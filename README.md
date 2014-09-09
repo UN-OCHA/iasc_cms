@@ -28,7 +28,7 @@ Once you have Grunt installed, install the building tools by running this comman
 
 ### Basic Grunt Commands
 
-Currently to build your site, you should run `grunt` from the base directory of this repository. This will perform the necessary cleaning and preparation tasks and then invoke drush make to build our Drupal install.
+Currently to build your site, you should run `grunt` from the base directory of this repository (cd /opt/development/iasc_cms/). This will perform the necessary cleaning and preparation tasks and then invoke drush make to build our Drupal install.
 
 You *must* do this from within the Vagrant-based development VM.
 To open a shell on your VM, type `vagrant ssh` from the iasc_env clone folder.
