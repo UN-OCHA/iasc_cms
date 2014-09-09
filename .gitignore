@@ -1,0 +1,7 @@
+.DS_Store
+node_modules
+src/sites/default/files/*
+src/sites/default/settings.db.inc
+build
+vendor
+bin

@@ -1,0 +1,32 @@
+default:
+  extensions:
+    Behat\MinkExtension\Extension:
+      goutte:
+        guzzle_parameters:
+          curl.options:
+            CURLOPT_SSL_VERIFYPEER: false
+            CURLOPT_CERTINFO: false
+            ssl.certificate_authority: false
+      # base_url is expected to be overridden in profiles below, or by the
+      # default profile in behat.local.yml for local development.
+      base_url: "http://iasc.local"
+    Drupal\DrupalExtension\Extension:
+      blackbox: ~
+      api_driver: drupal
+      drupal:
+        drupal_root: "build/html"
+
+  paths:
+    features: features
+    bootstrap: features/bootstrap
+  context:
+    class: IASC\FeatureContext
+ci:
+  formatter:
+    name: junit
+    parameters:
+      output_path: behat_junit
+#develop:
+#  extensions:
+#    Behat\MinkExtension\Extension:
+#      base_url: "http://iasc.p2devcloud.com"

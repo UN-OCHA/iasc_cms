@@ -1,0 +1,18 @@
+{
+  "srcPaths": {
+    "make": "src/iasc.make"
+  },
+  "buildPaths": {
+    "build": "build",
+    "html": "build/html",
+    "profile": "src/profiles",
+    "custom_theme": "src/themes",
+    "modules": "build/html/sites/all/modules",
+    "themes": "build/html/sites/all/themes",
+    "libraries": "build/html/sites/all/libraries"
+  },
+  "siteUrls": {
+    "default": "http://iasc.local"
+  },
+  "compassConfig": {}
+}

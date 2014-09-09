@@ -1,0 +1,37 @@
+<?php
+
+/**
+ * @file
+ * Install file for IASC profile.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function iasc_install() {
+
+  $theme_list = array(
+    'radix',
+    'oa_radix',
+    //'iasc',
+  );
+
+  // Enable all the themes
+  theme_enable($theme_list);
+
+  // Disable Bartik
+  theme_disable(array('bartik'));
+
+  // Set the default theme
+  variable_set('theme_default', 'oa_radix');
+  // variable_set('theme_default', 'iasc');
+
+  // Editing/creating content should use the admin theme
+  variable_set('node_admin_theme', 1);
+
+  // Enable Clean URL's.
+  variable_set('clean_url', 1);
+
+  // Rebuild content permissions for first time.
+  node_access_rebuild();
+}
