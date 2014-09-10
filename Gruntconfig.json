@@ -1,6 +1,11 @@
 {
   "srcPaths": {
-    "make": "src/iasc.make"
+    "make": "src/iasc.make",
+    "drupal": "src"
+  },
+  "phpcs": {
+    "path": "bin/phpcs",
+    "standard": "vendor/drupal/coder/coder_sniffer/Drupal"
   },
   "buildPaths": {
     "build": "build",
@@ -9,7 +14,8 @@
     "custom_theme": "src/themes",
     "modules": "build/html/sites/all/modules",
     "themes": "build/html/sites/all/themes",
-    "libraries": "build/html/sites/all/libraries"
+    "libraries": "build/html/sites/all/libraries",
+    "reports": "build/reports"
   },
   "siteUrls": {
     "default": "http://iasc.local"
