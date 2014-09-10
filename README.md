@@ -18,13 +18,12 @@ The IASC CMS build tools are run by [Grunt](http://gruntjs.com/). In order to bu
     - Not included in Debian-based Linux, so `apt-get install npm`.
 - [Grunt](http://gruntjs.com/getting-started)
     - Windows users should also read [this note](http://gruntjs.com/frequently-asked-questions#does-grunt-work-on-windows).
+    - *Note*: This should be installed by puppet. You will see a complaint that grunt-cli wasn't installed globally. This is fine.
 - [Composer](https://getcomposer.org)
     - OS X developers are recommended to use Homebrew to install Composer with the following command (all one line): `brew update && brew tap josegonzalez/homebrew-php && brew tap homebrew/versions && brew install php55 && brew install homebrew/php/composer`
     - Windows developers should download the installer; see [this page](https://getcomposer.org/doc/00-intro.md#installation-windows) for more details.
+    - Note: This gets installed when you first run `vagrant up`
 
-Once you have Grunt installed, install the building tools by running this command at the root of this repo:
-
-`npm install`
 
 ### Basic Grunt Commands
 
@@ -47,6 +46,8 @@ Everything you will be modifying is in the `src` directory. Files/directories ar
 - `themes`: Themes directory. Maps to `sites/all/themes/custom`. Our theme code will go in here.
 
 ## Working with the build
+
+You should not have to do this because when you vagrant up npm install and grunt is called in the install script (iasc_install.sh in iasc_env):
 
 If you are just building for the first time:
  First you will need to run `npm install` and `grunt`
@@ -85,7 +86,7 @@ If you are just building for the first time:
 
 We are following [Gitflow](http://nvie.com/posts/a-successful-git-branching-model/) as our branching strategy. Our primary branches are `master` and `develop`. Working branches should be named as follows:
 
-- `feature/IASC-123` where `IASC-123` is the JIRA ticket dicating the work in the feature. If there is no JIRA ticket, please use a short readable explanation of the work in the branch.
+- `feature/IASC-123` where `IASC-123` is the JIRA ticket indicating the work in the feature. If there is no JIRA ticket, please use a short readable explanation of the work in the branch.
 - `hotfix/IASC-123` for hotfixes/bug fixes. Same conventions apply.
 
   Here is a [cheatsheet](http://danielkummer.github.io/git-flow-cheatsheet/), it has instructions on how to install it and a cheatsheet for the commands.
@@ -104,7 +105,7 @@ Example:
 8. Go to bitbucket.org and make a pull request into the development branch from feature/IASC-123
 9. You can assign a code reviewer if you like. If you're not assigning it to anyone, be sure to make add a message in our flowdock room to alert developers. Something like: `Hey guys, I submitted a PR for IASC-123`
 
-To submit your working branch for merging, please push it to origin and create a pull request. Please note that developers in general will not be able to push directly to `develop`.
+Please note that developers in general will not be able to push directly to `develop`.
 
 ### Who do I talk to? ###
 
