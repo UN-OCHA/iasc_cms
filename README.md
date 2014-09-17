@@ -50,7 +50,7 @@ Everything you will be modifying is in the `src` directory. Files/directories ar
 You should not have to do this because when you vagrant up npm install and grunt is called in the install script (iasc_install.sh in iasc_env):
 
 If you are just building for the first time:
- First you will need to run `npm install`, `npm update`, `touch touch /opt/development/iasc_cms/src/iasc.make`, and `grunt` - this is all part of
+ First you will need to run `npm install`, `npm update`, `touch /opt/development/iasc_cms/src/iasc.make`, and `grunt` - this is all part of
  iasc_install.sh, which should run immediately when you first `vagrant up` so you shouldn't need to do this manually.
  Then you can follow the instructions on the [IASC Environment Repo](https://bitbucket.org/phase2tech/iasc_env).
 
