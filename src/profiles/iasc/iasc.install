@@ -23,7 +23,7 @@ function iasc_install() {
   theme_disable(array('bartik'));
 
   // Set the default theme
-  variable_set('theme_default', 'oa_radix');
+  variable_set('theme_default', 'radix');
   // variable_set('theme_default', 'iasc');
 
   // Editing/creating content should use the admin theme

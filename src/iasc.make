@@ -117,9 +117,10 @@ projects[oa_subspaces][download][type] = git
 projects[oa_subspaces][download][revision] = 243ae8d5
 
 projects[oa_radix][type] = theme
+projects[oa_radix][version] = 3.x-dev
 projects[oa_radix][download][url] = https://github.com/phase2/oa_radix.git
 projects[oa_radix][download][type] = git
-projects[oa_radix][download][tag] = 7.x-2.21
+projects[oa_radix][download][branch] = 7.x-3.x
 
 projects[openatrium][type] = profile
 projects[openatrium][download][type] = git
