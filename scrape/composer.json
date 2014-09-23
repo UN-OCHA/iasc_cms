@@ -1,0 +1,10 @@
+{
+  "require": {
+    "fabpot/goutte": "~2.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "IASC\\": "src/"
+    }
+  }
+}
