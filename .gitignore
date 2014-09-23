@@ -5,3 +5,5 @@ src/sites/default/settings.db.inc
 build
 vendor
 bin
+scrape/creds.php
+scrape/vendor
