@@ -5,11 +5,8 @@ namespace IASC\Listing;
 use Goutte\Client;
 use Symfony\Component\DomCrawler\Crawler;
 
-class ContactsListing implements ListingInterface
+class ContactsListing extends AbstractListing
 {
-  public $crawler;
-  public $client;
-
   public function __construct(Client $client, Crawler $crawler) {
     $this->client = $client;
     $this->crawler = $crawler;
@@ -22,11 +19,6 @@ class ContactsListing implements ListingInterface
     $link = $this->crawler->selectLink('Contacts')->link();
     // Click to follow link
     $this->crawler = $this->client->click($link);
-  }
-
-  public function getListingUrl() {
-    $uri = $this->client->getHistory()->current()->getUri();
-    return $uri;
   }
 
   public function clickEditLink($position = 1) {
