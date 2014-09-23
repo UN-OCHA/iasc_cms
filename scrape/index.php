@@ -19,9 +19,5 @@ $login = new IASC\Login($username, $password);
 $crawler = $login->crawler;
 $client = $login->client;
 
-$contactListing = new IASC\Listing\ContactsListing($client, $crawler);
-$contactListing->clickListingPage();
-
-$contactListing->clickEditLink();
-$crawler = $contactListing->crawler;
-echo $crawler->html();
+$contact= new IASC\Element\ContactElement($client, $crawler);
+print_r($contact->getValues());

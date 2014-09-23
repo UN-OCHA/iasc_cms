@@ -10,7 +10,7 @@ class ContactsListing implements ListingInterface
   public $crawler;
   public $client;
 
-  public function __construct(Client &$client, Crawler &$crawler) {
+  public function __construct(Client $client, Crawler $crawler) {
     $this->client = $client;
     $this->crawler = $crawler;
   }
