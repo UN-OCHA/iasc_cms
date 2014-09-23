@@ -14,21 +14,14 @@ if (file_exists('creds.php')) {
   include_once 'creds.php';
 }
 
-use Goutte\Client;
+$login = new IASC\Login($username, $password);
 
-$sso = 'http://singleone.unocha.org/OCHASingleOne/pageloader.aspx?page=login&pubappid=IASCAdmin&redirect=http%3a%2f%2fwebapps.humanitarianinfo.org%2fIASCadmin%2fpageloader.aspx%3fpage%3d&processlogin=b2000_admin';
+$crawler = $login->crawler;
+$client = $login->client;
 
-$client = new Client();
-$crawler = $client->request('GET', $sso);
+$contactListing = new IASC\Listing\ContactsListing($client, $crawler);
+$contactListing->clickListingPage();
 
-//select the form
-$form = $crawler->selectButton('Login')->form();
-//submit the form passing an array of values
-$crawler = $client->submit($form,
-  array(
-    '_ctl3:TextEmail' => $username,
-    '_ctl3:TextPassword' => $password,
-  )
-);
-
+$contactListing->clickEditLink();
+$crawler = $contactListing->crawler;
 echo $crawler->html();
