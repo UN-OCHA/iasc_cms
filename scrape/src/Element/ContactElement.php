@@ -17,9 +17,16 @@ class ContactElement extends AbstractElement
 
   public function setValues() {
     $values = array(
-      'homepage' => '#ctl00_ContentPlaceHolder1_ctl00_txtHomepage',
-      'city' => '#ctl00_ContentPlaceHolder1_ctl00_txtCity',
-      'country' => '#ctl00_ContentPlaceHolder1_ctl00_txtCountry',
+      'first_name' => array('selector' => '#ctl00_ContentPlaceHolder1_ctl00_txtFirst'),
+      'last_name' => array('selector' => '#ctl00_ContentPlaceHolder1_ctl00_txtLast'),
+      'homepage' => array('selector' => '#ctl00_ContentPlaceHolder1_ctl00_txtHomepage'),
+      'city' => array('selector' => '#ctl00_ContentPlaceHolder1_ctl00_txtCity'),
+      'country' => array('selector' => '#ctl00_ContentPlaceHolder1_ctl00_txtCountry'),
+      'organization_id' => array('selector' => '#ctl00_ContentPlaceHolder1_ctl00_ddlOrganisation option[selected="selected"]'),
+      'organization_name' => array(
+        'selector' => '#ctl00_ContentPlaceHolder1_ctl00_ddlOrganisation option[selected="selected"]',
+        'get_text' => TRUE
+      ),
     );
     $this->values = $values;
   }
