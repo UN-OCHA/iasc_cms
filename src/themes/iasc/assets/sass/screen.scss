@@ -1,0 +1,14 @@
+/**
+ * @file
+ * Bootstrap and variables partials import
+ */
+@import "bootstrap-compass";
+@import "global/variables";
+@import "global/bootstrap-variables"; 
+@import "bootstrap";
+
+// SMACSS imports
+// --------------------------------------------------
+@import "base/**/*";
+@import "layout/layout";
+@import "components/**/*";
