@@ -42,11 +42,13 @@ function iasc_preprocess_page(&$variables) {
     $variables['copyright'] = check_markup($copyright['value'], $copyright['format']);
   }
 
-  // Remove Panel IPE to add them in page.tpl.php on top of primary tabs
-  $panels_ipe = $variables['page']['page_bottom']['panels_ipe'];
-  unset($variables['page']['page_bottom']['panels_ipe']);
-
-  array_push($variables['page']['panelipe'], $panels_ipe);
+  // Move Panel IPE on top of primary tabs
+  if (!empty($variables['page']['page_bottom']['panels_ipe'])) {
+    $panels_ipe = $variables['page']['page_bottom']['panels_ipe'];
+    unset($variables['page']['page_bottom']['panels_ipe']);
+    array_push($variables['page']['panelipe'], $panels_ipe);
+  }
+  
 
 }
 
