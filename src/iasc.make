@@ -172,3 +172,7 @@ projects[fullcalendar][download][branch] = 7.x-2.x
 projects[fullcalendar][download][revision] = e416e7
 projects[fullcalendar][patch][2044391] = http://drupal.org/files/fullcalendar-legend-entityreference_taxonomy-2044391-1.patch
 projects[fullcalendar][patch][2333883] = https://www.drupal.org/files/issues/fullcalendar-update-fullcalendar-download-url-2333883-1.patch
+
+
+projects[colorbox][version] = 2.8
+projects[colorbox][subdir] = contrib
