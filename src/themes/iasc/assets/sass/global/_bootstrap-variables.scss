@@ -331,7 +331,7 @@ $input-border-radius:            0px;
 //##
 
 // Basics of a navbar
-// $navbar-height:                    50px
+$navbar-height:                       0px; //50px
 // $navbar-margin-bottom:             $line-height-computed
 $navbar-border-radius:                $border-radius-base;
 // $navbar-padding-horizontal:        floor(($grid-gutter-width / 2))
@@ -343,7 +343,7 @@ $navbar-default-bg:                   $brand-primary; // #f8f8f8
 $navbar-default-border:               $brand-primary; //darken($navbar-default-bg, 6.5%)
 
 // Navbar links
-// $navbar-default-link-color:                #777
+$navbar-default-link-color:                   #906303; 
 // $navbar-default-link-hover-color:          #333
 // $navbar-default-link-hover-bg:             transparent
 // $navbar-default-link-active-color:         #555
@@ -357,22 +357,22 @@ $navbar-default-border:               $brand-primary; //darken($navbar-default-b
 // $navbar-default-brand-hover-bg:            transparent
 
 // Navbar toggle
-// $navbar-default-toggle-hover-bg:           #ddd
+$navbar-default-toggle-hover-bg:              green;
 // $navbar-default-toggle-icon-bar-bg:        #888
 // $navbar-default-toggle-border-color:       #ddd
 
 // Inverted navbar
 // Reset inverted navbar basics
-// $navbar-inverse-color:                      $gray-light
-// $navbar-inverse-bg:                         #222
+$navbar-inverse-color:                          #fff;
+$navbar-inverse-bg:                             $brand-primary;
 // $navbar-inverse-border:                     darken($navbar-inverse-bg, 10%)
 
 // Inverted navbar links
-// $navbar-inverse-link-color:                 $gray-light
-// $navbar-inverse-link-hover-color:           #fff
+$navbar-inverse-link-color:                     #fff;
+$navbar-inverse-link-hover-color:               darken(#fff, 20%);
 // $navbar-inverse-link-hover-bg:              transparent
 // $navbar-inverse-link-active-color:          $navbar-inverse-link-hover-color
-// $navbar-inverse-link-active-bg:             darken($navbar-inverse-bg, 10%)
+$navbar-inverse-link-active-bg:                darken($navbar-inverse-bg, 6%);
 // $navbar-inverse-link-disabled-color:        #444
 // $navbar-inverse-link-disabled-bg:           transparent
 

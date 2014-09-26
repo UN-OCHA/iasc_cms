@@ -2,8 +2,30 @@
  * @file
  * oa_radix/drupal/contrib css overides
  */
+#oa-navbar {
+  clear: left;
+}
+
+// Hack to stop drupal from adding a padding-top
+body { padding-top: 0 !important; }
+
+ul.oa_toolbar { padding-top: 0; }
+
+.panel-display.container { padding: 0 !important; }
+
+.moscone-header {display: none;}
+
+.user-badge { padding: 0; }
+
 .navbar .navbar-inner {
   border: none;
+}
+
+ul#oa_favorites { padding: 0; } 
+ul#oa_favorites,
+ul#oa_tours,
+.oa_toolbar {
+  @extend .navbar-nav;
 }
 
 .brand {
