@@ -25,7 +25,7 @@ class ContactElement extends AbstractElement
       'organization_id' => array('selector' => '#ctl00_ContentPlaceHolder1_ctl00_ddlOrganisation option[selected="selected"]'),
       'organization_name' => array(
         'selector' => '#ctl00_ContentPlaceHolder1_ctl00_ddlOrganisation option[selected="selected"]',
-        'get_text' => TRUE
+        'get_text' => TRUE,
       ),
     );
     $this->values = $values;

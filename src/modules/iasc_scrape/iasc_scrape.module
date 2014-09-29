@@ -1,0 +1,68 @@
+<?php
+/**
+ * @file
+ * Customizations for IASC Scrape, if needed.
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function iasc_scrape_menu() {
+  $items = array();
+
+  $items['admin/iasc-scrape'] = array(
+    'title' => 'Scrape IASC',
+    'page callback' => 'iasc_scrape_scrape',
+    'access arguments' => array('administer site configuration'),
+    'type' => MENU_CALLBACK,
+  );
+
+  return $items;
+}
+
+/**
+ * Implements hook_libraries_info().
+ */
+function iasc_scrape_libraries_info() {
+  return array(
+    'IASC' => array(
+      'name' => 'IASC Scrape library',
+      'xautoload' => function($api) {
+        $api->namespaceRoot('IASC', 'src');
+      },
+    ),
+  );
+}
+
+function iasc_scrape_scrape() {
+  include_once 'IASC/vendor/autoload.php';
+
+  // Initially set credential values
+  $username = $password = '';
+
+  // Grab custom login credentials if set
+  if (file_exists('creds.php')) {
+    include_once 'IASC/creds.php';
+  }
+
+  $login = new IASC\Login($username, $password);
+
+  $crawler = $login->crawler;
+  $client = $login->client;
+
+  for ($i = 1; $i < 5; $i++) {
+    $contact = new IASC\Element\ContactElement($client, $crawler, $i);
+    print_r($contact->getValues());
+
+  }
+
+  echo '<br /><br />-----------<br /><br />';
+
+  $document = new IASC\Element\DocumentElement($client, $crawler);
+  print_r($document->getValues());
+
+  echo '<br /><br />-----------<br /><br />';
+
+  $news = new IASC\Element\NewsElement($client, $crawler);
+  print_r($news->getValues());
+}
