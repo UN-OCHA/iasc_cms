@@ -145,4 +145,6 @@ dependencies[] = apps
 ;dependencies[] = oa_workbench
 dependencies[] = iasc_taxonomy
 dependencies[] = iasc_meeting
+dependencies[] = iasc_contact
+dependencies[] = iasc_configuration
 
