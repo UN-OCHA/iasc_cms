@@ -61,7 +61,74 @@ function iasc_meeting_field_default_field_instances() {
         'apply_chosen' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 5,
+      'weight' => 8,
+    ),
+  );
+
+  // Exported field_instance: 'node-oa_event-field_contact'
+  $field_instances['node-oa_event-field_contact'] = array(
+    'bundle' => 'oa_event',
+    'comment_alter' => 0,
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 16,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'ical' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_contact',
+    'label' => 'Contact',
+    'options_limit' => 0,
+    'options_limit_empty_behaviour' => 0,
+    'options_limit_fields' => array(
+      'body' => 0,
+      'oa_section_ref' => 0,
+      'og_group_ref' => 0,
+    ),
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'references_dialog_add' => 0,
+        'references_dialog_edit' => 0,
+        'references_dialog_search' => 1,
+        'references_dialog_search_view' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 7,
     ),
   );
 
@@ -116,7 +183,7 @@ function iasc_meeting_field_default_field_instances() {
         'apply_chosen' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 4,
+      'weight' => 6,
     ),
   );
 
@@ -173,7 +240,7 @@ function iasc_meeting_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 3,
+      'weight' => 4,
     ),
   );
 
@@ -242,7 +309,7 @@ function iasc_meeting_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 6,
+      'weight' => 11,
     ),
   );
 
@@ -349,7 +416,7 @@ function iasc_meeting_field_default_field_instances() {
         'apply_chosen' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 8,
+      'weight' => 14,
     ),
   );
 
@@ -357,6 +424,7 @@ function iasc_meeting_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Add an existing or Create a new meeting note Document that should be associated with this Meeting.');
   t('Authoring Bodies');
+  t('Contact');
   t('Meeting Host(s)');
   t('Meeting Notes');
   t('Meeting Type');

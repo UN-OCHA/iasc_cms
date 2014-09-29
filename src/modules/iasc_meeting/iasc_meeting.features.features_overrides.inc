@@ -19,6 +19,7 @@ function iasc_meeting_features_override_default_overrides() {
   1600 Pennsylvania Avenue, NW<br />
   Washington, DC 20500</p>
   <p>If you need to add additional information such as a virtual location for the meeting (meeting call/dial-in information), please insert a break after your physical address and enter your additional details</p>';
+  $overrides["field_instance.node-oa_event-field_oa_address.widget|weight"] = 5;
 
   // Exported overrides for: node
   $overrides["node.oa_event.description"] = 'Create a Meeting to hold information about the next meeting event and to reference Agenda and the Meeting Notes Documents.';
