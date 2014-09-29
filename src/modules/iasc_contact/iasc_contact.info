@@ -1,4 +1,4 @@
-name = iasc_contact
+name = IASC Contact
 description = Provides content type and functionality for the Contacts Database.
 core = 7.x
 package = IASC

@@ -151,7 +151,7 @@ function iasc_meeting_field_default_field_bases() {
   // Exported field_base: 'field_meeting_agendas'
   $field_bases['field_meeting_agendas'] = array(
     'active' => 1,
-    'cardinality' => 1,
+    'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_meeting_agendas',
@@ -194,7 +194,7 @@ function iasc_meeting_field_default_field_bases() {
   // Exported field_base: 'field_meeting_notes'
   $field_bases['field_meeting_notes'] = array(
     'active' => 1,
-    'cardinality' => 1,
+    'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_meeting_notes',
