@@ -15,10 +15,49 @@ function iasc_meeting_features_override_default_overrides() {
   $overrides["field_instance.node-oa_event-body.description"] = 'Please enter the public information about the meeting. <strong>Please note:</strong> This information will be made publicly available. Use the <em>Private Details</em> field to contain information that should remain private.';
   $overrides["field_instance.node-oa_event-body.label"] = 'Public Information';
 
-
   // Exported overrides for: node
   $overrides["node.oa_event.description"] = 'Create a Meeting to hold information about the next meeting event and to reference Agenda and the Meeting Notes Documents.';
   $overrides["node.oa_event.name"] = 'Meeting';
+
+  // Exported overrides for: page_manager_handlers
+  $overrides["page_manager_handlers.node_edit_panel_context_7.conf|display|content|new-0b869cc5-d419-48ed-bcd1-4e6ec0d15a34|access|plugins"] = array(
+    0 => array(
+      'name' => 'perm',
+      'settings' => array(
+        'perm' => 'administer content types',
+      ),
+      'context' => 'logged-in-user',
+      'not' => FALSE,
+    ),
+  );
+  $overrides["page_manager_handlers.node_edit_panel_context_7.conf|display|content|new-30f4398c-9f13-4195-b392-3f34ab0ddcee"]["DELETED"] = TRUE;
+  $overrides["page_manager_handlers.node_edit_panel_context_7.conf|display|content|new-457a0b07-9259-4092-a16e-f542822ee2af"] = (object) array(
+      'pid' => 'new-457a0b07-9259-4092-a16e-f542822ee2af',
+      'panel' => 'sidebar',
+      'type' => 'entity_form_field',
+      'subtype' => 'node:field_time_zone',
+      'shown' => TRUE,
+      'access' => array(),
+      'configuration' => array(
+        'label' => '',
+        'formatter' => '',
+        'context' => 'argument_node_edit_1',
+        'override_title' => 0,
+        'override_title_text' => '',
+      ),
+      'cache' => array(),
+      'style' => array(
+        'settings' => NULL,
+      ),
+      'css' => array(),
+      'extras' => array(),
+      'position' => 0,
+      'locks' => array(),
+      'uuid' => '457a0b07-9259-4092-a16e-f542822ee2af',
+    );
+  $overrides["page_manager_handlers.node_edit_panel_context_7.conf|display|content|new-73af3f62-dd48-400c-bfff-26be3ede3b36|position"] = 2;
+  $overrides["page_manager_handlers.node_edit_panel_context_7.conf|display|panels|sidebar|0"] = 'new-457a0b07-9259-4092-a16e-f542822ee2af';
+  $overrides["page_manager_handlers.node_edit_panel_context_7.conf|display|panels|sidebar|2"] = 'new-73af3f62-dd48-400c-bfff-26be3ede3b36';
 
  return $overrides;
 }

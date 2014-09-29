@@ -65,61 +65,6 @@ function iasc_meeting_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-oa_event-field_meeting_type'
-  $field_instances['node-oa_event-field_meeting_type'] = array(
-    'bundle' => 'oa_event',
-    'comment_alter' => 0,
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'taxonomy',
-        'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 13,
-      ),
-      'featured' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'ical' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_meeting_type',
-    'label' => 'Meeting Type',
-    'options_limit' => FALSE,
-    'options_limit_empty_behaviour' => 0,
-    'options_limit_fields' => array(),
-    'required' => 1,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'apply_chosen' => 0,
-      ),
-      'type' => 'options_select',
-      'weight' => 1,
-    ),
-  );
-
   // Exported field_instance: 'node-oa_event-field_host'
   $field_instances['node-oa_event-field_host'] = array(
     'bundle' => 'oa_event',
@@ -301,6 +246,61 @@ function iasc_meeting_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-oa_event-field_meeting_type'
+  $field_instances['node-oa_event-field_meeting_type'] = array(
+    'bundle' => 'oa_event',
+    'comment_alter' => 0,
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 13,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'ical' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_meeting_type',
+    'label' => 'Meeting Type',
+    'options_limit' => FALSE,
+    'options_limit_empty_behaviour' => 0,
+    'options_limit_fields' => array(),
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => 0,
+      ),
+      'type' => 'options_select',
+      'weight' => 1,
+    ),
+  );
+
   // Exported field_instance: 'node-oa_event-field_time_zone'
   $field_instances['node-oa_event-field_time_zone'] = array(
     'bundle' => 'oa_event',
@@ -357,9 +357,9 @@ function iasc_meeting_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Add an existing or Create a new meeting note Document that should be associated with this Meeting.');
   t('Authoring Bodies');
-  t('Event Type');
   t('Meeting Host(s)');
   t('Meeting Notes');
+  t('Meeting Type');
   t('Please enter additional information about the meeting. <strong>Please note:</strong> This information will not be made publicly available and has privacy restrictions.');
   t('Please select one or more authoring bodies for this meeting.');
   t('Please select the host(s) for this meeting.');
