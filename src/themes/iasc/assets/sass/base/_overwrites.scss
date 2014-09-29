@@ -1,0 +1,25 @@
+/**
+ * @file
+ * oa_radix/drupal/contrib css overides
+ */
+.navbar .navbar-inner {
+  border: none;
+}
+
+.brand {
+  padding: 43px 25px 21px;
+  display: block;
+  max-width: 360px;
+}
+
+/**
+ * Panels IPE 
+ */
+div#panels-ipe-control-container {
+  box-shadow: 0 0 0 #fff;
+  position: relative;
+  top: auto;
+  background-color: transparent;
+  .panels-ipe-button-container { text-align: right;}
+}
+

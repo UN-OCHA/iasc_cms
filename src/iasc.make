@@ -178,3 +178,6 @@ projects[migrate][subdir] = contrib
 
 projects[xautoload][version] = 5.0
 projects[xautoload][subdir] = contrib
+
+projects[colorbox][version] = 2.8
+projects[colorbox][subdir] = contrib
