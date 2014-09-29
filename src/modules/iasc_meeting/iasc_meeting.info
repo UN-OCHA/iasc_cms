@@ -28,6 +28,7 @@ features[features_overrides][] = page_manager_handlers.node_edit_panel_context_7
 features[features_overrides][] = page_manager_handlers.node_edit_panel_context_7.conf|display|content|new-30f4398c-9f13-4195-b392-3f34ab0ddcee
 features[features_overrides][] = page_manager_handlers.node_edit_panel_context_7.conf|display|content|new-457a0b07-9259-4092-a16e-f542822ee2af
 features[features_overrides][] = page_manager_handlers.node_edit_panel_context_7.conf|display|content|new-73af3f62-dd48-400c-bfff-26be3ede3b36|position
+features[features_overrides][] = page_manager_handlers.node_edit_panel_context_7.conf|display|panels|sidebar|0
 features[features_overrides][] = page_manager_handlers.node_edit_panel_context_7.conf|display|panels|sidebar|2
 features[features_overrides][] = page_manager_handlers.node_edit_panel_context_7.conf|display|panels|sidebar|3
 features[features_overrides][] = page_manager_handlers.node_edit_panel_context_7.conf|display|panels|sidebar|4

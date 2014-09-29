@@ -15,9 +15,9 @@ function iasc_meeting_field_default_field_instances_alter(&$data) {
   if (isset($data['node-oa_event-field_oa_address'])) {
     $data['node-oa_event-field_oa_address']['comment_alter'] = 0; /* WAS: '' */
     $data['node-oa_event-field_oa_address']['description'] = '<p>To add a physical location for the meeting, please enter the address. A map widget will automatically populate with the correct coordinates when you save the node. For example:<br />
-        1600 Pennsylvania Avenue, NW<br />
-        Washington, DC 20500</p>
-        <p>If you need to add additional information such as a virtual location for the meeting (meeting call/dial-in information), please insert a break after your physical address and enter your additional details</p>'; /* WAS: 'Location Address and/or link, i.e.,
+            1600 Pennsylvania Avenue, NW<br />
+            Washington, DC 20500</p>
+            <p>If you need to add additional information such as a virtual location for the meeting (meeting call/dial-in information), please insert a break after your physical address and enter your additional details</p>'; /* WAS: 'Location Address and/or link, i.e.,
     1600 Pennsylvania Avenue, NW
     Washington, DC 20500
     http://www.whitehouse.gov/' */
