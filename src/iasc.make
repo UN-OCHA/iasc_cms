@@ -57,6 +57,9 @@ projects[panopoly_wysiwyg][subdir] = panopoly
 projects[panopoly_search][version] = 1.10
 projects[panopoly_search][subdir] = panopoly
 
+projects[panopoly_test][version] = 1.10
+projects[panopoly_test][subdir] = panopoly
+
 ; =====================================
 ; Open Atrium 2.x
 ; =====================================
@@ -176,3 +179,8 @@ projects[fullcalendar][patch][2333883] = https://www.drupal.org/files/issues/ful
 
 projects[colorbox][version] = 2.8
 projects[colorbox][subdir] = contrib
+
+; Allows for creation of documents nodes when creating an event node.
+projects[references_dialog][version] = 1.0-beta1
+projects[references_dialog][subdir] = contrib
+
