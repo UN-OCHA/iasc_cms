@@ -5,5 +5,5 @@ src/sites/default/settings.db.inc
 build
 vendor
 bin
-scrape/creds.php
-scrape/vendor
+src/modules/iasc_scrape/IASC/creds.php
+src/modules/iasc_scrape/IASC/vendor
