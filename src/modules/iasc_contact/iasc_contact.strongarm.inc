@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * iasc_contacts.strongarm.inc
+ * iasc_contact.strongarm.inc
  */
 
 /**
  * Implements hook_strongarm().
  */
-function iasc_contacts_strongarm() {
+function iasc_contact_strongarm() {
   $export = array();
 
   $strongarm = new stdClass();

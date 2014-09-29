@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * iasc_contacts.features.inc
+ * iasc_contact.features.inc
  */
 
 /**
  * Implements hook_ctools_plugin_api().
  */
-function iasc_contacts_ctools_plugin_api($module = NULL, $api = NULL) {
+function iasc_contact_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "strongarm" && $api == "strongarm") {
     return array("version" => "1");
   }
@@ -16,7 +16,7 @@ function iasc_contacts_ctools_plugin_api($module = NULL, $api = NULL) {
 /**
  * Implements hook_node_info().
  */
-function iasc_contacts_node_info() {
+function iasc_contact_node_info() {
   $items = array(
     'contact' => array(
       'name' => t('Contact'),

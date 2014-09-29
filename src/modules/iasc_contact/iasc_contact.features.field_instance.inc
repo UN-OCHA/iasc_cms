@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * iasc_contacts.features.field_instance.inc
+ * iasc_contact.features.field_instance.inc
  */
 
 /**
  * Implements hook_field_default_field_instances().
  */
-function iasc_contacts_field_default_field_instances() {
+function iasc_contact_field_default_field_instances() {
   $field_instances = array();
 
   // Exported field_instance: 'node-contact-body'
