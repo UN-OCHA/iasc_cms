@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the event feature.
- */
-
-include_once 'iasc_event.features.inc';

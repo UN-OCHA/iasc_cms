@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * iasc_event.features.field_base.inc
+ * iasc_meeting.features.field_base.inc
  */
 
 /**
  * Implements hook_field_default_field_bases().
  */
-function iasc_event_field_default_field_bases() {
+function iasc_meeting_field_default_field_bases() {
   $field_bases = array();
 
   // Exported field_base: 'field_authoring_bodies'
@@ -44,13 +44,13 @@ function iasc_event_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_event_type'
-  $field_bases['field_event_type'] = array(
+  // Exported field_base: 'field_meeting_type'
+  $field_bases['field_meeting_type'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_event_type',
+    'field_name' => 'field_meeting_type',
     'foreign keys' => array(
       'tid' => array(
         'columns' => array(
@@ -69,7 +69,7 @@ function iasc_event_field_default_field_bases() {
     'settings' => array(
       'allowed_values' => array(
         0 => array(
-          'vocabulary' => 'event_type',
+          'vocabulary' => 'meeting_type',
           'parent' => 0,
         ),
       ),

@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * iasc_event.views_default.inc
+ * iasc_meeting.views_default.inc
  */
 
 /**
  * Implements hook_views_default_views().
  */
-function iasc_event_views_default_views() {
+function iasc_meeting_views_default_views() {
   $export = array();
 
   $view = new view();

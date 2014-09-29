@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * iasc_event.features.field_instance.inc
+ * iasc_meeting.features.field_instance.inc
  */
 
 /**
  * Implements hook_field_default_field_instances().
  */
-function iasc_event_field_default_field_instances() {
+function iasc_meeting_field_default_field_instances() {
   $field_instances = array();
 
   // Exported field_instance: 'node-oa_event-field_authoring_bodies'
@@ -65,8 +65,8 @@ function iasc_event_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-oa_event-field_event_type'
-  $field_instances['node-oa_event-field_event_type'] = array(
+  // Exported field_instance: 'node-oa_event-field_meeting_type'
+  $field_instances['node-oa_event-field_meeting_type'] = array(
     'bundle' => 'oa_event',
     'comment_alter' => 0,
     'default_value' => NULL,
@@ -100,8 +100,8 @@ function iasc_event_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_event_type',
-    'label' => 'Event Type',
+    'field_name' => 'field_meeting_type',
+    'label' => 'Meeting Type',
     'options_limit' => FALSE,
     'options_limit_empty_behaviour' => 0,
     'options_limit_fields' => array(),
