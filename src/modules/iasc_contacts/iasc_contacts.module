@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the iasc_contacts feature.
+ */
+
+include_once 'iasc_contacts.features.inc';
