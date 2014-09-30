@@ -1,4 +1,14 @@
 default:
+  context:
+    parameters:
+      drupal_users:
+        space admin:
+          role: 'editor'
+          password: 'pass'
+          #group:
+        space user:
+          role: 'editor'
+          password: 'pass'
   extensions:
     Behat\MinkExtension\Extension:
       goutte:
@@ -15,12 +25,22 @@ default:
       api_driver: drupal
       drupal:
         drupal_root: "build/html"
-
+      subcontexts:
+        paths:
+          - "build/html/sites/all"
+      text:
+        log_out: "Log out"
+  formatter:
+    name: pretty,html
+    parameters:
+      decorated:              true
+      verbose:                false
+      time:                   true
+      output_path:            ,build/reports/behat.html
+      multiline_arguments:    true
   paths:
-    features: features
-    bootstrap: features/bootstrap
-  context:
-    class: IASC\FeatureContext
+    features: "features"
+    bootstrap: "features/bootstrap"
 ci:
   formatter:
     name: junit
