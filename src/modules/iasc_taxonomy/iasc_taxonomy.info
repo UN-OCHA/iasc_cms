@@ -1,0 +1,9 @@
+name = IASC Taxonomy
+description = Default taxonomies: Authoring Bodies, Hosts
+core = 7.x
+package = IASC
+dependencies[] = features
+dependencies[] = taxonomy
+features[features_api][] = api:2
+features[taxonomy][] = authoring_bodies
+features[taxonomy][] = hosts
