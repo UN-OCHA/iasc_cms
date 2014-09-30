@@ -17,8 +17,8 @@ class DocumentElement extends AbstractElement
 
   public function setValues() {
     $values = array(
-      'title' => '#ctl00_ContentPlaceHolder1_ctl00_txtTitle',
-      'doc no' => '#ctl00_ContentPlaceHolder1_ctl00_txtDocNo',
+      'title' => array('selector' => '#ctl00_ContentPlaceHolder1_ctl00_txtTitle'),
+      'doc no' => array('selector' => '#ctl00_ContentPlaceHolder1_ctl00_txtDocNo'),
     );
     $this->values = $values;
   }

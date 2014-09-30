@@ -17,7 +17,7 @@ class NewsElement extends AbstractElement
 
   public function setValues() {
     $values = array(
-      'header' => '#ctl00_ContentPlaceHolder1_ctl00_txtHeader',
+      'header' => array('selector' => '#ctl00_ContentPlaceHolder1_ctl00_txtHeader'),
     );
     $this->values = $values;
   }
