@@ -5,3 +5,41 @@
  */
 
 include_once 'iasc_document.features.inc';
+
+/**
+ *  Implements hook_form_BASE_FORM_ID_alter().
+ */
+function iasc_document_form_node_form_alter(&$form, &$form_state, $form_id) {
+  $content_type = $form['#node']->type;
+  if ('oa_wiki_page' == $content_type) {
+    $product_term = taxonomy_get_term_by_name('Product', 'document_types');
+    if ($product_term) {
+      $product_term = current($product_term);
+      $state = array(
+        'visible' => array(
+          ':input[name="field_document_type[und]"]' => array('value' => $product_term->tid),
+        ),
+      );
+
+      // Show Description only for Products.
+      $form['body']['#states'] = $state;
+
+      // Show Product Category only for Products.
+      $form['field_category']['#states'] = $state;
+    }
+
+    // Label should be Published date if Document is selected.
+    $document_term = taxonomy_get_term_by_name('Document', 'document_types');
+    if ($document_term) {
+      $document_term = current($document_term);
+      $state = array(
+        'visible' => array(
+          ':input[name="field_document_type[und]"]' => array('value' => $document_term->tid),
+        ),
+      );
+
+      // Show Document No. only for Documents.
+      $form['field_document_no']['#states'] = $state;
+    }
+  }
+}
