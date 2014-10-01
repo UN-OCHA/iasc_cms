@@ -10,7 +10,7 @@
 function iasc_document_field_default_field_instances_alter(&$data) {
   if (isset($data['node-oa_wiki_page-body'])) {
     $data['node-oa_wiki_page-body']['comment_alter'] = 0; /* WAS: '' */
-    $data['node-oa_wiki_page-body']['description'] = 'Enter a description of the document or product.'; /* WAS: 'Enter the content of the document or wiki here.' */
+    $data['node-oa_wiki_page-body']['description'] = 'Enter a description of the product.'; /* WAS: 'Enter the content of the document or wiki here.' */
     $data['node-oa_wiki_page-body']['label'] = 'Description'; /* WAS: 'Body' */
     $data['node-oa_wiki_page-body']['widget']['weight'] = 4; /* WAS: 3 */
   }

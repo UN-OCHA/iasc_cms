@@ -63,7 +63,7 @@ function iasc_document_field_default_field_instances() {
   $field_instances['node-oa_wiki_page-field_category'] = array(
     'bundle' => 'oa_wiki_page',
     'comment_alter' => 0,
-    'default_value' => NULL,
+    'default_value' => array(),
     'deleted' => 0,
     'description' => 'Please select one or more terms for the categories for the Product.',
     'display' => array(
@@ -99,12 +99,13 @@ function iasc_document_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 0,
-      'module' => 'taxonomy',
+      'module' => 'options',
       'settings' => array(
+        'apply_chosen' => 0,
         'autocomplete_path' => 'taxonomy/autocomplete',
         'size' => 60,
       ),
-      'type' => 'taxonomy_autocomplete',
+      'type' => 'options_select',
       'weight' => 3,
     ),
   );

@@ -11,11 +11,9 @@ function iasc_document_features_override_default_overrides() {
   // This code is only used for UI in features. Exported alters hooks do the magic.
   $overrides = array();
 
-  // Exported overrides for: field_group
-
   // Exported overrides for: field_instance
   $overrides["field_instance.node-oa_wiki_page-body.comment_alter"] = 0;
-  $overrides["field_instance.node-oa_wiki_page-body.description"] = 'Enter a description of the document or product.';
+  $overrides["field_instance.node-oa_wiki_page-body.description"] = 'Enter a description of the product.';
   $overrides["field_instance.node-oa_wiki_page-body.label"] = 'Description';
   $overrides["field_instance.node-oa_wiki_page-body.widget|weight"] = 4;
   $overrides["field_instance.node-oa_wiki_page-field_oa_media.widget|weight"] = 7;
