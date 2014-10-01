@@ -22,6 +22,7 @@ features[features_overrides][] = field_instance.node-oa_wiki_page-body.widget|we
 features[features_overrides][] = field_instance.node-oa_wiki_page-field_oa_media.widget|weight
 features[features_overrides][] = field_instance.node-oa_wiki_page-og_vocabulary.widget|weight
 features[features_overrides][] = node.oa_wiki_page.description
+features[features_overrides][] = node.oa_wiki_page.name
 features[features_overrides][] = page_manager_handlers.node_edit_panel_context_6.conf|display|content|new-2362dc2f-60f2-42e4-b13f-82918fd4b1a8|position
 features[features_overrides][] = page_manager_handlers.node_edit_panel_context_6.conf|display|content|new-250cd2f8-caf7-437c-9177-3babe6738d57|position
 features[features_overrides][] = page_manager_handlers.node_edit_panel_context_6.conf|display|content|new-316932d4-d342-45ef-8ddd-3aee5f75adc2
