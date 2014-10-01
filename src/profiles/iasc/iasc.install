@@ -9,30 +9,17 @@
  * Implements hook_install().
  */
 function iasc_install() {
-  //$theme = 'oa_radix';
   $theme_list = array(
-      'radix',
-      'oa_radix',
-      'iasc',
-    );
+    'radix',
+    'oa_radix',
+    'iasc',
+  );
 
   theme_enable($theme_list);
 
   variable_set('theme_default', 'iasc');
 
   theme_disable(array('responsive_bartik', 'bartik'));
-
-
-
-
-  // Enable all the themes.
-//  theme_enable($theme_list);
-
-  // Disable Bartik.
-//  theme_disable(array('responsive_bartik', 'bartik'));
-
-  // Set the default theme.
-//  variable_set('theme_default', 'isac');
 
   // Set the admin theme.
   variable_set('admin_theme', 'oa_radix');
