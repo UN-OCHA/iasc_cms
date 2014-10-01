@@ -1,0 +1,214 @@
+<?php
+/**
+ * @file
+ * IASC Taxonomy module file.
+ */
+
+/**
+ * Process the import of terms.
+ *
+ * @param array $options
+ *   An associative array of options:
+ *   - file           : the path to the csv file
+ *   - delimiter      : 1 character csv delimiter (default: ';')
+ *   - enclosure      : character that wraps the term (default: '"')
+ *   - vid            : the vid of the vocabulary to import into
+ *   - delete_terms   : delete all terms before import (default: FALSE)
+ *
+ * @return array
+ *   Array of errors or nothing if import is successful.
+ */
+function iasc_taxonomy_import($options) {
+  $messages = array();
+
+  // Load the file object.
+  if (empty($options['file'])) {
+    $messages['file'] = t('Missing file.');
+    return $messages;
+  }
+
+  $file_handle = fopen($options['file'], 'r');
+  if ($file_handle === FALSE) {
+    $messages['file'] = t('File could not be opened.');
+    return $messages;
+  }
+
+  $data = fgetcsv($file_handle, 0, $options['delimiter'], $options['enclosure']);
+  fclose($file_handle);
+  if ($data === FALSE) {
+    $messages['file'] = t('File had no data.');
+    return $messages;
+  }
+
+  if (empty($options['vid']) || !$vocabulary = taxonomy_vocabulary_load($options['vid'])) {
+    $messages['vocabulary'] = t('Could not load vocabulary.');
+    return $messages;
+  }
+
+  // Now we have an array of terms to import. Break it up into chunks of 10.
+  $chunk_size = 10;
+  $chunks = array_chunk($data, $chunk_size);
+  $operations = array();
+  $count_chunks = count($chunks);
+
+  $i = 0;
+  // Import these terms in chunks.
+  foreach ($chunks as $chunk) {
+    $i++;
+
+    $details = array(
+      '@chunk' => $i,
+      '@count' => $count_chunks,
+    );
+
+    $message = '';
+    if (1 == $i) {
+      if ($options['delete_terms']) {
+        $message .= t("Deleting all terms from vid: @vocab prior to importing.\n", array('@vocab' => $vocabulary->name));
+      }
+      $details['@size'] = $chunk_size;
+      $message .= t("Starting import of terms: chunk @chunk of @count (@size records/chunk)\n", $details);
+    }
+
+    $message .= t('(Importing chunk @chunk of @count)', $details);
+
+    $operations[] = array("iasc_taxonomy_import_term",
+      array(
+        $chunk,
+        $message,
+        $vocabulary,
+      ),
+    );
+  }
+
+  // Put all that information into our batch array.
+  $batch = array(
+    'operations' => $operations,
+    'title' => t('Importing !total_lines lines from CSV file "%filename"...', array(
+        '%filename'    => $options['file'],
+        '!total_lines' => $options['total_lines'],
+      )
+    ),
+    'init_message' => t('Starting to import terms...'),
+    'progress_message' => t('Processed @current out of @total.'),
+    'error_message' => t('An error occurred during the import.'),
+    'finished' => 'iasc_taxonomy_import_finished',
+  );
+
+  // Delete terms for vocabulary prior to importing if needed.
+  if ($options['delete_terms']) {
+    $tids = iasc_taxonomy_get_vocabulary_tids($options['vid']);
+    foreach ($tids as $tid) {
+      taxonomy_term_delete($tid);
+    }
+  }
+
+  // Set the batch.
+  batch_set($batch);
+}
+
+/**
+ * Return an array of all term ids of a given vocabulary.
+ *
+ * @param int $vid
+ *   The vocabulary id from where to fetch term ids.
+ *
+ * @return array
+ *   Array of term ids.
+ */
+function iasc_taxonomy_get_vocabulary_tids($vid) {
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'taxonomy_term')
+    ->propertyCondition('vid', $vid);
+  $result = $query->execute();
+
+  return (isset($result['taxonomy_term'])) ? array_keys($result['taxonomy_term']) : array();
+}
+
+/**
+ * Updates or saves the new chunk of terms.
+ *
+ * @param array $chunk
+ *   The current chunk of terms
+ * @param string $message
+ *   A helpful message about the status of the batch process.
+ * @param object $vocabulary
+ *   The vocabulary that these terms are to be imported into.
+ * @param array $context
+ *   The context for the batch process
+ */
+function iasc_taxonomy_import_term($chunk, $message, $vocabulary, &$context) {
+  $context['message'] = $message;
+
+  foreach ($chunk as $term_name) {
+    // Check to see if this term already exists in our vocabulary.
+    $term_name = trim(check_plain($term_name));
+    $term = taxonomy_get_term_by_name($term_name, $vocabulary->machine_name);
+
+    if (!empty($term)) {
+      // Update the term with the new term name.
+      $term = current($term);
+      $term->name = $term_name;
+      $result = taxonomy_term_save($term);
+      if (SAVED_UPDATED == $result) {
+        $context['results']['updated'][] = $term_name;
+      }
+      else {
+        $message = t('Could not create update term: @term', array('@term' => $term_name));
+        watchdog('iasc_taxonomy', $message, WATCHDOG_ERROR);
+        $context['results']['error'][] = $term_name;
+      }
+    }
+    else {
+      // Add the new term.
+      $term = new stdClass();
+      $term->name = $term_name;
+      $term->vid = $vocabulary->vid;
+      $result = taxonomy_term_save($term);
+      if (SAVED_NEW == $result) {
+        $context['results']['new'][] = $term_name;
+      }
+      else {
+        $context['results']['error'][] = $term_name;
+        $message = t('Could not create new term: @term', array('@term' => $term_name));
+        watchdog('iasc_taxonomy', $message, WATCHDOG_ERROR);
+      }
+    }
+
+    $context['results']['processed'][] = $term_name;
+  }
+}
+
+/**
+ * Callback for when the batch process finishes.
+ *
+ * @param bool $success
+ *   True if the batch process completed without errors.
+ * @param array $results
+ *   Information about the results set in iasc_taxonomy_import_term().
+ * @param array $operations
+ *   An array of details about the operations.
+ */
+function iasc_taxonomy_import_finished($success, $results, $operations) {
+  if ($success) {
+    drupal_set_message(count($results['processed']) . ' terms processed.');
+    drupal_set_message(count($results['new']) . ' new terms imported.');
+    drupal_set_message(count($results['updated']) . ' terms updated.');
+
+    if (count($results['error'])) {
+      drupal_set_message(count($results['error']) . ' terms were not imported. See log for details.');
+    }
+  }
+  else {
+    // $operations contains the operations that remained unprocessed.
+    $error_operation = reset($operations);
+    $message = t('An error occurred while processing %error_operation with arguments: @arguments',
+      array(
+        '%error_operation' => $error_operation[0],
+        '@arguments' => print_r($error_operation[1],
+          TRUE),
+      )
+    );
+    drupal_set_message($message, 'error');
+  }
+}

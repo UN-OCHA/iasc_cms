@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the iasc meeting feature.
+ */
+
+include_once 'iasc_meeting.features.inc';

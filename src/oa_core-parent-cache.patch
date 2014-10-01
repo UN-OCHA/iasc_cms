@@ -1,0 +1,49 @@
+diff --git a/includes/oa_core.util.inc b/includes/oa_core.util.inc
+index 46c70e0..31a0bd2 100644
+--- a/includes/oa_core.util.inc
++++ b/includes/oa_core.util.inc
+@@ -145,9 +145,19 @@ function oa_core_get_section_context() {
+  * @return array
+  *   Array of parent NIDs.
+  */
+-function oa_core_get_parents($nid, $bundle = OA_SPACE_TYPE, $status = NULL, $include_archived = FALSE) {
++function oa_core_get_parents($nid, $bundle = OA_SPACE_TYPE, $status = NULL, $include_archived = FALSE, $account = NULL) {
++  if (!isset($account)) {
++    global $user;
++    $uid = $user->uid;
++  }
++  elseif (is_numeric($account)) {
++    $uid = $account;
++  }
++  else {
++    $uid = $account->uid;
++  }
+ 
+-  $cid = oa_core_get_cache_id(OA_CACHE_GET_PARENTS, $nid, $include_archived, array($bundle, $status));
++  $cid = oa_core_get_cache_id(OA_CACHE_GET_PARENTS, $nid . '_' . $uid, $include_archived, array($bundle, $status));
+   if (oa_core_get_cache(OA_CACHE_GET_PARENTS, $cid, $result)) {
+     return $result;
+   }
+@@ -202,9 +212,20 @@ function oa_core_get_parents($nid, $bundle = OA_SPACE_TYPE, $status = NULL, $inc
+  * @return array
+  *   Array of children NIDs.
+  */
+-function oa_core_get_groups_by_parent($nid, $bundle = OA_SPACE_TYPE, $status = NULL, $include_archived = FALSE) {
++function oa_core_get_groups_by_parent($nid, $bundle = OA_SPACE_TYPE, $status = NULL, $include_archived = FALSE, $account = NULL) {
++
++  if (!isset($account)) {
++    global $user;
++    $uid = $user->uid;
++  }
++  elseif (is_numeric($account)) {
++    $uid = $account;
++  }
++  else {
++    $uid = $account->uid;
++  }
+ 
+-  $cid = oa_core_get_cache_id(OA_CACHE_GROUPS_BY_PARENT, $nid, $include_archived, array($bundle, $status));
++  $cid = oa_core_get_cache_id(OA_CACHE_GROUPS_BY_PARENT, $nid . '_' . $uid, $include_archived, array($bundle, $status));
+   if (oa_core_get_cache(OA_CACHE_GROUPS_BY_PARENT, $cid, $result)) {
+     return $result;
+   }

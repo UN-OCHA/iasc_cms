@@ -1,0 +1,34 @@
+<?php
+
+/**
+ * @file
+ * Install file for IASC Meeting.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function iasc_meeting_install() {
+  // We have to make these changes because the following are faux features.
+  $event = node_type_load('oa_event');
+  $t = get_t();
+  $event->name = $t('Meeting');
+  $event->description = $t('Create a Meeting to hold information about the next meeting event and to reference Agenda and the Meeting Notes Documents.');
+  $event->modified = TRUE;
+  $event->locked = 1;
+  node_type_save($event);
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function iasc_meeting_uninstall() {
+  // Revert back to the original setup for OA Event.
+  $event = node_type_load('oa_event');
+  $t = get_t();
+  $event->name = $t('Event');
+  $event->description = $t('An Open Atrium Event');
+  $event->modified = TRUE;
+  $event->locked = 1;
+  node_type_save($event);
+}

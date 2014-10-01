@@ -142,5 +142,8 @@ dependencies[] = panels_customerror
 dependencies[] = apps
 
 ; IASC Specific Dependencies
-;dependencies[] = oa_workbench
+dependencies[] = iasc_taxonomy
+dependencies[] = iasc_meeting
+dependencies[] = iasc_contact
+dependencies[] = iasc_configuration
 

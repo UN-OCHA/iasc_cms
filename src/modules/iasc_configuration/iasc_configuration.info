@@ -1,0 +1,6 @@
+name = IASC Configuration
+description = Holds general configurations for IASC.
+core = 7.x
+package = IASC
+features[features_api][] = api:2
+project path = sites/all/modules/custom

@@ -57,6 +57,9 @@ projects[panopoly_wysiwyg][subdir] = panopoly
 projects[panopoly_search][version] = 1.10
 projects[panopoly_search][subdir] = panopoly
 
+projects[panopoly_test][version] = 1.10
+projects[panopoly_test][subdir] = panopoly
+
 ; =====================================
 ; Open Atrium 2.x
 ; =====================================
@@ -66,6 +69,7 @@ projects[oa_core][subdir] = contrib
 projects[oa_core][download][url] = https://github.com/phase2/oa_core.git
 projects[oa_core][download][type] = git
 projects[oa_core][download][tag] = 7.x-2.21
+projects[oa_core][patch][] = oa_core-parent-cache.patch
 
 projects[oa_discussion][type] = module
 projects[oa_discussion][subdir] = contrib
@@ -181,3 +185,8 @@ projects[xautoload][subdir] = contrib
 
 projects[colorbox][version] = 2.8
 projects[colorbox][subdir] = contrib
+
+; Allows for creation of documents nodes when creating an event node.
+projects[references_dialog][version] = 1.0-beta1
+projects[references_dialog][subdir] = contrib
+
