@@ -84,3 +84,10 @@ function iasc_scrape_schema() {
   );
   return $schema;
 }
+
+/**
+ * Install IASC scrape schema.
+ */
+function iasc_scrape_update_7001() {
+  drupal_install_schema('iasc_scrape');
+}
