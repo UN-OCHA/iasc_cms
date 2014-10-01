@@ -14,4 +14,8 @@ abstract class AbstractListing implements ListingInterface
     $uri = $this->client->getHistory()->current()->getUri();
     return $uri;
   }
+
+  public function goBack() {
+    $this->client->back();
+  }
 }

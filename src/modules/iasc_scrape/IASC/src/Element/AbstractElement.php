@@ -57,4 +57,23 @@ abstract class AbstractElement implements ElementInterface
 
     return $value;
   }
+
+
+  public function setPosition($position) {
+    return $this->position = $position;
+  }
+
+  public function getPosition() {
+    return $this->position;
+  }
+
+  public function nextElement() {
+    if (isset($this->listing)
+      && is_object($this->listing)
+      && ($this->listing instanceof AbstractListing)
+    ) {
+      $this->listing->goBack();
+      $this->listing->clickEditLink($this->position + 1);
+    }
+  }
 }

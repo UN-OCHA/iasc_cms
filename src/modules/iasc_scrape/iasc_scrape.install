@@ -1,0 +1,86 @@
+<?php
+/**
+ * @file
+ * IASC Scrape schema.
+ */
+
+/**
+ * Implements hook_schema().
+ */
+function iasc_scrape_schema() {
+  $schema['iasc_scrape'] = array(
+    'description' => 'The base table for scraped data from the old IASC site.',
+    'fields' => array(
+      'id' => array(
+        'description' => 'The primary identifier for a scrape record.',
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'legacy_id' => array(
+        'description' => 'The legacy id from the old IASC site.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'entity_id' => array(
+        'description' => 'The entity id of the saved Drupal entity.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'type' => array(
+        'description' => 'The type from the old IASC site.',
+        'type' => 'varchar',
+        'length' => 32,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'legacy_url' => array(
+        'description' => 'The url of the item on the old IASC site.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'status' => array(
+        'description' => 'Boolean indicating whether an entity exists in Drupal.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'scrape' => array(
+        'description' => 'Boolean indicating whether the item is scraped.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'changed' => array(
+        'description' => 'The Unix timestamp when the record was most recently saved.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'data' => array(
+        'type' => 'text',
+        'not null' => TRUE,
+        'size' => 'big',
+        'description' => 'Serialized array of data to be saved.',
+      ),
+      'file_url' => array(
+        'description' => 'The url of a file saved (if a file was saved).',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+    ),
+    'indexes' => array(
+      'record_changed' => array('changed'),
+    ),
+    'primary key' => array('id'),
+  );
+  return $schema;
+}
