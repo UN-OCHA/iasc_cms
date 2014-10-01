@@ -1,0 +1,28 @@
+<?php
+
+/**
+ * @file
+ * Install file for IASC Taxonomy.
+ */
+
+/**
+ * Implements hook_uninstall().
+ */
+function iasc_taxonomy_uninstall() {
+  // Remove vocabularies: authoring_bodies, hosts, and meeting_type.
+  $authoring_bodies = taxonomy_vocabulary_machine_name_load('authoring_bodies');
+  if (!empty($authoring_bodies)) {
+    taxonomy_vocabulary_delete($authoring_bodies->vid);
+  }
+
+  $hosts = taxonomy_vocabulary_machine_name_load('hosts');
+  if (!empty($hosts)) {
+    taxonomy_vocabulary_delete($hosts->vid);
+  }
+
+  $meeting_type = taxonomy_vocabulary_machine_name_load('meeting_type');
+  if (!empty($meeting_type)) {
+    taxonomy_vocabulary_delete($meeting_type->vid);
+  }
+
+}
