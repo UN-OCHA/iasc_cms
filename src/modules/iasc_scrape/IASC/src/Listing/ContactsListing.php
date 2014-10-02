@@ -12,15 +12,6 @@ class ContactsListing extends AbstractListing
     $this->crawler = $crawler;
   }
 
-  /**
-   * @inheritdoc
-   */
-  public function clickListingPage() {
-    $link = $this->crawler->selectLink('Contacts')->link();
-    // Click to follow link
-    $this->crawler = $this->client->click($link);
-  }
-
   public function clickEditLink($position = 1) {
     $link = $this->crawler
       ->filter('#ctl00_ContentPlaceHolder1_ctl00_gvcontactslist')

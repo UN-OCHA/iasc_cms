@@ -5,19 +5,22 @@ namespace IASC\Listing;
 interface ListingInterface
 {
   /**
-   * Go to the default main page for a listing
+   * Go to the default main page for a listing.
    */
-  public function clickListingPage();
+  public function clickListingPage($name);
 
   /**
-   * Get the current Url
+   * Go to the listing page.
+   */
+  public function clickListingPager($table_id, $page);
+
+  /**
+   * Get the current Url.
    */
   public function getListingUrl();
 
   /**
-   * Go to the edit link for the detail page
-   *
-   * @param int $position
+   * Go to the edit link for the detail page.
    */
   public function clickEditLink($position = 1);
 }

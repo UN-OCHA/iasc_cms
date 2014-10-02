@@ -42,17 +42,19 @@ function iasc_scrape_scrape() {
   $crawler = $login->crawler;
   $client = $login->client;
 
-  for ($i = 1; $i < 8; $i++) {
-    $contact = new IASC\Element\ContactElement($client, $crawler, $i);
-    $values = array(
-      'legacy_id' => $contact->getLegacyId('contactid'),
-      'type' => 'contact',
-      'legacy_url' => $contact->getUrl(),
-      'data' => serialize($contact->getValues()),
-      'scrape' => 1,
-    );
-    iasc_scrape_save($values);
-    $output[] = $contact->getLegacyId('contactid');
+  for ($j = 1; $j < 4; $j++) {
+    for ($i = 1; $i < 3; $i++) {
+      $contact = new IASC\Element\ContactElement($client, $crawler, $i, $j);
+      $values = array(
+        'legacy_id' => $contact->getLegacyId('contactid'),
+        'type' => 'contact',
+        'legacy_url' => $contact->getUrl(),
+        'data' => serialize($contact->getValues()),
+        'scrape' => 1,
+      );
+      iasc_scrape_save($values);
+      $output[] = $contact->getLegacyId('contactid');
+    }
   }
 
 //  $document = new IASC\Element\DocumentElement($client, $crawler);

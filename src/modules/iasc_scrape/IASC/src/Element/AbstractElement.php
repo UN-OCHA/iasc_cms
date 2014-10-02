@@ -11,11 +11,15 @@ abstract class AbstractElement implements ElementInterface
 {
   protected $listing;
   protected $position;
+  protected $page;
   protected $values;
 
-  public function goThroughListingPage(AbstractListing $listing) {
+  public function goThroughListingPage(AbstractListing $listing, $name, $table_id) {
     $this->listing = $listing;
-    $this->listing->clickListingPage();
+    $this->listing->clickListingPage($name);
+    if ($this->page != 1) {
+      $this->listing->clickListingPager($table_id, $this->page);
+    }
     $this->listing->clickEditLink($this->position);
   }
 

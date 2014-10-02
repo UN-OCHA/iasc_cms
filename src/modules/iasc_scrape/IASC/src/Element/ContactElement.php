@@ -8,10 +8,11 @@ use Symfony\Component\DomCrawler\Crawler;
 
 class ContactElement extends AbstractElement
 {
-  public function __construct(Client $client, Crawler $crawler, $position = 1) {
+  public function __construct(Client $client, Crawler $crawler, $position = 1, $page = 1) {
     $this->position = $position;
+    $this->page = $page;
     $listing = new ContactsListing($client, $crawler);
-    $this->goThroughListingPage($listing);
+    $this->goThroughListingPage($listing, 'Contacts', '#ctl00_ContentPlaceHolder1_ctl00_gvcontactslist');
     $this->setValues();
   }
 
