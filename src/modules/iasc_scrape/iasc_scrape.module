@@ -5,22 +5,6 @@
  */
 
 /**
- * Implements hook_menu().
- */
-function iasc_scrape_menu() {
-  $items = array();
-
-  $items['admin/iasc-scrape'] = array(
-    'title' => 'Scrape IASC',
-    'page callback' => 'iasc_scrape_scrape',
-    'access arguments' => array('administer site configuration'),
-    'type' => MENU_CALLBACK,
-  );
-
-  return $items;
-}
-
-/**
  * Main callback for scraping the old IASC site.
  */
 function iasc_scrape_scrape($type, $page = 1, $position = 1) {
