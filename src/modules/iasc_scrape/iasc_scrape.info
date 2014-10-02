@@ -1,0 +1,4 @@
+name = "IASC Scrape"
+description = "Scrape IASC data."
+package = "IASC"
+core = 7.x

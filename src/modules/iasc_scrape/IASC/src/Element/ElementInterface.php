@@ -7,9 +7,9 @@ use IASC\Listing\AbstractListing;
 interface ElementInterface
 {
   /**
-   * Load and go through the listing page for the element
+   * Load and go through the listing page for the element.
    */
-  public function goThroughListingPage(AbstractListing $listing);
+  public function goThroughListingPage(AbstractListing $listing, $name, $table_id);
 
   /**
    * Set the element values

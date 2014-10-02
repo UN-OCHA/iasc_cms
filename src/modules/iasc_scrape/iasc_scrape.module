@@ -1,0 +1,80 @@
+<?php
+/**
+ * @file
+ * Customizations for IASC Scrape, if needed.
+ */
+
+/**
+ * Main callback for scraping the old IASC site.
+ */
+function iasc_scrape_scrape($type, $page = 1, $position = 1) {
+  if (file_exists(__DIR__ . '/IASC/vendor/autoload.php')) {
+    require __DIR__ . '/IASC/vendor/autoload.php';
+  }
+  else {
+    throw new Exception(t('Composer needs to be run to generate the autoload of classes.'));
+  }
+
+  // Initially set credential values.
+  $username = $password = '';
+
+  // Grab custom login credentials if set.
+  if (file_exists(__DIR__ . '/IASC/creds.php')) {
+    require __DIR__ . '/IASC/creds.php';
+  }
+  else {
+    throw new Exception(t('Credentials needed to login.'));
+  }
+
+  $login = new IASC\Login($username, $password);
+
+  $crawler = $login->crawler;
+  $client = $login->client;
+
+  // @TODO: May want to think of a better way to change types.
+  switch ($type) {
+    case 'contact':
+      $element = new IASC\Element\ContactElement($client, $crawler, $page, $position);
+      $id = 'contactid';
+      break;
+  }
+
+  $values = array(
+    'legacy_id' => $element->getLegacyId($id),
+    'type' => $type,
+    'legacy_url' => $element->getUrl(),
+    'data' => serialize($element->getValues()),
+    'scrape' => 1,
+  );
+  iasc_scrape_save($values);
+
+  drupal_set_message(
+    t('Element @legacy_id at @legacy_url of type @type imported from page @page at position @position',
+      array(
+        '@legacy_id' => $values['legacy_id'],
+        '@legacy_url' => $values['legacy_url'],
+        '@type' => $values['type'],
+        '@page' => $page,
+        '@position' => $position,
+      )
+    )
+  );
+}
+
+/**
+ * Save values to the database.
+ */
+function iasc_scrape_save($values) {
+  $record = $values;
+
+  // Set changed date.
+  $record['changed'] = REQUEST_TIME;
+
+  // Save record.
+  if (!empty($record['data'])) {
+    db_merge('iasc_scrape')
+      ->key(array('legacy_id' => $record['legacy_id']))
+      ->fields($record)
+      ->execute();
+  }
+}
