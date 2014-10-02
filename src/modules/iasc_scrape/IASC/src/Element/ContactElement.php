@@ -11,8 +11,10 @@ class ContactElement extends AbstractElement
   public function __construct(Client $client, Crawler $crawler, $position = 1, $page = 1) {
     $this->position = $position;
     $this->page = $page;
+    $table_id = 'ctl00$ContentPlaceHolder1$ctl00$gvcontactslist';
+    $link_name = 'Contacts';
     $listing = new ContactsListing($client, $crawler);
-    $this->goThroughListingPage($listing, 'Contacts', '#ctl00_ContentPlaceHolder1_ctl00_gvcontactslist');
+    $this->goThroughListingPage($listing, $link_name, $table_id);
     $this->setValues();
   }
 

@@ -29,10 +29,10 @@ function iasc_scrape_menu() {
 
 function iasc_scrape_scrape() {
   $output = array();
-  // Initially set credential values
+  // Initially set credential values.
   $username = $password = '';
 
-  // Grab custom login credentials if set
+  // Grab custom login credentials if set.
   if (file_exists(__DIR__ . '/IASC/creds.php')) {
     require __DIR__ . '/IASC/creds.php';
   }
@@ -56,14 +56,6 @@ function iasc_scrape_scrape() {
       $output[] = $contact->getLegacyId('contactid');
     }
   }
-
-//  $document = new IASC\Element\DocumentElement($client, $crawler);
-//  $output[] = print_r($document->getValues(), TRUE);
-//
-//  $output[] = '<br /><br />-----------<br /><br />';
-//
-//  $news = new IASC\Element\NewsElement($client, $crawler);
-//  $output[] = $news->getValues();
 
   return implode('<br />', $output);
 }

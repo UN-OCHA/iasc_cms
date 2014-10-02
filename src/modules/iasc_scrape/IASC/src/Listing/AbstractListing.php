@@ -2,6 +2,8 @@
 
 namespace IASC\Listing;
 
+use Symfony\Component\DomCrawler\Field\InputFormField;
+
 /**
  * Basic listing class that can be extended.
  */
@@ -22,20 +24,24 @@ abstract class AbstractListing implements ListingInterface
   }
 
   public function clickListingPager($table_id, $pager) {
-    $link = $this->crawler
-      ->filter($table_id)
-      ->filter('tr')->eq(21)
-      ->filter('td')->eq(0)
-      ->filter('table')->eq(0)
-      ->filter('tr')->eq(0)
-      ->filter('td')->eq($pager - 1)
-      ->selectLink($pager)
-      ->link();
+    $form = $this->crawler
+      ->filter('#aspnetForm')
+      ->form();
 
-    $this->crawler = $this->client->click($link);
-  }
+    $domdocument = new \DOMDocument();
+    $ff = $domdocument->createElement('input');
+    $ff->setAttribute('name', '__EVENTTARGET');
+    $ff->setAttribute('value', $table_id);
+    $formfield = new InputFormField($ff);
 
-  public function goBack() {
-    $this->client->back();
+    $ff = $domdocument->createElement('input');
+    $ff->setAttribute('name', '__EVENTARGUMENT');
+    $ff->setAttribute('value', 'Page$' . $pager);
+    $formfield2 = new InputFormField($ff);
+
+    $form->set($formfield);
+    $form->set($formfield2);
+
+    $this->crawler = $this->client->submit($form);
   }
 }
