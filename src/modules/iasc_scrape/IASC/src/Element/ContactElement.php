@@ -8,7 +8,7 @@ use Symfony\Component\DomCrawler\Crawler;
 
 class ContactElement extends AbstractElement
 {
-  public function __construct(Client $client, Crawler $crawler, $position = 1, $page = 1) {
+  public function __construct(Client $client, Crawler $crawler, $page = 1, $position = 1) {
     $this->position = $position;
     $this->page = $page;
     $table_id = 'ctl00$ContentPlaceHolder1$ctl00$gvcontactslist';

@@ -5,13 +5,6 @@
  */
 
 /**
- * Implements hook_init().
- */
-function iasc_scrape_init() {
-  require __DIR__ . '/IASC/vendor/autoload.php';
-}
-
-/**
  * Implements hook_menu().
  */
 function iasc_scrape_menu() {
@@ -27,8 +20,17 @@ function iasc_scrape_menu() {
   return $items;
 }
 
-function iasc_scrape_scrape() {
-  $output = array();
+/**
+ * Main callback for scraping the old IASC site.
+ */
+function iasc_scrape_scrape($type, $page = 1, $position = 1) {
+  if (file_exists(__DIR__ . '/IASC/vendor/autoload.php')) {
+    require __DIR__ . '/IASC/vendor/autoload.php';
+  }
+  else {
+    throw new Exception(t('Composer needs to be run to generate the autoload of classes.'));
+  }
+
   // Initially set credential values.
   $username = $password = '';
 
@@ -36,30 +38,48 @@ function iasc_scrape_scrape() {
   if (file_exists(__DIR__ . '/IASC/creds.php')) {
     require __DIR__ . '/IASC/creds.php';
   }
+  else {
+    throw new Exception(t('Credentials needed to login.'));
+  }
 
   $login = new IASC\Login($username, $password);
 
   $crawler = $login->crawler;
   $client = $login->client;
 
-  for ($j = 1; $j < 4; $j++) {
-    for ($i = 1; $i < 3; $i++) {
-      $contact = new IASC\Element\ContactElement($client, $crawler, $i, $j);
-      $values = array(
-        'legacy_id' => $contact->getLegacyId('contactid'),
-        'type' => 'contact',
-        'legacy_url' => $contact->getUrl(),
-        'data' => serialize($contact->getValues()),
-        'scrape' => 1,
-      );
-      iasc_scrape_save($values);
-      $output[] = $contact->getLegacyId('contactid');
-    }
+  // @TODO: May want to think of a better way to change types.
+  switch ($type) {
+    case 'contact':
+      $element = new IASC\Element\ContactElement($client, $crawler, $page, $position);
+      $id = 'contactid';
+      break;
   }
 
-  return implode('<br />', $output);
+  $values = array(
+    'legacy_id' => $element->getLegacyId($id),
+    'type' => $type,
+    'legacy_url' => $element->getUrl(),
+    'data' => serialize($element->getValues()),
+    'scrape' => 1,
+  );
+  iasc_scrape_save($values);
+
+  drupal_set_message(
+    t('Element @legacy_id at @legacy_url of type @type imported from page @page at position @position',
+      array(
+        '@legacy_id' => $values['legacy_id'],
+        '@legacy_url' => $values['legacy_url'],
+        '@type' => $values['type'],
+        '@page' => $page,
+        '@position' => $position,
+      )
+    )
+  );
 }
 
+/**
+ * Save values to the database.
+ */
 function iasc_scrape_save($values) {
   $record = $values;
 
@@ -73,5 +93,4 @@ function iasc_scrape_save($values) {
       ->fields($record)
       ->execute();
   }
-
 }

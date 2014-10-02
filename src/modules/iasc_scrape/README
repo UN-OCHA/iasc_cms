@@ -1,0 +1,4 @@
+To get the scrape to work:
+
+1.) Create a creds.php file inside IASC and set username and password to your IASC credentials
+2.) Run 'composer install' from inside the IASC directory
