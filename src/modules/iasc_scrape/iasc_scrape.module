@@ -42,20 +42,42 @@ function iasc_scrape_scrape() {
   $crawler = $login->crawler;
   $client = $login->client;
 
-  for ($i = 1; $i < 5; $i++) {
+  for ($i = 1; $i < 8; $i++) {
     $contact = new IASC\Element\ContactElement($client, $crawler, $i);
-    $output[] = print_r($contact->getValues(), TRUE);
+    $values = array(
+      'legacy_id' => $contact->getLegacyId('contactid'),
+      'type' => 'contact',
+      'legacy_url' => $contact->getUrl(),
+      'data' => serialize($contact->getValues()),
+      'scrape' => 1,
+    );
+    iasc_scrape_save($values);
+    $output[] = $contact->getLegacyId('contactid');
   }
 
-  $output[] = '<br /><br />-----------<br /><br />';
+//  $document = new IASC\Element\DocumentElement($client, $crawler);
+//  $output[] = print_r($document->getValues(), TRUE);
+//
+//  $output[] = '<br /><br />-----------<br /><br />';
+//
+//  $news = new IASC\Element\NewsElement($client, $crawler);
+//  $output[] = $news->getValues();
 
-  $document = new IASC\Element\DocumentElement($client, $crawler);
-  $output[] = print_r($document->getValues(), TRUE);
+  return implode('<br />', $output);
+}
 
-  $output[] = '<br /><br />-----------<br /><br />';
+function iasc_scrape_save($values) {
+  $record = $values;
 
-  $news = new IASC\Element\NewsElement($client, $crawler);
-  $output[] = $news->getValues();
+  // Set changed date.
+  $record['changed'] = REQUEST_TIME;
 
-  return implode('', $output);
+  // Save record.
+  if (!empty($record['data'])) {
+    db_merge('iasc_scrape')
+      ->key(array('legacy_id' => $record['legacy_id']))
+      ->fields($record)
+      ->execute();
+  }
+
 }
