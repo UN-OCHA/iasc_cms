@@ -1,0 +1,21 @@
+/**
+ * Calender field styles
+ */
+
+/* OA Event Date */
+.oa-event-date-wrapper {
+  border: $oa-event-date-border;
+  overflow: hidden;
+  margin-right: $padding-large-vertical;
+  -webkit-border-radius: $oa-event-date-radius;
+     -moz-border-radius: $oa-event-date-radius;
+          border-radius: $oa-event-date-radius;
+}
+.oa-event-date-month-wrapper {
+  background-color: $oa-event-date-month-wrapper-bg;
+  margin: $oa-event-date-month-wrapper-margin;
+}
+.oa-event-date-day {
+  color: $oa-event-date-day-color;
+  padding-top: 0; // Override oa-events style
+}

@@ -17,3 +17,7 @@ h6, .h6 {
   @extend .btn-primary;
   @extend .btn;
 }
+
+ol, ul {
+  padding: 0;
+}

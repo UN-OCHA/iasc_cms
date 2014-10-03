@@ -28,7 +28,7 @@ function iasc_css_alter(&$css) {
  * Implements template_preprocess_html().
  */
 function iasc_preprocess_html(&$vars) {
-  // Add Google fonts
+  // Add Google fonts.
   drupal_add_css('http://fonts.googleapis.com/css?family=Montserrat:400,700', 'external');
   drupal_add_css('http://fonts.googleapis.com/css?family=Merriweather:400,400italic,700,700italic', 'external');
 }
@@ -42,30 +42,25 @@ function iasc_preprocess_page(&$variables) {
     $variables['copyright'] = check_markup($copyright['value'], $copyright['format']);
   }
 
-  // Move Panel IPE on top of primary tabs
+  // Move Panel IPE on top of primary tabs.
   if (!empty($variables['page']['page_bottom']['panels_ipe'])) {
     $panels_ipe = $variables['page']['page_bottom']['panels_ipe'];
     unset($variables['page']['page_bottom']['panels_ipe']);
     array_push($variables['page']['panelipe'], $panels_ipe);
   }
-  
-
 }
 
-/** 
- * Implementation of hook_form_FORM_ID_alter().
- *
- * Remove default OA panel styles and set primary styles has default.
- * 
+/**
+ * Implements hook_form_FORM_ID_alter().
  */
 function iasc_form_panels_edit_style_type_form_alter(&$form, &$form_state, $form_id) {
 
-  // unset default panel styles
+  // Unset default panel styles.
   unset($form['style']['style']['#options']['default']);
   unset($form['style']['style']['#options']['oa_styles_well']);
   unset($form['style']['style']['#options']['oa_styles_oa_pane']);
 
-  // and set primary styles as default
+  // And set primary styles as default.
   $form['style']['style']['#default_value'] = 'primary';
 
 }
