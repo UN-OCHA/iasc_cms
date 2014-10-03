@@ -8,10 +8,13 @@ use Symfony\Component\DomCrawler\Crawler;
 
 class ContactElement extends AbstractElement
 {
-  public function __construct(Client $client, Crawler $crawler, $position = 1) {
+  public function __construct(Client $client, Crawler $crawler, $page = 1, $position = 1) {
     $this->position = $position;
+    $this->page = $page;
+    $table_id = 'ctl00$ContentPlaceHolder1$ctl00$gvcontactslist';
+    $link_name = 'Contacts';
     $listing = new ContactsListing($client, $crawler);
-    $this->goThroughListingPage($listing);
+    $this->goThroughListingPage($listing, $link_name, $table_id);
     $this->setValues();
   }
 
@@ -25,7 +28,7 @@ class ContactElement extends AbstractElement
       'organization_id' => array('selector' => '#ctl00_ContentPlaceHolder1_ctl00_ddlOrganisation option[selected="selected"]'),
       'organization_name' => array(
         'selector' => '#ctl00_ContentPlaceHolder1_ctl00_ddlOrganisation option[selected="selected"]',
-        'get_text' => TRUE
+        'get_text' => TRUE,
       ),
     );
     $this->values = $values;

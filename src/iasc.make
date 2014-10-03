@@ -69,6 +69,7 @@ projects[oa_core][subdir] = contrib
 projects[oa_core][download][url] = https://github.com/phase2/oa_core.git
 projects[oa_core][download][type] = git
 projects[oa_core][download][tag] = 7.x-2.21
+projects[oa_core][patch][] = oa_core-parent-cache.patch
 
 projects[oa_discussion][type] = module
 projects[oa_discussion][subdir] = contrib
@@ -176,6 +177,11 @@ projects[fullcalendar][download][revision] = e416e7
 projects[fullcalendar][patch][2044391] = http://drupal.org/files/fullcalendar-legend-entityreference_taxonomy-2044391-1.patch
 projects[fullcalendar][patch][2333883] = https://www.drupal.org/files/issues/fullcalendar-update-fullcalendar-download-url-2333883-1.patch
 
+projects[migrate][version] = 2.6-rc1
+projects[migrate][subdir] = contrib
+
+projects[xautoload][version] = 5.0
+projects[xautoload][subdir] = contrib
 
 projects[colorbox][version] = 2.8
 projects[colorbox][subdir] = contrib

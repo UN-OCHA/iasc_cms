@@ -11,15 +11,17 @@ abstract class AbstractElement implements ElementInterface
 {
   protected $listing;
   protected $position;
+  protected $page;
   protected $values;
 
-  public function goThroughListingPage(AbstractListing $listing) {
+  public function goThroughListingPage(AbstractListing $listing, $name, $table_id) {
     $this->listing = $listing;
-    $this->listing->clickListingPage();
+    $this->listing->clickListingPage($name);
+    if ($this->page != 1) {
+      $this->listing->clickListingPager($table_id, $this->page);
+    }
     $this->listing->clickEditLink($this->position);
   }
-
-  public function setValues() {}
 
   public function getValues() {
     $output = array();
@@ -32,11 +34,6 @@ abstract class AbstractElement implements ElementInterface
 
   /**
    * Grabs the desired string value from the DOM element.
-   *
-   * @param $params
-   *  An array that describes what we want to grab from the DOM element.
-   * @return string
-   *  The desired string value from the dom
    */
   public function getDOMValue($params) {
     // If get_text is set to TRUE, then we should use the text of the element
@@ -56,5 +53,14 @@ abstract class AbstractElement implements ElementInterface
     }
 
     return $value;
+  }
+
+  public function getUrl() {
+    return $this->listing->client->getHistory()->current()->getUri();
+  }
+
+  public function getLegacyId($name) {
+    preg_match("/(?=$name\=)?\d+/", $this->getUrl(), $id);
+    return isset($id[0]) ? $id[0] : 0;
   }
 }

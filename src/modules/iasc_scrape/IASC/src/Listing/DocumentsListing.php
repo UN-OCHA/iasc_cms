@@ -5,7 +5,7 @@ namespace IASC\Listing;
 use Goutte\Client;
 use Symfony\Component\DomCrawler\Crawler;
 
-class ContactsListing extends AbstractListing
+class DocumentsListing extends AbstractListing
 {
   public function __construct(Client $client, Crawler $crawler) {
     $this->client = $client;
@@ -16,16 +16,16 @@ class ContactsListing extends AbstractListing
    * @inheritdoc
    */
   public function clickListingPage() {
-    $link = $this->crawler->selectLink('Contacts')->link();
+    $link = $this->crawler->selectLink('Documents')->link();
     // Click to follow link
     $this->crawler = $this->client->click($link);
   }
 
   public function clickEditLink($position = 1) {
     $link = $this->crawler
-      ->filter('#ctl00_ContentPlaceHolder1_ctl00_gvcontactslist')
+      ->filter('#ctl00_ContentPlaceHolder1_ctl00_gvdocs')
       ->filter('tr')->eq($position)
-      ->filter('td')->eq(7)
+      ->filter('td')->eq(2)
       ->selectLink('Edit')
       ->link();
 
