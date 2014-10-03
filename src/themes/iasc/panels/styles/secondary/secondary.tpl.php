@@ -1,9 +1,7 @@
 <?php
 /**
  * @file
- *
  * Display for secondary content.
- *
  */
 ?>
 <div class="<?php print $class; ?>">

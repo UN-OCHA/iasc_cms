@@ -16,7 +16,7 @@ plugins[panels][layouts] = panels/layouts
 plugins[panels][styles] = panels/styles
 
 ; Remove Parent styles to defined our own
-; stylesheets[all][]     = assets/stylesheets/screen.css 
+stylesheets[all][] = system.theme.css 
 
 ; CSS - General
 stylesheets[all][]     = assets/stylesheets/screen.css

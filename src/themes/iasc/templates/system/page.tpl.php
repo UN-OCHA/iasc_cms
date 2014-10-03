@@ -10,53 +10,67 @@
  * @see html.tpl.php
  */
 ?>
-<header id="header" class="header" role="header">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        
-        <?php if ($logo): ?>
-          <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo" class="brand">
-             <img src="<?php print $logo; ?>"><div id="site-name"><?php print $site_name; ?></div>
-          </a>
-        <?php endif; ?>
-
-        <div id="navigation" class="navbar navbar-default">
-          <div class="navbar-inner">
-            <div class="container clearfix">
-              
-              <?php if(!empty($page['navigation'])): ?>
-              <nav id="main-nav" class="pull-left" role="navigation">
-                <?php print render($page['navigation']); ?>
-              </nav>
-              <?php endif; ?>
-  
-              <?php if ($main_menu || $search_form || $user_badge): ?>
-                <nav id="main-menu" class="main-menu border-radius clearfix" role="navigation">
-                  <?php print render($main_menu); ?>
-
-                  <?php if ($search_form): ?>
-                    <?php print $search_form; ?>
-                  <?php endif; ?>
-
-                  <?php //if ($user_badge): ?>
-                    <?php //print $user_badge; ?>
-                  <?php //endif; ?>
-                </nav> <!-- /#main-menu -->
-              <?php endif; ?>
-            </div>
-          </div>
-        </div> <!-- /#navigation -->
+<?php if (!empty($oa_toolbar_panel)): ?>
+  <div class="responsive-panels-region responsive-panels-region-top container">
+    <?php if ($logo): ?>
+      <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo" class="pull-left brand">
+         <img src="<?php print $logo; ?>"><div id="site-name"><?php print $site_name; ?></div>
+      </a>
+    <?php endif; ?>
+    <div id="oa-navbar" class="navbar navbar-default <?php print $oa_toolbar_class; ?>">
+      <div class="navbar-inner">
+        <?php print $oa_toolbar_panel; ?>
       </div>
     </div>
   </div>
-  <?php if (!empty($oa_banner)): ?>
-    <?php print $oa_banner; ?>
-  <?php endif; ?>
-  <?php if (!empty($oa_space_menu)): ?>
-    <?php print $oa_space_menu; ?>
-  <?php endif; ?>
-</header>
+<?php else: ?>
+  <header id="header" class="header" role="header">
+    <div class="container">
+      <div class="row">
+        <div class="span12">
+          <div id="navigation" class="navbar">
+            <div class="navbar-inner">
+              <div class="container clearfix">
+                <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </a>
+
+                <?php if ($logo): ?>
+                  <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo" class="pull-left brand">
+                     <img src="<?php print $logo; ?>"><div id="site-name"><?php print $site_name; ?></div>
+                  </a>
+                <?php endif; ?>
+
+                <nav id="main-nav" class="pull-left" role="navigation">
+                  <?php print render($page['navigation']); ?>
+                </nav>
+
+                <?php if ($user_badge): ?>
+                  <?php print $user_badge; ?>
+                <?php endif; ?>
+
+                <?php if ($main_menu): ?>
+                  <nav id="main-menu" class="main-menu" role="navigation">
+                    <?php print render($main_menu); ?>
+                  </nav> <!-- /#main-menu -->
+                <?php endif; ?>
+              </div>
+            </div>
+          </div> <!-- /#navigation -->
+        </div>
+      </div>
+    </div>
+    <?php if (!empty($oa_banner)): ?>
+      <?php print $oa_banner; ?>
+    <?php endif; ?>
+    <?php if (!empty($oa_space_menu)): ?>
+      <?php print $oa_space_menu; ?>
+    <?php endif; ?>
+  </header>
+<?php endif; ?>
 
 <div id="main-wrapper">
   <div id="main" class="main container">
@@ -91,20 +105,3 @@
   </div>
   <div id="push"></div>
 </div>
-
-<!--
-<footer id="footer" class="footer" role="footer">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="footer-inner">
-          <?php //if (!empty($oa_footer_panel)): ?>
-            <?php //print $oa_footer_panel; ?>
-          <?php //else: ?>
-            <?php //print render($page['footer']); ?>
-          <?php //endif; ?>
-        </div>
-      </div>
-    </div>
-  </div>
-</footer> -->

@@ -1,0 +1,11 @@
+.btn-inverse {
+  color: $btn-inverse-color !important;
+  background-color: $btn-inverse-bg;
+  border: $btn-inverse-border;
+  line-height: 20px !important;
+  &:not(.user-badge) {
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+  }
+}
+
