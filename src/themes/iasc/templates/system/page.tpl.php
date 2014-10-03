@@ -17,17 +17,11 @@
          <img src="<?php print $logo; ?>"><div id="site-name"><?php print $site_name; ?></div>
       </a>
     <?php endif; ?>
-    <div id="oa-navbar" class="navbar navbar-default <?php print $oa_toolbar_class; ?> <?php //print $oa_toolbar_sticky; ?>">
+    <div id="oa-navbar" class="navbar navbar-default <?php print $oa_toolbar_class; ?>">
       <div class="navbar-inner">
         <?php print $oa_toolbar_panel; ?>
       </div>
     </div>
-    <?php //if (!empty($oa_banner)): ?>
-      <?php //print $oa_banner; ?>
-    <?php //endif; ?>
-    <?php //if (!empty($oa_space_menu)): ?>
-      <?php //print $oa_space_menu; ?>
-    <?php //endif; ?>
   </div>
 <?php else: ?>
   <header id="header" class="header" role="header">
@@ -56,10 +50,6 @@
 
                 <?php if ($user_badge): ?>
                   <?php print $user_badge; ?>
-                <?php endif; ?>
-
-                <?php if ($search_form): ?>
-                  <?php // print $search_form; ?>
                 <?php endif; ?>
 
                 <?php if ($main_menu): ?>
@@ -115,20 +105,3 @@
   </div>
   <div id="push"></div>
 </div>
-
-<!--
-<footer id="footer" class="footer" role="footer">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="footer-inner">
-          <?php //if (!empty($oa_footer_panel)): ?>
-            <?php //print $oa_footer_panel; ?>
-          <?php //else: ?>
-            <?php //print render($page['footer']); ?>
-          <?php //endif; ?>
-        </div>
-      </div>
-    </div>
-  </div>
-</footer> -->

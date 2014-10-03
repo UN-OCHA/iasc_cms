@@ -16,7 +16,7 @@
 // $gray-darker:            lighten(#000, 13.5%) // #222
 // $gray-dark:              lighten(#000, 20%)   // #333
 // $gray:                   lighten(#000, 33.5%) // #555
-// $gray-light:             lighten(#000, 46.7%) // #777
+$gray-light:             #ccc;
 // $gray-lighter:           lighten(#000, 93.5%) // #eee
 
 $brand-primary:            $purple;
@@ -92,7 +92,7 @@ $headings-font-family:        $font-family-sans-serif;
 // $padding-base-vertical:     6px
 // $padding-base-horizontal:   12px
 
-// $padding-large-vertical:    10px
+$padding-large-vertical:    20px;
 // $padding-large-horizontal:  16px
 
 // $padding-small-vertical:    5px
@@ -104,7 +104,7 @@ $headings-font-family:        $font-family-sans-serif;
 // $line-height-large:         1.33
 // $line-height-small:         1.5
 
-$border-radius-base:            8px;
+$border-radius-base:            4px;    
 // $border-radius-large:       6px
 // $border-radius-small:       3px
 
@@ -144,9 +144,9 @@ $border-radius-base:            8px;
 
 // $btn-font-weight:                normal
 
-$btn-default-color:                 #fff;
-$btn-default-bg:                    $purple;
-// $btn-default-border:             #ccc
+// $btn-default-color:              #333;
+// $btn-default-bg:                 #fff;
+// $btn-default-border:             #ccc; 
 
 $btn-primary-color:                 #fff;
 $btn-primary-bg:                    $red;
@@ -175,7 +175,7 @@ $btn-primary-bg:                    $red;
 //##
 
 //* `<input>` background color
-$input-bg:                       #f1f1f1;
+$input-bg:                       #ffffff;
 //* `<input disabled>` background color
 // $input-bg-disabled:              $gray-lighter
 
@@ -333,7 +333,7 @@ $input-border-radius:            0px;
 // Basics of a navbar
 $navbar-height:                       0px; //50px
 // $navbar-margin-bottom:             $line-height-computed
-$navbar-border-radius:                $border-radius-base;
+$navbar-border-radius:                8px;
 // $navbar-padding-horizontal:        floor(($grid-gutter-width / 2))
 // $navbar-padding-vertical:          (($navbar-height - $line-height-computed) / 2)
 // $navbar-collapse-max-height:       340px
@@ -365,7 +365,7 @@ $navbar-default-toggle-hover-bg:              green;
 // Reset inverted navbar basics
 $navbar-inverse-color:                          #fff;
 $navbar-inverse-bg:                             $brand-primary;
-// $navbar-inverse-border:                     darken($navbar-inverse-bg, 10%)
+$navbar-inverse-border:                         $brand-primary;
 
 // Inverted navbar links
 $navbar-inverse-link-color:                     #fff;
@@ -420,9 +420,9 @@ $navbar-inverse-link-active-bg:                darken($navbar-inverse-bg, 6%);
 //
 //##
 
-// $pagination-color:                     $link-color
-// $pagination-bg:                        #fff
-// $pagination-border:                    #ddd
+$pagination-color:                     $purple;
+$pagination-bg:                        #fff;
+// $pagination-border:                 $light-gray;
 
 // $pagination-hover-color:               $link-hover-color
 // $pagination-hover-bg:                  $gray-lighter
@@ -442,7 +442,7 @@ $navbar-inverse-link-active-bg:                darken($navbar-inverse-bg, 6%);
 
 // $pager-bg:                             $pagination-bg
 // $pager-border:                         $pagination-border
-// $pager-border-radius:                  15px
+$pager-border-radius:                  0;
 
 // $pager-hover-bg:                       $pagination-hover-bg
 

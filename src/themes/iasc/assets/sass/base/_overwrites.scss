@@ -1,10 +1,18 @@
 /**
  * @file
- * oa_radix/drupal/contrib css overides
+ * oa_radix/drupal/contrib css overides + all the hacks and ugly css that should be fix at some point.
  */
 #oa-navbar {
   clear: left;
+  padding: 3px;
 }
+ 
+.btn-small { @extend .btn-default }
+
+.container .container {padding: 0; width: auto;}
+
+.oa-navigation .btn-navbar,
+.oa-menu-banner {display: none;}
 
 // Hack to stop drupal from adding a padding-top
 body { padding-top: 0 !important; }
@@ -17,7 +25,7 @@ ul.oa_toolbar { padding-top: 0; }
 
 .user-badge { padding: 0; }
 
-.navbar .navbar-inner {
+.navbar .navbar-inner { 
   border: none;
 }
 
