@@ -31,4 +31,10 @@ function iasc_meeting_uninstall() {
   $event->modified = TRUE;
   $event->locked = 1;
   node_type_save($event);
+
+  // Remove meeting_type vocabulary.
+  $meeting_type = taxonomy_vocabulary_machine_name_load('meeting_type');
+  if (!empty($meeting_type)) {
+    taxonomy_vocabulary_delete($meeting_type->vid);
+  }
 }

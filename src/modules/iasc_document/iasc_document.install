@@ -1,0 +1,46 @@
+<?php
+
+/**
+ * @file
+ * Install file for IASC Document.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function iasc_document_install() {
+  // We have to make these changes because the following are faux features.
+  $doc = node_type_load('oa_wiki_page');
+  $t = get_t();
+  $doc->name = $t('Document/Product');
+  $doc->description = $t('Create a Document or Product page.');
+  $doc->modified = TRUE;
+  $doc->locked = 1;
+  node_type_save($doc);
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function iasc_document_uninstall() {
+  // Revert back to the original setup for OA Document Page.
+  $doc = node_type_load('oa_wiki_page');
+  $t = get_t();
+  $doc->name = $t('Document Page');
+  $doc->description = $t('An Open Atrium Document/Wiki page');
+  $doc->modified = TRUE;
+  $doc->locked = 1;
+  node_type_save($doc);
+
+  // Remove document_types vocabulary.
+  $meeting_type = taxonomy_vocabulary_machine_name_load('document_types');
+  if (!empty($meeting_type)) {
+    taxonomy_vocabulary_delete($meeting_type->vid);
+  }
+
+  // Remove product_categories vocabulary.
+  $meeting_type = taxonomy_vocabulary_machine_name_load('product_categories');
+  if (!empty($meeting_type)) {
+    taxonomy_vocabulary_delete($meeting_type->vid);
+  }
+}

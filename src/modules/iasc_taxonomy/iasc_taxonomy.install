@@ -19,10 +19,4 @@ function iasc_taxonomy_uninstall() {
   if (!empty($hosts)) {
     taxonomy_vocabulary_delete($hosts->vid);
   }
-
-  $meeting_type = taxonomy_vocabulary_machine_name_load('meeting_type');
-  if (!empty($meeting_type)) {
-    taxonomy_vocabulary_delete($meeting_type->vid);
-  }
-
 }

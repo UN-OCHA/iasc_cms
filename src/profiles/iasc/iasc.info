@@ -146,4 +146,5 @@ dependencies[] = iasc_taxonomy
 dependencies[] = iasc_meeting
 dependencies[] = iasc_contact
 dependencies[] = iasc_configuration
+dependencies[] = iasc_document
 
