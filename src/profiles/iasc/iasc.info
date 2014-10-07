@@ -148,3 +148,5 @@ dependencies[] = iasc_contact
 dependencies[] = iasc_configuration
 dependencies[] = iasc_document
 
+; Contrib
+dependencies[] = radix_layouts
