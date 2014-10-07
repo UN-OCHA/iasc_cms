@@ -36,14 +36,23 @@ class MeetingElement extends AbstractElement {
       ),
       'title' => array('selector' => '#ctl00_ContentPlaceHolder1_ctl00_txtTitle'),
       'field_oa_date' => array('selector' => '#ctl00_ContentPlaceHolder1_ctl00_txtStartDate'),
-      'field_time_zone' => array('selector' => '#ctl00_ContentPlaceHolder1_ctl00_ddlZone'),
+      'field_time_zone' => array(
+        'selector' => '#ctl00_ContentPlaceHolder1_ctl00_ddlZone option[selected="selected"]',
+        'get_text' => TRUE,
+      ),
       'field_oa_address' => array('selector' => '#ctl00_ContentPlaceHolder1_ctl00_txtCity'),
       'field_host' => array(
         'selector' => '#ctl00_ContentPlaceHolder1_ctl00_ddlhost option[selected="selected"]',
         'get_text' => TRUE,
       ),
-      'body' => array('selector' => '#ctl00_ContentPlaceHolder1_ctl00_txtpublic'),
-      'field_info_private' => array('selector' => '#ctl00_ContentPlaceHolder1_ctl00_txtprivate'),
+      'body' => array(
+        'selector' => '#ctl00_ContentPlaceHolder1_ctl00_txtpublic',
+        'get_text' => TRUE,
+      ),
+      'field_info_private' => array(
+        'selector' => '#ctl00_ContentPlaceHolder1_ctl00_txtprivate',
+        'get_text' => TRUE,
+      ),
       'og_group_ref' => array(
         'selector' => '#ctl00_ContentPlaceHolder1_ctl00_ddlpublev2 option[selected="selected"]',
         'get_text' => TRUE,

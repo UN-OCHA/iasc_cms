@@ -55,7 +55,8 @@ abstract class AbstractElement implements ElementInterface {
         ->filter('tr')->eq($params['tr'])
         ->filter('td')->eq($params['td'])
         ->selectLink('Edit')
-        ->link();
+        ->link()
+        ->getUri();
     }
     else {
       // If the attribute isn't specified, then we assume that we need to grab
