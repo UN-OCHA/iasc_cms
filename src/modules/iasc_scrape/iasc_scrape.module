@@ -64,6 +64,19 @@ function iasc_scrape_scrape($type, $page = 1, $position = 1) {
       )
     )
   );
+
+  // Set next index value.
+  iasc_scrape_set_index($type, $page, $position);
+  $index = iasc_scrape_get_index($type);
+  drupal_set_message(
+    t('For @type, next: page - @page, position - @position',
+      array(
+        '@type' => $type,
+        '@page' => $index['page'],
+        '@position' => $index['position'],
+      )
+    )
+  );
 }
 
 /**
@@ -82,4 +95,39 @@ function iasc_scrape_save($values) {
       ->fields($record)
       ->execute();
   }
+}
+
+/**
+ * Set the index of a type so we can crawl.
+ */
+function iasc_scrape_set_index($type, $page, $position) {
+  // Each page on old IASC has no more than 20 elements.
+  if ($position >= 20) {
+    $position = 1;
+    $page++;
+  }
+  else {
+    $position++;
+  }
+  variable_set('iasc_' . $type . '_index',
+    array(
+      'type' => $type,
+      'page' => $page,
+      'position' => $position,
+    )
+  );
+}
+
+/**
+ * Get the index for an element type.
+ */
+function iasc_scrape_get_index($type) {
+  $index = variable_get('iasc_' . $type . '_index');
+  $page = (isset($index['page'])) ? $index['page'] : 1;
+  $position = (isset($index['position'])) ? $index['position'] : 1;
+  return array(
+    'type' => $type,
+    'page' => $page,
+    'position' => $position,
+  );
 }

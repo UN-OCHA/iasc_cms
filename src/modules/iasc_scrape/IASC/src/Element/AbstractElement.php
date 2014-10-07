@@ -3,6 +3,7 @@
 namespace IASC\Element;
 
 use IASC\Listing\AbstractListing;
+use Symfony\Component\DomCrawler\Link;
 
 /**
  * Basic element class that can be extended.
@@ -54,9 +55,16 @@ abstract class AbstractElement implements ElementInterface {
         ->filter($params['selector'])
         ->filter('tr')->eq($params['tr'])
         ->filter('td')->eq($params['td'])
-        ->selectLink('Edit')
-        ->link()
-        ->getUri();
+        ->selectLink('Edit');
+
+      if ($value->getNode(0) != NULL) {
+        $value
+          ->link()
+          ->getUri();
+      }
+      else {
+        $value = 0;
+      }
     }
     else {
       // If the attribute isn't specified, then we assume that we need to grab
