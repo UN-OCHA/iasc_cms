@@ -69,6 +69,7 @@ dependencies[] = job_scheduler
 dependencies[] = feeds
 dependencies[] = bootstrap_tour
 dependencies[] = conditional_styles
+dependencies[] = conditional_styles
 
 ; Organic Groups
 dependencies[] = og
@@ -148,3 +149,5 @@ dependencies[] = iasc_contact
 dependencies[] = iasc_configuration
 dependencies[] = iasc_document
 
+; Contrib
+dependencies[] = radix_layouts
