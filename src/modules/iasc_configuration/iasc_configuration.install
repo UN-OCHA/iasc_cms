@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * @file
+ * Install file for IASC Configuration.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function iasc_configuration_install() {
+  // Disable the tour modules as we don't need them.
+  module_disable(array('bootstrap_tour'));
+}
+
+
