@@ -238,8 +238,6 @@ function iasc_configuration_create_node($item, &$context) {
 
   node_save($node);
 
-  print "{$item['title']} : {$item['is_front']}\n\n";
-
   if ($item['is_front']) {
     variable_set('site_frontpage', "node/{$node->nid}");
   }
