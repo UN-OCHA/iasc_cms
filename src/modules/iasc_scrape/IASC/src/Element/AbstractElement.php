@@ -58,13 +58,17 @@ abstract class AbstractElement implements ElementInterface {
         ->selectLink('Edit');
 
       if ($value->getNode(0) != NULL) {
-        $value
+        $value = $value
           ->link()
           ->getUri();
       }
       else {
         $value = 0;
       }
+    }
+    elseif (!empty($params['filename'])) {
+      $value = $this->listing->crawler
+        ->filter('table')->eq(1);
     }
     else {
       // If the attribute isn't specified, then we assume that we need to grab
