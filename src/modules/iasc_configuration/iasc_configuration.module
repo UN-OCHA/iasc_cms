@@ -1,7 +1,322 @@
 <?php
 /**
  * @file
- * Code for the IASC Configuration feature.
+ * Code for the IASC Configuration module.
  */
 
 include_once 'iasc_configuration.features.inc';
+
+/**
+ * Process the import of spaces and sections.
+ *
+ * @param array $options
+ *   An associative array of options:
+ *   - file      : the path to the csv file
+ *   - delimiter : 1 character csv delimiter (default: ';')
+ *   - enclosure : character that wraps the term (default: '"')
+ *   - delete_all: delete all spaces and sections before import (default: FALSE)
+ *
+ * @return array
+ *   Array of errors or nothing if import is successful.
+ */
+function iasc_configuration_import($options) {
+  $messages = array();
+
+  // Load the file object.
+  if (empty($options['file'])) {
+    $messages['file'] = t('Missing file.');
+    return $messages;
+  }
+
+  $file_handle = fopen($options['file'], 'r');
+  if ($file_handle === FALSE) {
+    $messages['file'] = t('File could not be opened.');
+    return $messages;
+  }
+
+  $items = array();
+  if ($header = fgetcsv($file_handle, 0, $options['delimiter'], $options['enclosure'])) {
+    while ($data = fgetcsv($file_handle, 0, $options['delimiter'], $options['enclosure'])) {
+      if (is_array($data)) {
+        $items[] = array_combine($header, $data);
+      }
+    }
+  }
+
+  if ($items === FALSE) {
+    $messages['file'] = t('File had no data.');
+    return $messages;
+  }
+
+  // Break up array of spaces/sections to import into chunks of 10.
+  $chunk_size = 10;
+  $chunks = array_chunk($items, $chunk_size);
+  $operations = array();
+  $count_chunks = count($chunks);
+
+  $i = 0;
+  // Import these spaces/sections in chunks.
+  foreach ($chunks as $chunk) {
+    $i++;
+
+    $details = array(
+      '@chunk' => $i,
+      '@count' => $count_chunks,
+    );
+
+    $message = '';
+    if (1 == $i) {
+      if ($options['delete_all']) {
+        $message .= t("Deleting all spaces and sections prior to importing.\n");
+      }
+      $details['@size'] = $chunk_size;
+      $message .= t("Starting import: chunk @chunk of @count (@size records/chunk)\n", $details);
+    }
+
+    $message .= t('(Importing chunk @chunk of @count)', $details);
+
+    $operations[] = array("iasc_configuration_import_spaces",
+      array(
+        $chunk,
+        $message,
+      ),
+    );
+  }
+
+  // Put all that information into our batch array.
+  $batch = array(
+    'operations' => $operations,
+    'title' => t('Importing !total_lines lines from CSV file "%filename"...', array(
+        '%filename'    => $options['file'],
+        '!total_lines' => $options['total_lines'],
+      )
+    ),
+    'init_message' => t('Starting to import spaces and sections...'),
+    'progress_message' => t('Processed @current out of @total.'),
+    'error_message' => t('An error occurred during the import.'),
+    'finished' => 'iasc_configuration_import_spaces_finished',
+  );
+
+  // Delete all spaces and sections if flag set.
+  if ($options['delete_all']) {
+    iasc_configuration_delete_all();
+  }
+
+  // Set the batch.
+  batch_set($batch);
+}
+
+/**
+ * Updates or saves the new chunk of spaces/sections.
+ *
+ * @param array $chunk
+ *   The current chunk of spaces/sections
+ * @param string $message
+ *   A helpful message about the status of the batch process.
+ * @param array $context
+ *   The context for the batch process
+ */
+function iasc_configuration_import_spaces($chunk, $message, &$context) {
+  $context['message'] = $message;
+
+  foreach ($chunk as $item) {
+    $node = iasc_configuration_create_node($item, $context);
+  }
+}
+
+/**
+ * Deletes all space and section nodes.
+ */
+function iasc_configuration_delete_all() {
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', array('oa_space', 'oa_section'))
+    ->propertyOrderBy('nid', 'ASC');
+
+  $result = $query->execute();
+  if ($result['node']) {
+    $nids = array_keys($result['node']);
+    node_delete_multiple($nids);
+  }
+}
+
+/**
+ * Takes an array and creates a space or section node.
+ *
+ * @param array $item
+ *   An array describing the space or section to create.
+ * @param array &$context
+ *   A batch API context.
+ *
+ * @return object|NULL
+ *   Returns the resulting node object if created; otherwise NULL.
+ */
+function iasc_configuration_create_node($item, &$context) {
+  // Check the item array.
+  if (!is_array($item) || empty($item['title'])) {
+    $context['results']['skipped'][] = "Node import failure: Unreadable node data";
+    $message = t('Could not import item: @item', array('@item' => print_r($item, TRUE)));
+    watchdog('iasc_configuration', $message, WATCHDOG_ERROR);
+    return NULL;
+  }
+
+  $context['results']['processed'][] = $item['title'];
+  $node_type = isset($item['type']) ? $item['type'] : 'oa_space';
+
+  $parent_nid = 0;
+  if (!empty($item['parent'])) {
+    $parent_nid = iasc_configuration_get_node_by_name('oa_space', $item['parent']);
+  }
+
+  $nid = iasc_configuration_get_node_by_name($node_type, $item['title'], $parent_nid);
+
+  if (empty($nid)) {
+    $node = new stdClass();
+    $node->title = $item['title'];
+    $node->uid = 1;
+    $node->status = 1;
+    $node->comment = 0;
+    $node->promote = FALSE;
+    $node->type = $node_type;
+    $node->language = LANGUAGE_NONE;
+  }
+  else {
+    $node = node_load($nid);
+  }
+
+  $time = time();
+  // Set created time if this is new.
+  if (empty($nid)) {
+    if ($node_type == 'oa_space') {
+      $context['results']['new_space'][] = $node->title;
+    }
+    elseif ($node_type == 'oa_section') {
+      $context['results']['new_section'][] = $node->title;
+    }
+
+    $node->created = $time;
+  }
+  else {
+    if ($node_type == 'oa_space') {
+      $context['results']['updated_space'][] = $node->title;
+    }
+    elseif ($node_type == 'oa_section') {
+      $context['results']['updated_section'][] = $node->title;
+    }
+  }
+
+  $node->changed = $time;
+  $node->path['pathauto'] = TRUE;
+  $node->og_user_inheritance[LANGUAGE_NONE][0]['value'] = 1;
+  $node->og_roles_permissions[LANGUAGE_NONE][0]['value'] = 0;
+  $node->group_access[LANGUAGE_NONE][0]['value'] = 0;
+
+  if ('oa_space' == $node_type) {
+    $space_term = taxonomy_get_term_by_name('Default', 'space_type');
+    if ($space_term) {
+      $space_term = current($space_term);
+      $node->field_oa_space_type[LANGUAGE_NONE][0]['tid'] = $space_term->tid;
+    }
+  }
+  elseif ('oa_section' == $node_type) {
+    $section_type = !empty($item['section_type']) ? $item['section_type'] : 'Default';
+    $section_term = taxonomy_get_term_by_name($section_type, 'section_type');
+    if ($section_term) {
+      $section_term = current($section_term);
+      $node->field_oa_section[LANGUAGE_NONE][0]['tid'] = $section_term->tid;
+    }
+  }
+
+  if (!empty($item['parent']) && !empty($parent_nid)) {
+    if ('oa_space' == $node_type) {
+      $node->oa_parent_space[LANGUAGE_NONE][0]['target_id'] = $parent_nid;
+    }
+    elseif ('oa_section' == $node_type) {
+      $node->og_group_ref[LANGUAGE_NONE][0]['target_id'] = $parent_nid;
+    }
+  }
+
+  node_save($node);
+
+  print "{$item['title']} : {$item['is_front']}\n\n";
+
+  if ($item['is_front']) {
+    variable_set('site_frontpage', "node/{$node->nid}");
+  }
+}
+
+/**
+ * Get the space entity by title.
+ *
+ * @param string $type
+ *   The type of the node.
+ * @param string $title
+ *   The title of the node
+ * @param int $space_nid
+ *   Optional nid of the parent space
+ *
+ * @return int
+ *   The nid of the node
+ */
+function iasc_configuration_get_node_by_name($type, $title, $space_nid = 0) {
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', $type)
+    ->propertyCondition('title', $title)
+    ->propertyOrderBy('nid', 'ASC')
+    ->range(0, 1);
+
+  if ($space_nid) {
+    if ($type == 'oa_space') {
+      $query->fieldCondition('oa_parent_space', 'target_id', $space_nid, '=');
+    }
+    else {
+      $query->fieldCondition('og_group_ref', 'target_id', $space_nid, '=');
+    }
+  }
+
+  $result = $query->execute();
+
+  if (isset($result['node'])) {
+    $nids = array_keys($result['node']);
+    return $nids[0];
+  }
+
+  return FALSE;
+}
+
+/**
+ * Callback for when the batch process finishes.
+ *
+ * @param bool $success
+ *   True if the batch process completed without errors.
+ * @param array $results
+ *   Information about the results set in iasc_taxonomy_import_term().
+ * @param array $operations
+ *   An array of details about the operations.
+ */
+function iasc_configuration_import_spaces_finished($success, $results, $operations) {
+  if ($success) {
+    drupal_set_message(count($results['processed']) . ' items processed.');
+    drupal_set_message(count($results['new_space']) . ' new spaces imported.');
+    drupal_set_message(count($results['updated_space']) . ' spaces updated.');
+    drupal_set_message(count($results['new_section']) . ' new sections imported.');
+    drupal_set_message(count($results['updated_section']) . ' sections updated.');
+
+    if (count($results['skipped'])) {
+      drupal_set_message(count($results['skipped']) . ' spaces/sections were not imported. See log for details.');
+    }
+  }
+  else {
+    // $operations contains the operations that remained unprocessed.
+    $error_operation = reset($operations);
+    $message = t('An error occurred while processing %error_operation with arguments: @arguments',
+      array(
+        '%error_operation' => $error_operation[0],
+        '@arguments' => print_r($error_operation[1],
+          TRUE),
+      )
+    );
+    drupal_set_message($message, 'error');
+  }
+}
