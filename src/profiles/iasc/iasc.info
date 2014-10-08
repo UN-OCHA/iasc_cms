@@ -150,3 +150,4 @@ dependencies[] = iasc_document
 
 ; Contrib
 dependencies[] = radix_layouts
+dependencies[] = field_collection

@@ -196,5 +196,6 @@ projects[styleguide][subdir] = contrib
 projects[radix_layouts][version] = 3.0
 projects[radix_layouts][subdir] = contrib
 
-
-
+; Supports grouping of fields for Agenda items
+projects[field_collection][version] = 1.0-beta7
+projects[field_collection][subdir] = contrib
