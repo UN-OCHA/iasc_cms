@@ -21,7 +21,8 @@ module.exports = function(grunt) {
         '<%= config.srcPaths.drupal %>/**/*.profile',
         '<%= config.srcPaths.drupal %>/**/*.css',
         '!<%= config.srcPaths.drupal %>/**/*.features.*inc',
-        '!<%= config.srcPaths.drupal %>/sites/**'
+        '!<%= config.srcPaths.drupal %>/sites/**',
+        '!<%= config.srcPaths.drupal %>/modules/iasc_scrape/ISAC'
       ],
       options: {
         report: 'checkstyle',
