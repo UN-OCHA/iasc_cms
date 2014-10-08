@@ -3,6 +3,20 @@ module.exports = function(grunt) {
   // Load all plugins and tasks defined by the drupal-grunt-starter package.
   require('drupal-grunt-starter/Gruntfile')(grunt);
 
+  // Override the phplint setup so that we can exclude the vendor file
+  grunt.config('phplint', {
+    all: [
+      '<%= config.srcPaths.drupal %>/**/*.php',
+      '<%= config.srcPaths.drupal %>/**/*.module',
+      '<%= config.srcPaths.drupal %>/**/*.inc',
+      '<%= config.srcPaths.drupal %>/**/*.install',
+      '<%= config.srcPaths.drupal %>/**/*.profile',
+      '!<%= config.srcPaths.drupal %>/**/*.features.*inc',
+      '!<%= config.srcPaths.drupal %>/sites/**',
+      '!<%= config.srcPaths.drupal %>//modules/iasc_scrape/IASC/vendor/**'
+    ]
+  });
+
   // Override the phpcs options so that we can have different reporting for
   // default and local dev
   grunt.config('phpcs', {
@@ -22,7 +36,7 @@ module.exports = function(grunt) {
         '<%= config.srcPaths.drupal %>/**/*.css',
         '!<%= config.srcPaths.drupal %>/**/*.features.*inc',
         '!<%= config.srcPaths.drupal %>/sites/**',
-        '!<%= config.srcPaths.drupal %>/modules/iasc_scrape/ISAC'
+        '!<%= config.srcPaths.drupal %>/modules/iasc_scrape/ISAC/vendor/**'
       ],
       options: {
         report: 'checkstyle',
@@ -38,7 +52,8 @@ module.exports = function(grunt) {
         '<%= config.srcPaths.drupal %>/**/*.profile',
         '<%= config.srcPaths.drupal %>/**/*.css',
         '!<%= config.srcPaths.drupal %>/**/*.features.*inc',
-        '!<%= config.srcPaths.drupal %>/sites/**'
+        '!<%= config.srcPaths.drupal %>/sites/**',
+        '!<%= config.srcPaths.drupal %>/modules/iasc_scrape/ISAC/vendor/**'
       ],
       options: {
         report: 'full'
