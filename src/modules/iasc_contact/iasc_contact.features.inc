@@ -23,7 +23,7 @@ function iasc_contact_node_info() {
       'base' => 'node_content',
       'description' => t('Create a Contact to aggregate information about a person in the Contacts Database.'),
       'has_title' => '1',
-      'title_label' => t('Title'),
+      'title_label' => t('Full Name'),
       'help' => '',
     ),
   );

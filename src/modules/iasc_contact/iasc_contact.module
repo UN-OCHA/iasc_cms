@@ -5,3 +5,27 @@
  */
 
 include_once 'iasc_contact.features.inc';
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter().
+ */
+function iasc_contact_form_node_form_alter(&$form, &$form_state, $form_id) {
+  $content_type = $form['#node']->type;
+  if ('contact' == $content_type) {
+    // Make the node title the full name of the contact.
+    $form['title']['#access'] = FALSE;
+    $form['#submit'][] = 'iasc_contact_form_submit';
+  }
+}
+
+/**
+ * Submit function for the contact node edit form.
+ * @param array $form
+ *   The form array
+ * @param array $form_state
+ *   The form state array.
+ */
+function iasc_contact_form_submit($form, &$form_state) {
+  $form_state['values']['title'] = $form_state['input']['field_first_name'][LANGUAGE_NONE][0]['value'] .
+    ' ' . $form_state['input']['field_last_name'][LANGUAGE_NONE][0]['value'];
+}
