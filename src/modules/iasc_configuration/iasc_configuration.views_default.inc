@@ -117,8 +117,9 @@ function iasc_configuration_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['attach'] = array(
-    0 => 'node:field_meeting_agendas:oa_event',
-    1 => 'node:field_meeting_notes:oa_event',
+    0 => 'field_collection_item:field_referenced_docs:field_agenda_items',
+    1 => 'node:field_meeting_agendas:oa_event',
+    2 => 'node:field_meeting_notes:oa_event',
   );
 
   /* Display: Contact Reference dialog Search */
@@ -198,6 +199,7 @@ function iasc_configuration_views_default_views() {
   );
   $handler->display->display_options['attach'] = array(
     0 => 'node:field_contact:oa_event',
+    1 => 'field_collection_item:field_contact:field_agenda_items',
   );
   $export['reference_dialog_search'] = $view;
 
