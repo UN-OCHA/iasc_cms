@@ -26,6 +26,10 @@ function iasc_contact_form_node_form_alter(&$form, &$form_state, $form_id) {
  *   The form state array.
  */
 function iasc_contact_form_submit($form, &$form_state) {
-  $form_state['values']['title'] = $form_state['input']['field_first_name'][LANGUAGE_NONE][0]['value'] .
+  $title = $form_state['input']['field_first_name'][LANGUAGE_NONE][0]['value'] .
     ' ' . $form_state['input']['field_last_name'][LANGUAGE_NONE][0]['value'];
+
+  // Ensure the generated title isn't too long.
+  $title = substr($title, 0, 255);
+  $form_state['values']['title'] = $title;
 }
