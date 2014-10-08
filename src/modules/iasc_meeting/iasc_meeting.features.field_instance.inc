@@ -263,7 +263,7 @@ function iasc_meeting_field_default_field_instances() {
       'module' => 'field_collection',
       'settings' => array(),
       'type' => 'field_collection_embed',
-      'weight' => 18,
+      'weight' => 15,
     ),
   );
 
@@ -318,7 +318,7 @@ function iasc_meeting_field_default_field_instances() {
         'apply_chosen' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 12,
+      'weight' => 17,
     ),
   );
 
@@ -385,7 +385,7 @@ function iasc_meeting_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 9,
+      'weight' => 13,
     ),
   );
 
@@ -440,7 +440,7 @@ function iasc_meeting_field_default_field_instances() {
         'apply_chosen' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 8,
+      'weight' => 10,
     ),
   );
 
@@ -564,7 +564,7 @@ function iasc_meeting_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 10,
+      'weight' => 14,
     ),
   );
 
@@ -633,7 +633,7 @@ function iasc_meeting_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 11,
+      'weight' => 16,
     ),
   );
 
@@ -740,7 +740,7 @@ function iasc_meeting_field_default_field_instances() {
         'apply_chosen' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 17,
+      'weight' => 18,
     ),
   );
 
