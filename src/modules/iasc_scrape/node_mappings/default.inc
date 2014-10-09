@@ -15,6 +15,7 @@ class IASCDefault {
   protected $fields = array();
   protected $terms = array();
   protected $lists = array();
+  protected $groups = array();
 
   /**
    * Constructor.
@@ -43,6 +44,7 @@ class IASCDefault {
     $this->setFields();
     $this->setTerms();
     $this->setLists();
+    //$this->setGroups();
 
     // Save the entity.
     $this->wrapper->save(true);
@@ -90,6 +92,34 @@ class IASCDefault {
       }
       catch (Exception $e) {
         echo 'Caught exception on ' . $list . ': ',  $e->getMessage(), "\n";
+      }
+    }
+  }
+
+  /**
+   * Get group id based on the name.
+   */
+  protected function getGroupId($name) {
+    $result = db_select('node', 'n')
+      ->fields('n', array('nid'))
+      ->condition('type', 'oa_space')
+      ->condition('title', $name)
+      ->execute()
+      ->fetchAssoc();
+    return $result['title'];
+  }
+
+  /**
+   * Set predetermined groups / spaces fields.
+   */
+  protected function setGroups() {
+    foreach ($this->groups as $group) {
+      $group_id = $this->getGroupId($this->values['data'][$group]);
+      try {
+        $this->wrapper->{$group}->set(array($group_id));
+      }
+      catch (Exception $e) {
+        echo 'Caught exception on ' . $group . ': ',  $e->getMessage(), "\n";
       }
     }
   }
