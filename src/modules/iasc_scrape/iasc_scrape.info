@@ -2,3 +2,6 @@ name = "IASC Scrape"
 description = "Scrape IASC data."
 package = "IASC"
 core = 7.x
+
+files[] = node_mappings/default.inc
+files[] = node_mappings/meeting.inc
