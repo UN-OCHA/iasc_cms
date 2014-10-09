@@ -50,11 +50,11 @@ class MeetingElement extends AbstractElement {
         'get_text' => TRUE,
       ),
       'field_oa_end_time_min' => array(
-        'selector' => '#ctl00_ContentPlaceHolder1_ctl00_ddlStartTime2 option[selected="selected"]',
+        'selector' => '#ctl00_ContentPlaceHolder1_ctl00_ddlEndTime2 option[selected="selected"]',
         'get_text' => TRUE,
       ),
       'field_time_zone' => array(
-        'selector' => '#ctl00_ContentPlaceHolder1_ctl00_ddlEndTime2 option[selected="selected"]',
+        'selector' => '#ctl00_ContentPlaceHolder1_ctl00_ddlZone option[selected="selected"]',
         'get_text' => TRUE,
       ),
       'field_oa_address' => array('selector' => '#ctl00_ContentPlaceHolder1_ctl00_txtCity'),
