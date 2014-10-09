@@ -1,21 +1,42 @@
 <?php
+/**
+ * @file
+ * Meeting node mappings.
+ */
 
+/**
+ * Class IASCMeeting
+ */
 class IASCMeeting extends IASCDefault {
 
+  /**
+   * Constructor.
+   */
   public function __construct($values) {
     $this->values = $values;
+
+    // Plain text fields.
     $this->fields = array(
-      'field_time_zone',
       'field_oa_address',
       'body',
       'field_info_private',
     );
-    parent::__construct('oa_event');
 
-    $terms = array(
-      'field_host',
-      'field_authoring_bodies',
+    // Taxonomy term references.
+    $this->terms = array(
+      'field_host' => array(
+        'name' => 'hosts',
+      ),
+      'field_authoring_bodies' => array(
+        'name' => 'authoring_bodies',
+      ),
     );
+
+    // List fields.
+    $this->lists = array(
+      'field_time_zone',
+    );
+    parent::__construct('oa_event');
 
     $reference = array(
       'og_group_ref',

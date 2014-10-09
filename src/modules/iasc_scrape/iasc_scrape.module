@@ -132,22 +132,58 @@ function iasc_scrape_get_index($type) {
   );
 }
 
+/**
+ * Save the node.
+ */
 function iasc_scrape_save_node($type) {
   if (class_exists('IASC' . ucfirst($type))) {
     $values = iasc_scrape_get_scraped_element($type);
-    drupal_set_message(print_r($values));
-    exit;
+    $class = 'IASC' . ucfirst($type);
+    $node = new $class($values);
+    $node = $node->entity;
+    iasc_scrape_update($values['legacy_id'], $node->nid);
+    drupal_set_message(t(
+      '@type (@nodetype) saved. Nid: @nid Title: @title',
+      array(
+        '@type' => ucfirst($type),
+        '@nodetype' => $node->type,
+        '@nid' => $node->nid,
+        '@title' => $node->title,
+      )
+    ));
   }
 }
 
+/**
+ * Get the latest element scrape that isn't saved.
+ * This is marked by status = 0.
+ */
 function iasc_scrape_get_scraped_element($type) {
   $result = db_select('iasc_scrape', 'sc')
-    ->fields('sc', array('data'))
+    ->fields('sc', array('legacy_id', 'entity_id', 'data'))
     ->condition('type', $type)
     ->condition('status', 0)
     ->range(0, 1)
     ->execute()
     ->fetchAssoc();
 
-  return $result;
+  $data = unserialize($result['data']);
+  return array(
+    'legacy_id' => $result['legacy_id'],
+    'entity_id' => $result['entity_id'],
+    'data' => $data,
+  );
+}
+
+/**
+ * Update the row to set that it's scraped.
+ */
+function iasc_scrape_update($legacy_id, $entity_id) {
+  db_merge('iasc_scrape')
+    ->key(array('legacy_id' => $legacy_id))
+    ->fields(array(
+      'status' => 1,
+      'entity_id' => $entity_id,
+    ))
+    ->execute();
 }
