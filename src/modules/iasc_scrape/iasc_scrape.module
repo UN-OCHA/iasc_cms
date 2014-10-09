@@ -131,3 +131,23 @@ function iasc_scrape_get_index($type) {
     'position' => $position,
   );
 }
+
+function iasc_scrape_save_node($type) {
+  if (class_exists('IASC' . ucfirst($type))) {
+    $values = iasc_scrape_get_scraped_element($type);
+    drupal_set_message(print_r($values));
+    exit;
+  }
+}
+
+function iasc_scrape_get_scraped_element($type) {
+  $result = db_select('iasc_scrape', 'sc')
+    ->fields('sc', array('data'))
+    ->condition('type', $type)
+    ->condition('status', 0)
+    ->range(0, 1)
+    ->execute()
+    ->fetchAssoc();
+
+  return $result;
+}
