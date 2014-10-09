@@ -16,6 +16,7 @@ class IASCDefault {
   protected $terms = array();
   protected $lists = array();
   protected $groups = array();
+  protected $dates = array();
 
   /**
    * Constructor.
@@ -45,6 +46,7 @@ class IASCDefault {
     $this->setTerms();
     $this->setLists();
     //$this->setGroups();
+    $this->setDates();
 
     // Save the entity.
     $this->wrapper->save(true);
@@ -120,6 +122,52 @@ class IASCDefault {
       }
       catch (Exception $e) {
         echo 'Caught exception on ' . $group . ': ',  $e->getMessage(), "\n";
+      }
+    }
+  }
+
+  /**
+   * Set predetermined date fields.
+   */
+  protected function setDates() {
+    foreach ($this->dates as $date_field => $date) {
+      $start_hour = $this->values['data'][$date['start']['hour']];
+      $end_hour = $this->values['data'][$date['end']['hour']];
+
+      // Adjust for timezone
+      switch ($this->values['data']['field_time_zone']) {
+        case 'Geneva':
+          $start_hour += 1;
+          break;
+
+        case 'New York':
+          $start_hour -= 5;
+          break;
+
+        case 'Uganda':
+          $start_hour += 3;
+          break;
+      }
+      $start = $this->values['data'][$date['start']['date']]
+        . ' '
+        . $start_hour
+        . ':'
+        . $this->values['data'][$date['start']['min']];
+      $end = $this->values['data'][$date['end']['date']]
+        . ' '
+        . $end_hour
+        . ':'
+        . $this->values['data'][$date['end']['min']];
+      $formatted_start = strtotime($start);
+      $formatted_end = strtotime($end);
+      try {
+        $this->wrapper->{$date_field}[0]->set(array(
+          'value' => $formatted_start,
+          'value2' => $formatted_end
+        ));
+      }
+      catch (Exception $e) {
+        echo 'Caught exception on ' . $date_field . ': ',  $e->getMessage(), "\n";
       }
     }
   }
