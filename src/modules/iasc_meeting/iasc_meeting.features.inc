@@ -5,23 +5,48 @@
  */
 
 /**
+ * Implements hook_field_group_info_alter().
+ */
+function iasc_meeting_field_group_info_alter(&$data) {
+  if (isset($data['group_oa_access|node|oa_event|form'])) {
+    $data['group_oa_access|node|oa_event|form']->data['children'][0] = 'oa_other_spaces_ref'; /* WAS: 'oa_section_ref' */
+    $data['group_oa_access|node|oa_event|form']->data['children'][1] = 'oa_section_ref'; /* WAS: 'og_group_ref' */
+    $data['group_oa_access|node|oa_event|form']->data['children'][2] = 'og_group_ref'; /* WAS: 'oa_other_spaces_ref' */
+    $data['group_oa_access|node|oa_event|form']->data['weight'] = 9; /* WAS: 7 */
+  }
+  if (isset($data['group_oa_event_location|node|oa_event|form'])) {
+    $data['group_oa_event_location|node|oa_event|form']->data['weight'] = 6; /* WAS: 5 */
+  }
+}
+
+/**
  * Implements hook_field_default_field_instances_alter().
  */
 function iasc_meeting_field_default_field_instances_alter(&$data) {
   if (isset($data['node-oa_event-body'])) {
     $data['node-oa_event-body']['description'] = 'Please enter the public information about the meeting. <strong>Please note:</strong> This information will be made publicly available. Use the <em>Private Details</em> field to contain information that should remain private.'; /* WAS: 'Describe the Event' */
     $data['node-oa_event-body']['label'] = 'Public Information'; /* WAS: 'Description' */
+    $data['node-oa_event-body']['widget']['weight'] = 3; /* WAS: 2 */
   }
   if (isset($data['node-oa_event-field_oa_address'])) {
     $data['node-oa_event-field_oa_address']['comment_alter'] = 0; /* WAS: '' */
     $data['node-oa_event-field_oa_address']['description'] = '<p>To add a physical location for the meeting, please enter the address. A map widget will automatically populate with the correct coordinates when you save the node. For example:<br />
-            1600 Pennsylvania Avenue, NW<br />
-            Washington, DC 20500</p>
-            <p>If you need to add additional information such as a virtual location for the meeting (meeting call/dial-in information), please insert a break after your physical address and enter your additional details</p>'; /* WAS: 'Location Address and/or link, i.e.,
+                1600 Pennsylvania Avenue, NW<br />
+                Washington, DC 20500</p>
+                <p>If you need to add additional information such as a virtual location for the meeting (meeting call/dial-in information), please insert a break after your physical address and enter your additional details</p>'; /* WAS: 'Location Address and/or link, i.e.,
     1600 Pennsylvania Avenue, NW
     Washington, DC 20500
     http://www.whitehouse.gov/' */
     $data['node-oa_event-field_oa_address']['widget']['weight'] = 8; /* WAS: 3 */
+  }
+  if (isset($data['node-oa_event-field_oa_date'])) {
+    $data['node-oa_event-field_oa_date']['widget']['weight'] = 7; /* WAS: 6 */
+  }
+  if (isset($data['node-oa_event-field_oa_geo_location'])) {
+    $data['node-oa_event-field_oa_geo_location']['widget']['weight'] = 11; /* WAS: 8 */
+  }
+  if (isset($data['node-oa_event-og_vocabulary'])) {
+    $data['node-oa_event-og_vocabulary']['widget']['weight'] = 12; /* WAS: 9 */
   }
 }
 
@@ -82,5 +107,23 @@ function iasc_meeting_default_page_manager_handlers_alter(&$data) {
     $data['node_edit_panel_context_7']->conf['display']->panels['sidebar'][6] = 'new-68f32ccd-0cec-45db-9ecd-112683c079ae'; /* WAS: 'new-0b869cc5-d419-48ed-bcd1-4e6ec0d15a34' */
     $data['node_edit_panel_context_7']->conf['display']->panels['sidebar'][7] = 'new-457a0b07-9259-4092-a16e-f542822ee2af'; /* WAS: 'new-68f32ccd-0cec-45db-9ecd-112683c079ae' */
     unset($data['node_edit_panel_context_7']->conf['display']->content['new-30f4398c-9f13-4195-b392-3f34ab0ddcee']);
+  }
+}
+
+/**
+ * Implements hook_strongarm_alter().
+ */
+function iasc_meeting_strongarm_alter(&$data) {
+  if (isset($data['field_bundle_settings_node__oa_event'])) {
+    $data['field_bundle_settings_node__oa_event']->value['extra_fields']['form']['path']['weight'] = 2; /* WAS: 1 */
+  }
+}
+
+/**
+ * Implements hook_views_default_views_alter().
+ */
+function iasc_meeting_views_default_views_alter(&$data) {
+  if (isset($data['oa_event_detail'])) {
+    unset($data['oa_event_detail']->display['default']->display_options['fields']['term_node_tid']);
   }
 }
