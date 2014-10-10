@@ -148,26 +148,35 @@ class IASCDefault {
           $start_hour += 3;
           break;
       }
-      $start = $this->values['data'][$date['start']['date']]
+      // Reformat date
+      $fixed_date = array();
+      foreach (array(
+                 $this->values['data'][$date['start']['date']],
+                 $this->values['data'][$date['end']['date']],
+               ) as $weird_date) {
+        $fixed_date[] = str_replace('/', '-', $weird_date);
+      }
+      $start = $fixed_date[0]
         . ' '
         . $start_hour
         . ':'
         . $this->values['data'][$date['start']['min']];
-      $end = $this->values['data'][$date['end']['date']]
+      $end = $fixed_date[1]
         . ' '
         . $end_hour
         . ':'
         . $this->values['data'][$date['end']['min']];
-      $formatted_start = strtotime($start);
-      $formatted_end = strtotime($end);
-      try {
-        $this->wrapper->{$date_field}[0]->set(array(
-          'value' => $formatted_start,
-          'value2' => $formatted_end
-        ));
-      }
-      catch (Exception $e) {
-        echo 'Caught exception on ' . $date_field . ': ',  $e->getMessage(), "\n";
+      $unix_start = strtotime($start);
+      $unix_end = strtotime($end);
+      if (!empty($unix_start) && (!empty($unix_end))) {
+        try {
+          $this->wrapper->{$date_field}[0]->set(array(
+            'value' => $unix_start,
+            'value2' => $unix_end
+          ));
+        } catch (Exception $e) {
+          echo 'Caught exception on ' . $date_field . ': ', $e->getMessage(), "\n";
+        }
       }
     }
   }
