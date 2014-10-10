@@ -199,3 +199,7 @@ projects[radix_layouts][subdir] = contrib
 ; Supports grouping of fields for Agenda items
 projects[field_collection][version] = 1.0-beta7
 projects[field_collection][subdir] = contrib
+
+; Supports more standardized addresses.
+projects[addressfield][version] = 1.0-beta5
+projects[addressfield][subdir] = contrib
