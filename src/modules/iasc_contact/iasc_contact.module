@@ -15,21 +15,773 @@ function iasc_contact_form_node_form_alter(&$form, &$form_state, $form_id) {
     // Make the node title the full name of the contact.
     $form['title']['#access'] = FALSE;
     $form['#submit'][] = 'iasc_contact_form_submit';
+
+    // Change the labels for Building and Room. These are part of addressfield.
+    $form['field_address'][LANGUAGE_NONE][0]['name_block']['name_line']['#title'] = t('Building');
+    $form['field_address'][LANGUAGE_NONE][0]['organisation_block']['organisation_name']['#title'] = t('Room');
+
+    $node = $form['#node'];
+    $form['field_address'][LANGUAGE_NONE][0]['#address']['name_line'] = $node->field_address[LANGUAGE_NONE][0]['name_line'];
+    $form['field_address'][LANGUAGE_NONE][0]['#address']['organisation_name'] = $node->field_address[LANGUAGE_NONE][0]['organisation_name'];
   }
 }
 
 /**
  * Submit function for the contact node edit form.
+ *
  * @param array $form
  *   The form array
  * @param array $form_state
  *   The form state array.
  */
 function iasc_contact_form_submit($form, &$form_state) {
-  $title = $form_state['input']['field_first_name'][LANGUAGE_NONE][0]['value'] .
+  $title = '';
+
+  // Add the title to the full name if set.
+  $title_option = $form_state['input']['field_title'][LANGUAGE_NONE];
+  if ($title_option != '_none') {
+    $title .= $form['field_title'][LANGUAGE_NONE]['#options'][$title_option] . ' ';
+  }
+
+  $title .= $form_state['input']['field_first_name'][LANGUAGE_NONE][0]['value'] .
     ' ' . $form_state['input']['field_last_name'][LANGUAGE_NONE][0]['value'];
 
   // Ensure the generated title isn't too long.
   $title = substr($title, 0, 255);
   $form_state['values']['title'] = $title;
+}
+/**
+ * Process the import of contacts.
+ *
+ * @param array $options
+ *   An associative array of options:
+ *   - file      : the path to the csv file
+ *   - delimiter : 1 character csv delimiter (default: ';')
+ *   - enclosure : character that wraps the data (default: '"')
+ *   - delete_all: delete all spaces and sections before import (default: FALSE)
+ *
+ * @return array
+ *   Array of errors or nothing if import is successful.
+ */
+function iasc_contact_import($options) {
+  $messages = array();
+
+  // Load the file object.
+  $file_handles = iasc_contact_check_files(
+    array(
+      'contact_file' => $options['contact_file'],
+      'body_file' => $options['body_file'],
+      'org_file' => $options['org_file'],
+    ),
+    $messages
+  );
+
+  if (!empty($messages)) {
+    return $messages;
+  }
+
+  $operations = array();
+  iasc_contact_contact_batch_ops($file_handles['contact_file'], $options, $messages, $operations);
+  if (!empty($messages)) {
+    return $messages;
+  }
+
+  iasc_contact_body_membership_batch_ops($file_handles['body_file'], $options, $messages, $operations);
+  if (!empty($messages)) {
+    return $messages;
+  }
+
+  iasc_contact_org_membership_batch_ops($file_handles['org_file'], $options, $messages, $operations);
+  if (!empty($messages)) {
+    return $messages;
+  }
+
+  // Put all that information into our batch array.
+  $batch = array(
+    'operations' => $operations,
+    'title' => t('Importing !total_lines lines from CSV file "%filename"...', array(
+        '%filename'    => $options['file'],
+        '!total_lines' => $options['total_lines'],
+      )
+    ),
+    'init_message' => t('Starting to import contacts...'),
+    'progress_message' => t('Processed @current out of @total.'),
+    'error_message' => t('An error occurred during the import.'),
+    'finished' => 'iasc_contact_import_contacts_finished',
+  );
+
+  // Delete all contacts if flag set.
+  if ($options['delete_all']) {
+    iasc_contact_delete_all();
+  }
+
+  // Set the batch.
+  batch_set($batch);
+}
+
+/**
+ * Checks to make sure we can read the files.
+ *
+ * @param array $files
+ *   An array of files to check.
+ * @param array $messages
+ *   An array of messages.
+ *
+ * @return array
+ *   An array of file handles.
+ */
+function iasc_contact_check_files($files, &$messages) {
+  $file_handles = array();
+  foreach ($files as $key => $file) {
+    if (empty($file)) {
+      $messages['file'] = t("Missing file - %key", array('%key' => $key));
+    }
+
+    $file_handle = fopen($file, 'r');
+    if ($file_handle === FALSE) {
+      $messages['file'] = t("File: %file could not be opened.", array('%file' => $file));
+    }
+    else {
+      $file_handles[$key] = $file_handle;
+    }
+  }
+
+  return $file_handles;
+}
+
+/**
+ * Sets up the process contact batch operations.
+ *
+ * @param mixed $file_handle
+ *   The file pointer resource.
+ * @param array $options
+ *   Options for reading the file.
+ * @param array $messages
+ *   Error message array.
+ * @param array $operations
+ *   An array of batch operations.
+ */
+function iasc_contact_contact_batch_ops($file_handle, $options, &$messages, &$operations) {
+  $contact_items = array();
+  if ($header = fgetcsv($file_handle, 0, $options['delimiter'], $options['enclosure'])) {
+    while ($data = fgetcsv($file_handle, 0, $options['delimiter'], $options['enclosure'])) {
+      if (is_array($data)) {
+        $contact_items[] = array_combine($header, $data);
+      }
+    }
+  }
+
+  if ($contact_items === FALSE) {
+    $messages['file'] = t('File had no data.');
+    return $messages;
+  }
+
+  // Break up array of contacts to import into chunks of 10.
+  $chunk_size = 10;
+  $chunks = array_chunk($contact_items, $chunk_size);
+
+  $count_chunks = count($chunks);
+
+  $i = 0;
+  // Import these contacts in chunks.
+  foreach ($chunks as $chunk) {
+    $i++;
+
+    $details = array(
+      '@chunk' => $i,
+      '@count' => $count_chunks,
+    );
+
+    $message = '';
+    if (1 == $i) {
+      $details['@size'] = $chunk_size;
+      $message .= t("Starting import of contacts: chunk @chunk of @count (@size records/chunk)\n", $details);
+    }
+
+    $message .= t('(Importing chunk @chunk of @count)', $details);
+
+    $operations[] = array("iasc_contact_import_contacts",
+      array(
+        $chunk,
+        $message,
+      ),
+    );
+  }
+}
+
+/**
+ * Sets up the process contact - body membership batch operations.
+ *
+ * @param mixed $file_handle
+ *   The file pointer resource.
+ * @param array $options
+ *   Options for reading the file.
+ * @param array $messages
+ *   Error message array.
+ * @param array $operations
+ *   An array of batch operations.
+ */
+function iasc_contact_body_membership_batch_ops($file_handle, $options, &$messages, &$operations) {
+  $body_membership_items = array();
+  if ($header = fgetcsv($file_handle, 0, $options['delimiter'], $options['enclosure'])) {
+    while ($data = fgetcsv($file_handle, 0, $options['delimiter'], $options['enclosure'])) {
+      if (is_array($data)) {
+        $body_membership_items[] = array_combine($header, $data);
+      }
+    }
+  }
+
+  if ($body_membership_items === FALSE) {
+    $messages['file'] = t('File had no data.');
+    return $messages;
+  }
+
+  // Break up array of body memberships;; to import into chunks of 10.
+  $chunk_size = 10;
+  $chunks = array_chunk($body_membership_items, $chunk_size);
+
+  $count_chunks = count($chunks);
+
+  $i = 0;
+  // Import these  in chunks.
+  foreach ($chunks as $chunk) {
+    $i++;
+
+    $details = array(
+      '@chunk' => $i,
+      '@count' => $count_chunks,
+    );
+
+    $message = '';
+    if (1 == $i) {
+      $details['@size'] = $chunk_size;
+      $message .= t("Starting import of contact-body memberships: chunk @chunk of @count (@size records/chunk)\n", $details);
+    }
+
+    $message .= t('(Importing chunk @chunk of @count)', $details);
+
+    $operations[] = array("iasc_contact_import_body_membership",
+      array(
+        $chunk,
+        $message,
+      ),
+    );
+  }
+}
+
+/**
+ * Sets up the process contact - organisation membership batch operations.
+ *
+ * @param mixed $file_handle
+ *   The file pointer resource.
+ * @param array $options
+ *   Options for reading the file.
+ * @param array $messages
+ *   Error message array.
+ * @param array $operations
+ *   An array of batch operations.
+ */
+function iasc_contact_org_membership_batch_ops($file_handle, $options, &$messages, &$operations) {
+  $org_membership_items = array();
+  if ($header = fgetcsv($file_handle, 0, $options['delimiter'], $options['enclosure'])) {
+    while ($data = fgetcsv($file_handle, 0, $options['delimiter'], $options['enclosure'])) {
+      if (is_array($data)) {
+        $org_membership_items[] = array_combine($header, $data);
+      }
+    }
+  }
+
+  if ($org_membership_items === FALSE) {
+    $messages['file'] = t('File had no data.');
+    return $messages;
+  }
+
+  // Break up array of body memberships;; to import into chunks of 10.
+  $chunk_size = 10;
+  $chunks = array_chunk($org_membership_items, $chunk_size);
+
+  $count_chunks = count($chunks);
+
+  $i = 0;
+  // Import these  in chunks.
+  foreach ($chunks as $chunk) {
+    $i++;
+
+    $details = array(
+      '@chunk' => $i,
+      '@count' => $count_chunks,
+    );
+
+    $message = '';
+    if (1 == $i) {
+      $details['@size'] = $chunk_size;
+      $message .= t("Starting import of contact - org memberships: chunk @chunk of @count (@size records/chunk)\n", $details);
+    }
+
+    $message .= t('(Importing chunk @chunk of @count)', $details);
+
+    $operations[] = array("iasc_contact_import_org_membership",
+      array(
+        $chunk,
+        $message,
+      ),
+    );
+  }
+}
+
+/**
+ * Deletes all existing contact nodes.
+ */
+function iasc_contact_delete_all() {
+  // Delete all contact nodes.
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'contact');
+
+  $result = $query->execute();
+  if ($result['node']) {
+    $nids = array_keys($result['node']);
+    node_delete_multiple($nids);
+  }
+}
+
+/**
+ * Updates or saves the new chunk of contacts.
+ *
+ * @param array $chunk
+ *   The current chunk of contacts
+ * @param string $message
+ *   A helpful message about the status of the batch process.
+ * @param array $context
+ *   The context for the batch process
+ */
+function iasc_contact_import_contacts($chunk, $message, &$context) {
+  $context['message'] = $message;
+
+  foreach ($chunk as $item) {
+    iasc_contact_create_node($item, $context);
+  }
+}
+
+/**
+ * Updates or saves the new chunk of body memberships for contacts.
+ *
+ * @param array $chunk
+ *   The current chunk of body membership data
+ * @param string $message
+ *   A helpful message about the status of the batch process.
+ * @param array $context
+ *   The context for the batch process
+ */
+function iasc_contact_import_body_membership($chunk, $message, &$context) {
+  $context['message'] = $message;
+
+  foreach ($chunk as $item) {
+    iasc_contact_link_bodies($item, $context);
+  }
+}
+
+/**
+ * Updates or saves the new chunk of org memberships for contacts.
+ *
+ * @param array $chunk
+ *   The current chunk of org membership data
+ * @param string $message
+ *   A helpful message about the status of the batch process.
+ * @param array $context
+ *   The context for the batch process
+ */
+function iasc_contact_import_org_membership($chunk, $message, &$context) {
+  $context['message'] = $message;
+
+  foreach ($chunk as $item) {
+    iasc_contact_link_org($item, $context);
+  }
+}
+
+/**
+ * Takes an array and creates a contact node.
+ *
+ * @param array $item
+ *   An array describing the contact to create.
+ * @param array &$context
+ *   A batch API context.
+ */
+function iasc_contact_create_node($item, &$context) {
+  // Check the item array.
+  if (!is_array($item)) {
+    $context['results']['contact_skipped'][] = "Node import failure: Unreadable node data";
+    $message = t('Could not import item: @item', array('@item' => print_r($item, TRUE)));
+    watchdog('iasc_contact', $message, WATCHDOG_ERROR);
+    return;
+  }
+
+  $legacy_id = $item['contactID'];
+  $context['results']['contact_processed'][] = $legacy_id;
+
+  // Get field_legacy_id
+  $nid = iasc_contact_get_nid_by_legacyid($legacy_id);
+
+  if (empty($nid)) {
+    $defaults = array(
+      'type' => 'contact',
+      'uid' => 1,
+      'status' => 1,
+      'comment' => 0,
+      'promote' => 0,
+      'language' => LANGUAGE_NONE,
+    );
+
+    $entity = entity_create('node', $defaults);
+    $node_wrapper = entity_metadata_wrapper('node', $entity);
+  }
+  else {
+    $node_wrapper = entity_metadata_wrapper('node', $nid);
+    $entity = $node_wrapper->value();
+  }
+
+  // Set created time if this is new.
+  if (empty($nid)) {
+    $context['results']['new_contact'][] = $legacy_id;
+  }
+  else {
+    $context['results']['updated_contact'][] = $legacy_id;
+  }
+
+  // field_title is a select list: 0 => Ms. 1 => Mr., etc.
+  if (!empty($item['title'])) {
+    $titles = title_mappings();
+    $node_wrapper->field_title = $titles[$item['title']];
+  }
+
+  // TODO: Add fixes for encoding issues
+  $node_wrapper->field_first_name = $item['first'];
+  $node_wrapper->field_last_name = $item['last'];
+
+  $name = $item['title'] . ' ' . $item['first'] . ' ' . $item['last'];
+
+  // We are not going to import contacts missing first and last names.
+  if (empty($name)) {
+    $context['results']['contact_skipped'][] = "Node import failure: Unreadable node data";
+    $message = t('Could not import item: @item', array('@item' => print_r($item, TRUE)));
+    watchdog('iasc_contact', $message, WATCHDOG_ERROR);
+    return NULL;
+  }
+
+  $node_wrapper->title = $title = substr($name, 0, 255);
+
+  $node_wrapper->field_position = $item['position'];
+  $node_wrapper->field_department = $item['department'];
+  $node_wrapper->field_branch = $item['branch'];
+  $node_wrapper->body->set(array('value' => $item['description']));
+
+  $node_wrapper->field_phone[] = $item['phone'];
+  // We seem to be missing this in the csv file.
+  // $node_wrapper->field_phone[] = $item['phone2'];
+
+  // Mobile field is multi-value.
+  $node_wrapper->field_mobile[] = $item['mobile'];
+  $node_wrapper->field_mobile[] = $item['mobile2'];
+
+  $node_wrapper->field_fax = $item['fax'];
+
+  // Email field is multi-value.
+  $node_wrapper->field_email[] = $item['email'];
+  $node_wrapper->field_email[] = $item['email2'];
+
+  $node_wrapper->field_homepage->set(array('url' => $item['link']));
+
+  $address = $node_wrapper->field_address->value();
+
+  // We are using the name_line field of addressfield for Building.
+  $address['name_line'] = $item['building'];
+
+  // We are using the organisation_name field of addressfield for Room.
+  $address['organisation_name'] = $item['officeroom'];
+
+  $address['thoroughfare'] = $item['street'];
+  $address['administrative_area'] = $item['stateprovince'];
+  $address['locality'] = $item['city'];
+  $address['postal_code'] = $item['postalcode'];
+  $address['premise'] = $item['postalcode2'];
+
+  // Standardize the country.
+  $country_mappings = legacy_country_mappings();
+  $address['country'] = $country_mappings[$item['country']];
+  $node_wrapper->field_address->set($address);
+
+  $node_wrapper->field_legacy_id = $item['contactID'];
+
+  // Save the entity.
+  $node_wrapper->save(TRUE);
+  entity_save('node', $entity);
+}
+
+/**
+ * Takes an array and updates a contact node with body membership data.
+ *
+ * @param array $item
+ *   An array describing the contact/body membership relationship.
+ * @param array &$context
+ *   A batch API context.
+ */
+function iasc_contact_link_bodies($item, &$context) {
+  // Check the item array.
+  if (!is_array($item)) {
+    $context['results']['body_skipped'][] = "Node import failure: Unreadable node data";
+    $message = t('Could not import item: @item', array('@item' => print_r($item, TRUE)));
+    watchdog('iasc_contact', $message, WATCHDOG_ERROR);
+    return;
+  }
+
+  $legacy_id = $item['contactID'];
+  $context['results']['body_processed'][] = $legacy_id;
+
+  $nid = iasc_contact_get_nid_by_legacyid($legacy_id);
+
+  // We should have a contact node at this point.
+  if (empty($nid)) {
+    $context['results']['body_skipped'][] = "Node import failure: Unreadable node data";
+    $message = t('Could not import item: @item', array('@item' => print_r($item, TRUE)));
+    watchdog('iasc_contact', $message, WATCHDOG_ERROR);
+    return;
+  }
+
+  $node_wrapper = entity_metadata_wrapper('node', $nid);
+  $entity = $node_wrapper->value();
+
+  // Requires: separate csv file to map: contactID <-> body membership data.
+
+  // Body Membership is a field collection.
+  $collection = entity_create('field_collection_item', array('field_name' => 'field_membership'));
+  $collection->setHostEntity('node', $entity);
+  $membership_wrapper = entity_metadata_wrapper('field_collection_item', $collection);
+
+  // Get tid from legacy id: $item['bodyID'] or bodytitle if we can swing it.
+  // Sample csv file uses bodytitle.
+  $body_term = taxonomy_get_term_by_name($item['bodytitle'], 'authoring_bodies');
+  if ($body_term) {
+    $body_term = current($body_term);
+    $membership_wrapper->field_contact_body = $body_term->tid;
+  }
+
+  $membership_wrapper->field_position = $item['bodyposition'];
+  $membership_wrapper->field_contact_category = $item['category'];
+  $membership_wrapper->save();
+
+  // Ignore $item['bodydetail'] - this is a non-unique short name for the body.
+
+  // Save the entity.
+  $node_wrapper->save(TRUE);
+  entity_save('node', $entity);
+
+  $context['results']['updated_body_contact'][] = $legacy_id;
+}
+
+/**
+ * Takes an array and updates a contact node with organisation reference.
+ *
+ * @param array $item
+ *   An array describing the contact/organisation relationship.
+ * @param array &$context
+ *   A batch API context.
+ */
+function iasc_contact_link_org($item, &$context) {
+  // Check the item array.
+  if (!is_array($item)) {
+    $context['results']['org_skipped'][] = "Node import failure: Unreadable node data";
+    $message = t('Could not import item: @item', array('@item' => print_r($item, TRUE)));
+    watchdog('iasc_contact', $message, WATCHDOG_ERROR);
+    return NULL;
+  }
+
+  $legacy_id = $item['contactID'];
+  $context['results']['org_processed'][] = $legacy_id;
+
+  $nid = iasc_contact_get_nid_by_legacyid($legacy_id);
+  // We should have a contact node at this point.
+  if (empty($nid)) {
+    $context['results']['org_skipped'][] = "Node import failure: Unreadable node data";
+    $message = t('Could not import item: @item', array('@item' => print_r($item, TRUE)));
+    watchdog('iasc_contact', $message, WATCHDOG_ERROR);
+    return;
+  }
+
+  $node_wrapper = entity_metadata_wrapper('node', $nid);
+  $entity = $node_wrapper->value();
+
+  // Requires: separate csv file to map: contactID <-> org membership data.
+
+  // Get tid from legacy id: $item['orgID'] or organisation if we can swing it.
+  // Sample csv file cheats with organisation.
+  $org_term = taxonomy_get_term_by_name($item['organisation'], 'hosts');
+  if ($org_term) {
+    $org_term = current($org_term);
+    $node_wrapper->field_organisation = $org_term->tid;
+
+    // Save the entity.
+    $node_wrapper->save(TRUE);
+    entity_save('node', $entity);
+
+    $context['results']['updated_org_contact'][] = $legacy_id;
+  }
+}
+
+/**
+ * Get the default mappings for titles.
+ *
+ * @return array
+ *   An array with the default value => key mappings for titles.
+ */
+function title_mappings() {
+  static $titles;
+  if (isset($titles)) {
+    return $titles;
+  }
+
+  $titles = array(
+    'Ms.' => 0,
+    'Mr.' => 1,
+    'Mrs.' => 2,
+    'Dr.' => 3,
+    'Prof.' => 4,
+    'Sir.' => 5,
+    'Fr.' => 6,
+  );
+
+  return $titles;
+}
+
+/**
+ * Get the mapping for legacy countries to 2-letter country codes.
+ *
+ * @return array
+ *   An array of the legacy country mappings to 2-letter country codes.
+ */
+function legacy_country_mappings() {
+  // The final mappings are coming from country_get_list() in locale.inc.
+  static $legacy_country_mappings;
+  if (isset($legacy_country_mappings)) {
+    return $legacy_country_mappings;
+  }
+
+  $legacy_country_mappings = array(
+    "Afghanistan" => 'AF',
+    "Angola" => 'AO',
+    "Belgium" => 'BE',
+    "Burundi" => 'BI',
+    "Central African Republic" => 'CF',
+    "Chad" => 'TD',
+    "Cote d'Ivoire" => 'CI',
+    "Democratic Republic of Congo" => 'CD',
+    "Democratic Republic of Congo (DRC)" => 'CD',
+    "Ethiopia" => 'ET',
+    "France" => 'FR',
+    "Germany" => 'DE',
+    "Ghana" => 'GH',
+    "Indonesia" => 'ID',
+    "Ireland" => 'IE',
+    "Israel" => 'IL',
+    "Italy" => 'IT',
+    "Kenya" => 'KE',
+    "Norway" => 'NO',
+    "Pakistan" => 'PK',
+    "Panama" => 'PA',
+    "Peru" => 'PE',
+    "Philippines" => 'PH',
+    "Saudi Arabia" => 'SA',
+    "Senegal" => 'SN',
+    "Somalia" => 'SO',
+    "Sri Lanka" => 'LK',
+    "Sudan" => 'SD',
+    "Sweden" => 'SE',
+    "Suisse" => 'CH',
+    "Switzerland" => 'CH',
+    "Trinidad and Tobago" => 'TT',
+    "Uganda" => 'UG',
+    "UK" => 'GB',
+    "United Kingdom" => 'GB',
+    "United States" => 'US',
+    "United States of America" => 'US',
+    "USA" => 'US',
+    "Zimbabwe" => 'ZW',
+  );
+
+  return $legacy_country_mappings;
+}
+
+
+/**
+ * Returns the nid associated with the legacy id or FALSE if no node exists.
+ *
+ * @param int $id
+ *   The legacy id
+ *
+ * @return int
+ *   The nid of the node
+ */
+function iasc_contact_get_nid_by_legacyid($id) {
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'contact')
+    ->fieldCondition('field_legacy_id', 'value', $id, '=')
+    ->propertyOrderBy('nid', 'ASC')
+    ->range(0, 1);
+
+  $result = $query->execute();
+
+  if (isset($result['node'])) {
+    $nids = array_keys($result['node']);
+    return $nids[0];
+  }
+
+  return FALSE;
+}
+
+/**
+ * Callback for when the batch process finishes.
+ *
+ * @param bool $success
+ *   True if the batch process completed without errors.
+ * @param array $results
+ *   Information about the results set in iasc_taxonomy_import_term().
+ * @param array $operations
+ *   An array of details about the operations.
+ */
+function iasc_contact_import_contacts_finished($success, $results, $operations) {
+  if ($success) {
+    drupal_set_message(count($results['contact_processed']) . ' items processed.');
+    drupal_set_message(count($results['new_contact']) . ' new contacts imported.');
+    drupal_set_message(count($results['updated_contact']) . ' contacts updated.');
+
+    if (count($results['contact_skipped'])) {
+      drupal_set_message(count($results['contact_skipped']) . ' contacts were not imported. See log for details.');
+    }
+
+    drupal_set_message(count($results['body_processed']) . ' items processed.');
+    drupal_set_message(count($results['updated_body_contact']) . ' contacts updated with body memberships.');
+
+    if (count($results['body_skipped'])) {
+      drupal_set_message(count($results['body_skipped']) . ' body memberships were not imported. See log for details.');
+    }
+
+    drupal_set_message(count($results['org_processed']) . ' items processed.');
+    drupal_set_message(count($results['updated_org_contact']) . ' contacts updated with organisation memberships.');
+
+    if (count($results['org_skipped'])) {
+      drupal_set_message(count($results['org_skipped']) . ' org memberships were not imported. See log for details.');
+    }
+  }
+  else {
+    // $operations contains the operations that remained unprocessed.
+    $error_operation = reset($operations);
+    $message = t('An error occurred while processing %error_operation with arguments: @arguments',
+      array(
+        '%error_operation' => $error_operation[0],
+        '@arguments' => print_r($error_operation[1],
+          TRUE),
+      )
+    );
+    drupal_set_message($message, 'error');
+  }
 }

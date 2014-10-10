@@ -12,5 +12,3 @@ function iasc_configuration_install() {
   // Disable the tour modules as we don't need them.
   module_disable(array('bootstrap_tour'));
 }
-
-
