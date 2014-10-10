@@ -21,9 +21,6 @@ function iasc_install() {
 
   theme_disable(array('responsive_bartik', 'bartik'));
 
-  // Set the admin theme.
-  variable_set('admin_theme', 'oa_radix');
-
   // Editing/creating content should use the admin theme.
   variable_set('node_admin_theme', 1);
 

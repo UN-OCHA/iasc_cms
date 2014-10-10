@@ -21,7 +21,7 @@ function iasc_meeting_field_default_field_instances_alter(&$data) {
     1600 Pennsylvania Avenue, NW
     Washington, DC 20500
     http://www.whitehouse.gov/' */
-    $data['node-oa_event-field_oa_address']['widget']['weight'] = 7; /* WAS: 3 */
+    $data['node-oa_event-field_oa_address']['widget']['weight'] = 8; /* WAS: 3 */
   }
 }
 

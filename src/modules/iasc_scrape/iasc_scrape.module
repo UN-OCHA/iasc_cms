@@ -37,6 +37,11 @@ function iasc_scrape_scrape($type, $page = 1, $position = 1) {
       $element = new IASC\Element\ContactElement($client, $crawler, $page, $position);
       $id = 'contactid';
       break;
+
+    case 'meeting':
+      $element = new IASC\Element\MeetingElement($client, $crawler, $page, $position);
+      $id = 'meetingid';
+      break;
   }
 
   $values = array(
@@ -59,6 +64,19 @@ function iasc_scrape_scrape($type, $page = 1, $position = 1) {
       )
     )
   );
+
+  // Set next index value.
+  iasc_scrape_set_index($type, $page, $position);
+  $index = iasc_scrape_get_index($type);
+  drupal_set_message(
+    t('For @type, next: page - @page, position - @position',
+      array(
+        '@type' => $type,
+        '@page' => $index['page'],
+        '@position' => $index['position'],
+      )
+    )
+  );
 }
 
 /**
@@ -77,4 +95,95 @@ function iasc_scrape_save($values) {
       ->fields($record)
       ->execute();
   }
+}
+
+/**
+ * Set the index of a type so we can crawl.
+ */
+function iasc_scrape_set_index($type, $page, $position) {
+  // Each page on old IASC has no more than 20 elements.
+  if ($position >= 20) {
+    $position = 1;
+    $page++;
+  }
+  else {
+    $position++;
+  }
+  variable_set('iasc_' . $type . '_index',
+    array(
+      'type' => $type,
+      'page' => $page,
+      'position' => $position,
+    )
+  );
+}
+
+/**
+ * Get the index for an element type.
+ */
+function iasc_scrape_get_index($type) {
+  $index = variable_get('iasc_' . $type . '_index');
+  $page = (isset($index['page'])) ? $index['page'] : 1;
+  $position = (isset($index['position'])) ? $index['position'] : 1;
+  return array(
+    'type' => $type,
+    'page' => $page,
+    'position' => $position,
+  );
+}
+
+/**
+ * Save the node.
+ */
+function iasc_scrape_save_node($type) {
+  if (class_exists('IASC' . ucfirst($type))) {
+    $values = iasc_scrape_get_scraped_element($type);
+    $class = 'IASC' . ucfirst($type);
+    $node = new $class($values);
+    $node = $node->entity;
+    iasc_scrape_update($values['legacy_id'], $node->nid);
+    drupal_set_message(t(
+      '@type (@nodetype) saved. Nid: @nid Title: @title',
+      array(
+        '@type' => ucfirst($type),
+        '@nodetype' => $node->type,
+        '@nid' => $node->nid,
+        '@title' => $node->title,
+      )
+    ));
+  }
+}
+
+/**
+ * Get the latest element scrape that isn't saved.
+ * This is marked by status = 0.
+ */
+function iasc_scrape_get_scraped_element($type) {
+  $result = db_select('iasc_scrape', 'sc')
+    ->fields('sc', array('legacy_id', 'entity_id', 'data'))
+    ->condition('type', $type)
+    ->condition('status', 0)
+    ->range(0, 1)
+    ->execute()
+    ->fetchAssoc();
+
+  $data = unserialize($result['data']);
+  return array(
+    'legacy_id' => $result['legacy_id'],
+    'entity_id' => $result['entity_id'],
+    'data' => $data,
+  );
+}
+
+/**
+ * Update the row to set that it's scraped.
+ */
+function iasc_scrape_update($legacy_id, $entity_id) {
+  db_merge('iasc_scrape')
+    ->key(array('legacy_id' => $legacy_id))
+    ->fields(array(
+      'status' => 1,
+      'entity_id' => $entity_id,
+    ))
+    ->execute();
 }

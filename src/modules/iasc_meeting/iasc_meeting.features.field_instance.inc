@@ -10,6 +10,263 @@
 function iasc_meeting_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance: 'field_collection_item-field_agenda_items-field_ai_description'
+  $field_instances['field_collection_item-field_agenda_items-field_ai_description'] = array(
+    'bundle' => 'field_agenda_items',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_ai_description',
+    'label' => 'Description',
+    'required' => 0,
+    'settings' => array(
+      'linkit' => array(
+        'enable' => 0,
+        'insert_plugin' => '',
+      ),
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_agenda_items-field_ai_title'
+  $field_instances['field_collection_item-field_agenda_items-field_ai_title'] = array(
+    'bundle' => 'field_agenda_items',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 2,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_ai_title',
+    'label' => 'Item Title',
+    'required' => 0,
+    'settings' => array(
+      'linkit' => array(
+        'enable' => 0,
+        'insert_plugin' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 0,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_agenda_items-field_contact'
+  $field_instances['field_collection_item-field_agenda_items-field_contact'] = array(
+    'bundle' => 'field_agenda_items',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 4,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_contact',
+    'label' => 'Presenters',
+    'options_limit' => FALSE,
+    'options_limit_empty_behaviour' => 0,
+    'options_limit_fields' => array(),
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'references_dialog_add' => 0,
+        'references_dialog_edit' => 0,
+        'references_dialog_search' => 1,
+        'references_dialog_search_view' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 3,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_agenda_items-field_presenter_external'
+  $field_instances['field_collection_item-field_agenda_items-field_presenter_external'] = array(
+    'bundle' => 'field_agenda_items',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'You can use this field to enter Presenter(s) who are not in the Contacts database. ',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 5,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_presenter_external',
+    'label' => 'Presenter (External)',
+    'required' => 0,
+    'settings' => array(
+      'linkit' => array(
+        'enable' => 0,
+        'insert_plugin' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_agenda_items-field_referenced_docs'
+  $field_instances['field_collection_item-field_agenda_items-field_referenced_docs'] = array(
+    'bundle' => 'field_agenda_items',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 6,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_referenced_docs',
+    'label' => 'Relevant Documents',
+    'options_limit' => FALSE,
+    'options_limit_empty_behaviour' => 0,
+    'options_limit_fields' => array(),
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'references_dialog_add' => 1,
+        'references_dialog_edit' => 0,
+        'references_dialog_search' => 1,
+        'references_dialog_search_view' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 5,
+    ),
+  );
+
+  // Exported field_instance: 'node-oa_event-field_agenda_items'
+  $field_instances['node-oa_event-field_agenda_items'] = array(
+    'bundle' => 'oa_event',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Please note: If the agenda item does not have a referenced Document then the agenda item will be public <em>if</em> the Meeting is public.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'field_collection',
+        'settings' => array(
+          'add' => 'Add',
+          'delete' => 'Delete',
+          'description' => TRUE,
+          'edit' => 'Edit',
+          'view_mode' => 'full',
+        ),
+        'type' => 'field_collection_view',
+        'weight' => 18,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'ical' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_agenda_items',
+    'label' => 'Agenda Items',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'field_collection',
+      'settings' => array(),
+      'type' => 'field_collection_embed',
+      'weight' => 15,
+    ),
+  );
+
   // Exported field_instance: 'node-oa_event-field_authoring_bodies'
   $field_instances['node-oa_event-field_authoring_bodies'] = array(
     'bundle' => 'oa_event',
@@ -61,7 +318,7 @@ function iasc_meeting_field_default_field_instances() {
         'apply_chosen' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 12,
+      'weight' => 17,
     ),
   );
 
@@ -128,7 +385,7 @@ function iasc_meeting_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 9,
+      'weight' => 13,
     ),
   );
 
@@ -183,7 +440,7 @@ function iasc_meeting_field_default_field_instances() {
         'apply_chosen' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 8,
+      'weight' => 10,
     ),
   );
 
@@ -307,7 +564,7 @@ function iasc_meeting_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 10,
+      'weight' => 14,
     ),
   );
 
@@ -376,7 +633,7 @@ function iasc_meeting_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 11,
+      'weight' => 16,
     ),
   );
 
@@ -483,7 +740,7 @@ function iasc_meeting_field_default_field_instances() {
         'apply_chosen' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 17,
+      'weight' => 18,
     ),
   );
 
@@ -491,18 +748,26 @@ function iasc_meeting_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Add an existing or Create a new meeting agenda Document that should be associated with this Meeting.');
   t('Add an existing or Create a new meeting note Document that should be associated with this Meeting.');
+  t('Agenda Items');
   t('Authoring Bodies');
   t('Contact');
+  t('Description');
+  t('Item Title');
   t('Meeting Agendas');
   t('Meeting Host(s)');
   t('Meeting Notes');
   t('Meeting Type');
   t('Please enter additional information about the meeting. <strong>Please note:</strong> This information will not be made publicly available and has privacy restrictions.');
+  t('Please note: If the agenda item does not have a referenced Document then the agenda item will be public <em>if</em> the Meeting is public.');
   t('Please select one or more authoring bodies for this meeting.');
   t('Please select the host(s) for this meeting.');
   t('Please select the time zones for this meeting.');
+  t('Presenter (External)');
+  t('Presenters');
   t('Private Details');
+  t('Relevant Documents');
   t('Time Zone');
+  t('You can use this field to enter Presenter(s) who are not in the Contacts database. ');
 
   return $field_instances;
 }

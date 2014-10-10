@@ -190,3 +190,12 @@ projects[colorbox][subdir] = contrib
 projects[references_dialog][version] = 1.0-beta1
 projects[references_dialog][subdir] = contrib
 
+projects[styleguide][version] = 1.1
+projects[styleguide][subdir] = contrib
+
+projects[radix_layouts][version] = 3.0
+projects[radix_layouts][subdir] = contrib
+
+; Supports grouping of fields for Agenda items
+projects[field_collection][version] = 1.0-beta7
+projects[field_collection][subdir] = contrib

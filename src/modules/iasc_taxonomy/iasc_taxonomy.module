@@ -142,7 +142,7 @@ function iasc_taxonomy_import_term($chunk, $message, $vocabulary, &$context) {
 
   foreach ($chunk as $term_name) {
     // Check to see if this term already exists in our vocabulary.
-    $term_name = trim(check_plain($term_name));
+    $term_name = trim($term_name);
     $term = taxonomy_get_term_by_name($term_name, $vocabulary->machine_name);
 
     if (!empty($term)) {
