@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * @file
+ * Install file for IASC Configuration.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function iasc_configuration_install() {
+  // Disable the tour modules as we don't need them.
+  module_disable(array('bootstrap_tour'));
+
+  oa_buttons_create_term('section_type', 'Document Section', 'Allows users to create <em>Documents</em> and displays a list for others to read.', array('oa_wiki_page'), 'node:oa_section:document_section');
+}
