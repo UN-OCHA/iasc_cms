@@ -36,10 +36,30 @@ class IASCMeeting extends IASCDefault {
     $this->lists = array(
       'field_time_zone',
     );
+
+    // Groups.
+    $this->groups = array(
+      'og_group_ref',
+    );
+
+    // Date fields.
+    $this->dates = array(
+      'field_oa_date' => array(
+        'start' => array(
+          'date' => 'field_oa_start_date',
+          'hour' => 'field_oa_start_time_hour',
+          'min' => 'field_oa_start_time_min',
+        ),
+        'end' => array(
+          'date' => 'field_oa_end_date',
+          'hour' => 'field_oa_end_time_hour',
+          'min' => 'field_oa_end_time_min',
+        ),
+      ),
+    );
     parent::__construct('oa_event');
 
-    $reference = array(
-      'og_group_ref',
+    $references = array(
       'field_contact',
     );
   }

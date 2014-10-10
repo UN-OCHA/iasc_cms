@@ -35,7 +35,24 @@ class MeetingElement extends AbstractElement {
         'get_text' => TRUE,
       ),
       'title' => array('selector' => '#ctl00_ContentPlaceHolder1_ctl00_txtTitle'),
-      'field_oa_date' => array('selector' => '#ctl00_ContentPlaceHolder1_ctl00_txtStartDate'),
+      'field_oa_start_date' => array('selector' => '#ctl00_ContentPlaceHolder1_ctl00_txtStartDate'),
+      'field_oa_end_date' => array('selector' => '#ctl00_ContentPlaceHolder1_ctl00_txtEndDate'),
+      'field_oa_start_time_hour' => array(
+        'selector' => '#ctl00_ContentPlaceHolder1_ctl00_ddlStartTime1 option[selected="selected"]',
+        'get_text' => TRUE,
+      ),
+      'field_oa_start_time_min' => array(
+        'selector' => '#ctl00_ContentPlaceHolder1_ctl00_ddlStartTime2 option[selected="selected"]',
+        'get_text' => TRUE,
+      ),
+      'field_oa_end_time_hour' => array(
+        'selector' => '#ctl00_ContentPlaceHolder1_ctl00_ddlEndTime1 option[selected="selected"]',
+        'get_text' => TRUE,
+      ),
+      'field_oa_end_time_min' => array(
+        'selector' => '#ctl00_ContentPlaceHolder1_ctl00_ddlEndTime2 option[selected="selected"]',
+        'get_text' => TRUE,
+      ),
       'field_time_zone' => array(
         'selector' => '#ctl00_ContentPlaceHolder1_ctl00_ddlZone option[selected="selected"]',
         'get_text' => TRUE,

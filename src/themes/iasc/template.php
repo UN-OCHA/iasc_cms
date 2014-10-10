@@ -23,6 +23,28 @@ function iasc_css_alter(&$css) {
   unset($css[$oa_radix_path . '/assets/stylesheets/oa_radix-print.css']);
 }
 
+/**
+ * Implements template_preprocess_entity().
+ */
+function iasc_preprocess_entity(&$vars) {
+  if ($vars['elements']['#bundle'] == "field_agenda_items" && $vars['elements']['#entity_type'] == "field_collection_item") {
+    $combined_contacts = array();
+    if (!empty($vars['elements']['field_contact'])) {
+      $contacts = array_intersect_key($vars['elements']['field_contact'], array_flip(element_children($vars['elements']['field_contact'])));
+      foreach ($contacts as $contact) {
+        $combined_contacts[] = $contact['#markup'];
+      }
+    }
+
+    if (!empty($vars['elements']['field_presenter_external'])) {
+      $external_contacts = array_intersect_key($vars['elements']['field_presenter_external'], array_flip(element_children($vars['elements']['field_presenter_external'])));
+      foreach ($external_contacts as $contact) {
+        $combined_contacts[] = $contact['#markup'];
+      }
+    }
+    $vars['elements']['combined_contacts'] = implode(', ', $combined_contacts);
+   }
+}
 
 /**
  * Implements template_preprocess_html().

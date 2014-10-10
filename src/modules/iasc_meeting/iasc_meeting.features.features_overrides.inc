@@ -11,15 +11,26 @@ function iasc_meeting_features_override_default_overrides() {
   // This code is only used for UI in features. Exported alters hooks do the magic.
   $overrides = array();
 
+  // Exported overrides for: field_group
+  $overrides["field_group.group_oa_access|node|oa_event|form.data|children|0"] = 'oa_other_spaces_ref';
+  $overrides["field_group.group_oa_access|node|oa_event|form.data|children|1"] = 'oa_section_ref';
+  $overrides["field_group.group_oa_access|node|oa_event|form.data|children|2"] = 'og_group_ref';
+  $overrides["field_group.group_oa_access|node|oa_event|form.data|weight"] = 9;
+  $overrides["field_group.group_oa_event_location|node|oa_event|form.data|weight"] = 6;
+
   // Exported overrides for: field_instance
   $overrides["field_instance.node-oa_event-body.description"] = 'Please enter the public information about the meeting. <strong>Please note:</strong> This information will be made publicly available. Use the <em>Private Details</em> field to contain information that should remain private.';
   $overrides["field_instance.node-oa_event-body.label"] = 'Public Information';
+  $overrides["field_instance.node-oa_event-body.widget|weight"] = 3;
   $overrides["field_instance.node-oa_event-field_oa_address.comment_alter"] = 0;
   $overrides["field_instance.node-oa_event-field_oa_address.description"] = '<p>To add a physical location for the meeting, please enter the address. A map widget will automatically populate with the correct coordinates when you save the node. For example:<br />
-          1600 Pennsylvania Avenue, NW<br />
-          Washington, DC 20500</p>
-          <p>If you need to add additional information such as a virtual location for the meeting (meeting call/dial-in information), please insert a break after your physical address and enter your additional details</p>';
-  $overrides["field_instance.node-oa_event-field_oa_address.widget|weight"] = 7;
+              1600 Pennsylvania Avenue, NW<br />
+              Washington, DC 20500</p>
+              <p>If you need to add additional information such as a virtual location for the meeting (meeting call/dial-in information), please insert a break after your physical address and enter your additional details</p>';
+  $overrides["field_instance.node-oa_event-field_oa_address.widget|weight"] = 8;
+  $overrides["field_instance.node-oa_event-field_oa_date.widget|weight"] = 7;
+  $overrides["field_instance.node-oa_event-field_oa_geo_location.widget|weight"] = 11;
+  $overrides["field_instance.node-oa_event-og_vocabulary.widget|weight"] = 12;
 
   // Exported overrides for: node
   $overrides["node.oa_event.description"] = 'Create a Meeting to hold information about the next meeting event and to reference Agenda and the Meeting Notes Documents.';
@@ -68,6 +79,12 @@ function iasc_meeting_features_override_default_overrides() {
   $overrides["page_manager_handlers.node_edit_panel_context_7.conf|display|panels|sidebar|5"] = 'new-0b869cc5-d419-48ed-bcd1-4e6ec0d15a34';
   $overrides["page_manager_handlers.node_edit_panel_context_7.conf|display|panels|sidebar|6"] = 'new-68f32ccd-0cec-45db-9ecd-112683c079ae';
   $overrides["page_manager_handlers.node_edit_panel_context_7.conf|display|panels|sidebar|7"] = 'new-457a0b07-9259-4092-a16e-f542822ee2af';
+
+  // Exported overrides for: variable
+  $overrides["variable.field_bundle_settings_node__oa_event.value|extra_fields|form|path|weight"] = 2;
+
+  // Exported overrides for: views_view
+  $overrides["views_view.oa_event_detail.display|default|display_options|fields|term_node_tid"]["DELETED"] = TRUE;
 
  return $overrides;
 }
