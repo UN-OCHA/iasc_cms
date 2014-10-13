@@ -63,10 +63,10 @@ $font-size-h6:               ceil(($font-size-base * 0.90909091)); // ~11px
 //* Unit-less `line-height` for use in components like buttons.
 $line-height-base:          1.53846154; // 20/13
 //* Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
-// $line-height-computed:    floor(($font-size-base * $line-height-base)) // ~20px
+$line-height-computed:       floor(($font-size-base * $line-height-base)); // ~20px
 
 //* By default, this inherits from the `<body>`.
-$headings-font-family:        $font-family-sans-serif;
+$headings-font-family:        $font-family-sans-serif; 
 // $headings-font-weight:     500
 // $headings-line-height:     1.1
 // $headings-color:           inherit
@@ -331,8 +331,8 @@ $input-border-radius:            0px;
 //##
 
 // Basics of a navbar
-$navbar-height:                       0px; //50px
-// $navbar-margin-bottom:             $line-height-computed
+$navbar-height:                       40px;
+$navbar-margin-bottom:                $line-height-computed;
 $navbar-border-radius:                8px;
 // $navbar-padding-horizontal:        floor(($grid-gutter-width / 2))
 // $navbar-padding-vertical:          (($navbar-height - $line-height-computed) / 2)

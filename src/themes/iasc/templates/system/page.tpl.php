@@ -10,67 +10,59 @@
  * @see html.tpl.php
  */
 ?>
-<?php if (!empty($oa_toolbar_panel)): ?>
-  <div class="responsive-panels-region responsive-panels-region-top container">
-    <?php if ($logo): ?>
-      <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo" class="pull-left brand">
-         <img src="<?php print $logo; ?>"><div id="site-name"><?php print $site_name; ?></div>
-      </a>
-    <?php endif; ?>
-    <div id="oa-navbar" class="navbar navbar-default <?php print $oa_toolbar_class; ?>">
-      <div class="navbar-inner">
-        <?php print $oa_toolbar_panel; ?>
-      </div>
-    </div>
+<header class="container"> 
+  <div class="top clearfix">
+  <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo" class="navbar-left brand">
+     <img src="<?php print $logo; ?>" alt="<?php print $site_name; ?>">
+  </a>
+  <?php if($search_form): ?>
+    <?php print $search_form; ?>
+  <?php endif; ?> 
+  <?php if($top_menu): ?>
+    <nav class="navbar-top navbar-right">
+      <?php print theme('links__system_main_menu', array(
+        'links' => $top_menu,
+        'attributes' => array(
+          'class' => array('list-inline'),
+        ),
+      )); ?>
+    </nav>
+  <?php endif; ?>
   </div>
-<?php else: ?>
-  <header id="header" class="header" role="header">
-    <div class="container">
-      <div class="row">
-        <div class="span12">
-          <div id="navigation" class="navbar">
-            <div class="navbar-inner">
-              <div class="container clearfix">
-                <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
-                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                </a>
-
-                <?php if ($logo): ?>
-                  <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo" class="pull-left brand">
-                     <img src="<?php print $logo; ?>"><div id="site-name"><?php print $site_name; ?></div>
-                  </a>
-                <?php endif; ?>
-
-                <nav id="main-nav" class="pull-left" role="navigation">
-                  <?php print render($page['navigation']); ?>
-                </nav>
-
-                <?php if ($user_badge): ?>
-                  <?php print $user_badge; ?>
-                <?php endif; ?>
-
-                <?php if ($main_menu): ?>
-                  <nav id="main-menu" class="main-menu" role="navigation">
-                    <?php print render($main_menu); ?>
-                  </nav> <!-- /#main-menu -->
-                <?php endif; ?>
-              </div>
-            </div>
-          </div> <!-- /#navigation -->
-        </div>
+  <?php if ($mainmenu): ?>
+    <nav class="navbar navbar-inverse clearfix" role="navigation">
+      <button type="button" class="navbar-toggle collapsed navbar-left" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Home</a></li>
+          <li><a href="#">IASC</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#">Principals</a></li>
+              <li><a href="#">Subsidiary Bodies</a></li>
+              <li><a href="#">Transformative Agenda</a></li>
+              <li class="divider"></li>
+              <li><a href="#">Create New Setciton</a></li>
+              <li class="divider"></li>
+              <li><a href="#">One more separated link</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Weekly</a></li>
+          <li><a href="#">Working Groups</a></li>
+          <li><a href="#">Priorities/Subsidary bodies</a></li>
+          <li><a href="#">Prinipals</a></li>
+        </ul>
       </div>
-    </div>
-    <?php if (!empty($oa_banner)): ?>
-      <?php print $oa_banner; ?>
-    <?php endif; ?>
-    <?php if (!empty($oa_space_menu)): ?>
-      <?php print $oa_space_menu; ?>
-    <?php endif; ?>
-  </header>
-<?php endif; ?>
+    </nav> <!-- /#main-menu -->
+  <?php endif; ?>
+</header>
 
 <div id="main-wrapper">
   <div id="main" class="main container">
