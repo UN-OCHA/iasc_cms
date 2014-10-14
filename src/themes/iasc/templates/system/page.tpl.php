@@ -20,21 +20,14 @@
   <?php endif; ?> 
   <nav class="navbar-top navbar-right">
     <ul class="list-inline">
-      <li><a href="/"><span class="icon-calendar visible-sm-*"></span><span class="hidden-xs">Calender</span></a>
-      </li><li><a href="/"><span class="icon-drawer visible-sm-*"></span><span class="hidden-xs">Resources</span></a></li>
-      <li><a href="/"><span class="icon-mail visible-sm-*"></span><span class="hidden-xs">Contact Us</span></a></li>
+      <li><a href="/"><span class="icomoon-calendar visible-sm visible-xs"></span><span class="hidden-sm hidden-xs">Calender</span></a>
+      </li><li><a href="/"><span class="icomoon-drawer visible-sm visible-xs"></span><span class="hidden-sm hidden-xs">Resources</span></a></li>
+      <li><a href="/"><span class="icomoon-mail visible-sm visible-xs"></span><span class="hidden-sm hidden-xs">Contact Us</span></a></li>
     </ul>
   </nav>
   </div>
   <?php if ($mainmenu): ?>
-    <nav class="navbar navbar-inverse clearfix" role="navigation">
-      <button type="button" class="navbar-toggle collapsed navbar-left" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      
+    <nav class="navbar navbar-inverse clearfix hidden-xs hidden-sm" role="navigation">      
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
           <li class="active"><a href="#">Home</a></li>

@@ -213,18 +213,18 @@ $input-border-radius:            0px;
 //* Background for the dropdown menu.
 // $dropdown-bg:                    #fff
 //* Dropdown menu `border-color`.
-// $dropdown-border:                rgba(0,0,0,.15)
+$dropdown-border:                $brand-primary;
 //* Dropdown menu `border-color` **for IE8**.
 // $dropdown-fallback-border:       #ccc
 //* Divider color for between dropdown items.
 // $dropdown-divider-bg:            #e5e5e5
 
 //* Dropdown link text color.
-// $dropdown-link-color:            $gray-dark
+$dropdown-link-color:            $brand-primary;
 //* Hover color for dropdown links.
 // $dropdown-link-hover-color:      darken($gray-dark, 5%)
 //* Hover background for dropdown links.
-// $dropdown-link-hover-bg:         #f5f5f5
+$dropdown-link-hover-bg:         lighten($brand-primary, 75%);
 
 //* Active dropdown menu item text color.
 // $dropdown-link-active-color:     $component-active-color
