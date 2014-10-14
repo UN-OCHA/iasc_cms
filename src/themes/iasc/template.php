@@ -43,7 +43,7 @@ function iasc_preprocess_entity(&$vars) {
       }
     }
     $vars['elements']['combined_contacts'] = implode(', ', $combined_contacts);
-   }
+  }
 }
 
 /**
@@ -53,7 +53,7 @@ function iasc_preprocess_html(&$vars) {
   // Add Google fonts.
   drupal_add_css('http://fonts.googleapis.com/css?family=Montserrat:400,700', 'external');
   drupal_add_css('http://fonts.googleapis.com/css?family=Merriweather:400,400italic,700,700italic', 'external');
-  // Load Development Icomoon fonts
+  // Load Development Icomoon fonts.
   drupal_add_css('http://i.icomoon.io/public/88549393cd/IASC/style.css', 'external');
 }
 
@@ -92,7 +92,6 @@ function iasc_preprocess_page(&$variables) {
       'href' => '<front>',
     ),
   );
-
 
   // Move Panel IPE on top of primary tabs.
   if (!empty($variables['page']['page_bottom']['panels_ipe'])) {
