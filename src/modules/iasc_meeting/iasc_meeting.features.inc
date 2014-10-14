@@ -283,34 +283,6 @@ function iasc_meeting_panelizer_defaults_override_alter(&$data) {
           'locks' => array(),
           'uuid' => '64975a0b-8b8d-4816-8d78-0a066a557a04',
         ); /* WAS: '' */
-    $data['node:oa_event:default']->display->content['new-a9f6283b-bf22-4353-8833-be04cb53b8ce'] = (object) array(
-          'pid' => 'new-a9f6283b-bf22-4353-8833-be04cb53b8ce',
-          'panel' => 'contentmain',
-          'type' => 'entity_field',
-          'subtype' => 'node:field_authoring_bodies',
-          'shown' => TRUE,
-          'access' => array(),
-          'configuration' => array(
-            'label' => 'above',
-            'formatter' => 'taxonomy_term_reference_link',
-            'delta_limit' => 0,
-            'delta_offset' => 0,
-            'delta_reversed' => 0,
-            'formatter_settings' => array(),
-            'context' => array(),
-            'override_title' => 0,
-            'override_title_text' => '',
-          ),
-          'cache' => array(),
-          'style' => array(
-            'settings' => NULL,
-          ),
-          'css' => array(),
-          'extras' => array(),
-          'position' => 3,
-          'locks' => array(),
-          'uuid' => 'a9f6283b-bf22-4353-8833-be04cb53b8ce',
-        ); /* WAS: '' */
     $data['node:oa_event:default']->display->content['new-ba879f23-61fc-4869-a081-d6663e9d1523'] = (object) array(
           'pid' => 'new-ba879f23-61fc-4869-a081-d6663e9d1523',
           'panel' => 'contentmain',
