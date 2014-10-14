@@ -43,7 +43,7 @@ function iasc_preprocess_entity(&$vars) {
       }
     }
     $vars['elements']['combined_contacts'] = implode(', ', $combined_contacts);
-   }
+  }
 }
 
 /**
@@ -53,6 +53,8 @@ function iasc_preprocess_html(&$vars) {
   // Add Google fonts.
   drupal_add_css('http://fonts.googleapis.com/css?family=Montserrat:400,700', 'external');
   drupal_add_css('http://fonts.googleapis.com/css?family=Merriweather:400,400italic,700,700italic', 'external');
+  // Load Development Icomoon fonts.
+  drupal_add_css('http://i.icomoon.io/public/88549393cd/IASC/style.css', 'external');
 }
 
 /**
@@ -63,6 +65,33 @@ function iasc_preprocess_page(&$variables) {
   if ($copyright = theme_get_setting('copyright')) {
     $variables['copyright'] = check_markup($copyright['value'], $copyright['format']);
   }
+
+  $variables['mainmenu'] = array(
+    'home' => array(
+      'title' => t('Home'),
+      'href' => '<front>',
+    ),
+    'iasc' => array(
+      'title' => t('IASC'),
+      'href' => '<front>',
+    ),
+    'weekly' => array(
+      'title' => t('Weekly'),
+      'href' => '<front>',
+    ),
+    'working-groups' => array(
+      'title' => t('Working Groups'),
+      'href' => '<front>',
+    ),
+    'priorities' => array(
+      'title' => t('Priorities/Subsidary bodies'),
+      'href' => '<front>',
+    ),
+    'principals' => array(
+      'title' => t('Principals'),
+      'href' => '<front>',
+    ),
+  );
 
   // Move Panel IPE on top of primary tabs.
   if (!empty($variables['page']['page_bottom']['panels_ipe'])) {

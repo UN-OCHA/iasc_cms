@@ -1,0 +1,11 @@
+.navbar-form {
+  .form-type-textfield input[type="text"] {
+    @include transition(width, .5s);
+    width: 28px;
+  }
+
+  .form-type-textfield input[type="text"].grow {
+    @include transition(width, .2s);
+    width: 200px;
+  }
+}

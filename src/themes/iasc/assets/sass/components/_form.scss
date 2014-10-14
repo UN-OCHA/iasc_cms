@@ -2,6 +2,23 @@
  * @file
  * Form elements overides from global defaults
  */
+
 .navbar-form {
-  margin: 0;
+  margin: 0; padding: 0;
+  .form-item {width: 100%;}
+  .form-type-textfield { 
+    position: relative;
+    input[type="text"] {
+      @include border-radius(1em);
+      padding-left: 23px;
+      width: 100%;
+    }
+    &:after {
+      @include icomoon;
+      content: '\e604';
+      z-index: 2;
+      position: absolute;
+      left: 8px; top: 7px;
+    }
+  }
 }
