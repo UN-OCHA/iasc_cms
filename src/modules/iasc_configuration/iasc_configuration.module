@@ -13,7 +13,7 @@ include_once 'iasc_configuration.features.inc';
  *   An associative array of options:
  *   - file      : the path to the csv file
  *   - delimiter : 1 character csv delimiter (default: ';')
- *   - enclosure : character that wraps the term (default: '"')
+ *   - enclosure : character that wraps the data (default: '"')
  *   - delete_all: delete all spaces and sections before import (default: FALSE)
  *
  * @return array
@@ -225,6 +225,23 @@ function iasc_configuration_create_node($item, &$context) {
       $section_term = current($section_term);
       $node->field_oa_section[LANGUAGE_NONE][0]['tid'] = $section_term->tid;
     }
+    else {
+      // We need to create the section term since this is a brand new section
+      // that does not exist out of the box.
+      $section_term = new stdClass();
+      $section_term->name = $section_type;
+      $section_term->vocabulary_machine_name = 'section_type';
+
+      if (SAVED_NEW == taxonomy_term_save($section_term)) {
+        $node->field_oa_section[LANGUAGE_NONE][0]['tid'] = $section_term->tid;
+      }
+      else {
+        $section_term = taxonomy_get_term_by_name('Default', 'section_type');
+        $section_term = current($section_term);
+        $node->field_oa_section[LANGUAGE_NONE][0]['tid'] = $section_term->tid;
+      }
+
+    }
   }
 
   if (!empty($item['parent']) && !empty($parent_nid)) {
@@ -289,7 +306,7 @@ function iasc_configuration_get_node_by_name($type, $title, $space_nid = 0) {
  * @param bool $success
  *   True if the batch process completed without errors.
  * @param array $results
- *   Information about the results set in iasc_taxonomy_import_term().
+ *   Information about the results set in iasc_configuration_import().
  * @param array $operations
  *   An array of details about the operations.
  */

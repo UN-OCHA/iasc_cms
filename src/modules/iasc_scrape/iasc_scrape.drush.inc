@@ -27,6 +27,19 @@ function iasc_scrape_drush_command() {
     ),
   );
 
+  $items['iasc-scrape-save-node'] = array(
+    'description' => 'Save node from scrape',
+    'arguments' => array(
+      'type' => 'The type of element to save',
+    ),
+    'bootstrap' => DRUSH_BOOTSTRAP_DRUPAL_LOGIN,
+    'callback' => 'drush_iasc_scrape_save_node',
+    'aliases' => array('iasc-sn'),
+    'examples' => array(
+      'drush iasc-sn meeting' => 'Save a meeting node using the latest unsaved scrape.',
+    ),
+  );
+
   return $items;
 }
 
@@ -49,7 +62,7 @@ function drush_iasc_scrape_scrape($type, $page = 1, $position = 1) {
 
   // If we don't have a type, then don't continue.
   if (empty($type)) {
-    drush_set_error('Missing type', dt('You need to set the type to scrape, i.e. \'contacts\'.'));
+    drush_set_error('Missing type', dt('You need to set the type to scrape, i.e. \'contact\'.'));
     return;
   }
 
@@ -66,4 +79,21 @@ function drush_iasc_scrape_scrape($type, $page = 1, $position = 1) {
 
   // Scrape.
   iasc_scrape_scrape($type, $page, $position);
+}
+
+/**
+ * Callback to execute 'iasc-scrape-save-node'.
+ */
+function drush_iasc_scrape_save_node($type) {
+  // Start process.
+  drush_print('Checking options...');
+
+  // If we don't have a type, then don't continue.
+  if (empty($type)) {
+    drush_set_error('Missing type', dt('You need to set the type to save, i.e. \'meeting\'.'));
+    return;
+  }
+
+  // Save.
+  iasc_scrape_save_node($type);
 }
