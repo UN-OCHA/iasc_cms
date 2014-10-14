@@ -20,6 +20,7 @@ h6, .h6 {
 
 ol, ul {
   padding: 0;
+  li {list-style-position: inside;}
 }
 
 figcaption,
@@ -32,12 +33,10 @@ q {
   font-style: italic;
 }
 
-// .form-managed-file {
-//   @extend .input-group;
-// }
-
-// .form-file {
-//   @extend .form-control;
-// }
-
+.content {
+  img { padding: $line-height-computed / 2; }
+  p + img { padding-top: 0px } // remove top padding as paragraphs already provides it
+  img:not(.pull-right) { padding-left: 0 }
+  img.pull-right { padding-right: 0 }
+}
 

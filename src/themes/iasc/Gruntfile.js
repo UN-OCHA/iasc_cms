@@ -1,15 +1,21 @@
 module.exports = function(grunt) {
   grunt.initConfig({
     watch: {
+      options: {
+        livereload: true,
+      },
       css: {
         files: [
           '**/*.sass',
           '**/*.scss',
         ],
-        tasks: ['compass'],
-        options: {
-          livereload: true,
-        }
+        tasks: ['compass']
+      },
+      html: {
+        files: [
+          '**/*.php',
+          '**/*.html',
+        ]
       },
       svg: {
         files: [
