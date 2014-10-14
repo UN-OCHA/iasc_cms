@@ -1463,7 +1463,7 @@ a {
 }
 /* line 53, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_scaffolding.scss */
 a:hover, a:focus {
-  color: #901107;
+  color: #d9190a;
   text-decoration: underline;
 }
 /* line 58, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_scaffolding.scss */
@@ -4307,7 +4307,7 @@ select[multiple].input-lg,
 }
 /* line 105, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_buttons.scss */
 .btn-link:hover, .btn-link:focus {
-  color: #901107;
+  color: #d9190a;
   text-decoration: underline;
   background-color: transparent;
 }
@@ -5932,7 +5932,7 @@ ul#oa_tours > li > .dropdown-menu,
 .pagination > li > a:hover, .pagination > li > a:focus,
 .pagination > li > span:hover,
 .pagination > li > span:focus {
-  color: #901107;
+  color: #d9190a;
   background-color: #eeeeee;
   border-color: #dddddd;
 }
@@ -11227,7 +11227,7 @@ ul.nav > li.dropdown:after {
 }
 /* line 35, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/compass_radix-3.0.13/stylesheets/compass_radix/_menu.scss */
 .nav-expanded > li > a:hover, .nav-expanded > li > a:focus, .nav-expanded > li > a.active, .nav-expanded > li > a.active-trail {
-  color: #901107;
+  color: #d9190a;
   background: none;
 }
 /* line 40, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/compass_radix-3.0.13/stylesheets/compass_radix/_menu.scss */
@@ -11251,7 +11251,7 @@ ul.nav > li.dropdown:after {
 }
 /* line 53, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/compass_radix-3.0.13/stylesheets/compass_radix/_menu.scss */
 .nav-expanded > li ul.dropdown-menu li a:hover, .nav-expanded > li ul.dropdown-menu li a:focus, .nav-expanded > li ul.dropdown-menu li a.active, .nav-expanded > li ul.dropdown-menu li a.active-trail {
-  color: #901107;
+  color: #d9190a;
   background: none;
 }
 /* line 59, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/compass_radix-3.0.13/stylesheets/compass_radix/_menu.scss */
@@ -11272,7 +11272,7 @@ ul.nav > li.dropdown:after {
 }
 /* line 71, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/compass_radix-3.0.13/stylesheets/compass_radix/_menu.scss */
 .nav-expanded > li.open > a:hover, .nav-expanded > li.open > a:focus, .nav-expanded > li.open > a.active, .nav-expanded > li.open > a.active-trail {
-  color: #901107;
+  color: #d9190a;
   background: none;
 }
 
@@ -13151,7 +13151,7 @@ a {
 }
 /* line 53, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_scaffolding.scss */
 a:hover, a:focus {
-  color: #901107;
+  color: #d9190a;
   text-decoration: underline;
 }
 /* line 58, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_scaffolding.scss */
@@ -15995,7 +15995,7 @@ select[multiple].input-lg,
 }
 /* line 105, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_buttons.scss */
 .btn-link:hover, .btn-link:focus {
-  color: #901107;
+  color: #d9190a;
   text-decoration: underline;
   background-color: transparent;
 }
@@ -17620,7 +17620,7 @@ ul#oa_tours > li > .dropdown-menu,
 .pagination > li > a:hover, .pagination > li > a:focus,
 .pagination > li > span:hover,
 .pagination > li > span:focus {
-  color: #901107;
+  color: #d9190a;
   background-color: #eeeeee;
   border-color: #dddddd;
 }
@@ -19978,6 +19978,18 @@ h6, .h6 {
 /* line 21, ../sass/base/_elements.scss */
 ol, ul {
   padding: 0;
+}
+
+/* line 26, ../sass/base/_elements.scss */
+figcaption,
+figure {
+  font-size: 12px;
+  font-style: italic;
+}
+
+/* line 31, ../sass/base/_elements.scss */
+q {
+  font-style: italic;
 }
 
 @font-face {

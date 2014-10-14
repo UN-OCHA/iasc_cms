@@ -21,3 +21,23 @@ h6, .h6 {
 ol, ul {
   padding: 0;
 }
+
+figcaption,
+figure {
+  font-size: ($font-size-base - 1);
+  font-style: italic;
+}
+
+q {
+  font-style: italic;
+}
+
+// .form-managed-file {
+//   @extend .input-group;
+// }
+
+// .form-file {
+//   @extend .form-control;
+// }
+
+
