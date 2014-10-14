@@ -18,16 +18,13 @@
   <?php if($search_form): ?>
     <?php print $search_form; ?>
   <?php endif; ?> 
-  <?php if($top_menu): ?>
-    <nav class="navbar-top navbar-right">
-      <?php print theme('links__system_main_menu', array(
-        'links' => $top_menu,
-        'attributes' => array(
-          'class' => array('list-inline'),
-        ),
-      )); ?>
-    </nav>
-  <?php endif; ?>
+  <nav class="navbar-top navbar-right">
+    <ul class="list-inline">
+      <li><a href="/"><span class="icon-calendar visible-sm-*"></span><span class="hidden-xs">Calender</span></a>
+      </li><li><a href="/"><span class="icon-drawer visible-sm-*"></span><span class="hidden-xs">Resources</span></a></li>
+      <li><a href="/"><span class="icon-mail visible-sm-*"></span><span class="hidden-xs">Contact Us</span></a></li>
+    </ul>
+  </nav>
   </div>
   <?php if ($mainmenu): ?>
     <nav class="navbar navbar-inverse clearfix" role="navigation">

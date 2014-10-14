@@ -71,23 +71,6 @@ function iasc_preprocess_page(&$variables) {
     ),
   );
 
-  $variables['top_menu'] = array(
-    'calender' => array(
-      'title' => t('Calender'),
-      'href' => '<front>',
-      'attributes' => array('class' => array('icon-calendar .visible-sm-*')),
-    ),
-    'resources' => array(
-      'title' => t('Resources'),
-      'href' => '<front>',
-      'attributes' => array('class' => array('icon-drawer .visible-sm-*')),
-    ),
-    'contact-us' => array(
-      'title' => t('Contact Us'),
-      'href' => '<front>',
-      'attributes' => array('class' => array('icon-mail .visible-sm-*')),
-    ),
-  );
 
   // Move Panel IPE on top of primary tabs.
   if (!empty($variables['page']['page_bottom']['panels_ipe'])) {
@@ -95,22 +78,6 @@ function iasc_preprocess_page(&$variables) {
     unset($variables['page']['page_bottom']['panels_ipe']);
     array_push($variables['page']['panelipe'], $panels_ipe);
   }
-}
-
-/**
- * Implements theme_links__system_main_menu().
- */
-function iasc_links__system_main_menu($variables) {
-  dsm($variables);
-  $output = '';
-  $output .= '<ul class="' . implode(' ', $variables['attributes']['class']) . '">';
-  foreach ($variables['links'] as $link) {
-    $output .= '<li>';
-    $output .= l('<span class="hidden-xs">' . $link['title'] . '</span>', $link['href'], $link, array('html' => TRUE));
-    $output .= '</li>';
-  }
-  $output .= '</ul>';
-  return $output;
 }
 
 /**
