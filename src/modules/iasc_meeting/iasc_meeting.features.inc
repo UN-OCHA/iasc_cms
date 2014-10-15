@@ -70,16 +70,6 @@ function iasc_meeting_node_info_alter(&$data) {
  */
 function iasc_meeting_default_page_manager_handlers_alter(&$data) {
   if (isset($data['node_edit_panel_context_7'])) {
-    $data['node_edit_panel_context_7']->conf['display']->content['new-0b869cc5-d419-48ed-bcd1-4e6ec0d15a34']->access['plugins'] = array(
-      0 => array(
-        'name' => 'perm',
-        'settings' => array(
-          'perm' => 'administer content types',
-        ),
-        'context' => 'logged-in-user',
-        'not' => FALSE,
-      ),
-    ); /* WAS: '' */
     $data['node_edit_panel_context_7']->conf['display']->content['new-457a0b07-9259-4092-a16e-f542822ee2af'] = (object) array(
           'pid' => 'new-457a0b07-9259-4092-a16e-f542822ee2af',
           'panel' => 'sidebar',
@@ -282,34 +272,6 @@ function iasc_meeting_panelizer_defaults_override_alter(&$data) {
           'position' => 2,
           'locks' => array(),
           'uuid' => '64975a0b-8b8d-4816-8d78-0a066a557a04',
-        ); /* WAS: '' */
-    $data['node:oa_event:default']->display->content['new-a9f6283b-bf22-4353-8833-be04cb53b8ce'] = (object) array(
-          'pid' => 'new-a9f6283b-bf22-4353-8833-be04cb53b8ce',
-          'panel' => 'contentmain',
-          'type' => 'entity_field',
-          'subtype' => 'node:field_authoring_bodies',
-          'shown' => TRUE,
-          'access' => array(),
-          'configuration' => array(
-            'label' => 'above',
-            'formatter' => 'taxonomy_term_reference_link',
-            'delta_limit' => 0,
-            'delta_offset' => 0,
-            'delta_reversed' => 0,
-            'formatter_settings' => array(),
-            'context' => array(),
-            'override_title' => 0,
-            'override_title_text' => '',
-          ),
-          'cache' => array(),
-          'style' => array(
-            'settings' => NULL,
-          ),
-          'css' => array(),
-          'extras' => array(),
-          'position' => 3,
-          'locks' => array(),
-          'uuid' => 'a9f6283b-bf22-4353-8833-be04cb53b8ce',
         ); /* WAS: '' */
     $data['node:oa_event:default']->display->content['new-ba879f23-61fc-4869-a081-d6663e9d1523'] = (object) array(
           'pid' => 'new-ba879f23-61fc-4869-a081-d6663e9d1523',

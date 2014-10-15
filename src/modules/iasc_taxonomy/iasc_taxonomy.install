@@ -9,14 +9,22 @@
  * Implements hook_uninstall().
  */
 function iasc_taxonomy_uninstall() {
-  // Remove vocabularies: authoring_bodies, hosts, and meeting_type.
-  $authoring_bodies = taxonomy_vocabulary_machine_name_load('authoring_bodies');
-  if (!empty($authoring_bodies)) {
-    taxonomy_vocabulary_delete($authoring_bodies->vid);
-  }
-
+  // Remove vocabulary: hosts.
   $hosts = taxonomy_vocabulary_machine_name_load('hosts');
   if (!empty($hosts)) {
     taxonomy_vocabulary_delete($hosts->vid);
+  }
+}
+
+/**
+ * Implements hook_update_N().
+ *
+ * Remove the authoring body taxonomy.
+ */
+function iasc_taxonomy_update_7000() {
+  // Remove vocabulary: authoring_bodies
+  $authoring_bodies = taxonomy_vocabulary_machine_name_load('authoring_bodies');
+  if (!empty($authoring_bodies)) {
+    taxonomy_vocabulary_delete($authoring_bodies->vid);
   }
 }

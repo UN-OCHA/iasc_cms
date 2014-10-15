@@ -40,7 +40,6 @@ features[features_overrides][] = variable.field_bundle_settings_node__oa_wiki_pa
 features[field_base][] = field_category
 features[field_base][] = field_document_no
 features[field_base][] = field_document_type
-features[field_instance][] = node-oa_wiki_page-field_authoring_bodies
 features[field_instance][] = node-oa_wiki_page-field_category
 features[field_instance][] = node-oa_wiki_page-field_document_no
 features[field_instance][] = node-oa_wiki_page-field_document_type
