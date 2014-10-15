@@ -205,7 +205,7 @@ function iasc_contact_field_default_field_instances() {
         'premise' => '',
         'postal_code' => '',
         'locality' => '',
-        'country' => 'BE',
+        'country' => 'CH',
         'organisation_name' => '',
         'name_line' => '',
       ),
@@ -449,7 +449,7 @@ function iasc_contact_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 10,
+      'weight' => 11,
     ),
   );
 
@@ -500,7 +500,7 @@ function iasc_contact_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 9,
+      'weight' => 10,
     ),
   );
 
@@ -603,7 +603,7 @@ function iasc_contact_field_default_field_instances() {
         'insert_plugin' => '',
       ),
       'rel_remove' => 'default',
-      'title' => 'none',
+      'title' => 'optional',
       'title_maxlength' => 128,
       'title_value' => '',
       'url' => 0,
@@ -761,7 +761,7 @@ function iasc_contact_field_default_field_instances() {
       'module' => 'field_collection',
       'settings' => array(),
       'type' => 'field_collection_embed',
-      'weight' => 29,
+      'weight' => 7,
     ),
   );
 
@@ -812,7 +812,7 @@ function iasc_contact_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 8,
+      'weight' => 9,
     ),
   );
 
@@ -913,7 +913,7 @@ function iasc_contact_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 7,
+      'weight' => 8,
     ),
   );
 

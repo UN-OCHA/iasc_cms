@@ -27,9 +27,8 @@ function iasc_contact_field_group_info() {
       1 => 'field_branch',
       2 => 'field_department',
       3 => 'field_homepage',
-      4 => 'field_position',
-      5 => 'field_organisation',
-      6 => 'field_membership',
+      4 => 'field_organisation',
+      5 => 'field_position',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
