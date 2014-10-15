@@ -10,8 +10,8 @@
 function iasc_contact_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'field_collection_item-field_membership-field_contact_body'
-  $field_instances['field_collection_item-field_membership-field_contact_body'] = array(
+  // Exported field_instance: 'field_collection_item-field_membership-field_body_membership'
+  $field_instances['field_collection_item-field_membership-field_body_membership'] = array(
     'bundle' => 'field_membership',
     'default_value' => NULL,
     'deleted' => 0,
@@ -19,30 +19,49 @@ function iasc_contact_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'taxonomy',
-        'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 0,
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 4,
       ),
     ),
     'entity_type' => 'field_collection_item',
-    'field_name' => 'field_contact_body',
+    'field_name' => 'field_body_membership',
     'label' => 'Body',
     'options_limit' => FALSE,
     'options_limit_empty_behaviour' => 0,
     'options_limit_fields' => array(),
     'required' => 0,
     'settings' => array(
+      'behaviors' => array(
+        'og_widget' => array(
+          'access_override' => 0,
+          'admin' => array(
+            'widget_type' => 'entityreference_autocomplete',
+          ),
+          'default' => array(
+            'widget_type' => 'options_select',
+          ),
+          'status' => TRUE,
+        ),
+      ),
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 0,
-      'module' => 'taxonomy',
+      'active' => 1,
+      'module' => 'entityreference',
       'settings' => array(
-        'autocomplete_path' => 'taxonomy/autocomplete',
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'references_dialog_add' => 0,
+        'references_dialog_edit' => 0,
+        'references_dialog_search' => 0,
+        'references_dialog_search_view' => '',
         'size' => 60,
       ),
-      'type' => 'taxonomy_autocomplete',
+      'type' => 'entityreference_autocomplete',
       'weight' => 0,
     ),
   );
