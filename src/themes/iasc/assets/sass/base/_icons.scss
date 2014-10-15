@@ -4,17 +4,17 @@
 
 @font-face {
 	font-family:"icons";
-	src:url("../fonts/icons-58290f96fc5acfd8230dde38f82386d1.eot");
+	src:url("../fonts/icons-87d54bee6b496adbc698c0c688c4a1d1.eot");
 	font-weight:normal;
 	font-style:normal;
 }
 @font-face {
 	font-family:"icons";
-	src:url("../fonts/icons-58290f96fc5acfd8230dde38f82386d1.eot");
-	src:url("../fonts/icons-58290f96fc5acfd8230dde38f82386d1.eot?#iefix") format("embedded-opentype"),
-		url("../fonts/icons-58290f96fc5acfd8230dde38f82386d1.woff") format("woff"),
-		url("../fonts/icons-58290f96fc5acfd8230dde38f82386d1.ttf") format("truetype"),
-		url("../fonts/icons-58290f96fc5acfd8230dde38f82386d1.svg?#icons") format("svg");
+	src:url("../fonts/icons-87d54bee6b496adbc698c0c688c4a1d1.eot");
+	src:url("../fonts/icons-87d54bee6b496adbc698c0c688c4a1d1.eot?#iefix") format("embedded-opentype"),
+		url("../fonts/icons-87d54bee6b496adbc698c0c688c4a1d1.woff") format("woff"),
+		url("../fonts/icons-87d54bee6b496adbc698c0c688c4a1d1.ttf") format("truetype"),
+		url("../fonts/icons-87d54bee6b496adbc698c0c688c4a1d1.svg?#icons") format("svg");
 	font-weight:normal;
 	font-style:normal;
 }
@@ -45,10 +45,58 @@
 	content:"\f101";
 }
 
-.icons-page {
+.icons-calendar {
 	*zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf102;');
 }
 
-.icons-page:before {
+.icons-calendar:before {
 	content:"\f102";
+}
+
+.icons-contact {
+	*zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf103;');
+}
+
+.icons-contact:before {
+	content:"\f103";
+}
+
+.icons-customize {
+	*zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf104;');
+}
+
+.icons-customize:before {
+	content:"\f104";
+}
+
+.icons-home {
+	*zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf105;');
+}
+
+.icons-home:before {
+	content:"\f105";
+}
+
+.icons-layout {
+	*zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf106;');
+}
+
+.icons-layout:before {
+	content:"\f106";
+}
+
+.icons-page {
+	*zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf107;');
+}
+
+.icons-page:before {
+	content:"\f107";
+}
+
+.icons-resources {
+	*zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf108;');
+}
+
+.icons-resources:before {
+	content:"\f108";
 }

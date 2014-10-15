@@ -7,7 +7,7 @@
  * @see template_preprocess()
  * @see template_preprocess_page()
  * @see template_process()
- * @see html.tpl.php
+ * @see html.tpl.php\
  */
 ?>
 <header class="container"> 
@@ -20,9 +20,9 @@
   <?php endif; ?> 
   <nav class="navbar-top navbar-right">
     <ul class="list-inline">
-      <li><a href="/"><span class="icomoon-calendar visible-sm visible-xs"></span><span class="hidden-sm hidden-xs">Calender</span></a>
-      </li><li><a href="/"><span class="icomoon-drawer visible-sm visible-xs"></span><span class="hidden-sm hidden-xs">Resources</span></a></li>
-      <li><a href="/"><span class="icomoon-mail visible-sm visible-xs"></span><span class="hidden-sm hidden-xs">Contact Us</span></a></li>
+      <li><a href="/" class="icons-calendar"><span class="hide">Calender</span></a></li>
+      <li><a href="/" class="icons-resources"><span class="hide">Resources</span></a></li>
+      <li><a href="/" class="icons-contact"><span class="hide">Contact Us</span></a></li>
     </ul>
   </nav>
   </div>
