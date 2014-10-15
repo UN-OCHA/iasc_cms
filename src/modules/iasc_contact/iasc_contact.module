@@ -89,9 +89,11 @@ function iasc_contact_import($options) {
     case 'contacts':
       $finished = 'iasc_contact_import_contacts_finished';
       break;
+
     case 'orgs':
       $finished = 'iasc_contact_import_orgs_finished';
       break;
+
     case 'bodies':
       $finished = 'iasc_contact_import_bodies_finished';
       break;
@@ -181,7 +183,7 @@ function iasc_contact_contact_batch_ops($file_handle, $options, &$messages, &$op
   // Import these contacts in chunks.
   foreach ($chunks as $chunk) {
     $i++;
-if ($i > 1) break;
+
     $details = array(
       '@chunk' => $i,
       '@count' => $count_chunks,
@@ -191,9 +193,11 @@ if ($i > 1) break;
       case 'contacts':
         $operation = 'iasc_contact_import_contacts';
         break;
+
       case 'orgs':
         $operation = 'iasc_contact_update_orgs';
         break;
+
       case 'bodies':
         $operation = 'iasc_contact_update_bodies';
         break;
@@ -303,7 +307,7 @@ function iasc_contact_create_node($item, &$context) {
     return;
   }
 
-  foreach($item as $key => $value) {
+  foreach ($item as $key => $value) {
     $item[$key] = trim($value);
   }
 
@@ -354,7 +358,7 @@ function iasc_contact_create_node($item, &$context) {
     $item['title'] = '';
   }
 
-  // Keep the first and last name as is, even if NULL, just in case these accts are referred elsewhere.
+  // Keep first + last name as is (even if NULL) in case accts are referenced.
   $node_wrapper->field_first_name = $item['first'];
 
   $node_wrapper->field_last_name = $item['last'];

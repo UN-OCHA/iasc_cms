@@ -70,8 +70,10 @@ function iasc_contact_drush_help($section) {
   switch ($section) {
     case 'drush:iasc-import-contacts':
       return dt('Import contacts with a CSV file.');
+
     case 'drush:iasc-update-orgs':
       return dt('Update contacts with organisation references from a CSV file.');
+
     case 'drush:iasc-update-bodies':
       return dt('Import contacts with body references from a CSV file.');
   }
@@ -98,6 +100,14 @@ function drush_iasc_contact_iasc_update_contact_bodies($file = '') {
   iasc_contact_batch_import('bodies', $file);
 }
 
+/**
+ * Starts batch import for contacts and referenced organisations and bodies.
+ *
+ * @param string $type
+ *   The type of import: contacts, orgs, bodies
+ * @param string $file
+ *   The file with the data.
+ */
 function iasc_contact_batch_import($type, $file) {
   // Start process.
   drush_print('Checking options...');
@@ -146,5 +156,3 @@ function iasc_contact_batch_import($type, $file) {
 
   drush_print('Finished importing!');
 }
-
-
