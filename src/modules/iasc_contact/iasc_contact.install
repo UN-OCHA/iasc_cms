@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * @file
+ * Install file for IASC Contact.
+ */
+
+/**
+ * Implements hook_update_N().
+ */
+function iasc_contact_update_7000() {
+  // Remove field contact body
+  field_delete_field('field_contact_body');
+  field_purge_batch(10);
+}
