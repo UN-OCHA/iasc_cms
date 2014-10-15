@@ -35,16 +35,6 @@ function iasc_meeting_features_override_default_overrides() {
   $overrides["node.oa_event.name"] = 'Meeting';
 
   // Exported overrides for: page_manager_handlers
-  $overrides["page_manager_handlers.node_edit_panel_context_7.conf|display|content|new-0b869cc5-d419-48ed-bcd1-4e6ec0d15a34|access|plugins"] = array(
-    0 => array(
-      'name' => 'perm',
-      'settings' => array(
-        'perm' => 'administer content types',
-      ),
-      'context' => 'logged-in-user',
-      'not' => FALSE,
-    ),
-  );
   $overrides["page_manager_handlers.node_edit_panel_context_7.conf|display|content|new-30f4398c-9f13-4195-b392-3f34ab0ddcee"]["DELETED"] = TRUE;
   $overrides["page_manager_handlers.node_edit_panel_context_7.conf|display|content|new-457a0b07-9259-4092-a16e-f542822ee2af"] = (object) array(
       'pid' => 'new-457a0b07-9259-4092-a16e-f542822ee2af',

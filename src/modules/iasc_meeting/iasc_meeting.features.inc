@@ -70,16 +70,6 @@ function iasc_meeting_node_info_alter(&$data) {
  */
 function iasc_meeting_default_page_manager_handlers_alter(&$data) {
   if (isset($data['node_edit_panel_context_7'])) {
-    $data['node_edit_panel_context_7']->conf['display']->content['new-0b869cc5-d419-48ed-bcd1-4e6ec0d15a34']->access['plugins'] = array(
-      0 => array(
-        'name' => 'perm',
-        'settings' => array(
-          'perm' => 'administer content types',
-        ),
-        'context' => 'logged-in-user',
-        'not' => FALSE,
-      ),
-    ); /* WAS: '' */
     $data['node_edit_panel_context_7']->conf['display']->content['new-457a0b07-9259-4092-a16e-f542822ee2af'] = (object) array(
           'pid' => 'new-457a0b07-9259-4092-a16e-f542822ee2af',
           'panel' => 'sidebar',
