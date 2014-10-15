@@ -21,8 +21,12 @@ function iasc_contact_form_node_form_alter(&$form, &$form_state, $form_id) {
     $form['field_address'][LANGUAGE_NONE][0]['organisation_block']['organisation_name']['#title'] = t('Room');
 
     $node = $form['#node'];
-    $form['field_address'][LANGUAGE_NONE][0]['#address']['name_line'] = $node->field_address[LANGUAGE_NONE][0]['name_line'];
-    $form['field_address'][LANGUAGE_NONE][0]['#address']['organisation_name'] = $node->field_address[LANGUAGE_NONE][0]['organisation_name'];
+    if (isset($node->field_address[LANGUAGE_NONE][0]['name_line'])) {
+      $form['field_address'][LANGUAGE_NONE][0]['#address']['name_line'] = $node->field_address[LANGUAGE_NONE][0]['name_line'];
+    }
+    if (isset($node->field_address[LANGUAGE_NONE][0]['organisation_name'])) {
+      $form['field_address'][LANGUAGE_NONE][0]['#address']['organisation_name'] = $node->field_address[LANGUAGE_NONE][0]['organisation_name'];
+    }
   }
 }
 
@@ -559,11 +563,7 @@ function iasc_contact_link_bodies($item, &$context) {
 
   // Get tid from legacy id: $item['bodyID'] or bodytitle if we can swing it.
   // Sample csv file uses bodytitle.
-  $body_term = taxonomy_get_term_by_name($item['bodytitle'], 'authoring_bodies');
-  if ($body_term) {
-    $body_term = current($body_term);
-    $membership_wrapper->field_contact_body = $body_term->tid;
-  }
+  // TODO: Make this refer to space entity.
 
   $membership_wrapper->field_position = $item['bodyposition'];
   $membership_wrapper->field_contact_category = $item['category'];

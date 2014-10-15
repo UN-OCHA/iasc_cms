@@ -10,55 +10,6 @@
 function iasc_document_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-oa_wiki_page-field_authoring_bodies'
-  $field_instances['node-oa_wiki_page-field_authoring_bodies'] = array(
-    'bundle' => 'oa_wiki_page',
-    'comment_alter' => 0,
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Please select one or more authoring bodies for this meeting.',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'taxonomy',
-        'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 10,
-      ),
-      'featured' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_authoring_bodies',
-    'label' => 'Authoring Bodies',
-    'options_limit' => FALSE,
-    'options_limit_empty_behaviour' => 0,
-    'options_limit_fields' => array(),
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'apply_chosen' => 0,
-      ),
-      'type' => 'options_select',
-      'weight' => 6,
-    ),
-  );
-
   // Exported field_instance: 'node-oa_wiki_page-field_category'
   $field_instances['node-oa_wiki_page-field_category'] = array(
     'bundle' => 'oa_wiki_page',
@@ -212,11 +163,9 @@ function iasc_document_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Authoring Bodies');
   t('Document No.');
   t('Document Type');
   t('Please enter the Document No. as: Main body/YYMM/Document ID');
-  t('Please select one or more authoring bodies for this meeting.');
   t('Please select one or more terms for the categories for the Product.');
   t('Please select the type of Document you are creating.');
   t('Product Category');
