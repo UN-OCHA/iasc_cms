@@ -13,9 +13,7 @@ function iasc_contact_drush_command() {
   $items['iasc-import-contacts'] = array(
     'description' => 'Imports and creates contact nodes from a given csv file',
     'arguments' => array(
-      'contact_file' => 'The file containing the contact data',
-      'body_file' => 'The file containing the contact body membership data',
-      'org_file' => 'The file containing the contact organisation membership data',
+      'file' => 'The file containing the contact data',
     ),
     'bootstrap' => DRUSH_BOOTSTRAP_DRUPAL_LOGIN,
     'callback' => 'drush_iasc_contact_iasc_import_contacts',
@@ -26,7 +24,39 @@ function iasc_contact_drush_command() {
       'delete-all'  => 'Delete all contacts before import',
     ),
     'examples' => array(
-      'drush iasc-contacts <path>/data/contacts.csv <path>/data/body_membership.csv <path>/data/organisation_membership.csv --delimiter=";" --delete-all' => 'Import the contacts in contacts.csv, body_membership.csv, organisation_membership.csv using delimiter ";" and delete all contact nodes before importing.',
+      'drush iasc-contacts <path>/data/contacts.csv --delimiter=";" --delete-all' => 'Import the contacts in contacts.csv using delimiter ";" and delete all contact nodes before importing.',
+    ),
+  );
+
+  $items['iasc-update-orgs'] = array(
+    'description' => 'Updates contact nodes with organisation references from a given csv file',
+    'arguments' => array(
+      'file' => 'The file containing the contact organisation membership data',
+    ),
+    'bootstrap' => DRUSH_BOOTSTRAP_DRUPAL_LOGIN,
+    'callback' => 'drush_iasc_contact_iasc_update_contact_orgs',
+    'options' => array(
+      'delimiter'     => 'CSV delimiter (default: ",")',
+      'enclosure'     => "CSV enclosure (default: '\"')",
+    ),
+    'examples' => array(
+      'drush iasc-update-orgs <path>/data/organisation_membership.csv --delimiter=";"' => 'Updates contacts in organisation_membership.csv using delimiter ";"',
+    ),
+  );
+
+  $items['iasc-update-bodies'] = array(
+    'description' => 'Updates contact nodes with authoring body references from a given csv file',
+    'arguments' => array(
+      'file' => 'The file containing the contact body membership data',
+    ),
+    'bootstrap' => DRUSH_BOOTSTRAP_DRUPAL_LOGIN,
+    'callback' => 'drush_iasc_contact_iasc_update_contact_bodies',
+    'options' => array(
+      'delimiter'     => 'CSV delimiter (default: ",")',
+      'enclosure'     => "CSV enclosure (default: '\"')",
+    ),
+    'examples' => array(
+      'drush iasc-update-bodies <path>/data/body_membership.csv --delimiter=";"' => 'Updates contacts in body_membership.csv using delimiter ";"',
     ),
   );
 
@@ -40,37 +70,48 @@ function iasc_contact_drush_help($section) {
   switch ($section) {
     case 'drush:iasc-import-contacts':
       return dt('Import contacts with a CSV file.');
+    case 'drush:iasc-update-orgs':
+      return dt('Update contacts with organisation references from a CSV file.');
+    case 'drush:iasc-update-bodies':
+      return dt('Import contacts with body references from a CSV file.');
   }
 }
 
 /**
  * Callback to execute 'drush iasc-import-contacts'.
  */
-function drush_iasc_contact_iasc_import_contacts($contact_file = '', $body_file = '', $org_file = '') {
+function drush_iasc_contact_iasc_import_contacts($file = '') {
+  iasc_contact_batch_import('contacts', $file);
+}
+
+/**
+ * Callback to execute 'drush iasc-update-contacts'.
+ */
+function drush_iasc_contact_iasc_update_contact_orgs($file = '') {
+  iasc_contact_batch_import('orgs', $file);
+}
+
+/**
+ * Callback to execute 'drush iasc-update-contacts'.
+ */
+function drush_iasc_contact_iasc_update_contact_bodies($file = '') {
+  iasc_contact_batch_import('bodies', $file);
+}
+
+function iasc_contact_batch_import($type, $file) {
   // Start process.
   drush_print('Checking options...');
 
   // If we don't have the files, then don't continue.
-  if (empty($contact_file) || !file_exists($contact_file)) {
-    drush_set_error('Missing contact csv file', dt('You need to set the correct path to the file to import.'));
-    return;
-  }
-
-  if (empty($body_file) || !file_exists($body_file)) {
-    drush_set_error('Missing contact-body membership csv file', dt('You need to set the correct path to the file to import.'));
-    return;
-  }
-
-  if (empty($org_file) || !file_exists($org_file)) {
-    drush_set_error('Missing contact-organisation membership csv file', dt('You need to set the correct path to the file to import.'));
+  if (empty($file) || !file_exists($file)) {
+    drush_set_error('Missing csv file', dt('You need to set the correct path to the file to import.'));
     return;
   }
 
   // Set required options.
   $options = array();
-  $options['contact_file'] = $contact_file;
-  $options['body_file'] = $body_file;
-  $options['org_file'] = $org_file;
+  $options['type'] = $type;
+  $options['file'] = $file;
 
   // Set additional options.
   $delimiter = drush_get_option('delimiter');
@@ -79,15 +120,16 @@ function drush_iasc_contact_iasc_import_contacts($contact_file = '', $body_file 
   $enclosure = drush_get_option('enclosure');
   $options['enclosure'] = ($enclosure == NULL) ? '"' : $enclosure;
 
-  $options['delete_all'] = (drush_get_option('delete-all') == NULL) ? FALSE : TRUE;
-
   // Login as the admin user.
   global $user;
   $user = user_load(1);
 
   // Setup our batch process.
-  $messages = iasc_contact_import($options);
+  if ('contacts' == $type) {
+    $options['delete_all'] = (drush_get_option('delete-all') == NULL) ? FALSE : TRUE;
+  }
 
+  $messages = iasc_contact_import($options);
   if (count($messages)) {
     foreach ($messages as $message) {
       $msg = str_replace('<br />', " \n", $message);
@@ -104,3 +146,5 @@ function drush_iasc_contact_iasc_import_contacts($contact_file = '', $body_file 
 
   drush_print('Finished importing!');
 }
+
+
