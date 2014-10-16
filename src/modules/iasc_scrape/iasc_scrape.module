@@ -46,6 +46,25 @@ function iasc_scrape_scrape($type, $page = 1, $position = 1) {
     case 'document':
       $element = new IASC\Element\DocumentElement($client, $crawler, $page, $position);
       $id = 'documentid';
+      $values = $element->getValues();
+      // Get legacy filename and file_id.
+      if ($values['file_id_pdf']) {
+        $legacy_fid = $values['file_id_pdf'];
+        $filename = $values['file_text_pdf']['filename'];
+        $file_url = $values['file_text_pdf']['file_link'];
+      }
+      elseif ($values['file_id_other']) {
+        $legacy_fid = $values['file_id_other'];
+        $filename = $values['file_text_other']['filename'];
+        $file_url = $values['file_text_other']['file_link'];
+      }
+      if (isset($legacy_fid)) {
+        $additional_values = array(
+          'legacy_fid' => $legacy_fid,
+          'filename' => $filename,
+          'file_url' => $file_url,
+        );
+      }
       break;
   }
 
@@ -56,6 +75,11 @@ function iasc_scrape_scrape($type, $page = 1, $position = 1) {
     'data' => serialize($element->getValues()),
     'scrape' => 1,
   );
+
+  if (isset($additional_values)) {
+    $values += $additional_values;
+  }
+
   iasc_scrape_save($values);
 
   drupal_set_message(
@@ -161,6 +185,7 @@ function iasc_scrape_save_node($type) {
 
 /**
  * Get the latest element scrape that isn't saved.
+ *
  * This is marked by status = 0.
  */
 function iasc_scrape_get_scraped_element($type) {
@@ -181,6 +206,23 @@ function iasc_scrape_get_scraped_element($type) {
 }
 
 /**
+ * Get the latest file scrape that isn't saved.
+ *
+ * This is marked by file_save = 0.
+ */
+function iasc_scrape_get_scraped_legacy_fid() {
+  $result = db_select('iasc_scrape', 'sc')
+    ->fields('sc', array('legacy_fid'))
+    ->condition('type', 'document')
+    ->condition('file_save', 0)
+    ->range(0, 1)
+    ->execute()
+    ->fetchAssoc();
+
+  return ($result['legacy_fid']) ? $result['legacy_fid'] : 0;
+}
+
+/**
  * Update the row to set that it's scraped.
  */
 function iasc_scrape_update($legacy_id, $entity_id) {
@@ -189,6 +231,18 @@ function iasc_scrape_update($legacy_id, $entity_id) {
     ->fields(array(
       'status' => 1,
       'entity_id' => $entity_id,
+    ))
+    ->execute();
+}
+
+/**
+ * Update the row to set that file has been saved.
+ */
+function iasc_scrape_update_legacy_fid($legacy_fid) {
+  db_merge('iasc_scrape')
+    ->key(array('legacy_fid' => $legacy_fid))
+    ->fields(array(
+      'file_save' => 1,
     ))
     ->execute();
 }
