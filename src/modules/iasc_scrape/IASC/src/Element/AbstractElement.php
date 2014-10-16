@@ -71,18 +71,35 @@ abstract class AbstractElement implements ElementInterface {
       $text = $this->listing->crawler
         ->filter('table')->eq(1)
         ->filter('tr')->eq($params['tr'])
-        ->filter('td')->eq(2)
-        ->text();
+        ->filter('td')->eq(2);
 
-      $text = trim($text);
+      if ($text->getNode(0) != NULL) {
+        $text = $text->text();
+        $text = trim($text);
+      }
+      else {
+        $text = 0;
+      }
 
-      $link = $this->listing->crawler
-        ->filter('table')->eq(1)
-        ->filter('tr')->eq($params['tr'])
-        ->filter('td')->eq(2)
-        ->selectLink($text)
-        ->link()
-        ->getUri();
+      if ($text) {
+        $link = $this->listing->crawler
+          ->filter('table')->eq(1)
+          ->filter('tr')->eq($params['tr'])
+          ->filter('td')->eq(2)
+          ->selectLink($text);
+
+        if ($link->getNode(0) != NULL) {
+          $link = $link
+            ->link()
+            ->getUri();
+        }
+        else {
+          $link = 0;
+        }
+      }
+      else {
+        $link = 0;
+      }
 
       $value = array(
         'filename' => $text,
