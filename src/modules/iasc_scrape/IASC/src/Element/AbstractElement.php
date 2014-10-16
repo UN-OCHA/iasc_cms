@@ -4,6 +4,7 @@ namespace IASC\Element;
 
 use IASC\Listing\AbstractListing;
 use Symfony\Component\DomCrawler\Link;
+use Symfony\Component\BrowserKit\Cookie;
 
 /**
  * Basic element class that can be extended.
@@ -67,8 +68,43 @@ abstract class AbstractElement implements ElementInterface {
       }
     }
     elseif (!empty($params['filename'])) {
-      $value = $this->listing->crawler
-        ->filter('table')->eq(1);
+      $text = $this->listing->crawler
+        ->filter('table')->eq(1)
+        ->filter('tr')->eq($params['tr'])
+        ->filter('td')->eq(2)
+        ->text();
+
+      $text = trim($text);
+
+      $link = $this->listing->crawler
+        ->filter('table')->eq(1)
+        ->filter('tr')->eq($params['tr'])
+        ->filter('td')->eq(2)
+        ->selectLink($text)
+        ->link()
+        ->getUri();
+
+      $value = array(
+        'filename' => $text,
+        'file_link' => $link,
+      );
+
+      /*
+      $cookie = $this->listing->client->getCookieJar();
+      $this->listing->crawler = $this->listing->client->click($link);
+      $contents = $this->listing->client->request('GET', $link);
+      $contents->get($link,
+      array(
+      'save_to' =>
+      '/opt/development/iasc_cms/build/html/sites/default/files/' . $text
+      )
+      );
+
+      $file = file_get_contents($contents);
+      $insert = file_put_contents(
+      '/opt/development/iasc_cms/build/html/sites/default/files/'
+      . $text, $file);
+      */
     }
     else {
       // If the attribute isn't specified, then we assume that we need to grab

@@ -42,6 +42,11 @@ function iasc_scrape_scrape($type, $page = 1, $position = 1) {
       $element = new IASC\Element\MeetingElement($client, $crawler, $page, $position);
       $id = 'meetingid';
       break;
+
+    case 'document':
+      $element = new IASC\Element\DocumentElement($client, $crawler, $page, $position);
+      $id = 'documentid';
+      break;
   }
 
   $values = array(

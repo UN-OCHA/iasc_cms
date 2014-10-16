@@ -41,7 +41,6 @@ class DocumentElement extends AbstractElement {
         'selector' => '#ctl00_ContentPlaceHolder1_ctl00_ddlPublish option[selected="selected"]',
         'get_text' => TRUE,
       ),
-      'field_contact' => array('selector' => '#ctl00_ContentPlaceHolder1_ctl00_SearchContacts1_hdnContactId'),
       'field_linked_agendas' => array(
         'selector' => '#ctl00_ContentPlaceHolder1_ctl00_gvLinkedAgendas',
         'table_link' => TRUE,
@@ -53,6 +52,20 @@ class DocumentElement extends AbstractElement {
         'table_link' => TRUE,
         'tr' => 1,
         'td' => 2,
+      ),
+      'file_id_pdf' => array(
+        'selector' => '#ctl00_ContentPlaceHolder1_ctl00_hdnPDFID',
+      ),
+      'file_text_pdf' => array(
+        'filename' => TRUE,
+        'tr' => 1,
+      ),
+      'file_id_other' => array(
+        'selector' => '#ctl00_ContentPlaceHolder1_ctl00_hdnOtherID',
+      ),
+      'file_text_other' => array(
+        'filename' => TRUE,
+        'tr' => 2,
       ),
     );
     $this->values = $values;

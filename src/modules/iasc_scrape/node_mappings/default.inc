@@ -45,11 +45,11 @@ class IASCDefault {
     $this->setFields();
     $this->setTerms();
     $this->setLists();
-    //$this->setGroups();
+    // $this->setGroups();
     $this->setDates();
 
     // Save the entity.
-    $this->wrapper->save(true);
+    $this->wrapper->save(TRUE);
     entity_save('node', $this->entity);
   }
 
@@ -134,7 +134,7 @@ class IASCDefault {
       $start_hour = $this->values['data'][$date['start']['hour']];
       $end_hour = $this->values['data'][$date['end']['hour']];
 
-      // Adjust for timezone
+      // Adjust for timezone.
       switch ($this->values['data']['field_time_zone']) {
         case 'Geneva':
           $start_hour += 1;
@@ -148,7 +148,7 @@ class IASCDefault {
           $start_hour += 3;
           break;
       }
-      // Reformat date
+      // Reformat date.
       $fixed_date = array();
       foreach (array(
                  $this->values['data'][$date['start']['date']],
@@ -172,9 +172,10 @@ class IASCDefault {
         try {
           $this->wrapper->{$date_field}[0]->set(array(
             'value' => $unix_start,
-            'value2' => $unix_end
+            'value2' => $unix_end,
           ));
-        } catch (Exception $e) {
+        }
+        catch (Exception $e) {
           echo 'Caught exception on ' . $date_field . ': ', $e->getMessage(), "\n";
         }
       }
