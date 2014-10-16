@@ -13,6 +13,9 @@ class IASCDefault {
 
   protected $wrapper;
   protected $fields = array();
+  protected $plain = array();
+  protected $hardcoded = array();
+  protected $created = '';
   protected $terms = array();
   protected $lists = array();
   protected $groups = array();
@@ -42,7 +45,10 @@ class IASCDefault {
 
     // Set the field values.
     $this->wrapper->title->set($this->values['data']['title']);
+    $this->setCreated();
+    $this->setHardcoded();
     $this->setFields();
+    $this->setPlain();
     $this->setTerms();
     $this->setLists();
     // $this->setGroups();
@@ -51,6 +57,45 @@ class IASCDefault {
     // Save the entity.
     $this->wrapper->save(TRUE);
     entity_save('node', $this->entity);
+  }
+
+  /**
+   * Set entity created.
+   */
+  protected function setCreated() {
+    if (!empty($this->created)) {
+      $fixed_date = str_replace('/', '-', $this->values['data'][$this->created]);
+      $unix = strtotime($fixed_date);
+      $this->wrapper->created->set($unix);
+    }
+  }
+
+  /**
+   * Set hardcoded values.
+   */
+  protected function setHardcoded() {
+    foreach ($this->hardcoded as $field => $value) {
+      try {
+        $this->wrapper->{$field}->set($value);
+      }
+      catch (Exception $e) {
+        echo 'Caught exception on ' . $field . ': ',  $e->getMessage(), "\n";
+      }
+    }
+  }
+
+  /**
+   * Set plain fields.
+   */
+  protected function setPlain() {
+    foreach ($this->plain as $field) {
+      try {
+        $this->wrapper->{$field}->set($this->values['data'][$field]);
+      }
+      catch (Exception $e) {
+        echo 'Caught exception on ' . $field . ': ',  $e->getMessage(), "\n";
+      }
+    }
   }
 
   /**
