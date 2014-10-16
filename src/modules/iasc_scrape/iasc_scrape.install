@@ -24,8 +24,22 @@ function iasc_scrape_schema() {
         'not null' => TRUE,
         'default' => 0,
       ),
+      'legacy_fid' => array(
+        'description' => 'The legacy file id from the old IASC site.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ),
       'entity_id' => array(
         'description' => 'The entity id of the saved Drupal entity.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'managed_fid' => array(
+        'description' => 'The managed file id of the saved file.',
         'type' => 'int',
         'unsigned' => TRUE,
         'not null' => TRUE,
@@ -57,6 +71,12 @@ function iasc_scrape_schema() {
         'not null' => TRUE,
         'default' => 0,
       ),
+      'file_save' => array(
+        'description' => 'Boolean indicating whether the file was saved.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ),
       'changed' => array(
         'description' => 'The Unix timestamp when the record was most recently saved.',
         'type' => 'int',
@@ -76,6 +96,13 @@ function iasc_scrape_schema() {
         'not null' => TRUE,
         'default' => '',
       ),
+      'filename' => array(
+        'description' => 'The name of a file saved (if a file was saved).',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ),
     ),
     'indexes' => array(
       'record_changed' => array('changed'),
@@ -90,4 +117,43 @@ function iasc_scrape_schema() {
  */
 function iasc_scrape_update_7001() {
   drupal_install_schema('iasc_scrape');
+}
+
+/**
+ * Add file fields for IASC scrape schema.
+ */
+function iasc_scrape_update_7002() {
+  $fields = array(
+    'legacy_fid' => array(
+      'description' => 'The legacy file id from the old IASC site.',
+      'type' => 'int',
+      'unsigned' => TRUE,
+      'not null' => TRUE,
+      'default' => 0,
+    ),
+    'managed_fid' => array(
+      'description' => 'The managed file id of the saved file.',
+      'type' => 'int',
+      'unsigned' => TRUE,
+      'not null' => TRUE,
+      'default' => 0,
+    ),
+    'file_save' => array(
+      'description' => 'Boolean indicating whether the file was saved.',
+      'type' => 'int',
+      'not null' => TRUE,
+      'default' => 0,
+    ),
+    'filename' => array(
+      'description' => 'The name of a file saved (if a file was saved).',
+      'type' => 'varchar',
+      'length' => 255,
+      'not null' => TRUE,
+      'default' => '',
+    ),
+  );
+
+  foreach ($fields as $fieldname => $field_data) {
+    db_add_field('iasc_scrape', $fieldname, $field_data);
+  }
 }
