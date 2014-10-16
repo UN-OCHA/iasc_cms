@@ -17,6 +17,7 @@ plugins[panels][styles] = panels/styles
 
 ; Remove Parent styles to defined our own
 stylesheets[all][] = system.theme.css 
+stylesheets[all][] = jquery-ui-1.10.0.custom.css
 
 ; CSS - General
 stylesheets[all][]     = assets/stylesheets/screen.css

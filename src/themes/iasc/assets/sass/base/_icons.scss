@@ -4,17 +4,17 @@
 
 @font-face {
 	font-family:"icons";
-	src:url("../fonts/icons-87d54bee6b496adbc698c0c688c4a1d1.eot");
+	src:url("../fonts/icons-dee586c404c77f76d98d2dda5c429404.eot");
 	font-weight:normal;
 	font-style:normal;
 }
 @font-face {
 	font-family:"icons";
-	src:url("../fonts/icons-87d54bee6b496adbc698c0c688c4a1d1.eot");
-	src:url("../fonts/icons-87d54bee6b496adbc698c0c688c4a1d1.eot?#iefix") format("embedded-opentype"),
-		url("../fonts/icons-87d54bee6b496adbc698c0c688c4a1d1.woff") format("woff"),
-		url("../fonts/icons-87d54bee6b496adbc698c0c688c4a1d1.ttf") format("truetype"),
-		url("../fonts/icons-87d54bee6b496adbc698c0c688c4a1d1.svg?#icons") format("svg");
+	src:url("../fonts/icons-dee586c404c77f76d98d2dda5c429404.eot");
+	src:url("../fonts/icons-dee586c404c77f76d98d2dda5c429404.eot?#iefix") format("embedded-opentype"),
+		url("../fonts/icons-dee586c404c77f76d98d2dda5c429404.woff") format("woff"),
+		url("../fonts/icons-dee586c404c77f76d98d2dda5c429404.ttf") format("truetype"),
+		url("../fonts/icons-dee586c404c77f76d98d2dda5c429404.svg?#icons") format("svg");
 	font-weight:normal;
 	font-style:normal;
 }
@@ -61,42 +61,42 @@
 	content:"\f103";
 }
 
-.icons-customize {
+.icons-home {
 	*zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf104;');
 }
 
-.icons-customize:before {
+.icons-home:before {
 	content:"\f104";
 }
 
-.icons-home {
+.icons-layout {
 	*zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf105;');
 }
 
-.icons-home:before {
+.icons-layout:before {
 	content:"\f105";
 }
 
-.icons-layout {
+.icons-page {
 	*zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf106;');
 }
 
-.icons-layout:before {
+.icons-page:before {
 	content:"\f106";
 }
 
-.icons-page {
+.icons-resources {
 	*zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf107;');
 }
 
-.icons-page:before {
+.icons-resources:before {
 	content:"\f107";
 }
 
-.icons-resources {
+.icons-search {
 	*zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf108;');
 }
 
-.icons-resources:before {
+.icons-search:before {
 	content:"\f108";
 }

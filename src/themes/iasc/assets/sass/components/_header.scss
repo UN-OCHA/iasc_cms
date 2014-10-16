@@ -1,8 +1,15 @@
 header.container .top {
-  padding: 43px 25px 21px;
+  position: relative;
+  padding: 20px 0;
+  @media screen and (min-width: $screen-sm-min) {
+    padding: 43px 0 21px 25px;
+  }
 }
 
 .brand {
   display: block;
-  max-width: 360px; 
+  max-width: 238px;
+  @media screen and (min-width: $screen-lg-min) {
+    max-width: 360px; 
+  }
 }
