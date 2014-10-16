@@ -13,6 +13,10 @@ h6, .h6 {
   color: $purple;
 }
 
+.pagination a {
+  font-family: $font-family-sans-serif;
+}
+
 .node-readmore a {
   @extend .btn-primary;
   @extend .btn;
@@ -20,4 +24,5 @@ h6, .h6 {
 
 ol, ul {
   padding: 0;
+  li {list-style-position: inside;}
 }

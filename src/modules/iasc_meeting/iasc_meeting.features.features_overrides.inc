@@ -35,16 +35,6 @@ function iasc_meeting_features_override_default_overrides() {
   $overrides["node.oa_event.name"] = 'Meeting';
 
   // Exported overrides for: page_manager_handlers
-  $overrides["page_manager_handlers.node_edit_panel_context_7.conf|display|content|new-0b869cc5-d419-48ed-bcd1-4e6ec0d15a34|access|plugins"] = array(
-    0 => array(
-      'name' => 'perm',
-      'settings' => array(
-        'perm' => 'administer content types',
-      ),
-      'context' => 'logged-in-user',
-      'not' => FALSE,
-    ),
-  );
   $overrides["page_manager_handlers.node_edit_panel_context_7.conf|display|content|new-30f4398c-9f13-4195-b392-3f34ab0ddcee"]["DELETED"] = TRUE;
   $overrides["page_manager_handlers.node_edit_panel_context_7.conf|display|content|new-457a0b07-9259-4092-a16e-f542822ee2af"] = (object) array(
       'pid' => 'new-457a0b07-9259-4092-a16e-f542822ee2af',
@@ -241,34 +231,6 @@ function iasc_meeting_features_override_default_overrides() {
       'position' => 2,
       'locks' => array(),
       'uuid' => '64975a0b-8b8d-4816-8d78-0a066a557a04',
-    );
-  $overrides["panelizer_defaults.node:oa_event:default.display|content|new-a9f6283b-bf22-4353-8833-be04cb53b8ce"] = (object) array(
-      'pid' => 'new-a9f6283b-bf22-4353-8833-be04cb53b8ce',
-      'panel' => 'contentmain',
-      'type' => 'entity_field',
-      'subtype' => 'node:field_authoring_bodies',
-      'shown' => TRUE,
-      'access' => array(),
-      'configuration' => array(
-        'label' => 'above',
-        'formatter' => 'taxonomy_term_reference_link',
-        'delta_limit' => 0,
-        'delta_offset' => 0,
-        'delta_reversed' => 0,
-        'formatter_settings' => array(),
-        'context' => array(),
-        'override_title' => 0,
-        'override_title_text' => '',
-      ),
-      'cache' => array(),
-      'style' => array(
-        'settings' => NULL,
-      ),
-      'css' => array(),
-      'extras' => array(),
-      'position' => 3,
-      'locks' => array(),
-      'uuid' => 'a9f6283b-bf22-4353-8833-be04cb53b8ce',
     );
   $overrides["panelizer_defaults.node:oa_event:default.display|content|new-ba879f23-61fc-4869-a081-d6663e9d1523"] = (object) array(
       'pid' => 'new-ba879f23-61fc-4869-a081-d6663e9d1523',
