@@ -32,12 +32,12 @@ $brand-primary:            $purple;
 //* Background color for `<body>`.
 // $body-bg:               #fff
 //* Global text color on `<body>`.
-$text-color:              #333333;
+$text-color:              #333333; 
 
 //* Global textual link color.
 $link-color:              $red;
 //* Link hover color set via `darken()` function.
-// $link-hover-color:      darken($link-color, 15%)
+$link-hover-color:        $link-color;
 
 //== Typography
 //
