@@ -22,10 +22,27 @@ h6, .h6 {
   @extend .btn;
 }
 
-ol, ul {
-  padding: 0;
-  li {list-style-position: inside;}
+ul, ol {
+  @extend .list-unstyled;
 }
+li { list-style: none; }
+
+.list-styled,
+.wrapped-list {
+  li { 
+    padding-left: 15px;
+    position: relative;
+  }
+  li:before {
+    content: "\2022";
+    color: lighten($gray-dark, 40%);
+    position: absolute; left: 0; top: 0;
+    line-height: 22px;
+    font-size: 22px;
+  }
+}
+.wrapped-list li { margin-bottom: $line-height-computed / 2; }
+
 
 figcaption,
 figure {
