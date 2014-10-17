@@ -13,6 +13,9 @@ class IASCDefault {
 
   protected $wrapper;
   protected $fields = array();
+  protected $plain = array();
+  protected $hardcoded = array();
+  protected $created = '';
   protected $terms = array();
   protected $lists = array();
   protected $groups = array();
@@ -42,15 +45,57 @@ class IASCDefault {
 
     // Set the field values.
     $this->wrapper->title->set($this->values['data']['title']);
+    $this->setCreated();
+    $this->setHardcoded();
     $this->setFields();
+    $this->setPlain();
     $this->setTerms();
     $this->setLists();
-    //$this->setGroups();
+    // $this->setGroups();
     $this->setDates();
 
     // Save the entity.
-    $this->wrapper->save(true);
+    $this->wrapper->save(TRUE);
     entity_save('node', $this->entity);
+  }
+
+  /**
+   * Set entity created.
+   */
+  protected function setCreated() {
+    if (!empty($this->created)) {
+      $fixed_date = str_replace('/', '-', $this->values['data'][$this->created]);
+      $unix = strtotime($fixed_date);
+      $this->wrapper->created->set($unix);
+    }
+  }
+
+  /**
+   * Set hardcoded values.
+   */
+  protected function setHardcoded() {
+    foreach ($this->hardcoded as $field => $value) {
+      try {
+        $this->wrapper->{$field}->set($value);
+      }
+      catch (Exception $e) {
+        echo 'Caught exception on ' . $field . ': ',  $e->getMessage(), "\n";
+      }
+    }
+  }
+
+  /**
+   * Set plain fields.
+   */
+  protected function setPlain() {
+    foreach ($this->plain as $field) {
+      try {
+        $this->wrapper->{$field}->set($this->values['data'][$field]);
+      }
+      catch (Exception $e) {
+        echo 'Caught exception on ' . $field . ': ',  $e->getMessage(), "\n";
+      }
+    }
   }
 
   /**
@@ -134,7 +179,7 @@ class IASCDefault {
       $start_hour = $this->values['data'][$date['start']['hour']];
       $end_hour = $this->values['data'][$date['end']['hour']];
 
-      // Adjust for timezone
+      // Adjust for timezone.
       switch ($this->values['data']['field_time_zone']) {
         case 'Geneva':
           $start_hour += 1;
@@ -148,7 +193,7 @@ class IASCDefault {
           $start_hour += 3;
           break;
       }
-      // Reformat date
+      // Reformat date.
       $fixed_date = array();
       foreach (array(
                  $this->values['data'][$date['start']['date']],
@@ -172,9 +217,10 @@ class IASCDefault {
         try {
           $this->wrapper->{$date_field}[0]->set(array(
             'value' => $unix_start,
-            'value2' => $unix_end
+            'value2' => $unix_end,
           ));
-        } catch (Exception $e) {
+        }
+        catch (Exception $e) {
           echo 'Caught exception on ' . $date_field . ': ', $e->getMessage(), "\n";
         }
       }

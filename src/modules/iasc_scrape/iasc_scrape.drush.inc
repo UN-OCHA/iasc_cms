@@ -27,6 +27,23 @@ function iasc_scrape_drush_command() {
     ),
   );
 
+  $items['iasc-scrape-legacy-fid'] = array(
+    'description' => 'Get the next legacy fid from the old IASC site',
+    'bootstrap' => DRUSH_BOOTSTRAP_DRUPAL_LOGIN,
+    'callback' => 'drush_iasc_scrape_legacy_fid',
+    'aliases' => array('iasc-slf'),
+  );
+
+  $items['iasc-scrape-update-legacy-fid'] = array(
+    'description' => 'Update the legacy fid to note that it\'s saved',
+    'arguments' => array(
+      'legacy_fid' => 'The legacy fid to update',
+    ),
+    'bootstrap' => DRUSH_BOOTSTRAP_DRUPAL_LOGIN,
+    'callback' => 'drush_iasc_scrape_update_legacy_fid',
+    'aliases' => array('iasc-sulf'),
+  );
+
   $items['iasc-scrape-save-node'] = array(
     'description' => 'Save node from scrape',
     'arguments' => array(
@@ -96,4 +113,24 @@ function drush_iasc_scrape_save_node($type) {
 
   // Save.
   iasc_scrape_save_node($type);
+}
+
+/**
+ * Get latest fid.
+ */
+function drush_iasc_scrape_legacy_fid() {
+  return iasc_scrape_get_scraped_legacy_fid();
+}
+
+/**
+ * Update legacy fid to saved.
+ */
+function drush_iasc_scrape_update_legacy_fid($legacy_fid) {
+  // If we don't have a type, then don't continue.
+  if (empty($legacy_fid)) {
+    drush_set_error('Missing legacy fid', dt('You need to set the legacy fid to save.'));
+    return;
+  }
+
+  drush_iasc_scrape_update_legacy_fid($legacy_fid);
 }
