@@ -22,6 +22,14 @@ abstract class AbstractElement implements ElementInterface {
     $this->listing = $listing;
     $this->listing->clickListingPage($name);
     if ($this->page != 1) {
+      // If we are past the first set of pagers,
+      // we have to click through before we post.
+      if ($this->page > 11) {
+        // Go through each ellipsis pager.
+        for ($i = 11; $i >= 11; $i -= 11) {
+          $this->listing->clickListingPager($table_id, $i);
+        }
+      }
       $this->listing->clickListingPager($table_id, $this->page);
     }
     $this->listing->clickEditLink($this->position);
