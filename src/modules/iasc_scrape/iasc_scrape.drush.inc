@@ -132,5 +132,5 @@ function drush_iasc_scrape_update_legacy_fid($legacy_fid) {
     return;
   }
 
-  drush_iasc_scrape_update_legacy_fid($legacy_fid);
+  iasc_scrape_update_legacy_fid($legacy_fid);
 }
