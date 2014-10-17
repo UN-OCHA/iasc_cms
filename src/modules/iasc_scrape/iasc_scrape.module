@@ -215,6 +215,7 @@ function iasc_scrape_get_scraped_legacy_fid() {
     ->fields('sc', array('legacy_fid'))
     ->condition('type', 'document')
     ->condition('file_save', 0)
+    ->condition('legacy_fid', 0, '<>')
     ->range(0, 1)
     ->execute()
     ->fetchAssoc();
