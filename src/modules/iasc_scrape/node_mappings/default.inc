@@ -63,7 +63,7 @@ class IASCDefault {
    * Set entity created.
    */
   protected function setCreated() {
-    if (!empty($this->created)) {
+    if (($this->values['data'][$this->created])) {
       $fixed_date = str_replace('/', '-', $this->values['data'][$this->created]);
       $unix = strtotime($fixed_date);
       $this->wrapper->created->set($unix);
