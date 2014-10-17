@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Scrape Meeting element.
+ * Scrape Document element.
  */
 
 namespace IASC\Element;
