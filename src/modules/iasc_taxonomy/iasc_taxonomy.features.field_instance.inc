@@ -64,7 +64,7 @@ function iasc_taxonomy_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 4,
+      'weight' => 6,
     ),
   );
 
@@ -143,7 +143,51 @@ function iasc_taxonomy_field_default_field_instances() {
         'manualcrop_thumblist' => 0,
       ),
       'type' => 'media_generic',
-      'weight' => 2,
+      'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance: 'taxonomy_term-hosts-field_long_name'
+  $field_instances['taxonomy_term-hosts-field_long_name'] = array(
+    'bundle' => 'hosts',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 4,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'taxonomy_term',
+    'field_name' => 'field_long_name',
+    'label' => 'Long Name',
+    'required' => 0,
+    'settings' => array(
+      'linkit' => array(
+        'enable' => 0,
+        'insert_plugin' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 3,
     ),
   );
 
@@ -182,51 +226,7 @@ function iasc_taxonomy_field_default_field_instances() {
         'apply_chosen' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 3,
-    ),
-  );
-
-  // Exported field_instance: 'taxonomy_term-hosts-field_short_name'
-  $field_instances['taxonomy_term-hosts-field_short_name'] = array(
-    'bundle' => 'hosts',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 0,
-      ),
-      'featured' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'taxonomy_term',
-    'field_name' => 'field_short_name',
-    'label' => 'Short Name',
-    'required' => 0,
-    'settings' => array(
-      'linkit' => array(
-        'enable' => 0,
-        'insert_plugin' => '',
-      ),
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 1,
+      'weight' => 5,
     ),
   );
 
@@ -234,8 +234,8 @@ function iasc_taxonomy_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Homepage URL');
   t('Logo');
+  t('Long Name');
   t('Membership');
-  t('Short Name');
 
   return $field_instances;
 }

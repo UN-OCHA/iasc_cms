@@ -1,0 +1,151 @@
+orgID,organization,orgnamelong,membertype,securitylevel,link,logolarge,logosmall
+1,FAO,Food and Agriculture Organization,Full Member,2,http://www.fao.org,images/logo/Other/FAO_45px.jpg,images/logo/Other/FAO_30px.gif
+2,IASC Secretariat,Inter-Agency Standing Committee Secretariat,NULL,3,http://www.humanitarianinfo.org/iasc,NULL,NULL
+3,ICRC,International Committee of the Red Cross,Standing Invitee,2,http://www.icrc.org,images/logo/Other/ICRC_45px.jpg,images/logo/Other/ICRC_35px.gif
+4,ICVA,International Council of Voluntary Agencies,Standing Invitee,2,http://www.icva.ch,images/logo/Other/ICVAnew_30px.jpg,images/logo/Other/ICVAnew_20px.jpg
+5,IFRC,International Federation of Red Cross and Red Crescent Societies,Standing Invitee,2,http://www.ifrc.org,images/logo/Other/IFRC_40px.jpg,images/logo/Other/IFRC_25px.gif
+6,InterAction,InterAction,Standing Invitee,2,http://www.interaction.org,images/logo/Other/InterAction_new_45px.jpg,images/logo/Other/InterAction_new_30px.jpg
+7,IOM,International Organization for Migration,Standing Invitee,2,http://www.iom.int,images/logo/Other/IOM_45px.jpg,images/logo/Other/IOM_25px.jpg
+8,OCHA,United Nations Office for Coordination of Humanitarian Affairs,Full Member,2,http://www.unocha.org/,images/logo/Other/UN_blue_45px.jpg,images/logo/Other/UN_blue_30px.gif
+10,OHCHR,Office of the High Commissioner for Human Rights,Standing Invitee,2,http://www.ohchr.org,images/logo/Other/OHCHR_45px.jpg,images/logo/Other/OHCHR_40px.gif
+11,SCHR,Steering Committee for Humanitarian Response,Standing Invitee,2,http://schr.info/,images/logo/Other/SCHR_45px.jpg,images/logo/Other/SCHR_30px.jpg
+12,UNDP,United Nations Development Programme,Full Member,2,http://www.undp.org,images/logo/Other/UNDP_45px.jpg,images/logo/Other/UNDP_40px.gif
+13,UNFPA,United Nations Population Fund,Full Member,2,http://www.unfpa.org,images/logo/Other/UNFPA_35px.jpg,images/logo/Other/UNFPA_20px.jpg
+14,UNHCR,United Nations High Comissioner for Refugees,Full Member,2,http://www.unhcr.org,images/logo/Other/UNHCR_45px.jpg,images/logo/Other/UNHCR_30px.gif
+15,UNICEF,United Nations Children's Fund,Full Member,2,http://www.unicef.org,images/logo/Other/UNICEF_45px.jpg,images/logo/Other/UNICEF_30px.gif
+16,WFP,World Food Programme,Full Member,2,http://www.wfp.org,images/logo/Other/WFP_45px.jpg,images/logo/Other/WFP_30px.gif
+17,WHO,World Health Organization,Full Member,2,http://www.who.int,images/logo/Other/WHO_45px.jpg,images/logo/Other/WHO_30px.gif
+18,World Bank,World Bank,Standing Invitee,2,http://www.worldbank.org,images/logo/Other/World-Bank_45px.jpg,images/logo/Other/World-Bank_25px.jpg
+20,Other,Other,NULL,2,NULL,NULL,NULL
+22,RSG on Human Rights of IDPs,Office of the Special Representative of the Secretary General on the Human Rights of Internally Displaced Persons,NULL,2,http://www2.ohchr.org/english/issues/idp/index.htm,images/logo/Other/UN_blue_45px.jpg,images/logo/Other/UN_blue_30px.gif
+23,UNAIDS,Joint United Nations Programme on HIV/AIDS,NULL,2,http://www.unaids.org,NULL,NULL
+24,UNIDIR,United Nations Institute for Disarmament Research,NULL,2,http://www.unidir.org,NULL,NULL
+25,HAP International,International Environment House 2,NULL,0,http://www.hapinternational.org,NULL,NULL
+26,UN,United Nations,NULL,0,http://www.un.org,images/logo/Other/UN_blue_45px.jpg,images/logo/Other/UN_blue_30px.gif
+27,Caritas,Caritas Internationalis,NULL,0,http://www.caritas.org/,NULL,NULL
+28,UNITAR,United Nations Institute for Training and Research,NULL,0,http://www.unitar.org,NULL,NULL
+29,IDMC / NRC,Internal Displacement Monitoring Centre / Norwegian Refugee Council,NULL,0,http://www.internal-displacement.org/,NULL,NULL
+30,DNDi,Drugs for Neglected Diseases Initiative,NULL,0,http://www.dndi.org,NULL,NULL
+32,US Permanent Mission,United States Mission to the United Nations Office and International Organizations in Geneva,NULL,0,http://www.state.gov,NULL,NULL
+33,MSF,Medecins Sans Frontieres,NULL,0,http://www.msf.org,NULL,NULL
+34,InterSOS,NULL,NULL,0,http://www.intersos.org/,NULL,NULL
+35,UNEP,United Nations Environmental Programme,NULL,0,http://www.unep.org,NULL,NULL
+36,WVI,World Vision International,NULL,0,http://www.wvi.org,NULL,NULL
+37,EU Commission,European Commission,NULL,0,http://europa.eu.int/,NULL,NULL
+38,CARE Int.,CARE International,NULL,0,http://www.care.org,NULL,NULL
+39,UNRWA,United Nations Relief and Works Agency for Palestine Refugess in the Near East,NULL,0,http://www.un.org/unrwa/,NULL,NULL
+40,UNHABITAT,United Nations Human Settlements Programme,Full Member,0,http://www.unhabitat.org,images/logo/other/UNHABITAT 90px.jpg,images/logo/other/UNHABITAT 60px.jpg
+41,IRC,International Rescue Committee,NULL,0,http://www.theirc.org,NULL,NULL
+42,IntDMC,International Disaster Management Centre,NULL,0,http://www.tafe.swin.edu.au/indsci/dm/,NULL,NULL
+43,Islamic Relief,Islamic Relief,NULL,0,http://www.islamic-relief.com/,NULL,NULL
+46,Amnesty International,Amnesty International,NULL,0,NULL,NULL,NULL
+47,Human Rights Watch,Human Rights Watch,NULL,0,NULL,NULL,NULL
+48,SPHERE,The SPHERE Project,NULL,0,http://www.sphereproject.org,NULL,NULL
+49,UNMAS,United Nations Mine Action Service,NULL,0,http://www.mineaction.org,NULL,NULL
+50,MONUC,United Nations Mission in the Democratic Republic of Congo,NULL,0,www.monuc.org,NULL,NULL
+51,Fleet Forum,NULL,NULL,0,NULL,NULL,NULL
+53,ILO,International Labour Organisation,NULL,0,http://www.ilo.org,NULL,NULL
+54,ADB,Asian Development Bank,NULL,0,http://www.adb.org,NULL,NULL
+55,GFTAM,"The Global Fund to Fight AIDS, Tuberculosis and Malaria",NULL,0,http://www.theglobalfund.org/,NULL,NULL
+57,UNESCO,"United Nations Educational, Scientific and Cultural Organization",NULL,0,http://www.unesco.org,NULL,NULL
+58,UNIFEM,United Natios Development Fund for Women,NULL,0,http://www.unifem.org,NULL,NULL
+59,WMO,World Meteorological Organization,NULL,0,http://www.wmo.ch/,NULL,NULL
+60,OXFAM Int. Secr.,OXFAM International Secretariat,NULL,0,http://www.oxfam.org,NULL,NULL
+62,Concern Int.,Concern International,NULL,0,NULL,NULL,NULL
+63,DRN,Disaster Resource Network,NULL,0,NULL,NULL,NULL
+64,UNOPS,United Nations Office for Project Services,NULL,0,http://www.unops.org,NULL,NULL
+65,UNV,United Nations Volunteers,NULL,0,NULL,NULL,NULL
+66,ISDR,International Strategy for Disaster Reduction,NULL,0,http://www.unisdr.org,NULL,NULL
+67,IDB,Islamic Development Bank,NULL,0,http://www.isdb.org/,NULL,NULL
+68,MDM,Médecins du Monde,NULL,0,http://www.medecinsdumonde.org,NULL,NULL
+69,UNDSS,United Nations Department for Safety and Security,NULL,0,NULL,NULL,NULL
+70,German Permanent Mission,Permanent Mission of the Federal Republic of Germany to the United Nations and Other International Organisations,NULL,0,NULL,NULL,NULL
+71,Women's Commission,Women's Commission for Refugee Women and Children,NULL,0,http://www.womenscommission.org,NULL,NULL
+72,ICMC,International Catholic Migration Commission,NULL,0,http://www.icmc.net,NULL,NULL
+73,NRC,Norwegian Refugee Council,NULL,0,http://www.nrc.no,NULL,NULL
+74,SCF,Save the Children,NULL,0,NULL,NULL,NULL
+75,Belgium (Government of),NULL,NULL,0,NULL,NULL,NULL
+76,SADC,Swiss Agency for Development and Cooperation,NULL,0,http://www.deza.admin.ch,NULL,NULL
+78,OXFAM GB,OXFAM Great Britain,NULL,0,http://www.oxfam.org.uk/,NULL,NULL
+79,SFIA,The Swiss Forum for International Affairs,NULL,0,NULL,NULL,NULL
+80,HLWG,Humanitarian Liaison Working Group,NULL,0,NULL,NULL,NULL
+81,Swiss Permanent Mission,Swiss Permanent Mission to the United Nations and other International Organisations is Geneva,NULL,0,http://www.eda.admin.ch/geneva_miss/f/home.htm,NULL,NULL
+82,UNDGO,United Nations Development Group,NULL,0,http://www.undg.org,NULL,NULL
+83,AISP,Association Internationale des Soldats de la Paix,NULL,0,http://www.aisp.fr,NULL,NULL
+84,HDCentre,Centre for Humanitarian Dialogue,NULL,0,http://www.hdcentre.org,NULL,NULL
+86,UNSIC,UN System Influenza Coordination,NULL,0,http://www.undg.org/content.cfm?id=1488,NULL,NULL
+87,CCF,Christian Children's Fund,NULL,0,NULL,NULL,NULL
+92,OSAA,Office of the Special Advisor on Africa,NULL,0,NULL,NULL,NULL
+93,Save the Children,Save the Children,Observer,0,http://www.savethechildren.org/,NULL,NULL
+98,StC,Save the Children,Observer,0,http://www.savethechildren.org/,NULL,NULL
+99,Save the Children UK,Save the Children United Kingdom,NULL,0,http://www.savethechildren.org.uk/scuk/jsp/index.jsp,NULL,NULL
+100,ActionAid,ActionAid International,Observer,0,www.actionaid.org,NULL,NULL
+101,DFID,Department for International Development,NULL,0,http://www.dfid.gov.uk/,NULL,NULL
+102,Humanitarian Coordinator in Somalia,NULL,NULL,0,NULL,NULL,NULL
+103,UNMIS,United Nations Mission in Sudan,NULL,0,NULL,NULL,NULL
+104,Swedish Permant Mission,Swedish Permanent Mission to the United Nations and other International Organisations is Geneva,NULL,0,NULL,NULL,NULL
+105,HelpAge International,HelpAge International,NULL,0,http://www.helpage.org/Home,NULL,NULL
+106,King's College London,King's College London,NULL,0,NULL,NULL,NULL
+107,JRS,Jesuit Refugee Service (Switzerland),NULL,0,www.jrs.net,NULL,NULL
+108,CARE I,NULL,NULL,0,NULL,NULL,NULL
+109,Merlin,"Medical relief, lasting health care",NULL,0,http://www.merlin.org.uk/,NULL,NULL
+110,QUNO,Quaker United Nations Office,NULL,0,http://www.quno.org/,NULL,NULL
+111,Security Council Report,Security Council Report,NULL,0,www.securitycouncilreport.org,NULL,NULL
+112,Host to be confirmed,Host to be confirmed,Observer,0,NULL,NULL,NULL
+113,ECOSOC,UN Economic and Social Council,NULL,0,http://www.un.org/docs/ecosoc/,NULL,NULL
+114,VOICE,Voluntary Organisations in Cooperation in Emergencies,NULL,0,NULL,NULL,NULL
+115,Small Arms Survery,Small Arms Survery,NULL,0,www.smallarmssurvey.org,NULL,NULL
+116,NULL,NULL,NULL,0,NULL,NULL,NULL
+117,French Permanent Mission,French Permanent Mission to the United Nations and other International Organisations is Geneva,NULL,0,NULL,NULL,NULL
+118,WCC,World Council of Churches,NULL,0,NULL,NULL,NULL
+119,HPG,Humanitarian Policy Group,NULL,0,NULL,NULL,NULL
+120,NULL,Overseas Development Institute,NULL,0,NULL,NULL,NULL
+121,ODI,Overseas Development Institute,NULL,0,NULL,NULL,NULL
+122,Tufts University,NULL,NULL,0,NULL,NULL,NULL
+124,NULL,Tufts University,Observer,0,NULL,NULL,NULL
+125,Tufts Uni,Tufts University,Observer,0,NULL,NULL,NULL
+126,LST,Law & Society Trust,NULL,0,http://www.lawandsocietytrust.org/,NULL,NULL
+131,IMADR,International Movement Against all forms of Discrimination and Racisms,NULL,0,NULL,NULL,NULL
+132,INFORM,INFORM Human Rights Documentation Centre,NULL,0,NULL,NULL,NULL
+133,UNOSAT,United Nations Institute for Training and Research (UNITAR) Operational Satellite Applications Programme,NULL,0,http://unosat.web.cern.ch/unosat/,NULL,NULL
+134,TdH,Terre des Hommes,NULL,0,NULL,NULL,NULL
+135,OFADEC,Office Africain pour le Développement et la Coopération,Observer,0,http://ofadec.multimania.com,NULL,NULL
+136,Japan Permanent Mission,Japan Permanent Mission to the United Nations and other International Organisations is Geneva,NULL,0,NULL,NULL,NULL
+137,"UNV, Boston",University of Boston,Observer,0,NULL,NULL,NULL
+138,"UNIV, Lousanne",University of Lousanne,NULL,0,NULL,NULL,NULL
+139,"UNIV, Lausanne",University of Lausanne,Observer,0,NULL,NULL,NULL
+140,"UNV, Lausanne",University of Lausanne,NULL,0,NULL,NULL,NULL
+141,CEO Aidmatrix Foundation,NULL,Observer,0,NULL,NULL,NULL
+142,CEO Aidmatrix,CEO Aidmatrix Foundation,Observer,0,NULL,NULL,NULL
+143,Aidmatrix Foundation,Aidmatrix Foundation,NULL,0,NULL,NULL,NULL
+144,SRSA,SRSA,Observer,0,NULL,NULL,NULL
+147,t,,NULL,0,,,
+148,CPA Sri Lanka,Centre for Policy Alternatives Sri Lanka,NULL,0,NULL,NULL,NULL
+149,Mannar Church,Mannar Church,NULL,0,NULL,NULL,NULL
+150,Concern Worldwide US,Concern Worldwide United States,NULL,0,http://www.concernusa.org/,,
+151,Refugees International,Refugees International,NULL,0,NULL,NULL,NULL
+152,TEST,TEST,NULL,NULL,,NULL,NULL
+153,IOLO,IOLO,NULL,0,NULL,NULL,NULL
+154,NULL,Protection Cluster Working Group,NULL,0,NULL,NULL,NULL
+155,Protection Cluster Working Group,Protection Cluster Working Group,Observer,0,NULL,NULL,NULL
+156,ProCap,ProCap,NULL,0,NULL,NULL,NULL
+157,UNAMA,NULL,NULL,0,NULL,NULL,NULL
+158,GenCap,IASC Gender Standby Capacity,NULL,NULL,www.humanitarianreform.org/gencap,,
+159,American Red Cross,American Red Cross,NULL,NULL,,,
+160,CARE USA,CARE USA,NULL,NULL,http://www.care.org/,,
+161,Winrock International,Winrock International,NULL,NULL,http://www.winrock.org/,,
+162,ChildFund,ChildFund International,NULL,NULL,,,
+163,World Economic Forum,World Economic Forum,NULL,NULL,,,
+164,DRC,Danish Refugee Council,NULL,NULL,,,
+165,Somalia NGO Consortium,Somalia NGO Consortium,NULL,NULL,,,
+166,LWF,Lutheran World Federation,NULL,NULL,,,
+167,ACTED,ACTED,NULL,NULL,,,
+168,International Medical Corps,International Medical Corps,NULL,NULL,,,
+169,SR on HR of IDPs,Office of the Special Rapporteur on the Human Rights of Internally Displaced Persons,Standing Invitee,NULL,http://www2.ohchr.org/english/issues/idp/index.htm,images/logo/Other/UN_blue_45px.jpg,images/logo/Other/UN_blue_30px.gif
+170,Relief International,Relief International,NULL,NULL,,,
+171,ACT Alliance,ACT Alliance,NULL,NULL,,,
+172,IASC Secretariat,Inter-Agency Standing Committee Secretariat,NULL,NULL,http://www.humanitarianinfo.org/iasc,,
+173,UN WOMEN,United Nations Entity for Gender Equality and Empowerment of Women,NULL,NULL,,,
+174,Government of Switzerland,Government of Switzerland,NULL,NULL,,,
+175,War Trauma Foundation,War Trauma Foundation,NULL,NULL,,,
+176,Mercy Corps,Mercy Corps,NULL,NULL,,,
