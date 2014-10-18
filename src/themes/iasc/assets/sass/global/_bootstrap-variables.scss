@@ -343,7 +343,7 @@ $navbar-default-bg:                   $brand-primary; // #f8f8f8
 $navbar-default-border:               $brand-primary; //darken($navbar-default-bg, 6.5%)
 
 // Navbar links
-$navbar-default-link-color:                   #906303; 
+$navbar-default-link-color:                   #fff; 
 // $navbar-default-link-hover-color:          #333
 // $navbar-default-link-hover-bg:             transparent
 // $navbar-default-link-active-color:         #555
@@ -357,9 +357,9 @@ $navbar-default-link-color:                   #906303;
 // $navbar-default-brand-hover-bg:            transparent
 
 // Navbar toggle
-$navbar-default-toggle-hover-bg:              green;
-// $navbar-default-toggle-icon-bar-bg:        #888
-// $navbar-default-toggle-border-color:       #ddd
+$navbar-default-toggle-hover-bg:              lighten($brand-primary, 10%);
+$navbar-default-toggle-icon-bar-bg:           #fff;
+$navbar-default-toggle-border-color:          $brand-primary;
 
 // Inverted navbar
 // Reset inverted navbar basics

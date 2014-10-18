@@ -3,5 +3,28 @@
   a {
     font-family: $font-family-sans-serif;
   }
+  .icons-home { font-size: 20px; }
+}
+
+.nav-holder {
+  background: $gray-lighter;
+  @include border-radius($border-radius-base);
+  border: 0px;
+}
+
+.navbar-top {
+  ul {margin-bottom: 0;}
+  a {  
+    color: $brand-primary;
+    font-size: 24px;
+    @media screen and (min-width: $screen-lg-min) {
+      font-size: 19px;
+    }
+    padding: 5px;
+    text-decoration: none;
+    &:hover {
+      color: lighten($brand-primary, 10%);
+    }
+  }
 }
 

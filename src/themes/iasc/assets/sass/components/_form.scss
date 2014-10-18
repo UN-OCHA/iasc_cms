@@ -3,22 +3,34 @@
  * Form elements overides from global defaults
  */
 
-.navbar-form {
+form.navbar-form {
   margin: 0; padding: 0;
-  .form-item {width: 100%;}
-  .form-type-textfield { 
+  .form-type-textfield {
     position: relative;
+    width: 100%;
     input[type="text"] {
-      @include border-radius(1em);
-      padding-left: 23px;
+      @extend .nav-holder;
+      @extend .form-control;
+      padding: 5px 11px; 
       width: 100%;
+      height: 30px;
+      @media screen and (max-width: $screen-lg-min) {
+        margin-left: 10px;
+      }
     }
     &:after {
-      @include icomoon;
-      content: '\e604';
+      font-family: icons;
+      content: '\f108';
       z-index: 2;
       position: absolute;
-      left: 8px; top: 7px;
+      right: 8px; top: 7px;
+      color: $gray;
     }
+  }
+  
+  @media screen and (min-width: $screen-lg-min) {
+    position: absolute;
+    bottom: -38px; right: 10px;
+    z-index: 1;
   }
 }

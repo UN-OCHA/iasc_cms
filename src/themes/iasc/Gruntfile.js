@@ -17,12 +17,6 @@ module.exports = function(grunt) {
           '**/*.html',
         ]
       },
-      svg: {
-        files: [
-          '**/*.svg'
-        ],
-        tasks: ['webfont'],
-      },
       configFiles: {
         files: [ 'Gruntfile.js'],
         options: {

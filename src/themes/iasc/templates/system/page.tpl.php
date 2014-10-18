@@ -7,33 +7,46 @@
  * @see template_preprocess()
  * @see template_preprocess_page()
  * @see template_process()
- * @see html.tpl.php
+ * @see html.tpl.php\
  */
 ?>
 <header class="container"> 
   <div class="top clearfix">
-  <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo" class="navbar-left brand">
-     <img src="<?php print $logo; ?>" alt="<?php print $site_name; ?>">
-  </a>
-  <?php if($search_form): ?>
-    <?php print $search_form; ?>
-  <?php endif; ?> 
-  <nav class="navbar-top navbar-right">
-    <ul class="list-inline">
-      <li><a href="/"><span class="icomoon-calendar visible-sm visible-xs"></span><span class="hidden-sm hidden-xs">Calender</span></a>
-      </li><li><a href="/"><span class="icomoon-drawer visible-sm visible-xs"></span><span class="hidden-sm hidden-xs">Resources</span></a></li>
-      <li><a href="/"><span class="icomoon-mail visible-sm visible-xs"></span><span class="hidden-sm hidden-xs">Contact Us</span></a></li>
-    </ul>
-  </nav>
+    <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo" class="navbar-left brand">
+       <img src="<?php print $logo; ?>" alt="<?php print $site_name; ?>">
+    </a>
+    <?php if($search_form): ?>
+      <?php print $search_form; ?>
+    <?php endif; ?> 
+    <nav class="navbar-top navbar-right row col-xs-6 col-sm-3 col-lg-2 ">
+      <ul class="list-inline nav-holder clearfix">
+        <li class="col-xs-4 text-center"><a href="/" class="icons-calendar"><span class="hide">Calender</span></a></li>
+        <li class="col-xs-4 text-center"><a href="/" class="icons-resources"><span class="hide">Resources</span></a></li>
+        <li class="col-xs-4 text-center"><a href="/" class="icons-contact"><span class="hide">Contact Us</span></a></li>
+      </ul>
+    </nav>
   </div>
-  <?php if ($mainmenu): ?>
-    <nav class="navbar navbar-inverse clearfix hidden-xs hidden-sm" role="navigation">      
-      <div class="collapse navbar-collapse">
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <div class="navbar-left">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="#">IASC</a></li>
+          <li><a href="#"><span class="icons-home"></span><span class="hide">Home</span></a></li>
+          <li class="active"><a href="#">IASC</a></li>
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Weekly <span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
               <li><a href="#">Principals</a></li>
               <li><a href="#">Subsidiary Bodies</a></li>
@@ -44,14 +57,14 @@
               <li><a href="#">One more separated link</a></li>
             </ul>
           </li>
-          <li><a href="#">Weekly</a></li>
           <li><a href="#">Working Groups</a></li>
           <li><a href="#">Priorities/Subsidary bodies</a></li>
           <li><a href="#">Prinipals</a></li>
         </ul>
-      </div>
-    </nav> <!-- /#main-menu -->
-  <?php endif; ?>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
 </header>
 
 <div id="main-wrapper">
