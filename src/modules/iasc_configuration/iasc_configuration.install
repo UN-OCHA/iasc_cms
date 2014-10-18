@@ -14,3 +14,12 @@ function iasc_configuration_install() {
 
   oa_buttons_create_term('section_type', 'Document Section', 'Allows users to create <em>Documents</em> and displays a list for others to read.', array('oa_wiki_page'), 'node:oa_section:document_section');
 }
+
+/**
+ * Implements hook_update_N().
+ */
+function iasc_configuration_update_7000() {
+  // Remove authoring bodies field from all content types.
+  field_delete_field('field_authoring_bodies');
+  field_purge_batch(10);
+}

@@ -267,61 +267,6 @@ function iasc_meeting_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-oa_event-field_authoring_bodies'
-  $field_instances['node-oa_event-field_authoring_bodies'] = array(
-    'bundle' => 'oa_event',
-    'comment_alter' => 0,
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Please select one or more authoring bodies for this meeting.',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'taxonomy',
-        'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 12,
-      ),
-      'featured' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'ical' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_authoring_bodies',
-    'label' => 'Authoring Bodies',
-    'options_limit' => FALSE,
-    'options_limit_empty_behaviour' => 0,
-    'options_limit_fields' => array(),
-    'required' => 1,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'apply_chosen' => 0,
-      ),
-      'type' => 'options_select',
-      'weight' => 9,
-    ),
-  );
-
   // Exported field_instance: 'node-oa_event-field_contact'
   $field_instances['node-oa_event-field_contact'] = array(
     'bundle' => 'oa_event',
@@ -697,7 +642,6 @@ function iasc_meeting_field_default_field_instances() {
   t('Add an existing or Create a new meeting agenda Document that should be associated with this Meeting.');
   t('Add an existing or Create a new meeting note Document that should be associated with this Meeting.');
   t('Agenda Items');
-  t('Authoring Bodies');
   t('Contact');
   t('Description');
   t('Item Title');
@@ -706,7 +650,6 @@ function iasc_meeting_field_default_field_instances() {
   t('Meeting Notes');
   t('Please enter additional information about the meeting. <strong>Please note:</strong> This information will not be made publicly available and has privacy restrictions.');
   t('Please note: If the agenda item does not have a referenced Document then the agenda item will be public <em>if</em> the Meeting is public.');
-  t('Please select one or more authoring bodies for this meeting.');
   t('Please select the host(s) for this meeting.');
   t('Please select the time zones for this meeting.');
   t('Presenter (External)');

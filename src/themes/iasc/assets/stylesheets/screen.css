@@ -1449,7 +1449,7 @@ a {
 }
 /* line 53, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_scaffolding.scss */
 a:hover, a:focus {
-  color: #901107;
+  color: #d9190a;
   text-decoration: underline;
 }
 /* line 58, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_scaffolding.scss */
@@ -1840,7 +1840,11 @@ ol ol {
 }
 
 /* line 167, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_type.scss */
+<<<<<<< HEAD
 .list-unstyled, .list-inline {
+=======
+.list-unstyled, .list-inline, ul, ol {
+>>>>>>> develop
   padding-left: 0;
   list-style: none;
 }
@@ -3510,7 +3514,11 @@ output {
 }
 
 /* line 115, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_forms.scss */
+<<<<<<< HEAD
 .form-control, form.navbar-form .form-type-textfield input[type="text"] {
+=======
+.form-control {
+>>>>>>> develop
   display: block;
   width: 100%;
   height: 34px;
@@ -3529,18 +3537,27 @@ output {
   transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
 }
 /* line 53, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/mixins/_forms.scss */
+<<<<<<< HEAD
 .form-control:focus, form.navbar-form .form-type-textfield input[type="text"]:focus {
+=======
+.form-control:focus {
+>>>>>>> develop
   border-color: #66afe9;
   outline: 0;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
 }
 /* line 102, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/mixins/_vendor-prefixes.scss */
+<<<<<<< HEAD
 .form-control::-moz-placeholder, form.navbar-form .form-type-textfield input[type="text"]::-moz-placeholder {
+=======
+.form-control::-moz-placeholder {
+>>>>>>> develop
   color: #cccccc;
   opacity: 1;
 }
 /* line 104, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/mixins/_vendor-prefixes.scss */
+<<<<<<< HEAD
 .form-control:-ms-input-placeholder, form.navbar-form .form-type-textfield input[type="text"]:-ms-input-placeholder {
   color: #cccccc;
 }
@@ -3550,6 +3567,17 @@ output {
 }
 /* line 143, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_forms.scss */
 .form-control[disabled], form.navbar-form .form-type-textfield input[disabled][type="text"], .form-control[readonly], form.navbar-form .form-type-textfield input[readonly][type="text"], fieldset[disabled] .form-control, fieldset[disabled] form.navbar-form .form-type-textfield input[type="text"], form.navbar-form .form-type-textfield fieldset[disabled] input[type="text"] {
+=======
+.form-control:-ms-input-placeholder {
+  color: #cccccc;
+}
+/* line 105, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/mixins/_vendor-prefixes.scss */
+.form-control::-webkit-input-placeholder {
+  color: #cccccc;
+}
+/* line 143, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_forms.scss */
+.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
+>>>>>>> develop
   cursor: not-allowed;
   background-color: #eeeeee;
   opacity: 1;
@@ -3574,7 +3602,11 @@ input[type="month"] {
   line-height: 1.53846154 \0;
 }
 /* line 186, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_forms.scss */
+<<<<<<< HEAD
 input[type="date"].input-sm, .form-horizontal .form-group-sm input[type="date"].form-control, .form-horizontal .form-group-sm form.navbar-form .form-type-textfield input[type="date"][type="text"], form.navbar-form .form-type-textfield .form-horizontal .form-group-sm input[type="date"][type="text"], .input-group-sm > input[type="date"].form-control, form.navbar-form .form-type-textfield .input-group-sm > input[type="date"][type="text"],
+=======
+input[type="date"].input-sm, .form-horizontal .form-group-sm input[type="date"].form-control, .input-group-sm > input[type="date"].form-control,
+>>>>>>> develop
 .input-group-sm > input[type="date"].input-group-addon,
 .input-group-sm > .input-group-btn > input[type="date"].btn,
 input[type="time"].input-sm,
@@ -3604,7 +3636,11 @@ form.navbar-form .form-type-textfield .input-group-sm > input[type="month"][type
   line-height: 30px;
 }
 /* line 189, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_forms.scss */
+<<<<<<< HEAD
 input[type="date"].input-lg, .form-horizontal .form-group-lg input[type="date"].form-control, .form-horizontal .form-group-lg form.navbar-form .form-type-textfield input[type="date"][type="text"], form.navbar-form .form-type-textfield .form-horizontal .form-group-lg input[type="date"][type="text"], .input-group-lg > input[type="date"].form-control, form.navbar-form .form-type-textfield .input-group-lg > input[type="date"][type="text"],
+=======
+input[type="date"].input-lg, .form-horizontal .form-group-lg input[type="date"].form-control, .input-group-lg > input[type="date"].form-control,
+>>>>>>> develop
 .input-group-lg > input[type="date"].input-group-addon,
 .input-group-lg > .input-group-btn > input[type="date"].btn,
 input[type="time"].input-lg,
@@ -3720,7 +3756,11 @@ input[type="checkbox"] {
   margin-bottom: 0;
 }
 /* line 299, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_forms.scss */
+<<<<<<< HEAD
 .form-control-static.input-lg, .form-horizontal .form-group-lg .form-control-static.form-control, .form-horizontal .form-group-lg form.navbar-form .form-type-textfield input.form-control-static[type="text"], form.navbar-form .form-type-textfield .form-horizontal .form-group-lg input.form-control-static[type="text"], .input-group-lg > .form-control-static.form-control, form.navbar-form .form-type-textfield .input-group-lg > input.form-control-static[type="text"],
+=======
+.form-control-static.input-lg, .form-horizontal .form-group-lg .form-control-static.form-control, .input-group-lg > .form-control-static.form-control,
+>>>>>>> develop
 .input-group-lg > .form-control-static.input-group-addon,
 .input-group-lg > .input-group-btn > .form-control-static.btn,
 .node-readmore .input-group-lg > .input-group-btn > a.form-control-static, .form-control-static.input-sm, .form-horizontal .form-group-sm .form-control-static.form-control, .form-horizontal .form-group-sm form.navbar-form .form-type-textfield input.form-control-static[type="text"], form.navbar-form .form-type-textfield .form-horizontal .form-group-sm input.form-control-static[type="text"], .input-group-sm > .form-control-static.form-control, form.navbar-form .form-type-textfield .input-group-sm > input.form-control-static[type="text"],
@@ -3732,7 +3772,11 @@ input[type="checkbox"] {
 }
 
 /* line 67, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/mixins/_forms.scss */
+<<<<<<< HEAD
 .input-sm, .form-horizontal .form-group-sm .form-control, .form-horizontal .form-group-sm form.navbar-form .form-type-textfield input[type="text"], form.navbar-form .form-type-textfield .form-horizontal .form-group-sm input[type="text"], .input-group-sm > .form-control, form.navbar-form .form-type-textfield .input-group-sm > input[type="text"],
+=======
+.input-sm, .form-horizontal .form-group-sm .form-control, .input-group-sm > .form-control,
+>>>>>>> develop
 .input-group-sm > .input-group-addon,
 .input-group-sm > .input-group-btn > .btn,
 .node-readmore .input-group-sm > .input-group-btn > a {
@@ -3764,7 +3808,11 @@ select[multiple].input-sm,
 }
 
 /* line 67, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/mixins/_forms.scss */
+<<<<<<< HEAD
 .input-lg, .form-horizontal .form-group-lg .form-control, .form-horizontal .form-group-lg form.navbar-form .form-type-textfield input[type="text"], form.navbar-form .form-type-textfield .form-horizontal .form-group-lg input[type="text"], .input-group-lg > .form-control, form.navbar-form .form-type-textfield .input-group-lg > input[type="text"],
+=======
+.input-lg, .form-horizontal .form-group-lg .form-control, .input-group-lg > .form-control,
+>>>>>>> develop
 .input-group-lg > .input-group-addon,
 .input-group-lg > .input-group-btn > .btn,
 .node-readmore .input-group-lg > .input-group-btn > a {
@@ -3800,7 +3848,11 @@ select[multiple].input-lg,
   position: relative;
 }
 /* line 325, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_forms.scss */
+<<<<<<< HEAD
 .has-feedback .form-control, .has-feedback form.navbar-form .form-type-textfield input[type="text"], form.navbar-form .form-type-textfield .has-feedback input[type="text"] {
+=======
+.has-feedback .form-control {
+>>>>>>> develop
   padding-right: 42.5px;
 }
 
@@ -3818,7 +3870,11 @@ select[multiple].input-lg,
 }
 
 /* line 341, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_forms.scss */
+<<<<<<< HEAD
 .input-lg + .form-control-feedback, .form-horizontal .form-group-lg .form-control + .form-control-feedback, .form-horizontal .form-group-lg form.navbar-form .form-type-textfield input[type="text"] + .form-control-feedback, form.navbar-form .form-type-textfield .form-horizontal .form-group-lg input[type="text"] + .form-control-feedback, .input-group-lg > .form-control + .form-control-feedback, form.navbar-form .form-type-textfield .input-group-lg > input[type="text"] + .form-control-feedback,
+=======
+.input-lg + .form-control-feedback, .form-horizontal .form-group-lg .form-control + .form-control-feedback, .input-group-lg > .form-control + .form-control-feedback,
+>>>>>>> develop
 .input-group-lg > .input-group-addon + .form-control-feedback,
 .input-group-lg > .input-group-btn > .btn + .form-control-feedback,
 .node-readmore .input-group-lg > .input-group-btn > a + .form-control-feedback {
@@ -3828,7 +3884,11 @@ select[multiple].input-lg,
 }
 
 /* line 346, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_forms.scss */
+<<<<<<< HEAD
 .input-sm + .form-control-feedback, .form-horizontal .form-group-sm .form-control + .form-control-feedback, .form-horizontal .form-group-sm form.navbar-form .form-type-textfield input[type="text"] + .form-control-feedback, form.navbar-form .form-type-textfield .form-horizontal .form-group-sm input[type="text"] + .form-control-feedback, .input-group-sm > .form-control + .form-control-feedback, form.navbar-form .form-type-textfield .input-group-sm > input[type="text"] + .form-control-feedback,
+=======
+.input-sm + .form-control-feedback, .form-horizontal .form-group-sm .form-control + .form-control-feedback, .input-group-sm > .form-control + .form-control-feedback,
+>>>>>>> develop
 .input-group-sm > .input-group-addon + .form-control-feedback,
 .input-group-sm > .input-group-btn > .btn + .form-control-feedback,
 .node-readmore .input-group-sm > .input-group-btn > a + .form-control-feedback {
@@ -3847,13 +3907,21 @@ select[multiple].input-lg,
   color: #3c763d;
 }
 /* line 17, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/mixins/_forms.scss */
+<<<<<<< HEAD
 .has-success .form-control, .has-success form.navbar-form .form-type-textfield input[type="text"], form.navbar-form .form-type-textfield .has-success input[type="text"] {
+=======
+.has-success .form-control {
+>>>>>>> develop
   border-color: #3c763d;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
 }
 /* line 20, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/mixins/_forms.scss */
+<<<<<<< HEAD
 .has-success .form-control:focus, .has-success form.navbar-form .form-type-textfield input[type="text"]:focus, form.navbar-form .form-type-textfield .has-success input[type="text"]:focus {
+=======
+.has-success .form-control:focus {
+>>>>>>> develop
   border-color: #2b542c;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #67b168;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #67b168;
@@ -3879,13 +3947,21 @@ select[multiple].input-lg,
   color: #8a6d3b;
 }
 /* line 17, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/mixins/_forms.scss */
+<<<<<<< HEAD
 .has-warning .form-control, .has-warning form.navbar-form .form-type-textfield input[type="text"], form.navbar-form .form-type-textfield .has-warning input[type="text"] {
+=======
+.has-warning .form-control {
+>>>>>>> develop
   border-color: #8a6d3b;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
 }
 /* line 20, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/mixins/_forms.scss */
+<<<<<<< HEAD
 .has-warning .form-control:focus, .has-warning form.navbar-form .form-type-textfield input[type="text"]:focus, form.navbar-form .form-type-textfield .has-warning input[type="text"]:focus {
+=======
+.has-warning .form-control:focus {
+>>>>>>> develop
   border-color: #66512c;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #c0a16b;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #c0a16b;
@@ -3911,13 +3987,21 @@ select[multiple].input-lg,
   color: #a94442;
 }
 /* line 17, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/mixins/_forms.scss */
+<<<<<<< HEAD
 .has-error .form-control, .has-error form.navbar-form .form-type-textfield input[type="text"], form.navbar-form .form-type-textfield .has-error input[type="text"] {
+=======
+.has-error .form-control {
+>>>>>>> develop
   border-color: #a94442;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
 }
 /* line 20, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/mixins/_forms.scss */
+<<<<<<< HEAD
 .has-error .form-control:focus, .has-error form.navbar-form .form-type-textfield input[type="text"]:focus, form.navbar-form .form-type-textfield .has-error input[type="text"]:focus {
+=======
+.has-error .form-control:focus {
+>>>>>>> develop
   border-color: #843534;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483;
@@ -3954,7 +4038,11 @@ select[multiple].input-lg,
     vertical-align: middle;
   }
   /* line 407, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_forms.scss */
+<<<<<<< HEAD
   .form-inline .form-control, .navbar-form .form-control, form.navbar-form .form-type-textfield input[type="text"] {
+=======
+  .form-inline .form-control, .navbar-form .form-control {
+>>>>>>> develop
     display: inline-block;
     width: auto;
     vertical-align: middle;
@@ -3976,7 +4064,11 @@ select[multiple].input-lg,
     width: auto;
   }
   /* line 425, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_forms.scss */
+<<<<<<< HEAD
   .form-inline .input-group > .form-control, .navbar-form .input-group > .form-control, form.navbar-form .form-type-textfield .input-group > input[type="text"] {
+=======
+  .form-inline .input-group > .form-control, .navbar-form .input-group > .form-control {
+>>>>>>> develop
     width: 100%;
   }
   /* line 429, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_forms.scss */
@@ -4295,7 +4387,7 @@ select[multiple].input-lg,
 }
 /* line 105, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_buttons.scss */
 .btn-link:hover, .btn-link:focus {
-  color: #901107;
+  color: #d9190a;
   text-decoration: underline;
   background-color: transparent;
 }
@@ -4833,7 +4925,11 @@ tbody.collapse.in {
   padding-right: 0;
 }
 /* line 19, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_input-groups.scss */
+<<<<<<< HEAD
 .input-group .form-control, .input-group form.navbar-form .form-type-textfield input[type="text"], form.navbar-form .form-type-textfield .input-group input[type="text"] {
+=======
+.input-group .form-control {
+>>>>>>> develop
   position: relative;
   z-index: 2;
   float: left;
@@ -4879,7 +4975,11 @@ form.navbar-form .form-type-textfield .input-group input[type="text"]:not(:first
   border-radius: 4px;
 }
 /* line 85, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_input-groups.scss */
+<<<<<<< HEAD
 .input-group-addon.input-sm, .form-horizontal .form-group-sm .input-group-addon.form-control, .form-horizontal .form-group-sm form.navbar-form .form-type-textfield input.input-group-addon[type="text"], form.navbar-form .form-type-textfield .form-horizontal .form-group-sm input.input-group-addon[type="text"], form.navbar-form .form-type-textfield .input-group-sm > input.input-group-addon[type="text"],
+=======
+.input-group-addon.input-sm, .form-horizontal .form-group-sm .input-group-addon.form-control,
+>>>>>>> develop
 .input-group-sm > .input-group-addon,
 .input-group-sm > .input-group-btn > .input-group-addon.btn,
 .node-readmore .input-group-sm > .input-group-btn > a.input-group-addon {
@@ -4888,7 +4988,11 @@ form.navbar-form .form-type-textfield .input-group input[type="text"]:not(:first
   border-radius: 3px;
 }
 /* line 90, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_input-groups.scss */
+<<<<<<< HEAD
 .input-group-addon.input-lg, .form-horizontal .form-group-lg .input-group-addon.form-control, .form-horizontal .form-group-lg form.navbar-form .form-type-textfield input.input-group-addon[type="text"], form.navbar-form .form-type-textfield .form-horizontal .form-group-lg input.input-group-addon[type="text"], form.navbar-form .form-type-textfield .input-group-lg > input.input-group-addon[type="text"],
+=======
+.input-group-addon.input-lg, .form-horizontal .form-group-lg .input-group-addon.form-control,
+>>>>>>> develop
 .input-group-lg > .input-group-addon,
 .input-group-lg > .input-group-btn > .input-group-addon.btn,
 .node-readmore .input-group-lg > .input-group-btn > a.input-group-addon {
@@ -4903,7 +5007,11 @@ form.navbar-form .form-type-textfield .input-group input[type="text"]:not(:first
 }
 
 /* line 110, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_input-groups.scss */
+<<<<<<< HEAD
 .input-group .form-control:first-child, .input-group form.navbar-form .form-type-textfield input[type="text"]:first-child, form.navbar-form .form-type-textfield .input-group input[type="text"]:first-child,
+=======
+.input-group .form-control:first-child,
+>>>>>>> develop
 .input-group-addon:first-child,
 .input-group-btn:first-child > .btn,
 .node-readmore .input-group-btn:first-child > a,
@@ -4924,7 +5032,11 @@ form.navbar-form .form-type-textfield .input-group input[type="text"]:not(:first
 }
 
 /* line 122, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_input-groups.scss */
+<<<<<<< HEAD
 .input-group .form-control:last-child, .input-group form.navbar-form .form-type-textfield input[type="text"]:last-child, form.navbar-form .form-type-textfield .input-group input[type="text"]:last-child,
+=======
+.input-group .form-control:last-child,
+>>>>>>> develop
 .input-group-addon:last-child,
 .input-group-btn:last-child > .btn,
 .node-readmore .input-group-btn:last-child > a,
@@ -5807,7 +5919,7 @@ form.navbar-form .form-type-textfield .input-group input[type="text"]:not(:first
 .pagination > li > a:hover, .pagination > li > a:focus,
 .pagination > li > span:hover,
 .pagination > li > span:focus {
-  color: #901107;
+  color: #d9190a;
   background-color: #eeeeee;
   border-color: #dddddd;
 }
@@ -8193,13 +8305,61 @@ h6, .h6 {
   font-family: "Montserrat", sans-serif;
 }
 
-/* line 25, ../sass/base/_elements.scss */
-ol, ul {
-  padding: 0;
+/* line 28, ../sass/base/_elements.scss */
+li {
+  list-style: none;
 }
-/* line 27, ../sass/base/_elements.scss */
-ol li, ul li {
-  list-style-position: inside;
+
+/* line 32, ../sass/base/_elements.scss */
+.list-styled li,
+.wrapped-list li {
+  padding-left: 15px;
+  position: relative;
+}
+/* line 36, ../sass/base/_elements.scss */
+.list-styled li:before,
+.wrapped-list li:before {
+  content: "\2022";
+  color: #999999;
+  position: absolute;
+  left: 0;
+  top: 0;
+  line-height: 22px;
+  font-size: 22px;
+}
+
+/* line 44, ../sass/base/_elements.scss */
+.wrapped-list li {
+  margin-bottom: 10px;
+}
+
+/* line 48, ../sass/base/_elements.scss */
+figcaption,
+figure {
+  font-size: 12px;
+  font-style: italic;
+}
+
+/* line 53, ../sass/base/_elements.scss */
+q {
+  font-style: italic;
+}
+
+/* line 58, ../sass/base/_elements.scss */
+.content img {
+  padding: 10px;
+}
+/* line 59, ../sass/base/_elements.scss */
+.content p + img {
+  padding-top: 0px;
+}
+/* line 60, ../sass/base/_elements.scss */
+.content img:not(.pull-right) {
+  padding-left: 0;
+}
+/* line 61, ../sass/base/_elements.scss */
+.content img.pull-right {
+  padding-right: 0;
 }
 
 @font-face {
