@@ -4,6 +4,7 @@ namespace IASC\Element;
 
 use IASC\Listing\AbstractListing;
 use Symfony\Component\DomCrawler\Link;
+use Symfony\Component\BrowserKit\Cookie;
 
 /**
  * Basic element class that can be extended.
@@ -21,6 +22,14 @@ abstract class AbstractElement implements ElementInterface {
     $this->listing = $listing;
     $this->listing->clickListingPage($name);
     if ($this->page != 1) {
+      // If we are past the first set of pagers,
+      // we have to click through before we post.
+      if ($this->page > 11) {
+        // Go through each ellipsis pager.
+        for ($i = 11; $i >= 11; $i -= 11) {
+          $this->listing->clickListingPager($table_id, $i);
+        }
+      }
       $this->listing->clickListingPager($table_id, $this->page);
     }
     $this->listing->clickEditLink($this->position);
@@ -67,8 +76,60 @@ abstract class AbstractElement implements ElementInterface {
       }
     }
     elseif (!empty($params['filename'])) {
-      $value = $this->listing->crawler
-        ->filter('table')->eq(1);
+      $text = $this->listing->crawler
+        ->filter('table')->eq(1)
+        ->filter('tr')->eq($params['tr'])
+        ->filter('td')->eq(2);
+
+      if ($text->getNode(0) != NULL) {
+        $text = $text->text();
+        $text = trim($text);
+      }
+      else {
+        $text = 0;
+      }
+
+      if ($text) {
+        $link = $this->listing->crawler
+          ->filter('table')->eq(1)
+          ->filter('tr')->eq($params['tr'])
+          ->filter('td')->eq(2)
+          ->selectLink($text);
+
+        if ($link->getNode(0) != NULL) {
+          $link = $link
+            ->link()
+            ->getUri();
+        }
+        else {
+          $link = 0;
+        }
+      }
+      else {
+        $link = 0;
+      }
+
+      $value = array(
+        'filename' => $text,
+        'file_link' => $link,
+      );
+
+      /*
+      $cookie = $this->listing->client->getCookieJar();
+      $this->listing->crawler = $this->listing->client->click($link);
+      $contents = $this->listing->client->request('GET', $link);
+      $contents->get($link,
+      array(
+      'save_to' =>
+      '/opt/development/iasc_cms/build/html/sites/default/files/' . $text
+      )
+      );
+
+      $file = file_get_contents($contents);
+      $insert = file_put_contents(
+      '/opt/development/iasc_cms/build/html/sites/default/files/'
+      . $text, $file);
+      */
     }
     else {
       // If the attribute isn't specified, then we assume that we need to grab

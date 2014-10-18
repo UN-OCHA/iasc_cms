@@ -447,22 +447,6 @@ function iasc_contact_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_legacy_id'
-  $field_bases['field_legacy_id'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_legacy_id',
-    'foreign keys' => array(),
-    'indexes' => array(),
-    'locked' => 0,
-    'module' => 'number',
-    'settings' => array(),
-    'translatable' => 0,
-    'type' => 'number_integer',
-  );
-
   // Exported field_base: 'field_membership'
   $field_bases['field_membership'] = array(
     'active' => 1,
