@@ -5,18 +5,18 @@
 (function ($) {
   Drupal.behaviors.iasc = {
     attach: function (context, settings) {
-      
+
       // Search Form Expand on Hover
-      $('.navbar-form .search-query').hover(function(){
+      $('.navbar-form').hover(function(){
         $(this).addClass('grow');
       },function(){
-        if(!$(this).is(":focus")) {
+        if(!$('.navbar-form .search-query').is(":focus")) {
           $(this).removeClass('grow');
         }
       });
 
       $('.navbar-form .search-query').focusout(function(){
-        $(this).removeClass('grow');
+        $('.navbar-form').removeClass('grow');
       })
       
     }
