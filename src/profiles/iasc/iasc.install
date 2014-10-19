@@ -23,10 +23,20 @@ function iasc_install() {
 
   // Editing/creating content should use the admin theme.
   variable_set('node_admin_theme', 1);
+  variable_set('admin_theme', 'oa_radix');
 
   // Enable Clean URL's.
   variable_set('clean_url', 1);
 
   // Rebuild content permissions for first time.
   node_access_rebuild();
+}
+
+/**
+ * Implements hook_update_N().
+ *
+ * Disable oa worktracker module.
+ */
+function iasc_update_7000() {
+  module_disable(array('oa_worktracker'));
 }

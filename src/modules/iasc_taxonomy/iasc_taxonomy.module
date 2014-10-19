@@ -375,7 +375,6 @@ function iasc_taxonomy_import_org($chunk, $message, $vocabulary, &$context) {
 
     $long_name = (!empty($item['orgnamelong']) && $item['orgnamelong'] != 'NULL') ? $item['orgnamelong'] : '';
     $term->field_long_name[LANGUAGE_NONE][0]['value'] = $long_name;
-    $term->field_long_name[LANGUAGE_NONE][0]['safe_value'] = check_plain($long_name);
 
     $levels = membership_level_mappings();
     if (isset($levels[$item['membertype']])) {

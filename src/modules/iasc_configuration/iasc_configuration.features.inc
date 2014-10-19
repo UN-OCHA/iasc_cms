@@ -22,3 +22,12 @@ function iasc_configuration_ctools_plugin_api($module = NULL, $api = NULL) {
 function iasc_configuration_views_api($module = NULL, $api = NULL) {
   return array("api" => "3.0");
 }
+
+/**
+ * Implements hook_node_info_alter().
+ */
+function iasc_configuration_node_info_alter(&$data) {
+  if (isset($data['oa_space'])) {
+    $data['oa_space']['title_label'] = 'Full Name'; /* WAS: 'Title' */
+  }
+}
