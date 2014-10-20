@@ -20,8 +20,9 @@
  */
 function iasc_taxonomy_import($options) {
   $result = iasc_taxonomy_check_import($options);
-  if (!empty($result['messages']))
+  if (!empty($result['messages'])) {
     return $result['messages'];
+  }
 
   // Now we have an array of terms to import. Break it up into chunks of 10.
   $chunk_size = 10;
@@ -91,9 +92,10 @@ function iasc_taxonomy_import($options) {
  * @param array $options
  *   Import options
  *
- * @return array An array holding error messages (if any) and the data.
+ * @return array
+ *   An array holding error messages (if any) and the data.
  */
-function iasc_taxonomy_check_import($options, $has_headers = FALSE){
+function iasc_taxonomy_check_import($options, $has_headers = FALSE) {
   $result['messages'] = $result['data'] = $result['vocabulary'] = array();
 
   // Load the file object.
@@ -265,8 +267,9 @@ function iasc_taxonomy_import_finished($success, $results, $operations) {
  */
 function iasc_taxonomy_import_orgs($options) {
   $result = iasc_taxonomy_check_import($options, TRUE);
-  if (!empty($result['messages']))
+  if (!empty($result['messages'])) {
     return $result['messages'];
+  }
 
   // Now we have an array of terms to import. Break it up into chunks of 10.
   $chunk_size = 10;
@@ -375,7 +378,6 @@ function iasc_taxonomy_import_org($chunk, $message, $vocabulary, &$context) {
 
     $long_name = (!empty($item['orgnamelong']) && $item['orgnamelong'] != 'NULL') ? $item['orgnamelong'] : '';
     $term->field_long_name[LANGUAGE_NONE][0]['value'] = $long_name;
-    $term->field_long_name[LANGUAGE_NONE][0]['safe_value'] = check_plain($long_name);
 
     $levels = membership_level_mappings();
     if (isset($levels[$item['membertype']])) {

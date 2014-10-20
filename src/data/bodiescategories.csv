@@ -1,0 +1,63 @@
+bodyID,mainbodyID,body,bodydetail,bodyshort,link,defaultdoclocation,bodycreated,bodyclosed,bodypublishlevel,securitylevel
+1,2,Sub-Working Group,Gender and Humanitarian Action,Gender,pageloader.aspx?page=content-subsidi-tf_gender-default,tf_gender,1/1/1998 0:00:00,3/30/2013 0:00:00,NULL,0
+2,2,Task Force,HIV / AIDS in Emergency Settings,HIV/AIDS,NULL,tf_hiv,NULL,11/21/2005 0:00:00,0,7
+3,2,Task Force,Human Rights and Humanitarian Action,Human Rights,pageloader.aspx?page=content-subsidi-tf_hr-default,tf_hrha,1/1/1998 0:00:00,3/19/2007 0:00:00,0,7
+4,2,Task Force,Training,Training,NULL,tf_training,NULL,11/21/2005 0:00:00,0,7
+5,2,Task Force,Mental Health and Psychosocial Support in Emergency Settings,Psychosocial Support,pageloader.aspx?page=content-subsidi-tf_mhps-default,tf_mhps,6/1/2005 0:00:00,12/31/2007 0:00:00,0,0
+6,2,Task Force,Collaborative Approaches to Field Security,Field Security,NULL,tf_fieldsec,NULL,11/21/2005 0:00:00,0,7
+7,2,Task Force,Assistance to Tsunami Affected Communities (IASC-UNDG),Tsunami,http://www.reliefweb.int/rw/dbc.nsf/doc108?OpenForm&emid=TS-2004-000147-LKA,tf_tsnumani,12/27/2004 0:00:00,2/1/2007 0:00:00,0,7
+12,2,Sub-Working Group,Consolidated Appeals Process (CAP),CAP,pageloader.aspx?page=content-subsidi-swg_cap-default,swg_cap,1/1/1998 0:00:00,3/30/2013 0:00:00,NULL,0
+13,2,Sub-Working Group,Emergency Telecommunications,Emergency Telecom,pageloader.aspx?page=content-subsidi-swg_telecom-default,swg_telecom,1/1/1998 0:00:00,8/5/2011 0:00:00,NULL,0
+14,2,Sub-Working Group,Preparedness,Preparedness,pageloader.aspx?page=content-subsidi-swg_preparedness-default,swg_preparedness,1/1/1998 0:00:00,3/30/2013 0:00:00,NULL,0
+15,2,Sub-Working Group,Humanitarian Consequences of Sanctions,Sanctions,NULL,tf_sanctions,NULL,12/31/1900 0:00:00,0,7
+16,2,Task Force,Assistance to Communities Affected by the South Asia Earthquake (IASC-UNDG),South Asia Earthquake,content/subsidi/tf_saeq/default.asp,tf_saeq,10/8/2005 0:00:00,11/8/2006 0:00:00,0,7
+17,1,NULL,NULL,NULL,pageloader.aspx?page=content-working-default&mainbodyid=1&publish=0,OtherDocs,7/8/1992 0:00:00,NULL,0,9
+18,3,NULL,NULL,NULL,pageloader.aspx?page=content-princip-default&mainbodyid=3&publish=0,OtherDocs,NULL,NULL,0,9
+19,4,NULL,Focal Points,NULL,NULL,OtherDocs,2/23/2006 0:00:00,NULL,0,0
+20,1,Working Group,Health,Health,pageloader.aspx?page=content-cluster-health-default,health,9/12/2005 0:00:00,12/6/2007 0:00:00,0,7
+21,6,Geneva,NULL,NULL,pageloader.aspx?page=content-weekly-default&mainbodyid=6&publish=0,OtherDocs,NULL,NULL,0,9
+23,1,Working Group,Nutrition,Nutrition,pageloader.aspx?page=content-cluster-nutrition-default,nutrition,9/12/2005 0:00:00,12/6/2007 0:00:00,0,7
+24,1,Working Group,Emergency Telecommunications,Emergency Telecommunications,pageloader.aspx?page=content-cluster-telecom-default,telecom,9/12/2005 0:00:00,12/6/2007 0:00:00,0,7
+25,1,Working Group,Camp Coordination and Management,Camp Coordination and Management,pageloader.aspx?page=content-cluster-ccm-default,camp,9/12/2005 0:00:00,12/7/2007 0:00:00,0,7
+26,1,Working Group,Logistics,Logistics,pageloader.aspx?page=content-cluster-logistics-default,logistics,9/12/2005 0:00:00,12/6/2007 0:00:00,0,7
+27,1,Working Group,Emergency Shelter,Emergency Shelter,pageloader.aspx?page=content-cluster-shelter-default,shelter,9/12/2005 0:00:00,12/6/2007 0:00:00,0,7
+28,1,Working Group,Early Recovery,Early Recovery,pageloader.aspx?page=content-cluster-recovery-default,recovery,9/12/2005 0:00:00,12/6/2007 0:00:00,0,7
+29,1,Working Group,Protection,Protection,pageloader.aspx?page=content-cluster-protection-default,protection,9/12/2005 0:00:00,12/6/2007 0:00:00,0,7
+31,2,Contact Group,Good Humanitarian Donorship,Good Humanitarian Donorship,pageloader.aspx?page=content-subsidi-cg_ghd-default,cg_ghd,1/1/1998 0:00:00,11/2/2009 0:00:00,NULL,0
+41,1,Working Group,Water and Sanitation,Water and Sanitation,pageloader.aspx?page=content-cluster-watsan-default,watsan,9/12/2005 0:00:00,12/6/2007 0:00:00,0,7
+49,6,New York,NULL,NULL,pageloader.aspx?page=content-weekly-default&mainbodyid=6&publish=0,OtherDocs,NULL,NULL,0,9
+53,4,NULL,Heads of Agencies,NULL,NULL,NULL,2/23/2006 0:00:00,NULL,0,0
+54,4,NULL,Deputy Heads of Agencies,NULL,NULL,NULL,2/23/2006 0:00:00,NULL,0,0
+56,4,NULL,Senior Managers,NULL,NULL,NULL,2/24/2006 0:00:00,NULL,0,0
+57,4,NULL,ECHA,NULL,NULL,NULL,3/7/2006 0:00:00,NULL,0,0
+58,4,NULL,NULL,NULL,NULL,OtherDocs,4/22/2006 0:00:00,NULL,0,0
+59,2,Task Force,Indonesia Earthquake,Indonesia Earthquake,http://www.reliefweb.int/rw/dbc.nsf/doc108?OpenForm&emid=EQ-2006-000064-IDN&rc,NULL,5/27/2006 0:00:00,2/20/2007 0:00:00,0,0
+63,2,Task Force,Lebanon Crisis,Lebanon Crisis,http://www.reliefweb.int/rw/dbc.nsf/doc108?OpenForm&rc=3&emid=SODA-6RT2S7,NULL,7/20/2006 0:00:00,12/31/2006 0:00:00,0,0
+64,4,GHP SC,Global Humanitarian Platform - Steering Committee,NULL,NULL,NULL,NULL,NULL,0,0
+65,2,Task Force,Natural Disasters,Natural Disasters,NULL,NULL,7/1/2003 0:00:00,6/1/2005 0:00:00,0,0
+66,2,Task Force,HIV in Humanitarian Situations,HIV in Humanitarian Situations,pageloader.aspx?page=content-subsidi-tf_hiv-default,tf_hiv,3/20/2007 0:00:00,8/5/2011 0:00:00,NULL,0
+67,2,Task Force,Safe Access to Firewood and Alternative Energy in Humanitarian Settings,Safe Access to Firewood & Alternative Energy,pageloader.aspx?page=content-subsidi-tf_safe-default,tf_SAFE,3/20/2007 0:00:00,12/31/2008 0:00:00,0,0
+70,2,Reference Group,Human Rights and Humanitarian Action,Human Rights,pageloader.aspx?page=content-subsidi-rg_hr-default,rg_hrha,3/19/2007 0:00:00,3/31/2009 0:00:00,0,0
+71,2,Task Force,Myanmar,Task Force on Myanmar,http://www.humanitarianreform.org/Default.aspx?tabid=614,tf_myanmar,5/10/2008 0:00:00,6/30/2008 0:00:00,0,0
+72,2,Reference Group,Mental Health and Psychosocial Support in Emergency Settings,Psychosocial Support,pageloader.aspx?page=content-subsidi-tf_mhps-default,rg_mhps,8/22/2008 11:55:00,NULL,0,0
+73,2,Task Force,Information Management,Information Management,pageloader.aspx?page=content-subsidi-tf_IM-default,tf_IM,1/6/2009 15:58:00,8/5/2011 0:00:00,NULL,0
+74,2,Reference Group,Meeting Humanitarian Challenges in Urban Areas,Humanitarian Challenges in Urban Areas,page_subsidi_tf_MHCUA-default-midCol,tf_MHCUA,1/6/2009 15:58:00,NULL,NULL,0
+75,2,Task Force,Needs Assessment,Needs Assessment,page_subsidi_tf_NA-midCol,tf_mmm,8/18/2009 16:53:00,NULL,NULL,0
+76,2,Task Force,Climate Change,Climate Change,page_subsidi_tf_CC-midCol,tf_CC,8/21/2009 11:45:00,8/5/2011 0:00:00,NULL,0
+77,2,IASC Sub-Working Group,Leadership and Humanitarian Coordination,Leadership and Humanitarian Coordination,page_subsidi_tf_HC-midCol,tf_HC,8/21/2009 11:47:00,3/30/2013 0:00:00,NULL,0
+78,2,Task Force,Humanitarian Space Core Group,Humanitarian Space,page_subsidi_tf_HS-midCol,tf_HS,8/21/2009 11:53:00,8/5/2011 0:00:00,NULL,0
+79,2,Sub-Working Group,Humanitarian Financing Task Team ,Humanitarian Financing,page_subsidi_tf_HF-midCol,tf_HF,8/21/2009 12:00:00,3/30/2013 0:00:00,NULL,0
+81,2,Task Force,Task Team on Clusters Mainstreaming,Task Team on Clusters Mainstreaming,,,8/21/2009 12:02:00,4/5/2010 0:00:00,NULL,0
+82,2,Task Force,Steering Group on Security,Steering Group on Security,pageloader.aspx?page=content-subsidi-tf_security-default,tf_security,4/16/2010 14:50:00,8/5/2011 0:00:00,NULL,0
+83,2,Sub-Working Group,Sub-Working Group on the Cluster Approach,Sub-Working Group on the Cluster Approach,pageloader.aspx?page=content-subsidi-tf_cluster-default,tf_cluster,4/16/2010 14:53:00,3/30/2013 0:00:00,NULL,0
+84,2,Task Force,Protection from Sexual Exploitation and Abuse,PSEA,pageloader.aspx?page=content-subsidi-tf_PSEA-default,tf_psea,11/29/2010 15:18:00,3/30/2013 0:00:00,NULL,0
+86,21,Task Force,Humanitarian Space and Civil Military Relations,Humanitarian Space and Civil Military Relations,page_subsidi_tf_HS&CV-midCol,tf_HS&CV,8/11/2011 21:22:00,NULL,NULL,0
+87,22,Transformative Agenda,IASC Transformative Agenda,TA,pageloader.aspx?page=content-template-default&bd=87,,9/1/2011 11:51:00,NULL,NULL,0
+88,1,Group,Champions and Subsidiary Body Co-Chairs,Champions and SWG Co-Chairs,,,2/16/2012 14:35:00,NULL,NULL,0
+89,2,Task Force,Accountability to Affected People,AAP,,,2/5/2013 16:37:00,3/30/2013 0:00:00,NULL,0
+90,2,Task Team,"Accountability to Affected Populations, including Protection from Sexual Exploitation and Abuse",AAP/PSEA,pageloader.aspx?page=content-subsidi-tt_AAP/PSEA-default,tt_AAP/PSEA,2/25/2014 11:18:00,NULL,NULL,0
+91,2,Task Team,Humanitarian Financing Task Team,Humanitarian Financing,pageloader.aspx?page=content-subsidi-tt_HF-default,tt_HF,2/25/2014 11:18:00,NULL,NULL,0
+92,2,Task Team,Preparedness and Resilience,Preparedness and Resilience,pageloader.aspx?page=content-subsidi-tt_PR-default,tt_PR,2/25/2014 11:19:00,NULL,NULL,0
+93,2,Task Team,Revitalizing Principled Humanitarian Action,Revitalizing Principled Humanitarian Action,pageloader.aspx?page=content-subsidi-tt_RP-default,tt_RP,2/25/2014 11:20:00,NULL,NULL,0
+94,2,Task Team,Protection in Humanitarian Crises,Protection in Humanitarian Crises,pageloader.aspx?page=content-subsidi-tt_PHC-default,tt_PHC,2/25/2014 11:21:00,NULL,NULL,0
+95,2,Reference Group,Gender and Humanitarian Action,Gender and Humanitarian Action,pageloader.aspx?page=content-subsidi-rg_GHA-default,tt_GHA,2/25/2014 11:23:00,NULL,NULL,0

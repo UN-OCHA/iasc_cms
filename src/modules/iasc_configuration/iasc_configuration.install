@@ -13,13 +13,55 @@ function iasc_configuration_install() {
   module_disable(array('bootstrap_tour'));
 
   oa_buttons_create_term('section_type', 'Document Section', 'Allows users to create <em>Documents</em> and displays a list for others to read.', array('oa_wiki_page'), 'node:oa_section:document_section');
+
+  // We have to make these changes because the following are faux features.
+  $space = node_type_load('oa_space');
+  $t = get_t();
+  $space->title_label = $t('Full Name');
+  $space->modified = TRUE;
+  node_type_save($space);
 }
 
 /**
  * Implements hook_update_N().
+ *
+ * Remove authoring bodies field from all content types.
  */
 function iasc_configuration_update_7000() {
   // Remove authoring bodies field from all content types.
   field_delete_field('field_authoring_bodies');
   field_purge_batch(10);
+}
+
+/**
+ * Implements hook_update_N().
+ *
+ * Update node title label + remove parent space nodes.
+ */
+function iasc_configuration_update_7001() {
+  // We have to make these changes because the following are faux features.
+  $space = node_type_load('oa_space');
+  $t = get_t();
+  $space->title_label = $t('Full Name');
+  $space->modified = TRUE;
+  node_type_save($space);
+
+  // Remove space parent for Subsidiary Bodies.
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'oa_space')
+    ->propertyCondition('title', array('Subsidiary Bodies', 'Principals'))
+    ->propertyOrderBy('nid', 'ASC');
+
+  $result = $query->execute();
+
+  if (isset($result['node'])) {
+    $nids = array_keys($result['node']);
+    $nodes = node_load_multiple($nids);
+    foreach ($nodes as $node) {
+      $node->oa_parent_space = array();
+      node_save($node);
+    }
+  }
+
 }
