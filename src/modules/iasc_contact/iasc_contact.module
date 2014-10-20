@@ -797,14 +797,16 @@ function iasc_contact_import_bodies_finished($success, $results, $operations) {
  * Implements hook_preprocess_views_view_table().
  */
 function iasc_contact_preprocess_views_view_table(&$vars) {
-  $rows = $vars['rows'];
-  $len = count($rows);
-  for ($i = 0; $i < $len; $i++) {
-    // field_last_name is a combination of the Title, First Name and Last Name fields.
-    // This combination is made in the table settings for the view display.
-    // We want to have the final name ouput link to the node.
-    $rows[$i]['field_last_name'] = l($rows[$i]['field_last_name'], "node/{$vars['result'][$i]->nid}");
-  }
+  if ('search_contacts' == $vars['view']->name) {
+    $rows = $vars['rows'];
+    $len = count($rows);
+    for ($i = 0; $i < $len; $i++) {
+      // field_last_name is a combination of the Title, First Name and Last Name fields.
+      // This combination is made in the table settings for the view display.
+      // We want to have the final name ouput link to the node.
+      $rows[$i]['field_last_name'] = l($rows[$i]['field_last_name'], "node/{$vars['result'][$i]->nid}");
+    }
 
-  $vars['rows'] = $rows;
+    $vars['rows'] = $rows;
+  }
 }

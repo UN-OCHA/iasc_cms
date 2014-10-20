@@ -48,10 +48,28 @@ function iasc_configuration_import($options) {
     return $messages;
   }
 
+  // Get parent bodies.
+  $parent_bodies = iasc_configuration_default_parent_bodies();
+  $subsidiary_ids = array();
+  foreach ($parent_bodies as $key => $item) {
+    if ('Subsidiary Bodies' == $item) {
+      $subsidiary_ids[] = $key;
+    }
+  }
+
+  $message = t("Importing parent bodies...\n");
+  $operations[] = array("iasc_configuration_import_spaces",
+    array(
+      $parent_bodies,
+      $message,
+      array(),
+      $subsidiary_ids,
+    ),
+  );
+
   // Break up array of spaces/sections to import into chunks of 10.
   $chunk_size = 10;
   $chunks = array_chunk($items, $chunk_size);
-  $operations = array();
   $count_chunks = count($chunks);
 
   $i = 0;
@@ -79,6 +97,8 @@ function iasc_configuration_import($options) {
       array(
         $chunk,
         $message,
+        $parent_bodies,
+        $subsidiary_ids,
       ),
     );
   }
@@ -113,14 +133,21 @@ function iasc_configuration_import($options) {
  *   The current chunk of spaces/sections
  * @param string $message
  *   A helpful message about the status of the batch process.
+ * @param array $parent_bodies
+ *   An array mapping parent body names to legacy body ids.
  * @param array $context
  *   The context for the batch process
  */
-function iasc_configuration_import_spaces($chunk, $message, &$context) {
+function iasc_configuration_import_spaces($chunk, $message, $parent_bodies, $subsidiary_ids, &$context) {
   $context['message'] = $message;
 
-  foreach ($chunk as $item) {
-    $node = iasc_configuration_create_node($item, $context);
+  foreach ($chunk as $key => $item) {
+    if (empty($parent_bodies)) {
+      // Parent bodies array does not have the same structure as subspaces csv.
+      $item = array($item => $key);
+    }
+
+    iasc_configuration_create_node($item, $parent_bodies, $subsidiary_ids, $context);
   }
 }
 
@@ -145,39 +172,65 @@ function iasc_configuration_delete_all() {
  *
  * @param array $item
  *   An array describing the space or section to create.
+ * @param array $parent_bodies
+ *   An array mapping parent body names to legacy body ids.
  * @param array &$context
  *   A batch API context.
  *
  * @return object|NULL
  *   Returns the resulting node object if created; otherwise NULL.
  */
-function iasc_configuration_create_node($item, &$context) {
+function iasc_configuration_create_node($item, $parent_bodies, $subsidiary_ids, &$context) {
   // Check the item array.
-  if (!is_array($item) || empty($item['title'])) {
+  if (!is_array($item)) {
     $context['results']['skipped'][] = "Node import failure: Unreadable node data";
     $message = t('Could not import item: @item', array('@item' => print_r($item, TRUE)));
     watchdog('iasc_configuration', $message, WATCHDOG_ERROR);
     return NULL;
   }
 
-  $context['results']['processed'][] = $item['title'];
-  $node_type = isset($item['type']) ? $item['type'] : 'oa_space';
+  $title = '';
+  // If $parent_bodies is empty, we are importing a parent space.
+  if (empty($parent_bodies)) {
+    $title = key($item);
+    $context['results']['processed'][] = $title;
 
-  $parent_nid = 0;
-  if (!empty($item['parent'])) {
-    $parent_nid = iasc_configuration_get_node_by_name('oa_space', $item['parent']);
+    $nid = iasc_configuration_get_node_by_name('oa_space', $title, 0);
   }
+  else {
+    $context['results']['processed'][] = $item['bodyID'];
 
-  $nid = iasc_configuration_get_node_by_name($node_type, $item['title'], $parent_nid);
+    // If body, bodydetail, and bodyshort equal NULL, then this is a parent space.
+    $is_parent = 'NULL' == $item['body'] &&
+      'NULL' == $item['bodydetail'] &&
+      'NULL' == $item['bodyshort'];
+    if ($is_parent) {
+      $nid = iasc_configuration_get_parent_by_legacy_id($item['mainbodyID']);
+    }
+    else {
+      // Get parent nid.
+      $legacy_parent = iasc_configuration_get_parent_by_legacy_id($item['mainbodyID']);
+
+      // If bodydetail != NULL, then that's the space name, otherwise use body.
+      if (!empty($item['bodydetail']) && $item['bodydetail'] != 'NULL') {
+        $title = $item['bodydetail'];
+      }
+      else {
+        $title = $item['body'];
+      }
+
+      $nid = iasc_configuration_get_node_by_name('oa_space', $title, $legacy_parent);
+    }
+  }
 
   if (empty($nid)) {
     $node = new stdClass();
-    $node->title = $item['title'];
+    $node->title = $title;
     $node->uid = 1;
     $node->status = 1;
     $node->comment = 0;
     $node->promote = FALSE;
-    $node->type = $node_type;
+    $node->type = 'oa_space';
     $node->language = LANGUAGE_NONE;
   }
   else {
@@ -185,24 +238,28 @@ function iasc_configuration_create_node($item, &$context) {
   }
 
   $time = time();
+  // Get created date if available.
+  if (!empty($item['bodycreated']) && $item['bodycreated'] != 'NULL') {
+    $created = new DateTime($item['bodycreated']);
+    $created = $created->getTimestamp();
+  }
+
   // Set created time if this is new.
   if (empty($nid)) {
-    if ($node_type == 'oa_space') {
-      $context['results']['new_space'][] = $node->title;
+    $context['results']['new_space'][] = $node->title;
+    if (!empty($created)) {
+      $node->created = $created;
     }
-    elseif ($node_type == 'oa_section') {
-      $context['results']['new_section'][] = $node->title;
+    else {
+      $node->created = $time;
     }
-
-    $node->created = $time;
   }
   else {
-    if ($node_type == 'oa_space') {
-      $context['results']['updated_space'][] = $node->title;
+    if (!empty($created)) {
+      $node->created = $created;
     }
-    elseif ($node_type == 'oa_section') {
-      $context['results']['updated_section'][] = $node->title;
-    }
+
+    $context['results']['updated_space'][] = $node->title;
   }
 
   $node->changed = $time;
@@ -211,52 +268,87 @@ function iasc_configuration_create_node($item, &$context) {
   $node->og_roles_permissions[LANGUAGE_NONE][0]['value'] = 0;
   $node->group_access[LANGUAGE_NONE][0]['value'] = 0;
 
-  if ('oa_space' == $node_type) {
-    $space_term = taxonomy_get_term_by_name('Default', 'space_type');
-    if ($space_term) {
-      $space_term = current($space_term);
-      $node->field_oa_space_type[LANGUAGE_NONE][0]['tid'] = $space_term->tid;
+  $space_term = taxonomy_get_term_by_name('Default', 'space_type');
+  if ($space_term) {
+    $space_term = current($space_term);
+    $node->field_oa_space_type[LANGUAGE_NONE][0]['tid'] = $space_term->tid;
+  }
+
+  if (!empty($item['bodyshort']) && $item['bodyshort'] != 'NULL') {
+    $node->field_short_name[LANGUAGE_NONE][0]['value'] = trim($item['bodyshort']);
+  }
+
+  $existing_ids = array();
+  $legacy_items = field_get_items('node', $node, 'field_body_legacy_ids');
+
+  if ($legacy_items) {
+    foreach ($legacy_items as $id) {
+      $existing_ids[] = $id['value'];
     }
   }
-  elseif ('oa_section' == $node_type) {
-    $section_type = !empty($item['section_type']) ? $item['section_type'] : 'Default';
-    $section_term = taxonomy_get_term_by_name($section_type, 'section_type');
-    if ($section_term) {
-      $section_term = current($section_term);
-      $node->field_oa_section[LANGUAGE_NONE][0]['tid'] = $section_term->tid;
+
+  // Store the legacy id of the parent body.
+  if (empty($parent_bodies)) {
+    $id = array_shift($item);
+    if (!in_array($id, $existing_ids)) {
+      $node->field_body_legacy_ids[LANGUAGE_NONE][] = array(
+        'value' => $id,
+      );
+    }
+  }
+
+  // Store the legacy id of the body. There might be multiple ids.
+  if (!empty($item['bodyID'])) {
+    if (!in_array($item['bodyID'], $existing_ids)) {
+      $node->field_body_legacy_ids[LANGUAGE_NONE][] = array(
+        'value' => trim($item['bodyID']),
+      );
+    }
+  }
+
+  if (!empty($item['bodyclosed']) && $item['bodyclosed'] != 'NULL') {
+    $closed = new DateTime($item['bodyclosed']);
+    $node->field_date_closed[LANGUAGE_NONE][0] = array(
+      'value' => $closed->format('Y-m-d H:i:s'),
+      'timezone' => 'UTC',
+      'timezone_db' => 'UTC',
+    );
+  }
+
+  // Ignore $item['link'] - we will manually update since most won't be included.
+
+  if (!empty($legacy_parent)) {
+    $node->oa_parent_space[LANGUAGE_NONE][0]['target_id'] = $legacy_parent;
+  }
+
+  // Set Panelizer default.
+  $node->field_oa_section_override[LANGUAGE_NONE][0]['value'] = 1;
+  $handler = panelizer_entity_plugin_get_handler('node');
+
+  if ('Subsidiary Bodies' == $title || in_array($item['mainbodyID'], $subsidiary_ids)) {
+    if (empty($node->panelizer)) {
+      $panelizer = $handler->get_default_panelizer_object('oa_space', 'node:oa_space:subsidiary_bodies_default');
+      $node->panelizer = $panelizer;
     }
     else {
-      // We need to create the section term since this is a brand new section
-      // that does not exist out of the box.
-      $section_term = new stdClass();
-      $section_term->name = $section_type;
-      $section_term->vocabulary_machine_name = 'section_type';
-
-      if (SAVED_NEW == taxonomy_term_save($section_term)) {
-        $node->field_oa_section[LANGUAGE_NONE][0]['tid'] = $section_term->tid;
-      }
-      else {
-        $section_term = taxonomy_get_term_by_name('Default', 'section_type');
-        $section_term = current($section_term);
-        $node->field_oa_section[LANGUAGE_NONE][0]['tid'] = $section_term->tid;
-      }
-
+      $node->panelizer['page_manager']->name = 'node:oa_space:subsidiary_bodies_default';
     }
   }
-
-  if (!empty($item['parent']) && !empty($parent_nid)) {
-    if ('oa_space' == $node_type) {
-      $node->oa_parent_space[LANGUAGE_NONE][0]['target_id'] = $parent_nid;
+  else {
+    if (empty($node->panelizer)) {
+      $panelizer = $handler->get_default_panelizer_object('oa_space', 'node:oa_space:principals_wg_weekly_default');
+      $node->panelizer = $panelizer;
     }
-    elseif ('oa_section' == $node_type) {
-      $node->og_group_ref[LANGUAGE_NONE][0]['target_id'] = $parent_nid;
+    else {
+      $node->panelizer['page_manager']->name = 'node:oa_space:principals_wg_weekly_default';
     }
   }
 
   node_save($node);
 
-  if ($item['is_front']) {
-    variable_set('site_frontpage', "node/{$node->nid}");
+  // Add sections to the subspaces - ignore $parent_bodies.
+  if (!empty($parent_bodies) && !empty($legacy_parent)) {
+    iasc_configuration_update_sections($node->nid, $context);
   }
 }
 
@@ -289,6 +381,33 @@ function iasc_configuration_get_node_by_name($type, $title, $space_nid = 0) {
       $query->fieldCondition('og_group_ref', 'target_id', $space_nid, '=');
     }
   }
+
+  $result = $query->execute();
+
+  if (isset($result['node'])) {
+    $nids = array_keys($result['node']);
+    return $nids[0];
+  }
+
+  return FALSE;
+}
+
+/**
+ * Get nid of parent based on the given legacy id.
+ *
+ * @param int $legacy_id
+ *   The legacy id
+ *
+ * @return int
+ *   The nid or FALSE if there's no nid.
+ */
+function iasc_configuration_get_parent_by_legacy_id($legacy_id) {
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'oa_space')
+    ->fieldCondition('field_body_legacy_ids', 'value', $legacy_id, '=')
+    ->propertyOrderBy('nid', 'ASC')
+    ->range(0, 1);
 
   $result = $query->execute();
 
@@ -334,4 +453,138 @@ function iasc_configuration_import_spaces_finished($success, $results, $operatio
     );
     drupal_set_message($message, 'error');
   }
+}
+
+/**
+ * Get default parent bodies.
+ *
+ * @return array
+ *   An array of the parent bodies and their legacy ids.
+ */
+function iasc_configuration_default_parent_bodies() {
+  // An array of Body Name => body legacy id.
+  $init_bodies = array(
+    'Working Group' => array(1),
+    'Subsidiary Bodies' => array(2, 10, 11, 12, 15, 18, 19, 20, 21),
+    'Principals' => array(3),
+    'Other' => array(4, 14, 17),
+    'Weekly' => array(6),
+    'Reference Group' => array(13),
+  );
+
+  $parent_bodies = array();
+  foreach ($init_bodies as $body_name => $ids) {
+    foreach ($ids as $legacy_id) {
+      $parent_bodies[$legacy_id] = $body_name;
+    }
+  }
+
+  return $parent_bodies;
+}
+
+/**
+ * Get sections nodes based on the parent nid.
+ *
+ * @param int $space_nid
+ *   The parent space nid.
+ *
+ * @return array|bool
+ *   The nid for the section or FALSE if one does not exist.
+ */
+function iasc_configuration_get_sections_by_parent($space_nid) {
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'oa_section')
+    ->propertyOrderBy('nid', 'ASC')
+    ->fieldCondition('og_group_ref', 'target_id', $space_nid, '=');
+
+  $result = $query->execute();
+
+  if (isset($result['node'])) {
+    return array_keys($result['node']);
+  }
+
+  return FALSE;
+}
+
+/**
+ * Adds default sections to a space.
+ *
+ * @param int $parent_nid
+ *   The nid for the space.
+ * @param array $context
+ *   The context array for the batch operation.
+ */
+function iasc_configuration_update_sections($parent_nid, &$context) {
+  // All subspaces have a Documents, Calendar and News Section.
+  $section_types = array('Document Section', 'Calendar Section', 'News Section');
+  $section_type_terms = array();
+  foreach ($section_types as $type) {
+    $section_term = taxonomy_get_term_by_name($type, 'section_type');
+    if ($section_term) {
+      $section_term = current($section_term);
+      $section_type_terms[$section_term->name] = $section_term->tid;
+    }
+  }
+
+  $section_nids = iasc_configuration_get_sections_by_parent($parent_nid);
+
+  if ($section_nids) {
+    $subspace_section_tids = array();
+    $sections = node_load_multiple($section_nids);
+    // Confirm that we have all of the sections:
+    foreach ($sections as $section) {
+      $subspace_section_tids[] = $section->field_oa_section[LANGUAGE_NONE][0]['tid'];
+    }
+
+    $missing_tids = array_diff($section_type_terms, $subspace_section_tids);
+    if (!empty($missing_tids)) {
+      foreach ($missing_tids as $term_name => $tid) {
+        iasc_configuration_add_section($parent_nid, $term_name, $tid);
+        $context['results']['new_section'][] = "$$term_name - $parent_nid";
+      }
+
+    }
+
+  }
+  else {
+    // We need to create sections for the first time.
+    foreach ($section_type_terms as $term_name => $tid) {
+      iasc_configuration_add_section($parent_nid, $term_name, $tid);
+      $context['results']['new_section'][] = "$term_name - $parent_nid";
+    }
+  }
+}
+
+/**
+ * Adds a section to a space.
+ *
+ * @param int $parent_nid
+ *   The nid of the space.
+ * @param string $section_name
+ *   The name of the section to be added to the space.
+ * @param int $section_tid
+ *   The tid for the section to be added to the space.
+ */
+function iasc_configuration_add_section($parent_nid, $section_name, $section_tid) {
+  $node = new stdClass();
+  $node->title = $section_name;
+  $node->uid = 1;
+  $node->status = 1;
+  $node->comment = 0;
+  $node->promote = FALSE;
+  $node->type = 'oa_section';
+  $node->language = LANGUAGE_NONE;
+  $node->og_group_ref[LANGUAGE_NONE][0]['target_id'] = $parent_nid;
+  $node->field_oa_section[LANGUAGE_NONE][0]['tid'] = $section_tid;
+
+  $time = time();
+  $node->created = $time;
+  $node->changed = $time;
+  $node->path['pathauto'] = TRUE;
+  $node->og_user_inheritance[LANGUAGE_NONE][0]['value'] = 1;
+  $node->og_roles_permissions[LANGUAGE_NONE][0]['value'] = 0;
+  $node->group_access[LANGUAGE_NONE][0]['value'] = 0;
+
+  node_save($node);
 }
