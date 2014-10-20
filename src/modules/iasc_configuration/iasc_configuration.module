@@ -208,7 +208,7 @@ function iasc_configuration_create_node($item, $parent_bodies, $subsidiary_ids, 
       $nid = iasc_configuration_get_parent_by_legacy_id($item['mainbodyID']);
     }
     else {
-      // Get parent nid
+      // Get parent nid.
       $legacy_parent = iasc_configuration_get_parent_by_legacy_id($item['mainbodyID']);
 
       // If bodydetail != NULL, then that's the space name, otherwise use body.
@@ -282,7 +282,7 @@ function iasc_configuration_create_node($item, $parent_bodies, $subsidiary_ids, 
   $legacy_items = field_get_items('node', $node, 'field_body_legacy_ids');
 
   if ($legacy_items) {
-    foreach($legacy_items as $id) {
+    foreach ($legacy_items as $id) {
       $existing_ids[] = $id['value'];
     }
   }
@@ -393,8 +393,13 @@ function iasc_configuration_get_node_by_name($type, $title, $space_nid = 0) {
 }
 
 /**
- * @param $legacy_id
- * @return bool
+ * Get nid of parent based on the given legacy id.
+ *
+ * @param int $legacy_id
+ *   The legacy id
+ *
+ * @return int
+ *   The nid or FALSE if there's no nid.
  */
 function iasc_configuration_get_parent_by_legacy_id($legacy_id) {
   $query = new EntityFieldQuery();
@@ -451,19 +456,20 @@ function iasc_configuration_import_spaces_finished($success, $results, $operatio
 }
 
 /**
+ * Get default parent bodies.
+ *
  * @return array
+ *   An array of the parent bodies and their legacy ids.
  */
 function iasc_configuration_default_parent_bodies() {
   // An array of Body Name => body legacy id.
   $init_bodies = array(
     'Working Group' => array(1),
-    'Subsidiary Bodies' => array(2, 10, 11, 12, 15, 18, 19, 20, 21,),
+    'Subsidiary Bodies' => array(2, 10, 11, 12, 15, 18, 19, 20, 21),
     'Principals' => array(3),
-    'Other' => array(4, 14, 17,),
+    'Other' => array(4, 14, 17),
     'Weekly' => array(6),
     'Reference Group' => array(13),
-//    'IASC' => array(),
-//    'Task Force' => array(),
   );
 
   $parent_bodies = array();
@@ -477,10 +483,13 @@ function iasc_configuration_default_parent_bodies() {
 }
 
 /**
- * @param $type
- * @param $title
+ * Get sections nodes based on the parent nid.
+ *
  * @param int $space_nid
+ *   The parent space nid.
+ *
  * @return array|bool
+ *   The nid for the section or FALSE if one does not exist.
  */
 function iasc_configuration_get_sections_by_parent($space_nid) {
   $query = new EntityFieldQuery();
@@ -499,8 +508,12 @@ function iasc_configuration_get_sections_by_parent($space_nid) {
 }
 
 /**
- * @param $parent_nid
- * @param $context
+ * Adds default sections to a space.
+ *
+ * @param int $parent_nid
+ *   The nid for the space.
+ * @param array $context
+ *   The context array for the batch operation.
  */
 function iasc_configuration_update_sections($parent_nid, &$context) {
   // All subspaces have a Documents, Calendar and News Section.
@@ -543,6 +556,16 @@ function iasc_configuration_update_sections($parent_nid, &$context) {
   }
 }
 
+/**
+ * Adds a section to a space.
+ *
+ * @param int $parent_nid
+ *   The nid of the space.
+ * @param string $section_name
+ *   The name of the section to be added to the space.
+ * @param int $section_tid
+ *   The tid for the section to be added to the space.
+ */
 function iasc_configuration_add_section($parent_nid, $section_name, $section_tid) {
   $node = new stdClass();
   $node->title = $section_name;

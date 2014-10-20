@@ -46,7 +46,7 @@ function iasc_configuration_update_7001() {
   $space->modified = TRUE;
   node_type_save($space);
 
-  // Remove space parent for Subsidiary Bodies
+  // Remove space parent for Subsidiary Bodies.
   $query = new EntityFieldQuery();
   $query->entityCondition('entity_type', 'node')
     ->entityCondition('bundle', 'oa_space')
