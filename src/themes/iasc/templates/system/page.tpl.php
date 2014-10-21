@@ -42,27 +42,14 @@
 
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-          <li><a href="#"><span class="icons-home"></span><span class="hide">Home</span></a></li>
-          <li class="active"><a href="#">IASC</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Weekly <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="#">Principals</a></li>
-              <li><a href="#">Subsidiary Bodies</a></li>
-              <li><a href="#">Transformative Agenda</a></li>
-              <li class="divider"></li>
-              <li><a href="#">Create New Setciton</a></li>
-              <li class="divider"></li>
-              <li><a href="#">One more separated link</a></li>
-            </ul>
-          </li>
-          <li><a href="#">Working Groups</a></li>
-          <li><a href="#">Priorities/Subsidary bodies</a></li>
-          <li><a href="#">Prinipals</a></li>
-        </ul>
-      </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
+        <?php print theme('links__system_main_menu', array(
+          'links' => $main_menu,
+          'attributes' => array(
+            'class' => array('nav navbar-nav'),
+          ),
+        )); ?>
+      </div>
+    </div>
   </nav>
 
 </header>

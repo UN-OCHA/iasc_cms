@@ -4,6 +4,8 @@
     font-family: $font-family-sans-serif;
   }
   .icons-home { font-size: 20px; }
+
+
 }
 
 .nav-holder {
@@ -11,6 +13,12 @@
   @include border-radius($border-radius-base);
   border: 0px;
 }
+
+
+  .expanded { @extend .dropdown; }
+  a.menu { @extend .dropdown-toggle; }
+  ul.menu { @extend .dropdown-menu; } 
+
 
 .navbar-top {
   ul {margin-bottom: 0;}
@@ -27,4 +35,6 @@
     }
   }
 }
+
+
 
