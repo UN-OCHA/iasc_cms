@@ -29,6 +29,9 @@ function iasc_contact_field_group_info() {
       3 => 'field_homepage',
       4 => 'field_organisation',
       5 => 'field_position',
+      6 => 'field_org_address',
+      7 => 'field_org_phone',
+      8 => 'field_org_fax',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
