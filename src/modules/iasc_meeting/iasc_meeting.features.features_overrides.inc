@@ -11,24 +11,24 @@ function iasc_meeting_features_override_default_overrides() {
   // This code is only used for UI in features. Exported alters hooks do the magic.
   $overrides = array();
 
+  // Exported overrides for: field_base
+  $overrides["field_base.field_oa_address.field_oa_address"]["DELETED"] = TRUE;
+  $overrides["field_base.field_oa_geo_location.field_oa_geo_location"]["DELETED"] = TRUE;
+
   // Exported overrides for: field_group
   $overrides["field_group.group_oa_access|node|oa_event|form.data|children|0"] = 'oa_other_spaces_ref';
   $overrides["field_group.group_oa_access|node|oa_event|form.data|children|1"] = 'oa_section_ref';
   $overrides["field_group.group_oa_access|node|oa_event|form.data|children|2"] = 'og_group_ref';
-  $overrides["field_group.group_oa_access|node|oa_event|form.data|weight"] = 5;
+  $overrides["field_group.group_oa_access|node|oa_event|form.data|weight"] = 8;
   $overrides["field_group.group_oa_event_location|node|oa_event|form.data|weight"] = 4;
 
   // Exported overrides for: field_instance
   $overrides["field_instance.node-oa_event-body.description"] = 'Please enter the public information about the meeting. <strong>Please note:</strong> This information will be made publicly available. Use the <em>Private Details</em> field to contain information that should remain private.';
   $overrides["field_instance.node-oa_event-body.label"] = 'Public Information';
-  $overrides["field_instance.node-oa_event-field_oa_address.comment_alter"] = 0;
-  $overrides["field_instance.node-oa_event-field_oa_address.description"] = '<p>To add a physical location for the meeting, please enter the address. A map widget will automatically populate with the correct coordinates when you save the node. For example:<br />
-                  1600 Pennsylvania Avenue, NW<br />
-                  Washington, DC 20500</p>
-                  <p>If you need to add additional information such as a virtual location for the meeting (meeting call/dial-in information), please insert a break after your physical address and enter your additional details</p>';
-  $overrides["field_instance.node-oa_event-field_oa_address.widget|weight"] = 10;
-  $overrides["field_instance.node-oa_event-field_oa_geo_location.widget|weight"] = 11;
-  $overrides["field_instance.node-oa_event-og_vocabulary.widget|weight"] = 15;
+  $overrides["field_instance.node-oa_event-field_oa_address.node-oa_event-field_oa_address"]["DELETED"] = TRUE;
+  $overrides["field_instance.node-oa_event-field_oa_geo_location.node-oa_event-field_oa_geo_location"]["DELETED"] = TRUE;
+  $overrides["field_instance.node-oa_event-field_oa_media.node-oa_event-field_oa_media"]["DELETED"] = TRUE;
+  $overrides["field_instance.node-oa_event-og_vocabulary.widget|weight"] = 14;
 
   // Exported overrides for: node
   $overrides["node.oa_event.description"] = 'Create a Meeting to hold information about the next meeting event and to reference Agenda and the Meeting Notes Documents.';
@@ -261,14 +261,12 @@ function iasc_meeting_features_override_default_overrides() {
       'uuid' => 'ba879f23-61fc-4869-a081-d6663e9d1523',
     );
   $overrides["panelizer_defaults.node:oa_event:default.display|content|new-cf81af22-ac8b-4147-8462-a5fce1b76471|position"] = 4;
-  $overrides["panelizer_defaults.node:oa_event:default.display|panels|contentmain|1"] = 'new-554e3ff8-5ae2-47d4-944e-53903613b9f5';
-  $overrides["panelizer_defaults.node:oa_event:default.display|panels|contentmain|2"] = 'new-ba879f23-61fc-4869-a081-d6663e9d1523';
-  $overrides["panelizer_defaults.node:oa_event:default.display|panels|contentmain|3"] = 'new-a9f6283b-bf22-4353-8833-be04cb53b8ce';
-  $overrides["panelizer_defaults.node:oa_event:default.display|panels|contentmain|4"] = 'new-19fe4e19-0d90-4acf-9c80-e1ffdf773880';
-  $overrides["panelizer_defaults.node:oa_event:default.display|panels|contentmain|5"] = 'new-2832cb36-53a3-484e-bbf0-05b7084ea8f4';
-  $overrides["panelizer_defaults.node:oa_event:default.display|panels|sidebar|2"] = 'new-64975a0b-8b8d-4816-8d78-0a066a557a04';
+  $overrides["panelizer_defaults.node:oa_event:default.display|panels|contentmain|1"] = 'new-19fe4e19-0d90-4acf-9c80-e1ffdf773880';
+  $overrides["panelizer_defaults.node:oa_event:default.display|panels|contentmain|2"] = 'new-2832cb36-53a3-484e-bbf0-05b7084ea8f4';
+  $overrides["panelizer_defaults.node:oa_event:default.display|panels|contentmain|3"] = 'new-554e3ff8-5ae2-47d4-944e-53903613b9f5';
+  $overrides["panelizer_defaults.node:oa_event:default.display|panels|contentmain|4"] = 'new-ba879f23-61fc-4869-a081-d6663e9d1523';
   $overrides["panelizer_defaults.node:oa_event:default.display|panels|sidebar|3"] = 'new-213e8d65-ffde-47b2-bad5-b54b3f97dcfd';
-  $overrides["panelizer_defaults.node:oa_event:default.display|panels|sidebar|4"] = 'new-cf81af22-ac8b-4147-8462-a5fce1b76471';
+  $overrides["panelizer_defaults.node:oa_event:default.display|panels|sidebar|4"] = 'new-64975a0b-8b8d-4816-8d78-0a066a557a04';
 
   // Exported overrides for: views_view
   $overrides["views_view.oa_event_detail.display|default|display_options|fields|field_time_zone"] = array(

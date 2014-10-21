@@ -20,21 +20,19 @@ function iasc_meeting_install() {
 }
 
 /**
- * Implements hook_uninstall().
+ * Implements hook_update_N().
+ *
+ * Remove location and media attachment fields.
  */
-function iasc_meeting_uninstall() {
-  // Revert back to the original setup for OA Event.
-  $event = node_type_load('oa_event');
-  $t = get_t();
-  $event->name = $t('Event');
-  $event->description = $t('An Open Atrium Event');
-  $event->modified = TRUE;
-  $event->locked = 1;
-  node_type_save($event);
+function iasc_meeting_update_7000() {
+  field_delete_field('field_oa_media');
+  field_delete_field('field_oa_address');
+  field_delete_field('field_oa_geo_location');
 
-  // Remove meeting_type vocabulary.
-  $meeting_type = taxonomy_vocabulary_machine_name_load('meeting_type');
-  if (!empty($meeting_type)) {
-    taxonomy_vocabulary_delete($meeting_type->vid);
+  if ($group = field_group_load_field_group('group_oa_event_location', 'node', 'oa_event', 'form')) {
+    ctools_include('export');
+    field_group_group_export_delete($group, FALSE);
   }
+
+  field_purge_batch(10);
 }

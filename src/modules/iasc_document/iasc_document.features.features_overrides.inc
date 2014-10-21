@@ -15,7 +15,7 @@ function iasc_document_features_override_default_overrides() {
   $overrides["field_instance.node-oa_wiki_page-body.comment_alter"] = 0;
   $overrides["field_instance.node-oa_wiki_page-body.description"] = 'Enter a description of the product.';
   $overrides["field_instance.node-oa_wiki_page-body.label"] = 'Description';
-  $overrides["field_instance.node-oa_wiki_page-body.widget|weight"] = 4;
+  $overrides["field_instance.node-oa_wiki_page-body.widget|weight"] = 5;
   $overrides["field_instance.node-oa_wiki_page-field_oa_media.widget|weight"] = 7;
   $overrides["field_instance.node-oa_wiki_page-og_vocabulary.widget|weight"] = 8;
 

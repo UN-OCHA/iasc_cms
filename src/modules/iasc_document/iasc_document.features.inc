@@ -12,7 +12,7 @@ function iasc_document_field_default_field_instances_alter(&$data) {
     $data['node-oa_wiki_page-body']['comment_alter'] = 0; /* WAS: '' */
     $data['node-oa_wiki_page-body']['description'] = 'Enter a description of the product.'; /* WAS: 'Enter the content of the document or wiki here.' */
     $data['node-oa_wiki_page-body']['label'] = 'Description'; /* WAS: 'Body' */
-    $data['node-oa_wiki_page-body']['widget']['weight'] = 4; /* WAS: 3 */
+    $data['node-oa_wiki_page-body']['widget']['weight'] = 5; /* WAS: 3 */
   }
   if (isset($data['node-oa_wiki_page-field_oa_media'])) {
     $data['node-oa_wiki_page-field_oa_media']['widget']['weight'] = 7; /* WAS: 6 */
