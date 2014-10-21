@@ -16,8 +16,15 @@ class IASCMeeting extends IASCDefault {
     $this->values = $values;
 
     // Plain text fields.
+    $this->plain = array(
+      'field_city',
+      'field_venue',
+      'field_room',
+      'field_legacy_publish',
+    );
+
+    // Text area fields.
     $this->fields = array(
-      'field_oa_address',
       'body',
       'field_info_private',
     );
@@ -26,9 +33,6 @@ class IASCMeeting extends IASCDefault {
     $this->terms = array(
       'field_host' => array(
         'name' => 'hosts',
-      ),
-      'field_authoring_bodies' => array(
-        'name' => 'authoring_bodies',
       ),
     );
 

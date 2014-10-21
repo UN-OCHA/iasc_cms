@@ -7,9 +7,38 @@
 
 /**
  * Implements hook_update_N().
+ *
+ * Remove field contact body.
  */
 function iasc_contact_update_7000() {
-  // Remove field contact body.
   field_delete_field('field_contact_body');
+  field_purge_batch(10);
+}
+
+/**
+ * Implements hook_update_N().
+ *
+ * Remove all of the field bases that features doesn't remove.
+ */
+function iasc_contact_update_7001() {
+  /* These fields were removed from the feature.
+     At the time we did a site install, but apparently removing a previously
+     defined field from a feature doesn't remove it from the field_base.inc and
+     feature.info file. Since we are no longer doing site installs we need to
+     remove these fields programmatically :/
+  */
+  field_delete_field('field_building');
+  field_delete_field('field_country');
+  field_delete_field('field_email_other');
+  field_delete_field('field_email_web');
+  field_delete_field('field_mobile_other');
+  field_delete_field('field_mobile_web');
+  field_delete_field('field_organization');
+  field_delete_field('field_phone_other');
+  field_delete_field('field_phone_web');
+  field_delete_field('field_post_code');
+  field_delete_field('field_province');
+  field_delete_field('field_street');
+  field_delete_field('field_suffix');
   field_purge_batch(10);
 }

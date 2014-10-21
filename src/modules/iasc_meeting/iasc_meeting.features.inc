@@ -14,6 +14,18 @@ function iasc_meeting_ctools_plugin_api($module = NULL, $api = NULL) {
 }
 
 /**
+ * Implements hook_field_default_field_bases_alter().
+ */
+function iasc_meeting_field_default_field_bases_alter(&$data) {
+  if (isset($data['field_oa_address'])) {
+    unset($data['field_oa_address']);
+  }
+  if (isset($data['field_oa_geo_location'])) {
+    unset($data['field_oa_geo_location']);
+  }
+}
+
+/**
  * Implements hook_field_group_info_alter().
  */
 function iasc_meeting_field_group_info_alter(&$data) {
@@ -21,7 +33,7 @@ function iasc_meeting_field_group_info_alter(&$data) {
     $data['group_oa_access|node|oa_event|form']->data['children'][0] = 'oa_other_spaces_ref'; /* WAS: 'oa_section_ref' */
     $data['group_oa_access|node|oa_event|form']->data['children'][1] = 'oa_section_ref'; /* WAS: 'og_group_ref' */
     $data['group_oa_access|node|oa_event|form']->data['children'][2] = 'og_group_ref'; /* WAS: 'oa_other_spaces_ref' */
-    $data['group_oa_access|node|oa_event|form']->data['weight'] = 5; /* WAS: 7 */
+    $data['group_oa_access|node|oa_event|form']->data['weight'] = 8; /* WAS: 7 */
   }
   if (isset($data['group_oa_event_location|node|oa_event|form'])) {
     $data['group_oa_event_location|node|oa_event|form']->data['weight'] = 4; /* WAS: 5 */
@@ -37,21 +49,16 @@ function iasc_meeting_field_default_field_instances_alter(&$data) {
     $data['node-oa_event-body']['label'] = 'Public Information'; /* WAS: 'Description' */
   }
   if (isset($data['node-oa_event-field_oa_address'])) {
-    $data['node-oa_event-field_oa_address']['comment_alter'] = 0; /* WAS: '' */
-    $data['node-oa_event-field_oa_address']['description'] = '<p>To add a physical location for the meeting, please enter the address. A map widget will automatically populate with the correct coordinates when you save the node. For example:<br />
-                    1600 Pennsylvania Avenue, NW<br />
-                    Washington, DC 20500</p>
-                    <p>If you need to add additional information such as a virtual location for the meeting (meeting call/dial-in information), please insert a break after your physical address and enter your additional details</p>'; /* WAS: 'Location Address and/or link, i.e.,
-    1600 Pennsylvania Avenue, NW
-    Washington, DC 20500
-    http://www.whitehouse.gov/' */
-    $data['node-oa_event-field_oa_address']['widget']['weight'] = 10; /* WAS: 3 */
+    unset($data['node-oa_event-field_oa_address']);
   }
   if (isset($data['node-oa_event-field_oa_geo_location'])) {
-    $data['node-oa_event-field_oa_geo_location']['widget']['weight'] = 11; /* WAS: 8 */
+    unset($data['node-oa_event-field_oa_geo_location']);
+  }
+  if (isset($data['node-oa_event-field_oa_media'])) {
+    unset($data['node-oa_event-field_oa_media']);
   }
   if (isset($data['node-oa_event-og_vocabulary'])) {
-    $data['node-oa_event-og_vocabulary']['widget']['weight'] = 15; /* WAS: 9 */
+    $data['node-oa_event-og_vocabulary']['widget']['weight'] = 14; /* WAS: 9 */
   }
 }
 
@@ -302,14 +309,12 @@ function iasc_meeting_panelizer_defaults_override_alter(&$data) {
           'uuid' => 'ba879f23-61fc-4869-a081-d6663e9d1523',
         ); /* WAS: '' */
     $data['node:oa_event:default']->display->content['new-cf81af22-ac8b-4147-8462-a5fce1b76471']->position = 4; /* WAS: 2 */
-    $data['node:oa_event:default']->display->panels['contentmain'][1] = 'new-554e3ff8-5ae2-47d4-944e-53903613b9f5'; /* WAS: '' */
-    $data['node:oa_event:default']->display->panels['contentmain'][2] = 'new-ba879f23-61fc-4869-a081-d6663e9d1523'; /* WAS: '' */
-    $data['node:oa_event:default']->display->panels['contentmain'][3] = 'new-a9f6283b-bf22-4353-8833-be04cb53b8ce'; /* WAS: '' */
-    $data['node:oa_event:default']->display->panels['contentmain'][4] = 'new-19fe4e19-0d90-4acf-9c80-e1ffdf773880'; /* WAS: '' */
-    $data['node:oa_event:default']->display->panels['contentmain'][5] = 'new-2832cb36-53a3-484e-bbf0-05b7084ea8f4'; /* WAS: '' */
-    $data['node:oa_event:default']->display->panels['sidebar'][2] = 'new-64975a0b-8b8d-4816-8d78-0a066a557a04'; /* WAS: 'new-cf81af22-ac8b-4147-8462-a5fce1b76471' */
+    $data['node:oa_event:default']->display->panels['contentmain'][1] = 'new-19fe4e19-0d90-4acf-9c80-e1ffdf773880'; /* WAS: '' */
+    $data['node:oa_event:default']->display->panels['contentmain'][2] = 'new-2832cb36-53a3-484e-bbf0-05b7084ea8f4'; /* WAS: '' */
+    $data['node:oa_event:default']->display->panels['contentmain'][3] = 'new-554e3ff8-5ae2-47d4-944e-53903613b9f5'; /* WAS: '' */
+    $data['node:oa_event:default']->display->panels['contentmain'][4] = 'new-ba879f23-61fc-4869-a081-d6663e9d1523'; /* WAS: '' */
     $data['node:oa_event:default']->display->panels['sidebar'][3] = 'new-213e8d65-ffde-47b2-bad5-b54b3f97dcfd'; /* WAS: '' */
-    $data['node:oa_event:default']->display->panels['sidebar'][4] = 'new-cf81af22-ac8b-4147-8462-a5fce1b76471'; /* WAS: '' */
+    $data['node:oa_event:default']->display->panels['sidebar'][4] = 'new-64975a0b-8b8d-4816-8d78-0a066a557a04'; /* WAS: '' */
   }
 }
 

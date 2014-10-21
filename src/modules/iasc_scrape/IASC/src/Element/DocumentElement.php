@@ -67,6 +67,10 @@ class DocumentElement extends AbstractElement {
         'filename' => TRUE,
         'tr' => 2,
       ),
+      'field_legacy_publish' => array(
+        'selector' => '#ctl00_ContentPlaceHolder1_ctl00_ddlPublish option[selected="selected"]',
+        'get_text' => TRUE,
+      ),
     );
     $this->values = $values;
   }

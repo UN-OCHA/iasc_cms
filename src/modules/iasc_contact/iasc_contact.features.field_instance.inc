@@ -846,7 +846,7 @@ function iasc_contact_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_organisation',
-    'label' => 'Organisation',
+    'label' => 'Organization',
     'options_limit' => FALSE,
     'options_limit_empty_behaviour' => 0,
     'options_limit_fields' => array(),
@@ -1114,7 +1114,7 @@ function iasc_contact_field_default_field_instances() {
   t('Last Name');
   t('Legacy ID');
   t('Mobile Phone');
-  t('Organisation');
+  t('Organization');
   t('Phone');
   t('Photo');
   t('Position');

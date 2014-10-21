@@ -18,10 +18,20 @@ class IASCDocument extends IASCDefault {
     // Plain fields.
     $this->plain = array(
       'field_document_no',
+      'field_legacy_publish',
     );
 
     // Created date.
     $this->created = 'posted_date';
+
+    // Date fields.
+    $this->dates = array(
+      'field_published_date' => array(
+        'published' => array(
+          'date' => 'posted_date',
+        ),
+      ),
+    );
 
     // Hardcoded values.
     $term = taxonomy_get_term_by_name('Document', 'document_types');

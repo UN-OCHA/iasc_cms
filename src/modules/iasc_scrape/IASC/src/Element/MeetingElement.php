@@ -57,7 +57,9 @@ class MeetingElement extends AbstractElement {
         'selector' => '#ctl00_ContentPlaceHolder1_ctl00_ddlZone option[selected="selected"]',
         'get_text' => TRUE,
       ),
-      'field_oa_address' => array('selector' => '#ctl00_ContentPlaceHolder1_ctl00_txtCity'),
+      'field_city' => array('selector' => '#ctl00_ContentPlaceHolder1_ctl00_txtCity'),
+      'field_venue' => array('selector' => '#ctl00_ContentPlaceHolder1_ctl00_txtVenue'),
+      'field_room' => array('selector' => '#ctl00_ContentPlaceHolder1_ctl00_txtRoom'),
       'field_host' => array(
         'selector' => '#ctl00_ContentPlaceHolder1_ctl00_ddlhost option[selected="selected"]',
         'get_text' => TRUE,
@@ -80,6 +82,10 @@ class MeetingElement extends AbstractElement {
         'table_link' => TRUE,
         'tr' => 1,
         'td' => 5,
+      ),
+      'field_legacy_publish' => array(
+        'selector' => '#ctl00_ContentPlaceHolder1_ctl00_ddlpublev2 option[selected="selected"]',
+        'get_text' => TRUE,
       ),
     );
     $this->values = $values;
