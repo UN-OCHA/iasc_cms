@@ -61,3 +61,7 @@ q {
   img.pull-right { padding-right: 0 }
 }
 
+.form-control:focus {
+  @include box-shadow(0 0 0 #fff !important);
+}
+
