@@ -64,39 +64,34 @@ function iasc_preprocess_page(&$variables) {
     $variables['copyright'] = check_markup($copyright['value'], $copyright['format']);
   }
 
-  $variables['mainmenu'] = array(
-    'home' => array(
-      'title' => t('Home'),
-      'href' => '<front>',
-    ),
-    'iasc' => array(
-      'title' => t('IASC'),
-      'href' => '<front>',
-    ),
-    'weekly' => array(
-      'title' => t('Weekly'),
-      'href' => '<front>',
-    ),
-    'working-groups' => array(
-      'title' => t('Working Groups'),
-      'href' => '<front>',
-    ),
-    'priorities' => array(
-      'title' => t('Priorities/Subsidary bodies'),
-      'href' => '<front>',
-    ),
-    'principals' => array(
-      'title' => t('Principals'),
-      'href' => '<front>',
-    ),
-  );
-
   // Move Panel IPE on top of primary tabs.
   if (!empty($variables['page']['page_bottom']['panels_ipe'])) {
     $panels_ipe = $variables['page']['page_bottom']['panels_ipe'];
     unset($variables['page']['page_bottom']['panels_ipe']);
     array_push($variables['page']['panelipe'], $panels_ipe);
   }
+}
+
+/**
+ * Implements hook_links__system_main_menu().
+ */
+function iasc_links__system_main_menu(&$vars) {
+  unset($vars['links']['#sorted']);
+  unset($vars['links']['#theme_wrappers']);
+  $output = '';
+  $output .= '<ul class="' . implode(' ', $vars['attributes']['class']) . '">';
+  if (is_array($vars['links'])) {
+    foreach ($vars['links'] as &$link) {
+      if (!empty($link['#below'])) {
+        $link['#attributes']['class'][] = 'dropdown';
+        $link['#below']['#attributes']['class'][] = 'dropdown-menu';
+      }
+      $output .= render($link);
+    }
+  }
+  $output .= '</ul>';
+
+  return $output;
 }
 
 /**
