@@ -8731,7 +8731,3 @@ header.container .top {
     max-width: 200px;
   }
 }
-/* line 22, ../sass/screen.scss */
-.another-class {
-  border: 1px solid red !important;
-}
