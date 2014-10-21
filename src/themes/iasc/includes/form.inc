@@ -40,7 +40,7 @@ function iasc_file_managed_file($vars) {
 }
 
 /**
- * Implements theme_file_managed_file().
+ * Implements theme_file().
  */
 function iasc_file(&$vars) {
   $element = $vars['element'];
