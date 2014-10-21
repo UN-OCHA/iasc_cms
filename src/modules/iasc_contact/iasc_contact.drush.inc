@@ -60,6 +60,22 @@ function iasc_contact_drush_command() {
     ),
   );
 
+  $items['iasc-update-addresses'] = array(
+    'description' => 'Updates contact nodes with addresses for organizations from a given csv file',
+    'arguments' => array(
+      'file' => 'The file containing the contact organization address data',
+    ),
+    'bootstrap' => DRUSH_BOOTSTRAP_DRUPAL_LOGIN,
+    'callback' => 'drush_iasc_contact_iasc_update_contact_addresses',
+    'options' => array(
+      'delimiter'     => 'CSV delimiter (default: ",")',
+      'enclosure'     => "CSV enclosure (default: '\"')",
+    ),
+    'examples' => array(
+      'drush iasc-update-addresses <path>/data/addresses.csv --delimiter=";"' => 'Updates contacts using addresses.csv using delimiter ";"',
+    ),
+  );
+
   return $items;
 }
 
@@ -75,7 +91,9 @@ function iasc_contact_drush_help($section) {
       return dt('Update contacts with organisation references from a CSV file.');
 
     case 'drush:iasc-update-bodies':
-      return dt('Import contacts with body references from a CSV file.');
+      return dt('Update contacts with body references from a CSV file.');
+    case 'drush:iasc-update-addresses':
+      return dt('Update contacts with organization addresses from a CSV file.');
   }
 }
 
@@ -98,6 +116,13 @@ function drush_iasc_contact_iasc_update_contact_orgs($file = '') {
  */
 function drush_iasc_contact_iasc_update_contact_bodies($file = '') {
   iasc_contact_batch_import('bodies', $file);
+}
+
+/**
+ * Callback to execute 'drush iasc-update-addresses'.
+ */
+function drush_iasc_contact_iasc_update_contact_addresses($file = '') {
+  iasc_contact_batch_import('addresses', $file);
 }
 
 /**

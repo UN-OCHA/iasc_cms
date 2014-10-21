@@ -113,6 +113,10 @@ function iasc_contact_import($options) {
     case 'bodies':
       $finished = 'iasc_contact_import_bodies_finished';
       break;
+
+    case 'addresses':
+      $finished = 'iasc_contact_import_addresses_finished';
+      break;
   }
 
   // Put all that information into our batch array.
@@ -120,7 +124,6 @@ function iasc_contact_import($options) {
     'operations' => $operations,
     'title' => t('Importing !total_lines lines from CSV file "%filename"...', array(
         '%filename'    => $options['file'],
-        '!total_lines' => $options['total_lines'],
       )
     ),
     'init_message' => t('Starting to import contacts...'),
@@ -130,7 +133,7 @@ function iasc_contact_import($options) {
   );
 
   // Delete all contacts if flag set.
-  if ($options['delete_all']) {
+  if (!empty($options['delete_all'])) {
     iasc_contact_delete_all();
   }
 
@@ -216,6 +219,10 @@ function iasc_contact_contact_batch_ops($file_handle, $options, &$messages, &$op
 
       case 'bodies':
         $operation = 'iasc_contact_update_bodies';
+        break;
+
+      case 'addresses':
+        $operation = 'iasc_contact_update_addresses';
         break;
     }
 
@@ -303,6 +310,24 @@ function iasc_contact_update_orgs($chunk, $message, &$context) {
 
   foreach ($chunk as $item) {
     iasc_contact_link_org($item, $context);
+  }
+}
+
+/**
+ * Updates or saves the new chunk of org addresses for contacts.
+ *
+ * @param array $chunk
+ *   The current chunk of org address data
+ * @param string $message
+ *   A helpful message about the status of the batch process.
+ * @param array $context
+ *   The context for the batch process
+ */
+function iasc_contact_update_addresses($chunk, $message, &$context) {
+  $context['message'] = $message;
+
+  foreach ($chunk as $item) {
+    iasc_contact_link_address($item, $context);
   }
 }
 
@@ -576,6 +601,79 @@ function iasc_contact_link_org($item, &$context) {
 }
 
 /**
+ * Takes an array and updates a contact node with organisation address.
+ *
+ * @param array $item
+ *   An array describing the contact/organisation relationship and address.
+ * @param array &$context
+ *   A batch API context.
+ */
+function iasc_contact_link_address($item, &$context) {
+  // Check the item array.
+  if (!is_array($item)) {
+    $context['results']['address_skipped'][] = "Node import failure: Unreadable node data";
+    $message = t('Could not import item');
+    watchdog('iasc_contact', $message, WATCHDOG_ERROR);
+    return NULL;
+  }
+
+  $legacy_id = $item['contactID'];
+  $context['results']['address_processed'][] = $legacy_id;
+
+  $nid = iasc_contact_get_nid_by_legacyid($legacy_id);
+  // We should have a contact node at this point.
+  if (empty($nid)) {
+    $context['results']['address_skipped'][] = "Node import failure: Unreadable node data";
+    $message = t('Could not import item: @item', array('@item' => $item['contactID']));
+    watchdog('iasc_contact', $message, WATCHDOG_ERROR);
+    return;
+  }
+
+  $node_wrapper = entity_metadata_wrapper('node', $nid);
+  $entity = $node_wrapper->value();
+
+  $address = $node_wrapper->field_org_address->value();
+
+  // We are using the name_line field of addressfield for orgbuilding.
+  $address['name_line'] = (!empty($item['orgbuilding']) && $item['orgbuilding'] != 'NULL') ? $item['orgbuilding'] : '';
+
+  $address['thoroughfare'] = (!empty($item['orgstreet']) && $item['orgstreet'] != 'NULL') ? $item['orgstreet'] : '';
+  $address['administrative_area'] = (!empty($item['orgstateprovince']) && $item['orgstateprovince'] != 'NULL') ? $item['orgstateprovince'] : '';
+  $address['locality'] = (!empty($item['orgcity']) && $item['orgcity'] != 'NULL') ? $item['orgcity'] : '';
+  $address['postal_code'] = (!empty($item['orgpostcode']) && $item['orgpostcode'] != 'NULL') ? $item['orgpostcode'] : '';
+  $address['premise'] = (!empty($item['orgpostcode2']) && $item['orgpostcode2'] != 'NULL') ? $item['orgpostcode2'] : '';
+
+  // Standardize the country.
+  if (!empty($item['orgcountry']) && $item['orgcountry'] != 'NULL') {
+    $country_mappings = legacy_country_mappings();
+    $address['country'] = $country_mappings[$item['orgcountry']];
+  }
+  else {
+    // Set the default country to Switzerland for empty addresses.
+    // Country determines the default set of address fields displayed in the form.
+    $address['country'] = 'CH';
+  }
+
+  $node_wrapper->field_org_address->set($address);
+
+  $node_wrapper->field_org_phone = (!empty($item['orgphone']) && $item['orgphone'] != 'NULL') ? $item['orgphone'] : '';
+  $node_wrapper->field_org_fax = (!empty($item['orgfax']) && $item['orgfax'] != 'NULL') ? $item['orgfax'] : '';
+
+  // Save the entity.
+    $node_wrapper->save(TRUE);
+    entity_save('node', $entity);
+
+    $message = t("Update Contact: @contact with org address for: @org", array(
+      '@contact' => $node_wrapper->title->value(),
+      '@org' => $item['orgName'],
+    ));
+    watchdog('iasc_contact', $message, WATCHDOG_DEBUG);
+
+    $context['results']['updated_org_contact'][] = $legacy_id;
+}
+
+
+/**
  * Get the default mappings for titles.
  *
  * @return array
@@ -792,6 +890,45 @@ function iasc_contact_import_bodies_finished($success, $results, $operations) {
     drupal_set_message($message, 'error');
   }
 }
+
+/**
+ * Callback for when the batch process finishes.
+ *
+ * @param bool $success
+ *   True if the batch process completed without errors.
+ * @param array $results
+ *   Information about the results set in iasc_contact_update_addresses().
+ * @param array $operations
+ *   An array of details about the operations.
+ */
+function iasc_contact_import_addresses_finished($success, $results, $operations) {
+  if ($success) {
+    drupal_set_message(count($results['address_processed']) . ' items processed.');
+
+    $results['updated_address_contact'] = !empty($results['updated_address_contact']) ?
+      $results['updated_address_contact'] : array();
+    drupal_set_message(count($results['updated_address_contact']) .
+      ' contacts updated with organization address.');
+
+    if (!empty($results['address_skipped'])) {
+      drupal_set_message(count($results['address_skipped']) .
+        ' org address were not imported. See log for details.');
+    }
+  }
+  else {
+    // $operations contains the operations that remained unprocessed.
+    $error_operation = reset($operations);
+    $message = t('An error occurred while processing %error_operation with arguments: @arguments',
+      array(
+        '%error_operation' => $error_operation[0],
+        '@arguments' => print_r($error_operation[1],
+          TRUE),
+      )
+    );
+    drupal_set_message($message, 'error');
+  }
+}
+
 
 /**
  * Implements hook_preprocess_views_view_table().
