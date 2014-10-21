@@ -18,3 +18,7 @@
 @import "layout/layout";
 @import "components/**/*";
 @import "state/**/*"; 
+
+.another-class {
+  border: 1px solid red !important; 
+}
