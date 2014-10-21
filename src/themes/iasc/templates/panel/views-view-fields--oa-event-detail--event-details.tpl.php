@@ -39,7 +39,6 @@
     <div class='oa-event-details'>
       <?php print $field_oa_date; ?>
       <span class='oa-event-label'><?php print t('Timezone:');?></span> <?php print $field_time_zone; ?>
-      <?php print $field_oa_address; ?>
     </div>
   </div>
   <div class='oa-event-description'>

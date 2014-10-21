@@ -176,6 +176,23 @@ class IASCDefault {
    */
   protected function setDates() {
     foreach ($this->dates as $date_field => $date) {
+      // If date is of type published, then this is just a single m/d/y date value.
+      // Published is similar to the node->created timestamp.
+      if (!empty($date['published'])) {
+        $fixed_date = str_replace('/', '-', $this->values['data'][$date['published']['date']]);
+        $unix = strtotime($fixed_date);
+        if (!empty($unix)) {
+          try {
+            $this->wrapper->{$date_field}->set($unix);
+          }
+          catch (Exception $e) {
+            echo 'Caught exception on ' . $date_field . ': ',  $e->getMessage(), "\n";
+          }
+        }
+
+        continue;
+      }
+
       $start_hour = $this->values['data'][$date['start']['hour']];
       $end_hour = $this->values['data'][$date['end']['hour']];
 
