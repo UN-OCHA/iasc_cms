@@ -10,19 +10,19 @@
 function iasc_document_drush_command() {
   $items = array();
 
-  $items['iasc-document-save-file'] = array(
-    'description' => 'Saves an existing file to Drupal file system',
+  $items['iasc-document-connect-file'] = array(
+    'description' => 'Connect an existing file to Drupal file system',
     'bootstrap' => DRUSH_BOOTSTRAP_DRUPAL_LOGIN,
-    'callback' => 'drush_iasc_document_save_file',
-    'aliases' => array('iasc-doc-save'),
+    'callback' => 'drush_iasc_document_connect_file',
+    'aliases' => array('iasc-doc-connect'),
   );
 
   return $items;
 }
 
 /**
- * Callback to execute 'drush iasc-document-save-file'.
+ * Callback to execute 'drush iasc-document-connect-file'.
  */
-function drush_iasc_document_save_file() {
-  iasc_document_save_file();
+function drush_iasc_document_connect_file() {
+  iasc_document_connect_file();
 }
