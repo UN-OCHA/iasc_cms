@@ -49,7 +49,7 @@ function iasc_document_form_node_form_alter(&$form, &$form_state, $form_id) {
  */
 function iasc_document_connect_file() {
   $result = db_select('iasc_scrape', 'sc')
-    ->fields('sc', array('filename', 'entity_id'))
+    ->fields('sc', array('filename', 'entity_id', 'legacy_fid'))
     ->condition('type', 'document')
     ->condition('managed_fid', 0)
     ->condition('legacy_fid', 0, '<>')
@@ -79,6 +79,7 @@ function iasc_document_connect_file() {
     file_save($file);
 
     if (isset($file->fid)) {
+      $legacy_fid = (isset($result['legacy_fid'])) ? $result['legacy_fid'] : 0;
       db_merge('iasc_scrape')
         ->key(array('legacy_fid' => $legacy_fid))
         ->fields(array(
