@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * iasc_announcements.strongarm.inc
+ * iasc_announcement.strongarm.inc
  */
 
 /**
  * Implements hook_strongarm().
  */
-function iasc_announcements_strongarm() {
+function iasc_announcement_strongarm() {
   $export = array();
 
   $strongarm = new stdClass();

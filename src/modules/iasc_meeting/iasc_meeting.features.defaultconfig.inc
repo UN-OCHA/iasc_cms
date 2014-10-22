@@ -97,7 +97,7 @@ function iasc_meeting_defaultconfig_field_default_fields() {
           'summary_rows' => 5,
         ),
         'type' => 'text_textarea_with_summary',
-        'weight' => 30,
+        'weight' => 32,
       ),
     ),
   );

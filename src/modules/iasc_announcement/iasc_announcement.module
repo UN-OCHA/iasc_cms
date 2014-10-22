@@ -4,4 +4,4 @@
  * Code for the IASC Announcements feature.
  */
 
-include_once 'iasc_announcements.features.inc';
+include_once 'iasc_announcement.features.inc';

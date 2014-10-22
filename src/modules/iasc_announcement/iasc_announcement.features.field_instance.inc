@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * iasc_announcements.features.field_instance.inc
+ * iasc_announcement.features.field_instance.inc
  */
 
 /**
  * Implements hook_field_default_field_instances().
  */
-function iasc_announcements_field_default_field_instances() {
+function iasc_announcement_field_default_field_instances() {
   $field_instances = array();
 
   // Exported field_instance: 'node-announcement-body'
@@ -115,7 +115,7 @@ function iasc_announcements_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
@@ -351,6 +351,68 @@ function iasc_announcements_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-announcement-field_referenced_docs'
+  $field_instances['node-announcement-field_referenced_docs'] = array(
+    'bundle' => 'announcement',
+    'comment_alter' => 0,
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 8,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_referenced_docs',
+    'label' => 'Relevant Documents',
+    'options_limit' => 0,
+    'options_limit_empty_behaviour' => 0,
+    'options_limit_fields' => array(
+      'body' => 0,
+      'field_legacy_publish' => 0,
+      'field_published_date' => 0,
+      'og_group_ref' => 0,
+    ),
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'references_dialog_add' => 1,
+        'references_dialog_edit' => 0,
+        'references_dialog_search' => 1,
+        'references_dialog_search_view' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 5,
+    ),
+  );
+
   // Exported field_instance: 'node-announcement-og_group_ref'
   $field_instances['node-announcement-og_group_ref'] = array(
     'bundle' => 'announcement',
@@ -421,6 +483,7 @@ function iasc_announcements_field_default_field_instances() {
   t('Contact');
   t('Legacy Publish');
   t('Published Date');
+  t('Relevant Documents');
   t('Relevant Links');
   t('Section Type');
 

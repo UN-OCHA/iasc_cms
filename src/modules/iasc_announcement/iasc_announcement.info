@@ -30,6 +30,7 @@ features[field_instance][] = node-announcement-field_legacy_publish
 features[field_instance][] = node-announcement-field_links
 features[field_instance][] = node-announcement-field_oa_section
 features[field_instance][] = node-announcement-field_published_date
+features[field_instance][] = node-announcement-field_referenced_docs
 features[field_instance][] = node-announcement-og_group_ref
 features[node][] = announcement
 features[variable][] = comment_announcement

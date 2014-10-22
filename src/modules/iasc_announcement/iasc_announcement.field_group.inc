@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * iasc_announcements.field_group.inc
+ * iasc_announcement.field_group.inc
  */
 
 /**
  * Implements hook_field_group_info().
  */
-function iasc_announcements_field_group_info() {
+function iasc_announcement_field_group_info() {
   $export = array();
 
   $field_group = new stdClass();
@@ -21,10 +21,10 @@ function iasc_announcements_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Access',
-    'weight' => '6',
+    'weight' => '7',
     'children' => array(
-      0 => 'og_group_ref',
-      1 => 'field_oa_section',
+      0 => 'field_oa_section',
+      1 => 'og_group_ref',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(

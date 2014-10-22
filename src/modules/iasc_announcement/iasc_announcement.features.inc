@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * iasc_announcements.features.inc
+ * iasc_announcement.features.inc
  */
 
 /**
  * Implements hook_ctools_plugin_api().
  */
-function iasc_announcements_ctools_plugin_api($module = NULL, $api = NULL) {
+function iasc_announcement_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "field_group" && $api == "field_group") {
     return array("version" => "1");
   }
@@ -19,7 +19,7 @@ function iasc_announcements_ctools_plugin_api($module = NULL, $api = NULL) {
 /**
  * Implements hook_node_info().
  */
-function iasc_announcements_node_info() {
+function iasc_announcement_node_info() {
   $items = array(
     'announcement' => array(
       'name' => t('Announcement'),

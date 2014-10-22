@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * iasc_announcements.features.field_base.inc
+ * iasc_announcement.features.field_base.inc
  */
 
 /**
  * Implements hook_field_default_field_bases().
  */
-function iasc_announcements_field_default_field_bases() {
+function iasc_announcement_field_default_field_bases() {
   $field_bases = array();
 
   // Exported field_base: 'field_links'
