@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the IASC Announcements feature.
+ */
+
+include_once 'iasc_announcements.features.inc';
