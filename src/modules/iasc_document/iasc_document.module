@@ -43,3 +43,60 @@ function iasc_document_form_node_form_alter(&$form, &$form_state, $form_id) {
     }
   }
 }
+
+/**
+ * Save an existing file to the Drupal file system.
+ */
+function iasc_document_save_file($legacy_fid) {
+  $result = db_select('iasc_scrape', 'sc')
+    ->fields('sc', array('filename', 'entity_id'))
+    ->condition('type', 'document')
+    ->condition('legacy_fid', $legacy_fid)
+    ->execute()
+    ->fetchAssoc();
+
+  $filename = (isset($result['filename'])) ? $result['filename'] : 0;
+
+  if ($filename) {
+    $uri = 'private://legacy_files/' . $filename;
+    $file = new stdClass();
+    $file->fid = NULL;
+    $file->uri = $uri;
+    $file->filename = drupal_basename($uri);
+    $file->filemime = file_get_mimetype($file->uri);
+    $file->uid = 1;
+    $file->display = 1;
+    $file->status = FILE_STATUS_PERMANENT;
+    $existing_files = file_load_multiple(array(), array('uri' => $uri));
+    if (count($existing_files)) {
+      $existing = reset($existing_files);
+      $file->fid = $existing->fid;
+      $file->filename = $existing->filename;
+    }
+    file_save($file);
+
+    if (isset($file->fid)) {
+      db_merge('iasc_scrape')
+        ->key(array('legacy_fid' => $legacy_fid))
+        ->fields(array(
+          'managed_fid' => $file->fid,
+        ))
+        ->execute();
+
+      // Entity id.
+      $entity_id = (isset($result['entity_id'])) ? $result['entity_id'] : 0;
+      if ($entity_id) {
+        $wrapper = entity_metadata_wrapper('node', $entity_id);
+        $entity = $wrapper->value();
+        // This is insane.
+        $file = (array) $file;
+        $items = array($file);
+        $wrapper->field_oa_media->set($items);
+
+        // Save the entity.
+        $wrapper->save(TRUE);
+        entity_save('node', $entity);
+      }
+    }
+  }
+}
