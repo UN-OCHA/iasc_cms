@@ -28,6 +28,11 @@ function iasc_meeting_features_override_default_overrides() {
   $overrides["field_instance.node-oa_event-field_oa_address.node-oa_event-field_oa_address"]["DELETED"] = TRUE;
   $overrides["field_instance.node-oa_event-field_oa_geo_location.node-oa_event-field_oa_geo_location"]["DELETED"] = TRUE;
   $overrides["field_instance.node-oa_event-field_oa_media.node-oa_event-field_oa_media"]["DELETED"] = TRUE;
+  $overrides["field_instance.node-oa_event-oa_section_ref.comment_alter"] = 0;
+  $overrides["field_instance.node-oa_event-oa_section_ref.label"] = 'Section';
+  $overrides["field_instance.node-oa_event-oa_section_ref.options_limit_fields|oa_section_ref"]["DELETED"] = TRUE;
+  $overrides["field_instance.node-oa_event-og_group_ref.label"] = 'Authoring Bodies';
+  $overrides["field_instance.node-oa_event-og_group_ref.settings|behaviors|og_widget|access_override"] = 0;
   $overrides["field_instance.node-oa_event-og_vocabulary.widget|weight"] = 14;
 
   // Exported overrides for: node
