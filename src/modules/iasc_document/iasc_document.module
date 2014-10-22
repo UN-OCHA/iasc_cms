@@ -47,11 +47,13 @@ function iasc_document_form_node_form_alter(&$form, &$form_state, $form_id) {
 /**
  * Save an existing file to the Drupal file system.
  */
-function iasc_document_save_file($legacy_fid) {
+function iasc_document_save_file() {
   $result = db_select('iasc_scrape', 'sc')
     ->fields('sc', array('filename', 'entity_id'))
     ->condition('type', 'document')
-    ->condition('legacy_fid', $legacy_fid)
+    ->condition('managed_fid', 0)
+    ->condition('legacy_fid', 0, '<>')
+    ->range(0, 1)
     ->execute()
     ->fetchAssoc();
 
