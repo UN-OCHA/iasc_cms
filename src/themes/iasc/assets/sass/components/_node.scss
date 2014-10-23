@@ -1,0 +1,49 @@
+/**
+ * @file
+ * Node styles
+ */
+
+/**
+ * Contact Node
+ */
+.node-contact {
+  // Override default "all Featured image listing should be center align".
+  .panel-primary .panel-body & { text-align: left; }
+  .name {
+    margin-bottom: 0;
+    div, span {
+      display: inline;
+      &:after {
+        content: " ";
+      }
+    }
+  }
+  .field-label { word-wrap: normal; }
+  .field-label-inline div { display: inline; float: initial; }
+  .name, .field-name-field-position {
+    text-align: center;
+  }
+  .field-name-field-position { 
+    display: block;
+    margin-bottom: 2rem;
+  }
+  .field-name-body {
+    text-align: center;
+    display: block;
+    margin-bottom: 2rem;
+  }
+  .group-contact-info {
+    padding: 0 10%;
+  }
+  .field-type-addressfield {
+    div:after { content: " "; }
+  }
+  .field-collection-container {
+    border: none; margin-bottom: 0;
+    .field-collection-view {
+      padding-top: 0;
+      display: block;
+      border: none; margin-bottom: 0;
+    }
+  }
+}

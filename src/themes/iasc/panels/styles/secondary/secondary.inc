@@ -48,6 +48,7 @@ function theme_iasc_secondary_style_render_pane(&$vars) {
  * Settings form callback.
  */
 function secondary_style_settings_form($style_settings) {
+  $form = '';
   $form['secondary_options'] = array(
     '#type' => 'select',
     '#title' => t('Select pane options'),

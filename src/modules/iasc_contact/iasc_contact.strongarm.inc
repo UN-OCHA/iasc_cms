@@ -92,6 +92,15 @@ function iasc_contact_strongarm() {
       'token' => array(
         'custom_settings' => FALSE,
       ),
+      'bio_short' => array(
+        'custom_settings' => TRUE,
+      ),
+      'bio_long' => array(
+        'custom_settings' => TRUE,
+      ),
+      'bio_full' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -143,7 +152,7 @@ function iasc_contact_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_submitted_contact';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['node_submitted_contact'] = $strongarm;
 
   return $export;
