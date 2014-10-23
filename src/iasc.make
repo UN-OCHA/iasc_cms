@@ -68,7 +68,7 @@ projects[oa_core][type] = module
 projects[oa_core][subdir] = contrib
 projects[oa_core][download][url] = https://github.com/phase2/oa_core.git
 projects[oa_core][download][type] = git
-projects[oa_core][download][tag] = 7.x-2.21
+projects[oa_core][download][tag] = 7.x-2.22
 projects[oa_core][patch][] = oa_core-parent-cache.patch
 
 projects[oa_discussion][type] = module

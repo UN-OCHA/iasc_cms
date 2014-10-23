@@ -17,6 +17,19 @@ function iasc_document_features_override_default_overrides() {
   $overrides["field_instance.node-oa_wiki_page-body.label"] = 'Description';
   $overrides["field_instance.node-oa_wiki_page-body.widget|weight"] = 5;
   $overrides["field_instance.node-oa_wiki_page-field_oa_media.widget|weight"] = 7;
+  $overrides["field_instance.node-oa_wiki_page-oa_section_ref.comment_alter"] = 0;
+  $overrides["field_instance.node-oa_wiki_page-oa_section_ref.label"] = 'Section';
+  $overrides["field_instance.node-oa_wiki_page-oa_section_ref.options_limit_fields|oa_section_ref"]["DELETED"] = TRUE;
+  $overrides["field_instance.node-oa_wiki_page-og_group_ref.comment_alter"] = 0;
+  $overrides["field_instance.node-oa_wiki_page-og_group_ref.label"] = 'Authoring Bodies';
+  $overrides["field_instance.node-oa_wiki_page-og_group_ref.options_limit"] = 0;
+  $overrides["field_instance.node-oa_wiki_page-og_group_ref.options_limit_empty_behaviour"] = 0;
+  $overrides["field_instance.node-oa_wiki_page-og_group_ref.options_limit_fields"] = array(
+    'body' => 0,
+  );
+  $overrides["field_instance.node-oa_wiki_page-og_group_ref.required"] = 0;
+  $overrides["field_instance.node-oa_wiki_page-og_group_ref.settings|behaviors|og_widget|access_override"] = 0;
+  $overrides["field_instance.node-oa_wiki_page-og_group_ref.widget|active"] = 0;
   $overrides["field_instance.node-oa_wiki_page-og_vocabulary.widget|weight"] = 8;
 
   // Exported overrides for: node
