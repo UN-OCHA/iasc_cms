@@ -269,13 +269,6 @@ function iasc_configuration_views_default_views() {
     3 => 0,
     4 => 0,
   );
-  /* Filter criterion: Content: Section (oa_section_ref) */
-  $handler->display->display_options['filters']['oa_section_ref_target_id']['id'] = 'oa_section_ref_target_id';
-  $handler->display->display_options['filters']['oa_section_ref_target_id']['table'] = 'field_data_oa_section_ref';
-  $handler->display->display_options['filters']['oa_section_ref_target_id']['field'] = 'oa_section_ref_target_id';
-  $handler->display->display_options['filters']['oa_section_ref_target_id']['value'] = array(
-    2624 => '2624',
-  );
 
   /* Display: Filterable Documents */
   $handler = $view->new_display('panel_pane', 'Filterable Documents', 'panel_pane_filterable_docs');
