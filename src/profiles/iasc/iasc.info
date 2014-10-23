@@ -36,7 +36,6 @@ dependencies[] = panopoly_users
 
 ; Panopoly Toolset
 dependencies[] = panopoly_pages
-dependencies[] = panopoly_search
 dependencies[] = panopoly_wysiwyg
 
 ; Panopoly Recommended - Admin
@@ -113,7 +112,6 @@ dependencies[] = oa_styles
 dependencies[] = oa_media
 dependencies[] = oa_permissions
 dependencies[] = oa_admin
-dependencies[] = oa_search
 dependencies[] = oa_variables
 dependencies[] = oa_buttons
 dependencies[] = oa_tour
@@ -147,8 +145,10 @@ dependencies[] = iasc_contact
 dependencies[] = iasc_configuration
 dependencies[] = iasc_document
 dependencies[] = iasc_announcement
+dependencies[] = oa_apachesolr
 
 ; Contrib
 dependencies[] = radix_layouts
 dependencies[] = field_collection
 dependencies[] = addressfield
+dependencies[] = apachesolr_attachments
