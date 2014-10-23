@@ -1,0 +1,23 @@
+<?php
+/**
+ * @file
+ * Install hooks for Open Atrium Apache Solr module.
+ */
+
+/**
+ * Implements hook_requirements().
+ */
+function oa_apachesolr_requirements($phase) {
+  $requirements = array();
+
+  if (module_exists('oa_search')) {
+    $t = get_t();
+    $requirements['oa_apachesolr'] = array(
+      'title' => $t('Open Atrium Apache Solr'),
+      'description' => $t('The oa_apachesolr module conflicts with oa_search and can only be enabled when that module is disabled.'),
+      'severity' => REQUIREMENT_ERROR,
+    );
+  }
+
+  return $requirements;
+}

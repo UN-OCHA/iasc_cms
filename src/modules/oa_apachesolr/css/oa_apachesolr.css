@@ -1,0 +1,15 @@
+
+/**
+ * Get the search form to exist on one line without any margin.
+ */
+.oa-apachesolr-search-form .input-append .form-item-keys {
+  margin: 0;
+  float: left;
+}
+.oa-apachesolr-search-form-sidebar .input-append .form-item-keys {
+  width: 80%;
+}
+/* Override something in the theme targetted at the oa_search widget. */
+.pane-oa-sidebar-search .search-text {
+  width: 100% !important;
+}

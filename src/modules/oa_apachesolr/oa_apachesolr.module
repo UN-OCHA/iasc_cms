@@ -1,0 +1,229 @@
+<?php
+/**
+ * @file
+ * Code for the Open Atrium Apache Solr module.
+ */ 
+
+include_once 'oa_apachesolr.features.inc';
+
+/**
+ * Implementation of hook_ctools_plugin_directory()
+ */
+function oa_apachesolr_ctools_plugin_directory($module, $plugin) {
+  return 'plugins/' . $plugin;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function oa_apachesolr_theme() {
+  $path = drupal_get_path('module', 'oa_apachesolr') . '/templates';
+  return array(
+    'oa_apachesolr_search_form_toolbar' => array(
+      'template' => 'oa-apachesolr-search-form-toolbar',
+      'render element' => 'element',
+      'path' => $path,
+    ),
+    'oa_apachesolr_search_form_sidebar' => array(
+      'template' => 'oa-apachesolr-search-form-sidebar',
+      'render element' => 'element',
+      'path' => $path,
+    ),
+  );
+}
+
+/**
+ * Implements hook_preprocess_oa_toolbar_search().
+ */
+function oa_apachesolr_preprocess_oa_apachesolr_search_form_toolbar(&$vars) {
+  $vars['oa_toolbar_btn_class'] = variable_get('oa_toolbar_style', 0) ? '' : 'btn-inverse';
+}
+
+/**
+ * Form constructor for the search form.
+ *
+ * @param string $type
+ *   (Optional) Either "toolbar" or "sidebar" to control which theme template
+ *   gets used. The default is 'sidebar'.
+ * @param array $allowed_options
+ *   (Optional) Which options to show the user from "all_spaces", "this_space",
+ *   "users". By default, includes all of them.
+ *
+ * @see oa_apache_search_form_submit
+ *
+ * @ingroup forms
+ */
+function oa_apachesolr_search_form($form, &$form_state, $type = 'sidebar', $allowed_options = array('all_spaces', 'this_space', 'users')) {
+  $form['#id'] = drupal_html_id('oa-apachesolr-search-form-' . $type);
+  $form['#attributes'] = array(
+    'class' => array(
+      'oa-apachesolr-search-form',
+      'oa-apachesolr-search-form-' . $type,
+    ),
+  );
+  $form['wrapper'] = array(
+    '#theme' => ($type == 'toolbar') ? 'oa_apachesolr_search_form_toolbar'
+      : 'oa_apachesolr_search_form_sidebar',
+  );
+
+  $form['wrapper']['keys'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Enter your keywords'),
+    '#title_display' => 'invisible',
+    '#attributes' => array(
+      'class' => array('search-text'),
+    ),
+  );
+  $form['wrapper']['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Search'),
+  );
+ 
+  // Setup options based on what is allowed.
+  if (count($allowed_options) > 1) {
+    $default_options = array(
+      'all_spaces' => t('All spaces'),
+      'this_space' => t('This space'),
+      'users' => t('Users'),
+    );
+    $form['wrapper']['options'] = array(
+      '#type' => 'radios',
+      '#options' => array(),
+      '#default_value' => 'all_spaces',
+    );
+     foreach ($allowed_options as $key) {
+      $form['wrapper']['options']['#options'][$key] = $default_options[$key];
+    }
+  }
+  else {
+    $form['wrapper']['options'] = array(
+      '#type' => 'value',
+      '#values' => $allowed_options[0],
+    );
+  }
+
+  // Setup autocomplete on the form.
+  apachesolr_autocomplete_do_alter($form['wrapper']['keys'], $form);
+
+  // Stash space_id for later use.
+  $space_id = oa_core_get_space_context();
+  $form['space_id'] = array(
+    '#type' => 'value',
+    '#value' => $space_id,
+  );
+
+  // Add Javascript.
+  $form['#attached']['js'][] = drupal_get_path('module', 'oa_apachesolr') . '/js/oa_apachesolr.js';
+  $form['#attached']['js'][] = array(
+    'data' => array(
+      'oa_apachesolr' => array(
+        'space_id' => $space_id,
+      ),
+    ),
+    'type' => 'setting',
+  );
+
+  $form['#submit'][] = 'oa_apachesolr_search_form_submit';
+
+  return $form;
+}
+
+/**
+ * Submit callback for oa_apachesolr_search_form().
+ *
+ * @see oa_apache_search_form
+ */
+function oa_apachesolr_search_form_submit($form, &$form_state) {
+  $keys = $form_state['values']['keys'];
+
+  $path = '';
+  $query = array();
+
+  if ($form_state['values']['options'] == 'users') {
+    $path = 'search/user/' . $keys;
+  }
+  else {
+    $path = 'search/node/' . $keys;
+    if ($form_state['values']['options'] == 'this_space') {
+      $query = array(
+        'f[0]' => 'sm_og_group_ref:node:' . $form_state['values']['space_id'],
+      );
+    }
+  }
+
+  drupal_goto($path, array('query' => $query));
+}
+
+/**
+ * Implements hook_modules_enabled().
+ */
+function oa_apachesolr_modules_enabled($modules) {
+  if (in_array('oa_search', $modules)) {
+    $t = get_t();
+    drupal_set_message($t('The oa_apachesolr module has been disabled because it conflicts with oa_search.'), 'warning');
+    module_disable(array('oa_apachesolr'));
+  }
+}
+
+/**
+ * Implements hook_apachesolr_query_alter().
+ */
+function oa_apachesolr_apachesolr_query_alter(DrupalSolrQueryInterface $query) {
+  if (variable_get('oa_apachesolr_include_shared_content', FALSE)) {
+    $current_fields = $query->getFilters();
+    $node_search_criteria;
+    foreach ($current_fields as $filter_field) {
+      if ($filter_field['#name'] == 'sm_og_group_ref') {
+        $node_search_criteria = $filter_field['#value'];
+      }
+    }
+    if (!empty($node_search_criteria)) {
+      $query->replaceParam('fq', 'sm_og_group_ref:"' . $node_search_criteria . '" OR sm_oa_other_spaces_ref:"' . $node_search_criteria . '"');
+    }
+  }
+}
+
+/**
+ * Implements hook_menu().
+ */
+function oa_apachesolr_menu() {
+  $items = array();
+
+  $items['admin/oa_apachesolr'] = array(
+    'title' => t('Open Atrium ApacheSolr Integration Settings'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('oa_apachesolr_settings_form'),
+    'access arguments' => array('oa_apachesolr_manage_settings'),
+  );
+
+  return $items;
+}
+
+/**
+ * Implements hook_permission().
+ */
+function oa_apachesolr_permission() {
+  return array(
+    'oa_apachesolr_manage_settings' => array(
+      'title' => t('Manage Open Atrium ApacheSolr Settings'),
+      'description' => t('Give the ability to manage search settings with Open Atrium and ApacheSolr.'),
+    ),
+  );
+}
+
+/**
+ * oa_apachesolr_settings_form
+ * Simple form for admin settings for oa_apachesolr
+ */
+function oa_apachesolr_settings_form() {
+  $form = array();
+
+  $form['oa_apachesolr_include_shared_content'] = array(
+    '#type' => 'checkbox',
+    '#title' => 'Include shared content in searches.',
+    '#description' => 'When searching in an individual space, include outside content that has been shared with that space.',
+    '#default_value' => variable_get('oa_apachesolr_include_shared_content', FALSE),
+  );
+
+  return system_settings_form($form);
+}
