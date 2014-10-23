@@ -76,6 +76,7 @@ features[field_instance][] = node-contact-field_phone
 features[field_instance][] = node-contact-field_photo
 features[field_instance][] = node-contact-field_position
 features[field_instance][] = node-contact-field_title
+features[image][] = bio_circled
 features[node][] = contact
 features[variable][] = comment_anonymous_contact
 features[variable][] = comment_contact
