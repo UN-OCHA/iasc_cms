@@ -151,3 +151,4 @@ dependencies[] = iasc_document
 dependencies[] = radix_layouts
 dependencies[] = field_collection
 dependencies[] = addressfield
+dependencies[] = entity_view_mode

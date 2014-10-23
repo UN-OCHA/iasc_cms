@@ -203,3 +203,6 @@ projects[field_collection][subdir] = contrib
 ; Supports more standardized addresses.
 projects[addressfield][version] = 1.0-beta5
 projects[addressfield][subdir] = contrib
+
+projects[entity_view_mode][version] = 1.0-rc1
+projects[entity_view_mode][subdir] = contrib
