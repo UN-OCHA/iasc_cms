@@ -57,6 +57,15 @@ function iasc_meeting_field_default_field_instances_alter(&$data) {
   if (isset($data['node-oa_event-field_oa_media'])) {
     unset($data['node-oa_event-field_oa_media']);
   }
+  if (isset($data['node-oa_event-oa_section_ref'])) {
+    $data['node-oa_event-oa_section_ref']['comment_alter'] = 0; /* WAS: '' */
+    $data['node-oa_event-oa_section_ref']['label'] = 'Section'; /* WAS: 'Open Atrium Section' */
+    unset($data['node-oa_event-oa_section_ref']['options_limit_fields']['oa_section_ref']);
+  }
+  if (isset($data['node-oa_event-og_group_ref'])) {
+    $data['node-oa_event-og_group_ref']['label'] = 'Authoring Bodies'; /* WAS: 'Groups audience' */
+    $data['node-oa_event-og_group_ref']['settings']['behaviors']['og_widget']['access_override'] = 0; /* WAS: '' */
+  }
   if (isset($data['node-oa_event-og_vocabulary'])) {
     $data['node-oa_event-og_vocabulary']['widget']['weight'] = 14; /* WAS: 9 */
   }

@@ -17,6 +17,23 @@ function iasc_document_field_default_field_instances_alter(&$data) {
   if (isset($data['node-oa_wiki_page-field_oa_media'])) {
     $data['node-oa_wiki_page-field_oa_media']['widget']['weight'] = 7; /* WAS: 6 */
   }
+  if (isset($data['node-oa_wiki_page-oa_section_ref'])) {
+    $data['node-oa_wiki_page-oa_section_ref']['comment_alter'] = 0; /* WAS: '' */
+    $data['node-oa_wiki_page-oa_section_ref']['label'] = 'Section'; /* WAS: 'OpenAtrium Section' */
+    unset($data['node-oa_wiki_page-oa_section_ref']['options_limit_fields']['oa_section_ref']);
+  }
+  if (isset($data['node-oa_wiki_page-og_group_ref'])) {
+    $data['node-oa_wiki_page-og_group_ref']['comment_alter'] = 0; /* WAS: '' */
+    $data['node-oa_wiki_page-og_group_ref']['label'] = 'Authoring Bodies'; /* WAS: 'Groups audience' */
+    $data['node-oa_wiki_page-og_group_ref']['options_limit'] = 0; /* WAS: '' */
+    $data['node-oa_wiki_page-og_group_ref']['options_limit_empty_behaviour'] = 0; /* WAS: '' */
+    $data['node-oa_wiki_page-og_group_ref']['options_limit_fields'] = array(
+      'body' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_wiki_page-og_group_ref']['required'] = 0; /* WAS: FALSE */
+    $data['node-oa_wiki_page-og_group_ref']['settings']['behaviors']['og_widget']['access_override'] = 0; /* WAS: '' */
+    $data['node-oa_wiki_page-og_group_ref']['widget']['active'] = 0; /* WAS: '' */
+  }
   if (isset($data['node-oa_wiki_page-og_vocabulary'])) {
     $data['node-oa_wiki_page-og_vocabulary']['widget']['weight'] = 8; /* WAS: 7 */
   }

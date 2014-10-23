@@ -144,6 +144,7 @@ dependencies[] = iasc_meeting
 dependencies[] = iasc_contact
 dependencies[] = iasc_configuration
 dependencies[] = iasc_document
+dependencies[] = iasc_announcement
 dependencies[] = oa_apachesolr
 
 ; Contrib
