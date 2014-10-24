@@ -20,9 +20,9 @@
     <?php endif; ?> 
     <nav class="navbar-top navbar-right row col-xs-6 col-sm-3 col-lg-2 ">
       <ul class="list-inline nav-holder clearfix">
-        <li class="col-xs-4 text-center"><a href="/" class="icons-calendar"><span class="hide">Calender</span></a></li>
-        <li class="col-xs-4 text-center"><a href="/" class="icons-resources"><span class="hide">Resources</span></a></li>
-        <li class="col-xs-4 text-center"><a href="/" class="icons-contact"><span class="hide">Contact Us</span></a></li>
+        <li class="col-xs-4 text-center"><a href="/calendar" class="icons-calendar"><span class="hide">Calender</span></a></li>
+        <li class="col-xs-4 text-center"><a href="/resources" class="icons-resources"><span class="hide">Resources</span></a></li>
+        <li class="col-xs-4 text-center"><a href="/contact" class="icons-contact"><span class="hide">Contact Us</span></a></li>
       </ul>
     </nav>
   </div>
