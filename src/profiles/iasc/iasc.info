@@ -151,4 +151,6 @@ dependencies[] = oa_apachesolr
 dependencies[] = radix_layouts
 dependencies[] = field_collection
 dependencies[] = addressfield
+dependencies[] = entity_view_mode
 dependencies[] = apachesolr_attachments
+

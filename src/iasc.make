@@ -204,6 +204,10 @@ projects[field_collection][subdir] = contrib
 projects[addressfield][version] = 1.0-beta5
 projects[addressfield][subdir] = contrib
 
+
+projects[entity_view_mode][version] = 1.0-rc1
+projects[entity_view_mode][subdir] = contrib
+
 ; Apache Solr modules
 projects[apachesolr][subdir] = contrib
 projects[apachesolr][version] = 1.6
@@ -226,3 +230,4 @@ projects[apachesolr_user][download][revision] = cadb26b
 projects[apachesolr_attachments][type] = module
 projects[apachesolr_attachments][version] = 1.3
 projects[apachesolr_attachments][subdir] = contrib
+
