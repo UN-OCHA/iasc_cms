@@ -21,9 +21,6 @@ function iasc_document_form_node_form_alter(&$form, &$form_state, $form_id) {
         ),
       );
 
-      // Show Description only for Products.
-      $form['body']['#states'] = $state;
-
       // Show Product Category only for Products.
       $form['field_category']['#states'] = $state;
     }
@@ -104,3 +101,4 @@ function iasc_document_connect_file() {
     }
   }
 }
+
