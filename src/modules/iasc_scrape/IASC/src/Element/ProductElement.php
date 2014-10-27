@@ -31,7 +31,7 @@ class ProductElement extends AbstractElement {
   public function setValues() {
     $values = array(
       'title' => array('selector' => '#ctl00_ContentPlaceHolder1_ctl00_txtTitle'),
-      'field_authoring_bodies' => array(
+      'og_group_ref' => array(
         'selector' => '#ctl00_ContentPlaceHolder1_ctl00_ddlBody option[selected="selected"]',
         'get_text' => TRUE,
       ),

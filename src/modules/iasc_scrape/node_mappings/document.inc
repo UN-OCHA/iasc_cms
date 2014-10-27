@@ -40,15 +40,11 @@ class IASCDocument extends IASCDefault {
       'field_document_type' => $tid,
     );
 
-    // Groups.
-    $this->groups = array(
+    // Space.
+    $this->space = array(
       'og_group_ref',
     );
 
     parent::__construct('oa_wiki_page');
-
-    $references = array(
-      'field_contact',
-    );
   }
 }

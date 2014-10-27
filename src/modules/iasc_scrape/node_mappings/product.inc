@@ -47,20 +47,11 @@ class IASCProduct extends IASCDefault {
       ),
     );
 
-    // Groups.
-    $this->groups = array(
+    // Space.
+    $this->space = array(
       'og_group_ref',
     );
 
-    // Space.
-    $this->space = array(
-      'field_authoring_bodies',
-    );
-
     parent::__construct('oa_wiki_page');
-
-    $references = array(
-      'field_contact',
-    );
   }
 }

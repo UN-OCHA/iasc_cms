@@ -32,7 +32,7 @@ class DocumentElement extends AbstractElement {
     $values = array(
       'title' => array('selector' => '#ctl00_ContentPlaceHolder1_ctl00_txtTitle'),
       'field_document_no' => array('selector' => '#ctl00_ContentPlaceHolder1_ctl00_txtDocNo'),
-      'field_authoring_bodies' => array(
+      'og_group_ref' => array(
         'selector' => '#ctl00_ContentPlaceHolder1_ctl00_ddlAuthBody option[selected="selected"]',
         'get_text' => TRUE,
       ),
