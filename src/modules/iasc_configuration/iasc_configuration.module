@@ -308,11 +308,18 @@ function iasc_configuration_create_node($item, $parent_bodies, $subsidiary_ids, 
     // Store the legacy name of the body.
     // format = mainbody + body + bodyshort
     $legacy_name = $parent_bodies[$item['mainbodyID']];
-    $legacy_name .= !empty($item['body']) && $item['body'] != NULL ?
+    $legacy_name .= !empty($item['body']) && $item['body'] != 'NULL' ?
       " {$item['body']}" : '';
-    $legacy_name .= !empty($item['bodyshort']) && $item['bodyshort'] != NULL ?
-      " {$item['bodyshort']}" : '';
-      $node->field_legacy_space_name[LANGUAGE_NONE][0] = array(
+
+    if (!empty($item['bodyshort']) && $item['bodyshort'] != 'NULL') {
+      $legacy_name .= " {$item['bodyshort']}";
+    }
+    else {
+      $legacy_name .= !empty($item['bodydetail']) && $item['bodydetail'] != 'NULL' ?
+        " {$item['bodydetail']}" : '';
+    }
+
+    $node->field_legacy_space_name[LANGUAGE_NONE][0] = array(
       'value' => trim($legacy_name),
     );
   }
