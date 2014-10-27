@@ -24,7 +24,7 @@ function iasc_configuration_drush_command() {
       'delete-all'  => 'Delete all spaces and sections before import',
     ),
     'examples' => array(
-      'drush iasc-spaces <path>/data/iasc_spaces.csv --delimiter=";" --delete-all' => 'Import the spaces and sections in iasc_spaces.csv, using delimiter ";" and delete all spaces and sections before importing.',
+      'drush iasc-spaces <path>/data/bodiescategories.csv --delimiter=";" --delete-all' => 'Import the spaces and sections in iasc_spaces.csv, using delimiter ";" and delete all spaces and sections before importing.',
     ),
   );
 
