@@ -41,11 +41,6 @@ class IASCMeeting extends IASCDefault {
       'field_time_zone',
     );
 
-    // Groups.
-    $this->groups = array(
-      'og_group_ref',
-    );
-
     // Date fields.
     $this->dates = array(
       'field_oa_date' => array(
@@ -61,6 +56,12 @@ class IASCMeeting extends IASCDefault {
         ),
       ),
     );
+
+    // Space.
+    $this->space = array(
+      'og_group_ref',
+    );
+
     parent::__construct('oa_event');
 
     $references = array(

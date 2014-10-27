@@ -19,6 +19,7 @@ class IASCDefault {
   protected $terms = array();
   protected $lists = array();
   protected $groups = array();
+  protected $space = array();
   protected $dates = array();
 
   /**
@@ -52,6 +53,7 @@ class IASCDefault {
     $this->setTerms();
     $this->setLists();
     // $this->setGroups();
+    $this->setSpace();
     $this->setDates();
 
     // Save the entity.
@@ -118,8 +120,9 @@ class IASCDefault {
   protected function setTerms() {
     foreach ($this->terms as $term => $vocab) {
       $full_term = taxonomy_get_term_by_name($this->values['data'][$term], $vocab['name']);
+      $full_term = reset($full_term);
       try {
-        $this->wrapper->{$term}->set(array(reset($full_term)->tid));
+        $this->wrapper->{$term}->set($full_term->tid);
       }
       catch (Exception $e) {
         echo 'Caught exception on ' . $term . ': ',  $e->getMessage(), "\n";
@@ -153,11 +156,25 @@ class IASCDefault {
       ->condition('title', $name)
       ->execute()
       ->fetchAssoc();
-    return $result['title'];
+    return $result['nid'];
   }
 
   /**
-   * Set predetermined groups / spaces fields.
+   * Get group id based on the name.
+   */
+  protected function getSpaceId($name) {
+    $result = db_select('node', 'n')
+      ->fields('n', array('nid'))
+      ->condition('type', 'oa_space')
+      ->condition('title', $name)
+      ->execute()
+      ->fetchAssoc();
+    $nid = $result['nid'];
+    return $nid;
+  }
+
+  /**
+   * Set predetermined groups fields.
    */
   protected function setGroups() {
     foreach ($this->groups as $group) {
@@ -167,6 +184,56 @@ class IASCDefault {
       }
       catch (Exception $e) {
         echo 'Caught exception on ' . $group . ': ',  $e->getMessage(), "\n";
+      }
+    }
+  }
+
+  /**
+   * Set predetermined space field.
+   */
+  protected function setSpace() {
+    foreach ($this->space as $space) {
+      // Remove spaces on data.
+      $value = trim($this->values['data'][$space]);
+
+      // Try to see if it's one value.
+      $space_id = $this->getSpaceId($value);
+
+      // If nothing matches, try to break apart and match.
+      if (empty($space_id)) {
+        $space_ids = array();
+
+        // Two spaces seem to separate the authoring bodies data.
+        $parts = explode('  ', $value);
+
+        foreach ($parts as $part) {
+          if (!empty($part)) {
+            $part = trim($part);
+            $space_ids[] = $this->getSpaceId($part);
+          }
+        }
+        // Pop off the first one for the main space.
+        $space_id = array_shift($space_ids);
+      }
+
+      // Save to main space.
+      if ($space_id) {
+        try {
+          $this->wrapper->og_group_ref->set($space_id);
+        }
+        catch (Exception $e) {
+          echo 'Caught exception on ' . $space . ': ', $e->getMessage(), "\n";
+        }
+      }
+
+      // Save to other spaces.
+      if (!empty($space_ids)) {
+        try {
+          $this->wrapper->oa_other_spaces_ref->set($space_ids);
+        }
+        catch (Exception $e) {
+          echo 'Caught exception on ' . $space . ': ', $e->getMessage(), "\n";
+        }
       }
     }
   }

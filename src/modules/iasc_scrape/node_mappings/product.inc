@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * Document node mappings.
+ * Product node mappings.
  */
 
 /**
- * Class IASCDocument
+ * Class IASCProduct
  */
-class IASCDocument extends IASCDefault {
+class IASCProduct extends IASCDefault {
 
   /**
    * Constructor.
@@ -34,10 +34,17 @@ class IASCDocument extends IASCDefault {
     );
 
     // Hardcoded values.
-    $term = taxonomy_get_term_by_name('Document', 'document_types');
+    $term = taxonomy_get_term_by_name('Product', 'document_types');
     $tid = reset($term)->tid;
     $this->hardcoded = array(
       'field_document_type' => $tid,
+    );
+
+    // Taxonomy term references.
+    $this->terms = array(
+      'field_category' => array(
+        'name' => 'product_categories',
+      ),
     );
 
     // Space.
