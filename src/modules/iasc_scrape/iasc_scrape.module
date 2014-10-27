@@ -232,7 +232,7 @@ function iasc_scrape_get_scraped_element($type) {
 function iasc_scrape_get_scraped_legacy_fid() {
   $result = db_select('iasc_scrape', 'sc')
     ->fields('sc', array('legacy_fid'))
-    ->condition('type', 'document')
+    ->condition('type', array('document', 'product'), 'IN')
     ->condition('file_save', 0)
     ->condition('legacy_fid', 0, '<>')
     ->range(0, 1)
