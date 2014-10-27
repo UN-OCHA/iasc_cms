@@ -61,6 +61,17 @@ q {
   img.pull-right { padding-right: 0 }
 }
 
+.chosen-container.form-control {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  display: block !important;
+  width: 100% !important;
+  .chosen-choices {
+    @extend .form-control;
+  }
+}
+
 .form-control:focus {
   @include box-shadow(0 0 0 #fff !important);
 }
