@@ -66,6 +66,25 @@ function iasc_scrape_scrape($type, $page = 1, $position = 1) {
         );
       }
       break;
+
+    case 'product':
+      $element = new IASC\Element\ProductElement($client, $crawler, $page, $position);
+      $id = 'productid';
+      $values = $element->getValues();
+      // Get legacy filename and file_id.
+      if ($values['file_id_pdf']) {
+        $legacy_fid = $values['file_id_pdf'];
+        $filename = $values['file_text_pdf']['filename'];
+        $file_url = $values['file_text_pdf']['file_link'];
+      }
+      if (isset($legacy_fid)) {
+        $additional_values = array(
+          'legacy_fid' => $legacy_fid,
+          'filename' => $filename,
+          'file_url' => $file_url,
+        );
+      }
+      break;
   }
 
   $values = array(

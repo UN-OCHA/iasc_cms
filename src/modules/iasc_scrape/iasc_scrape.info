@@ -6,3 +6,4 @@ core = 7.x
 files[] = node_mappings/default.inc
 files[] = node_mappings/meeting.inc
 files[] = node_mappings/document.inc
+files[] = node_mappings/product.inc
