@@ -76,10 +76,10 @@ function iasc_document_connect_file() {
     file_save($file);
 
     if (isset($file->fid)) {
-      drupal_set_message('File @fid - @name saved.', array(
+      drupal_set_message(t('File @fid - @name saved.', array(
         '@fid' => $file->fid,
         '@name' => $file->filename,
-      ));
+      )));
       $legacy_fid = (isset($result['legacy_fid'])) ? $result['legacy_fid'] : 0;
       db_merge('iasc_scrape')
         ->key(array('legacy_fid' => $legacy_fid))
@@ -101,10 +101,10 @@ function iasc_document_connect_file() {
         // Save the entity.
         $wrapper->save(TRUE);
         entity_save('node', $entity);
-        drupal_set_message('File @fid connected to node @nid.', array(
+        drupal_set_message(t('File @fid connected to node @nid.', array(
           '@fid' => $file->fid,
           '@nid' => $entity->nid,
-        ));
+        )));
       }
     }
   }
