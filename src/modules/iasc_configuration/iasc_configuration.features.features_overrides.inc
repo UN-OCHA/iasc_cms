@@ -55,6 +55,10 @@ function iasc_configuration_features_override_default_overrides() {
   $overrides["panelizer_defaults.node:oa_section:calendar_section.display|panels|sidebar|1"] = 'new-f7576cce-3df6-4498-89b5-77da59c5f99c';
   $overrides["panelizer_defaults.node:oa_section:calendar_section.display|panels|sidebar|2"]["DELETED"] = TRUE;
 
+  // Exported overrides for: panels_mini
+  $overrides["panels_mini.default_section_sidebar.display|content|new-e88f722e-09b5-451c-b694-f6b79c2d8554|style|settings|secondary_options"] = 'panel-primary';
+  $overrides["panels_mini.default_section_sidebar.display|content|new-e88f722e-09b5-451c-b694-f6b79c2d8554|style|style"] = 'secondary';
+
   // Exported overrides for: views_view
   $overrides["views_view.oa_fullcalendar.display|default|display_options|filters|field_city_value"] = array(
     'id' => 'field_city_value',
@@ -74,8 +78,6 @@ function iasc_configuration_features_override_default_overrides() {
         3 => 0,
         4 => 0,
       ),
-      'autocomplete_items' => 10,
-      'autocomplete_min_chars' => 0,
       'autocomplete_raw_suggestion' => 1,
       'autocomplete_raw_dropdown' => 1,
       'autocomplete_dependent' => 0,

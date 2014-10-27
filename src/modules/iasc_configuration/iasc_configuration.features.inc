@@ -80,6 +80,16 @@ function iasc_configuration_panelizer_defaults_override_alter(&$data) {
 }
 
 /**
+ * Implements hook_default_panels_mini_alter().
+ */
+function iasc_configuration_default_panels_mini_alter(&$data) {
+  if (isset($data['default_section_sidebar'])) {
+    $data['default_section_sidebar']->display->content['new-e88f722e-09b5-451c-b694-f6b79c2d8554']->style['settings']['secondary_options'] = 'panel-primary'; /* WAS: '' */
+    $data['default_section_sidebar']->display->content['new-e88f722e-09b5-451c-b694-f6b79c2d8554']->style['style'] = 'secondary'; /* WAS: '' */
+  }
+}
+
+/**
  * Implements hook_views_default_views_alter().
  */
 function iasc_configuration_views_default_views_alter(&$data) {
@@ -102,8 +112,6 @@ function iasc_configuration_views_default_views_alter(&$data) {
           3 => 0,
           4 => 0,
         ),
-        'autocomplete_items' => 10,
-        'autocomplete_min_chars' => 0,
         'autocomplete_raw_suggestion' => 1,
         'autocomplete_raw_dropdown' => 1,
         'autocomplete_dependent' => 0,
