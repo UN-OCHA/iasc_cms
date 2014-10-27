@@ -306,7 +306,7 @@ function iasc_configuration_create_node($item, $parent_bodies, $subsidiary_ids, 
     }
 
     // Store the legacy name of the body.
-    // format = mainbody + body + bodyshort
+    // format = mainbody + body + bodyshort.
     $legacy_name = $parent_bodies[$item['mainbodyID']];
     $legacy_name .= !empty($item['body']) && $item['body'] != 'NULL' ?
       " {$item['body']}" : '';
