@@ -119,13 +119,15 @@ class IASCDefault {
    */
   protected function setTerms() {
     foreach ($this->terms as $term => $vocab) {
-      $full_term = taxonomy_get_term_by_name($this->values['data'][$term], $vocab['name']);
-      $full_term = reset($full_term);
-      try {
-        $this->wrapper->{$term}->set($full_term->tid);
-      }
-      catch (Exception $e) {
-        echo 'Caught exception on ' . $term . ': ',  $e->getMessage(), "\n";
+      if (!empty($this->values['data'][$term])) {
+        $full_term = taxonomy_get_term_by_name($this->values['data'][$term], $vocab['name']);
+        $full_term = reset($full_term);
+        try {
+          $this->wrapper->{$term}->set(array($full_term->tid));
+        }
+        catch (Exception $e) {
+          echo 'Caught exception on ' . $term . ': ', $e->getMessage(), "\n";
+        }
       }
     }
   }
@@ -149,43 +151,15 @@ class IASCDefault {
   /**
    * Get group id based on the name.
    */
-  protected function getGroupId($name) {
-    $result = db_select('node', 'n')
-      ->fields('n', array('nid'))
-      ->condition('type', 'oa_space')
-      ->condition('title', $name)
-      ->execute()
-      ->fetchAssoc();
-    return $result['nid'];
-  }
-
-  /**
-   * Get group id based on the name.
-   */
   protected function getSpaceId($name) {
-    $result = db_select('node', 'n')
-      ->fields('n', array('nid'))
-      ->condition('type', 'oa_space')
-      ->condition('title', $name)
+    $result = db_select('field_data_field_legacy_space_name', 'flsn')
+      ->fields('flsn', array('entity_id'))
+      ->condition('bundle', 'oa_space')
+      ->condition('field_legacy_space_name_value', $name)
       ->execute()
       ->fetchAssoc();
-    $nid = $result['nid'];
+    $nid = (!empty($result['entity_id'])) ? $result['entity_id'] : 0;
     return $nid;
-  }
-
-  /**
-   * Set predetermined groups fields.
-   */
-  protected function setGroups() {
-    foreach ($this->groups as $group) {
-      $group_id = $this->getGroupId($this->values['data'][$group]);
-      try {
-        $this->wrapper->{$group}->set(array($group_id));
-      }
-      catch (Exception $e) {
-        echo 'Caught exception on ' . $group . ': ',  $e->getMessage(), "\n";
-      }
-    }
   }
 
   /**
@@ -193,46 +167,40 @@ class IASCDefault {
    */
   protected function setSpace() {
     foreach ($this->space as $space) {
-      // Remove spaces on data.
-      $value = trim($this->values['data'][$space]);
+      if (!empty($this->values['data'][$space])) {
+        // Remove spaces on data.
+        $value = trim($this->values['data'][$space]);
+        $value = str_replace('  ', ' ', $value);
 
-      // Try to see if it's one value.
-      $space_id = $this->getSpaceId($value);
+        // If it's a subsidiary body, that is the main space.
+        $subsidiary = preg_match("/Subsidiary Bodies+/", $value);
 
-      // If nothing matches, try to break apart and match.
-      if (empty($space_id)) {
-        $space_ids = array();
+        if ($subsidiary) {
+          $space_id = 2606;
+          $other_space_id = $this->getSpaceId($value);
+        }
+        else {
+          $space_id = $this->getSpaceId($value);
+        }
 
-        // Two spaces seem to separate the authoring bodies data.
-        $parts = explode('  ', $value);
-
-        foreach ($parts as $part) {
-          if (!empty($part)) {
-            $part = trim($part);
-            $space_ids[] = $this->getSpaceId($part);
+        // Save to main space.
+        if ($space_id) {
+          try {
+            $this->wrapper->og_group_ref->set($space_id);
+          }
+          catch (Exception $e) {
+            echo 'Caught exception on ' . $space . ': ', $e->getMessage(), "\n";
           }
         }
-        // Pop off the first one for the main space.
-        $space_id = array_shift($space_ids);
-      }
 
-      // Save to main space.
-      if ($space_id) {
-        try {
-          $this->wrapper->og_group_ref->set($space_id);
-        }
-        catch (Exception $e) {
-          echo 'Caught exception on ' . $space . ': ', $e->getMessage(), "\n";
-        }
-      }
-
-      // Save to other spaces.
-      if (!empty($space_ids)) {
-        try {
-          $this->wrapper->oa_other_spaces_ref->set($space_ids);
-        }
-        catch (Exception $e) {
-          echo 'Caught exception on ' . $space . ': ', $e->getMessage(), "\n";
+        // Save to other space.
+        if ($other_space_id) {
+          try {
+            $this->wrapper->oa_other_spaces_ref->set(array($other_space_id));
+          }
+          catch (Exception $e) {
+            echo 'Caught exception on ' . $space . ': ', $e->getMessage(), "\n";
+          }
         }
       }
     }
