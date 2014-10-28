@@ -16,6 +16,7 @@ class IASCDefault {
   protected $plain = array();
   protected $hardcoded = array();
   protected $created = '';
+  protected $term = NULL;
   protected $terms = array();
   protected $lists = array();
   protected $groups = array();
@@ -50,6 +51,7 @@ class IASCDefault {
     $this->setHardcoded();
     $this->setFields();
     $this->setPlain();
+    $this->setTerm();
     $this->setTerms();
     $this->setLists();
     // $this->setGroups();
@@ -110,6 +112,27 @@ class IASCDefault {
       }
       catch (Exception $e) {
         echo 'Caught exception on ' . $field . ': ',  $e->getMessage(), "\n";
+      }
+    }
+  }
+
+  /**
+   * Set term reference field.
+   *
+   * This is different than setTerms as it is for term reference
+   * fields where only one value can be set.
+   */
+  protected function setTerm() {
+    foreach ($this->term as $term => $vocab) {
+      if (!empty($this->values['data'][$term])) {
+        $full_term = taxonomy_get_term_by_name($this->values['data'][$term], $vocab['name']);
+        $full_term = reset($full_term);
+        try {
+          $this->wrapper->{$term}->set($full_term->tid);
+        }
+        catch (Exception $e) {
+          echo 'Caught exception on ' . $term . ': ', $e->getMessage(), "\n";
+        }
       }
     }
   }
