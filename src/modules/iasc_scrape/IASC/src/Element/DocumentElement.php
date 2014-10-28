@@ -37,10 +37,6 @@ class DocumentElement extends AbstractElement {
         'get_text' => TRUE,
       ),
       'posted_date' => array('selector' => '#ctl00_ContentPlaceHolder1_ctl00_txtPostedDate'),
-      'og_group_ref' => array(
-        'selector' => '#ctl00_ContentPlaceHolder1_ctl00_ddlPublish option[selected="selected"]',
-        'get_text' => TRUE,
-      ),
       'field_linked_agendas' => array(
         'selector' => '#ctl00_ContentPlaceHolder1_ctl00_gvLinkedAgendas',
         'table_link' => TRUE,
