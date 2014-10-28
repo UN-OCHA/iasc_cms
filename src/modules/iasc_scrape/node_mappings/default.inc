@@ -175,6 +175,7 @@ class IASCDefault {
         $value = str_replace('  ', ' ', $value);
 
         // Possible main spaces.
+        // Not a fan of hard-coding, but no legacy name to lookup.
         $main_spaces = array(
           'Subsidiary Bodies' => 2606,
           'Other' => 2608,
