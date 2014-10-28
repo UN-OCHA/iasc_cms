@@ -179,6 +179,7 @@ class IASCDefault {
         $main_spaces = array(
           'Subsidiary Bodies' => 2606,
           'Other' => 2608,
+          'Weekly' => 2609,
           'Working Group' => 2605,
         );
 
