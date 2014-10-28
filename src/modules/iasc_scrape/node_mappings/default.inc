@@ -168,18 +168,33 @@ class IASCDefault {
   protected function setSpace() {
     foreach ($this->space as $space) {
       if (!empty($this->values['data'][$space])) {
+        $space_id = $other_space_id = 0;
+
         // Remove spaces on data.
         $value = trim($this->values['data'][$space]);
         $value = str_replace('  ', ' ', $value);
 
-        // If it's a subsidiary body, that is the main space.
-        $subsidiary = preg_match("/Subsidiary Bodies+/", $value);
+        // Possible main spaces.
+        $main_spaces = array(
+          'Subsidiary Bodies' => 2606,
+          'Other' => 2608,
+          'Working Group' => 2605,
+        );
 
-        if ($subsidiary) {
-          $space_id = 2606;
-          $other_space_id = $this->getSpaceId($value);
+        foreach ($main_spaces as $space_name => $entity_id) {
+          // Attempt to see if named space is part of main space.
+          $match = preg_match("/$space_name+/", $value);
+
+          // If so, set main space, then other space.
+          if ($match) {
+            $space_id = $entity_id;
+            $other_space_id = $this->getSpaceId($value);
+            break;
+          }
         }
-        else {
+
+        // If no matches were found, attempt to set the space.
+        if (!isset($match)) {
           $space_id = $this->getSpaceId($value);
         }
 
@@ -211,7 +226,7 @@ class IASCDefault {
    */
   protected function setDates() {
     foreach ($this->dates as $date_field => $date) {
-      // If date is of type published, then this is just a single m/d/y date value.
+      // If date is type published, then this is just a single m/d/y date value.
       // Published is similar to the node->created timestamp.
       if (!empty($date['published'])) {
         $fixed_date = str_replace('/', '-', $this->values['data'][$date['published']['date']]);
