@@ -64,7 +64,7 @@ function iasc_preprocess_page(&$variables) {
     $variables['copyright'] = check_markup($copyright['value'], $copyright['format']);
   }
 
-  // User menu
+  // User menu.
   $variables['utility_navigation'] = menu_navigation_links('user-menu');
 
   // Move Panel IPE on top of primary tabs.
@@ -97,15 +97,15 @@ function iasc_links__system_main_menu(&$vars) {
   return $output;
 }
 
+/**
+ * Implements hook_links__system_secondary_menu().
+ */
 function iasc_links__system_secondary_menu($vars) {
-
     foreach ($vars['links'] as &$link) {
         $link['title'] = "<span>" . $link['title'] . "</span>";
         $link['html'] = TRUE;
     }
     return theme_links($vars);
-
-    dsm($vars);
 }
 
 
