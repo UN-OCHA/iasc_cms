@@ -196,7 +196,9 @@ class IASCDefault {
         // Remove spaces on data.
         $value = trim($this->values['data'][$space]);
         $value = str_replace('  ', ' ', $value);
+        $space_id = $this->getSpaceId($value);
 
+        /*
         // Possible main spaces.
         // Not a fan of hard-coding, but no legacy name to lookup.
         $main_spaces = array(
@@ -222,6 +224,7 @@ class IASCDefault {
         if (!isset($match)) {
           $space_id = $this->getSpaceId($value);
         }
+        */
 
         // Save to main space.
         if ($space_id) {
@@ -233,6 +236,7 @@ class IASCDefault {
           }
         }
 
+        /*
         // Save to other space.
         if ($other_space_id) {
           try {
@@ -242,6 +246,7 @@ class IASCDefault {
             echo 'Caught exception on ' . $space . ': ', $e->getMessage(), "\n";
           }
         }
+        */
       }
     }
   }
