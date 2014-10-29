@@ -67,7 +67,6 @@ function iasc_configuration_views_default_views() {
   $handler->display->display_options['fields']['og_group_ref']['id'] = 'og_group_ref';
   $handler->display->display_options['fields']['og_group_ref']['table'] = 'og_membership';
   $handler->display->display_options['fields']['og_group_ref']['field'] = 'og_group_ref';
-  $handler->display->display_options['fields']['og_group_ref']['label'] = 'Authoring Bodies';
   $handler->display->display_options['fields']['og_group_ref']['element_type'] = 'span';
   $handler->display->display_options['fields']['og_group_ref']['element_label_type'] = 'span';
   $handler->display->display_options['fields']['og_group_ref']['settings'] = array(
@@ -161,7 +160,7 @@ function iasc_configuration_views_default_views() {
   $handler->display->display_options['filters']['og_group_ref_target_id']['group'] = 1;
   $handler->display->display_options['filters']['og_group_ref_target_id']['exposed'] = TRUE;
   $handler->display->display_options['filters']['og_group_ref_target_id']['expose']['operator_id'] = 'og_group_ref_target_id_op';
-  $handler->display->display_options['filters']['og_group_ref_target_id']['expose']['label'] = 'Groups audience (og_group_ref)';
+  $handler->display->display_options['filters']['og_group_ref_target_id']['expose']['label'] = 'Authoring Bodies';
   $handler->display->display_options['filters']['og_group_ref_target_id']['expose']['operator'] = 'og_group_ref_target_id_op';
   $handler->display->display_options['filters']['og_group_ref_target_id']['expose']['identifier'] = 'og_group_ref_target_id';
   $handler->display->display_options['filters']['og_group_ref_target_id']['expose']['remember_roles'] = array(
@@ -289,7 +288,7 @@ function iasc_configuration_views_default_views() {
     'filters' => array(
       'field_published_date_value' => 'pane_and_exposed',
       'field_published_date_value_1' => 'pane_and_exposed',
-      'og_group_ref_target_id' => '',
+      'og_group_ref_target_id' => 'pane_and_exposed',
       'field_category_tid' => 'pane_and_exposed',
       'field_document_type_tid' => 'pane_and_exposed',
       'keys' => 'exposed',
@@ -324,6 +323,37 @@ function iasc_configuration_views_default_views() {
     'oa_wiki_page' => 'oa_wiki_page',
   );
   $handler->display->display_options['path'] = 'resources';
+
+  /* Display: Recently Updated Documents */
+  $handler = $view->new_display('panel_pane', 'Recently Updated Documents', 'panel_pane_recent_docs');
+  $handler->display->display_options['display_description'] = 'A list of recently updated documents without a filter or dropdown list';
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Updated date */
+  $handler->display->display_options['sorts']['changed']['id'] = 'changed';
+  $handler->display->display_options['sorts']['changed']['table'] = 'node';
+  $handler->display->display_options['sorts']['changed']['field'] = 'changed';
+  $handler->display->display_options['sorts']['changed']['order'] = 'DESC';
+  /* Sort criterion: Content: Title */
+  $handler->display->display_options['sorts']['title']['id'] = 'title';
+  $handler->display->display_options['sorts']['title']['table'] = 'node';
+  $handler->display->display_options['sorts']['title']['field'] = 'title';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'oa_wiki_page' => 'oa_wiki_page',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
   $export['filterable_content'] = $view;
 
   $view = new view();
@@ -380,7 +410,7 @@ function iasc_configuration_views_default_views() {
     3 => 0,
     4 => 0,
   );
-  /* Filter criterion: Content: Section (oa_section_ref) */
+  /* Filter criterion: Content: Open Atrium Section (oa_section_ref) */
   $handler->display->display_options['filters']['oa_section_ref_target_id']['id'] = 'oa_section_ref_target_id';
   $handler->display->display_options['filters']['oa_section_ref_target_id']['table'] = 'field_data_oa_section_ref';
   $handler->display->display_options['filters']['oa_section_ref_target_id']['field'] = 'oa_section_ref_target_id';
@@ -470,7 +500,7 @@ function iasc_configuration_views_default_views() {
     3 => 0,
     4 => 0,
   );
-  /* Filter criterion: Content: Section (oa_section_ref) */
+  /* Filter criterion: Content: Open Atrium Section (oa_section_ref) */
   $handler->display->display_options['filters']['oa_section_ref_target_id']['id'] = 'oa_section_ref_target_id';
   $handler->display->display_options['filters']['oa_section_ref_target_id']['table'] = 'field_data_oa_section_ref';
   $handler->display->display_options['filters']['oa_section_ref_target_id']['field'] = 'oa_section_ref_target_id';
