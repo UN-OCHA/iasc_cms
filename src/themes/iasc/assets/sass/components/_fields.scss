@@ -3,20 +3,30 @@
  */
 
 /* OA Event Date */
-.oa-event-date-wrapper {
+.iasc-event-date-wrapper {
   font-family: $font-family-sans-serif;
-  border: $oa-event-date-border;
   overflow: hidden;
   margin-right: $padding-large-vertical;
-  -webkit-border-radius: $oa-event-date-radius;
-     -moz-border-radius: $oa-event-date-radius;
-          border-radius: $oa-event-date-radius;
+  background-color: $calendar-icon-bg;
+  text-align: center;
+  max-width: 80px;
+  line-height: 18px;
+  float: left;
+  margin-right: 20px;
 }
-.oa-event-date-month-wrapper {
-  background-color: $oa-event-date-month-wrapper-bg;
-  margin: $oa-event-date-month-wrapper-margin;
+.iasc-event-date-month-wrapper {
+  background: $red;
+  padding: 3px 0;
 }
-.oa-event-date-day {
-  color: $oa-event-date-day-color;
-  padding-top: 0; // Override oa-events style
+.iasc-event-date-month {
+  color: #fff;
+  font-weight: 400;
+  padding-top: 10px;
+}
+.iasc-event-date-day {
+  font-size: 26px;
+  color: $red;
+}
+.iasc-event-date-year {
+  color: $red;
 }
