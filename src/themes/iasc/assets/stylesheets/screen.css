@@ -8310,15 +8310,15 @@ q {
 
 @font-face {
   font-family: "icons";
-  src: url("../fonts/icons-dee586c404c77f76d98d2dda5c429404.eot");
+  src: url("../fonts/icons-29be5025a89b0ad762585bb0f75e91a9.eot");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "icons";
-  src: url("../fonts/icons-dee586c404c77f76d98d2dda5c429404.eot");
-  src: url("../fonts/icons-dee586c404c77f76d98d2dda5c429404.eot?#iefix") format("embedded-opentype"), url("../fonts/icons-dee586c404c77f76d98d2dda5c429404.woff") format("woff"), url("../fonts/icons-dee586c404c77f76d98d2dda5c429404.ttf") format("truetype"), url("../fonts/icons-dee586c404c77f76d98d2dda5c429404.svg?#icons") format("svg");
+  src: url("../fonts/icons-29be5025a89b0ad762585bb0f75e91a9.eot");
+  src: url("../fonts/icons-29be5025a89b0ad762585bb0f75e91a9.eot?#iefix") format("embedded-opentype"), url("../fonts/icons-29be5025a89b0ad762585bb0f75e91a9.woff") format("woff"), url("../fonts/icons-29be5025a89b0ad762585bb0f75e91a9.ttf") format("truetype"), url("../fonts/icons-29be5025a89b0ad762585bb0f75e91a9.svg?#icons") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -8390,33 +8390,63 @@ q {
 }
 
 /* line 80, ../sass/base/_icons.scss */
-.icons-page {
+.icons-login {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf106;');
 }
 
 /* line 84, ../sass/base/_icons.scss */
-.icons-page:before {
+.icons-login:before {
   content: "\f106";
 }
 
 /* line 88, ../sass/base/_icons.scss */
-.icons-resources {
+.icons-logout {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf107;');
 }
 
 /* line 92, ../sass/base/_icons.scss */
-.icons-resources:before {
+.icons-logout:before {
   content: "\f107";
 }
 
 /* line 96, ../sass/base/_icons.scss */
-.icons-search {
+.icons-myaccount {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf108;');
 }
 
 /* line 100, ../sass/base/_icons.scss */
-.icons-search:before {
+.icons-myaccount:before {
   content: "\f108";
+}
+
+/* line 104, ../sass/base/_icons.scss */
+.icons-page {
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf109;');
+}
+
+/* line 108, ../sass/base/_icons.scss */
+.icons-page:before {
+  content: "\f109";
+}
+
+/* line 112, ../sass/base/_icons.scss */
+.icons-resources {
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf10a;');
+}
+
+/* line 116, ../sass/base/_icons.scss */
+.icons-resources:before {
+  content: "\f10a";
+}
+
+/* line 120, ../sass/base/_icons.scss */
+.icons-search {
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf10b;');
+}
+
+/* line 124, ../sass/base/_icons.scss */
+.icons-search:before {
+  content: "\f10b";
 }
 
 /**
@@ -8647,7 +8677,7 @@ form.navbar-form .form-type-textfield input[type="text"] {
 /* line 21, ../sass/components/_form.scss */
 form.navbar-form .form-type-textfield:after {
   font-family: icons;
-  content: '\f108';
+  content: '\f10b';
   z-index: 2;
   position: absolute;
   right: 8px;
@@ -8723,24 +8753,37 @@ img.bio-circled {
   border: 0px;
 }
 
-/* line 24, ../sass/components/_navigation.scss */
+@media screen and (min-width: 1200px) {
+  /* line 23, ../sass/components/_navigation.scss */
+  .navbar-top {
+    width: auto !important;
+  }
+}
+/* line 27, ../sass/components/_navigation.scss */
 .navbar-top ul {
   margin-bottom: 0;
 }
-/* line 25, ../sass/components/_navigation.scss */
+/* line 28, ../sass/components/_navigation.scss */
 .navbar-top a {
   color: #6e0138;
-  font-size: 24px;
   padding: 5px;
   text-decoration: none;
 }
+/* line 30, ../sass/components/_navigation.scss */
+.navbar-top a:before {
+  font-size: 24px !important;
+}
+/* line 31, ../sass/components/_navigation.scss */
+.navbar-top a span {
+  display: none;
+}
 @media screen and (min-width: 1200px) {
-  /* line 25, ../sass/components/_navigation.scss */
-  .navbar-top a {
+  /* line 33, ../sass/components/_navigation.scss */
+  .navbar-top a:before {
     font-size: 19px;
   }
 }
-/* line 33, ../sass/components/_navigation.scss */
+/* line 37, ../sass/components/_navigation.scss */
 .navbar-top a:hover {
   color: #a10152;
 }
@@ -8834,74 +8877,6 @@ img.bio-circled {
 /* line 15, ../sass/components/_panel.scss */
 .panel-success .btn, .panel-success .node-readmore a, .node-readmore .panel-success a {
   background-color: #437a75;
-}
-
-/**
- * @file
- * Node styles
- */
-/**
- * Contact Node
- */
-/* line 11, ../sass/components/node/_node_contact.scss */
-.panel-primary .panel-body .node-contact {
-  text-align: left;
-}
-/* line 12, ../sass/components/node/_node_contact.scss */
-.node-contact .name {
-  margin-bottom: 0;
-}
-/* line 14, ../sass/components/node/_node_contact.scss */
-.node-contact .name div, .node-contact .name span {
-  display: inline;
-}
-/* line 16, ../sass/components/node/_node_contact.scss */
-.node-contact .name div:after, .node-contact .name span:after {
-  content: " ";
-}
-/* line 21, ../sass/components/node/_node_contact.scss */
-.node-contact .field-label {
-  word-wrap: normal;
-}
-/* line 22, ../sass/components/node/_node_contact.scss */
-.node-contact .field-label-inline div {
-  display: inline;
-  float: initial;
-}
-/* line 23, ../sass/components/node/_node_contact.scss */
-.node-contact .name, .node-contact .field-name-field-position {
-  text-align: center;
-}
-/* line 26, ../sass/components/node/_node_contact.scss */
-.node-contact .field-name-field-position {
-  display: block;
-  margin-bottom: 2rem;
-}
-/* line 30, ../sass/components/node/_node_contact.scss */
-.node-contact .field-name-body {
-  text-align: center;
-  display: block;
-  margin-bottom: 2rem;
-}
-/* line 35, ../sass/components/node/_node_contact.scss */
-.node-contact .group-contact-info {
-  padding: 0 10%;
-}
-/* line 39, ../sass/components/node/_node_contact.scss */
-.node-contact .field-type-addressfield div:after {
-  content: " ";
-}
-/* line 41, ../sass/components/node/_node_contact.scss */
-.node-contact .field-collection-container {
-  border: none;
-  margin-bottom: 0;
-}
-/* line 43, ../sass/components/node/_node_contact.scss */
-.node-contact .field-collection-container .field-collection-view {
-  padding-top: 0;
-  display: block;
-  border: none;
-  margin-bottom: 0;
 }
 
 @media screen and (min-width: 1200px) {

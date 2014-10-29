@@ -4,17 +4,17 @@
 
 @font-face {
 	font-family:"icons";
-	src:url("../fonts/icons-dee586c404c77f76d98d2dda5c429404.eot");
+	src:url("../fonts/icons-29be5025a89b0ad762585bb0f75e91a9.eot");
 	font-weight:normal;
 	font-style:normal;
 }
 @font-face {
 	font-family:"icons";
-	src:url("../fonts/icons-dee586c404c77f76d98d2dda5c429404.eot");
-	src:url("../fonts/icons-dee586c404c77f76d98d2dda5c429404.eot?#iefix") format("embedded-opentype"),
-		url("../fonts/icons-dee586c404c77f76d98d2dda5c429404.woff") format("woff"),
-		url("../fonts/icons-dee586c404c77f76d98d2dda5c429404.ttf") format("truetype"),
-		url("../fonts/icons-dee586c404c77f76d98d2dda5c429404.svg?#icons") format("svg");
+	src:url("../fonts/icons-29be5025a89b0ad762585bb0f75e91a9.eot");
+	src:url("../fonts/icons-29be5025a89b0ad762585bb0f75e91a9.eot?#iefix") format("embedded-opentype"),
+		url("../fonts/icons-29be5025a89b0ad762585bb0f75e91a9.woff") format("woff"),
+		url("../fonts/icons-29be5025a89b0ad762585bb0f75e91a9.ttf") format("truetype"),
+		url("../fonts/icons-29be5025a89b0ad762585bb0f75e91a9.svg?#icons") format("svg");
 	font-weight:normal;
 	font-style:normal;
 }
@@ -77,26 +77,50 @@
 	content:"\f105";
 }
 
-.icons-page {
+.icons-login {
 	*zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf106;');
 }
 
-.icons-page:before {
+.icons-login:before {
 	content:"\f106";
 }
 
-.icons-resources {
+.icons-logout {
 	*zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf107;');
 }
 
-.icons-resources:before {
+.icons-logout:before {
 	content:"\f107";
 }
 
-.icons-search {
+.icons-myaccount {
 	*zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf108;');
 }
 
-.icons-search:before {
+.icons-myaccount:before {
 	content:"\f108";
+}
+
+.icons-page {
+	*zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf109;');
+}
+
+.icons-page:before {
+	content:"\f109";
+}
+
+.icons-resources {
+	*zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf10a;');
+}
+
+.icons-resources:before {
+	content:"\f10a";
+}
+
+.icons-search {
+	*zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf10b;');
+}
+
+.icons-search:before {
+	content:"\f10b";
 }

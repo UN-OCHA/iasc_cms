@@ -21,12 +21,16 @@
 
 
 .navbar-top {
+  @media screen and (min-width: $screen-lg-min) {
+    width: auto !important;
+  }
   ul {margin-bottom: 0;}
   a {  
     color: $brand-primary;
-    font-size: 24px;
+    &:before { font-size: 24px !important; }
+    span { display: none; }
     @media screen and (min-width: $screen-lg-min) {
-      font-size: 19px;
+      &:before { font-size: 19px; }
     }
     padding: 5px;
     text-decoration: none;
