@@ -102,8 +102,6 @@ function iasc_configuration_views_default_views_alter(&$data) {
           3 => 0,
           4 => 0,
         ),
-        'autocomplete_items' => 10,
-        'autocomplete_min_chars' => 0,
         'autocomplete_raw_suggestion' => 1,
         'autocomplete_raw_dropdown' => 1,
         'autocomplete_dependent' => 0,
@@ -204,6 +202,43 @@ function iasc_configuration_views_default_views_alter(&$data) {
  */
 function iasc_configuration_flag_default_flags() {
   $flags = array();
+  // Exported flag: "Featured".
+  $flags['featured'] = array(
+    'content_type' => 'node',
+    'title' => 'Featured',
+    'global' => 0,
+    'types' => array(
+      0 => 'oa_wiki_page',
+    ),
+    'flag_short' => 'Featured',
+    'flag_long' => 'Mark as Featured',
+    'flag_message' => 'Flagged as Featured!',
+    'unflag_short' => 'Remove Featured flag',
+    'unflag_long' => 'Remove item from Featured list',
+    'unflag_message' => 'Removed Featured flag',
+    'unflag_denied_text' => '',
+    'link_type' => 'toggle',
+    'roles' => array(
+      'flag' => array(
+        0 => 2,
+      ),
+      'unflag' => array(
+        0 => 2,
+      ),
+    ),
+    'weight' => 0,
+    'show_on_form' => 1,
+    'access_author' => '',
+    'show_on_page' => 1,
+    'show_on_teaser' => 1,
+    'show_contextual_link' => FALSE,
+    'i18n' => 0,
+    'api_version' => 2,
+    'module' => 'iasc_configuration',
+    'locked' => array(
+      0 => 'name',
+    ),
+  );
   // Exported flag: "Show on Homepage".
   $flags['show_on_home'] = array(
     'content_type' => 'node',
