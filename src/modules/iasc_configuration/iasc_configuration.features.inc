@@ -102,8 +102,6 @@ function iasc_configuration_views_default_views_alter(&$data) {
           3 => 0,
           4 => 0,
         ),
-        'autocomplete_items' => 10,
-        'autocomplete_min_chars' => 0,
         'autocomplete_raw_suggestion' => 1,
         'autocomplete_raw_dropdown' => 1,
         'autocomplete_dependent' => 0,

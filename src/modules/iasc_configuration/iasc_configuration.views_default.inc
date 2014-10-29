@@ -11,11 +11,11 @@ function iasc_configuration_views_default_views() {
   $export = array();
 
   $view = new view();
-  $view->name = 'filterable_content';
+  $view->name = 'iasc_document';
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'node';
-  $view->human_name = 'Filterable Content';
+  $view->human_name = 'IASC Document content panes and pages.';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -324,7 +324,7 @@ function iasc_configuration_views_default_views() {
     'oa_wiki_page' => 'oa_wiki_page',
   );
   $handler->display->display_options['path'] = 'resources';
-  $export['filterable_content'] = $view;
+  $export['iasc_document'] = $view;
 
   $view = new view();
   $view->name = 'reference_dialog_search';
