@@ -63,7 +63,7 @@ function iasc_configuration_views_default_views() {
   $handler->display->display_options['fields']['field_document_type']['element_type'] = 'span';
   $handler->display->display_options['fields']['field_document_type']['element_label_type'] = 'span';
   $handler->display->display_options['fields']['field_document_type']['type'] = 'taxonomy_term_reference_plain';
-  /* Field: Content: Groups audience */
+  /* Field: Content: Authoring Bodies */
   $handler->display->display_options['fields']['og_group_ref']['id'] = 'og_group_ref';
   $handler->display->display_options['fields']['og_group_ref']['table'] = 'og_membership';
   $handler->display->display_options['fields']['og_group_ref']['field'] = 'og_group_ref';
@@ -153,7 +153,7 @@ function iasc_configuration_views_default_views() {
     4 => 0,
   );
   $handler->display->display_options['filters']['field_published_date_value_1']['form_type'] = 'date_popup';
-  /* Filter criterion: Content: Groups audience (og_group_ref) */
+  /* Filter criterion: Content: Authoring Bodies (og_group_ref) */
   $handler->display->display_options['filters']['og_group_ref_target_id']['id'] = 'og_group_ref_target_id';
   $handler->display->display_options['filters']['og_group_ref_target_id']['table'] = 'og_membership';
   $handler->display->display_options['filters']['og_group_ref_target_id']['field'] = 'og_group_ref_target_id';
@@ -354,6 +354,36 @@ function iasc_configuration_views_default_views() {
     'oa_wiki_page' => 'oa_wiki_page',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
+
+  /* Display: Featured Products */
+  $handler = $view->new_display('panel_pane', 'Featured Products', 'panel_pane_featured_products');
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Nodequeue: Queue */
+  $handler->display->display_options['relationships']['nodequeue_rel']['id'] = 'nodequeue_rel';
+  $handler->display->display_options['relationships']['nodequeue_rel']['table'] = 'node';
+  $handler->display->display_options['relationships']['nodequeue_rel']['field'] = 'nodequeue_rel';
+  $handler->display->display_options['relationships']['nodequeue_rel']['required'] = TRUE;
+  $handler->display->display_options['relationships']['nodequeue_rel']['limit'] = 1;
+  $handler->display->display_options['relationships']['nodequeue_rel']['names'] = array(
+    'featured_products' => 'featured_products',
+    'featured_home' => 0,
+    'special_announcements' => 0,
+  );
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Nodequeue: Position */
+  $handler->display->display_options['sorts']['position']['id'] = 'position';
+  $handler->display->display_options['sorts']['position']['table'] = 'nodequeue_nodes';
+  $handler->display->display_options['sorts']['position']['field'] = 'position';
+  $handler->display->display_options['sorts']['position']['relationship'] = 'nodequeue_rel';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
   $export['iasc_document'] = $view;
 
   $view = new view();
@@ -395,7 +425,7 @@ function iasc_configuration_views_default_views() {
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Groups audience (og_group_ref) */
+  /* Filter criterion: Content: Authoring Bodies (og_group_ref) */
   $handler->display->display_options['filters']['og_group_ref_target_id']['id'] = 'og_group_ref_target_id';
   $handler->display->display_options['filters']['og_group_ref_target_id']['table'] = 'og_membership';
   $handler->display->display_options['filters']['og_group_ref_target_id']['field'] = 'og_group_ref_target_id';
@@ -410,7 +440,7 @@ function iasc_configuration_views_default_views() {
     3 => 0,
     4 => 0,
   );
-  /* Filter criterion: Content: Open Atrium Section (oa_section_ref) */
+  /* Filter criterion: Content: Section (oa_section_ref) */
   $handler->display->display_options['filters']['oa_section_ref_target_id']['id'] = 'oa_section_ref_target_id';
   $handler->display->display_options['filters']['oa_section_ref_target_id']['table'] = 'field_data_oa_section_ref';
   $handler->display->display_options['filters']['oa_section_ref_target_id']['field'] = 'oa_section_ref_target_id';
@@ -485,7 +515,7 @@ function iasc_configuration_views_default_views() {
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Groups audience (og_group_ref) */
+  /* Filter criterion: Content: Authoring Bodies (og_group_ref) */
   $handler->display->display_options['filters']['og_group_ref_target_id']['id'] = 'og_group_ref_target_id';
   $handler->display->display_options['filters']['og_group_ref_target_id']['table'] = 'og_membership';
   $handler->display->display_options['filters']['og_group_ref_target_id']['field'] = 'og_group_ref_target_id';
@@ -500,7 +530,7 @@ function iasc_configuration_views_default_views() {
     3 => 0,
     4 => 0,
   );
-  /* Filter criterion: Content: Open Atrium Section (oa_section_ref) */
+  /* Filter criterion: Content: Section (oa_section_ref) */
   $handler->display->display_options['filters']['oa_section_ref_target_id']['id'] = 'oa_section_ref_target_id';
   $handler->display->display_options['filters']['oa_section_ref_target_id']['table'] = 'field_data_oa_section_ref';
   $handler->display->display_options['filters']['oa_section_ref_target_id']['field'] = 'oa_section_ref_target_id';
