@@ -29,12 +29,16 @@
     .pane-title { display: none }
     h1 {margin: 0;}
   }
+  // Can't find how to remove this in panel.
+  .field-name-field-referenced-docs h2 { display: none } 
   .sidebar {
     .panel-pane {
       margin-bottom: 10px;
     }
   }
 }
+
+
 
 
 

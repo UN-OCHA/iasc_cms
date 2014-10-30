@@ -9,45 +9,47 @@
  */
 function iasc_document_field_default_field_instances_alter(&$data) {
   if (isset($data['node-oa_wiki_page-body'])) {
-    $data['node-oa_wiki_page-body']['comment_alter'] = 0; /* WAS: '' */
-    $data['node-oa_wiki_page-body']['description'] = 'Enter a description of the product.'; /* WAS: 'Enter the content of the document or wiki here.' */
-    $data['node-oa_wiki_page-body']['display']['teaser']['weight'] = 5; /* WAS: 0 */
-    $data['node-oa_wiki_page-body']['label'] = 'Description'; /* WAS: 'Body' */
-    $data['node-oa_wiki_page-body']['widget']['weight'] = 5; /* WAS: 3 */
+    $data['node-oa_wiki_page-body']['display']['link_only'] = array(
+      'label' => 'hidden',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 2,
+    ); /* WAS: '' */
   }
   if (isset($data['node-oa_wiki_page-field_oa_media'])) {
-    $data['node-oa_wiki_page-field_oa_media']['display']['teaser']['weight'] = 10; /* WAS: 4 */
-    $data['node-oa_wiki_page-field_oa_media']['widget']['weight'] = 7; /* WAS: 6 */
+    $data['node-oa_wiki_page-field_oa_media']['display']['link_only'] = array(
+      'label' => 'hidden',
+      'module' => 'file_entity',
+      'settings' => array(
+        'text' => 'Download [file:name]',
+      ),
+      'type' => 'file_download_link',
+      'weight' => 0,
+    ); /* WAS: '' */
   }
   if (isset($data['node-oa_wiki_page-oa_section_ref'])) {
-    $data['node-oa_wiki_page-oa_section_ref']['comment_alter'] = 0; /* WAS: '' */
-    $data['node-oa_wiki_page-oa_section_ref']['display']['teaser']['weight'] = 9; /* WAS: 3 */
-    $data['node-oa_wiki_page-oa_section_ref']['label'] = 'Section'; /* WAS: 'OpenAtrium Section' */
-    unset($data['node-oa_wiki_page-oa_section_ref']['options_limit_fields']['oa_section_ref']);
+    $data['node-oa_wiki_page-oa_section_ref']['display']['link_only'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 4,
+    ); /* WAS: '' */
   }
   if (isset($data['node-oa_wiki_page-og_group_ref'])) {
-    $data['node-oa_wiki_page-og_group_ref']['comment_alter'] = 0; /* WAS: '' */
-    $data['node-oa_wiki_page-og_group_ref']['display']['teaser']['label'] = 'inline'; /* WAS: 'above' */
-    $data['node-oa_wiki_page-og_group_ref']['display']['teaser']['module'] = 'entityreference'; /* WAS: '' */
-    $data['node-oa_wiki_page-og_group_ref']['display']['teaser']['settings']['link'] = 1; /* WAS: '' */
-    $data['node-oa_wiki_page-og_group_ref']['display']['teaser']['type'] = 'entityreference_label'; /* WAS: 'hidden' */
-    $data['node-oa_wiki_page-og_group_ref']['display']['teaser']['weight'] = 3; /* WAS: 2 */
-    $data['node-oa_wiki_page-og_group_ref']['label'] = 'Authoring Bodies'; /* WAS: 'Groups audience' */
-    $data['node-oa_wiki_page-og_group_ref']['options_limit'] = 0; /* WAS: '' */
-    $data['node-oa_wiki_page-og_group_ref']['options_limit_empty_behaviour'] = 0; /* WAS: '' */
-    $data['node-oa_wiki_page-og_group_ref']['options_limit_fields'] = array(
-      'body' => 0,
+    $data['node-oa_wiki_page-og_group_ref']['display']['link_only'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 3,
     ); /* WAS: '' */
-    $data['node-oa_wiki_page-og_group_ref']['required'] = 0; /* WAS: FALSE */
-    $data['node-oa_wiki_page-og_group_ref']['settings']['behaviors']['og_widget']['access_override'] = 0; /* WAS: '' */
-    $data['node-oa_wiki_page-og_group_ref']['widget']['active'] = 0; /* WAS: '' */
   }
   if (isset($data['node-oa_wiki_page-og_vocabulary'])) {
-    $data['node-oa_wiki_page-og_vocabulary']['display']['teaser']['type'] = 'hidden'; /* WAS: 'og_vocab' */
-    $data['node-oa_wiki_page-og_vocabulary']['display']['teaser']['weight'] = 6; /* WAS: 1 */
-    $data['node-oa_wiki_page-og_vocabulary']['widget']['weight'] = 8; /* WAS: 7 */
-    unset($data['node-oa_wiki_page-og_vocabulary']['display']['teaser']['module']);
-    unset($data['node-oa_wiki_page-og_vocabulary']['display']['teaser']['settings']['concatenate']);
+    $data['node-oa_wiki_page-og_vocabulary']['display']['link_only'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 5,
+    ); /* WAS: '' */
   }
 }
 
@@ -97,6 +99,18 @@ function iasc_document_default_page_manager_handlers_alter(&$data) {
 function iasc_document_strongarm_alter(&$data) {
   if (isset($data['field_bundle_settings_node__oa_wiki_page'])) {
     $data['field_bundle_settings_node__oa_wiki_page']->value['extra_fields']['form']['path']['weight'] = 1; /* WAS: 2 */
+    $data['field_bundle_settings_node__oa_wiki_page']->value['view_modes']['bio_full'] = array(
+      'custom_settings' => FALSE,
+    ); /* WAS: '' */
+    $data['field_bundle_settings_node__oa_wiki_page']->value['view_modes']['bio_long'] = array(
+      'custom_settings' => FALSE,
+    ); /* WAS: '' */
+    $data['field_bundle_settings_node__oa_wiki_page']->value['view_modes']['bio_short'] = array(
+      'custom_settings' => FALSE,
+    ); /* WAS: '' */
+    $data['field_bundle_settings_node__oa_wiki_page']->value['view_modes']['link_only'] = array(
+      'custom_settings' => TRUE,
+    ); /* WAS: '' */
   }
   if (isset($data['node_submitted_oa_wiki_page'])) {
     $data['node_submitted_oa_wiki_page']->value = 0; /* WAS: 1 */

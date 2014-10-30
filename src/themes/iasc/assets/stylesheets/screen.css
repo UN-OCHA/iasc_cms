@@ -8922,6 +8922,10 @@ img.bio-circled {
   margin: 0;
 }
 /* line 33, ../sass/components/_panel.scss */
+.panel-flexible .field-name-field-referenced-docs h2 {
+  display: none;
+}
+/* line 35, ../sass/components/_panel.scss */
 .panel-flexible .sidebar .panel-pane {
   margin-bottom: 10px;
 }

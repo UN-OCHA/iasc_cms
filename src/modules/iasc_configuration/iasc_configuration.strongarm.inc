@@ -16,16 +16,20 @@ function iasc_configuration_strongarm() {
   $strongarm->name = 'entity_view_modes';
   $strongarm->value = array(
     'node' => array(
-      'bio_short' => array(
-        'label' => 'Bio (short)',
+      'bio_full' => array(
+        'label' => 'Bio (full)',
         'custom settings' => 1,
       ),
       'bio_long' => array(
         'label' => 'Bio (long)',
         'custom settings' => 1,
       ),
-      'bio_full' => array(
-        'label' => 'Bio (full)',
+      'bio_short' => array(
+        'label' => 'Bio (short)',
+        'custom settings' => 1,
+      ),
+      'link_only' => array(
+        'label' => 'Link Only',
         'custom settings' => 1,
       ),
     ),
