@@ -234,6 +234,9 @@ projects[apachesolr_attachments][type] = module
 projects[apachesolr_attachments][version] = 1.3
 projects[apachesolr_attachments][subdir] = contrib
 
+projects[title][type] = module
+projects[title][version] = 1.0-alpha7
+projects[title][subdir] = contrib
 
 
 
