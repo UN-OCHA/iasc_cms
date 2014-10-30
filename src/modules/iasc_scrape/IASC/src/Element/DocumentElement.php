@@ -40,12 +40,14 @@ class DocumentElement extends AbstractElement {
       'field_linked_agendas' => array(
         'selector' => '#ctl00_ContentPlaceHolder1_ctl00_gvLinkedAgendas',
         'table_link' => TRUE,
+        'link_text' => 'View Agenda',
         'tr' => 1,
         'td' => 1,
       ),
       'field_linked_meeting' => array(
         'selector' => '#ctl00_ContentPlaceHolder1_ctl00_gvLinkedAgendas',
         'table_link' => TRUE,
+        'link_text' => 'View Meeting',
         'tr' => 1,
         'td' => 2,
       ),
