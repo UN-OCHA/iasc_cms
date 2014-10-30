@@ -274,7 +274,6 @@ function iasc_meeting_link_agendas($item, &$context) {
 
   // Requires: separate csv file to map: calmeetID <-> agenda data.
 
-  // Agenda items are a field collection.
   $collection = entity_create('field_collection_item', array('field_name' => 'field_agenda_items'));
   $collection->setHostEntity('node', $entity);
   $agenda_wrapper = entity_metadata_wrapper('field_collection_item', $collection);
