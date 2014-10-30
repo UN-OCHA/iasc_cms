@@ -8,11 +8,32 @@
   .panel-heading { text-transform: uppercase; }
 }
 .panel-primary {
-  .panel-heading, .panel-body { text-align: center; }
+  .panel-heading { text-align: center; }
 }
 
 .panel-success {
   .btn { background-color: $green; }
+}
+
+.panel-body {
+  padding: $panel-body-padding !important; 
+}
+
+/**
+ * Panel node template
+ */
+ .panel-flexible {
+  .header {
+    padding-bottom: 7px;
+    // Can't find how to remove this in panel.
+    .pane-title { display: none }
+    h1 {margin: 0;}
+  }
+  .sidebar {
+    .panel-pane {
+      margin-bottom: 10px;
+    }
+  }
 }
 
 

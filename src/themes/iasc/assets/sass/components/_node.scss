@@ -4,6 +4,17 @@
  */
 
 /**
+ * Global node styles
+ */
+.node {
+  header {
+    h1 { margin: 0; }
+    margin-bottom: $grid-gutter-width / 2;
+  }
+}
+
+
+/**
  * Contact Node
  */
 .node-contact {
