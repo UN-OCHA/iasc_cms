@@ -608,7 +608,7 @@ function iasc_configuration_add_section($parent_nid, $section_name, $section_tid
 }
 
 /**
- *  Implements hook_flag_access().
+ * Implements hook_flag_access().
  */
 function iasc_configuration_flag_access($flag, $content_id, $action, $account) {
   // Only Document nodes of type Product can use the Featured flag at this time.
@@ -682,7 +682,7 @@ function iasc_configuration_flag($action, $flag, $content_id, $account) {
  */
 function iasc_configuration_nodequeue_remove($sqid, $nid) {
   $subqueue = nodequeue_load_subqueue($sqid);
-  switch($subqueue->title) {
+  switch ($subqueue->title) {
     case 'Featured Products':
       flag('unflag', 'featured', $nid);
       break;
@@ -702,7 +702,7 @@ function iasc_configuration_nodequeue_remove($sqid, $nid) {
  */
 function iasc_configuration_nodequeue_add($sqid, $nid) {
   $subqueue = nodequeue_load_subqueue($sqid);
-  switch($subqueue->title) {
+  switch ($subqueue->title) {
     case 'Featured Products':
       flag('flag', 'featured', $nid);
       break;
@@ -718,7 +718,7 @@ function iasc_configuration_nodequeue_add($sqid, $nid) {
 }
 
 /**
- * Implementation of hook_query_alter().
+ * Implements hook_query_alter().
  */
 function iasc_configuration_query_alter(QueryAlterableInterface $query) {
   if ($query->hasTag('nodequeue_api_autocomplete')) {
@@ -733,6 +733,4 @@ function iasc_configuration_query_alter(QueryAlterableInterface $query) {
       }
     }
   }
-
-
 }
