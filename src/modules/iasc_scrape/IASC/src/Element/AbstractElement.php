@@ -59,12 +59,13 @@ abstract class AbstractElement implements ElementInterface {
         ->text();
     }
     elseif (!empty($params['table_link'])) {
+      $link_text = (isset($params['link_text'])) ? $params['link_text'] : 'Edit';
       // If table_link is TRUE, then find the link inside a table element.
       $value = $this->listing->crawler
         ->filter($params['selector'])
         ->filter('tr')->eq($params['tr'])
         ->filter('td')->eq($params['td'])
-        ->selectLink('Edit');
+        ->selectLink($link_text);
 
       if ($value->getNode(0) != NULL) {
         $value = $value
