@@ -234,6 +234,10 @@ projects[apachesolr_attachments][type] = module
 projects[apachesolr_attachments][version] = 1.3
 projects[apachesolr_attachments][subdir] = contrib
 
+projects[nodequeue][type] = module
+projects[nodequeue][version] = 2.0-beta1
+projects[nodequeue][subdir] = contrib
+projects[nodequeue][patch][1402634] = https://www.drupal.org/files/node-mark-deprecated-1402634-7.patch
 
 
 
