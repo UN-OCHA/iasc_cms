@@ -151,4 +151,5 @@ dependencies[] = field_collection
 dependencies[] = addressfield
 dependencies[] = entity_view_mode
 dependencies[] = apachesolr_attachments
+dependencies[] = menu_attributes
 

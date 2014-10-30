@@ -18,12 +18,13 @@
     <?php if($search_form): ?>
       <?php print $search_form; ?>
     <?php endif; ?> 
-    <nav class="navbar-top navbar-right row col-xs-6 col-sm-3 col-lg-2 ">
-      <ul class="list-inline nav-holder clearfix">
-        <li class="col-xs-4 text-center"><a href="/calendar" class="icons-calendar"><span class="hide">Calender</span></a></li>
-        <li class="col-xs-4 text-center"><a href="/resources" class="icons-resources"><span class="hide">Resources</span></a></li>
-        <li class="col-xs-4 text-center"><a href="/contact" class="icons-contact"><span class="hide">Contact Us</span></a></li>
-      </ul>
+    <nav class="navbar-top navbar-right row col-xs-6 col-sm-3">
+      <?php print theme('links__system_secondary_menu', array(
+        'links' => $utility_navigation,
+        'attributes' => array(
+          'class' => array('list-inline', 'nav-holder', 'clearfix'),
+        ),
+      )); ?>
     </nav>
   </div>
   <nav class="navbar navbar-default" role="navigation">

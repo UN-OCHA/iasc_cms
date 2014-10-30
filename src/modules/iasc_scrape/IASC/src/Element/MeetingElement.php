@@ -30,7 +30,7 @@ class MeetingElement extends AbstractElement {
    */
   public function setValues() {
     $values = array(
-      'field_authoring_bodies' => array(
+      'og_group_ref' => array(
         'selector' => '#ctl00_ContentPlaceHolder1_ctl00_ddlBody option[selected="selected"]',
         'get_text' => TRUE,
       ),
@@ -70,10 +70,6 @@ class MeetingElement extends AbstractElement {
       ),
       'field_info_private' => array(
         'selector' => '#ctl00_ContentPlaceHolder1_ctl00_txtprivate',
-        'get_text' => TRUE,
-      ),
-      'og_group_ref' => array(
-        'selector' => '#ctl00_ContentPlaceHolder1_ctl00_ddlpublev2 option[selected="selected"]',
         'get_text' => TRUE,
       ),
       'field_contact' => array('selector' => '#ctl00_ContentPlaceHolder1_ctl00_SearchContacts1_hdnContactId'),
