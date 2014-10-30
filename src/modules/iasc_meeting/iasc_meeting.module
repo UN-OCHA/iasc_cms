@@ -296,10 +296,16 @@ function iasc_meeting_link_agendas($item, &$context) {
     $agenda_wrapper->field_ai_description = array('value' => $description);
   }
 
-  // Get contact entity_id
+  // Set contact.
   $contact_id = iasc_contact_get_nid_by_legacyid($item['presenterID']);
   if ($contact_id) {
     $agenda_wrapper->field_contact = array($contact_id);
+  }
+
+  // Set document.
+  $document_id = iasc_meeting_get_document_id_by_meeting_id($item['calmeetID']);
+  if ($document_id) {
+    $agenda_wrapper->field_referenced_docs = array($document_id);
   }
   $agenda_wrapper->save();
 
@@ -350,7 +356,7 @@ function iasc_meeting_import_meeting_agenda_finished($success, $results, $operat
  * @param int $id
  *   The legacy id
  *
- * @return int
+ * @return bool|int
  *   The nid of the node
  */
 function iasc_meeting_get_nid_by_legacyid($id) {
@@ -361,5 +367,29 @@ function iasc_meeting_get_nid_by_legacyid($id) {
     ->execute()
     ->fetchAssoc();
 
-  return ($result['entity_id']) ? $result['entity_id'] : 0;
+  return ($result['entity_id']) ? $result['entity_id'] : FALSE;
+}
+
+/**
+ * Returns the nid associated with the legacy id or FALSE if no node exists.
+ */
+function iasc_meeting_get_document_id_by_meeting_id($meeting_id) {
+  $result = db_select('iasc_scrape', 'sc')
+    ->fields('sc', array('legacy_id'))
+    ->condition('type', 'meeting')
+    ->condition('entity_id', $meeting_id)
+    ->execute()
+    ->fetchAssoc();
+
+  // Now grab document entity by the legacy id of the meeting.
+  if ($result['legacy_id']) {
+    $result = db_select('iasc_scrape', 'sc')
+      ->fields('sc', array('entity_id'))
+      ->condition('type', 'document')
+      ->condition('legacy_meeting_id', $result['legacy_id'])
+      ->execute()
+      ->fetchAssoc();
+  }
+
+  return isset($result['entity_id']) ? $result['entity_id'] : FALSE;
 }
