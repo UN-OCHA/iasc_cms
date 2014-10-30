@@ -20,6 +20,10 @@ function iasc_configuration_install() {
   $space->title_label = $t('Full Name');
   $space->modified = TRUE;
   node_type_save($space);
+
+  // Setup default nodequeues for: Featured products, Homepage nodes, and
+  // special announcements.
+  _iasc_configuration_default_nodequeues();
 }
 
 /**
@@ -63,5 +67,91 @@ function iasc_configuration_update_7001() {
       node_save($node);
     }
   }
+}
 
+/**
+ * Implements hook_update_N().
+ *
+ * Add default nodequeues for Featured products, Homepage featured nodes, and
+ * special announcements.
+ */
+function iasc_configuration_update_7002() {
+  _iasc_configuration_default_nodequeues();
+}
+
+/**
+ * Helper function that creates the default nodequeues.
+ */
+function _iasc_configuration_default_nodequeues() {
+  $queue = nodequeue_load_queue_by_name('featured_products');
+  if (!$queue) {
+    $nodequeue = new stdClass();
+    $nodequeue->name = 'featured_products';
+    $nodequeue->title = 'Featured Products';
+    $nodequeue->subqueue_title = '';
+    $nodequeue->size = 0;
+    $nodequeue->link = '';
+    $nodequeue->link_remove = '';
+    $nodequeue->owner = 'nodequeue';
+    $nodequeue->show_in_links = 0;
+    $nodequeue->show_in_tab = 1;
+    $nodequeue->show_in_ui = 1;
+    $nodequeue->i18n = 0;
+    $nodequeue->reverse = 0;
+    $nodequeue->reference = 0;
+    $nodequeue->subqueues = 1;
+    $nodequeue->roles = array();
+    $nodequeue->types = array('oa_wiki_page');
+    $nodequeue->add_subqueue = array('Featured Products');
+
+    nodequeue_save($nodequeue);
+  }
+
+  $queue = nodequeue_load_queue_by_name('featured_home');
+  if (!$queue) {
+    $nodequeue = new stdClass();
+    $nodequeue->name = 'featured_home';
+    $nodequeue->title = 'Featured on Home';
+    $nodequeue->subqueue_title = '';
+    $nodequeue->size = 0;
+    $nodequeue->link = '';
+    $nodequeue->link_remove = '';
+    $nodequeue->owner = 'nodequeue';
+    $nodequeue->show_in_links = 0;
+    $nodequeue->show_in_tab = 1;
+    $nodequeue->show_in_ui = 1;
+    $nodequeue->i18n = 0;
+    $nodequeue->reverse = 0;
+    $nodequeue->reference = 0;
+    $nodequeue->subqueues = 1;
+    $nodequeue->roles = array();
+    $nodequeue->types = array('announcement');
+    $nodequeue->add_subqueue = array('Featured on Home');
+
+    nodequeue_save($nodequeue);
+  }
+
+  $queue = nodequeue_load_queue_by_name('special_announcements');
+  if (!$queue) {
+    $nodequeue = new stdClass();
+    $nodequeue->name = 'special_announcements';
+    $nodequeue->title = 'Special Announcements';
+    $nodequeue->subqueue_title = '';
+    $nodequeue->size = 0;
+    $nodequeue->link = '';
+    $nodequeue->link_remove = '';
+    $nodequeue->owner = 'nodequeue';
+    $nodequeue->show_in_links = 0;
+    $nodequeue->show_in_tab = 1;
+    $nodequeue->show_in_ui = 1;
+    $nodequeue->i18n = 0;
+    $nodequeue->reverse = 0;
+    $nodequeue->reference = 0;
+    $nodequeue->subqueues = 1;
+    $nodequeue->roles = array();
+    $nodequeue->types = array('announcement');
+    $nodequeue->add_subqueue = array('Special Announcements');
+
+    nodequeue_save($nodequeue);
+  }
 }

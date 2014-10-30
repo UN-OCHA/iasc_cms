@@ -202,11 +202,48 @@ function iasc_configuration_views_default_views_alter(&$data) {
  */
 function iasc_configuration_flag_default_flags() {
   $flags = array();
+  // Exported flag: "Featured".
+  $flags['featured'] = array(
+    'content_type' => 'node',
+    'title' => 'Featured',
+    'global' => 1,
+    'types' => array(
+      0 => 'oa_wiki_page',
+    ),
+    'flag_short' => 'Featured',
+    'flag_long' => 'Mark as Featured',
+    'flag_message' => 'Flagged as Featured!',
+    'unflag_short' => 'Remove Featured flag',
+    'unflag_long' => 'Remove item from Featured list',
+    'unflag_message' => 'Removed Featured flag',
+    'unflag_denied_text' => '',
+    'link_type' => 'toggle',
+    'roles' => array(
+      'flag' => array(
+        0 => 2,
+      ),
+      'unflag' => array(
+        0 => 2,
+      ),
+    ),
+    'weight' => 0,
+    'show_on_form' => 1,
+    'access_author' => '',
+    'show_on_page' => 1,
+    'show_on_teaser' => 1,
+    'show_contextual_link' => FALSE,
+    'i18n' => 0,
+    'module' => 'iasc_configuration',
+    'locked' => array(
+      0 => 'name',
+    ),
+    'api_version' => 2,
+  );
   // Exported flag: "Show on Homepage".
   $flags['show_on_home'] = array(
     'content_type' => 'node',
     'title' => 'Show on Homepage',
-    'global' => 0,
+    'global' => 1,
     'types' => array(
       0 => 'announcement',
     ),
@@ -243,7 +280,7 @@ function iasc_configuration_flag_default_flags() {
   $flags['special'] = array(
     'content_type' => 'node',
     'title' => 'Special',
-    'global' => 0,
+    'global' => 1,
     'types' => array(
       0 => 'announcement',
     ),

@@ -606,3 +606,131 @@ function iasc_configuration_add_section($parent_nid, $section_name, $section_tid
 
   node_save($node);
 }
+
+/**
+ * Implements hook_flag_access().
+ */
+function iasc_configuration_flag_access($flag, $content_id, $action, $account) {
+  // Only Document nodes of type Product can use the Featured flag at this time.
+  if ('featured' == $flag->name) {
+    if (empty($content_id) || !($node = node_load($content_id))) {
+      return FALSE;
+    }
+
+    if ('oa_wiki_page' == $node->type) {
+      $wrapper = entity_metadata_wrapper('node', $node);
+      $type = $wrapper->field_document_type->value();
+
+      if ('Product' == $type->name) {
+        return TRUE;
+      }
+    }
+
+    return FALSE;
+  }
+}
+
+/**
+ * Implements hook_flag().
+ *
+ * Remove from featured, show on home, special nodequeues.
+ */
+function iasc_configuration_flag($action, $flag, $content_id, $account) {
+  if ('featured' == $flag->name) {
+    $node = node_load($content_id);
+
+    // Determine the queue for Featured Document nodes.
+    if ('oa_wiki_page' == $node->type) {
+      $wrapper = entity_metadata_wrapper('node', $node);
+      $type = $wrapper->field_document_type->value();
+
+      // Currently we only have a nodequeue for Products.
+      if ('Product' == $type->name) {
+        $queue = nodequeue_load_queue_by_name('featured_products');
+
+        if ($queue) {
+          $subqueue = nodequeue_load_subqueue($queue->qid);
+        }
+      }
+    }
+  }
+  elseif ('show_on_home' == $flag->name) {
+    // Add to the Featured Homepage nodequeue.
+    $queue = nodequeue_load_queue_by_name('featured_home');
+    if ($queue) {
+      $subqueue = nodequeue_load_subqueue($queue->qid);
+    }
+  }
+  elseif ('special' == $flag->name) {
+    // Add to the Special Announcements nodequeue.
+    $queue = nodequeue_load_queue_by_name('special_announcements');
+    if ($queue) {
+      $subqueue = nodequeue_load_subqueue($queue->qid);
+    }
+  }
+
+  if (!empty($subqueue) && 'flag' == $action) {
+    nodequeue_subqueue_add($queue, $subqueue, $content_id);
+  }
+  elseif (!empty($subqueue) && 'unflag' == $action) {
+    nodequeue_subqueue_remove_node($subqueue->qid, $content_id);
+  }
+}
+
+/**
+ * Implements hook_nodequeue_remove().
+ */
+function iasc_configuration_nodequeue_remove($sqid, $nid) {
+  $subqueue = nodequeue_load_subqueue($sqid);
+  switch ($subqueue->title) {
+    case 'Featured Products':
+      flag('unflag', 'featured', $nid);
+      break;
+
+    case 'Featured on Home':
+      flag('unflag', 'show_on_home', $nid);
+      break;
+
+    case 'Special Announcements':
+      flag('unflag', 'special', $nid);
+      break;
+  }
+}
+
+/**
+ * Implements hook_nodequeue_add().
+ */
+function iasc_configuration_nodequeue_add($sqid, $nid) {
+  $subqueue = nodequeue_load_subqueue($sqid);
+  switch ($subqueue->title) {
+    case 'Featured Products':
+      flag('flag', 'featured', $nid);
+      break;
+
+    case 'Featured on Home':
+      flag('flag', 'show_on_home', $nid);
+      break;
+
+    case 'Special Announcements':
+      flag('flag', 'special', $nid);
+      break;
+  }
+}
+
+/**
+ * Implements hook_query_alter().
+ */
+function iasc_configuration_query_alter(QueryAlterableInterface $query) {
+  if ($query->hasTag('nodequeue_api_autocomplete')) {
+    $queue = $query->getMetaData('queue');
+
+    if ('featured_products' == $queue->name) {
+      $term = taxonomy_get_term_by_name('Product', 'document_types');
+      if ($term) {
+        $term = current($term);
+        $query->join('field_data_field_document_type', 't', 'n.nid = t.entity_id');
+        $query->condition('t.field_document_type_tid', $term->tid, '=');
+      }
+    }
+  }
+}
