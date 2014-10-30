@@ -206,7 +206,7 @@ function iasc_configuration_flag_default_flags() {
   $flags['featured'] = array(
     'content_type' => 'node',
     'title' => 'Featured',
-    'global' => 0,
+    'global' => 1,
     'types' => array(
       0 => 'oa_wiki_page',
     ),
@@ -233,17 +233,17 @@ function iasc_configuration_flag_default_flags() {
     'show_on_teaser' => 1,
     'show_contextual_link' => FALSE,
     'i18n' => 0,
-    'api_version' => 2,
     'module' => 'iasc_configuration',
     'locked' => array(
       0 => 'name',
     ),
+    'api_version' => 2,
   );
   // Exported flag: "Show on Homepage".
   $flags['show_on_home'] = array(
     'content_type' => 'node',
     'title' => 'Show on Homepage',
-    'global' => 0,
+    'global' => 1,
     'types' => array(
       0 => 'announcement',
     ),
@@ -280,7 +280,7 @@ function iasc_configuration_flag_default_flags() {
   $flags['special'] = array(
     'content_type' => 'node',
     'title' => 'Special',
-    'global' => 0,
+    'global' => 1,
     'types' => array(
       0 => 'announcement',
     ),
