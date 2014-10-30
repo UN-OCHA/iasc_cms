@@ -74,8 +74,6 @@ function iasc_configuration_features_override_default_overrides() {
         3 => 0,
         4 => 0,
       ),
-      'autocomplete_items' => 10,
-      'autocomplete_min_chars' => 0,
       'autocomplete_raw_suggestion' => 1,
       'autocomplete_raw_dropdown' => 1,
       'autocomplete_dependent' => 0,
