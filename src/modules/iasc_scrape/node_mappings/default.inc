@@ -16,6 +16,7 @@ class IASCDefault {
   protected $plain = array();
   protected $hardcoded = array();
   protected $created = '';
+  protected $term = NULL;
   protected $terms = array();
   protected $lists = array();
   protected $groups = array();
@@ -50,6 +51,7 @@ class IASCDefault {
     $this->setHardcoded();
     $this->setFields();
     $this->setPlain();
+    $this->setTerm();
     $this->setTerms();
     $this->setLists();
     // $this->setGroups();
@@ -115,17 +117,40 @@ class IASCDefault {
   }
 
   /**
+   * Set term reference field.
+   *
+   * This is different than setTerms as it is for term reference
+   * fields where only one value can be set.
+   */
+  protected function setTerm() {
+    foreach ($this->term as $term => $vocab) {
+      if (!empty($this->values['data'][$term])) {
+        $full_term = taxonomy_get_term_by_name($this->values['data'][$term], $vocab['name']);
+        $full_term = reset($full_term);
+        try {
+          $this->wrapper->{$term}->set($full_term->tid);
+        }
+        catch (Exception $e) {
+          echo 'Caught exception on ' . $term . ': ', $e->getMessage(), "\n";
+        }
+      }
+    }
+  }
+
+  /**
    * Set term reference fields.
    */
   protected function setTerms() {
     foreach ($this->terms as $term => $vocab) {
-      $full_term = taxonomy_get_term_by_name($this->values['data'][$term], $vocab['name']);
-      $full_term = reset($full_term);
-      try {
-        $this->wrapper->{$term}->set($full_term->tid);
-      }
-      catch (Exception $e) {
-        echo 'Caught exception on ' . $term . ': ',  $e->getMessage(), "\n";
+      if (!empty($this->values['data'][$term])) {
+        $full_term = taxonomy_get_term_by_name($this->values['data'][$term], $vocab['name']);
+        $full_term = reset($full_term);
+        try {
+          $this->wrapper->{$term}->set(array($full_term->tid));
+        }
+        catch (Exception $e) {
+          echo 'Caught exception on ' . $term . ': ', $e->getMessage(), "\n";
+        }
       }
     }
   }
@@ -149,43 +174,15 @@ class IASCDefault {
   /**
    * Get group id based on the name.
    */
-  protected function getGroupId($name) {
-    $result = db_select('node', 'n')
-      ->fields('n', array('nid'))
-      ->condition('type', 'oa_space')
-      ->condition('title', $name)
-      ->execute()
-      ->fetchAssoc();
-    return $result['nid'];
-  }
-
-  /**
-   * Get group id based on the name.
-   */
   protected function getSpaceId($name) {
-    $result = db_select('node', 'n')
-      ->fields('n', array('nid'))
-      ->condition('type', 'oa_space')
-      ->condition('title', $name)
+    $result = db_select('field_data_field_legacy_space_name', 'flsn')
+      ->fields('flsn', array('entity_id'))
+      ->condition('bundle', 'oa_space')
+      ->condition('field_legacy_space_name_value', $name)
       ->execute()
       ->fetchAssoc();
-    $nid = $result['nid'];
+    $nid = (!empty($result['entity_id'])) ? $result['entity_id'] : 0;
     return $nid;
-  }
-
-  /**
-   * Set predetermined groups fields.
-   */
-  protected function setGroups() {
-    foreach ($this->groups as $group) {
-      $group_id = $this->getGroupId($this->values['data'][$group]);
-      try {
-        $this->wrapper->{$group}->set(array($group_id));
-      }
-      catch (Exception $e) {
-        echo 'Caught exception on ' . $group . ': ',  $e->getMessage(), "\n";
-      }
-    }
   }
 
   /**
@@ -193,47 +190,63 @@ class IASCDefault {
    */
   protected function setSpace() {
     foreach ($this->space as $space) {
-      // Remove spaces on data.
-      $value = trim($this->values['data'][$space]);
+      if (!empty($this->values['data'][$space])) {
+        $space_id = $other_space_id = 0;
 
-      // Try to see if it's one value.
-      $space_id = $this->getSpaceId($value);
+        // Remove spaces on data.
+        $value = trim($this->values['data'][$space]);
+        $value = str_replace('  ', ' ', $value);
+        $space_id = $this->getSpaceId($value);
 
-      // If nothing matches, try to break apart and match.
-      if (empty($space_id)) {
-        $space_ids = array();
+        /*
+        // Possible main spaces.
+        // Not a fan of hard-coding, but no legacy name to lookup.
+        $main_spaces = array(
+          'Subsidiary Bodies' => 2606,
+          'Other' => 2608,
+          'Weekly' => 2609,
+          'Working Group' => 2605,
+        );
 
-        // Two spaces seem to separate the authoring bodies data.
-        $parts = explode('  ', $value);
+        foreach ($main_spaces as $space_name => $entity_id) {
+          // Attempt to see if named space is part of main space.
+          $match = preg_match("/$space_name+/", $value);
 
-        foreach ($parts as $part) {
-          if (!empty($part)) {
-            $part = trim($part);
-            $space_ids[] = $this->getSpaceId($part);
+          // If so, set main space, then other space.
+          if ($match) {
+            $space_id = $entity_id;
+            $other_space_id = $this->getSpaceId($value);
+            break;
           }
         }
-        // Pop off the first one for the main space.
-        $space_id = array_shift($space_ids);
-      }
 
-      // Save to main space.
-      if ($space_id) {
-        try {
-          $this->wrapper->og_group_ref->set($space_id);
+        // If no matches were found, attempt to set the space.
+        if (!isset($match)) {
+          $space_id = $this->getSpaceId($value);
         }
-        catch (Exception $e) {
-          echo 'Caught exception on ' . $space . ': ', $e->getMessage(), "\n";
-        }
-      }
+        */
 
-      // Save to other spaces.
-      if (!empty($space_ids)) {
-        try {
-          $this->wrapper->oa_other_spaces_ref->set($space_ids);
+        // Save to main space.
+        if ($space_id) {
+          try {
+            $this->wrapper->og_group_ref->set($space_id);
+          }
+          catch (Exception $e) {
+            echo 'Caught exception on ' . $space . ': ', $e->getMessage(), "\n";
+          }
         }
-        catch (Exception $e) {
-          echo 'Caught exception on ' . $space . ': ', $e->getMessage(), "\n";
+
+        /*
+        // Save to other space.
+        if ($other_space_id) {
+          try {
+            $this->wrapper->oa_other_spaces_ref->set(array($other_space_id));
+          }
+          catch (Exception $e) {
+            echo 'Caught exception on ' . $space . ': ', $e->getMessage(), "\n";
+          }
         }
+        */
       }
     }
   }
@@ -243,7 +256,7 @@ class IASCDefault {
    */
   protected function setDates() {
     foreach ($this->dates as $date_field => $date) {
-      // If date is of type published, then this is just a single m/d/y date value.
+      // If date is type published, then this is just a single m/d/y date value.
       // Published is similar to the node->created timestamp.
       if (!empty($date['published'])) {
         $fixed_date = str_replace('/', '-', $this->values['data'][$date['published']['date']]);

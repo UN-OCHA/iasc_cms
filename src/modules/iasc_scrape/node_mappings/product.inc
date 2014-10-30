@@ -41,7 +41,7 @@ class IASCProduct extends IASCDefault {
     );
 
     // Taxonomy term references.
-    $this->terms = array(
+    $this->term = array(
       'field_category' => array(
         'name' => 'product_categories',
       ),
