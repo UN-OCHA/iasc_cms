@@ -168,8 +168,8 @@ function iasc_meeting_check_file($file, &$messages) {
  */
 function iasc_meeting_meeting_agenda_batch_ops($file_handle, $options, &$messages, &$operations) {
   $meeting_items = array();
-  if ($header = fgetcsv($file_handle, 0, $options['delimiter'], $options['enclosure'])) {
-    while ($data = fgetcsv($file_handle, 0, $options['delimiter'], $options['enclosure'])) {
+  if ($header = fgetcsv($file_handle, 1000, $options['delimiter'], $options['enclosure'])) {
+    while ($data = fgetcsv($file_handle, 1000, $options['delimiter'], $options['enclosure'])) {
       if (is_array($data)) {
         $meeting_items[] = array_combine($header, $data);
       }
@@ -279,13 +279,28 @@ function iasc_meeting_link_agendas($item, &$context) {
   $collection->setHostEntity('node', $entity);
   $agenda_wrapper = entity_metadata_wrapper('field_collection_item', $collection);
 
-  $agenda_wrapper->field_ai_title = $item['agitem'];
-  $agenda_wrapper->field_ai_description = $item['agsubitem'] . "\r\n" . $item['agdescription'];
+  if ('NULL' != $item['agitem']) {
+    $agenda_wrapper->field_ai_title = $item['agitem'];
+  }
+
+  $description = array();
+  if ('NULL' != $item['agsubitem']) {
+    $description[] = $item['agsubitem'];
+  }
+  if ('NULL' != $item['agdescription']) {
+    $description[] = $item['agdescription'];
+  }
+
+  $description = (count($description) > 1) ? implode('\r\n', $description) : $description;
+  $description = (is_array($description)) ? reset($description) : $description;
+  if (!empty($description)) {
+    $agenda_wrapper->field_ai_description = array('value' => $description);
+  }
 
   // Get contact entity_id
   $contact_id = iasc_contact_get_nid_by_legacyid($item['presenterID']);
   if ($contact_id) {
-    $agenda_wrapper->field_contact = $contact_id;
+    $agenda_wrapper->field_contact = array($contact_id);
   }
   $agenda_wrapper->save();
 
@@ -342,7 +357,7 @@ function iasc_meeting_import_meeting_agenda_finished($success, $results, $operat
 function iasc_meeting_get_nid_by_legacyid($id) {
   $result = db_select('iasc_scrape', 'sc')
     ->fields('sc', array('entity_id'))
-    ->condition('type', 'meeting', 'product')
+    ->condition('type', 'meeting')
     ->condition('legacy_id', $id)
     ->execute()
     ->fetchAssoc();
