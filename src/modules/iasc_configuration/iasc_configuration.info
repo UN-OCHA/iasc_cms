@@ -84,6 +84,6 @@ features[panelizer_defaults][] = node:oa_section:document_section
 features[panelizer_defaults][] = node:oa_space:principals_wg_weekly_default
 features[panelizer_defaults][] = node:oa_space:subsidiary_bodies_default
 features[variable][] = entity_view_modes
-features[views_view][] = filterable_content
+features[views_view][] = iasc_document
 features[views_view][] = reference_dialog_search
 project path = sites/all/modules/custom
