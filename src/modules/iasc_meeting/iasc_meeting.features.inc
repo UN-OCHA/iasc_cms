@@ -46,6 +46,24 @@ function iasc_meeting_field_group_info_alter(&$data) {
 function iasc_meeting_field_default_field_instances_alter(&$data) {
   if (isset($data['node-oa_event-body'])) {
     $data['node-oa_event-body']['description'] = 'Please enter the public information about the meeting. <strong>Please note:</strong> This information will be made publicly available. Use the <em>Private Details</em> field to contain information that should remain private.'; /* WAS: 'Describe the Event' */
+    $data['node-oa_event-body']['display']['bio_full'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_event-body']['display']['bio_long'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_event-body']['display']['bio_short'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
     $data['node-oa_event-body']['label'] = 'Public Information'; /* WAS: 'Description' */
   }
   if (isset($data['node-oa_event-field_oa_address'])) {
@@ -59,10 +77,46 @@ function iasc_meeting_field_default_field_instances_alter(&$data) {
   }
   if (isset($data['node-oa_event-oa_section_ref'])) {
     $data['node-oa_event-oa_section_ref']['comment_alter'] = 0; /* WAS: '' */
+    $data['node-oa_event-oa_section_ref']['display']['bio_full'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_event-oa_section_ref']['display']['bio_long'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_event-oa_section_ref']['display']['bio_short'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
     $data['node-oa_event-oa_section_ref']['label'] = 'Section'; /* WAS: 'Open Atrium Section' */
     unset($data['node-oa_event-oa_section_ref']['options_limit_fields']['oa_section_ref']);
   }
   if (isset($data['node-oa_event-og_group_ref'])) {
+    $data['node-oa_event-og_group_ref']['display']['bio_full'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_event-og_group_ref']['display']['bio_long'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_event-og_group_ref']['display']['bio_short'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
     $data['node-oa_event-og_group_ref']['label'] = 'Authoring Bodies'; /* WAS: 'Groups audience' */
     $data['node-oa_event-og_group_ref']['settings']['behaviors']['og_widget']['access_override'] = 0; /* WAS: '' */
   }

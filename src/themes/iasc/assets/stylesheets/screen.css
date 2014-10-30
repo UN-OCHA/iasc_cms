@@ -8610,7 +8610,7 @@ body.ctools-modal-open {
   margin-right: 20px;
   background-color: #f1f1f1;
   text-align: center;
-  max-width: 80px;
+  width: 80px;
   line-height: 18px;
   float: left;
   margin-right: 20px;
@@ -8620,12 +8620,12 @@ body.ctools-modal-open {
 .iasc-event-date-month-wrapper {
   background: #d9190a;
   padding: 3px 0;
+  margin-bottom: 10px;
 }
 
-/* line 21, ../sass/components/_fields.scss */
+/* line 22, ../sass/components/_fields.scss */
 .iasc-event-date-month {
   color: #fff;
-  font-weight: 400;
   padding-top: 10px;
 }
 
@@ -8636,8 +8636,9 @@ body.ctools-modal-open {
 }
 
 /* line 30, ../sass/components/_fields.scss */
-.iasc-event-date-year {
+.iasc-event-date-year-wrapper {
   color: #d9190a;
+  padding-bottom: 5px;
 }
 
 /**

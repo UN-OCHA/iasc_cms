@@ -109,13 +109,6 @@ function iasc_form_panels_edit_style_type_form_alter(&$form, &$form_state, $form
 }
 
 /**
- * Implements hook_theme_registry_alter().
- */
-function iasc_theme_registry_alter(&$theme_registry) {
-  dsm($theme_registry);
-}
-
-/**
  * Implements theme_pager().
  */
 function iasc_pager($variables) {
