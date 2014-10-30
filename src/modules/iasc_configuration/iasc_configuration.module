@@ -87,6 +87,10 @@ function iasc_configuration_import($options) {
       if ($options['delete_all']) {
         $message .= t("Deleting all spaces and sections prior to importing.\n");
       }
+
+      if ($options['delete_sections']) {
+        $message .= t("Deleting all sections prior to importing.\n");
+      }
       $details['@size'] = $chunk_size;
       $message .= t("Starting import: chunk @chunk of @count (@size records/chunk)\n", $details);
     }
@@ -108,7 +112,6 @@ function iasc_configuration_import($options) {
     'operations' => $operations,
     'title' => t('Importing !total_lines lines from CSV file "%filename"...', array(
         '%filename'    => $options['file'],
-        '!total_lines' => $options['total_lines'],
       )
     ),
     'init_message' => t('Starting to import spaces and sections...'),
@@ -120,6 +123,10 @@ function iasc_configuration_import($options) {
   // Delete all spaces and sections if flag set.
   if ($options['delete_all']) {
     iasc_configuration_delete_all();
+  }
+  elseif ($options['delete_sections']) {
+    // Delete only all sections if flag set.
+    iasc_configuration_delete_all(TRUE);
   }
 
   // Set the batch.
@@ -152,13 +159,23 @@ function iasc_configuration_import_spaces($chunk, $message, $parent_bodies, $sub
 }
 
 /**
- * Deletes all space and section nodes.
+ * Deletes all space and optionally all section nodes.
+ *
+ * @param bool $delete_sections_only
+ *   TRUE if sections should only be deleted, otherwise FALSE.
  */
-function iasc_configuration_delete_all() {
+function iasc_configuration_delete_all($delete_sections_only = FALSE) {
   $query = new EntityFieldQuery();
-  $query->entityCondition('entity_type', 'node')
-    ->entityCondition('bundle', array('oa_space', 'oa_section'))
-    ->propertyOrderBy('nid', 'ASC');
+  $query->entityCondition('entity_type', 'node');
+
+  if ($delete_sections_only) {
+    $query->entityCondition('bundle', array('oa_section'));
+  }
+  else {
+    $query->entityCondition('bundle', array('oa_space', 'oa_section'));
+  }
+
+  $query->propertyOrderBy('nid', 'ASC');
 
   $result = $query->execute();
   if ($result['node']) {
@@ -343,7 +360,8 @@ function iasc_configuration_create_node($item, $parent_bodies, $subsidiary_ids, 
   $node->field_oa_section_override[LANGUAGE_NONE][0]['value'] = 1;
   $handler = panelizer_entity_plugin_get_handler('node');
 
-  if ('Subsidiary Bodies' == $title || in_array($item['mainbodyID'], $subsidiary_ids)) {
+  if ('Subsidiary Bodies' == $title ||
+    (!empty($item['mainbodyID']) && in_array($item['mainbodyID'], $subsidiary_ids))) {
     if (empty($node->panelizer)) {
       $panelizer = $handler->get_default_panelizer_object('oa_space', 'node:oa_space:subsidiary_bodies_default');
       $node->panelizer = $panelizer;
@@ -450,13 +468,21 @@ function iasc_configuration_get_parent_by_legacy_id($legacy_id) {
 function iasc_configuration_import_spaces_finished($success, $results, $operations) {
   if ($success) {
     drupal_set_message(count($results['processed']) . ' items processed.');
-    drupal_set_message(count($results['new_space']) . ' new spaces imported.');
-    drupal_set_message(count($results['updated_space']) . ' spaces updated.');
-    drupal_set_message(count($results['new_section']) . ' new sections imported.');
-    drupal_set_message(count($results['updated_section']) . ' sections updated.');
+    $new_space = !empty($results['new_space']) ? count($results['new_space']) : 0;
+    drupal_set_message($new_space . ' new spaces imported.');
 
-    if (count($results['skipped'])) {
-      drupal_set_message(count($results['skipped']) . ' spaces/sections were not imported. See log for details.');
+    $updated_space = !empty($results['updated_space']) ? count($results['updated_space']) : 0;
+    drupal_set_message($updated_space . ' spaces updated.');
+
+    $new_section = !empty($results['new_section']) ? count($results['new_section']) : 0;
+    drupal_set_message($new_section . ' new sections imported.');
+
+    $updated_section = !empty($results['updated_section']) ? count($results['updated_section']) : 0;
+    drupal_set_message($updated_section . ' sections updated.');
+
+    $skipped = !empty($results['skipped']) ? count($results['skipped']) : 0;
+    if ($skipped) {
+      drupal_set_message($skipped . ' spaces/sections were not imported. See log for details.');
     }
   }
   else {
@@ -536,42 +562,83 @@ function iasc_configuration_get_sections_by_parent($space_nid) {
 function iasc_configuration_update_sections($parent_nid, &$context) {
   // All subspaces have a Documents, Calendar and News Section.
   $section_types = array('Document Section', 'Calendar Section', 'News Section');
+  $groups = iasc_configuration_get_groups();
+
   $section_type_terms = array();
   foreach ($section_types as $type) {
     $section_term = taxonomy_get_term_by_name($type, 'section_type');
     if ($section_term) {
       $section_term = current($section_term);
-      $section_type_terms[$section_term->name] = $section_term->tid;
+
+      $section_name = str_replace(array('Document', 'Calendar', ' Section'),
+        array('Documents', 'Meetings', ''), $section_term->name);
+
+      $section_type_terms[$section_name] = array(
+        'tid' => $section_term->tid,
+        'groups' => array(),
+        'term_name' => $section_term->name
+      );
+      // We need a section for each group.
+      foreach ($groups as $group) {
+        $name = $section_name;
+        $name .= " ($group->title)";
+        $section_type_terms[$name] = array(
+          'tid' => $section_term->tid,
+          'groups' => array($group),
+          'term_name' => $section_term->name,
+        );
+      }
     }
   }
 
   $section_nids = iasc_configuration_get_sections_by_parent($parent_nid);
 
+  $existing_sections = array();
+
   if ($section_nids) {
-    $subspace_section_tids = array();
     $sections = node_load_multiple($section_nids);
+
     // Confirm that we have all of the sections:
     foreach ($sections as $section) {
-      $subspace_section_tids[] = $section->field_oa_section[LANGUAGE_NONE][0]['tid'];
-    }
-
-    $missing_tids = array_diff($section_type_terms, $subspace_section_tids);
-    if (!empty($missing_tids)) {
-      foreach ($missing_tids as $term_name => $tid) {
-        iasc_configuration_add_section($parent_nid, $term_name, $tid);
-        $context['results']['new_section'][] = "$$term_name - $parent_nid";
-      }
-
-    }
-
-  }
-  else {
-    // We need to create sections for the first time.
-    foreach ($section_type_terms as $term_name => $tid) {
-      iasc_configuration_add_section($parent_nid, $term_name, $tid);
-      $context['results']['new_section'][] = "$term_name - $parent_nid";
+      $existing_sections[$section->title] = $section;
     }
   }
+
+  foreach ($section_type_terms as $section_name => $details) {
+    // Update existing section.
+    if (isset($existing_sections[$section_name])) {
+      $details['node'] = $existing_sections[$section_name];
+      iasc_configuration_add_section($parent_nid, $section_name, $details);
+      $context['results']['update_section'][] = "$section_name - $parent_nid";
+    }
+    else {
+      // Create new section.
+      $details['node'] = FALSE;
+      iasc_configuration_add_section($parent_nid, $section_name, $details);
+      $context['results']['new_section'][] = "$section_name - $parent_nid";
+    }
+  }
+}
+
+/**
+ * Get the OA Groups.
+ *
+ * @return array|bool
+ *   Return an array of group nodes or FALSE if none found.
+ */
+function iasc_configuration_get_groups() {
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'oa_group')
+    ->propertyOrderBy('nid', 'ASC');
+  $result = $query->execute();
+
+  if (isset($result['node'])) {
+    $nids = array_keys($result['node']);
+    return node_load_multiple($nids);
+  }
+
+  return FALSE;
 }
 
 /**
@@ -579,30 +646,83 @@ function iasc_configuration_update_sections($parent_nid, &$context) {
  *
  * @param int $parent_nid
  *   The nid of the space.
- * @param string $section_name
+ * @param string $name
  *   The name of the section to be added to the space.
  * @param int $section_tid
  *   The tid for the section to be added to the space.
+ * @param array $details
+ *   An array for the section: node, section_tid, groups, and section term name.
  */
-function iasc_configuration_add_section($parent_nid, $section_name, $section_tid) {
-  $node = new stdClass();
-  $node->title = $section_name;
+function iasc_configuration_add_section($parent_nid, $name, $details) {
+  if ($details['node']) {
+    $node = $details['node'];
+  }
+  else {
+    $node = new stdClass();
+  }
+
+  $node->title = $name;
   $node->uid = 1;
   $node->status = 1;
   $node->comment = 0;
   $node->promote = FALSE;
   $node->type = 'oa_section';
   $node->language = LANGUAGE_NONE;
+
+  // Set the space for the section.
   $node->og_group_ref[LANGUAGE_NONE][0]['target_id'] = $parent_nid;
-  $node->field_oa_section[LANGUAGE_NONE][0]['tid'] = $section_tid;
+
+  // Set the section type.
+  $node->field_oa_section[LANGUAGE_NONE][0]['tid'] = $details['tid'];
+
+  // Set the panelizer default for the section.
+  // The term name has to be in a similar format as machine names.
+  $term_name = strtolower($details['term_name']);
+  $term_name = str_replace(' ', '_', $term_name);
+
+  if ($details['node']) {
+    $node->panelizer['page_manager']->name = 'node:oa_section:' . $term_name;
+  }
+  else {
+    /* This is not automatically tied to the section term on node creation.
+     There is code in oa_core.module (_oa_core_setup_node_space_type()) that
+     actually handles the setting of the panelizer layout based on the section
+     selected on the form. Thus, we need to actually set the panelizer layout
+     on node creation.
+   */
+    $handler = panelizer_entity_plugin_get_handler('node');
+    $panelizer = $handler->get_default_panelizer_object(
+      'oa_section',
+      'node:oa_section:' . $term_name
+    );
+    $node->panelizer = $panelizer;
+  }
 
   $time = time();
   $node->created = $time;
   $node->changed = $time;
-  $node->path['pathauto'] = TRUE;
-  $node->og_user_inheritance[LANGUAGE_NONE][0]['value'] = 1;
-  $node->og_roles_permissions[LANGUAGE_NONE][0]['value'] = 0;
-  $node->group_access[LANGUAGE_NONE][0]['value'] = 0;
+
+  // Make sure we don't have duplicate group nids.
+  $existing_groups = array();
+  if ($details['node']) {
+    $existing_groups = field_get_items('node', $node, 'field_oa_group_ref');
+  }
+
+  foreach ($details['groups'] as $group) {
+    $exists = FALSE;
+    foreach($existing_groups as $eg) {
+      if ($eg['target_id'] == $group->nid) {
+        $exists = TRUE;
+        break;
+      }
+    }
+
+    if (!$exists) {
+      $node->field_oa_group_ref[LANGUAGE_NONE][]['target_id'] = $group->nid;
+      $existing_groups[] = array('target_id' => $group->nid);
+    }
+
+  }
 
   node_save($node);
 }
