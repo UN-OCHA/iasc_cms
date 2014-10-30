@@ -46,6 +46,7 @@ function iasc_scrape_scrape($type, $page = 1, $position = 1) {
     case 'document':
       $element = new IASC\Element\DocumentElement($client, $crawler, $page, $position);
       $id = 'documentid';
+      $legacy_meeting_id = 0;
       $values = $element->getValues();
       // Get legacy filename and file_id.
       if ($values['file_id_pdf']) {
@@ -58,11 +59,20 @@ function iasc_scrape_scrape($type, $page = 1, $position = 1) {
         $filename = $values['file_text_other']['filename'];
         $file_url = $values['file_text_other']['file_link'];
       }
+
+      // Get legacy meeting id for agenda connecting.
+      if ($values['field_linked_meeting']) {
+        $legacy_meeting_url = $values['field_linked_meeting'];
+        preg_match("/(?=meetingid\=)?\d+/", $legacy_meeting_url, $id);
+        $legacy_meeting_id = (isset($id[0])) ? $id[0] : 0;
+      }
+
       if (isset($legacy_fid)) {
         $additional_values = array(
           'legacy_fid' => $legacy_fid,
           'filename' => $filename,
           'file_url' => $file_url,
+          'legacy_meeting_id' => $legacy_meeting_id,
         );
       }
       break;
