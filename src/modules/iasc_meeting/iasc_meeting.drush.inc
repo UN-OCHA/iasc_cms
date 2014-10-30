@@ -33,7 +33,7 @@ function iasc_meeting_drush_command() {
 /**
  * Implements hook_drush_help().
  */
-function iasc_contact_drush_help($section) {
+function iasc_meeting_drush_help($section) {
   switch ($section) {
     case 'drush:iasc-import-meeting-agendas':
       return dt('Update meetings with agenda items from a CSV file.');
