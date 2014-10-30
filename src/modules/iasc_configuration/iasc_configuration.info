@@ -77,6 +77,7 @@ features[field_instance][] = node-oa_space-field_legacy_parent_id
 features[field_instance][] = node-oa_space-field_legacy_space_name
 features[field_instance][] = node-oa_space-field_responsibilities
 features[field_instance][] = node-oa_space-field_short_name
+features[flag][] = featured
 features[flag][] = show_on_home
 features[flag][] = special
 features[panelizer_defaults][] = node:oa_section:document_section
