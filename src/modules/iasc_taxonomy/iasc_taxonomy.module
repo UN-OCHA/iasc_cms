@@ -1,6 +1,12 @@
 <?php
 /**
  * @file
+ * Code for the IASC Taxonomy feature.
+ */
+
+include_once 'iasc_taxonomy.features.inc';
+/**
+ * @file
  * IASC Taxonomy module file.
  */
 
