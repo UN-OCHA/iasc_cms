@@ -3,6 +3,7 @@ description = This extends oa_event to provide functionality for Meetings.
 core = 7.x
 package = IASC
 dependencies[] = ctools
+dependencies[] = panels
 dependencies[] = defaultconfig
 dependencies[] = entityreference
 dependencies[] = features
