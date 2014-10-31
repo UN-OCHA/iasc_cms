@@ -554,7 +554,7 @@ function iasc_contact_link_bodies($item, &$context) {
   if ($body_nid) {
     $position = !empty($item['bodyposition']) && $item['bodyposition'] != 'NULL' ? trim($item['bodyposition']) : '';
     $category = !empty($item['category']) && $item['category'] != 'NULL' ? trim($item['category']) : '';
-    
+
     $add_another = FALSE;
 
     if (empty($memberships)) {
@@ -566,9 +566,9 @@ function iasc_contact_link_bodies($item, &$context) {
       foreach ($memberships as $info) {
         print "has fc entities\n";
         $membership_wrapper = entity_metadata_wrapper('field_collection_item', $info);
-        $full_match = ($body_nid == $membership_wrapper ->field_body_membership->value()->nid);
-        $full_match = ($position == $membership_wrapper ->field_position->value());
-        $full_match = ($category == $membership_wrapper ->field_body_membership->value()->nid);
+        $full_match = ($body_nid == $membership_wrapper->field_body_membership->value()->nid);
+        $full_match = ($position == $membership_wrapper->field_position->value());
+        $full_match = ($category == $membership_wrapper->field_body_membership->value()->nid);
 
         if (!$full_match) {
           $add_another = TRUE;
@@ -739,16 +739,16 @@ function iasc_contact_link_address($item, &$context) {
   $node_wrapper->field_org_fax = (!empty($item['orgfax']) && $item['orgfax'] != 'NULL') ? $item['orgfax'] : '';
 
   // Save the entity.
-    $node_wrapper->save(TRUE);
-    entity_save('node', $entity);
+  $node_wrapper->save(TRUE);
+  entity_save('node', $entity);
 
-    $message = t("Update Contact: @contact with org address for: @org", array(
-      '@contact' => $node_wrapper->title->value(),
-      '@org' => $item['orgName'],
-    ));
-    watchdog('iasc_contact', $message, WATCHDOG_DEBUG);
+  $message = t("Update Contact: @contact with org address for: @org", array(
+    '@contact' => $node_wrapper->title->value(),
+    '@org' => $item['orgName'],
+  ));
+  watchdog('iasc_contact', $message, WATCHDOG_DEBUG);
 
-    $context['results']['updated_org_address'][] = $legacy_id;
+  $context['results']['updated_org_address'][] = $legacy_id;
 }
 
 

@@ -576,7 +576,7 @@ function iasc_configuration_update_sections($parent_nid, &$context) {
       $section_type_terms[$section_name] = array(
         'tid' => $section_term->tid,
         'groups' => array(),
-        'term_name' => $section_term->name
+        'term_name' => $section_term->name,
       );
       // We need a section for each group.
       foreach ($groups as $group) {
@@ -648,8 +648,6 @@ function iasc_configuration_get_groups() {
  *   The nid of the space.
  * @param string $name
  *   The name of the section to be added to the space.
- * @param int $section_tid
- *   The tid for the section to be added to the space.
  * @param array $details
  *   An array for the section: node, section_tid, groups, and section term name.
  */
@@ -685,11 +683,11 @@ function iasc_configuration_add_section($parent_nid, $name, $details) {
   }
   else {
     /* This is not automatically tied to the section term on node creation.
-     There is code in oa_core.module (_oa_core_setup_node_space_type()) that
-     actually handles the setting of the panelizer layout based on the section
-     selected on the form. Thus, we need to actually set the panelizer layout
-     on node creation.
-   */
+    There is code in oa_core.module (_oa_core_setup_node_space_type()) that
+    actually handles the setting of the panelizer layout based on the section
+    selected on the form. Thus, we need to actually set the panelizer layout
+    on node creation.
+    */
     $handler = panelizer_entity_plugin_get_handler('node');
     $panelizer = $handler->get_default_panelizer_object(
       'oa_section',
@@ -710,7 +708,7 @@ function iasc_configuration_add_section($parent_nid, $name, $details) {
 
   foreach ($details['groups'] as $group) {
     $exists = FALSE;
-    foreach($existing_groups as $eg) {
+    foreach ($existing_groups as $eg) {
       if ($eg['target_id'] == $group->nid) {
         $exists = TRUE;
         break;
