@@ -138,6 +138,11 @@ function iasc_contact_import($options) {
     iasc_contact_delete_all();
   }
 
+  // Delete all body memberships if flag set.
+  if (!empty($options['clear_memberships'])) {
+    iasc_contact_clear_memberships();
+  }
+
   // Set the batch.
   batch_set($batch);
 }
@@ -254,9 +259,28 @@ function iasc_contact_delete_all() {
     ->entityCondition('bundle', 'contact');
 
   $result = $query->execute();
-  if ($result['node']) {
+  if (!empty($result['node'])) {
     $nids = array_keys($result['node']);
     node_delete_multiple($nids);
+  }
+}
+
+/**
+ * Deletes all existing body memberships in contact nodes.
+ *
+ * This clears out all of the membership fields in the field collection entities.
+ */
+function iasc_contact_clear_memberships() {
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'field_collection_item')
+    ->entityCondition('bundle', 'field_membership');
+  $result = $query->execute();
+
+  if (!empty($result['field_collection_item'])) {
+    $ids = array_keys($result['field_collection_item']);
+    foreach (field_collection_item_load_multiple($ids) as $un_item) {
+      $un_item->deleteRevision(TRUE);
+    }
   }
 }
 
@@ -525,28 +549,82 @@ function iasc_contact_link_bodies($item, &$context) {
   $node_wrapper = entity_metadata_wrapper('node', $nid);
   $entity = $node_wrapper->value();
 
-  // Requires: separate csv file to map: contactID <-> body membership data.
-
   // Body Membership is a field collection.
-  $collection = entity_create('field_collection_item', array('field_name' => 'field_membership'));
-  $collection->setHostEntity('node', $entity);
-  $membership_wrapper = entity_metadata_wrapper('field_collection_item', $collection);
+  $body_nid = iasc_contact_get_nid_by_legacy_name(trim($item['body_detailed_short_concatenated']));
+  if ($body_nid) {
+    $position = !empty($item['bodyposition']) && $item['bodyposition'] != 'NULL' ? trim($item['bodyposition']) : '';
+    $category = !empty($item['category']) && $item['category'] != 'NULL' ? trim($item['category']) : '';
 
-  // Get tid from legacy id: $item['bodyID'] or bodytitle if we can swing it.
-  // Sample csv file uses bodytitle.
-  // TODO: Make this refer to space entity.
+    $add_another = FALSE;
 
-  $membership_wrapper->field_position = $item['bodyposition'];
-  $membership_wrapper->field_contact_category = $item['category'];
-  $membership_wrapper->save();
+    if (empty($memberships)) {
+      // This is the first item in the multivalued field collection.
+      $add_another = TRUE;
+    }
+    else {
+      // We need to check if this entry already exists or if it's new.
+      foreach ($memberships as $info) {
+        print "has fc entities\n";
+        $membership_wrapper = entity_metadata_wrapper('field_collection_item', $info);
+        $full_match = ($body_nid == $membership_wrapper->field_body_membership->value()->nid);
+        $full_match = ($position == $membership_wrapper->field_position->value());
+        $full_match = ($category == $membership_wrapper->field_body_membership->value()->nid);
 
-  // Ignore $item['bodydetail'] - this is a non-unique short name for the body.
+        if (!$full_match) {
+          $add_another = TRUE;
+        }
+      }
+    }
+
+    if ($add_another) {
+      $collection = entity_create('field_collection_item', array('field_name' => 'field_membership'));
+      $collection->setHostEntity('node', $entity);
+      $membership_wrapper = entity_metadata_wrapper('field_collection_item', $collection);
+      $membership_wrapper->field_body_membership = $body_nid;
+      $membership_wrapper->field_position = $position;
+      $membership_wrapper->field_contact_category = $category;
+      $membership_wrapper->save();
+    }
+  }
+  else {
+    $context['results']['body_skipped'][] = "Could not import authoring body - no match for {$item['body_detailed_short_concatenated']}";
+    $message = t('Could not import authoring body - no match for @item', array('@item' => $item['body_detailed_short_concatenated']));
+    watchdog('iasc_contact', $message, WATCHDOG_ERROR);
+    return;
+  }
 
   // Save the entity.
   $node_wrapper->save(TRUE);
   entity_save('node', $entity);
 
   $context['results']['updated_body_contact'][] = $legacy_id;
+}
+
+/**
+ * Returns the space nid associated with the legacy name or FALSE if none exists.
+ *
+ * @param string $name
+ *   The legacy name
+ *
+ * @return int
+ *   The nid of the node
+ */
+function iasc_contact_get_nid_by_legacy_name($name) {
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'oa_space')
+    ->fieldCondition('field_legacy_space_name', 'value', $name, '=')
+    ->propertyOrderBy('nid', 'ASC')
+    ->range(0, 1);
+
+  $result = $query->execute();
+
+  if (isset($result['node'])) {
+    $nids = array_keys($result['node']);
+    return $nids[0];
+  }
+
+  return FALSE;
 }
 
 /**
@@ -661,16 +739,16 @@ function iasc_contact_link_address($item, &$context) {
   $node_wrapper->field_org_fax = (!empty($item['orgfax']) && $item['orgfax'] != 'NULL') ? $item['orgfax'] : '';
 
   // Save the entity.
-    $node_wrapper->save(TRUE);
-    entity_save('node', $entity);
+  $node_wrapper->save(TRUE);
+  entity_save('node', $entity);
 
-    $message = t("Update Contact: @contact with org address for: @org", array(
-      '@contact' => $node_wrapper->title->value(),
-      '@org' => $item['orgName'],
-    ));
-    watchdog('iasc_contact', $message, WATCHDOG_DEBUG);
+  $message = t("Update Contact: @contact with org address for: @org", array(
+    '@contact' => $node_wrapper->title->value(),
+    '@org' => $item['orgName'],
+  ));
+  watchdog('iasc_contact', $message, WATCHDOG_DEBUG);
 
-    $context['results']['updated_org_address'][] = $legacy_id;
+  $context['results']['updated_org_address'][] = $legacy_id;
 }
 
 

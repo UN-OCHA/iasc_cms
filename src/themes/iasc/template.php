@@ -101,11 +101,11 @@ function iasc_links__system_main_menu(&$vars) {
  * Implements hook_links__system_secondary_menu().
  */
 function iasc_links__system_secondary_menu($vars) {
-    foreach ($vars['links'] as &$link) {
-        $link['title'] = "<span>" . $link['title'] . "</span>";
-        $link['html'] = TRUE;
-    }
-    return theme_links($vars);
+  foreach ($vars['links'] as &$link) {
+    $link['title'] = "<span>" . $link['title'] . "</span>";
+    $link['html'] = TRUE;
+  }
+  return theme_links($vars);
 }
 
 
