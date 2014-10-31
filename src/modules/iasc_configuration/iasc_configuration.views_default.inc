@@ -354,6 +354,8 @@ function iasc_configuration_views_default_views() {
     'oa_wiki_page' => 'oa_wiki_page',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
+  $handler->display->display_options['pane_category']['name'] = 'IASC';
+  $handler->display->display_options['pane_category']['weight'] = '0';
 
   /* Display: Featured Products */
   $handler = $view->new_display('panel_pane', 'Featured Products', 'panel_pane_featured_products');
@@ -384,6 +386,8 @@ function iasc_configuration_views_default_views() {
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  $handler->display->display_options['pane_category']['name'] = 'IASC';
+  $handler->display->display_options['pane_category']['weight'] = '0';
   $export['iasc_document'] = $view;
 
   $view = new view();
