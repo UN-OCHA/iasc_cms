@@ -11,7 +11,7 @@ function iasc_contact_views_default_views() {
   $export = array();
 
   $view = new view();
-  $view->name = 'iasc_contacts';
+  $view->name = 'search_contacts';
   $view->description = 'Content panes and pages for contacts.';
   $view->tag = 'default';
   $view->base_table = 'node';
@@ -289,7 +289,7 @@ function iasc_contact_views_default_views() {
   $handler->display->display_options['filters']['field_organisation_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_organisation_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_organisation_tid']['expose']['operator_id'] = 'field_organisation_tid_op';
-  $handler->display->display_options['filters']['field_organisation_tid']['expose']['label'] = 'Organisation';
+  $handler->display->display_options['filters']['field_organisation_tid']['expose']['label'] = 'Organization';
   $handler->display->display_options['filters']['field_organisation_tid']['expose']['operator'] = 'field_organisation_tid_op';
   $handler->display->display_options['filters']['field_organisation_tid']['expose']['identifier'] = 'field_organisation_tid';
   $handler->display->display_options['filters']['field_organisation_tid']['expose']['multiple'] = TRUE;
@@ -335,18 +335,24 @@ function iasc_contact_views_default_views() {
   $handler->display->display_options['relationships']['field_membership_value']['delta'] = '-1';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Organization (field_organisation) */
-  $handler->display->display_options['sorts']['field_organisation_tid']['id'] = 'field_organisation_tid';
-  $handler->display->display_options['sorts']['field_organisation_tid']['table'] = 'field_data_field_organisation';
-  $handler->display->display_options['sorts']['field_organisation_tid']['field'] = 'field_organisation_tid';
-  $handler->display->display_options['sorts']['field_organisation_tid']['exposed'] = TRUE;
-  $handler->display->display_options['sorts']['field_organisation_tid']['expose']['label'] = 'Organization';
   /* Sort criterion: Content: Title */
   $handler->display->display_options['sorts']['title']['id'] = 'title';
   $handler->display->display_options['sorts']['title']['table'] = 'node';
   $handler->display->display_options['sorts']['title']['field'] = 'title';
   $handler->display->display_options['sorts']['title']['exposed'] = TRUE;
   $handler->display->display_options['sorts']['title']['expose']['label'] = 'Name';
+  /* Sort criterion: Content: Organization (field_organisation) */
+  $handler->display->display_options['sorts']['field_organisation_tid']['id'] = 'field_organisation_tid';
+  $handler->display->display_options['sorts']['field_organisation_tid']['table'] = 'field_data_field_organisation';
+  $handler->display->display_options['sorts']['field_organisation_tid']['field'] = 'field_organisation_tid';
+  $handler->display->display_options['sorts']['field_organisation_tid']['exposed'] = TRUE;
+  $handler->display->display_options['sorts']['field_organisation_tid']['expose']['label'] = 'Organization';
+  /* Sort criterion: Content: Department (field_department) */
+  $handler->display->display_options['sorts']['field_department_value']['id'] = 'field_department_value';
+  $handler->display->display_options['sorts']['field_department_value']['table'] = 'field_data_field_department';
+  $handler->display->display_options['sorts']['field_department_value']['field'] = 'field_department_value';
+  $handler->display->display_options['sorts']['field_department_value']['exposed'] = TRUE;
+  $handler->display->display_options['sorts']['field_department_value']['expose']['label'] = 'Department';
   /* Sort criterion: Field: Position (field_position) */
   $handler->display->display_options['sorts']['field_position_value']['id'] = 'field_position_value';
   $handler->display->display_options['sorts']['field_position_value']['table'] = 'field_data_field_position';
@@ -411,7 +417,7 @@ function iasc_contact_views_default_views() {
   $handler->display->display_options['filters']['field_organisation_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_organisation_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_organisation_tid']['expose']['operator_id'] = 'field_organisation_tid_op';
-  $handler->display->display_options['filters']['field_organisation_tid']['expose']['label'] = 'Organisation';
+  $handler->display->display_options['filters']['field_organisation_tid']['expose']['label'] = 'Organization';
   $handler->display->display_options['filters']['field_organisation_tid']['expose']['operator'] = 'field_organisation_tid_op';
   $handler->display->display_options['filters']['field_organisation_tid']['expose']['identifier'] = 'field_organisation_tid';
   $handler->display->display_options['filters']['field_organisation_tid']['expose']['multiple'] = TRUE;
@@ -446,6 +452,28 @@ function iasc_contact_views_default_views() {
   $handler->display->display_options['filters']['field_department_value']['expose']['autocomplete_raw_suggestion'] = 1;
   $handler->display->display_options['filters']['field_department_value']['expose']['autocomplete_raw_dropdown'] = 1;
   $handler->display->display_options['filters']['field_department_value']['expose']['autocomplete_dependent'] = 0;
+  /* Filter criterion: Field: Position (field_position) */
+  $handler->display->display_options['filters']['field_position_value']['id'] = 'field_position_value';
+  $handler->display->display_options['filters']['field_position_value']['table'] = 'field_data_field_position';
+  $handler->display->display_options['filters']['field_position_value']['field'] = 'field_position_value';
+  $handler->display->display_options['filters']['field_position_value']['relationship'] = 'field_membership_value';
+  $handler->display->display_options['filters']['field_position_value']['operator'] = 'contains';
+  $handler->display->display_options['filters']['field_position_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_position_value']['expose']['operator_id'] = 'field_position_value_op';
+  $handler->display->display_options['filters']['field_position_value']['expose']['label'] = 'Position';
+  $handler->display->display_options['filters']['field_position_value']['expose']['operator'] = 'field_position_value_op';
+  $handler->display->display_options['filters']['field_position_value']['expose']['identifier'] = 'field_position_value';
+  $handler->display->display_options['filters']['field_position_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+  );
+  $handler->display->display_options['filters']['field_position_value']['expose']['autocomplete_items'] = '10';
+  $handler->display->display_options['filters']['field_position_value']['expose']['autocomplete_min_chars'] = '0';
+  $handler->display->display_options['filters']['field_position_value']['expose']['autocomplete_raw_suggestion'] = 1;
+  $handler->display->display_options['filters']['field_position_value']['expose']['autocomplete_raw_dropdown'] = 1;
+  $handler->display->display_options['filters']['field_position_value']['expose']['autocomplete_dependent'] = 0;
   $handler->display->display_options['pane_category']['name'] = 'IASC';
   $handler->display->display_options['pane_category']['weight'] = '0';
   $handler->display->display_options['allow']['use_pager'] = 'use_pager';
@@ -471,7 +499,7 @@ function iasc_contact_views_default_views() {
       'field_position_value' => '',
     ),
   );
-  $export['iasc_contacts'] = $view;
+  $export['search_contacts'] = $view;
 
   return $export;
 }
