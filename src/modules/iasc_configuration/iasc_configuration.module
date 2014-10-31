@@ -64,6 +64,7 @@ function iasc_configuration_import($options) {
       $message,
       array(),
       $subsidiary_ids,
+      FALSE,
     ),
   );
 
@@ -103,6 +104,7 @@ function iasc_configuration_import($options) {
         $message,
         $parent_bodies,
         $subsidiary_ids,
+        $options['ignore_parents']
       ),
     );
   }
@@ -110,7 +112,7 @@ function iasc_configuration_import($options) {
   // Put all that information into our batch array.
   $batch = array(
     'operations' => $operations,
-    'title' => t('Importing !total_lines lines from CSV file "%filename"...', array(
+    'title' => t('Importing lines from CSV file "%filename"...', array(
         '%filename'    => $options['file'],
       )
     ),
@@ -142,10 +144,12 @@ function iasc_configuration_import($options) {
  *   A helpful message about the status of the batch process.
  * @param array $parent_bodies
  *   An array mapping parent body names to legacy body ids.
+ * @param bool $ignore_parents
+ *   Whether or not we should ignore the parents in the file.
  * @param array $context
  *   The context for the batch process
  */
-function iasc_configuration_import_spaces($chunk, $message, $parent_bodies, $subsidiary_ids, &$context) {
+function iasc_configuration_import_spaces($chunk, $message, $parent_bodies, $subsidiary_ids, $ignore_parents, &$context) {
   $context['message'] = $message;
 
   foreach ($chunk as $key => $item) {
@@ -154,7 +158,7 @@ function iasc_configuration_import_spaces($chunk, $message, $parent_bodies, $sub
       $item = array($item => $key);
     }
 
-    iasc_configuration_create_node($item, $parent_bodies, $subsidiary_ids, $context);
+    iasc_configuration_create_node($item, $parent_bodies, $subsidiary_ids, $ignore_parents, $context);
   }
 }
 
@@ -191,13 +195,15 @@ function iasc_configuration_delete_all($delete_sections_only = FALSE) {
  *   An array describing the space or section to create.
  * @param array $parent_bodies
  *   An array mapping parent body names to legacy body ids.
+ * @param bool $ignore_parents
+ *   Whether or not we should ignore the parents in the file.
  * @param array &$context
  *   A batch API context.
  *
  * @return object|NULL
  *   Returns the resulting node object if created; otherwise NULL.
  */
-function iasc_configuration_create_node($item, $parent_bodies, $subsidiary_ids, &$context) {
+function iasc_configuration_create_node($item, $parent_bodies, $subsidiary_ids, $ignore_parents, &$context) {
   // Check the item array.
   if (!is_array($item)) {
     $context['results']['skipped'][] = "Node import failure: Unreadable node data";
@@ -226,17 +232,33 @@ function iasc_configuration_create_node($item, $parent_bodies, $subsidiary_ids, 
     }
     else {
       // Get parent nid.
-      $legacy_parent = iasc_configuration_get_parent_by_legacy_id($item['mainbodyID']);
+      // The parent might be $item['body'] or $item['mainbodyID'].
+      // $item['body'] takes care of the fake bodies (pre-created).
+      if (!empty($item['body']) && $item['body'] != 'NULL') {
+        // Try to see if we have a space w/ a title that matches $item['body'].
+        $legacy_parent = iasc_configuration_get_node_by_name('oa_space', trim($item['body']));
+      }
+
+      // If we don't have a space that matches $item['body'], then use $item['mainbodyID'].
+      if (empty($legacy_parent)) {
+        $legacy_parent = iasc_configuration_get_parent_by_legacy_id($item['mainbodyID']);
+      }
 
       // If bodydetail != NULL, then that's the space name, otherwise use body.
       if (!empty($item['bodydetail']) && $item['bodydetail'] != 'NULL') {
         $title = $item['bodydetail'];
       }
       else {
-        $title = $item['body'];
+        $title = trim($item['body']);
       }
 
-      $nid = iasc_configuration_get_node_by_name('oa_space', $title, $legacy_parent);
+      if ($ignore_parents) {
+        $nid = iasc_configuration_get_node_by_name('oa_space', $title);
+      }
+      else {
+        $nid = iasc_configuration_get_node_by_name('oa_space', $title, $legacy_parent);
+      }
+
     }
   }
 
@@ -370,13 +392,22 @@ function iasc_configuration_create_node($item, $parent_bodies, $subsidiary_ids, 
       $node->panelizer['page_manager']->name = 'node:oa_space:subsidiary_bodies_default';
     }
   }
-  else {
+  elseif ('Principals' == $title || 'Working Group' == $title || 'Weekly' == $title) {
     if (empty($node->panelizer)) {
       $panelizer = $handler->get_default_panelizer_object('oa_space', 'node:oa_space:principals_wg_weekly_default');
       $node->panelizer = $panelizer;
     }
     else {
       $node->panelizer['page_manager']->name = 'node:oa_space:principals_wg_weekly_default';
+    }
+  }
+  else {
+    if (empty($node->panelizer)) {
+      $panelizer = $handler->get_default_panelizer_object('oa_space', 'node:oa_space:default');
+      $node->panelizer = $panelizer;
+    }
+    else {
+      $node->panelizer['page_manager']->name = 'node:oa_space:default';
     }
   }
 
