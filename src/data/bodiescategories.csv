@@ -15,7 +15,7 @@ bodyID,mainbodyID,body,bodydetail,bodyshort,link,defaultdoclocation,bodycreated,
 18,3,NULL,NULL,NULL,pageloader.aspx?page=content-princip-default&mainbodyid=3&publish=0,OtherDocs,NULL,NULL,0,9
 19,4,NULL,Focal Points,NULL,NULL,OtherDocs,2/23/2006 0:00:00,NULL,0,0
 20,1,Working Group,Health,Health,pageloader.aspx?page=content-cluster-health-default,health,9/12/2005 0:00:00,12/6/2007 0:00:00,0,7
-21,6,Geneva,NULL,NULL,pageloader.aspx?page=content-weekly-default&mainbodyid=6&publish=0,OtherDocs,NULL,NULL,0,9
+21,6,NULL,Geneva,NULL,pageloader.aspx?page=content-weekly-default&mainbodyid=6&publish=0,OtherDocs,NULL,NULL,0,9
 23,1,Working Group,Nutrition,Nutrition,pageloader.aspx?page=content-cluster-nutrition-default,nutrition,9/12/2005 0:00:00,12/6/2007 0:00:00,0,7
 24,1,Working Group,Emergency Telecommunications,Emergency Telecommunications,pageloader.aspx?page=content-cluster-telecom-default,telecom,9/12/2005 0:00:00,12/6/2007 0:00:00,0,7
 25,1,Working Group,Camp Coordination and Management,Camp Coordination and Management,pageloader.aspx?page=content-cluster-ccm-default,camp,9/12/2005 0:00:00,12/7/2007 0:00:00,0,7
@@ -25,7 +25,7 @@ bodyID,mainbodyID,body,bodydetail,bodyshort,link,defaultdoclocation,bodycreated,
 29,1,Working Group,Protection,Protection,pageloader.aspx?page=content-cluster-protection-default,protection,9/12/2005 0:00:00,12/6/2007 0:00:00,0,7
 31,2,Contact Group,Good Humanitarian Donorship,Good Humanitarian Donorship,pageloader.aspx?page=content-subsidi-cg_ghd-default,cg_ghd,1/1/1998 0:00:00,11/2/2009 0:00:00,NULL,0
 41,1,Working Group,Water and Sanitation,Water and Sanitation,pageloader.aspx?page=content-cluster-watsan-default,watsan,9/12/2005 0:00:00,12/6/2007 0:00:00,0,7
-49,6,New York,NULL,NULL,pageloader.aspx?page=content-weekly-default&mainbodyid=6&publish=0,OtherDocs,NULL,NULL,0,9
+49,6,NULL,New York,NULL,pageloader.aspx?page=content-weekly-default&mainbodyid=6&publish=0,OtherDocs,NULL,NULL,0,9
 53,4,NULL,Heads of Agencies,NULL,NULL,NULL,2/23/2006 0:00:00,NULL,0,0
 54,4,NULL,Deputy Heads of Agencies,NULL,NULL,NULL,2/23/2006 0:00:00,NULL,0,0
 56,4,NULL,Senior Managers,NULL,NULL,NULL,2/24/2006 0:00:00,NULL,0,0
