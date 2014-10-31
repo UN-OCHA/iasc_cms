@@ -57,6 +57,33 @@ function iasc_meeting_defaultconfig_field_default_fields() {
       'deleted' => 0,
       'description' => '',
       'display' => array(
+        'bio_full' => array(
+          'label' => 'hidden',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => 3,
+        ),
+        'bio_full_' => array(
+          'label' => 'hidden',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => 0,
+        ),
+        'bio_long' => array(
+          'label' => 'hidden',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => 3,
+        ),
+        'bio_short' => array(
+          'label' => 'hidden',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 6,
+        ),
         'default' => array(
           'label' => 'hidden',
           'module' => 'text',
@@ -131,6 +158,24 @@ function iasc_meeting_defaultconfig_field_default_fields() {
       'deleted' => 0,
       'description' => 'Please note: If the agenda item does not have a referenced Document then the agenda item will be public <em>if</em> the Meeting is public.',
       'display' => array(
+        'bio_full' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'bio_long' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'bio_short' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'default' => array(
           'label' => 'above',
           'module' => 'field_collection',
@@ -160,7 +205,7 @@ function iasc_meeting_defaultconfig_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => 17,
         ),
       ),
       'entity_type' => 'node',
@@ -216,6 +261,24 @@ function iasc_meeting_defaultconfig_field_default_fields() {
       'deleted' => 0,
       'description' => '',
       'display' => array(
+        'bio_full' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'bio_long' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'bio_short' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'default' => array(
           'label' => 'above',
           'module' => 'text',
@@ -236,10 +299,11 @@ function iasc_meeting_defaultconfig_field_default_fields() {
           'weight' => 0,
         ),
         'teaser' => array(
-          'label' => 'above',
+          'label' => 'hidden',
+          'module' => 'text',
           'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
+          'type' => 'text_default',
+          'weight' => 3,
         ),
       ),
       'entity_type' => 'node',
@@ -316,6 +380,24 @@ function iasc_meeting_defaultconfig_field_default_fields() {
       'deleted' => 0,
       'description' => '',
       'display' => array(
+        'bio_full' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'bio_long' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'bio_short' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'default' => array(
           'label' => 'above',
           'module' => 'entityreference',
@@ -342,7 +424,7 @@ function iasc_meeting_defaultconfig_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => 19,
         ),
       ),
       'entity_type' => 'node',
@@ -418,6 +500,24 @@ function iasc_meeting_defaultconfig_field_default_fields() {
       'deleted' => 0,
       'description' => 'Please select the host(s) for this meeting.',
       'display' => array(
+        'bio_full' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'bio_long' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'bio_short' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'default' => array(
           'label' => 'above',
           'module' => 'taxonomy',
@@ -441,7 +541,7 @@ function iasc_meeting_defaultconfig_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => 10,
         ),
       ),
       'entity_type' => 'node',
@@ -500,6 +600,24 @@ function iasc_meeting_defaultconfig_field_default_fields() {
       'deleted' => 0,
       'description' => 'Please enter additional information about the meeting. <strong>Please note:</strong> This information will not be made publicly available and has privacy restrictions.',
       'display' => array(
+        'bio_full' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'bio_long' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'bio_short' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'default' => array(
           'label' => 'above',
           'module' => 'text',
@@ -523,7 +641,7 @@ function iasc_meeting_defaultconfig_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => 18,
         ),
       ),
       'entity_type' => 'node',
@@ -586,6 +704,24 @@ function iasc_meeting_defaultconfig_field_default_fields() {
       'deleted' => 0,
       'description' => '',
       'display' => array(
+        'bio_full' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'bio_long' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'bio_short' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'default' => array(
           'label' => 'above',
           'module' => 'text',
@@ -609,7 +745,7 @@ function iasc_meeting_defaultconfig_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => 8,
         ),
       ),
       'entity_type' => 'node',
@@ -686,6 +822,24 @@ function iasc_meeting_defaultconfig_field_default_fields() {
       'deleted' => 0,
       'description' => 'Add an existing or Create a new meeting agenda Document that should be associated with this Meeting.',
       'display' => array(
+        'bio_full' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'bio_long' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'bio_short' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'default' => array(
           'label' => 'above',
           'module' => 'entityreference',
@@ -712,7 +866,7 @@ function iasc_meeting_defaultconfig_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => 15,
         ),
       ),
       'entity_type' => 'node',
@@ -797,6 +951,24 @@ function iasc_meeting_defaultconfig_field_default_fields() {
       'deleted' => 0,
       'description' => 'Add an existing or Create a new meeting note Document that should be associated with this Meeting.',
       'display' => array(
+        'bio_full' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'bio_long' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'bio_short' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'default' => array(
           'label' => 'above',
           'module' => 'entityreference',
@@ -823,7 +995,7 @@ function iasc_meeting_defaultconfig_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => 14,
         ),
       ),
       'entity_type' => 'node',
@@ -896,6 +1068,24 @@ function iasc_meeting_defaultconfig_field_default_fields() {
       'deleted' => 0,
       'description' => '',
       'display' => array(
+        'bio_full' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'bio_long' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'bio_short' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'default' => array(
           'label' => 'above',
           'module' => 'text',
@@ -916,10 +1106,11 @@ function iasc_meeting_defaultconfig_field_default_fields() {
           'weight' => 0,
         ),
         'teaser' => array(
-          'label' => 'above',
+          'label' => 'hidden',
+          'module' => 'text',
           'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
+          'type' => 'text_default',
+          'weight' => 4,
         ),
       ),
       'entity_type' => 'node',
@@ -980,6 +1171,24 @@ function iasc_meeting_defaultconfig_field_default_fields() {
       'deleted' => 0,
       'description' => 'Please select the time zones for this meeting.',
       'display' => array(
+        'bio_full' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'bio_long' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'bio_short' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'default' => array(
           'label' => 'above',
           'module' => 'list',
@@ -1000,10 +1209,11 @@ function iasc_meeting_defaultconfig_field_default_fields() {
           'weight' => 0,
         ),
         'teaser' => array(
-          'label' => 'above',
+          'label' => 'inline',
+          'module' => 'list',
           'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
+          'type' => 'list_default',
+          'weight' => 1,
         ),
       ),
       'entity_type' => 'node',
@@ -1061,6 +1271,24 @@ function iasc_meeting_defaultconfig_field_default_fields() {
       'deleted' => 0,
       'description' => '',
       'display' => array(
+        'bio_full' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'bio_long' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'bio_short' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'default' => array(
           'label' => 'above',
           'module' => 'text',
@@ -1081,10 +1309,11 @@ function iasc_meeting_defaultconfig_field_default_fields() {
           'weight' => 0,
         ),
         'teaser' => array(
-          'label' => 'above',
+          'label' => 'hidden',
+          'module' => 'text',
           'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
+          'type' => 'text_default',
+          'weight' => 2,
         ),
       ),
       'entity_type' => 'node',
