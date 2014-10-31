@@ -27,14 +27,11 @@
 <div class='oa-event'>
   <div class='oa-event-header'>
     <div class='oa-event-icon'>
-      <?php
-        if (!empty($field_oa_media)) {
-          print $field_oa_media;
-        }
-        else {
-          print $field_oa_date_1;
-        }
-      ?>
+      <?php if (!empty($field_oa_media)): ?>
+        <?php print $field_oa_media; ?>
+      <?php else: ?>
+        <?php print $field_oa_date_1; ?>
+      <?php endif; ?>
     </div>
     <div class='oa-event-details'>
       <?php print $field_oa_date; ?>

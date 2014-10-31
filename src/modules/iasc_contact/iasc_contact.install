@@ -22,10 +22,10 @@ function iasc_contact_update_7000() {
  */
 function iasc_contact_update_7001() {
   /* These fields were removed from the feature.
-     At the time we did a site install, but apparently removing a previously
-     defined field from a feature doesn't remove it from the field_base.inc and
-     feature.info file. Since we are no longer doing site installs we need to
-     remove these fields programmatically :/
+  At the time we did a site install, but apparently removing a previously
+  defined field from a feature doesn't remove it from the field_base.inc and
+  feature.info file. Since we are no longer doing site installs we need to
+  remove these fields programmatically :/
   */
   field_delete_field('field_building');
   field_delete_field('field_country');

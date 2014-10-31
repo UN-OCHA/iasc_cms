@@ -18,7 +18,7 @@ class ProductElement extends AbstractElement {
     $this->position = $position;
     $this->page = $page;
     // The table id needed to use the pager. Not the id of the table element.
-    $table_id = 'ctl00$ContentPlaceHolder1$ctl00$gvdocs';
+    $table_id = 'ctl00$ContentPlaceHolder1$ctl00$gvnews';
     $link_name = 'Products';
     $listing = new ProductListing($client, $crawler);
     $this->goThroughListingPage($listing, $link_name, $table_id);

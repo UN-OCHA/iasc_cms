@@ -54,9 +54,10 @@ function iasc_contact_drush_command() {
     'options' => array(
       'delimiter'     => 'CSV delimiter (default: ",")',
       'enclosure'     => "CSV enclosure (default: '\"')",
+      'clear-memberships' => 'Delete all body memberships before import',
     ),
     'examples' => array(
-      'drush iasc-update-bodies <path>/data/body_membership.csv --delimiter=";"' => 'Updates contacts in body_membership.csv using delimiter ";"',
+      'drush iasc-update-bodies <path>/data/body_membership_exported.csv --delimiter=";"' => 'Updates contacts in body_membership.csv using delimiter ";"',
     ),
   );
 
@@ -92,6 +93,7 @@ function iasc_contact_drush_help($section) {
 
     case 'drush:iasc-update-bodies':
       return dt('Update contacts with body references from a CSV file.');
+
     case 'drush:iasc-update-addresses':
       return dt('Update contacts with organization addresses from a CSV file.');
   }
@@ -162,6 +164,9 @@ function iasc_contact_batch_import($type, $file) {
   // Setup our batch process.
   if ('contacts' == $type) {
     $options['delete_all'] = (drush_get_option('delete-all') == NULL) ? FALSE : TRUE;
+  }
+  elseif ('bodies' == $type) {
+    $options['clear_memberships'] = (drush_get_option('clear-memberships') == NULL) ? FALSE : TRUE;
   }
 
   $messages = iasc_contact_import($options);

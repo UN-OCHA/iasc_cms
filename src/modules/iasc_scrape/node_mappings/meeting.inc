@@ -62,10 +62,11 @@ class IASCMeeting extends IASCDefault {
       'og_group_ref',
     );
 
-    parent::__construct('oa_event');
-
-    $references = array(
+    // Contact.
+    $this->contact = array(
       'field_contact',
     );
+
+    parent::__construct('oa_event');
   }
 }
