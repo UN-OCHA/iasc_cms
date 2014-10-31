@@ -62,6 +62,24 @@ function iasc_document_defaultconfig_field_default_fields() {
       'deleted' => 0,
       'description' => 'Please select one or more terms for the categories for the Product.',
       'display' => array(
+        'bio_full' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'bio_long' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'bio_short' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'default' => array(
           'label' => 'above',
           'module' => 'taxonomy',
@@ -143,6 +161,24 @@ function iasc_document_defaultconfig_field_default_fields() {
       'deleted' => 0,
       'description' => 'Please enter the Document No. as: Main body/YYMM/Document ID',
       'display' => array(
+        'bio_full' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'bio_long' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'bio_short' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'default' => array(
           'label' => 'above',
           'module' => 'text',
@@ -229,6 +265,24 @@ function iasc_document_defaultconfig_field_default_fields() {
       'deleted' => 0,
       'description' => 'Please select the type of Document you are creating.',
       'display' => array(
+        'bio_full' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'bio_long' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'bio_short' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'default' => array(
           'label' => 'above',
           'module' => 'taxonomy',
@@ -308,6 +362,24 @@ function iasc_document_defaultconfig_field_default_fields() {
       'deleted' => 0,
       'description' => '',
       'display' => array(
+        'bio_full' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'bio_long' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'bio_short' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'default' => array(
           'label' => 'above',
           'module' => 'text',
@@ -389,6 +461,24 @@ function iasc_document_defaultconfig_field_default_fields() {
       'deleted' => 0,
       'description' => '',
       'display' => array(
+        'bio_full' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'bio_long' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'bio_short' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'default' => array(
           'label' => 'above',
           'module' => 'date',
