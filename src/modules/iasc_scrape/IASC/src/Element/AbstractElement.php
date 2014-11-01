@@ -144,8 +144,15 @@ abstract class AbstractElement implements ElementInterface {
       // the string in the value attribute.
       $attr = !empty($params['attr']) ? $params['attr'] : 'value';
       $value = $this->listing->crawler
-        ->filter($params['selector'])
-        ->attr($attr);
+        ->filter($params['selector']);
+
+      if ($value->getNode(0) != NULL) {
+        $value = $value
+          ->attr($attr);
+      }
+      else {
+        $value = 0;
+      }
     }
 
     return $value;
