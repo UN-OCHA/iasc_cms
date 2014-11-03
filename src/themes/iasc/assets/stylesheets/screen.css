@@ -8933,6 +8933,66 @@ img.bio-circled {
   background-color: #437a75;
 }
 
+/* line 3, ../sass/components/_view.scss */
+.view-filters .container-inline-date .form-item {
+  width: 100%;
+}
+/* line 5, ../sass/components/_view.scss */
+.view-filters .container-inline-date .form-item div, .view-filters .container-inline-date .form-item input {
+  width: 100%;
+}
+/* line 7, ../sass/components/_view.scss */
+.view-filters .views-exposed-widget {
+  width: 100%;
+  padding-right: 0;
+}
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  /* line 7, ../sass/components/_view.scss */
+  .view-filters .views-exposed-widget {
+    width: 50%;
+  }
+  /* line 12, ../sass/components/_view.scss */
+  .view-filters .views-exposed-widget:nth-child(odd) {
+    padding-right: 10px;
+  }
+  /* line 15, ../sass/components/_view.scss */
+  .view-filters .views-exposed-widget:nth-child(even) {
+    padding-left: 10px;
+  }
+  /* line 18, ../sass/components/_view.scss */
+  .view-filters .views-exposed-widget#edit-field-oa-date-value2-wrapper {
+    margin-top: 25px;
+  }
+}
+@media screen and (min-width: 992px) {
+  /* line 7, ../sass/components/_view.scss */
+  .view-filters .views-exposed-widget {
+    width: 25%;
+    padding-right: 20px;
+  }
+  /* line 25, ../sass/components/_view.scss */
+  .view-filters .views-exposed-widget#edit-field-oa-date-value2-wrapper {
+    margin-top: 25px;
+  }
+}
+/* line 30, ../sass/components/_view.scss */
+.view-filters .views-submit-button {
+  width: 100%;
+  padding-top: 2rem;
+}
+/* line 33, ../sass/components/_view.scss */
+.view-filters .views-submit-button input, .view-filters .views-submit-button .form-item {
+  float: right;
+}
+/* line 36, ../sass/components/_view.scss */
+.view-filters .views-submit-button input[type="submit"] {
+  margin: 0 0 0 2rem;
+}
+/* line 39, ../sass/components/_view.scss */
+.view-filters .views-submit-button .form-type-checkbox {
+  top: 8px;
+}
+
 @media screen and (min-width: 1200px) {
   /* line 2, ../sass/state/_animation.scss */
   form.navbar-form {
