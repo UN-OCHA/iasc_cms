@@ -8,6 +8,7 @@ form.navbar-form {
   .form-type-textfield {
     position: relative;
     width: 100%;
+    display: block;
     input[type="text"] {
       @extend .nav-holder;
       @extend .form-control;
