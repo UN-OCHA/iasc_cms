@@ -11,7 +11,6 @@
  * Open Atrium Specific Variables
  */
 /* Buttons */
-/* Calender / Events */
 /**
  * @file
  * Custom Mixins
@@ -8308,6 +8307,15 @@ q {
   box-shadow: 0 0 0 white !important;
 }
 
+/*
+ * @file
+ * Helpers not included in bootsrap
+ */
+/* line 6, ../sass/base/_helpers.scss */
+.radius {
+  border-radius: 4px;
+}
+
 @font-face {
   font-family: "icons";
   src: url("../fonts/icons-29be5025a89b0ad762585bb0f75e91a9.eot");
@@ -8633,26 +8641,41 @@ body.ctools-modal-open {
  */
 /* OA Event Date */
 /* line 6, ../sass/components/_fields.scss */
-.oa-event-date-wrapper {
+.iasc-event-date-wrapper {
   font-family: "Montserrat", sans-serif;
-  border: 0;
   overflow: hidden;
   margin-right: 20px;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
+  background-color: #f1f1f1;
+  text-align: center;
+  width: 80px;
+  line-height: 18px;
+  float: left;
+  margin-right: 20px;
 }
 
-/* line 15, ../sass/components/_fields.scss */
-.oa-event-date-month-wrapper {
-  background-color: #d9190a;
-  margin: 0px;
+/* line 17, ../sass/components/_fields.scss */
+.iasc-event-date-month-wrapper {
+  background: #d9190a;
+  padding: 3px 0;
+  margin-bottom: 10px;
 }
 
-/* line 19, ../sass/components/_fields.scss */
-.oa-event-date-day {
+/* line 22, ../sass/components/_fields.scss */
+.iasc-event-date-month {
+  color: #fff;
+  padding-top: 10px;
+}
+
+/* line 26, ../sass/components/_fields.scss */
+.iasc-event-date-day {
+  font-size: 26px;
   color: #d9190a;
-  padding-top: 0;
+}
+
+/* line 30, ../sass/components/_fields.scss */
+.iasc-event-date-year-wrapper {
+  color: #d9190a;
+  padding-bottom: 5px;
 }
 
 /**
@@ -8901,7 +8924,7 @@ img.bio-circled {
 }
 
 /* line 11, ../sass/components/_panel.scss */
-.panel-primary .panel-heading, .panel-primary .panel-body {
+.panel-primary .panel-heading {
   text-align: center;
 }
 
