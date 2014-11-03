@@ -18,7 +18,7 @@
     <?php if($search_form): ?>
       <?php print $search_form; ?>
     <?php endif; ?> 
-    <nav class="navbar-top navbar-right row col-xs-6 col-sm-3">
+    <nav class="navbar-top navbar-right col-xs-6">
       <?php print theme('links__system_secondary_menu', array(
         'links' => $utility_navigation,
         'attributes' => array(
