@@ -14,16 +14,88 @@ function iasc_document_features_override_default_overrides() {
   // Exported overrides for: field_instance
   $overrides["field_instance.node-oa_wiki_page-body.comment_alter"] = 0;
   $overrides["field_instance.node-oa_wiki_page-body.description"] = 'Enter a description of the product.';
+  $overrides["field_instance.node-oa_wiki_page-body.display|bio_full"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
+  $overrides["field_instance.node-oa_wiki_page-body.display|bio_long"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
+  $overrides["field_instance.node-oa_wiki_page-body.display|bio_short"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
   $overrides["field_instance.node-oa_wiki_page-body.display|teaser|weight"] = 5;
   $overrides["field_instance.node-oa_wiki_page-body.label"] = 'Description';
   $overrides["field_instance.node-oa_wiki_page-body.widget|weight"] = 5;
+  $overrides["field_instance.node-oa_wiki_page-field_oa_media.display|bio_full"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
+  $overrides["field_instance.node-oa_wiki_page-field_oa_media.display|bio_long"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
+  $overrides["field_instance.node-oa_wiki_page-field_oa_media.display|bio_short"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
   $overrides["field_instance.node-oa_wiki_page-field_oa_media.display|teaser|weight"] = 10;
   $overrides["field_instance.node-oa_wiki_page-field_oa_media.widget|weight"] = 7;
   $overrides["field_instance.node-oa_wiki_page-oa_section_ref.comment_alter"] = 0;
+  $overrides["field_instance.node-oa_wiki_page-oa_section_ref.display|bio_full"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
+  $overrides["field_instance.node-oa_wiki_page-oa_section_ref.display|bio_long"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
+  $overrides["field_instance.node-oa_wiki_page-oa_section_ref.display|bio_short"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
   $overrides["field_instance.node-oa_wiki_page-oa_section_ref.display|teaser|weight"] = 9;
   $overrides["field_instance.node-oa_wiki_page-oa_section_ref.label"] = 'Section';
   $overrides["field_instance.node-oa_wiki_page-oa_section_ref.options_limit_fields|oa_section_ref"]["DELETED"] = TRUE;
   $overrides["field_instance.node-oa_wiki_page-og_group_ref.comment_alter"] = 0;
+  $overrides["field_instance.node-oa_wiki_page-og_group_ref.display|bio_full"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
+  $overrides["field_instance.node-oa_wiki_page-og_group_ref.display|bio_long"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
+  $overrides["field_instance.node-oa_wiki_page-og_group_ref.display|bio_short"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
   $overrides["field_instance.node-oa_wiki_page-og_group_ref.display|teaser|label"] = 'inline';
   $overrides["field_instance.node-oa_wiki_page-og_group_ref.display|teaser|module"] = 'entityreference';
   $overrides["field_instance.node-oa_wiki_page-og_group_ref.display|teaser|settings|link"] = 1;
@@ -38,6 +110,24 @@ function iasc_document_features_override_default_overrides() {
   $overrides["field_instance.node-oa_wiki_page-og_group_ref.required"] = 0;
   $overrides["field_instance.node-oa_wiki_page-og_group_ref.settings|behaviors|og_widget|access_override"] = 0;
   $overrides["field_instance.node-oa_wiki_page-og_group_ref.widget|active"] = 0;
+  $overrides["field_instance.node-oa_wiki_page-og_vocabulary.display|bio_full"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
+  $overrides["field_instance.node-oa_wiki_page-og_vocabulary.display|bio_long"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
+  $overrides["field_instance.node-oa_wiki_page-og_vocabulary.display|bio_short"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
   $overrides["field_instance.node-oa_wiki_page-og_vocabulary.display|teaser|module"]["DELETED"] = TRUE;
   $overrides["field_instance.node-oa_wiki_page-og_vocabulary.display|teaser|settings|concatenate"]["DELETED"] = TRUE;
   $overrides["field_instance.node-oa_wiki_page-og_vocabulary.display|teaser|type"] = 'hidden';

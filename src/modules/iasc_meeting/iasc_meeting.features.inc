@@ -72,25 +72,6 @@ function iasc_meeting_field_default_field_instances_alter(&$data) {
   }
   if (isset($data['node-oa_event-field_oa_address'])) {
     unset($data['node-oa_event-field_oa_address']);
-    $data['node-oa_event-field_oa_address']['display']['bio_full'] = array(
-      'label' => 'above',
-      'settings' => array(),
-      'type' => 'hidden',
-      'weight' => 0,
-    ); /* WAS: '' */
-    $data['node-oa_event-field_oa_address']['display']['bio_long'] = array(
-      'label' => 'above',
-      'settings' => array(),
-      'type' => 'hidden',
-      'weight' => 0,
-    ); /* WAS: '' */
-    $data['node-oa_event-field_oa_address']['display']['bio_short'] = array(
-      'label' => 'above',
-      'settings' => array(),
-      'type' => 'hidden',
-      'weight' => 0,
-    ); /* WAS: '' */
-    $data['node-oa_event-field_oa_address']['display']['teaser']['weight'] = 13; /* WAS: 0 */
   }
   if (isset($data['node-oa_event-field_oa_date'])) {
     $data['node-oa_event-field_oa_date']['display']['bio_full'] = array(
@@ -124,47 +105,9 @@ function iasc_meeting_field_default_field_instances_alter(&$data) {
   }
   if (isset($data['node-oa_event-field_oa_geo_location'])) {
     unset($data['node-oa_event-field_oa_geo_location']);
-    $data['node-oa_event-field_oa_geo_location']['display']['bio_full'] = array(
-      'label' => 'above',
-      'settings' => array(),
-      'type' => 'hidden',
-      'weight' => 0,
-    ); /* WAS: '' */
-    $data['node-oa_event-field_oa_geo_location']['display']['bio_long'] = array(
-      'label' => 'above',
-      'settings' => array(),
-      'type' => 'hidden',
-      'weight' => 0,
-    ); /* WAS: '' */
-    $data['node-oa_event-field_oa_geo_location']['display']['bio_short'] = array(
-      'label' => 'above',
-      'settings' => array(),
-      'type' => 'hidden',
-      'weight' => 0,
-    ); /* WAS: '' */
-    $data['node-oa_event-field_oa_geo_location']['display']['teaser']['weight'] = 12; /* WAS: 0 */
   }
   if (isset($data['node-oa_event-field_oa_media'])) {
     unset($data['node-oa_event-field_oa_media']);
-    $data['node-oa_event-field_oa_media']['display']['bio_full'] = array(
-      'label' => 'above',
-      'settings' => array(),
-      'type' => 'hidden',
-      'weight' => 0,
-    ); /* WAS: '' */
-    $data['node-oa_event-field_oa_media']['display']['bio_long'] = array(
-      'label' => 'above',
-      'settings' => array(),
-      'type' => 'hidden',
-      'weight' => 0,
-    ); /* WAS: '' */
-    $data['node-oa_event-field_oa_media']['display']['bio_short'] = array(
-      'label' => 'above',
-      'settings' => array(),
-      'type' => 'hidden',
-      'weight' => 0,
-    ); /* WAS: '' */
-    $data['node-oa_event-field_oa_media']['display']['teaser']['weight'] = 11; /* WAS: 0 */
   }
   if (isset($data['node-oa_event-oa_other_spaces_ref'])) {
     $data['node-oa_event-oa_other_spaces_ref']['display']['bio_full'] = array(
@@ -343,7 +286,7 @@ function iasc_meeting_panelizer_defaults_override_alter(&$data) {
           ),
           'css' => array(),
           'extras' => array(),
-          'position' => 4,
+          'position' => 1,
           'locks' => array(),
           'uuid' => '19fe4e19-0d90-4acf-9c80-e1ffdf773880',
         ); /* WAS: '' */
@@ -373,7 +316,7 @@ function iasc_meeting_panelizer_defaults_override_alter(&$data) {
           ),
           'css' => array(),
           'extras' => array(),
-          'position' => 3,
+          'position' => 2,
           'locks' => array(),
           'uuid' => '213e8d65-ffde-47b2-bad5-b54b3f97dcfd',
         ); /* WAS: '' */
@@ -403,7 +346,7 @@ function iasc_meeting_panelizer_defaults_override_alter(&$data) {
           ),
           'css' => array(),
           'extras' => array(),
-          'position' => 5,
+          'position' => 2,
           'locks' => array(),
           'uuid' => '2832cb36-53a3-484e-bbf0-05b7084ea8f4',
         ); /* WAS: '' */
@@ -444,7 +387,7 @@ function iasc_meeting_panelizer_defaults_override_alter(&$data) {
           ),
           'css' => array(),
           'extras' => array(),
-          'position' => 1,
+          'position' => 3,
           'locks' => array(),
           'uuid' => '554e3ff8-5ae2-47d4-944e-53903613b9f5',
         ); /* WAS: '' */
@@ -476,7 +419,7 @@ function iasc_meeting_panelizer_defaults_override_alter(&$data) {
           ),
           'css' => array(),
           'extras' => array(),
-          'position' => 2,
+          'position' => 3,
           'locks' => array(),
           'uuid' => '64975a0b-8b8d-4816-8d78-0a066a557a04',
         ); /* WAS: '' */
@@ -504,17 +447,19 @@ function iasc_meeting_panelizer_defaults_override_alter(&$data) {
           ),
           'css' => array(),
           'extras' => array(),
-          'position' => 2,
+          'position' => 4,
           'locks' => array(),
           'uuid' => 'ba879f23-61fc-4869-a081-d6663e9d1523',
         ); /* WAS: '' */
-    $data['node:oa_event:default']->display->content['new-cf81af22-ac8b-4147-8462-a5fce1b76471']->position = 4; /* WAS: 2 */
+    $data['node:oa_event:default']->display->content['new-cf81af22-ac8b-4147-8462-a5fce1b76471']->position = 1; /* WAS: 2 */
     $data['node:oa_event:default']->display->panels['contentmain'][1] = 'new-19fe4e19-0d90-4acf-9c80-e1ffdf773880'; /* WAS: '' */
     $data['node:oa_event:default']->display->panels['contentmain'][2] = 'new-2832cb36-53a3-484e-bbf0-05b7084ea8f4'; /* WAS: '' */
     $data['node:oa_event:default']->display->panels['contentmain'][3] = 'new-554e3ff8-5ae2-47d4-944e-53903613b9f5'; /* WAS: '' */
     $data['node:oa_event:default']->display->panels['contentmain'][4] = 'new-ba879f23-61fc-4869-a081-d6663e9d1523'; /* WAS: '' */
-    $data['node:oa_event:default']->display->panels['sidebar'][3] = 'new-213e8d65-ffde-47b2-bad5-b54b3f97dcfd'; /* WAS: '' */
-    $data['node:oa_event:default']->display->panels['sidebar'][4] = 'new-64975a0b-8b8d-4816-8d78-0a066a557a04'; /* WAS: '' */
+    $data['node:oa_event:default']->display->panels['sidebar'][1] = 'new-cf81af22-ac8b-4147-8462-a5fce1b76471'; /* WAS: 'new-e0f02a5b-dd4e-4ab9-8479-06a195d86fd0' */
+    $data['node:oa_event:default']->display->panels['sidebar'][2] = 'new-213e8d65-ffde-47b2-bad5-b54b3f97dcfd'; /* WAS: 'new-cf81af22-ac8b-4147-8462-a5fce1b76471' */
+    $data['node:oa_event:default']->display->panels['sidebar'][3] = 'new-64975a0b-8b8d-4816-8d78-0a066a557a04'; /* WAS: '' */
+    unset($data['node:oa_event:default']->display->content['new-e0f02a5b-dd4e-4ab9-8479-06a195d86fd0']);
   }
 }
 
