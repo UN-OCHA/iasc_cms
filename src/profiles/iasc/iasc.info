@@ -152,4 +152,5 @@ dependencies[] = addressfield
 dependencies[] = entity_view_mode
 dependencies[] = apachesolr_attachments
 dependencies[] = menu_attributes
-
+dependencies[] = title
+dependencies[] = nodequeue

@@ -26,7 +26,7 @@ abstract class AbstractElement implements ElementInterface {
       // we have to click through before we post.
       if ($this->page > 11) {
         // Go through each ellipsis pager.
-        for ($i = 11; $i >= 11; $i -= 11) {
+        for ($i = 11; $i < $this->page; $i += 10) {
           $this->listing->clickListingPager($table_id, $i);
         }
       }
@@ -55,16 +55,24 @@ abstract class AbstractElement implements ElementInterface {
     // instead of the attribute.
     if (!empty($params['get_text'])) {
       $value = $this->listing->crawler
-        ->filter($params['selector'])
-        ->text();
+        ->filter($params['selector']);
+
+      if ($value->getNode(0) != NULL) {
+        $value = $value
+          ->text();
+      }
+      else {
+        $value = 0;
+      }
     }
     elseif (!empty($params['table_link'])) {
+      $link_text = (isset($params['link_text'])) ? $params['link_text'] : 'Edit';
       // If table_link is TRUE, then find the link inside a table element.
       $value = $this->listing->crawler
         ->filter($params['selector'])
         ->filter('tr')->eq($params['tr'])
         ->filter('td')->eq($params['td'])
-        ->selectLink('Edit');
+        ->selectLink($link_text);
 
       if ($value->getNode(0) != NULL) {
         $value = $value
@@ -136,8 +144,15 @@ abstract class AbstractElement implements ElementInterface {
       // the string in the value attribute.
       $attr = !empty($params['attr']) ? $params['attr'] : 'value';
       $value = $this->listing->crawler
-        ->filter($params['selector'])
-        ->attr($attr);
+        ->filter($params['selector']);
+
+      if ($value->getNode(0) != NULL) {
+        $value = $value
+          ->attr($attr);
+      }
+      else {
+        $value = 0;
+      }
     }
 
     return $value;

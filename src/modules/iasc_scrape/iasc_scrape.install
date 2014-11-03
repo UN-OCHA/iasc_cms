@@ -31,6 +31,13 @@ function iasc_scrape_schema() {
         'not null' => TRUE,
         'default' => 0,
       ),
+      'legacy_meeting_id' => array(
+        'description' => 'The legacy meeting id from the old IASC site.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ),
       'entity_id' => array(
         'description' => 'The entity id of the saved Drupal entity.',
         'type' => 'int',
@@ -150,6 +157,25 @@ function iasc_scrape_update_7002() {
       'length' => 255,
       'not null' => TRUE,
       'default' => '',
+    ),
+  );
+
+  foreach ($fields as $fieldname => $field_data) {
+    db_add_field('iasc_scrape', $fieldname, $field_data);
+  }
+}
+
+/**
+ * Add legacy meeting id field for IASC scrape schema.
+ */
+function iasc_scrape_update_7003() {
+  $fields = array(
+    'legacy_meeting_id' => array(
+      'description' => 'The legacy meeting id from the old IASC site.',
+      'type' => 'int',
+      'unsigned' => TRUE,
+      'not null' => TRUE,
+      'default' => 0,
     ),
   );
 

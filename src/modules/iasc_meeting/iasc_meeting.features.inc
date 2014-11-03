@@ -46,27 +46,218 @@ function iasc_meeting_field_group_info_alter(&$data) {
 function iasc_meeting_field_default_field_instances_alter(&$data) {
   if (isset($data['node-oa_event-body'])) {
     $data['node-oa_event-body']['description'] = 'Please enter the public information about the meeting. <strong>Please note:</strong> This information will be made publicly available. Use the <em>Private Details</em> field to contain information that should remain private.'; /* WAS: 'Describe the Event' */
+    $data['node-oa_event-body']['display']['bio_full'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_event-body']['display']['bio_long'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_event-body']['display']['bio_short'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_event-body']['display']['teaser']['type'] = 'hidden'; /* WAS: 'text_summary_or_trimmed' */
+    $data['node-oa_event-body']['display']['teaser']['weight'] = 9; /* WAS: 0 */
     $data['node-oa_event-body']['label'] = 'Public Information'; /* WAS: 'Description' */
+    unset($data['node-oa_event-body']['display']['teaser']['module']);
+    unset($data['node-oa_event-body']['display']['teaser']['settings']['trim_length']);
   }
   if (isset($data['node-oa_event-field_oa_address'])) {
     unset($data['node-oa_event-field_oa_address']);
+    $data['node-oa_event-field_oa_address']['display']['bio_full'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_event-field_oa_address']['display']['bio_long'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_event-field_oa_address']['display']['bio_short'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_event-field_oa_address']['display']['teaser']['weight'] = 13; /* WAS: 0 */
+  }
+  if (isset($data['node-oa_event-field_oa_date'])) {
+    $data['node-oa_event-field_oa_date']['display']['bio_full'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_event-field_oa_date']['display']['bio_long'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_event-field_oa_date']['display']['bio_short'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_event-field_oa_date']['display']['default']['module'] = 'iasc_meeting'; /* WAS: 'oa_events' */
+    $data['node-oa_event-field_oa_date']['display']['teaser']['label'] = 'hidden'; /* WAS: 'above' */
+    $data['node-oa_event-field_oa_date']['display']['teaser']['module'] = 'date'; /* WAS: '' */
+    $data['node-oa_event-field_oa_date']['display']['teaser']['settings']['format_type'] = 'long'; /* WAS: '' */
+    $data['node-oa_event-field_oa_date']['display']['teaser']['settings']['fromto'] = 'both'; /* WAS: '' */
+    $data['node-oa_event-field_oa_date']['display']['teaser']['settings']['multiple_from'] = ''; /* WAS: '' */
+    $data['node-oa_event-field_oa_date']['display']['teaser']['settings']['multiple_number'] = ''; /* WAS: '' */
+    $data['node-oa_event-field_oa_date']['display']['teaser']['settings']['multiple_to'] = ''; /* WAS: '' */
+    $data['node-oa_event-field_oa_date']['display']['teaser']['settings']['show_repeat_rule'] = 'show'; /* WAS: '' */
+    $data['node-oa_event-field_oa_date']['display']['teaser']['type'] = 'date_default'; /* WAS: 'hidden' */
   }
   if (isset($data['node-oa_event-field_oa_geo_location'])) {
     unset($data['node-oa_event-field_oa_geo_location']);
+    $data['node-oa_event-field_oa_geo_location']['display']['bio_full'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_event-field_oa_geo_location']['display']['bio_long'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_event-field_oa_geo_location']['display']['bio_short'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_event-field_oa_geo_location']['display']['teaser']['weight'] = 12; /* WAS: 0 */
   }
   if (isset($data['node-oa_event-field_oa_media'])) {
     unset($data['node-oa_event-field_oa_media']);
+    $data['node-oa_event-field_oa_media']['display']['bio_full'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_event-field_oa_media']['display']['bio_long'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_event-field_oa_media']['display']['bio_short'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_event-field_oa_media']['display']['teaser']['weight'] = 11; /* WAS: 0 */
+  }
+  if (isset($data['node-oa_event-oa_other_spaces_ref'])) {
+    $data['node-oa_event-oa_other_spaces_ref']['display']['bio_full'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_event-oa_other_spaces_ref']['display']['bio_long'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_event-oa_other_spaces_ref']['display']['bio_short'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_event-oa_other_spaces_ref']['display']['teaser']['weight'] = 7; /* WAS: 0 */
   }
   if (isset($data['node-oa_event-oa_section_ref'])) {
     $data['node-oa_event-oa_section_ref']['comment_alter'] = 0; /* WAS: '' */
+    $data['node-oa_event-oa_section_ref']['display']['bio_full'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_event-oa_section_ref']['display']['bio_long'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_event-oa_section_ref']['display']['bio_short'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_event-oa_section_ref']['display']['teaser']['weight'] = 16; /* WAS: 0 */
     $data['node-oa_event-oa_section_ref']['label'] = 'Section'; /* WAS: 'Open Atrium Section' */
     unset($data['node-oa_event-oa_section_ref']['options_limit_fields']['oa_section_ref']);
   }
   if (isset($data['node-oa_event-og_group_ref'])) {
+    $data['node-oa_event-og_group_ref']['display']['bio_full'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_event-og_group_ref']['display']['bio_long'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_event-og_group_ref']['display']['bio_short'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_event-og_group_ref']['display']['teaser']['label'] = 'hidden'; /* WAS: 'above' */
+    $data['node-oa_event-og_group_ref']['display']['teaser']['module'] = 'entityreference'; /* WAS: '' */
+    $data['node-oa_event-og_group_ref']['display']['teaser']['settings']['link'] = 1; /* WAS: '' */
+    $data['node-oa_event-og_group_ref']['display']['teaser']['type'] = 'entityreference_label'; /* WAS: 'hidden' */
+    $data['node-oa_event-og_group_ref']['display']['teaser']['weight'] = 5; /* WAS: 0 */
     $data['node-oa_event-og_group_ref']['label'] = 'Authoring Bodies'; /* WAS: 'Groups audience' */
     $data['node-oa_event-og_group_ref']['settings']['behaviors']['og_widget']['access_override'] = 0; /* WAS: '' */
   }
   if (isset($data['node-oa_event-og_vocabulary'])) {
+    $data['node-oa_event-og_vocabulary']['display']['bio_full'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_event-og_vocabulary']['display']['bio_long'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_event-og_vocabulary']['display']['bio_short'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_event-og_vocabulary']['display']['teaser']['weight'] = 6; /* WAS: 0 */
     $data['node-oa_event-og_vocabulary']['widget']['weight'] = 14; /* WAS: 9 */
   }
 }
@@ -328,6 +519,15 @@ function iasc_meeting_panelizer_defaults_override_alter(&$data) {
 }
 
 /**
+ * Implements hook_strongarm_alter().
+ */
+function iasc_meeting_strongarm_alter(&$data) {
+  if (isset($data['node_submitted_oa_event'])) {
+    $data['node_submitted_oa_event']->value = 0; /* WAS: 1 */
+  }
+}
+
+/**
  * Implements hook_views_default_views_alter().
  */
 function iasc_meeting_views_default_views_alter(&$data) {
@@ -341,5 +541,9 @@ function iasc_meeting_views_default_views_alter(&$data) {
       'element_default_classes' => FALSE,
     ); /* WAS: '' */
     unset($data['oa_event_detail']->display['default']->display_options['fields']['term_node_tid']);
+  }
+  if (isset($data['oa_event_list'])) {
+    $data['oa_event_list']->display['page_calendar'] = unserialize('O:13:"views_display":7:{s:15:"display_options";a:9:{s:5:"query";a:2:{s:4:"type";s:11:"views_query";s:7:"options";a:0:{}}s:8:"defaults";a:8:{s:5:"title";b:0;s:12:"style_plugin";b:0;s:13:"style_options";b:0;s:10:"row_plugin";b:0;s:11:"row_options";b:0;s:13:"relationships";b:0;s:13:"filter_groups";b:0;s:7:"filters";b:0;}s:5:"title";s:8:"Calendar";s:12:"style_plugin";s:4:"list";s:13:"style_options";a:3:{s:17:"default_row_class";b:0;s:17:"row_class_special";b:0;s:13:"wrapper_class";s:0:"";}s:10:"row_plugin";s:4:"node";s:11:"row_options";a:1:{s:5:"links";b:0;}s:7:"filters";a:6:{s:6:"status";a:6:{s:2:"id";s:6:"status";s:5:"table";s:4:"node";s:5:"field";s:6:"status";s:5:"value";i:1;s:5:"group";i:1;s:6:"expose";a:1:{s:8:"operator";b:0;}}s:4:"type";a:5:{s:2:"id";s:4:"type";s:5:"table";s:4:"node";s:5:"field";s:4:"type";s:5:"value";a:1:{s:8:"oa_event";s:8:"oa_event";}s:5:"group";i:1;}s:19:"field_oa_date_value";a:10:{s:2:"id";s:19:"field_oa_date_value";s:5:"table";s:24:"field_data_field_oa_date";s:5:"field";s:19:"field_oa_date_value";s:7:"ui_name";s:16:"Start Date Limit";s:8:"operator";s:2:">=";s:5:"group";i:1;s:7:"exposed";b:1;s:6:"expose";a:5:{s:11:"operator_id";s:22:"field_oa_date_value_op";s:5:"label";s:10:"Date Range";s:8:"operator";s:22:"field_oa_date_value_op";s:10:"identifier";s:19:"field_oa_date_value";s:14:"remember_roles";a:4:{i:2;s:1:"2";i:1;i:0;i:3;i:0;i:4;i:0;}}s:9:"form_type";s:10:"date_popup";s:12:"default_date";s:23:"first day of this month";}s:21:"field_oa_date_value_1";a:9:{s:2:"id";s:21:"field_oa_date_value_1";s:5:"table";s:24:"field_data_field_oa_date";s:5:"field";s:19:"field_oa_date_value";s:7:"ui_name";s:14:"End Date Limit";s:8:"operator";s:2:"<=";s:5:"group";i:1;s:7:"exposed";b:1;s:6:"expose";a:4:{s:11:"operator_id";s:24:"field_oa_date_value_1_op";s:8:"operator";s:24:"field_oa_date_value_1_op";s:10:"identifier";s:21:"field_oa_date_value_1";s:14:"remember_roles";a:4:{i:2;s:1:"2";i:1;i:0;i:3;i:0;i:4;i:0;}}s:9:"form_type";s:10:"date_popup";}s:22:"og_group_ref_target_id";a:6:{s:2:"id";s:22:"og_group_ref_target_id";s:5:"table";s:13:"og_membership";s:5:"field";s:22:"og_group_ref_target_id";s:5:"group";i:1;s:7:"exposed";b:1;s:6:"expose";a:5:{s:11:"operator_id";s:25:"og_group_ref_target_id_op";s:5:"label";s:16:"Authoring Bodies";s:8:"operator";s:25:"og_group_ref_target_id_op";s:10:"identifier";s:22:"og_group_ref_target_id";s:14:"remember_roles";a:4:{i:2;s:1:"2";i:1;i:0;i:3;i:0;i:4;i:0;}}}s:4:"keys";a:5:{s:2:"id";s:4:"keys";s:5:"table";s:12:"search_index";s:5:"field";s:4:"keys";s:7:"exposed";b:1;s:6:"expose";a:5:{s:11:"operator_id";s:7:"keys_op";s:5:"label";s:6:"Search";s:8:"operator";s:7:"keys_op";s:10:"identifier";s:4:"keys";s:14:"remember_roles";a:4:{i:2;s:1:"2";i:1;i:0;i:3;i:0;i:4;i:0;}}}}s:4:"path";s:8:"calendar";}s:8:"db_table";s:13:"views_display";s:3:"vid";i:0;s:2:"id";s:13:"page_calendar";s:13:"display_title";s:8:"Calendar";s:14:"display_plugin";s:4:"page";s:8:"position";i:0;}'); /* WAS: '' */
+    $data['oa_event_list']->display['panel_pane_upcoming_meetings'] = unserialize('O:13:"views_display":7:{s:15:"display_options";a:14:{s:5:"query";a:2:{s:4:"type";s:11:"views_query";s:7:"options";a:0:{}}s:8:"defaults";a:11:{s:5:"title";b:0;s:12:"style_plugin";b:0;s:13:"style_options";b:0;s:10:"row_plugin";b:0;s:11:"row_options";b:0;s:13:"relationships";b:0;s:6:"fields";b:0;s:5:"sorts";b:0;s:9:"arguments";b:0;s:13:"filter_groups";b:0;s:7:"filters";b:0;}s:5:"title";s:17:"Upcoming Meetings";s:19:"display_description";s:56:"A panel pane list of upcoming events (no calendar icons)";s:12:"style_plugin";s:4:"list";s:13:"style_options";a:3:{s:17:"default_row_class";b:0;s:17:"row_class_special";b:0;s:13:"wrapper_class";s:0:"";}s:10:"row_plugin";s:4:"node";s:11:"row_options";a:1:{s:5:"links";b:0;}s:6:"fields";a:4:{s:13:"field_oa_date";a:9:{s:2:"id";s:13:"field_oa_date";s:5:"table";s:24:"field_data_field_oa_date";s:5:"field";s:13:"field_oa_date";s:5:"label";s:0:"";s:19:"element_label_colon";b:0;s:4:"type";s:24:"oa_events_date_formatter";s:8:"settings";a:6:{s:11:"format_type";s:4:"long";s:6:"fromto";s:4:"both";s:15:"multiple_number";s:0:"";s:13:"multiple_from";s:0:"";s:11:"multiple_to";s:0:"";s:16:"show_repeat_rule";s:4:"hide";}s:10:"group_rows";b:0;s:12:"delta_offset";s:1:"0";}s:9:"timestamp";a:6:{s:2:"id";s:9:"timestamp";s:5:"table";s:7:"history";s:5:"field";s:9:"timestamp";s:5:"label";s:0:"";s:7:"exclude";b:1;s:19:"element_label_colon";b:0;}s:5:"title";a:6:{s:2:"id";s:5:"title";s:5:"table";s:4:"node";s:5:"field";s:5:"title";s:5:"label";s:0:"";s:5:"alter";a:4:{s:10:"alter_text";b:1;s:4:"text";s:19:"[title] [timestamp]";s:13:"word_boundary";b:0;s:8:"ellipsis";b:0;}s:19:"element_label_colon";b:0;}s:15:"field_oa_date_1";a:8:{s:2:"id";s:15:"field_oa_date_1";s:5:"table";s:24:"field_data_field_oa_date";s:5:"field";s:13:"field_oa_date";s:5:"label";s:0:"";s:19:"element_label_colon";b:0;s:8:"settings";a:6:{s:11:"format_type";s:13:"panopoly_time";s:6:"fromto";s:4:"both";s:15:"multiple_number";s:0:"";s:13:"multiple_from";s:0:"";s:11:"multiple_to";s:0:"";s:16:"show_repeat_rule";s:4:"hide";}s:10:"group_rows";b:0;s:12:"delta_offset";s:1:"0";}}s:5:"sorts";a:1:{s:19:"field_oa_date_value";a:3:{s:2:"id";s:19:"field_oa_date_value";s:5:"table";s:24:"field_data_field_oa_date";s:5:"field";s:19:"field_oa_date_value";}}s:7:"filters";a:8:{s:6:"status";a:6:{s:2:"id";s:6:"status";s:5:"table";s:4:"node";s:5:"field";s:6:"status";s:5:"value";i:1;s:5:"group";i:1;s:6:"expose";a:1:{s:8:"operator";b:0;}}s:4:"type";a:5:{s:2:"id";s:4:"type";s:5:"table";s:4:"node";s:5:"field";s:4:"type";s:5:"value";a:1:{s:8:"oa_event";s:8:"oa_event";}s:5:"group";i:1;}s:19:"field_oa_date_value";a:10:{s:2:"id";s:19:"field_oa_date_value";s:5:"table";s:24:"field_data_field_oa_date";s:5:"field";s:19:"field_oa_date_value";s:7:"ui_name";s:16:"Start Date Limit";s:8:"operator";s:2:">=";s:5:"group";i:1;s:7:"exposed";b:1;s:6:"expose";a:5:{s:11:"operator_id";s:22:"field_oa_date_value_op";s:5:"label";s:10:"Date Range";s:8:"operator";s:22:"field_oa_date_value_op";s:10:"identifier";s:19:"field_oa_date_value";s:14:"remember_roles";a:4:{i:2;s:1:"2";i:1;i:0;i:3;i:0;i:4;i:0;}}s:9:"form_type";s:10:"date_popup";s:12:"default_date";s:23:"first day of this month";}s:20:"field_oa_date_value2";a:9:{s:2:"id";s:20:"field_oa_date_value2";s:5:"table";s:24:"field_data_field_oa_date";s:5:"field";s:20:"field_oa_date_value2";s:7:"ui_name";s:14:"Date End Limit";s:8:"operator";s:2:"<=";s:5:"group";i:1;s:7:"exposed";b:1;s:6:"expose";a:4:{s:11:"operator_id";s:23:"field_oa_date_value2_op";s:8:"operator";s:23:"field_oa_date_value2_op";s:10:"identifier";s:20:"field_oa_date_value2";s:14:"remember_roles";a:4:{i:2;s:1:"2";i:1;i:0;i:3;i:0;i:4;i:0;}}s:9:"form_type";s:10:"date_popup";}s:16:"field_city_value";a:7:{s:2:"id";s:16:"field_city_value";s:5:"table";s:21:"field_data_field_city";s:5:"field";s:16:"field_city_value";s:8:"operator";s:4:"word";s:5:"group";i:1;s:7:"exposed";b:1;s:6:"expose";a:10:{s:11:"operator_id";s:19:"field_city_value_op";s:5:"label";s:4:"City";s:8:"operator";s:19:"field_city_value_op";s:10:"identifier";s:16:"field_city_value";s:14:"remember_roles";a:4:{i:2;s:1:"2";i:1;i:0;i:3;i:0;i:4;i:0;}s:18:"autocomplete_items";s:2:"10";s:22:"autocomplete_min_chars";s:1:"0";s:27:"autocomplete_raw_suggestion";i:1;s:25:"autocomplete_raw_dropdown";i:1;s:22:"autocomplete_dependent";i:0;}}s:22:"og_group_ref_target_id";a:6:{s:2:"id";s:22:"og_group_ref_target_id";s:5:"table";s:13:"og_membership";s:5:"field";s:22:"og_group_ref_target_id";s:5:"group";i:1;s:7:"exposed";b:1;s:6:"expose";a:5:{s:11:"operator_id";s:25:"og_group_ref_target_id_op";s:5:"label";s:30:"Groups audience (og_group_ref)";s:8:"operator";s:25:"og_group_ref_target_id_op";s:10:"identifier";s:22:"og_group_ref_target_id";s:14:"remember_roles";a:4:{i:2;s:1:"2";i:1;i:0;i:3;i:0;i:4;i:0;}}}s:24:"oa_section_ref_target_id";a:6:{s:2:"id";s:24:"oa_section_ref_target_id";s:5:"table";s:25:"field_data_oa_section_ref";s:5:"field";s:24:"oa_section_ref_target_id";s:5:"group";i:1;s:7:"exposed";b:1;s:6:"expose";a:5:{s:11:"operator_id";s:27:"oa_section_ref_target_id_op";s:5:"label";s:36:"Open Atrium Section (oa_section_ref)";s:8:"operator";s:27:"oa_section_ref_target_id_op";s:10:"identifier";s:24:"oa_section_ref_target_id";s:14:"remember_roles";a:4:{i:2;s:1:"2";i:1;i:0;i:3;i:0;i:4;i:0;}}}s:4:"keys";a:6:{s:2:"id";s:4:"keys";s:5:"table";s:12:"search_index";s:5:"field";s:4:"keys";s:5:"group";i:1;s:7:"exposed";b:1;s:6:"expose";a:5:{s:11:"operator_id";s:7:"keys_op";s:5:"label";s:6:"Search";s:8:"operator";s:7:"keys_op";s:10:"identifier";s:4:"keys";s:14:"remember_roles";a:4:{i:2;s:1:"2";i:1;i:0;i:3;i:0;i:4;i:0;}}}}s:13:"pane_category";a:2:{s:4:"name";s:4:"IASC";s:6:"weight";s:1:"0";}s:5:"allow";a:10:{s:9:"use_pager";i:0;s:14:"items_per_page";s:14:"items_per_page";s:6:"offset";i:0;s:12:"link_to_view";i:0;s:9:"more_link";i:0;s:13:"path_override";i:0;s:14:"title_override";s:14:"title_override";s:12:"exposed_form";s:12:"exposed_form";s:22:"exposed_form_configure";i:0;s:15:"fields_override";s:15:"fields_override";}s:22:"exposed_form_overrides";a:1:{s:7:"filters";a:6:{s:19:"field_oa_date_value";s:13:"configureable";s:20:"field_oa_date_value2";s:13:"configureable";s:16:"field_city_value";s:13:"configureable";s:22:"og_group_ref_target_id";s:0:"";s:24:"oa_section_ref_target_id";s:0:"";s:4:"keys";s:13:"configureable";}}}s:8:"db_table";s:13:"views_display";s:3:"vid";i:0;s:2:"id";s:28:"panel_pane_upcoming_meetings";s:13:"display_title";s:26:"Upcoming Events - No Icons";s:14:"display_plugin";s:10:"panel_pane";s:8:"position";i:0;}'); /* WAS: '' */
   }
 }

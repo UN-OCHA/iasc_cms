@@ -38,26 +38,46 @@ function iasc_configuration_node_info_alter(&$data) {
 function iasc_configuration_panelizer_defaults_override_alter(&$data) {
   if (isset($data['node:oa_section:calendar_section'])) {
     $data['node:oa_section:calendar_section']->display->content['new-5241f5c7-9e10-4e79-a1ce-84f68ad200f3']->position = 0; /* WAS: 1 */
-    $data['node:oa_section:calendar_section']->display->content['new-c5f294ed-58bb-4218-8dc6-ef07c0b83628'] = (object) array(
-          'pid' => 'new-c5f294ed-58bb-4218-8dc6-ef07c0b83628',
+    $data['node:oa_section:calendar_section']->display->content['new-72532a34-7123-45bb-88ef-b02e101c1bd4'] = (object) array(
+          'pid' => 'new-72532a34-7123-45bb-88ef-b02e101c1bd4',
           'panel' => 'contentmain',
           'type' => 'views_panes',
-          'subtype' => 'oa_fullcalendar-oa_calendar_month',
+          'subtype' => 'oa_event_list-panel_pane_upcoming_meetings',
           'shown' => TRUE,
           'access' => array(),
           'configuration' => array(
             'exposed' => array(
+              'filter-field_oa_date_value' => array(
+                'expose_to_visitor' => 1,
+              ),
+              'field_oa_date_value' => array(
+                'value' => '2014-10-01',
+              ),
+              'filter-field_oa_date_value2' => array(
+                'expose_to_visitor' => 1,
+              ),
+              'field_oa_date_value2' => array(
+                'value' => NULL,
+              ),
+              'filter-field_city_value' => array(
+                'expose_to_visitor' => 1,
+              ),
+              'field_city_value' => '',
               'og_group_ref_target_id' => '',
               'og_group_ref_target_id_mine' => 0,
-              'og_subspaces_view_all' => 0,
+              'og_subspaces_view_all' => 1,
               'og_subspaces_view_parent' => 0,
               'oa_section_ref_target_id' => '',
-              'flagged' => 0,
+              'filter-keys' => array(
+                'expose_to_visitor' => 1,
+              ),
+              'keys' => '',
             ),
-            'include_attachments' => 1,
-            'view_settings' => 'fields',
-            'header_type' => 'none',
+            'items_per_page' => 10,
+            'override_title' => '',
+            'override_title_text' => '',
             'view_mode' => 'teaser',
+            'widget_title' => 'Upcoming Meetings',
           ),
           'cache' => array(),
           'style' => array(
@@ -67,146 +87,84 @@ function iasc_configuration_panelizer_defaults_override_alter(&$data) {
           'extras' => array(),
           'position' => 0,
           'locks' => array(),
-          'uuid' => 'c5f294ed-58bb-4218-8dc6-ef07c0b83628',
+          'uuid' => '72532a34-7123-45bb-88ef-b02e101c1bd4',
         ); /* WAS: '' */
-    $data['node:oa_section:calendar_section']->display->content['new-f7576cce-3df6-4498-89b5-77da59c5f99c']->position = 1; /* WAS: 2 */
-    $data['node:oa_section:calendar_section']->display->panels['contentmain'][0] = 'new-c5f294ed-58bb-4218-8dc6-ef07c0b83628'; /* WAS: 'new-39b87a40-e27c-45b0-8bdf-6a9c3f117695' */
+    $data['node:oa_section:calendar_section']->display->content['new-9ea94d4c-567b-404f-9aec-386ae14a1aea'] = (object) array(
+          'pid' => 'new-9ea94d4c-567b-404f-9aec-386ae14a1aea',
+          'panel' => 'contentmain',
+          'type' => 'iasc_meeting.add_meeting',
+          'subtype' => 'iasc_meeting.add_meeting',
+          'shown' => TRUE,
+          'access' => array(),
+          'configuration' => array(),
+          'cache' => array(),
+          'style' => array(
+            'settings' => NULL,
+          ),
+          'css' => array(),
+          'extras' => array(),
+          'position' => 1,
+          'locks' => array(),
+          'uuid' => '9ea94d4c-567b-404f-9aec-386ae14a1aea',
+        ); /* WAS: '' */
+    $data['node:oa_section:calendar_section']->display->panels['contentmain'][0] = 'new-72532a34-7123-45bb-88ef-b02e101c1bd4'; /* WAS: 'new-39b87a40-e27c-45b0-8bdf-6a9c3f117695' */
+    $data['node:oa_section:calendar_section']->display->panels['contentmain'][1] = 'new-9ea94d4c-567b-404f-9aec-386ae14a1aea'; /* WAS: '' */
     $data['node:oa_section:calendar_section']->display->panels['sidebar'][0] = 'new-5241f5c7-9e10-4e79-a1ce-84f68ad200f3'; /* WAS: 'new-81942150-4ee9-4396-8371-b94f72b18f6a' */
-    $data['node:oa_section:calendar_section']->display->panels['sidebar'][1] = 'new-f7576cce-3df6-4498-89b5-77da59c5f99c'; /* WAS: 'new-5241f5c7-9e10-4e79-a1ce-84f68ad200f3' */
     unset($data['node:oa_section:calendar_section']->display->content['new-39b87a40-e27c-45b0-8bdf-6a9c3f117695']);
     unset($data['node:oa_section:calendar_section']->display->content['new-81942150-4ee9-4396-8371-b94f72b18f6a']);
+    unset($data['node:oa_section:calendar_section']->display->content['new-f7576cce-3df6-4498-89b5-77da59c5f99c']);
+    unset($data['node:oa_section:calendar_section']->display->panels['sidebar'][1]);
     unset($data['node:oa_section:calendar_section']->display->panels['sidebar'][2]);
   }
 }
 
-/**
- * Implements hook_views_default_views_alter().
- */
-function iasc_configuration_views_default_views_alter(&$data) {
-  if (isset($data['oa_fullcalendar'])) {
-    $data['oa_fullcalendar']->display['default']->display_options['filters']['field_city_value'] = array(
-      'id' => 'field_city_value',
-      'table' => 'field_data_field_city',
-      'field' => 'field_city_value',
-      'operator' => 'word',
-      'group' => 1,
-      'exposed' => TRUE,
-      'expose' => array(
-        'operator_id' => 'field_city_value_op',
-        'label' => 'City',
-        'operator' => 'field_city_value_op',
-        'identifier' => 'field_city_value',
-        'remember_roles' => array(
-          2 => 2,
-          1 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-        'autocomplete_raw_suggestion' => 1,
-        'autocomplete_raw_dropdown' => 1,
-        'autocomplete_dependent' => 0,
-      ),
-    ); /* WAS: '' */
-    $data['oa_fullcalendar']->display['default']->display_options['filters']['field_oa_date_value'] = array(
-      'id' => 'field_oa_date_value',
-      'table' => 'field_data_field_oa_date',
-      'field' => 'field_oa_date_value',
-      'ui_name' => 'Start from Date range',
-      'operator' => '>=',
-      'group' => 1,
-      'exposed' => TRUE,
-      'expose' => array(
-        'operator_id' => 'field_oa_date_value_op',
-        'label' => 'Date Range',
-        'operator' => 'field_oa_date_value_op',
-        'identifier' => 'field_oa_date_value',
-        'remember_roles' => array(
-          2 => 2,
-          1 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-      ),
-      'form_type' => 'date_popup',
-    ); /* WAS: '' */
-    $data['oa_fullcalendar']->display['default']->display_options['filters']['field_oa_date_value_1'] = array(
-      'id' => 'field_oa_date_value_1',
-      'table' => 'field_data_field_oa_date',
-      'field' => 'field_oa_date_value',
-      'ui_name' => 'End Date Range',
-      'operator' => '<=',
-      'group' => 1,
-      'exposed' => TRUE,
-      'expose' => array(
-        'operator_id' => 'field_oa_date_value_1_op',
-        'operator' => 'field_oa_date_value_1_op',
-        'identifier' => 'field_oa_date_value_1',
-        'remember_roles' => array(
-          2 => 2,
-          1 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-      ),
-      'form_type' => 'date_popup',
-    ); /* WAS: '' */
-    $data['oa_fullcalendar']->display['default']->display_options['filters']['flagged']['group'] = 1; /* WAS: '' */
-    $data['oa_fullcalendar']->display['default']->display_options['filters']['keys'] = array(
-      'id' => 'keys',
-      'table' => 'search_index',
-      'field' => 'keys',
-      'group' => 1,
-      'exposed' => TRUE,
-      'expose' => array(
-        'operator_id' => 'keys_op',
-        'label' => 'Search',
-        'operator' => 'keys_op',
-        'identifier' => 'keys',
-        'remember_roles' => array(
-          2 => 2,
-          1 => 0,
-          3 => 0,
-          4 => 0,
-        ),
-      ),
-    ); /* WAS: '' */
-    $data['oa_fullcalendar']->display['default']->display_options['filters']['oa_section_ref_target_id']['group'] = 1; /* WAS: '' */
-    $data['oa_fullcalendar']->display['default']->display_options['filters']['og_group_ref_target_id']['expose']['label'] = 'Group'; /* WAS: 'Space' */
-    $data['oa_fullcalendar']->display['default']->display_options['filters']['og_group_ref_target_id']['group'] = 1; /* WAS: '' */
-    $data['oa_fullcalendar']->display['default']->display_options['filters']['type']['group'] = 1; /* WAS: '' */
-    $data['oa_fullcalendar']->display['default']->display_options['sorts']['field_oa_date_value'] = array(
-      'id' => 'field_oa_date_value',
-      'table' => 'field_data_field_oa_date',
-      'field' => 'field_oa_date_value',
-      'order' => 'DESC',
-    ); /* WAS: '' */
-    $data['oa_fullcalendar']->display['oa_calendar_day']->display_options['exposed_form_overrides']['filters']['field_city_value'] = 'exposed'; /* WAS: '' */
-    $data['oa_fullcalendar']->display['oa_calendar_day']->display_options['exposed_form_overrides']['filters']['field_oa_date_value'] = 'exposed'; /* WAS: '' */
-    $data['oa_fullcalendar']->display['oa_calendar_day']->display_options['exposed_form_overrides']['filters']['field_oa_date_value_1'] = 'exposed'; /* WAS: '' */
-    $data['oa_fullcalendar']->display['oa_calendar_day']->display_options['exposed_form_overrides']['filters']['keys'] = 'exposed'; /* WAS: '' */
-    $data['oa_fullcalendar']->display['oa_calendar_month']->display_options['exposed_form_overrides']['filters']['field_city_value'] = 'exposed'; /* WAS: '' */
-    $data['oa_fullcalendar']->display['oa_calendar_month']->display_options['exposed_form_overrides']['filters']['field_oa_date_value'] = 'exposed'; /* WAS: '' */
-    $data['oa_fullcalendar']->display['oa_calendar_month']->display_options['exposed_form_overrides']['filters']['field_oa_date_value_1'] = 'exposed'; /* WAS: '' */
-    $data['oa_fullcalendar']->display['oa_calendar_month']->display_options['exposed_form_overrides']['filters']['keys'] = 'exposed'; /* WAS: '' */
-    $data['oa_fullcalendar']->display['oa_calendar_week']->display_options['exposed_form_overrides']['filters']['field_city_value'] = 'exposed'; /* WAS: '' */
-    $data['oa_fullcalendar']->display['oa_calendar_week']->display_options['exposed_form_overrides']['filters']['field_oa_date_value'] = 'exposed'; /* WAS: '' */
-    $data['oa_fullcalendar']->display['oa_calendar_week']->display_options['exposed_form_overrides']['filters']['field_oa_date_value_1'] = 'exposed'; /* WAS: '' */
-    $data['oa_fullcalendar']->display['oa_calendar_week']->display_options['exposed_form_overrides']['filters']['keys'] = 'exposed'; /* WAS: '' */
-    $data['oa_fullcalendar']->display['page_calendar'] = unserialize('O:13:"views_display":7:{s:15:"display_options";a:5:{s:5:"query";a:2:{s:4:"type";s:11:"views_query";s:7:"options";a:0:{}}s:19:"display_description";s:31:"A chronological list of events.";s:8:"defaults";a:3:{s:13:"relationships";b:0;s:13:"filter_groups";b:0;s:7:"filters";b:0;}s:7:"filters";a:2:{s:6:"status";a:6:{s:2:"id";s:6:"status";s:5:"table";s:4:"node";s:5:"field";s:6:"status";s:5:"value";i:1;s:5:"group";i:1;s:6:"expose";a:1:{s:8:"operator";b:0;}}s:4:"type";a:5:{s:2:"id";s:4:"type";s:5:"table";s:4:"node";s:5:"field";s:4:"type";s:5:"value";a:1:{s:8:"oa_event";s:8:"oa_event";}s:5:"group";i:1;}}s:4:"path";s:8:"calendar";}s:8:"db_table";s:13:"views_display";s:3:"vid";i:0;s:2:"id";s:13:"page_calendar";s:13:"display_title";s:13:"Calendar Page";s:14:"display_plugin";s:4:"page";s:8:"position";i:0;}'); /* WAS: '' */
-    unset($data['oa_fullcalendar']->display['default']->display_options['sorts']['created']);
-  }
-}
-
-/**
+/*
  * Implements hook_flag_default_flags().
  */
 function iasc_configuration_flag_default_flags() {
   $flags = array();
+  // Exported flag: "Featured".
+  $flags['featured'] = array(
+    'content_type' => 'node',
+    'title' => 'Featured',
+    'global' => 1,
+    'types' => array(
+      0 => 'oa_wiki_page',
+    ),
+    'flag_short' => 'Featured',
+    'flag_long' => 'Mark as Featured',
+    'flag_message' => 'Flagged as Featured!',
+    'unflag_short' => 'Remove Featured flag',
+    'unflag_long' => 'Remove item from Featured list',
+    'unflag_message' => 'Removed Featured flag',
+    'unflag_denied_text' => '',
+    'link_type' => 'toggle',
+    'roles' => array(
+      'flag' => array(
+        0 => 2,
+      ),
+      'unflag' => array(
+        0 => 2,
+      ),
+    ),
+    'weight' => 0,
+    'show_on_form' => 1,
+    'access_author' => '',
+    'show_on_page' => 1,
+    'show_on_teaser' => 1,
+    'show_contextual_link' => FALSE,
+    'i18n' => 0,
+    'module' => 'iasc_configuration',
+    'locked' => array(
+      0 => 'name',
+    ),
+    'api_version' => 2,
+  );
   // Exported flag: "Show on Homepage".
   $flags['show_on_home'] = array(
     'content_type' => 'node',
     'title' => 'Show on Homepage',
-    'global' => 0,
+    'global' => 1,
     'types' => array(
       0 => 'announcement',
     ),
@@ -243,7 +201,7 @@ function iasc_configuration_flag_default_flags() {
   $flags['special'] = array(
     'content_type' => 'node',
     'title' => 'Special',
-    'global' => 0,
+    'global' => 1,
     'types' => array(
       0 => 'announcement',
     ),

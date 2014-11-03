@@ -22,6 +22,8 @@ function iasc_configuration_drush_command() {
       'delimiter'     => 'CSV delimiter (default: ",")',
       'enclosure'     => "CSV enclosure (default: '\"')",
       'delete-all'  => 'Delete all spaces and sections before import',
+      'delete-sections'  => 'Delete all sections before import',
+      'ignore-parents'  => 'Ignores the parent bodies in the file',
     ),
     'examples' => array(
       'drush iasc-spaces <path>/data/bodiescategories.csv --delimiter=";" --delete-all' => 'Import the spaces and sections in iasc_spaces.csv, using delimiter ";" and delete all spaces and sections before importing.',
@@ -66,6 +68,8 @@ function drush_iasc_configuration_iasc_import_spaces($file = '') {
   $options['enclosure'] = ($enclosure == NULL) ? '"' : $enclosure;
 
   $options['delete_all'] = (drush_get_option('delete-all') == NULL) ? FALSE : TRUE;
+  $options['delete_sections'] = (drush_get_option('delete-sections') == NULL) ? FALSE : TRUE;
+  $options['ignore_parents'] = (drush_get_option('ignore-parents') == NULL) ? FALSE : TRUE;
 
   // Login as the admin user.
   global $user;

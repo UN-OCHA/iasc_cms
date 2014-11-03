@@ -7,6 +7,15 @@
 include_once 'iasc_meeting.features.inc';
 
 /**
+ * Implements hook_ctools_plugin_directory
+ */
+function iasc_meeting_ctools_plugin_directory($owner, $plugin_type) {
+  if ($owner == 'ctools' && $plugin_type == 'content_types') {
+    return 'plugins/content_types';
+  }
+}
+
+/**
  * Implements hook_field_formatter_info_alter().
  */
 function iasc_meeting_field_formatter_info_alter(&$info) {
@@ -79,4 +88,317 @@ function iasc_meeting_theme($existing, $type, $theme, $path) {
   );
 
   return $theme;
+}
+
+/**
+ * Process the import of agendas on meetings.
+ *
+ * @param array $options
+ *   An associative array of options:
+ *   - file      : the path to the csv file
+ *   - delimiter : 1 character csv delimiter (default: ';')
+ *   - enclosure : character that wraps the data (default: '"')
+ *   - delete_all: delete all spaces and sections before import (default: FALSE)
+ *
+ * @return array
+ *   Array of errors or nothing if import is successful.
+ */
+function iasc_meeting_agenda_import($options) {
+  $messages = array();
+
+  // Load the file object.
+  $file_handle = iasc_meeting_check_file($options['file'], $messages);
+
+  $operations = array();
+  iasc_meeting_meeting_agenda_batch_ops($file_handle, $options, $messages, $operations);
+
+  // Set finished function based on type being processed.
+  switch ($options['type']) {
+    case 'agendas':
+      $finished = 'iasc_meeting_import_meeting_agenda_finished';
+      break;
+  }
+
+  // Put all that information into our batch array.
+  $batch = array(
+    'operations' => $operations,
+    'title' => t('Importing !total_lines lines from CSV file "%filename"...', array(
+        '%filename'    => $options['file'],
+      )
+    ),
+    'init_message' => t('Starting to import meeting agendas...'),
+    'progress_message' => t('Processed @current out of @total.'),
+    'error_message' => t('An error occurred during the import.'),
+    'finished' => $finished,
+  );
+
+  // Set the batch.
+  batch_set($batch);
+}
+
+/**
+ * Checks to make sure we can read the file.
+ *
+ * @param string $file
+ *   The file to check.
+ * @param array $messages
+ *   An array of messages.
+ *
+ * @return mixed
+ *   The file handle.
+ */
+function iasc_meeting_check_file($file, &$messages) {
+  if (empty($file)) {
+    $messages['file'] = t("Missing file");
+  }
+
+  $file_handle = fopen($file, 'r');
+  if ($file_handle === FALSE) {
+    $messages['file'] = t("File: %file could not be opened.", array('%file' => $file));
+  }
+
+  return $file_handle;
+}
+
+/**
+ * Sets up the process meeting batch operations.
+ *
+ * @param mixed $file_handle
+ *   The file pointer resource.
+ * @param array $options
+ *   Options for reading the file.
+ * @param array $messages
+ *   Error message array.
+ * @param array $operations
+ *   An array of batch operations.
+ *
+ * @return NULL
+ *   Nothing returned.
+ */
+function iasc_meeting_meeting_agenda_batch_ops($file_handle, $options, &$messages, &$operations) {
+  $meeting_items = array();
+  if ($header = fgetcsv($file_handle, 1000, $options['delimiter'], $options['enclosure'])) {
+    while ($data = fgetcsv($file_handle, 1000, $options['delimiter'], $options['enclosure'])) {
+      if (is_array($data)) {
+        $meeting_items[] = array_combine($header, $data);
+      }
+    }
+  }
+  fclose($file_handle);
+
+  if (empty($meeting_items)) {
+    $messages['file'] = t('File had no data.');
+    return $messages;
+  }
+
+  // Break up array of meetings to import into chunks of 10.
+  $chunk_size = 10;
+  $chunks = array_chunk($meeting_items, $chunk_size);
+
+  $count_chunks = count($chunks);
+
+  $i = 0;
+  // Import these meetings in chunks.
+  foreach ($chunks as $chunk) {
+    $i++;
+
+    $details = array(
+      '@chunk' => $i,
+      '@count' => $count_chunks,
+    );
+
+    switch ($options['type']) {
+      case 'agendas':
+        $operation = 'iasc_meeting_import_agenda_meetings';
+        break;
+    }
+
+    $message = '';
+    if (1 == $i) {
+      $details['@size'] = $chunk_size;
+      $message .= t("Starting import of meetings: chunk @chunk of @count (@size records/chunk)\n", $details);
+    }
+
+    $message .= t('(Importing chunk @chunk of @count)', $details);
+
+    $operations[] = array($operation,
+      array(
+        $chunk,
+        $message,
+      ),
+    );
+  }
+}
+
+/**
+ * Updates or saves the new chunk of contacts.
+ *
+ * @param array $chunk
+ *   The current chunk of contacts
+ * @param string $message
+ *   A helpful message about the status of the batch process.
+ * @param array $context
+ *   The context for the batch process
+ */
+function iasc_meeting_import_agenda_meetings($chunk, $message, &$context) {
+  $context['message'] = $message;
+
+  foreach ($chunk as $item) {
+    iasc_meeting_link_agendas($item, $context);
+  }
+}
+
+/**
+ * Takes an array and updates a meeting node with agenda data.
+ *
+ * @param array $item
+ *   An array describing the meeting/agenda relationship.
+ * @param array &$context
+ *   A batch API context.
+ */
+function iasc_meeting_link_agendas($item, &$context) {
+  // Check the item array.
+  if (!is_array($item)) {
+    $context['results']['meeting_agenda_skipped'][] = "Node import failure: Unreadable node data";
+    $message = t('Could not import item: @item', array('@item' => print_r($item, TRUE)));
+    watchdog('iasc_meeting', $message, WATCHDOG_ERROR);
+    return;
+  }
+
+  $legacy_id = $item['calmeetID'];
+  $context['results']['meeting_agenda_processed'][] = $legacy_id;
+
+  $nid = iasc_meeting_get_nid_by_legacyid($legacy_id);
+
+  // We should have a meeting node at this point.
+  if (!$nid) {
+    $context['results']['meeting_agenda_skipped'][] = "Node import failure: Unreadable node data";
+    $message = t('Could not import item: @item', array('@item' => print_r($item, TRUE)));
+    watchdog('iasc_meeting', $message, WATCHDOG_ERROR);
+    return;
+  }
+
+  $node_wrapper = entity_metadata_wrapper('node', $nid);
+  $entity = $node_wrapper->value();
+
+  // Requires: separate csv file to map: calmeetID <-> agenda data.
+
+  $collection = entity_create('field_collection_item', array('field_name' => 'field_agenda_items'));
+  $collection->setHostEntity('node', $entity);
+  $agenda_wrapper = entity_metadata_wrapper('field_collection_item', $collection);
+
+  if ('NULL' != $item['agitem']) {
+    $agenda_wrapper->field_ai_title = $item['agitem'];
+  }
+
+  $description = array();
+  if ('NULL' != $item['agsubitem']) {
+    $description[] = $item['agsubitem'];
+  }
+  if ('NULL' != $item['agdescription']) {
+    $description[] = $item['agdescription'];
+  }
+
+  $description = (count($description) > 1) ? implode('\r\n', $description) : $description;
+  $description = (is_array($description)) ? reset($description) : $description;
+  if (!empty($description)) {
+    $agenda_wrapper->field_ai_description = array('value' => $description);
+  }
+
+  // Set contact.
+  $contact_id = iasc_contact_get_nid_by_legacyid($item['presenterID']);
+  if ($contact_id) {
+    $agenda_wrapper->field_contact = array($contact_id);
+  }
+
+  // Set document.
+  $document_id = iasc_meeting_get_document_id_by_meeting_id($item['calmeetID']);
+  if ($document_id) {
+    $agenda_wrapper->field_referenced_docs = array($document_id);
+  }
+  $agenda_wrapper->save();
+
+  // Save the entity.
+  $node_wrapper->save(TRUE);
+  entity_save('node', $entity);
+
+  $context['results']['updated_meeting_agenda'][] = $legacy_id;
+}
+
+/**
+ * Callback for when the batch process finishes.
+ *
+ * @param bool $success
+ *   True if the batch process completed without errors.
+ * @param array $results
+ *   Information about the results set in iasc_contact_update_bodies().
+ * @param array $operations
+ *   An array of details about the operations.
+ */
+function iasc_meeting_import_meeting_agenda_finished($success, $results, $operations) {
+  if ($success) {
+    drupal_set_message(count($results['meeting_agenda_processed']) . ' items processed.');
+    $results['updated_meeting_agenda'] = !empty($results['updated_meeting_agenda']) ? $results['updated_meeting_agenda'] : array();
+    drupal_set_message(count($results['updated_meeting_agenda']) . ' meetings updated with agendas.');
+
+    if (count($results['meeting_agenda_skipped'])) {
+      drupal_set_message(count($results['meeting_agenda_skipped']) . ' agendas were not imported. See log for details.');
+    }
+  }
+  else {
+    // $operations contains the operations that remained unprocessed.
+    $error_operation = reset($operations);
+    $message = t('An error occurred while processing %error_operation with arguments: @arguments',
+      array(
+        '%error_operation' => $error_operation[0],
+        '@arguments' => print_r($error_operation[1],
+          TRUE),
+      )
+    );
+    drupal_set_message($message, 'error');
+  }
+}
+
+/**
+ * Returns the nid associated with the legacy id or FALSE if no node exists.
+ *
+ * @param int $id
+ *   The legacy id
+ *
+ * @return bool|int
+ *   The nid of the node
+ */
+function iasc_meeting_get_nid_by_legacyid($id) {
+  $result = db_select('iasc_scrape', 'sc')
+    ->fields('sc', array('entity_id'))
+    ->condition('type', 'meeting')
+    ->condition('legacy_id', $id)
+    ->execute()
+    ->fetchAssoc();
+
+  return ($result['entity_id']) ? $result['entity_id'] : FALSE;
+}
+
+/**
+ * Returns the nid associated with the legacy id or FALSE if no node exists.
+ */
+function iasc_meeting_get_document_id_by_meeting_id($meeting_id) {
+  $result = db_select('iasc_scrape', 'sc')
+    ->fields('sc', array('legacy_id'))
+    ->condition('type', 'meeting')
+    ->condition('entity_id', $meeting_id)
+    ->execute()
+    ->fetchAssoc();
+
+  // Now grab document entity by the legacy id of the meeting.
+  if ($result['legacy_id']) {
+    $result = db_select('iasc_scrape', 'sc')
+      ->fields('sc', array('entity_id'))
+      ->condition('type', 'document')
+      ->condition('legacy_meeting_id', $result['legacy_id'])
+      ->execute()
+      ->fetchAssoc();
+  }
+
+  return isset($result['entity_id']) ? $result['entity_id'] : FALSE;
 }
