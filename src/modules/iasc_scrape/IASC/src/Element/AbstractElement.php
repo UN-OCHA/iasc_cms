@@ -55,8 +55,15 @@ abstract class AbstractElement implements ElementInterface {
     // instead of the attribute.
     if (!empty($params['get_text'])) {
       $value = $this->listing->crawler
-        ->filter($params['selector'])
-        ->text();
+        ->filter($params['selector']);
+
+      if ($value->getNode(0) != NULL) {
+        $value = $value
+          ->text();
+      }
+      else {
+        $value = 0;
+      }
     }
     elseif (!empty($params['table_link'])) {
       $link_text = (isset($params['link_text'])) ? $params['link_text'] : 'Edit';
@@ -137,8 +144,15 @@ abstract class AbstractElement implements ElementInterface {
       // the string in the value attribute.
       $attr = !empty($params['attr']) ? $params['attr'] : 'value';
       $value = $this->listing->crawler
-        ->filter($params['selector'])
-        ->attr($attr);
+        ->filter($params['selector']);
+
+      if ($value->getNode(0) != NULL) {
+        $value = $value
+          ->attr($attr);
+      }
+      else {
+        $value = 0;
+      }
     }
 
     return $value;

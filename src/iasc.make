@@ -243,3 +243,8 @@ projects[nodequeue][version] = 2.0-beta1
 projects[nodequeue][subdir] = contrib
 projects[nodequeue][patch][1402634] = https://www.drupal.org/files/node-mark-deprecated-1402634-7.patch
 projects[nodequeue][patch][2231793] = https://www.drupal.org/files/issues/nodequeue-query_add_tag-2231793-9.patch
+
+projects[date_facets][subdir] = contrib
+projects[date_facets][download][type] = git
+projects[date_facets][download][branch] = 7.x-1.x
+projects[date_facets][download][revision] = 9037608
