@@ -16,12 +16,13 @@ class IASCDefault {
   protected $plain = array();
   protected $hardcoded = array();
   protected $created = '';
-  protected $term = NULL;
+  protected $term = array();
   protected $terms = array();
   protected $lists = array();
   protected $groups = array();
   protected $space = array();
   protected $dates = array();
+  protected $contact = array();
 
   /**
    * Constructor.
@@ -57,6 +58,7 @@ class IASCDefault {
     // $this->setGroups();
     $this->setSpace();
     $this->setDates();
+    $this->setContact();
 
     // Save the entity.
     $this->wrapper->save(TRUE);
@@ -319,6 +321,42 @@ class IASCDefault {
         }
         catch (Exception $e) {
           echo 'Caught exception on ' . $date_field . ': ', $e->getMessage(), "\n";
+        }
+      }
+    }
+  }
+
+  /**
+   * Get legacy contact reference id.
+   */
+  protected function getContact($legacy_id) {
+    $result = db_select('field_data_field_legacy_id', 'fli')
+      ->fields('fli', array('entity_id'))
+      ->condition('bundle', 'contact')
+      ->condition('field_legacy_id_value', $legacy_id)
+      ->execute()
+      ->fetchAssoc();
+    $nid = (!empty($result['entity_id'])) ? $result['entity_id'] : 0;
+    return $nid;
+  }
+
+  /**
+   * Set contact reference.
+   */
+  protected function setContact() {
+    foreach ($this->contact as $contact) {
+      if (!empty($this->values['data'][$contact])) {
+        $value = trim($this->values['data'][$contact]);
+        $entity_id = $this->getContact($value);
+
+        // Save to contact field.
+        if ($entity_id) {
+          try {
+            $this->wrapper->{$contact}->set(array($entity_id));
+          }
+          catch (Exception $e) {
+            echo 'Caught exception on ' . $contact . ': ', $e->getMessage(), "\n";
+          }
         }
       }
     }

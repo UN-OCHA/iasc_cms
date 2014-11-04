@@ -60,7 +60,7 @@ function iasc_configuration_panelizer_defaults() {
     $pane->pid = 'new-1c4dd840-ad97-4b85-9c82-84aee3c81846';
     $pane->panel = 'contentmain';
     $pane->type = 'views_panes';
-    $pane->subtype = 'filterable_content-panel_pane_filterable_docs';
+    $pane->subtype = 'iasc_document-panel_pane_filterable_docs';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(

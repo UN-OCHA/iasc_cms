@@ -21,13 +21,10 @@
 
 
 .navbar-top {
-  @media screen and (min-width: $screen-lg-min) {
-    width: auto !important;
-  }
   ul {margin-bottom: 0;}
   a {  
     color: $brand-primary;
-    &:before { font-size: 24px !important; }
+    &:before { font-size: 24px; }
     span { display: none; }
     @media screen and (min-width: $screen-lg-min) {
       &:before { font-size: 19px; }
@@ -37,6 +34,24 @@
     &:hover {
       color: lighten($brand-primary, 10%);
     }
+  }
+  @media screen and (max-width: $screen-xs-min) {
+    a:before { font-size: 19px; }
+  }
+  @media screen and (max-width: $screen-sm-min) {
+    padding-left: 0;
+    li {
+      width: 25%; 
+      padding: 0;
+      text-align: center;
+      float: left;
+    }
+    .logged-in & li {
+      width: 20%; 
+    }
+  }
+  @media screen and (min-width: $screen-sm-min) {
+    width: auto !important;
   }
 }
 

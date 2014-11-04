@@ -3,3 +3,10 @@
  * Layout
  * Styles for main layout
  */
+
+@media screen and (max-width: $screen-xs-min) {
+  .container {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+}
