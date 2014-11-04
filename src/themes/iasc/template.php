@@ -76,6 +76,19 @@ function iasc_preprocess_page(&$variables) {
 }
 
 /**
+ * Implements template_preprocess_node().
+ */
+function iasc_preprocess_node(&$vars) {
+  if ('oa_event' == $vars['type']) {
+    // Don't show the room to anon users for all view modes.
+    global $user;
+    if (!$user->uid) {
+      unset($vars['content']['field_room']);
+    }
+  }
+}
+
+/**
  * Implements hook_links__system_main_menu().
  */
 function iasc_links__system_main_menu(&$vars) {
@@ -260,3 +273,4 @@ function iasc_pager($variables) {
     ));
   }
 }
+
