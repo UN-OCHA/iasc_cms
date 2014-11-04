@@ -41,7 +41,7 @@ function iasc_document_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 11,
+        'weight' => 8,
       ),
       'featured' => array(
         'label' => 'above',
@@ -54,7 +54,7 @@ function iasc_document_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_plain',
-        'weight' => 2,
+        'weight' => 3,
       ),
     ),
     'entity_type' => 'node',
@@ -111,7 +111,7 @@ function iasc_document_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 9,
+        'weight' => 7,
       ),
       'featured' => array(
         'label' => 'above',
@@ -124,7 +124,7 @@ function iasc_document_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 0,
+        'weight' => 1,
       ),
     ),
     'entity_type' => 'node',
@@ -181,7 +181,7 @@ function iasc_document_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 12,
+        'weight' => 9,
       ),
       'featured' => array(
         'label' => 'above',
@@ -194,7 +194,7 @@ function iasc_document_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_plain',
-        'weight' => 1,
+        'weight' => 2,
       ),
     ),
     'entity_type' => 'node',
@@ -249,7 +249,7 @@ function iasc_document_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 13,
+        'weight' => 10,
       ),
       'featured' => array(
         'label' => 'above',
@@ -261,7 +261,7 @@ function iasc_document_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 7,
+        'weight' => 9,
       ),
     ),
     'entity_type' => 'node',
@@ -283,7 +283,114 @@ function iasc_document_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 10,
+      'weight' => 11,
+    ),
+  );
+
+  // Exported field_instance: 'node-oa_wiki_page-field_product_thumbnail'
+  $field_instances['node-oa_wiki_page-field_product_thumbnail'] = array(
+    'bundle' => 'oa_wiki_page',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'bio_full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'bio_long' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'bio_short' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => 'large',
+        ),
+        'type' => 'image',
+        'weight' => 3,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => 'content',
+          'image_style' => 'thumbnail',
+        ),
+        'type' => 'image',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_product_thumbnail',
+    'label' => 'Product Thumbnail',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'media',
+      'settings' => array(
+        'allowed_schemes' => array(
+          'private' => 'private',
+          'public' => 'public',
+          'vimeo' => 0,
+          'youtube' => 0,
+        ),
+        'allowed_types' => array(
+          'audio' => 0,
+          'document' => 0,
+          'image' => 'image',
+          'video' => 0,
+        ),
+        'browser_plugins' => array(
+          'media_default--media_browser_1' => 'media_default--media_browser_1',
+          'media_default--media_browser_my_files' => 0,
+          'media_internet' => 0,
+          'upload' => 'upload',
+          'youtube' => 0,
+        ),
+        'manualcrop_crop_info' => 1,
+        'manualcrop_default_crop_area' => 1,
+        'manualcrop_enable' => 0,
+        'manualcrop_inline_crop' => 0,
+        'manualcrop_instant_crop' => FALSE,
+        'manualcrop_instant_preview' => 1,
+        'manualcrop_keyboard' => 1,
+        'manualcrop_maximize_default_crop_area' => 0,
+        'manualcrop_require_cropping' => array(),
+        'manualcrop_styles_list' => array(),
+        'manualcrop_styles_mode' => 'include',
+        'manualcrop_thumblist' => 0,
+      ),
+      'type' => 'media_generic',
+      'weight' => 7,
     ),
   );
 
@@ -324,7 +431,7 @@ function iasc_document_field_default_field_instances() {
           'show_repeat_rule' => 'show',
         ),
         'type' => 'date_default',
-        'weight' => 14,
+        'weight' => 11,
       ),
       'featured' => array(
         'label' => 'above',
@@ -344,7 +451,7 @@ function iasc_document_field_default_field_instances() {
           'show_repeat_rule' => 'show',
         ),
         'type' => 'date_default',
-        'weight' => 4,
+        'weight' => 5,
       ),
     ),
     'entity_type' => 'node',
@@ -385,6 +492,7 @@ function iasc_document_field_default_field_instances() {
   t('Please select one or more terms for the categories for the Product.');
   t('Please select the type of Document you are creating.');
   t('Product Category');
+  t('Product Thumbnail');
   t('Published Date');
 
   return $field_instances;

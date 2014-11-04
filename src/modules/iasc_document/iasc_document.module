@@ -23,6 +23,9 @@ function iasc_document_form_node_form_alter(&$form, &$form_state, $form_id) {
 
       // Show Product Category only for Products.
       $form['field_category']['#states'] = $state;
+
+      // Show Product Thumbnail only for Products.
+      $form['field_product_thumbnail']['#states'] = $state;
     }
 
     // Label should be Published date if Document is selected.
