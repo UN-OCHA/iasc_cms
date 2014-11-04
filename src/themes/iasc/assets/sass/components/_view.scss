@@ -22,11 +22,13 @@
     @media screen and (min-width: $screen-md-min) {
       width: 25%;
       padding-right: 20px;
+      &:nth-child(4n+5) { clear: left; }
       &#edit-field-oa-date-value2-wrapper {
         margin-top: 25px;
       }
     }
   }
+  .views-reset-button,
   .views-submit-button {
     width: 100%;
     padding-top: 2rem;
