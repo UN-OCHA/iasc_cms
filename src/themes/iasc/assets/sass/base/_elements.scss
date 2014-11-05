@@ -69,6 +69,7 @@ q {
   width: 100% !important;
   .chosen-choices {
     @extend .form-control;
+    input { padding: 0 !important; }
   }
 }
 

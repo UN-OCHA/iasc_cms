@@ -8300,8 +8300,12 @@ q {
   display: block !important;
   width: 100% !important;
 }
+/* line 72, ../sass/base/_elements.scss */
+.chosen-container.form-control .chosen-choices input, form.navbar-form .form-type-textfield input.chosen-container[type="text"] .chosen-choices input {
+  padding: 0 !important;
+}
 
-/* line 75, ../sass/base/_elements.scss */
+/* line 76, ../sass/base/_elements.scss */
 .form-control:focus, .chosen-container.form-control .chosen-choices:focus, form.navbar-form .form-type-textfield input[type="text"]:focus {
   -webkit-box-shadow: 0 0 0 white !important;
   box-shadow: 0 0 0 white !important;
@@ -8931,6 +8935,75 @@ img.bio-circled {
 /* line 15, ../sass/components/_panel.scss */
 .panel-success .btn, .panel-success .node-readmore a, .node-readmore .panel-success a {
   background-color: #437a75;
+}
+
+/* line 3, ../sass/components/_view.scss */
+.view-filters .container-inline-date .form-item {
+  width: 100%;
+}
+/* line 5, ../sass/components/_view.scss */
+.view-filters .container-inline-date .form-item div, .view-filters .container-inline-date .form-item input {
+  width: 100%;
+}
+/* line 7, ../sass/components/_view.scss */
+.view-filters .views-exposed-widget {
+  width: 100%;
+  padding-right: 0;
+}
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  /* line 7, ../sass/components/_view.scss */
+  .view-filters .views-exposed-widget {
+    width: 50%;
+  }
+  /* line 12, ../sass/components/_view.scss */
+  .view-filters .views-exposed-widget:nth-child(odd) {
+    padding-right: 10px;
+  }
+  /* line 15, ../sass/components/_view.scss */
+  .view-filters .views-exposed-widget:nth-child(even) {
+    padding-left: 10px;
+  }
+  /* line 18, ../sass/components/_view.scss */
+  .view-filters .views-exposed-widget#edit-field-oa-date-value2-wrapper {
+    margin-top: 25px;
+  }
+}
+@media screen and (min-width: 992px) {
+  /* line 7, ../sass/components/_view.scss */
+  .view-filters .views-exposed-widget {
+    width: 25%;
+    padding-right: 20px;
+  }
+  /* line 25, ../sass/components/_view.scss */
+  .view-filters .views-exposed-widget:nth-child(4n+5) {
+    clear: left;
+  }
+  /* line 26, ../sass/components/_view.scss */
+  .view-filters .views-exposed-widget#edit-field-oa-date-value2-wrapper {
+    margin-top: 25px;
+  }
+}
+/* line 32, ../sass/components/_view.scss */
+.view-filters .views-reset-button,
+.view-filters .views-submit-button {
+  width: 100%;
+  padding-top: 2rem;
+}
+/* line 35, ../sass/components/_view.scss */
+.view-filters .views-reset-button input, .view-filters .views-reset-button .form-item,
+.view-filters .views-submit-button input,
+.view-filters .views-submit-button .form-item {
+  float: right;
+}
+/* line 38, ../sass/components/_view.scss */
+.view-filters .views-reset-button input[type="submit"],
+.view-filters .views-submit-button input[type="submit"] {
+  margin: 0 0 0 2rem;
+}
+/* line 41, ../sass/components/_view.scss */
+.view-filters .views-reset-button .form-type-checkbox,
+.view-filters .views-submit-button .form-type-checkbox {
+  top: 8px;
 }
 
 @media screen and (min-width: 1200px) {

@@ -23,6 +23,9 @@ function iasc_document_form_node_form_alter(&$form, &$form_state, $form_id) {
 
       // Show Product Category only for Products.
       $form['field_category']['#states'] = $state;
+
+      // Show Product Thumbnail only for Products.
+      $form['field_product_thumbnail']['#states'] = $state;
     }
 
     // Label should be Published date if Document is selected.
@@ -108,4 +111,15 @@ function iasc_document_connect_file() {
       }
     }
   }
+}
+
+/**
+ *  Implements hook_panels_pane_content_alter().
+ */
+function iasc_document_panels_pane_content_alter(&$content, $pane, $args, $contexts) {
+  if ('oa_widgets_content_visibility' == $pane->type) {
+    // Don't show the "Content Visibility" block title.
+    unset($content->title);
+  }
+
 }

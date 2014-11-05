@@ -1,0 +1,45 @@
+.view-filters {
+
+  .container-inline-date .form-item {
+    width: 100%;
+    div, input { width: 100%; }
+  }
+  .views-exposed-widget {
+    width: 100%;
+    padding-right: 0;
+    @media screen and (min-width: $screen-sm-min) and (max-width: $screen-md-min) {
+      width: 50%;
+      &:nth-child(odd) {
+        padding-right: 10px;
+      }
+      &:nth-child(even) {
+        padding-left: 10px;
+      }
+      &#edit-field-oa-date-value2-wrapper {
+        margin-top: 25px;
+      }
+    }
+    @media screen and (min-width: $screen-md-min) {
+      width: 25%;
+      padding-right: 20px;
+      &:nth-child(4n+5) { clear: left; }
+      &#edit-field-oa-date-value2-wrapper {
+        margin-top: 25px;
+      }
+    }
+  }
+  .views-reset-button,
+  .views-submit-button {
+    width: 100%;
+    padding-top: 2rem;
+    input, .form-item {
+      float: right;
+    }
+    input[type="submit"] {
+      margin: 0 0 0 2rem;
+    }
+    .form-type-checkbox {
+      top: 8px;
+    }
+  }
+}
