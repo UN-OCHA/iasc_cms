@@ -154,3 +154,4 @@ dependencies[] = apachesolr_attachments
 dependencies[] = menu_attributes
 dependencies[] = title
 dependencies[] = nodequeue
+dependencies[] = access_code
