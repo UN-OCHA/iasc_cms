@@ -160,6 +160,7 @@ features[features_overrides][] = views_view.oa_event_detail.display|default|disp
 features[features_overrides][] = views_view.oa_event_detail.display|default|display_options|fields|term_node_tid
 features[features_overrides][] = views_view.oa_event_list.display|page_calendar
 features[features_overrides][] = views_view.oa_event_list.display|panel_pane_upcoming_meetings
+features[features_overrides][] = views_view.oa_event_list.display|panel_pane_upcoming_meetings_filterable
 features[field_base][] = field_agenda_items
 features[field_base][] = field_ai_description
 features[field_base][] = field_ai_title
