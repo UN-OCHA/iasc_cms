@@ -1026,3 +1026,19 @@ function iasc_contact_preprocess_views_view_table(&$vars) {
     $vars['rows'] = $rows;
   }
 }
+
+/**
+ * Implements hook_panels_pane_prerender().
+ */
+function iasc_contact_panels_pane_prerender($pane) {
+  // Contacts are not part of spaces but they do have a reference to spaces.
+  if ('search_contacts-panel_pane_contacts' == $pane->subtype) {
+    // If an authoring body is not selected, use the active space.
+    if (empty($pane->configuration['exposed']['field_body_membership_target_id'])) {
+      $space_id = oa_core_get_space_context();
+      if ($space_id) {
+        $pane->configuration['exposed']['field_body_membership_target_id'][] = $space_id;
+      }
+    }
+  }
+}
