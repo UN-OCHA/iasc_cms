@@ -248,3 +248,7 @@ projects[date_facets][subdir] = contrib
 projects[date_facets][download][type] = git
 projects[date_facets][download][branch] = 7.x-1.x
 projects[date_facets][download][revision] = 9037608
+
+projects[access_code][type] = module
+projects[access_code][version] = 1.1
+projects[access_code][subdir] = contrib
