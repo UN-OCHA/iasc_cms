@@ -272,4 +272,3 @@ function iasc_pager($variables) {
     ));
   }
 }
-
