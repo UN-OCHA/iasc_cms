@@ -3,6 +3,10 @@
  * Panel Styles
  */
 
+.panel-heading {
+  padding: 10px 15px;
+}
+
 .panel-default {
   border: none;
   .panel-heading { text-transform: uppercase; }

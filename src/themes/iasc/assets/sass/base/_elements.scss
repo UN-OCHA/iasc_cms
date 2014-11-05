@@ -61,6 +61,25 @@ q {
   img.pull-right { padding-right: 0 }
 }
 
+/* Forms */
+
+form .field-multiple-table thead th {
+  padding: 10px !important;
+}
+
+html.js fieldset.collapsed {
+  height: auto;
+  border-left-width: 1px;
+  border-right-width: 1px;
+}
+
+legend {
+  margin-bottom: 0;
+}
+label {
+  margin-bottom: 0;
+}
+
 .chosen-container.form-control {
   padding: 0;
   border: none;
@@ -75,5 +94,16 @@ q {
 
 .form-control:focus {
   @include box-shadow(0 0 0 #fff !important);
+}
+
+html.js {
+  input.form-autocomplete {
+    background-image: image-url('throbber.gif');
+    background-position: 100% 9px; 
+  }
+  input.throbbing {
+    background-image: image-url('throbber.gif');
+    background-position: 100% -121px; 
+  }
 }
 
