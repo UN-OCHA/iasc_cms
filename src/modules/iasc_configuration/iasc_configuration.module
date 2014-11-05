@@ -770,12 +770,10 @@ function iasc_configuration_flag_access($flag, $content_id, $action, $account) {
       $wrapper = entity_metadata_wrapper('node', $node);
       $type = $wrapper->field_document_type->value();
 
-      if ('Product' == $type->name) {
-        return TRUE;
+      if ('Product' != $type->name) {
+        return FALSE;
       }
     }
-
-    return FALSE;
   }
 }
 
