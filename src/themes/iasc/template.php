@@ -128,7 +128,6 @@ function iasc_links__system_secondary_menu($vars) {
 function iasc_form_panels_edit_style_type_form_alter(&$form, &$form_state, $form_id) {
 
   // Unset default panel styles.
-  unset($form['style']['style']['#options']['default']);
   unset($form['style']['style']['#options']['oa_styles_well']);
   unset($form['style']['style']['#options']['oa_styles_oa_pane']);
 
