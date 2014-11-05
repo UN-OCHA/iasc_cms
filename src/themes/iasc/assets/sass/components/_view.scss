@@ -4,30 +4,44 @@
     width: 100%;
     div, input { width: 100%; }
   }
+  
+
+  @media screen and (min-width: $screen-sm-min) {
+    #edit-field-published-date-value-1-wrapper,
+    #edit-field-oa-date-value2-wrapper {
+      .element-invisible {
+        color: transparent;
+        position: relative !important;
+        height: auto;
+        overflow: visible;
+      }
+    }
+  }
+
   .views-exposed-widget {
     width: 100%;
     padding-right: 0;
     @media screen and (min-width: $screen-sm-min) and (max-width: $screen-md-min) {
       width: 50%;
       &:nth-child(odd) {
-        padding-right: 10px;
+        padding: 10px 10px 0 0;
+        clear: left;
       }
       &:nth-child(even) {
-        padding-left: 10px;
-      }
-      &#edit-field-oa-date-value2-wrapper {
-        margin-top: 25px;
+        padding: 10px 0 0 10px;
       }
     }
     @media screen and (min-width: $screen-md-min) {
       width: 25%;
       padding-right: 20px;
-      &:nth-child(4n+5) { clear: left; }
-      &#edit-field-oa-date-value2-wrapper {
-        margin-top: 25px;
+      margin-bottom: 20px;
+      .view-iasc-document &:not(.views-submit-button) {
+        width: 33%;
+        float: left;
       }
     }
   }
+
   .views-reset-button,
   .views-submit-button {
     width: 100%;
