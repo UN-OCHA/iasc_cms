@@ -116,7 +116,7 @@ function iasc_configuration_features_override_default_overrides() {
         'override_title' => '',
         'override_title_text' => '',
         'view_mode' => 'bio_short',
-        'widget_title' => '',
+        'widget_title' => 'Contacts',
       ),
       'cache' => array(),
       'style' => array(
@@ -131,6 +131,7 @@ function iasc_configuration_features_override_default_overrides() {
       'locks' => array(),
       'uuid' => '003b40be-c976-41cd-9bcc-1fe83c4bd599',
     );
+  $overrides["panelizer_defaults.node:oa_space:default.display|content|new-18865aa1-e2a6-4d3d-93c2-3f80adf44c54|configuration|widget_title"] = 'Sections';
   $overrides["panelizer_defaults.node:oa_space:default.display|content|new-18865aa1-e2a6-4d3d-93c2-3f80adf44c54|style|settings|secondary_options"] = 'panel-primary';
   $overrides["panelizer_defaults.node:oa_space:default.display|content|new-18865aa1-e2a6-4d3d-93c2-3f80adf44c54|style|style"] = 'secondary';
   $overrides["panelizer_defaults.node:oa_space:default.display|content|new-2b5ef25a-4dce-4b89-99b7-f940adbd5e95|style|settings|secondary_options"] = 'panel-primary';
@@ -146,11 +147,18 @@ function iasc_configuration_features_override_default_overrides() {
         'view_settings' => 'fields',
         'header_type' => 'none',
         'view_mode' => 'featured',
+        'use_pager' => 0,
+        'pager_id' => 0,
+        'items_per_page' => 5,
+        'override_title' => '',
+        'override_title_text' => '',
+        'widget_title' => 'Featured Products',
       ),
       'cache' => array(),
       'style' => array(
         'settings' => array(
           'secondary_options' => 'panel-success',
+          'linked_list' => 'doc-icon',
         ),
         'style' => 'secondary',
       ),
@@ -171,11 +179,18 @@ function iasc_configuration_features_override_default_overrides() {
         'view_settings' => 'fields',
         'header_type' => 'none',
         'view_mode' => 'featured',
+        'use_pager' => 0,
+        'pager_id' => 0,
+        'items_per_page' => 5,
+        'override_title' => '',
+        'override_title_text' => '',
+        'widget_title' => 'Recently Updated Documents',
       ),
       'cache' => array(),
       'style' => array(
         'settings' => array(
           'secondary_options' => 'panel-success',
+          'linked_list' => 'doc-icon',
         ),
         'style' => 'secondary',
       ),
