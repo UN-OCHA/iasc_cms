@@ -17,6 +17,18 @@
 
 .panel-success {
   .btn { background-color: $green; }
+  &.doc-icon li:before  { @extend .icons-page; }
+  &.arrow li:before  { @extend .icons-arrow; }
+  li { 
+    line-height: 28px; 
+  }
+  &:not(.none) li:before {
+    @extend .icons;
+    color: $green;
+    margin-right: 15px;
+    font-size: 16px;
+  }
+  a { color: #000; }
 }
 
 
