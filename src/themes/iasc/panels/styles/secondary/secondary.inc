@@ -39,6 +39,7 @@ function theme_iasc_secondary_style_render_pane(&$vars) {
 
   $class[] = 'panel panel-default';
   $class[] = $settings['secondary_options'];
+  $class[] = $settings['linked_list'];
 
   $output = theme('secondary', array(
     'content' => $content,
@@ -64,5 +65,22 @@ function secondary_style_settings_form($style_settings) {
     '#default_value' => (isset($style_settings['secondary_options'])) ? $style_settings['secondary_options'] : FALSE,
     '#description' => t('Chose what kind of secondary content will be.'),
   );
+  $form['linked_list'] = array(
+    '#type' => 'select',
+    '#title' => t('List Icon'),
+    '#options' => array(
+      'none' => t('None'),
+      'doc-icon' => t('Doc Icon'),
+      'arrow' => t('Arrow'),
+    ),
+    '#default_value' => (isset($style_settings['linked_list'])) ? $style_settings['linked_list'] : FALSE,
+    '#description' => t('Add icon to the list'),
+    '#states' => array(
+      'visible' => array(
+        ':input[name="settings[secondary_options]"]' => array('value' => 'panel-success'),
+      ),
+    ),
+  );
+
   return $form;
 }

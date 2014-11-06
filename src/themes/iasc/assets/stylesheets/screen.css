@@ -8370,7 +8370,7 @@ html.js input.throbbing {
 }
 
 /* line 22, ../sass/base/_icons.scss */
-.icons, [class*="icons-"] {
+.icons, .panel-success:not(.none) li:before, [class*="icons-"] {
   font-family: "icons";
   display: inline-block;
   vertical-align: middle;
@@ -8386,12 +8386,12 @@ html.js input.throbbing {
 }
 
 /* line 40, ../sass/base/_icons.scss */
-.icons-arrow {
+.icons-arrow, .panel-success.arrow li:before {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf101;');
 }
 
 /* line 44, ../sass/base/_icons.scss */
-.icons-arrow:before {
+.icons-arrow:before, .panel-success.arrow li:before {
   content: "\f101";
 }
 
@@ -8466,12 +8466,12 @@ html.js input.throbbing {
 }
 
 /* line 104, ../sass/base/_icons.scss */
-.icons-page {
+.icons-page, .panel-success.doc-icon li:before {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf109;');
 }
 
 /* line 108, ../sass/base/_icons.scss */
-.icons-page:before {
+.icons-page:before, .panel-success.doc-icon li:before {
   content: "\f109";
 }
 
@@ -8980,6 +8980,20 @@ img.bio-circled {
 /* line 19, ../sass/components/_panel.scss */
 .panel-success .btn, .panel-success .node-readmore a, .node-readmore .panel-success a {
   background-color: #437a75;
+}
+/* line 22, ../sass/components/_panel.scss */
+.panel-success li {
+  line-height: 28px;
+}
+/* line 25, ../sass/components/_panel.scss */
+.panel-success:not(.none) li:before {
+  color: #437a75;
+  margin-right: 15px;
+  font-size: 16px;
+}
+/* line 31, ../sass/components/_panel.scss */
+.panel-success a {
+  color: #000;
 }
 
 /* line 3, ../sass/components/_view.scss */
