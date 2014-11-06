@@ -40,6 +40,7 @@ features[features_overrides][] = panelizer_defaults.node:oa_section:calendar_sec
 features[features_overrides][] = panelizer_defaults.node:oa_section:calendar_section.display|panels|sidebar|1
 features[features_overrides][] = panelizer_defaults.node:oa_section:calendar_section.display|panels|sidebar|2
 features[features_overrides][] = panelizer_defaults.node:oa_space:default.display|content|new-003b40be-c976-41cd-9bcc-1fe83c4bd599
+features[features_overrides][] = panelizer_defaults.node:oa_space:default.display|content|new-18865aa1-e2a6-4d3d-93c2-3f80adf44c54|configuration|widget_title
 features[features_overrides][] = panelizer_defaults.node:oa_space:default.display|content|new-18865aa1-e2a6-4d3d-93c2-3f80adf44c54|style|settings|secondary_options
 features[features_overrides][] = panelizer_defaults.node:oa_space:default.display|content|new-18865aa1-e2a6-4d3d-93c2-3f80adf44c54|style|style
 features[features_overrides][] = panelizer_defaults.node:oa_space:default.display|content|new-2b5ef25a-4dce-4b89-99b7-f940adbd5e95|style|settings|secondary_options

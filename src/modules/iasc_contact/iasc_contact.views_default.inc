@@ -306,15 +306,18 @@ function iasc_contact_views_default_views() {
   $handler->display->display_options['display_description'] = 'This is a role restricted page.';
   $handler->display->display_options['path'] = 'admin/search-contacts';
 
-  /* Display: Content pane */
-  $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_contacts');
+  /* Display: Contacts Content pane */
+  $handler = $view->new_display('panel_pane', 'Contacts Content pane', 'panel_pane_contacts');
   $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Contacts';
   $handler->display->display_options['defaults']['access'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['type'] = 'load_more';
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
   $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'list';
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;

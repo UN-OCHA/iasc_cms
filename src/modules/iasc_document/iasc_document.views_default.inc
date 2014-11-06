@@ -326,6 +326,8 @@ function iasc_document_views_default_views() {
 
   /* Display: Recently Updated Documents */
   $handler = $view->new_display('panel_pane', 'Recently Updated Documents', 'panel_pane_recent_docs');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Recently Updated Documents';
   $handler->display->display_options['display_description'] = 'A list of recently updated documents without a filter or dropdown list';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'list';
@@ -374,9 +376,21 @@ function iasc_document_views_default_views() {
   $handler->display->display_options['filters']['type']['group'] = 1;
   $handler->display->display_options['pane_category']['name'] = 'IASC';
   $handler->display->display_options['pane_category']['weight'] = '0';
+  $handler->display->display_options['allow']['use_pager'] = 'use_pager';
+  $handler->display->display_options['allow']['items_per_page'] = 'items_per_page';
+  $handler->display->display_options['allow']['offset'] = 0;
+  $handler->display->display_options['allow']['link_to_view'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 0;
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 'title_override';
+  $handler->display->display_options['allow']['exposed_form'] = 0;
+  $handler->display->display_options['allow']['exposed_form_configure'] = 0;
+  $handler->display->display_options['allow']['fields_override'] = 0;
 
   /* Display: Featured Products */
   $handler = $view->new_display('panel_pane', 'Featured Products', 'panel_pane_featured_products');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Featured Products';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'list';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
@@ -421,6 +435,16 @@ function iasc_document_views_default_views() {
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
   $handler->display->display_options['pane_category']['name'] = 'IASC';
   $handler->display->display_options['pane_category']['weight'] = '0';
+  $handler->display->display_options['allow']['use_pager'] = 'use_pager';
+  $handler->display->display_options['allow']['items_per_page'] = 'items_per_page';
+  $handler->display->display_options['allow']['offset'] = 0;
+  $handler->display->display_options['allow']['link_to_view'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 0;
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 'title_override';
+  $handler->display->display_options['allow']['exposed_form'] = 0;
+  $handler->display->display_options['allow']['exposed_form_configure'] = 0;
+  $handler->display->display_options['allow']['fields_override'] = 0;
   $export['iasc_document'] = $view;
 
   return $export;
