@@ -3,9 +3,22 @@
   a {
     font-family: $font-family-sans-serif;
   }
-  .icons-home { font-size: 20px; }
-
-
+  
+  .icons-home { 
+    position: relative;
+    font-weight: 900;
+    letter-spacing: initial;      
+    @media screen and (min-width: $screen-sm-min) {
+      padding-left: 30px;
+      &:before {
+        @include icomoon();
+        font-size: 20px; 
+        top: 8px;
+        left: 0;
+        position: absolute;
+      }
+    }
+  }
 }
 
 .nav-holder {
