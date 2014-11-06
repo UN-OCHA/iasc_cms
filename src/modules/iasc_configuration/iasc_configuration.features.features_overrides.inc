@@ -223,7 +223,10 @@ function iasc_configuration_features_override_default_overrides() {
       ),
       'cache' => array(),
       'style' => array(
-        'settings' => NULL,
+        'settings' => array(
+          'secondary_options' => 'panel-primary',
+        ),
+        'style' => 'secondary',
       ),
       'css' => array(),
       'extras' => array(),

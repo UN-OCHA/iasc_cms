@@ -247,7 +247,10 @@ function iasc_configuration_panelizer_defaults_override_alter(&$data) {
           ),
           'cache' => array(),
           'style' => array(
-            'settings' => NULL,
+            'settings' => array(
+              'secondary_options' => 'panel-primary',
+            ),
+            'style' => 'secondary',
           ),
           'css' => array(),
           'extras' => array(),
