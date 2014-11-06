@@ -19,15 +19,18 @@ class IASCDefault {
   protected $term = array();
   protected $terms = array();
   protected $lists = array();
-  protected $groups = array();
   protected $space = array();
   protected $dates = array();
   protected $contact = array();
+  protected static $sections = array();
 
   /**
    * Constructor.
    */
   public function __construct($type) {
+    // Determine default section names.
+    $this->mapSectionNames();
+
     // Check to see if we're updating an existing entity.
     if ($this->values['entity_id']) {
       $this->wrapper = entity_metadata_wrapper('node', $this->values['entity_id']);
@@ -55,7 +58,6 @@ class IASCDefault {
     $this->setTerm();
     $this->setTerms();
     $this->setLists();
-    // $this->setGroups();
     $this->setSpace();
     $this->setDates();
     $this->setContact();
@@ -232,6 +234,9 @@ class IASCDefault {
         if ($space_id) {
           try {
             $this->wrapper->og_group_ref->set($space_id);
+
+            // Set section for this node.
+            $this->setSection($space_id);
           }
           catch (Exception $e) {
             echo 'Caught exception on ' . $space . ': ', $e->getMessage(), "\n";
@@ -251,6 +256,169 @@ class IASCDefault {
         */
       }
     }
+  }
+
+  /**
+   * Set section based on the the legacy privacy setting.
+   *
+   * @param int $space_id
+   *   The space nid for the section.
+   */
+  protected function setSection($space_id) {
+    $legacy_privacy = FALSE;
+
+    foreach ($this->plain as $field) {
+      if ('field_legacy_publish' == $field) {
+        $legacy_privacy = $this->values['data']['field_legacy_publish'];
+        print "space id: $space_id\n";
+        print "legacy privacy: $legacy_privacy\n";
+
+        // Default is Public.
+        $section_add = '';
+        if ($legacy_privacy) {
+          switch ($legacy_privacy) {
+            case 'HLWG and IASC':
+              print 'yo';
+              $section_add = ' (Donor)';
+              break;
+
+            case 'IASC':
+            case 'IASC Admin':
+              $section_add = ' (IASC)';
+              break;
+          }
+        }
+
+        // Determine the appropriate section name.
+        $type = $this->wrapper->getBundle();
+        switch ($type) {
+          case 'oa_event':
+            $section = 'Meetings' . $section_add;
+            break;
+
+          case 'oa_wiki_page':
+            $section = 'Documents' . $section_add;
+            break;
+
+          case 'announcements':
+            $section = 'News' . $section_add;
+            break;
+        }
+
+        // Set the section.
+        if (!empty($section)) {
+          $section_nid = $this->getSection($space_id, $section);
+          if ($section_nid) {
+            print "Will save section for $space_id, $section\n";
+            try {
+              $this->wrapper->oa_section_ref->set($section_nid);
+            }
+            catch (Exception $e) {
+              echo 'Caught exception on ' . $section . ': ', $e->getMessage(), "\n";
+            }
+          }
+        }
+        break;
+      }
+    }
+  }
+
+  /**
+   * Get section node based on the parent nid and name.
+   *
+   * @param int $space_nid
+   *   The parent space nid.
+   * @param int $name
+   *   The node title for the section.
+   *
+   * @return int|bool
+   *   The nid for the section or FALSE if one does not exist.
+   */
+  protected function getSection($space_nid, $name) {
+    $query = db_select('node', 'n');
+    $query->rightJoin('og_membership', 'og', 'n.nid = og.etid');
+    $query->leftJoin('field_data_field_oa_section_weight', 'w',
+      "n.nid = w.entity_id AND w.entity_type = 'node'");
+    if (isset($status)) {
+      $query->condition('n.status', $status);
+    }
+    $query
+      ->fields('n', array('nid'))
+      ->condition('n.type', OA_SECTION_TYPE)
+      ->condition('n.title', $name)
+      ->condition('og.entity_type', 'node')
+      ->condition('og.field_name', OA_SPACE_FIELD)
+      ->condition('og.gid', $space_nid)
+      ->orderBy('w.field_oa_section_weight_value');
+
+    $result = $query->execute();
+    return $result->fetchField();
+  }
+
+  /**
+   * Setup default section names.
+   *
+   * @throws Exception
+   */
+  protected function mapSectionNames() {
+    // We only want a subset of all of the section types.
+    $section_types = array('Document Section', 'Calendar Section', 'News Section');
+
+    $groups = $this->getGroups();
+    if (!groups) {
+      throw new Exception('Missing groups.');
+    }
+
+    $sections = array();
+    foreach ($section_types as $type) {
+      $section_term = taxonomy_get_term_by_name($type, 'section_type');
+      if ($section_term) {
+        $section_term = current($section_term);
+
+        $section_name = str_replace(array('Document', 'Calendar', ' Section'),
+          array('Documents', 'Meetings', ''), $section_term->name);
+
+        $sections[$section_name] = array(
+          'tid' => $section_term->tid,
+          'group' => '',
+          'term_name' => $section_term->name,
+        );
+
+        // We need a section for each group.
+        foreach ($groups as $group) {
+          $name = $section_name;
+          $name .= " ($group->title)";
+          $sections[$name] = array(
+            'tid' => $section_term->tid,
+            'groups' => $group,
+            'term_name' => $section_term->name,
+          );
+        }
+      }
+    }
+
+    self::$sections = $sections;
+  }
+
+  /**
+   * Get the OA Groups.
+   *
+   * @return array|bool
+   *   Return an array of group nodes or FALSE if none found.
+   */
+  protected function getGroups() {
+    $query = new EntityFieldQuery();
+    $query->entityCondition('entity_type', 'node')
+      ->entityCondition('bundle', 'oa_group')
+      ->propertyOrderBy('nid', 'ASC');
+    $result = $query->execute();
+
+    if (isset($result['node'])) {
+      $nids = array_keys($result['node']);
+      return node_load_multiple($nids);
+    }
+
+    return FALSE;
   }
 
   /**
