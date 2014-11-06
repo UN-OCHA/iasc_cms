@@ -29,6 +29,10 @@ function theme_iasc_secondary_style_render_pane(&$vars) {
   $display = $vars['display'];
   $settings = $vars['settings'];
 
+  if ($pane->configuration['override_title']) {
+    $content->title = $pane->configuration['override_title_text'];
+  }
+
   if (empty($content->content)) {
     return;
   }

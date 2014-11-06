@@ -126,13 +126,9 @@ function iasc_links__system_secondary_menu($vars) {
  * Implements hook_form_FORM_ID_alter().
  */
 function iasc_form_panels_edit_style_type_form_alter(&$form, &$form_state, $form_id) {
-
   // Unset default panel styles.
   unset($form['style']['style']['#options']['oa_styles_well']);
   unset($form['style']['style']['#options']['oa_styles_oa_pane']);
-
-  // And set primary styles as default.
-  $form['style']['style']['#default_value'] = 'primary';
 }
 
 /**
