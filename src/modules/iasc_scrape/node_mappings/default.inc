@@ -270,15 +270,12 @@ class IASCDefault {
     foreach ($this->plain as $field) {
       if ('field_legacy_publish' == $field) {
         $legacy_privacy = $this->values['data']['field_legacy_publish'];
-        print "space id: $space_id\n";
-        print "legacy privacy: $legacy_privacy\n";
 
         // Default is Public.
         $section_add = '';
         if ($legacy_privacy) {
           switch ($legacy_privacy) {
             case 'HLWG and IASC':
-              print 'yo';
               $section_add = ' (Donor)';
               break;
 
@@ -309,7 +306,6 @@ class IASCDefault {
         if (!empty($section)) {
           $section_nid = $this->getSection($space_id, $section);
           if ($section_nid) {
-            print "Will save section for $space_id, $section\n";
             try {
               $this->wrapper->oa_section_ref->set($section_nid);
             }
