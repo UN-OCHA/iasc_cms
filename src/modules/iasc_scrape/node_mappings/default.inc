@@ -331,23 +331,22 @@ class IASCDefault {
    *   The nid for the section or FALSE if one does not exist.
    */
   protected function getSection($space_nid, $name) {
+    // Note: simply querying field_og_group_ref does not work.
+    // This is because the data table for the field contains no information.
+    // The information is actually stored in organic group tables.
     $query = db_select('node', 'n');
     $query->rightJoin('og_membership', 'og', 'n.nid = og.etid');
     $query->leftJoin('field_data_field_oa_section_weight', 'w',
       "n.nid = w.entity_id AND w.entity_type = 'node'");
-    if (isset($status)) {
-      $query->condition('n.status', $status);
-    }
-    $query
-      ->fields('n', array('nid'))
+    $query->fields('n', array('nid'))
       ->condition('n.type', OA_SECTION_TYPE)
       ->condition('n.title', $name)
       ->condition('og.entity_type', 'node')
       ->condition('og.field_name', OA_SPACE_FIELD)
       ->condition('og.gid', $space_nid)
       ->orderBy('w.field_oa_section_weight_value');
-
     $result = $query->execute();
+
     return $result->fetchField();
   }
 
