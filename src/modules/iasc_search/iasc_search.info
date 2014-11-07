@@ -1,4 +1,4 @@
-name = iasc_search
+name = IASC Search
 core = 7.x
 package = IASC
 dependencies[] = ctools
