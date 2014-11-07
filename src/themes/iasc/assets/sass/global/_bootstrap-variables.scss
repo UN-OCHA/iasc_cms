@@ -344,9 +344,9 @@ $navbar-default-border:               $brand-primary; //darken($navbar-default-b
 
 // Navbar links
 $navbar-default-link-color:                   #fff; 
-$navbar-default-link-hover-color:             lighten(#fff, 20%);
-// $navbar-default-link-hover-bg:             transparent
-// $navbar-default-link-active-color:         lighten(#fff, 20%);
+$navbar-default-link-hover-color:             #fff;
+$navbar-default-link-hover-bg:                transparent;
+$navbar-default-link-active-color:            #fff;
 $navbar-default-link-active-bg:               $brand-primary;
 // $navbar-default-link-disabled-color:       #ccc
 // $navbar-default-link-disabled-bg:          transparent
