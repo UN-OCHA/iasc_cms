@@ -1,0 +1,27 @@
+<?php
+
+/**
+ * @file
+ * Install file for IASC WYSIWYG.
+ */
+
+/**
+ * Implements hook_install().
+ *
+ * We want our module to weigh heavier than oa_config so that we can override
+ * the feature override for table buttons in oa_config.
+ */
+function iasc_wysiwyg_install() {
+  // Get the weight of the oa_config module.
+  $weight = db_select('system', 's')
+    ->fields('s', array('weight'))
+    ->condition('name', 'oa_config', '=')
+    ->execute()
+    ->fetchField();
+
+  // Set our module to a weight 1 heavier, so ours moves lower in execution order.
+  db_update('system')
+    ->fields(array('weight' => $weight + 1))
+    ->condition('name', 'iasc_wysiwyg', '=')
+    ->execute();
+}

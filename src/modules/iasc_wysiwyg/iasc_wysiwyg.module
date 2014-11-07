@@ -1,0 +1,35 @@
+<?php
+/**
+ * @file
+ * Code for the IASC WYSIWYG feature.
+ */
+
+include_once 'iasc_wysiwyg.features.inc';
+
+/**
+ * Implementation of hook_module_implements_alter()
+ */
+function iasc_wysiwyg_module_implements_alter(&$implementations, $hook) {
+  if ($hook == 'wysiwyg_editor_settings_alter') {
+    $group = $implementations['iasc_wysiwyg'];
+    unset($implementations['iasc_wysiwyg']);
+    $implementations['iasc_wysiwyg'] = $group;
+  }
+}
+
+/**
+ * Implements hook_wysiwyg_editor_settings_alter().
+ *
+ * Modify the Panopoly improvements WYSIWYG editor settings for tinymce.
+ */
+function iasc_wysiwyg_wysiwyg_editor_settings_alter(&$settings, $context) {
+  switch ($context['editor']['name']) {
+    case 'tinymce':
+      // Make all our buttons display all on 1 line in the wysiwyg.
+      $settings['theme_advanced_buttons1'] .= ',' . $settings['theme_advanced_buttons2'];
+      $settings['theme_advanced_buttons1'] .= ',' . $settings['theme_advanced_buttons3'];
+      unset($settings['theme_advanced_buttons2']);
+      unset($settings['theme_advanced_buttons3']);
+      break;
+  }
+}
