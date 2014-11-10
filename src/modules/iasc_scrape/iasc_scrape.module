@@ -149,7 +149,10 @@ function iasc_scrape_save($values) {
   // Save record.
   if (!empty($record['data'])) {
     db_merge('iasc_scrape')
-      ->key(array('legacy_id' => $record['legacy_id']))
+      ->key(array(
+        'legacy_id' => $record['legacy_id'],
+        'type' => $values['type'],
+      ))
       ->fields($record)
       ->execute();
   }
@@ -199,7 +202,7 @@ function iasc_scrape_save_node($type) {
     $class = 'IASC' . ucfirst($type);
     $node = new $class($values);
     $node = $node->entity;
-    iasc_scrape_update($values['legacy_id'], $node->nid);
+    iasc_scrape_update($values['legacy_id'], $node->nid, $type);
     drupal_set_message(t(
       '@type (@nodetype) saved. Nid: @nid Title: @title',
       array(
@@ -255,9 +258,12 @@ function iasc_scrape_get_scraped_legacy_fid() {
 /**
  * Update the row to set that it's scraped.
  */
-function iasc_scrape_update($legacy_id, $entity_id) {
+function iasc_scrape_update($legacy_id, $entity_id, $type) {
   db_merge('iasc_scrape')
-    ->key(array('legacy_id' => $legacy_id))
+    ->key(array(
+      'legacy_id' => $legacy_id,
+      'type' => $type,
+    ))
     ->fields(array(
       'status' => 1,
       'entity_id' => $entity_id,

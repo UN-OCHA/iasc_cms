@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the iasc_search feature.
+ */
+
+include_once 'iasc_search.features.inc';

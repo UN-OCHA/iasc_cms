@@ -1,0 +1,183 @@
+<?php
+/**
+ * @file
+ * iasc_search.features.features_overrides.inc
+ */
+
+/**
+ * Implements hook_features_override_default_overrides().
+ */
+function iasc_search_features_override_default_overrides() {
+  // This code is only used for UI in features. Exported alters hooks do the magic.
+  $overrides = array();
+
+  // Exported overrides for: apachesolr_environment
+  $overrides["apachesolr_environment.solr.conf|apachesolr_direct_commit"] = 1;
+  $overrides["apachesolr_environment.solr.conf|apachesolr_index_last|file"] = array(
+    'last_changed' => 1415114184,
+    'last_entity_id' => 751,
+  );
+  $overrides["apachesolr_environment.solr.conf|apachesolr_index_last|node|last_changed"] = 1415307892;
+  $overrides["apachesolr_environment.solr.conf|apachesolr_index_last|node|last_entity_id"] = 2803;
+  $overrides["apachesolr_environment.solr.conf|apachesolr_index_last|user|last_changed"] = 1415213596;
+  $overrides["apachesolr_environment.solr.conf|apachesolr_index_last|user|last_entity_id"] = 42;
+  $overrides["apachesolr_environment.solr.conf|apachesolr_index_updated"] = 0;
+  $overrides["apachesolr_environment.solr.conf|apachesolr_last_optimize"] = 1415323886;
+  $overrides["apachesolr_environment.solr.conf|apachesolr_read_only"] = 0;
+  $overrides["apachesolr_environment.solr.conf|apachesolr_soft_commit"] = 1;
+  $overrides["apachesolr_environment.solr.index_bundles|file"] = array(
+    0 => 'audio',
+    1 => 'document',
+    2 => 'image',
+    3 => 'video',
+  );
+  $overrides["apachesolr_environment.solr.index_bundles|node|0"] = 'oa_event';
+  $overrides["apachesolr_environment.solr.index_bundles|node|1"] = 'oa_space';
+  $overrides["apachesolr_environment.solr.index_bundles|node|10"]["DELETED"] = TRUE;
+  $overrides["apachesolr_environment.solr.index_bundles|node|2"] = 'oa_wiki_page';
+  $overrides["apachesolr_environment.solr.index_bundles|node|3"] = 'panopoly_page';
+  $overrides["apachesolr_environment.solr.index_bundles|node|4"]["DELETED"] = TRUE;
+  $overrides["apachesolr_environment.solr.index_bundles|node|5"]["DELETED"] = TRUE;
+  $overrides["apachesolr_environment.solr.index_bundles|node|6"]["DELETED"] = TRUE;
+  $overrides["apachesolr_environment.solr.index_bundles|node|7"]["DELETED"] = TRUE;
+  $overrides["apachesolr_environment.solr.index_bundles|node|8"]["DELETED"] = TRUE;
+  $overrides["apachesolr_environment.solr.index_bundles|node|9"]["DELETED"] = TRUE;
+  $overrides["apachesolr_environment.solr.index_bundles|user"]["DELETED"] = TRUE;
+
+  // Exported overrides for: facetapi
+  $overrides["facetapi.apachesolr@solr:block:created.enabled"] = FALSE;
+  $overrides["facetapi.apachesolr@solr:block:sm_oa_section_ref.enabled"] = FALSE;
+
+  // Exported overrides for: field_instance
+  $overrides["field_instance.node-oa_discussion_post-og_group_ref.display|bio_long"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
+
+  // Exported overrides for: page_manager_handlers
+  $overrides["page_manager_handlers.search_node_panel_context_apachesolr.conf|display|content|new-6724ddeb-08bf-4792-bcd9-6bb074e1b26d"] = (object) array(
+      'pid' => 'new-6724ddeb-08bf-4792-bcd9-6bb074e1b26d',
+      'panel' => 'sidebar',
+      'type' => 'block',
+      'subtype' => 'facetapi-Twu0IoflQ0tCVFvfi2LFrGPGO28QTKg2',
+      'shown' => TRUE,
+      'access' => array(),
+      'configuration' => array(
+        'context' => 'argument_string_1',
+        'override_title' => 1,
+        'override_title_text' => 'Meeting Date',
+      ),
+      'cache' => array(),
+      'style' => array(
+        'settings' => NULL,
+      ),
+      'css' => array(),
+      'extras' => array(),
+      'position' => 5,
+      'locks' => array(),
+      'uuid' => '6724ddeb-08bf-4792-bcd9-6bb074e1b26d',
+    );
+  $overrides["page_manager_handlers.search_node_panel_context_apachesolr.conf|display|content|new-693a6a4c-b829-490a-b985-ef3b1452bc62|configuration|context"] = 'argument_string_1';
+  $overrides["page_manager_handlers.search_node_panel_context_apachesolr.conf|display|content|new-693a6a4c-b829-490a-b985-ef3b1452bc62|configuration|override_title_text"] = 'Authoring Body';
+  $overrides["page_manager_handlers.search_node_panel_context_apachesolr.conf|display|content|new-693a6a4c-b829-490a-b985-ef3b1452bc62|position"] = 1;
+  $overrides["page_manager_handlers.search_node_panel_context_apachesolr.conf|display|content|new-7ed46a82-19a3-409e-b5bb-9b4036327874"] = (object) array(
+      'pid' => 'new-7ed46a82-19a3-409e-b5bb-9b4036327874',
+      'panel' => 'sidebar',
+      'type' => 'block',
+      'subtype' => 'facetapi-4tlFBXQsusEWPvDYbaIuku11CSsa9PaJ',
+      'shown' => TRUE,
+      'access' => array(),
+      'configuration' => array(
+        'context' => 'argument_string_1',
+        'override_title' => 1,
+        'override_title_text' => 'Published Date',
+      ),
+      'cache' => array(),
+      'style' => array(
+        'settings' => NULL,
+      ),
+      'css' => array(),
+      'extras' => array(),
+      'position' => 4,
+      'locks' => array(),
+      'uuid' => '7ed46a82-19a3-409e-b5bb-9b4036327874',
+    );
+  $overrides["page_manager_handlers.search_node_panel_context_apachesolr.conf|display|content|new-8a7e45ba-2ffc-4ec8-84f0-20bbd6ca08ea"] = (object) array(
+      'pid' => 'new-8a7e45ba-2ffc-4ec8-84f0-20bbd6ca08ea',
+      'panel' => 'sidebar',
+      'type' => 'block',
+      'subtype' => 'facetapi-4Zh0ggJMBgeeYbrLPJCe8EML3A6PLE0J',
+      'shown' => TRUE,
+      'access' => array(),
+      'configuration' => array(
+        'context' => 'argument_string_1',
+        'override_title' => 1,
+        'override_title_text' => 'Product Category',
+      ),
+      'cache' => array(),
+      'style' => array(
+        'settings' => NULL,
+      ),
+      'css' => array(),
+      'extras' => array(),
+      'position' => 3,
+      'locks' => array(),
+      'uuid' => '8a7e45ba-2ffc-4ec8-84f0-20bbd6ca08ea',
+    );
+  $overrides["page_manager_handlers.search_node_panel_context_apachesolr.conf|display|content|new-ac601488-2d1a-4098-b231-f9acd96ec8fc"] = (object) array(
+      'pid' => 'new-ac601488-2d1a-4098-b231-f9acd96ec8fc',
+      'panel' => 'sidebar',
+      'type' => 'block',
+      'subtype' => 'facetapi-CoAiUJ4oF1m1W4ZI3N00oQL1yBDDz2zJ',
+      'shown' => TRUE,
+      'access' => array(),
+      'configuration' => array(
+        'context' => 'argument_string_1',
+        'override_title' => 1,
+        'override_title_text' => 'Meeting Host',
+      ),
+      'cache' => array(),
+      'style' => array(
+        'settings' => NULL,
+      ),
+      'css' => array(),
+      'extras' => array(),
+      'position' => 6,
+      'locks' => array(),
+      'uuid' => 'ac601488-2d1a-4098-b231-f9acd96ec8fc',
+    );
+  $overrides["page_manager_handlers.search_node_panel_context_apachesolr.conf|display|content|new-d20db8aa-7a1c-4920-be9d-ebcdaa896b4b"] = (object) array(
+      'pid' => 'new-d20db8aa-7a1c-4920-be9d-ebcdaa896b4b',
+      'panel' => 'sidebar',
+      'type' => 'block',
+      'subtype' => 'facetapi-rdivo01SKN5F1E4FueqZJl3JRX19bxQ4',
+      'shown' => TRUE,
+      'access' => array(),
+      'configuration' => array(
+        'context' => 'argument_string_1',
+        'override_title' => 1,
+        'override_title_text' => 'Document Type',
+      ),
+      'cache' => array(),
+      'style' => array(
+        'settings' => NULL,
+      ),
+      'css' => array(),
+      'extras' => array(),
+      'position' => 2,
+      'locks' => array(),
+      'uuid' => 'd20db8aa-7a1c-4920-be9d-ebcdaa896b4b',
+    );
+  $overrides["page_manager_handlers.search_node_panel_context_apachesolr.conf|display|content|new-eed5638b-f350-4b54-b718-1ad25538945c"]["DELETED"] = TRUE;
+  $overrides["page_manager_handlers.search_node_panel_context_apachesolr.conf|display|content|new-f3bdafc7-f1bc-4d50-9522-6c9595542d2d"]["DELETED"] = TRUE;
+  $overrides["page_manager_handlers.search_node_panel_context_apachesolr.conf|display|panels|sidebar|1"] = 'new-693a6a4c-b829-490a-b985-ef3b1452bc62';
+  $overrides["page_manager_handlers.search_node_panel_context_apachesolr.conf|display|panels|sidebar|2"] = 'new-d20db8aa-7a1c-4920-be9d-ebcdaa896b4b';
+  $overrides["page_manager_handlers.search_node_panel_context_apachesolr.conf|display|panels|sidebar|3"] = 'new-8a7e45ba-2ffc-4ec8-84f0-20bbd6ca08ea';
+  $overrides["page_manager_handlers.search_node_panel_context_apachesolr.conf|display|panels|sidebar|4"] = 'new-7ed46a82-19a3-409e-b5bb-9b4036327874';
+  $overrides["page_manager_handlers.search_node_panel_context_apachesolr.conf|display|panels|sidebar|5"] = 'new-6724ddeb-08bf-4792-bcd9-6bb074e1b26d';
+  $overrides["page_manager_handlers.search_node_panel_context_apachesolr.conf|display|panels|sidebar|6"] = 'new-ac601488-2d1a-4098-b231-f9acd96ec8fc';
+
+ return $overrides;
+}
