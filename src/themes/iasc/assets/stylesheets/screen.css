@@ -4485,8 +4485,8 @@ tbody.collapse.in {
 /* line 77, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_dropdowns.scss */
 .dropdown-menu > li > a:hover, ul.menu > li > a:hover, .dropdown-menu > li > a:focus, ul.menu > li > a:focus {
   text-decoration: none;
-  color: #262626;
-  background-color: #ffeff7;
+  color: white;
+  background-color: #7c435f;
 }
 
 /* line 88, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_dropdowns.scss */
@@ -8792,6 +8792,35 @@ header.container .top {
   .brand {
     max-width: 360px;
   }
+}
+
+/* line 2, ../sass/components/_iasc-organizatinos.scss */
+.view-display-id-panel_pane_membership_logos h4 {
+  clear: both;
+}
+/* line 6, ../sass/components/_iasc-organizatinos.scss */
+.view-display-id-panel_pane_membership_logos ul li {
+  position: relative;
+  float: left;
+  width: 50%;
+  text-align: center;
+  padding: 0 8px;
+}
+/* line 13, ../sass/components/_iasc-organizatinos.scss */
+.view-display-id-panel_pane_membership_logos ul li:nth-child(2n+3) {
+  clear: left;
+}
+/* line 16, ../sass/components/_iasc-organizatinos.scss */
+.view-display-id-panel_pane_membership_logos ul a {
+  height: 100px;
+  line-height: 100px;
+}
+/* line 20, ../sass/components/_iasc-organizatinos.scss */
+.view-display-id-panel_pane_membership_logos ul img {
+  vertical-align: middle;
+  margin-bottom: 44px;
+  padding: 0;
+  width: auto;
 }
 
 /**
