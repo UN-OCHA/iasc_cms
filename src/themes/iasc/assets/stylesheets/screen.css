@@ -6665,28 +6665,28 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:hover, a.list-g
 }
 
 /* line 16, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_panels.scss */
-.panel-body {
+.panel-body, .view-display-id-panel_pane_membership_logos ul {
   padding: 20px 30px;
 }
 /* line 15, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/mixins/_clearfix.scss */
-.panel-body:before, .panel-body:after {
+.panel-body:before, .view-display-id-panel_pane_membership_logos ul:before, .panel-body:after, .view-display-id-panel_pane_membership_logos ul:after {
   content: " ";
   display: table;
 }
 /* line 19, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/mixins/_clearfix.scss */
-.panel-body:after {
+.panel-body:after, .view-display-id-panel_pane_membership_logos ul:after {
   clear: both;
 }
 
 /* line 22, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_panels.scss */
-.panel-heading {
+.panel-heading, .view-display-id-panel_pane_membership_logos h4 {
   padding: 10px 15px;
   border-bottom: 1px solid transparent;
   border-top-right-radius: -1;
   border-top-left-radius: -1;
 }
 /* line 27, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_panels.scss */
-.panel-heading > .dropdown .dropdown-toggle, .panel-heading > .expanded .dropdown-toggle, .panel-heading > .dropdown a.menu, .panel-heading > .expanded a.menu {
+.panel-heading > .dropdown .dropdown-toggle, .view-display-id-panel_pane_membership_logos h4 > .dropdown .dropdown-toggle, .panel-heading > .expanded .dropdown-toggle, .view-display-id-panel_pane_membership_logos h4 > .expanded .dropdown-toggle, .panel-heading > .dropdown a.menu, .view-display-id-panel_pane_membership_logos h4 > .dropdown a.menu, .panel-heading > .expanded a.menu, .view-display-id-panel_pane_membership_logos h4 > .expanded a.menu {
   color: inherit;
 }
 
@@ -6734,7 +6734,7 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:hover, a.list-g
 }
 
 /* line 85, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_panels.scss */
-.panel-heading + .list-group .list-group-item:first-child {
+.panel-heading + .list-group .list-group-item:first-child, .view-display-id-panel_pane_membership_logos h4 + .list-group .list-group-item:first-child {
   border-top-width: 0;
 }
 
@@ -6806,8 +6806,9 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:hover, a.list-g
   border-bottom-right-radius: -1;
 }
 /* line 143, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_panels.scss */
-.panel > .panel-body + .table,
-.panel > .panel-body + .table-responsive {
+.panel > .panel-body + .table, .view-display-id-panel_pane_membership_logos .panel > ul + .table,
+.panel > .panel-body + .table-responsive,
+.view-display-id-panel_pane_membership_logos .panel > ul + .table-responsive {
   border-top: 1px solid #dddddd;
 }
 /* line 147, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_panels.scss */
@@ -6892,11 +6893,11 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:hover, a.list-g
   margin-top: 5px;
 }
 /* line 210, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_panels.scss */
-.panel-group .panel-heading {
+.panel-group .panel-heading, .panel-group .view-display-id-panel_pane_membership_logos h4, .view-display-id-panel_pane_membership_logos .panel-group h4 {
   border-bottom: 0;
 }
 /* line 212, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_panels.scss */
-.panel-group .panel-heading + .panel-collapse > .panel-body {
+.panel-group .panel-heading + .panel-collapse > .panel-body, .panel-group .view-display-id-panel_pane_membership_logos h4 + .panel-collapse > .panel-body, .view-display-id-panel_pane_membership_logos .panel-group h4 + .panel-collapse > .panel-body, .panel-group .view-display-id-panel_pane_membership_logos .panel-heading + .panel-collapse > ul, .view-display-id-panel_pane_membership_logos .panel-group .panel-heading + .panel-collapse > ul, .panel-group .view-display-id-panel_pane_membership_logos h4 + .panel-collapse > ul, .view-display-id-panel_pane_membership_logos .panel-group h4 + .panel-collapse > ul {
   border-top: 1px solid none;
 }
 /* line 216, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_panels.scss */
@@ -6904,7 +6905,7 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:hover, a.list-g
   border-top: 0;
 }
 /* line 218, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_panels.scss */
-.panel-group .panel-footer + .panel-collapse .panel-body {
+.panel-group .panel-footer + .panel-collapse .panel-body, .panel-group .panel-footer + .panel-collapse .view-display-id-panel_pane_membership_logos ul, .view-display-id-panel_pane_membership_logos .panel-group .panel-footer + .panel-collapse ul {
   border-bottom: 1px solid none;
 }
 
@@ -6913,22 +6914,22 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:hover, a.list-g
   border-color: #dddddd;
 }
 /* line 6, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/mixins/_panels.scss */
-.panel-default > .panel-heading {
+.panel-default > .panel-heading, .view-display-id-panel_pane_membership_logos .panel-default > h4 {
   color: #333333;
   background-color: whitesmoke;
   border-color: #dddddd;
 }
 /* line 11, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/mixins/_panels.scss */
-.panel-default > .panel-heading + .panel-collapse > .panel-body {
+.panel-default > .panel-heading + .panel-collapse > .panel-body, .view-display-id-panel_pane_membership_logos .panel-default > h4 + .panel-collapse > .panel-body, .view-display-id-panel_pane_membership_logos .panel-default > .panel-heading + .panel-collapse > ul, .view-display-id-panel_pane_membership_logos .panel-default > h4 + .panel-collapse > ul {
   border-top-color: #dddddd;
 }
 /* line 14, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/mixins/_panels.scss */
-.panel-default > .panel-heading .badge {
+.panel-default > .panel-heading .badge, .view-display-id-panel_pane_membership_logos .panel-default > h4 .badge {
   color: whitesmoke;
   background-color: #333333;
 }
 /* line 20, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/mixins/_panels.scss */
-.panel-default > .panel-footer + .panel-collapse > .panel-body {
+.panel-default > .panel-footer + .panel-collapse > .panel-body, .view-display-id-panel_pane_membership_logos .panel-default > .panel-footer + .panel-collapse > ul {
   border-bottom-color: #dddddd;
 }
 
@@ -6937,22 +6938,22 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:hover, a.list-g
   border-color: #6e0138;
 }
 /* line 6, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/mixins/_panels.scss */
-.panel-primary > .panel-heading {
+.panel-primary > .panel-heading, .view-display-id-panel_pane_membership_logos .panel-primary > h4 {
   color: white;
   background-color: #6e0138;
   border-color: #6e0138;
 }
 /* line 11, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/mixins/_panels.scss */
-.panel-primary > .panel-heading + .panel-collapse > .panel-body {
+.panel-primary > .panel-heading + .panel-collapse > .panel-body, .view-display-id-panel_pane_membership_logos .panel-primary > h4 + .panel-collapse > .panel-body, .view-display-id-panel_pane_membership_logos .panel-primary > .panel-heading + .panel-collapse > ul, .view-display-id-panel_pane_membership_logos .panel-primary > h4 + .panel-collapse > ul {
   border-top-color: #6e0138;
 }
 /* line 14, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/mixins/_panels.scss */
-.panel-primary > .panel-heading .badge {
+.panel-primary > .panel-heading .badge, .view-display-id-panel_pane_membership_logos .panel-primary > h4 .badge {
   color: #6e0138;
   background-color: white;
 }
 /* line 20, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/mixins/_panels.scss */
-.panel-primary > .panel-footer + .panel-collapse > .panel-body {
+.panel-primary > .panel-footer + .panel-collapse > .panel-body, .view-display-id-panel_pane_membership_logos .panel-primary > .panel-footer + .panel-collapse > ul {
   border-bottom-color: #6e0138;
 }
 
@@ -6961,22 +6962,22 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:hover, a.list-g
   border-color: #d6e9c6;
 }
 /* line 6, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/mixins/_panels.scss */
-.panel-success > .panel-heading {
+.panel-success > .panel-heading, .view-display-id-panel_pane_membership_logos .panel-success > h4 {
   color: white;
   background-color: #437a75;
   border-color: #d6e9c6;
 }
 /* line 11, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/mixins/_panels.scss */
-.panel-success > .panel-heading + .panel-collapse > .panel-body {
+.panel-success > .panel-heading + .panel-collapse > .panel-body, .view-display-id-panel_pane_membership_logos .panel-success > h4 + .panel-collapse > .panel-body, .view-display-id-panel_pane_membership_logos .panel-success > .panel-heading + .panel-collapse > ul, .view-display-id-panel_pane_membership_logos .panel-success > h4 + .panel-collapse > ul {
   border-top-color: #d6e9c6;
 }
 /* line 14, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/mixins/_panels.scss */
-.panel-success > .panel-heading .badge {
+.panel-success > .panel-heading .badge, .view-display-id-panel_pane_membership_logos .panel-success > h4 .badge {
   color: #437a75;
   background-color: white;
 }
 /* line 20, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/mixins/_panels.scss */
-.panel-success > .panel-footer + .panel-collapse > .panel-body {
+.panel-success > .panel-footer + .panel-collapse > .panel-body, .view-display-id-panel_pane_membership_logos .panel-success > .panel-footer + .panel-collapse > ul {
   border-bottom-color: #d6e9c6;
 }
 
@@ -6985,22 +6986,22 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:hover, a.list-g
   border-color: #bce8f1;
 }
 /* line 6, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/mixins/_panels.scss */
-.panel-info > .panel-heading {
+.panel-info > .panel-heading, .view-display-id-panel_pane_membership_logos .panel-info > h4 {
   color: white;
   background-color: #d9190a;
   border-color: #bce8f1;
 }
 /* line 11, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/mixins/_panels.scss */
-.panel-info > .panel-heading + .panel-collapse > .panel-body {
+.panel-info > .panel-heading + .panel-collapse > .panel-body, .view-display-id-panel_pane_membership_logos .panel-info > h4 + .panel-collapse > .panel-body, .view-display-id-panel_pane_membership_logos .panel-info > .panel-heading + .panel-collapse > ul, .view-display-id-panel_pane_membership_logos .panel-info > h4 + .panel-collapse > ul {
   border-top-color: #bce8f1;
 }
 /* line 14, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/mixins/_panels.scss */
-.panel-info > .panel-heading .badge {
+.panel-info > .panel-heading .badge, .view-display-id-panel_pane_membership_logos .panel-info > h4 .badge {
   color: #d9190a;
   background-color: white;
 }
 /* line 20, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/mixins/_panels.scss */
-.panel-info > .panel-footer + .panel-collapse > .panel-body {
+.panel-info > .panel-footer + .panel-collapse > .panel-body, .view-display-id-panel_pane_membership_logos .panel-info > .panel-footer + .panel-collapse > ul {
   border-bottom-color: #bce8f1;
 }
 
@@ -7009,22 +7010,22 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:hover, a.list-g
   border-color: #faebcc;
 }
 /* line 6, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/mixins/_panels.scss */
-.panel-warning > .panel-heading {
+.panel-warning > .panel-heading, .view-display-id-panel_pane_membership_logos .panel-warning > h4 {
   color: #8a6d3b;
   background-color: #fcf8e3;
   border-color: #faebcc;
 }
 /* line 11, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/mixins/_panels.scss */
-.panel-warning > .panel-heading + .panel-collapse > .panel-body {
+.panel-warning > .panel-heading + .panel-collapse > .panel-body, .view-display-id-panel_pane_membership_logos .panel-warning > h4 + .panel-collapse > .panel-body, .view-display-id-panel_pane_membership_logos .panel-warning > .panel-heading + .panel-collapse > ul, .view-display-id-panel_pane_membership_logos .panel-warning > h4 + .panel-collapse > ul {
   border-top-color: #faebcc;
 }
 /* line 14, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/mixins/_panels.scss */
-.panel-warning > .panel-heading .badge {
+.panel-warning > .panel-heading .badge, .view-display-id-panel_pane_membership_logos .panel-warning > h4 .badge {
   color: #fcf8e3;
   background-color: #8a6d3b;
 }
 /* line 20, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/mixins/_panels.scss */
-.panel-warning > .panel-footer + .panel-collapse > .panel-body {
+.panel-warning > .panel-footer + .panel-collapse > .panel-body, .view-display-id-panel_pane_membership_logos .panel-warning > .panel-footer + .panel-collapse > ul {
   border-bottom-color: #faebcc;
 }
 
@@ -7033,22 +7034,22 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:hover, a.list-g
   border-color: #ebccd1;
 }
 /* line 6, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/mixins/_panels.scss */
-.panel-danger > .panel-heading {
+.panel-danger > .panel-heading, .view-display-id-panel_pane_membership_logos .panel-danger > h4 {
   color: #a94442;
   background-color: #f2dede;
   border-color: #ebccd1;
 }
 /* line 11, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/mixins/_panels.scss */
-.panel-danger > .panel-heading + .panel-collapse > .panel-body {
+.panel-danger > .panel-heading + .panel-collapse > .panel-body, .view-display-id-panel_pane_membership_logos .panel-danger > h4 + .panel-collapse > .panel-body, .view-display-id-panel_pane_membership_logos .panel-danger > .panel-heading + .panel-collapse > ul, .view-display-id-panel_pane_membership_logos .panel-danger > h4 + .panel-collapse > ul {
   border-top-color: #ebccd1;
 }
 /* line 14, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/mixins/_panels.scss */
-.panel-danger > .panel-heading .badge {
+.panel-danger > .panel-heading .badge, .view-display-id-panel_pane_membership_logos .panel-danger > h4 .badge {
   color: #f2dede;
   background-color: #a94442;
 }
 /* line 20, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/mixins/_panels.scss */
-.panel-danger > .panel-footer + .panel-collapse > .panel-body {
+.panel-danger > .panel-footer + .panel-collapse > .panel-body, .view-display-id-panel_pane_membership_logos .panel-danger > .panel-footer + .panel-collapse > ul {
   border-bottom-color: #ebccd1;
 }
 
@@ -8619,11 +8620,11 @@ body.ctools-modal-open {
   border: 1px solid #ddd;
 }
 /* line 331, ../sass/base/_structure.scss */
-#modal-content fieldset.widget-preview .panel-heading {
+#modal-content fieldset.widget-preview .panel-heading, #modal-content fieldset.widget-preview .view-display-id-panel_pane_membership_logos h4, .view-display-id-panel_pane_membership_logos #modal-content fieldset.widget-preview h4 {
   position: relative;
 }
 /* line 333, ../sass/base/_structure.scss */
-#modal-content fieldset.widget-preview .panel-heading .btn, #modal-content fieldset.widget-preview .panel-heading .node-readmore a, .node-readmore #modal-content fieldset.widget-preview .panel-heading a {
+#modal-content fieldset.widget-preview .panel-heading .btn, #modal-content fieldset.widget-preview .view-display-id-panel_pane_membership_logos h4 .btn, .view-display-id-panel_pane_membership_logos #modal-content fieldset.widget-preview h4 .btn, #modal-content fieldset.widget-preview .panel-heading .node-readmore a, .node-readmore #modal-content fieldset.widget-preview .panel-heading a, #modal-content fieldset.widget-preview .view-display-id-panel_pane_membership_logos h4 .node-readmore a, .node-readmore #modal-content fieldset.widget-preview .view-display-id-panel_pane_membership_logos h4 a, .view-display-id-panel_pane_membership_logos #modal-content fieldset.widget-preview h4 .node-readmore a, .node-readmore .view-display-id-panel_pane_membership_logos #modal-content fieldset.widget-preview h4 a {
   position: absolute;
   right: 10px;
   top: 5px;
@@ -8794,6 +8795,57 @@ header.container .top {
   }
 }
 
+/* line 1, ../sass/components/_iasc-organization.scss */
+.view-display-id-panel_pane_membership_logos {
+  margin: -20px -30px;
+  background: #fff;
+}
+/* line 5, ../sass/components/_iasc-organization.scss */
+.view-display-id-panel_pane_membership_logos h4 {
+  color: #fff;
+  background-color: #6e0138;
+  clear: both;
+  margin: 0;
+}
+/* line 12, ../sass/components/_iasc-organization.scss */
+.view-display-id-panel_pane_membership_logos ul {
+  background-color: #eceff0;
+  margin-bottom: 20px;
+}
+/* line 15, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/mixins/_clearfix.scss */
+.view-display-id-panel_pane_membership_logos ul:before, .view-display-id-panel_pane_membership_logos ul:after {
+  content: " ";
+  display: table;
+}
+/* line 19, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/mixins/_clearfix.scss */
+.view-display-id-panel_pane_membership_logos ul:after {
+  clear: both;
+}
+/* line 17, ../sass/components/_iasc-organization.scss */
+.view-display-id-panel_pane_membership_logos ul li {
+  position: relative;
+  float: left;
+  width: 50%;
+  text-align: center;
+  padding: 0 8px;
+}
+/* line 24, ../sass/components/_iasc-organization.scss */
+.view-display-id-panel_pane_membership_logos ul li:nth-child(2n+3) {
+  clear: left;
+}
+/* line 27, ../sass/components/_iasc-organization.scss */
+.view-display-id-panel_pane_membership_logos ul a {
+  height: 100px;
+  line-height: 100px;
+}
+/* line 31, ../sass/components/_iasc-organization.scss */
+.view-display-id-panel_pane_membership_logos ul img {
+  vertical-align: middle;
+  margin-bottom: 44px;
+  padding: 0;
+  width: auto;
+}
+
 /**
  * Image style styles
  */
@@ -8922,7 +8974,7 @@ img.bio-circled {
  * Contact Node
  */
 /* line 11, ../sass/components/_node.scss */
-.panel-primary .panel-body .node-contact {
+.panel-primary .panel-body .node-contact, .panel-primary .view-display-id-panel_pane_membership_logos ul .node-contact, .view-display-id-panel_pane_membership_logos .panel-primary ul .node-contact {
   text-align: left;
 }
 /* line 12, ../sass/components/_node.scss */
@@ -8987,7 +9039,7 @@ img.bio-circled {
  * Panel Styles
  */
 /* line 6, ../sass/components/_panel.scss */
-.panel-heading {
+.panel-heading, .view-display-id-panel_pane_membership_logos h4 {
   padding: 10px 15px;
 }
 
@@ -8996,12 +9048,12 @@ img.bio-circled {
   border: none;
 }
 /* line 12, ../sass/components/_panel.scss */
-.panel-default .panel-heading {
+.panel-default .panel-heading, .panel-default .view-display-id-panel_pane_membership_logos h4, .view-display-id-panel_pane_membership_logos .panel-default h4 {
   text-transform: uppercase;
 }
 
 /* line 15, ../sass/components/_panel.scss */
-.panel-primary .panel-heading {
+.panel-primary .panel-heading, .panel-primary .view-display-id-panel_pane_membership_logos h4, .view-display-id-panel_pane_membership_logos .panel-primary h4 {
   text-align: center;
 }
 
