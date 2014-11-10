@@ -4485,8 +4485,8 @@ tbody.collapse.in {
 /* line 77, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_dropdowns.scss */
 .dropdown-menu > li > a:hover, ul.menu > li > a:hover, .dropdown-menu > li > a:focus, ul.menu > li > a:focus {
   text-decoration: none;
-  color: #262626;
-  background-color: #ffeff7;
+  color: white;
+  background-color: #7c435f;
 }
 
 /* line 88, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_dropdowns.scss */
