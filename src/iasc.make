@@ -129,7 +129,7 @@ projects[oa_radix][download][branch] = 7.x-3.x
 projects[openatrium][type] = profile
 projects[openatrium][download][type] = git
 projects[openatrium][download][url] = http://git.drupal.org/project/openatrium.git
-projects[openatrium][download][tag] = 7.x-2.21
+projects[openatrium][download][tag] = 7.x-2.22
 
 projects[oa_mailhandler][type] = module
 projects[oa_mailhandler][subdir] = contrib

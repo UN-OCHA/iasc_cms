@@ -13,16 +13,6 @@ function iasc_search_features_override_default_overrides() {
 
   // Exported overrides for: apachesolr_environment
   $overrides["apachesolr_environment.solr.conf|apachesolr_direct_commit"] = 1;
-  $overrides["apachesolr_environment.solr.conf|apachesolr_index_last|file"] = array(
-    'last_changed' => 1415114184,
-    'last_entity_id' => 751,
-  );
-  $overrides["apachesolr_environment.solr.conf|apachesolr_index_last|node|last_changed"] = 1415307892;
-  $overrides["apachesolr_environment.solr.conf|apachesolr_index_last|node|last_entity_id"] = 2803;
-  $overrides["apachesolr_environment.solr.conf|apachesolr_index_last|user|last_changed"] = 1415213596;
-  $overrides["apachesolr_environment.solr.conf|apachesolr_index_last|user|last_entity_id"] = 42;
-  $overrides["apachesolr_environment.solr.conf|apachesolr_index_updated"] = 0;
-  $overrides["apachesolr_environment.solr.conf|apachesolr_last_optimize"] = 1415323886;
   $overrides["apachesolr_environment.solr.conf|apachesolr_read_only"] = 0;
   $overrides["apachesolr_environment.solr.conf|apachesolr_soft_commit"] = 1;
   $overrides["apachesolr_environment.solr.index_bundles|file"] = array(
