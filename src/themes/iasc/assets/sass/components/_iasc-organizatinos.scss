@@ -1,0 +1,27 @@
+.view-display-id-panel_pane_membership_logos {
+  h4 {
+    clear: both;
+  }
+  ul {
+    li {
+      position: relative;
+      float: left;
+      width: 50%;
+      text-align: center;
+      padding: 0 8px;
+    }
+    li:nth-child(2n+3) {
+      clear: left;
+    }
+    a {
+      height: 100px; 
+      line-height: 100px; 
+    }
+    img {
+      vertical-align: middle;
+      margin-bottom: 44px;
+      padding: 0;
+      width: auto;
+    }
+  }
+}

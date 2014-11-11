@@ -222,9 +222,9 @@ $dropdown-border:                $brand-primary;
 //* Dropdown link text color.
 $dropdown-link-color:            $brand-primary;
 //* Hover color for dropdown links.
-// $dropdown-link-hover-color:      darken($gray-dark, 5%)
+$dropdown-link-hover-color:      #fff; 
 //* Hover background for dropdown links.
-$dropdown-link-hover-bg:         lighten($brand-primary, 75%);
+$dropdown-link-hover-bg:         #7c435f;
 
 //* Active dropdown menu item text color.
 // $dropdown-link-active-color:     $component-active-color
