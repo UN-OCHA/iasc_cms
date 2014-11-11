@@ -7,10 +7,10 @@
 include_once 'iasc_search.features.inc';
 
 /**
- * Implementation of hook_form_alter()
+ * Implements hook_form_alter().
  */
 function iasc_search_form_alter(&$form, &$form_state, $form_id) {
-  if ($form_id == 'search_form' || $form_id == 'search_theme_form') {
+  if (('search_form' == $form_id) || ('search_theme_form' == $form_id)) {
     $form['#submit'] = array('iasc_search_all_form_submit');
     if (!empty($form['basic']['keys'])) {
       $form['basic']['keys']['#size'] = '';
@@ -19,7 +19,7 @@ function iasc_search_form_alter(&$form, &$form_state, $form_id) {
 }
 
 /**
- * Custom form submit handler to change redirect state of the form
+ * Custom form submit handler to change redirect state of the form.
  */
 function iasc_search_all_form_submit($form, &$form_state) {
   $keys = trim($form_state['values']['keys']);

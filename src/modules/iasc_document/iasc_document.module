@@ -114,7 +114,7 @@ function iasc_document_connect_file() {
 }
 
 /**
- *  Implements hook_panels_pane_content_alter().
+ * Implements hook_panels_pane_content_alter().
  */
 function iasc_document_panels_pane_content_alter(&$content, $pane, $args, $contexts) {
   if ('oa_widgets_content_visibility' == $pane->type) {
