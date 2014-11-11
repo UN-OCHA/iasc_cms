@@ -22,20 +22,14 @@ function iasc_wysiwyg_wysiwyg_default_profiles() {
       'language' => 'en',
       'buttons' => array(
         'default' => array(
-          'underline' => 1,
-          'justifyright' => 1,
-          'justifyfull' => 1,
+          'bold' => 1,
+          'italic' => 1,
+          'strikethrough' => 1,
           'bullist' => 1,
           'numlist' => 1,
-          'outdent' => 1,
-          'indent' => 1,
           'formatselect' => 1,
           'styleselect' => 1,
-          'sup' => 1,
-          'sub' => 1,
-          'blockquote' => 1,
           'removeformat' => 1,
-          'charmap' => 1,
         ),
         'paste' => array(
           'pasteword' => 1,
@@ -48,7 +42,6 @@ function iasc_wysiwyg_wysiwyg_default_profiles() {
         ),
         'drupal' => array(
           'media' => 1,
-          'break' => 1,
         ),
       ),
       'toolbar_loc' => 'top',
