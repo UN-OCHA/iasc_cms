@@ -11,6 +11,9 @@ function iasc_search_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "facetapi" && $api == "facetapi_defaults") {
     return array("version" => "1");
   }
+  if ($module == "page_manager" && $api == "pages_default") {
+    return array("version" => "1");
+  }
 }
 
 /**
@@ -19,16 +22,6 @@ function iasc_search_ctools_plugin_api($module = NULL, $api = NULL) {
 function iasc_search_apachesolr_environments_alter(&$data) {
   if (isset($data['solr'])) {
     $data['solr']->conf['apachesolr_direct_commit'] = 1; /* WAS: '' */
-    $data['solr']->conf['apachesolr_index_last']['file'] = array(
-      'last_changed' => 1415114184,
-      'last_entity_id' => 751,
-    ); /* WAS: '' */
-    $data['solr']->conf['apachesolr_index_last']['node']['last_changed'] = 1415307892; /* WAS: 1397566114 */
-    $data['solr']->conf['apachesolr_index_last']['node']['last_entity_id'] = 2803; /* WAS: 49 */
-    $data['solr']->conf['apachesolr_index_last']['user']['last_changed'] = 1415213596; /* WAS: 1397566114 */
-    $data['solr']->conf['apachesolr_index_last']['user']['last_entity_id'] = 42; /* WAS: 6 */
-    $data['solr']->conf['apachesolr_index_updated'] = 0; /* WAS: 1397574334 */
-    $data['solr']->conf['apachesolr_last_optimize'] = 1415323886; /* WAS: 1397574334 */
     $data['solr']->conf['apachesolr_read_only'] = 0; /* WAS: '' */
     $data['solr']->conf['apachesolr_soft_commit'] = 1; /* WAS: '' */
     $data['solr']->index_bundles['file'] = array(
