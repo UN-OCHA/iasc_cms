@@ -25,15 +25,12 @@
   }
   .field-name-field-position { 
     display: block;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
   }
   .field-name-body {
     text-align: center;
     display: block;
     margin-bottom: 2rem;
-  }
-  .group-contact-info {
-    padding: 0 10%;
   }
   .field-type-addressfield {
     div:after { content: " "; }
@@ -45,5 +42,14 @@
       display: block;
       border: none; margin-bottom: 0;
     }
+  }
+}
+.view-search-contacts {
+  h2 { display: none; }
+  h4 { margin-top: 0; }
+  li {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #fff;
   }
 }
