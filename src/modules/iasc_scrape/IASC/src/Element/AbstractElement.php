@@ -121,23 +121,6 @@ abstract class AbstractElement implements ElementInterface {
         'filename' => $text,
         'file_link' => $link,
       );
-
-      /*
-      $cookie = $this->listing->client->getCookieJar();
-      $this->listing->crawler = $this->listing->client->click($link);
-      $contents = $this->listing->client->request('GET', $link);
-      $contents->get($link,
-      array(
-      'save_to' =>
-      '/opt/development/iasc_cms/build/html/sites/default/files/' . $text
-      )
-      );
-
-      $file = file_get_contents($contents);
-      $insert = file_put_contents(
-      '/opt/development/iasc_cms/build/html/sites/default/files/'
-      . $text, $file);
-      */
     }
     else {
       // If the attribute isn't specified, then we assume that we need to grab
