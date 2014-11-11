@@ -8982,7 +8982,7 @@ img.bio-circled {
 /* line 26, ../sass/components/_node.scss */
 .node-contact .field-name-field-position {
   display: block;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 /* line 30, ../sass/components/_node.scss */
 .node-contact .field-name-body {
@@ -8990,25 +8990,36 @@ img.bio-circled {
   display: block;
   margin-bottom: 2rem;
 }
-/* line 35, ../sass/components/_node.scss */
-.node-contact .group-contact-info {
-  padding: 0 10%;
-}
-/* line 39, ../sass/components/_node.scss */
+/* line 36, ../sass/components/_node.scss */
 .node-contact .field-type-addressfield div:after {
   content: " ";
 }
-/* line 41, ../sass/components/_node.scss */
+/* line 38, ../sass/components/_node.scss */
 .node-contact .field-collection-container {
   border: none;
   margin-bottom: 0;
 }
-/* line 43, ../sass/components/_node.scss */
+/* line 40, ../sass/components/_node.scss */
 .node-contact .field-collection-container .field-collection-view {
   padding-top: 0;
   display: block;
   border: none;
   margin-bottom: 0;
+}
+
+/* line 48, ../sass/components/_node.scss */
+.view-search-contacts h2 {
+  display: none;
+}
+/* line 49, ../sass/components/_node.scss */
+.view-search-contacts h4 {
+  margin-top: 0;
+}
+/* line 50, ../sass/components/_node.scss */
+.view-search-contacts li {
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #fff;
 }
 
 /**
