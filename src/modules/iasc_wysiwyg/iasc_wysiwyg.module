@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the IASC WYSIWYG feature.
+ */
+
+include_once 'iasc_wysiwyg.features.inc';
