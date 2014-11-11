@@ -1,0 +1,38 @@
+.view-display-id-panel_pane_membership_logos {
+  // remove padding and color from parent
+  margin: -20px -30px; 
+  background: #fff;
+  h4 {
+    @extend .panel-heading;
+    color: #fff;
+    background-color: $brand-primary;
+    clear: both;
+    margin: 0;
+  }
+  ul {
+    @include clearfix;
+    @extend .panel-body;
+    background-color: $panel-bg;
+    margin-bottom: 20px;
+    li {
+      position: relative;
+      float: left;
+      width: 50%;
+      text-align: center;
+      padding: 0 8px;
+    }
+    li:nth-child(2n+3) {
+      clear: left;
+    }
+    a {
+      height: 100px;
+      line-height: 100px;      
+    }
+    img {
+      vertical-align: middle;
+      margin-bottom: 44px;
+      padding: 0;
+      width: auto; 
+    }
+  }
+}
