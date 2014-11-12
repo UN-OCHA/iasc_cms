@@ -414,8 +414,10 @@ function iasc_meeting_form_views_exposed_form_alter(&$form, &$form_state, $form_
     $view = $form_state['view'];
 
     // We currently just limit these changes to these displays.
+    $change = FALSE;
     $change = ('panel_pane_upcoming_meetings_filterable' == $view->current_display) ||
       ('page_calendar' == $view->current_display);
+
     if ($change) {
       // Hide My Spaces checkbox.
       if (!empty($form['og_group_ref_target_id_mine'])) {
