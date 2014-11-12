@@ -29,6 +29,16 @@ class IASCNews extends IASCDefault {
       ),
     );
 
+    // Flags.
+    $this->flags = array(
+      'show_on_home',
+    );
+
+    // Links.
+    $this->links = array(
+      'field_links',
+    );
+
     // Created date.
     $this->created = 'field_published_date';
 

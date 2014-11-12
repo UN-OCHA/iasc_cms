@@ -37,7 +37,7 @@ class NewsElement extends AbstractElement {
       'title' => array('selector' => '#ctl00_ContentPlaceHolder1_ctl00_txtHeader'),
       'field_published_date' => array('selector' => '#ctl00_ContentPlaceHolder1_ctl00_txtDate'),
       'show_on_home' => array(
-        'selector' => '#ctl00_ContentPlaceHolder1_ctl00_rbFrontpage_1 input[checked="checked"]',
+        'selector' => '#ctl00_ContentPlaceHolder1_ctl00_rbFrontpage_0',
       ),
       'field_contact' => array('selector' => '#ctl00_ContentPlaceHolder1_ctl00_SearchContacts1_hdnContactId'),
       'intro' => array(
@@ -59,6 +59,10 @@ class NewsElement extends AbstractElement {
       'field_links' => array(
         'selector' => '#ctl00_ContentPlaceHolder1_ctl00_gvnewslinks',
         'table_text' => TRUE,
+        'left_label' => '#ctl00_ContentPlaceHolder1_ctl00_gvnewslinks_ctl',
+        'right_label' => '_lblLabel',
+        'left_link' => '#ctl00_ContentPlaceHolder1_ctl00_gvnewslinks_ctl',
+        'right_link' => '_lblLink',
       ),
     );
     $this->values = $values;

@@ -15,6 +15,7 @@ class IASCDefault {
   protected $fields = array();
   protected $combineFields = array();
   protected $plain = array();
+  protected $flags = array();
   protected $hardcoded = array();
   protected $created = '';
   protected $term = array();
@@ -23,6 +24,7 @@ class IASCDefault {
   protected $space = array();
   protected $dates = array();
   protected $contact = array();
+  protected $links = array();
   protected static $sections = array();
 
   /**
@@ -63,10 +65,14 @@ class IASCDefault {
     $this->setSpace();
     $this->setDates();
     $this->setContact();
+    $this->setLinks();
 
     // Save the entity.
     $this->wrapper->save(TRUE);
     entity_save('node', $this->entity);
+
+    // Set flags. Need nid.
+    $this->setFlags();
   }
 
   /**
@@ -505,6 +511,34 @@ class IASCDefault {
           catch (Exception $e) {
             echo 'Caught exception on ' . $contact . ': ', $e->getMessage(), "\n";
           }
+        }
+      }
+    }
+  }
+
+  /**
+   * Set flags.
+   */
+  protected function setFlags() {
+    foreach ($this->flags as $flag) {
+      $nid = $this->wrapper->getIdentifier();
+      if (1 == $this->values['data'][$flag]) {
+        flag('flag', $flag, $nid);
+      }
+    }
+  }
+
+  /**
+   * Set links.
+   */
+  protected function setLinks() {
+    foreach ($this->links as $link) {
+      if (!empty($this->values['data'][$link])) {
+        try {
+          $this->wrapper->{$link}->set($this->values['data'][$link]);
+        }
+        catch (Exception $e) {
+          echo 'Caught exception on ' . $link . ': ', $e->getMessage(), "\n";
         }
       }
     }

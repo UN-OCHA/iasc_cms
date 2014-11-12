@@ -75,9 +75,12 @@ abstract class AbstractElement implements ElementInterface {
         $count = count($value->filter($params['selector'])->children());
         $value = $value->filter($params['selector'])->children();
         for ($i = 2; $i < $count + 1; $i++) {
+          $num = sprintf("%02s", $i);
+          $title_filter = $params['left_label'] . $num . $params['right_label'];
+          $url_filter = $params['left_link'] . $num . $params['right_link'];
           $items[] = array(
-            'label' => $value->filter('#ctl00_ContentPlaceHolder1_ctl00_gvnewslinks_ctl0' . $i . '_lblLabel')->text(),
-            'link' => $value->filter('#ctl00_ContentPlaceHolder1_ctl00_gvnewslinks_ctl0' . $i . '_lblLink')->text(),
+            'title' => $value->filter($title_filter)->text(),
+            'url' => $value->filter($url_filter)->text(),
           );
         }
         $value = $items;
