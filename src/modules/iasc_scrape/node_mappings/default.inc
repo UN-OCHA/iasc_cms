@@ -132,7 +132,7 @@ class IASCDefault {
    * Set combine text fields.
    */
   protected function setCombineFields() {
-    foreach ($this->fields as $field => $combine) {
+    foreach ($this->combineFields as $field => $combine) {
       $value = array();
       foreach ($combine as $combine_field) {
         $value[] = $this->values['data'][$combine_field];
