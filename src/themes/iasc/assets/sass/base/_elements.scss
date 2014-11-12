@@ -43,6 +43,13 @@ li { list-style: none; }
 }
 .wrapped-list li { margin-bottom: $line-height-computed / 2; }
 
+ol.ordered-styled {
+  li {
+    list-style: decimal;
+    list-style-position: inside;
+  }
+}
+
 
 figcaption,
 figure {
