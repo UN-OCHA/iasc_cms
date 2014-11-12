@@ -327,7 +327,7 @@ function iasc_configuration_panelizer_defaults() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 8;
+    $pane->position = 4;
     $pane->locks = array();
     $pane->uuid = '0d484813-4380-4e64-bb7f-8710b7c7eeb8';
     $display->content['new-0d484813-4380-4e64-bb7f-8710b7c7eeb8'] = $pane;
@@ -367,7 +367,20 @@ function iasc_configuration_panelizer_defaults() {
     $pane->type = 'entity_field';
     $pane->subtype = 'node:group_group';
     $pane->shown = TRUE;
-    $pane->access = array();
+    $pane->access = array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'role',
+          'settings' => array(
+            'rids' => array(
+              0 => 3,
+            ),
+          ),
+          'context' => 'logged-in-user',
+          'not' => FALSE,
+        ),
+      ),
+    );
     $pane->configuration = array(
       'label' => 'hidden',
       'formatter' => 'og_group_subscribe',
@@ -659,7 +672,20 @@ function iasc_configuration_panelizer_defaults() {
     $pane->type = 'entity_field';
     $pane->subtype = 'node:group_group';
     $pane->shown = TRUE;
-    $pane->access = array();
+    $pane->access = array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'role',
+          'settings' => array(
+            'rids' => array(
+              0 => 3,
+            ),
+          ),
+          'context' => 'logged-in-user',
+          'not' => FALSE,
+        ),
+      ),
+    );
     $pane->configuration = array(
       'label' => 'hidden',
       'formatter' => 'og_group_subscribe',

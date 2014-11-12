@@ -1,0 +1,11 @@
+name = IASC Permissions
+description = Contains general permission overrides.
+core = 7.x
+package = IASC
+dependencies[] = oa_permissions
+features[features_api][] = api:2
+features[features_override_items][] = og_features_permission.node:oa_space:subscribe
+features[features_override_items][] = og_features_permission.node:oa_space:unsubscribe
+features[features_overrides][] = og_features_permission.node:oa_space:subscribe.roles|non-member
+features[features_overrides][] = og_features_permission.node:oa_space:unsubscribe.roles|member
+project path = sites/all/modules/custom
