@@ -21,10 +21,12 @@ class IASCNews extends IASCDefault {
     );
 
     // Combine fields.
-    $this->combineFields = array(
-      'body' => array(
+    $this->summaryFields = array(
+      'summary' => array(
         'intro',
         'intro_link',
+      ),
+      'value' => array(
         'body',
       ),
     );

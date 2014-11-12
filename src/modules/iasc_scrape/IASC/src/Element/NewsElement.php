@@ -40,14 +40,8 @@ class NewsElement extends AbstractElement {
         'selector' => '#ctl00_ContentPlaceHolder1_ctl00_rbFrontpage_0',
       ),
       'field_contact' => array('selector' => '#ctl00_ContentPlaceHolder1_ctl00_SearchContacts1_hdnContactId'),
-      'intro' => array(
-        'selector' => '#ctl00_ContentPlaceHolder1_ctl00_txtIntro',
-        'get_text' => TRUE,
-      ),
-      'intro_link' => array(
-        'selector' => '#ctl00_ContentPlaceHolder1_ctl00_txtIntroLink',
-        'get_text' => TRUE,
-      ),
+      'intro' => array('selector' => '#ctl00_ContentPlaceHolder1_ctl00_txtIntro'),
+      'intro_link' => array('selector' => '#ctl00_ContentPlaceHolder1_ctl00_txtIntroLink'),
       'body' => array(
         'selector' => '#ctl00_ContentPlaceHolder1_ctl00_txtNews',
         'get_text' => TRUE,

@@ -13,7 +13,7 @@ class IASCDefault {
 
   protected $wrapper;
   protected $fields = array();
-  protected $combineFields = array();
+  protected $summaryFields = array();
   protected $plain = array();
   protected $flags = array();
   protected $hardcoded = array();
@@ -57,7 +57,7 @@ class IASCDefault {
     $this->setCreated();
     $this->setHardcoded();
     $this->setFields();
-    $this->setCombineFields();
+    $this->setSummaryFields();
     $this->setPlain();
     $this->setTerm();
     $this->setTerms();
@@ -131,19 +131,24 @@ class IASCDefault {
   /**
    * Set combine text fields.
    */
-  protected function setCombineFields() {
-    foreach ($this->combineFields as $field => $combine) {
-      $value = array();
-      foreach ($combine as $combine_field) {
-        $value[] = $this->values['data'][$combine_field];
-      }
-      $value = implode(' ', $value);
-      try {
-        $this->wrapper->{$field}->set(array('value' => $value));
-      }
-      catch (Exception $e) {
-        echo 'Caught exception on ' . $field . ': ',  $e->getMessage(), "\n";
-      }
+  protected function setSummaryFields() {
+    $summary = array();
+    $summaries = $this->summaryFields['summary'];
+
+    // Combine summary fields.
+    foreach ($summaries as $summary_field) {
+      $summary[] = $this->values['data'][$summary_field];
+    }
+    $summary = implode(' ', $summary);
+
+    // Grab body field.
+    $body = $this->values['data']['body'];
+
+    try {
+      $this->wrapper->body->set(array('value' => $body, 'summary' => $summary));
+    }
+    catch (Exception $e) {
+      echo 'Caught exception on body: ',  $e->getMessage(), "\n";
     }
   }
 
