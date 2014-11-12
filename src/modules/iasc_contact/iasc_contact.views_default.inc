@@ -304,6 +304,103 @@ function iasc_contact_views_default_views() {
   /* Display: Admin Contact Search Page */
   $handler = $view->new_display('page', 'Admin Contact Search Page', 'page');
   $handler->display->display_options['display_description'] = 'This is a role restricted page.';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Photo */
+  $handler->display->display_options['fields']['field_photo']['id'] = 'field_photo';
+  $handler->display->display_options['fields']['field_photo']['table'] = 'field_data_field_photo';
+  $handler->display->display_options['fields']['field_photo']['field'] = 'field_photo';
+  $handler->display->display_options['fields']['field_photo']['label'] = '';
+  $handler->display->display_options['fields']['field_photo']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_photo']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_photo']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_photo']['settings'] = array(
+    'image_style' => 'thumbnail',
+    'image_link' => '',
+  );
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['field_title']['id'] = 'field_title';
+  $handler->display->display_options['fields']['field_title']['table'] = 'field_data_field_title';
+  $handler->display->display_options['fields']['field_title']['field'] = 'field_title';
+  $handler->display->display_options['fields']['field_title']['label'] = '';
+  $handler->display->display_options['fields']['field_title']['element_label_colon'] = FALSE;
+  /* Field: Content: First Name */
+  $handler->display->display_options['fields']['field_first_name']['id'] = 'field_first_name';
+  $handler->display->display_options['fields']['field_first_name']['table'] = 'field_data_field_first_name';
+  $handler->display->display_options['fields']['field_first_name']['field'] = 'field_first_name';
+  $handler->display->display_options['fields']['field_first_name']['label'] = '';
+  $handler->display->display_options['fields']['field_first_name']['element_label_colon'] = FALSE;
+  /* Field: Content: Last Name */
+  $handler->display->display_options['fields']['field_last_name']['id'] = 'field_last_name';
+  $handler->display->display_options['fields']['field_last_name']['table'] = 'field_data_field_last_name';
+  $handler->display->display_options['fields']['field_last_name']['field'] = 'field_last_name';
+  $handler->display->display_options['fields']['field_last_name']['label'] = 'Name';
+  /* Field: Field: Position */
+  $handler->display->display_options['fields']['field_position']['id'] = 'field_position';
+  $handler->display->display_options['fields']['field_position']['table'] = 'field_data_field_position';
+  $handler->display->display_options['fields']['field_position']['field'] = 'field_position';
+  $handler->display->display_options['fields']['field_position']['label'] = '';
+  $handler->display->display_options['fields']['field_position']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_position']['element_label_colon'] = FALSE;
+  /* Field: Content: Organization */
+  $handler->display->display_options['fields']['field_organisation']['id'] = 'field_organisation';
+  $handler->display->display_options['fields']['field_organisation']['table'] = 'field_data_field_organisation';
+  $handler->display->display_options['fields']['field_organisation']['field'] = 'field_organisation';
+  /* Field: Position and Department */
+  $handler->display->display_options['fields']['field_department']['id'] = 'field_department';
+  $handler->display->display_options['fields']['field_department']['table'] = 'field_data_field_department';
+  $handler->display->display_options['fields']['field_department']['field'] = 'field_department';
+  $handler->display->display_options['fields']['field_department']['ui_name'] = 'Position and Department';
+  $handler->display->display_options['fields']['field_department']['label'] = 'Position and Department';
+  $handler->display->display_options['fields']['field_department']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_department']['alter']['text'] = '<strong>Position:</strong> [field_position]<br />
+<strong>Department:</strong> [field_department]';
+  /* Field: Content: Body Membership */
+  $handler->display->display_options['fields']['field_membership']['id'] = 'field_membership';
+  $handler->display->display_options['fields']['field_membership']['table'] = 'field_data_field_membership';
+  $handler->display->display_options['fields']['field_membership']['field'] = 'field_membership';
+  $handler->display->display_options['fields']['field_membership']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_membership']['empty_zero'] = TRUE;
+  $handler->display->display_options['fields']['field_membership']['settings'] = array(
+    'edit' => '',
+    'delete' => '',
+    'add' => '',
+    'description' => 0,
+    'view_mode' => 'full',
+  );
+  $handler->display->display_options['fields']['field_membership']['delta_offset'] = '0';
+  /* Field: Content: Email */
+  $handler->display->display_options['fields']['field_email']['id'] = 'field_email';
+  $handler->display->display_options['fields']['field_email']['table'] = 'field_data_field_email';
+  $handler->display->display_options['fields']['field_email']['field'] = 'field_email';
+  /* Field: Content: Address - Administrative area (i.e. State / Province) */
+  $handler->display->display_options['fields']['field_address_administrative_area']['id'] = 'field_address_administrative_area';
+  $handler->display->display_options['fields']['field_address_administrative_area']['table'] = 'field_data_field_address';
+  $handler->display->display_options['fields']['field_address_administrative_area']['field'] = 'field_address_administrative_area';
+  $handler->display->display_options['fields']['field_address_administrative_area']['label'] = '';
+  $handler->display->display_options['fields']['field_address_administrative_area']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_address_administrative_area']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_address_administrative_area']['alter']['text'] = '[field_address_administrative_area], ';
+  $handler->display->display_options['fields']['field_address_administrative_area']['element_label_colon'] = FALSE;
+  /* Field: Content: Address - Country */
+  $handler->display->display_options['fields']['field_address_country']['id'] = 'field_address_country';
+  $handler->display->display_options['fields']['field_address_country']['table'] = 'field_data_field_address';
+  $handler->display->display_options['fields']['field_address_country']['field'] = 'field_address_country';
+  $handler->display->display_options['fields']['field_address_country']['label'] = 'Location';
+  $handler->display->display_options['fields']['field_address_country']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_address_country']['alter']['text'] = '[field_address_administrative_area] [field_address_country]';
+  $handler->display->display_options['fields']['field_address_country']['display_name'] = 1;
+  /* Field: Content: Edit link */
+  $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['label'] = 'Actions';
   $handler->display->display_options['path'] = 'admin/search-contacts';
 
   /* Display: Contacts Content pane */
