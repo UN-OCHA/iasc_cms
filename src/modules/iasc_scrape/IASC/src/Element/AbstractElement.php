@@ -65,6 +65,27 @@ abstract class AbstractElement implements ElementInterface {
         $value = 0;
       }
     }
+    elseif (!empty($params['table_text'])) {
+      // If table_link is TRUE, then find the link inside a table element.
+      $value = $this->listing->crawler
+        ->filter($params['selector']);
+
+      if ($value->getNode(0) != NULL) {
+        $items = array();
+        $count = count($value->filter($params['selector'])->children());
+        $value = $value->filter($params['selector'])->children();
+        for ($i = 2; $i < $count + 1; $i++) {
+          $items[] = array(
+            'label' => $value->filter('#ctl00_ContentPlaceHolder1_ctl00_gvnewslinks_ctl0' . $i . '_lblLabel')->text(),
+            'link' => $value->filter('#ctl00_ContentPlaceHolder1_ctl00_gvnewslinks_ctl0' . $i . '_lblLink')->text(),
+          );
+        }
+        $value = $items;
+      }
+      else {
+        $value = 0;
+      }
+    }
     elseif (!empty($params['table_link'])) {
       $link_text = (isset($params['link_text'])) ? $params['link_text'] : 'Edit';
       // If table_link is TRUE, then find the link inside a table element.

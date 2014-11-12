@@ -56,6 +56,10 @@ class NewsElement extends AbstractElement {
         'selector' => '#ctl00_ContentPlaceHolder1_ctl00_ddlPublish option[selected="selected"]',
         'get_text' => TRUE,
       ),
+      'field_links' => array(
+        'selector' => '#ctl00_ContentPlaceHolder1_ctl00_gvnewslinks',
+        'table_text' => TRUE,
+      ),
     );
     $this->values = $values;
   }

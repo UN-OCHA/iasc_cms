@@ -20,11 +20,13 @@ class IASCNews extends IASCDefault {
       'field_legacy_publish',
     );
 
-    // Text area fields.
-    $this->fields = array(
-      'intro',
-      'intro_link',
-      'body',
+    // Combine fields.
+    $this->combineFields = array(
+      'body' => array(
+        'intro',
+        'intro_link',
+        'body',
+      ),
     );
 
     // Created date.
