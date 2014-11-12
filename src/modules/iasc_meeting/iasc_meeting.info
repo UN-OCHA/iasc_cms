@@ -158,6 +158,7 @@ features[features_overrides][] = panelizer_defaults.node:oa_event:default.displa
 features[features_overrides][] = variable.node_submitted_oa_event.value
 features[features_overrides][] = views_view.oa_event_detail.display|default|display_options|fields|field_time_zone
 features[features_overrides][] = views_view.oa_event_detail.display|default|display_options|fields|term_node_tid
+features[features_overrides][] = views_view.oa_event_list.display|default|display_options|fields|field_oa_address
 features[features_overrides][] = views_view.oa_event_list.display|page_calendar
 features[features_overrides][] = views_view.oa_event_list.display|panel_pane_upcoming_meetings
 features[features_overrides][] = views_view.oa_event_list.display|panel_pane_upcoming_meetings_filterable

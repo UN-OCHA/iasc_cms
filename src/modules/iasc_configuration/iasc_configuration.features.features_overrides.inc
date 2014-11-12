@@ -56,6 +56,7 @@ function iasc_configuration_features_override_default_overrides() {
           'og_group_ref_target_id_mine' => 0,
           'og_subspaces_view_all' => 1,
           'og_subspaces_view_parent' => 0,
+          'oa_section_ref_target_id' => '',
           'keys' => '',
         ),
         'use_pager' => 1,
@@ -115,7 +116,7 @@ function iasc_configuration_features_override_default_overrides() {
       ),
       'css' => array(),
       'extras' => array(),
-      'position' => 3,
+      'position' => 5,
       'locks' => array(),
       'uuid' => '003b40be-c976-41cd-9bcc-1fe83c4bd599',
     );
@@ -164,7 +165,7 @@ function iasc_configuration_features_override_default_overrides() {
       ),
       'css' => array(),
       'extras' => array(),
-      'position' => 4,
+      'position' => 3,
       'locks' => array(),
       'uuid' => '35ab60ac-d6d7-41b2-a57e-21ca28e5e974',
     );
@@ -196,7 +197,7 @@ function iasc_configuration_features_override_default_overrides() {
       ),
       'css' => array(),
       'extras' => array(),
-      'position' => 5,
+      'position' => 4,
       'locks' => array(),
       'uuid' => '652e1d79-7e20-4a4b-8b66-4fc46244013e',
     );
@@ -205,6 +206,7 @@ function iasc_configuration_features_override_default_overrides() {
   $overrides["panelizer_defaults.node:oa_space:default.display|content|new-801d2668-fa45-4031-83ba-e7d47830a8a6|configuration|override_title_text"] = 'Security Level';
   $overrides["panelizer_defaults.node:oa_space:default.display|content|new-801d2668-fa45-4031-83ba-e7d47830a8a6|style|settings|secondary_options"] = 'panel-primary';
   $overrides["panelizer_defaults.node:oa_space:default.display|content|new-801d2668-fa45-4031-83ba-e7d47830a8a6|style|style"] = 'secondary';
+  $overrides["panelizer_defaults.node:oa_space:default.display|content|new-9995e8b8-d8cb-4339-a7ad-1f0ea569d2de|position"] = 2;
   $overrides["panelizer_defaults.node:oa_space:default.display|content|new-bf416e9c-7588-48cd-a156-db4e7d2a33ee"] = (object) array(
       'pid' => 'new-bf416e9c-7588-48cd-a156-db4e7d2a33ee',
       'panel' => 'contentmain',
@@ -226,6 +228,7 @@ function iasc_configuration_features_override_default_overrides() {
           'og_subspaces_view_all' => 1,
           'og_subspaces_view_parent' => 0,
           'keys' => '',
+          'oa_section_ref_target_id' => 'All',
         ),
         'use_pager' => 1,
         'pager_id' => 0,
@@ -234,6 +237,8 @@ function iasc_configuration_features_override_default_overrides() {
         'override_title_text' => '',
         'view_mode' => 'teaser',
         'widget_title' => 'Upcoming Meetings',
+        'view_settings' => 'fields',
+        'header_type' => 'none',
       ),
       'cache' => array(),
       'style' => array(
@@ -244,14 +249,15 @@ function iasc_configuration_features_override_default_overrides() {
       ),
       'css' => array(),
       'extras' => array(),
-      'position' => 2,
+      'position' => 1,
       'locks' => array(),
       'uuid' => 'bf416e9c-7588-48cd-a156-db4e7d2a33ee',
     );
-  $overrides["panelizer_defaults.node:oa_space:default.display|panels|contentmain|2"] = 'new-bf416e9c-7588-48cd-a156-db4e7d2a33ee';
-  $overrides["panelizer_defaults.node:oa_space:default.display|panels|sidebar|3"] = 'new-003b40be-c976-41cd-9bcc-1fe83c4bd599';
-  $overrides["panelizer_defaults.node:oa_space:default.display|panels|sidebar|4"] = 'new-35ab60ac-d6d7-41b2-a57e-21ca28e5e974';
-  $overrides["panelizer_defaults.node:oa_space:default.display|panels|sidebar|5"] = 'new-652e1d79-7e20-4a4b-8b66-4fc46244013e';
+  $overrides["panelizer_defaults.node:oa_space:default.display|panels|contentmain|1"] = 'new-bf416e9c-7588-48cd-a156-db4e7d2a33ee';
+  $overrides["panelizer_defaults.node:oa_space:default.display|panels|contentmain|2"] = 'new-9995e8b8-d8cb-4339-a7ad-1f0ea569d2de';
+  $overrides["panelizer_defaults.node:oa_space:default.display|panels|sidebar|3"] = 'new-35ab60ac-d6d7-41b2-a57e-21ca28e5e974';
+  $overrides["panelizer_defaults.node:oa_space:default.display|panels|sidebar|4"] = 'new-652e1d79-7e20-4a4b-8b66-4fc46244013e';
+  $overrides["panelizer_defaults.node:oa_space:default.display|panels|sidebar|5"] = 'new-003b40be-c976-41cd-9bcc-1fe83c4bd599';
 
   // Exported overrides for: panels_mini
   $overrides["panels_mini.default_section_sidebar.display|content|new-e88f722e-09b5-451c-b694-f6b79c2d8554|style|settings|secondary_options"] = 'panel-primary';
