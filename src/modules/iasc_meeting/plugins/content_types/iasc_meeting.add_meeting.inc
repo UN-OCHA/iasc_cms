@@ -1,6 +1,7 @@
 <?php
 /**
- * @file iasc_meeting.add_meeting.inc
+ * @file
+ * Code for Add meeting button.
  */
 
 $plugin = array(
@@ -25,8 +26,7 @@ function iasc_meeting_add_meeting_render($subtype, $conf, $args, $context) {
 
   $items = l(t('Add a Meeting'), 'node/add/oa-event',
     array(
-      'attributes' =>
-        array('class' => $classes),
+      'attributes' => array('class' => $classes),
       'query' => array('oa_section_ref' => $section),
     )
   );

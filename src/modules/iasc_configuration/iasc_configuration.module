@@ -104,7 +104,7 @@ function iasc_configuration_import($options) {
         $message,
         $parent_bodies,
         $subsidiary_ids,
-        $options['ignore_parents']
+        $options['ignore_parents'],
       ),
     );
   }
