@@ -144,6 +144,9 @@ dependencies[] = iasc_configuration
 dependencies[] = iasc_document
 dependencies[] = iasc_announcement
 dependencies[] = oa_apachesolr
+dependencies[] = iasc_wysiwyg
+dependencies[] = iasc_search
+dependencies[] = iasc_permissions
 
 ; Contrib
 dependencies[] = radix_layouts

@@ -881,3 +881,4 @@ function iasc_configuration_query_alter(QueryAlterableInterface $query) {
     }
   }
 }
+

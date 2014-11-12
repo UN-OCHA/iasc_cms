@@ -151,13 +151,25 @@ function iasc_configuration_panelizer_defaults_override_alter(&$data) {
           ),
           'css' => array(),
           'extras' => array(),
-          'position' => 5,
+          'position' => 3,
           'locks' => array(),
           'uuid' => '003b40be-c976-41cd-9bcc-1fe83c4bd599',
         ); /* WAS: '' */
     $data['node:oa_space:default']->display->content['new-18865aa1-e2a6-4d3d-93c2-3f80adf44c54']->configuration['widget_title'] = 'Sections'; /* WAS: '' */
     $data['node:oa_space:default']->display->content['new-18865aa1-e2a6-4d3d-93c2-3f80adf44c54']->style['settings']['secondary_options'] = 'panel-primary'; /* WAS: '' */
     $data['node:oa_space:default']->display->content['new-18865aa1-e2a6-4d3d-93c2-3f80adf44c54']->style['style'] = 'secondary'; /* WAS: '' */
+    $data['node:oa_space:default']->display->content['new-2b5ef25a-4dce-4b89-99b7-f940adbd5e95']->access['plugins'] = array(
+      0 => array(
+        'name' => 'role',
+        'settings' => array(
+          'rids' => array(
+            0 => 3,
+          ),
+        ),
+        'context' => 'logged-in-user',
+        'not' => FALSE,
+      ),
+    ); /* WAS: '' */
     $data['node:oa_space:default']->display->content['new-2b5ef25a-4dce-4b89-99b7-f940adbd5e95']->style['settings']['secondary_options'] = 'panel-primary'; /* WAS: '' */
     $data['node:oa_space:default']->display->content['new-2b5ef25a-4dce-4b89-99b7-f940adbd5e95']->style['style'] = 'secondary'; /* WAS: '' */
     $data['node:oa_space:default']->display->content['new-35ab60ac-d6d7-41b2-a57e-21ca28e5e974'] = (object) array(
@@ -220,7 +232,7 @@ function iasc_configuration_panelizer_defaults_override_alter(&$data) {
           ),
           'css' => array(),
           'extras' => array(),
-          'position' => 3,
+          'position' => 5,
           'locks' => array(),
           'uuid' => '652e1d79-7e20-4a4b-8b66-4fc46244013e',
         ); /* WAS: '' */
@@ -229,7 +241,6 @@ function iasc_configuration_panelizer_defaults_override_alter(&$data) {
     $data['node:oa_space:default']->display->content['new-801d2668-fa45-4031-83ba-e7d47830a8a6']->configuration['override_title_text'] = 'Security Level'; /* WAS: '' */
     $data['node:oa_space:default']->display->content['new-801d2668-fa45-4031-83ba-e7d47830a8a6']->style['settings']['secondary_options'] = 'panel-primary'; /* WAS: '' */
     $data['node:oa_space:default']->display->content['new-801d2668-fa45-4031-83ba-e7d47830a8a6']->style['style'] = 'secondary'; /* WAS: '' */
-    $data['node:oa_space:default']->display->content['new-9995e8b8-d8cb-4339-a7ad-1f0ea569d2de']->position = 2; /* WAS: 1 */
     $data['node:oa_space:default']->display->content['new-bf416e9c-7588-48cd-a156-db4e7d2a33ee'] = (object) array(
           'pid' => 'new-bf416e9c-7588-48cd-a156-db4e7d2a33ee',
           'panel' => 'contentmain',
@@ -269,7 +280,7 @@ function iasc_configuration_panelizer_defaults_override_alter(&$data) {
           ),
           'css' => array(),
           'extras' => array(),
-          'position' => 1,
+          'position' => 2,
           'locks' => array(),
           'uuid' => 'bf416e9c-7588-48cd-a156-db4e7d2a33ee',
         ); /* WAS: '' */
