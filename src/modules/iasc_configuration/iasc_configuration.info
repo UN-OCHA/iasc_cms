@@ -57,6 +57,7 @@ features[features_overrides][] = panelizer_defaults.node:oa_space:default.displa
 features[features_overrides][] = panelizer_defaults.node:oa_space:default.display|content|new-801d2668-fa45-4031-83ba-e7d47830a8a6|style|style
 features[features_overrides][] = panelizer_defaults.node:oa_space:default.display|content|new-9995e8b8-d8cb-4339-a7ad-1f0ea569d2de|position
 features[features_overrides][] = panelizer_defaults.node:oa_space:default.display|content|new-bf416e9c-7588-48cd-a156-db4e7d2a33ee
+features[features_overrides][] = panelizer_defaults.node:oa_space:default.display|panels|contentmain|1
 features[features_overrides][] = panelizer_defaults.node:oa_space:default.display|panels|contentmain|2
 features[features_overrides][] = panelizer_defaults.node:oa_space:default.display|panels|sidebar|3
 features[features_overrides][] = panelizer_defaults.node:oa_space:default.display|panels|sidebar|4
