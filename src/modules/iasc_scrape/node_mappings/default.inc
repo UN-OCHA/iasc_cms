@@ -72,7 +72,7 @@ class IASCDefault {
     entity_save('node', $this->entity);
 
     // Set flags. Need nid.
-    $this->setFlags();
+    // $this->setFlags();
   }
 
   /**
