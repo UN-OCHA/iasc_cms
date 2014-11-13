@@ -1,0 +1,184 @@
+<?php
+/**
+ * @file
+ * Functions to support editor account creation from a group login account.
+ */
+
+/**
+ *  Implements hook_menu().
+ */
+function iasc_group_login_menu() {
+  $items['group/user/register'] = array(
+    'title' => 'Create new account',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('iasc_user_register_form'),
+    'access callback' => 'iasc_user_register_access',
+    'type' => MENU_LOCAL_TASK,
+  );
+
+  return $items;
+}
+
+/**
+ *  Implements hook_menu_alter().
+ */
+function iasc_group_login_menu_alter(&$items) {
+  // Use our access check to determine if a user can edit his/her user profile.
+  $items['user/%user/edit']['access callback'] = 'iasc_user_edit_access';
+
+  // Remove access to the direct access code login link.
+  $items['ac/%']['access callback'] = FALSE;
+}
+
+/**
+ *  Implements hook_permission().
+ */
+function iasc_group_login_permission() {
+  return array(
+    'edit user profiles' => array(
+      'title' => t('Edit user profiles'),
+      'description' => t('Edit any user profile.'),
+      'restrict access' => TRUE,
+    ),
+    'register new account' => array(
+      'title' => t('Register a new user account'),
+      'description' => t('Register a new user account while logged in. This is more restrictive than the administer users permission.'),
+      'restrict access' => TRUE,
+    ),
+  );
+}
+
+/**
+ * Access callback for user account editing.
+ */
+function iasc_user_edit_access($account) {
+  return ($account->uid > 0 && (user_access('administer users') || user_access('edit user profiles')));
+}
+
+/**
+ * Access callback to determines if the current user has access to the user registration page.
+ */
+function iasc_user_register_access() {
+  global $user;
+  // Note that this ignores the Drupal user account registration rules.
+  return ($user->uid > 0 && user_access('register new account'));
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ *
+ * Alter the Login form to include information about the access code.
+ */
+function iasc_group_login_form_user_login_alter(&$form, $form_state) {
+  $items[] = l(t('Use access code'), 'user/ac', array('attributes' => array('title' => t('Log in using an access code.'))));
+  $form['access_code_link'] = array('#markup' => theme('item_list', array('items' => $items)));
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ *
+ * Alter the Forgot Password form to include information about the access code.
+ */
+function iasc_group_login_form_user_pass_alter(&$form, $form_state) {
+  $items[] = l(t('Use access code'), 'user/ac', array('attributes' => array('title' => t('Log in using an access code.'))));
+  $items[] = t('If you do not have an access code, you will have to contact the site administrator.');
+  $form['access_code_link'] = array('#markup' => theme('item_list', array('items' => $items)));
+}
+
+/**
+ * Form builder; the user registration form from a group login.
+ *
+ * @ingroup forms
+ * @see iasc_user_register_submit()
+ */
+function iasc_user_register_form($form, &$form_state) {
+  $form['#user'] = drupal_anonymous_user();
+  $form['#user_category'] = 'register';
+
+  $form['#attached']['library'][] = array('system', 'jquery.cookie');
+  $form['#attributes']['class'][] = 'user-info-from-cookie';
+
+  // Start with the default user account fields.
+  user_account_form($form, $form_state);
+
+  // Attach field widgets, and hide the ones where the 'user_register_form'
+  // setting is not on.
+  $langcode = entity_language('user', $form['#user']);
+  field_attach_form('user', $form['#user'], $form, $form_state, $langcode);
+  foreach (field_info_instances('user', 'user') as $field_name => $instance) {
+    if (empty($instance['settings']['user_register_form'])) {
+      $form[$field_name]['#access'] = FALSE;
+    }
+  }
+
+  $form['actions'] = array('#type' => 'actions');
+  $form['actions']['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Create new account'),
+  );
+
+  $form['#validate'][] = 'user_register_validate';
+
+  // Add our user registration form submit handler.
+  $form['#submit'][] = 'iasc_user_register_submit';
+
+
+  return $form;
+}
+
+/**
+ * Submit handler for the user registration form.
+ *
+ * This function is a variation of the normal registration form.
+ *
+ * @see iasc_user_register_form()
+ */
+function iasc_user_register_submit($form, &$form_state) {
+  // Get password.
+  $pass = $form_state['values']['pass'];
+
+  // Remove unneeded values.
+  form_state_values_clean($form_state);
+
+  $form_state['values']['pass'] = $pass;
+  $form_state['values']['init'] = $form_state['values']['mail'];
+
+  $account = $form['#user'];
+
+  entity_form_submit_build_entity('user', $account, $form, $form_state);
+
+  // Populate $edit with the properties of $account, which have been edited on
+  // this form by taking over all values, which appear in the form values too.
+  $edit = array_intersect_key((array) $account, $form_state['values']);
+
+  // Add the editor role to this new account.
+  if ($editor = user_role_load_by_name('editor')) {
+    $edit['roles'][$editor->rid] = TRUE;
+
+    // Unblock the account. Verification by the site admin/user email is unnecessary.
+    $edit['status'] = TRUE;
+  }
+
+  $account = user_save($account, $edit);
+
+  // Terminate if an error occurred during user_save().
+  if (!$account) {
+    drupal_set_message(t("Error saving user account."), 'error');
+    $form_state['redirect'] = '';
+    return;
+  }
+
+  $form_state['user'] = $account;
+  $form_state['values']['uid'] = $account->uid;
+
+  watchdog('user', 'New user: %name (%email).', array('%name' => $form_state['values']['name'], '%email' => $form_state['values']['mail']), WATCHDOG_NOTICE, l(t('edit'), 'user/' . $account->uid . '/edit'));
+
+  // No e-mail verification required; log in user immediately.
+  if ($account->status) {
+    _user_mail_notify('register_no_approval_required', $account);
+    $form_state['uid'] = $account->uid;
+    user_login_submit(array(), $form_state);
+    drupal_set_message(t('Registration successful. You are now logged in.'));
+    $form_state['redirect'] = '';
+  }
+}
