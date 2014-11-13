@@ -96,8 +96,8 @@ function iasc_configuration_panelizer_defaults_override_alter(&$data) {
           'locks' => array(),
           'uuid' => 'a8210476-3ab0-4ab6-974e-f511ec91f54b',
         ); /* WAS: '' */
-    $data['node:oa_section:calendar_section']->display->panels['contentmain'][0] = 'new-a8210476-3ab0-4ab6-974e-f511ec91f54b'; /* WAS: 'new-39b87a40-e27c-45b0-8bdf-6a9c3f117695' */
-    $data['node:oa_section:calendar_section']->display->panels['contentmain'][1] = 'new-9ea94d4c-567b-404f-9aec-386ae14a1aea'; /* WAS: '' */
+    $data['node:oa_section:calendar_section']->display->panels['contentmain'][0] = 'new-9ea94d4c-567b-404f-9aec-386ae14a1aea'; /* WAS: 'new-39b87a40-e27c-45b0-8bdf-6a9c3f117695' */
+    $data['node:oa_section:calendar_section']->display->panels['contentmain'][1] = 'new-a8210476-3ab0-4ab6-974e-f511ec91f54b'; /* WAS: '' */
     $data['node:oa_section:calendar_section']->display->panels['sidebar'][0] = 'new-5241f5c7-9e10-4e79-a1ce-84f68ad200f3'; /* WAS: 'new-81942150-4ee9-4396-8371-b94f72b18f6a' */
     unset($data['node:oa_section:calendar_section']->display->content['new-39b87a40-e27c-45b0-8bdf-6a9c3f117695']);
     unset($data['node:oa_section:calendar_section']->display->content['new-81942150-4ee9-4396-8371-b94f72b18f6a']);
