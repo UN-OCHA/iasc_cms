@@ -65,6 +65,30 @@ abstract class AbstractElement implements ElementInterface {
         $value = 0;
       }
     }
+    elseif (!empty($params['table_text'])) {
+      // If table_link is TRUE, then find the link inside a table element.
+      $value = $this->listing->crawler
+        ->filter($params['selector']);
+
+      if ($value->getNode(0) != NULL) {
+        $items = array();
+        $count = count($value->filter($params['selector'])->children());
+        $value = $value->filter($params['selector'])->children();
+        for ($i = 2; $i < $count + 1; $i++) {
+          $num = sprintf("%02s", $i);
+          $title_filter = $params['left_label'] . $num . $params['right_label'];
+          $url_filter = $params['left_link'] . $num . $params['right_link'];
+          $items[] = array(
+            'title' => $value->filter($title_filter)->text(),
+            'url' => $value->filter($url_filter)->text(),
+          );
+        }
+        $value = $items;
+      }
+      else {
+        $value = 0;
+      }
+    }
     elseif (!empty($params['table_link'])) {
       $link_text = (isset($params['link_text'])) ? $params['link_text'] : 'Edit';
       // If table_link is TRUE, then find the link inside a table element.
@@ -121,23 +145,6 @@ abstract class AbstractElement implements ElementInterface {
         'filename' => $text,
         'file_link' => $link,
       );
-
-      /*
-      $cookie = $this->listing->client->getCookieJar();
-      $this->listing->crawler = $this->listing->client->click($link);
-      $contents = $this->listing->client->request('GET', $link);
-      $contents->get($link,
-      array(
-      'save_to' =>
-      '/opt/development/iasc_cms/build/html/sites/default/files/' . $text
-      )
-      );
-
-      $file = file_get_contents($contents);
-      $insert = file_put_contents(
-      '/opt/development/iasc_cms/build/html/sites/default/files/'
-      . $text, $file);
-      */
     }
     else {
       // If the attribute isn't specified, then we assume that we need to grab

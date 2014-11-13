@@ -13,7 +13,9 @@ class IASCDefault {
 
   protected $wrapper;
   protected $fields = array();
+  protected $summaryFields = array();
   protected $plain = array();
+  protected $flags = array();
   protected $hardcoded = array();
   protected $created = '';
   protected $term = array();
@@ -22,6 +24,7 @@ class IASCDefault {
   protected $space = array();
   protected $dates = array();
   protected $contact = array();
+  protected $links = array();
   protected static $sections = array();
 
   /**
@@ -54,6 +57,7 @@ class IASCDefault {
     $this->setCreated();
     $this->setHardcoded();
     $this->setFields();
+    $this->setSummaryFields();
     $this->setPlain();
     $this->setTerm();
     $this->setTerms();
@@ -61,10 +65,14 @@ class IASCDefault {
     $this->setSpace();
     $this->setDates();
     $this->setContact();
+    $this->setLinks();
 
     // Save the entity.
     $this->wrapper->save(TRUE);
     entity_save('node', $this->entity);
+
+    // Set flags. Need nid.
+    // $this->setFlags();
   }
 
   /**
@@ -117,6 +125,30 @@ class IASCDefault {
       catch (Exception $e) {
         echo 'Caught exception on ' . $field . ': ',  $e->getMessage(), "\n";
       }
+    }
+  }
+
+  /**
+   * Set combine text fields.
+   */
+  protected function setSummaryFields() {
+    $summary = array();
+    $summaries = $this->summaryFields['summary'];
+
+    // Combine summary fields.
+    foreach ($summaries as $summary_field) {
+      $summary[] = $this->values['data'][$summary_field];
+    }
+    $summary = implode(' ', $summary);
+
+    // Grab body field.
+    $body = $this->values['data']['body'];
+
+    try {
+      $this->wrapper->body->set(array('value' => $body, 'summary' => $summary));
+    }
+    catch (Exception $e) {
+      echo 'Caught exception on body: ',  $e->getMessage(), "\n";
     }
   }
 
@@ -202,34 +234,6 @@ class IASCDefault {
         $value = str_replace('  ', ' ', $value);
         $space_id = $this->getSpaceId($value);
 
-        /*
-        // Possible main spaces.
-        // Not a fan of hard-coding, but no legacy name to lookup.
-        $main_spaces = array(
-          'Subsidiary Bodies' => 2606,
-          'Other' => 2608,
-          'Weekly' => 2609,
-          'Working Group' => 2605,
-        );
-
-        foreach ($main_spaces as $space_name => $entity_id) {
-          // Attempt to see if named space is part of main space.
-          $match = preg_match("/$space_name+/", $value);
-
-          // If so, set main space, then other space.
-          if ($match) {
-            $space_id = $entity_id;
-            $other_space_id = $this->getSpaceId($value);
-            break;
-          }
-        }
-
-        // If no matches were found, attempt to set the space.
-        if (!isset($match)) {
-          $space_id = $this->getSpaceId($value);
-        }
-        */
-
         // Save to main space.
         if ($space_id) {
           try {
@@ -242,18 +246,6 @@ class IASCDefault {
             echo 'Caught exception on ' . $space . ': ', $e->getMessage(), "\n";
           }
         }
-
-        /*
-        // Save to other space.
-        if ($other_space_id) {
-          try {
-            $this->wrapper->oa_other_spaces_ref->set(array($other_space_id));
-          }
-          catch (Exception $e) {
-            echo 'Caught exception on ' . $space . ': ', $e->getMessage(), "\n";
-          }
-        }
-        */
       }
     }
   }
@@ -357,10 +349,14 @@ class IASCDefault {
    */
   protected function mapSectionNames() {
     // We only want a subset of all of the section types.
-    $section_types = array('Document Section', 'Calendar Section', 'News Section');
+    $section_types = array(
+      'Document Section',
+      'Calendar Section',
+      'News Section',
+    );
 
     $groups = $this->getGroups();
-    if (!groups) {
+    if (!$groups) {
       throw new Exception('Missing groups.');
     }
 
@@ -520,6 +516,34 @@ class IASCDefault {
           catch (Exception $e) {
             echo 'Caught exception on ' . $contact . ': ', $e->getMessage(), "\n";
           }
+        }
+      }
+    }
+  }
+
+  /**
+   * Set flags.
+   */
+  protected function setFlags() {
+    foreach ($this->flags as $flag) {
+      $nid = $this->wrapper->getIdentifier();
+      if (1 == $this->values['data'][$flag]) {
+        flag('flag', $flag, $nid);
+      }
+    }
+  }
+
+  /**
+   * Set links.
+   */
+  protected function setLinks() {
+    foreach ($this->links as $link) {
+      if (!empty($this->values['data'][$link])) {
+        try {
+          $this->wrapper->{$link}->set($this->values['data'][$link]);
+        }
+        catch (Exception $e) {
+          echo 'Caught exception on ' . $link . ': ', $e->getMessage(), "\n";
         }
       }
     }
