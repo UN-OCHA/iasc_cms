@@ -53,3 +53,14 @@
     border-bottom: 1px solid #fff;
   }
 }
+
+/* Annoucements */
+.node-type-announcement {
+  .title {
+    margin-bottom: 0;
+  }
+  .field-name-field-published-date {
+    margin-bottom: 10px;
+  }
+  .node-oa-wiki-page h2 { display: none; }
+}

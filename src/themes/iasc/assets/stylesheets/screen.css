@@ -8662,12 +8662,23 @@ body.ctools-modal-open {
  * Styles for main layout
  */
 @media screen and (max-width: 480px) {
-  /* line 8, ../sass/layout/_layout.scss */
+  /* line 7, ../sass/layout/_layout.scss */
   .container {
     padding-right: 10px;
     padding-left: 10px;
   }
+  /* line 11, ../sass/layout/_layout.scss */
+  #main-wrapper > .container {
+    padding-bottom: 20px;
+  }
 }
+@media screen and (min-width: 480px) {
+  /* line 14, ../sass/layout/_layout.scss */
+  #main-wrapper > .container {
+    padding-bottom: 100px;
+  }
+}
+
 /* line 1, ../sass/components/_buttons.scss */
 .btn-inverse {
   color: white !important;
@@ -8793,35 +8804,6 @@ header.container .top {
   .brand {
     max-width: 360px;
   }
-}
-
-/* line 2, ../sass/components/_iasc-organizatinos.scss */
-.view-display-id-panel_pane_membership_logos h4 {
-  clear: both;
-}
-/* line 6, ../sass/components/_iasc-organizatinos.scss */
-.view-display-id-panel_pane_membership_logos ul li {
-  position: relative;
-  float: left;
-  width: 50%;
-  text-align: center;
-  padding: 0 8px;
-}
-/* line 13, ../sass/components/_iasc-organizatinos.scss */
-.view-display-id-panel_pane_membership_logos ul li:nth-child(2n+3) {
-  clear: left;
-}
-/* line 16, ../sass/components/_iasc-organizatinos.scss */
-.view-display-id-panel_pane_membership_logos ul a {
-  height: 100px;
-  line-height: 100px;
-}
-/* line 20, ../sass/components/_iasc-organizatinos.scss */
-.view-display-id-panel_pane_membership_logos ul img {
-  vertical-align: middle;
-  margin-bottom: 44px;
-  padding: 0;
-  width: auto;
 }
 
 /* line 1, ../sass/components/_iasc-organization.scss */
@@ -9074,6 +9056,20 @@ img.bio-circled {
   border-bottom: 1px solid #fff;
 }
 
+/* Annoucements */
+/* line 59, ../sass/components/_node.scss */
+.node-type-announcement .title {
+  margin-bottom: 0;
+}
+/* line 62, ../sass/components/_node.scss */
+.node-type-announcement .field-name-field-published-date {
+  margin-bottom: 10px;
+}
+/* line 65, ../sass/components/_node.scss */
+.node-type-announcement .node-oa-wiki-page h2 {
+  display: none;
+}
+
 /**
  * @file
  * Panel Styles
@@ -9114,6 +9110,16 @@ img.bio-circled {
 /* line 31, ../sass/components/_panel.scss */
 .panel-success a {
   color: #000;
+}
+
+/* line 34, ../sass/components/_panel.scss */
+.well {
+  border: 0;
+  border-radius: 0;
+}
+/* line 37, ../sass/components/_panel.scss */
+.node-type-announcement .well .panel-separator {
+  margin-bottom: 10px;
 }
 
 /* line 3, ../sass/components/_view.scss */
