@@ -54,6 +54,7 @@ function iasc_document_connect_file() {
     ->condition('managed_fid', 0)
     ->condition('legacy_fid', 0, '<>')
     ->condition('file_save', 1)
+    ->condition('filename', '', '<>')
     ->range(0, 1)
     ->execute()
     ->fetchAssoc();
