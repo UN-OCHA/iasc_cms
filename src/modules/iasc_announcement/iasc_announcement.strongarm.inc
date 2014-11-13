@@ -64,7 +64,20 @@ function iasc_announcement_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__announcement';
   $strongarm->value = array(
-    'view_modes' => array(),
+    'view_modes' => array(
+      'link_to_document' => array(
+        'custom_settings' => FALSE,
+      ),
+      'bio_full' => array(
+        'custom_settings' => FALSE,
+      ),
+      'bio_long' => array(
+        'custom_settings' => FALSE,
+      ),
+      'bio_short' => array(
+        'custom_settings' => FALSE,
+      ),
+    ),
     'extra_fields' => array(
       'form' => array(
         'title' => array(

@@ -31,6 +31,14 @@
   a { color: #000; }
 }
 
+.well {
+  border: 0;
+  border-radius: 0;
+  .node-type-announcement & .panel-separator {
+    margin-bottom: 10px;
+  }
+}
+
 
 
 
