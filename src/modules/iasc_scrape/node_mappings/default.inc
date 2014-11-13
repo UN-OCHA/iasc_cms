@@ -289,7 +289,7 @@ class IASCDefault {
             $section = 'Documents' . $section_add;
             break;
 
-          case 'announcements':
+          case 'announcement':
             $section = 'News' . $section_add;
             break;
         }
