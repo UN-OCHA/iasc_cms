@@ -35,9 +35,9 @@ function iasc_group_login_menu_alter(&$items) {
  */
 function iasc_group_login_permission() {
   return array(
-    'edit user profiles' => array(
-      'title' => t('Edit user profiles'),
-      'description' => t('Edit any user profile.'),
+    'edit user profile' => array(
+      'title' => t('Edit user profile'),
+      'description' => t('Edit a user profile. Restriction on own vs any handed by the user module.'),
       'restrict access' => TRUE,
     ),
     'register new account' => array(
@@ -52,7 +52,7 @@ function iasc_group_login_permission() {
  * Access callback for user account editing.
  */
 function iasc_user_edit_access($account) {
-  return ($account->uid > 0 && (user_access('administer users') || user_access('edit user profiles')));
+  return ($account->uid > 0 && (user_access('administer users') || user_access('edit user profile')));
 }
 
 /**
