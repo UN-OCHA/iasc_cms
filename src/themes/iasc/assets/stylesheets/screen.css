@@ -9131,7 +9131,8 @@ img.bio-circled {
   width: 100%;
 }
 @media screen and (min-width: 768px) {
-  /* line 12, ../sass/components/_view.scss */
+  /* line 13, ../sass/components/_view.scss */
+  .view-filters #edit-field-oa-date-value-1-wrapper .element-invisible,
   .view-filters #edit-field-published-date-value-1-wrapper .element-invisible,
   .view-filters #edit-field-oa-date-value2-wrapper .element-invisible {
     color: transparent;
@@ -9140,57 +9141,57 @@ img.bio-circled {
     overflow: visible;
   }
 }
-/* line 21, ../sass/components/_view.scss */
+/* line 22, ../sass/components/_view.scss */
 .view-filters .views-exposed-widget {
   width: 100%;
   padding-right: 0;
 }
 @media screen and (min-width: 768px) and (max-width: 992px) {
-  /* line 21, ../sass/components/_view.scss */
+  /* line 22, ../sass/components/_view.scss */
   .view-filters .views-exposed-widget {
     width: 50%;
   }
-  /* line 26, ../sass/components/_view.scss */
+  /* line 27, ../sass/components/_view.scss */
   .view-filters .views-exposed-widget:nth-child(odd) {
     padding: 10px 10px 0 0;
     clear: left;
   }
-  /* line 30, ../sass/components/_view.scss */
+  /* line 31, ../sass/components/_view.scss */
   .view-filters .views-exposed-widget:nth-child(even) {
     padding: 10px 0 0 10px;
   }
 }
 @media screen and (min-width: 992px) {
-  /* line 21, ../sass/components/_view.scss */
+  /* line 22, ../sass/components/_view.scss */
   .view-filters .views-exposed-widget {
     width: 25%;
     padding-right: 20px;
     margin-bottom: 20px;
   }
-  /* line 38, ../sass/components/_view.scss */
+  /* line 39, ../sass/components/_view.scss */
   .view-iasc-document .view-filters .views-exposed-widget:not(.views-submit-button) {
     width: 33%;
     float: left;
   }
 }
-/* line 46, ../sass/components/_view.scss */
+/* line 47, ../sass/components/_view.scss */
 .view-filters .views-reset-button,
 .view-filters .views-submit-button {
   width: 100%;
   padding-top: 2rem;
 }
-/* line 49, ../sass/components/_view.scss */
+/* line 50, ../sass/components/_view.scss */
 .view-filters .views-reset-button input, .view-filters .views-reset-button .form-item,
 .view-filters .views-submit-button input,
 .view-filters .views-submit-button .form-item {
   float: right;
 }
-/* line 52, ../sass/components/_view.scss */
+/* line 53, ../sass/components/_view.scss */
 .view-filters .views-reset-button input[type="submit"],
 .view-filters .views-submit-button input[type="submit"] {
   margin: 0 0 0 2rem;
 }
-/* line 55, ../sass/components/_view.scss */
+/* line 56, ../sass/components/_view.scss */
 .view-filters .views-reset-button .form-type-checkbox,
 .view-filters .views-submit-button .form-type-checkbox {
   top: 8px;

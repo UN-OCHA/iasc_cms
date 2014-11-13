@@ -5,8 +5,9 @@
     div, input { width: 100%; }
   }
   
-
+  // These field needs to be pushed down beacause they don't have a label but we want them aligned.
   @media screen and (min-width: $screen-sm-min) {
+    #edit-field-oa-date-value-1-wrapper,
     #edit-field-published-date-value-1-wrapper,
     #edit-field-oa-date-value2-wrapper {
       .element-invisible {
