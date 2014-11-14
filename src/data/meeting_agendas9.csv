@@ -1,0 +1,299 @@
+agendaID,calmeetID,agorder,agitem,agsubitem,agdescription,presenterID,agpublishlevel
+921,626,1,Humanitarian Response,NULL,NULL,0,2
+922,626,0,Summary Record and Action Points,NULL,NULL,0,2
+923,626,0,Outcome Statement,NULL,NULL,0,2
+916,625,NULL,"Presentation by Ms. Yvette Stevens, AERC",NULL,NULL,0,2
+915,620,NULL,Fleet Forum,NULL,NULL,346,0
+955,620,0,UNIDIR,NULL,NULL,347,0
+914,619,1,"Russian Federation, North Caucasus - Mission Debriefing",NULL,NULL,351,0
+954,619,2,Guatemala and El Salvador - Humanitarian Situation after Hurricane Stan,NULL,NULL,294,0
+912,615,NULL,IDPs,NULL,NULL,0,3
+913,615,NULL,Summary Notes,NULL,NULL,0,3
+911,614,0,Afghanistan - Displacement,NULL,NULL,348,0
+956,614,0,Gender Equality,NULL,NULL,7,0
+910,613,1,Serbia and Kosovo - Internal Displacement,NULL,NULL,315,0
+1116,611,1,New Agenda for Strengthening the CAP,NULL,NULL,0,0
+1117,611,2,Follow-up Actions in Response to the Allegations of Sexual Exploitation of Children in West Africanefugee Camps,NULL,NULL,0,0
+1118,611,3,Humanitarian Crises,NULL,NULL,0,0
+1119,611,4,IASC Work Plan 2002,NULL,NULL,0,0
+1120,611,5,IASC Membership,NULL,NULL,0,0
+1121,611,6,AOB,ECOSOC Humanitarian Segment,NULL,0,0
+1122,611,0,Agenda,NULL,NULL,0,0
+1123,611,0,Summary Record and Action Points,NULL,NULL,0,0
+1129,610,0,Agenda,NULL,NULL,0,0
+1130,610,0,Summary Record and Action Points,NULL,NULL,0,0
+1131,610,1,Review of the Work of the IASC in 2002 and Endorsement of the Work Plan for 2003,NULL,NULL,0,0
+1132,610,2,Middle East,NULL,NULL,0,0
+1133,610,3,Humanitarian Action and Interface with Military Actors,NULL,NULL,0,0
+1134,610,4,Worsening Impact of HIV/AIDS on Food Security and Human Survival in Southern Africa,NULL,NULL,0,0
+898,609,1,Agenda,NULL,NULL,0,2
+899,609,1,Follow-up Matrix,NULL,NULL,0,2
+900,609,1,Summary Records and Actions Points,NULL,NULL,0,2
+901,609,2,Consolidated Appeals Process (CAP),NULL,NULL,0,2
+902,609,2,ECOSOC,NULL,NULL,0,2
+903,609,2,HIV/AIDS,NULL,NULL,0,2
+904,609,2,Humanitarian Coordinators,NULL,NULL,0,2
+905,609,2,Internally Displaced Persons (IDPs),NULL,NULL,0,2
+906,609,2,Middle East,NULL,NULL,0,2
+907,609,2,Reference Groups,NULL,NULL,0,2
+908,609,2,Sexual Exploitation,NULL,NULL,0,2
+909,609,3,Workplan,NULL,NULL,0,2
+883,608,1,Agenda,NULL,NULL,0,2
+884,608,1,Follow-up Matrix,NULL,NULL,0,2
+885,608,1,Summary Records and Actions Points,NULL,NULL,0,2
+886,608,2,Consolidated Appeals Process (CAP),NULL,NULL,0,2
+887,608,2,Debriefings,NULL,NULL,0,2
+888,608,2,ECOSOC,NULL,NULL,0,2
+889,608,2,Humanitarian Coordinators,NULL,NULL,0,2
+890,608,2,IASC Review,NULL,NULL,0,2
+891,608,2,Internally Displaced Persons (IDPs),NULL,NULL,0,2
+892,608,2,Liberia,NULL,NULL,0,2
+893,608,2,Northern Caucasus,NULL,NULL,0,2
+894,608,2,Sexual Exploitation,NULL,NULL,0,2
+895,608,2,Sudan,NULL,NULL,0,2
+896,608,2,Zimbabwe,NULL,NULL,0,2
+897,608,3,AOB,NULL,NULL,0,2
+872,606,1,Agenda,NULL,NULL,0,2
+873,606,1,Follow up-Matrix,NULL,NULL,0,2
+874,606,1,Summary Record and Action Points,NULL,NULL,0,2
+875,606,2,Civil-Military Relations,NULL,NULL,0,2
+876,606,2,Consolidated Appeals Process (CAP),NULL,NULL,0,2
+877,606,2,Democratic Republic of the Congo,NULL,NULL,0,2
+878,606,2,Humanitarian Coordinators,NULL,NULL,0,2
+879,606,2,Occupied Palestinian Territory,NULL,NULL,0,2
+880,606,2,Sexual Exploitation,NULL,NULL,0,2
+881,606,2,Sri Lanka,NULL,NULL,0,2
+882,606,2,UMAS,NULL,NULL,0,2
+859,605,1,Agenda,NULL,NULL,0,2
+860,605,1,Follow up-Matrix,NULL,NULL,0,2
+861,605,1,Follow-up Matrix,NULL,NULL,0,2
+862,605,1,Summary Record and Action Points,NULL,NULL,0,2
+863,605,2,Advocacy,NULL,NULL,0,2
+864,605,2,Afghanistan,NULL,NULL,0,2
+865,605,2,Consolidated Appeals Process (CAP),NULL,NULL,0,2
+866,605,2,HIV/AIDS,NULL,NULL,0,2
+867,605,2,Humanitarian Information,NULL,NULL,0,2
+868,605,2,Internally Displaced Persons (IDPs),NULL,NULL,0,2
+869,605,2,Liberia,NULL,NULL,0,2
+870,605,2,Logistics,NULL,NULL,0,2
+871,605,2,UNDAC,NULL,NULL,0,2
+857,604,1,Follow-up Matrix,NULL,NULL,0,2
+858,604,1,Summary Record and Action Points,NULL,NULL,0,2
+855,603,1,Follow-up Matrix,NULL,NULL,0,2
+856,603,1,Summary Record and Action Points,NULL,NULL,0,2
+854,602,1,Summary Record and Action Points,NULL,NULL,0,2
+853,601,1,Summary Record and Action Points,NULL,NULL,0,2
+852,600,2,Presentations,NULL,NULL,0,0
+841,599,1,Summary Records and Action Points,NULL,NULL,0,2
+842,599,2,Conditionality,NULL,NULL,0,2
+843,599,2,Consolidated Appeals and IDPs,NULL,NULL,0,2
+844,599,2,Consolidated Appeals Process (CAP),NULL,NULL,0,2
+845,599,2,Disaster Management Training Programme,NULL,NULL,0,2
+846,599,2,Indonesia,NULL,NULL,0,2
+847,599,2,In-Kind Donations,NULL,NULL,0,2
+848,599,2,Internally Displaced Persons (IDPs),NULL,NULL,0,2
+849,599,2,Post-Conflict Reintegration,NULL,NULL,0,2
+850,599,2,Somalia,NULL,NULL,0,2
+851,599,2,United Nations Disaster Management Training Programme,NULL,NULL,0,2
+840,597,1,Summary Record,NULL,NULL,0,2
+838,596,1,Summary Record,NULL,NULL,0,2
+839,596,2,Internally Displaced Persons (IDPs),NULL,NULL,0,2
+837,595,2,Newly Independent States,NULL,NULL,0,2
+832,592,1,Summary Records and Action Points,NULL,NULL,0,2
+833,592,2,Brahimi Report,NULL,NULL,0,2
+834,592,2,ECOSOC,NULL,NULL,0,2
+835,592,2,Food Security,NULL,NULL,0,2
+836,592,2,Internally Displaced Persons (IDPs),NULL,NULL,0,2
+824,591,1,Summary Records and Action Points,NULL,NULL,0,2
+825,591,2,Democratic Republic of Congo,NULL,NULL,0,2
+826,591,2,Economic Sanctions and Human Rights,NULL,NULL,0,2
+827,591,2,Emergency Telecommunications,NULL,NULL,0,2
+828,591,2,HIV/AIDS,NULL,NULL,0,2
+829,591,2,Internally Displaced Persons (IDPs),NULL,NULL,0,2
+830,591,2,Natural Disasters,NULL,NULL,0,2
+831,591,2,Post-Conflict Reintegration,NULL,NULL,0,2
+814,590,1,Summary Records and Action Points,NULL,NULL,0,2
+815,590,2,Africa Month,NULL,NULL,0,2
+816,590,2,Consolidated Appeals Process (CAP),NULL,NULL,0,2
+817,590,2,Human Rights,NULL,NULL,0,2
+818,590,2,Internally Displaced Persons (IDPs),NULL,NULL,0,2
+819,590,2,Polio,NULL,NULL,0,2
+820,590,2,Post-Conflict Reintegration,NULL,NULL,0,2
+821,590,2,Republic of Congo,NULL,NULL,0,2
+822,590,2,Resident Coordinators,NULL,NULL,0,2
+823,590,2,Staff Security,NULL,NULL,0,2
+809,589,1,Summary Records and Action Points,NULL,NULL,0,2
+810,589,2,Colombia,NULL,NULL,0,2
+811,589,2,IASC,NULL,NULL,0,2
+812,589,2,Internally Displaced Persons (IDPs),NULL,NULL,0,2
+813,589,2,Post-Conflict Reintegration,NULL,NULL,0,2
+806,588,1,Summary Records and Action Points,NULL,NULL,0,2
+807,588,2,Colombia,NULL,NULL,0,2
+808,588,2,Post-Conflict Reintegration,NULL,NULL,0,2
+802,587,1,Summary Records and Action Points,NULL,NULL,0,2
+803,587,2,Consolidated Appeals Process (CAP),NULL,NULL,0,2
+804,587,2,Military and Civil Defence Unit,NULL,NULL,0,2
+805,587,2,Polio,NULL,NULL,0,2
+794,586,1,Summary Records and Action Points,NULL,NULL,0,2
+795,586,2,Gender,NULL,NULL,0,2
+796,586,2,Humanitarian Access,NULL,NULL,0,2
+797,586,2,IASC,NULL,NULL,0,2
+798,586,2,Internally Displaced Persons (IDPs),NULL,NULL,0,2
+799,586,2,International Criminal Court,NULL,NULL,0,2
+800,586,2,Russian Federation,NULL,NULL,0,2
+801,586,2,Small Arms,NULL,NULL,0,2
+790,585,1,Summary Records and Action Points,NULL,NULL,0,2
+791,585,2,Angola,NULL,NULL,0,2
+792,585,2,Former Yugoslavia,NULL,NULL,0,2
+793,585,2,Internally Displaced Persons (IDPs),NULL,NULL,0,2
+784,584,1,Summary Records and Action Points,NULL,NULL,0,2
+785,584,2,Capacity Building,NULL,NULL,0,2
+786,584,2,Gender,NULL,NULL,0,2
+787,584,2,Internally Displaced Persons (IDPs),NULL,NULL,0,2
+788,584,2,Security Council,NULL,NULL,0,2
+789,584,2,Small Arms,NULL,NULL,0,2
+1681,583,0,Summary Record,NULL,NULL,0,0
+778,581,1,Summary Records and Action Points,NULL,NULL,0,2
+779,581,2,Environment,NULL,NULL,0,2
+780,581,2,Human Rights,NULL,NULL,0,2
+781,581,2,Internally Displaced Persons (IDPs),NULL,NULL,0,2
+782,581,2,Mine Action,NULL,NULL,0,2
+783,581,2,Principled Common Programming,NULL,NULL,0,2
+774,580,1,Summary Records and Action Points,NULL,NULL,0,2
+775,580,2,Afghanistan,NULL,NULL,0,2
+776,580,2,Demobilization,NULL,NULL,0,2
+777,580,2,Sudan,NULL,NULL,0,2
+767,579,1,Summary Records and Action Points,NULL,NULL,0,2
+768,579,2,Afghanistan,NULL,NULL,0,2
+769,579,2,CETI,NULL,NULL,0,2
+770,579,2,Democratic Republic of Korea,NULL,NULL,0,2
+771,579,2,Divestment,NULL,NULL,0,2
+772,579,2,Economic Sanctions,NULL,NULL,0,2
+773,579,2,Internally Displaced Persons (IDPs),NULL,NULL,0,2
+765,578,1,Summary Record,NULL,NULL,0,2
+766,578,1,"Zambia, Zaire, Mozambique",NULL,NULL,0,2
+763,577,1,Summary Records and Action Points,NULL,NULL,0,2
+764,577,2,Democratic Republic of Korea,NULL,NULL,0,2
+756,576,1,Summary Records and Action Points,NULL,NULL,0,2
+757,576,2,Coordination,NULL,NULL,0,2
+758,576,2,Demining,NULL,NULL,0,2
+759,576,2,Demobilization,NULL,NULL,0,2
+760,576,2,IASC and ECHA,NULL,NULL,0,2
+761,576,2,Internally Displaced Persons (IDPs),NULL,NULL,0,2
+762,576,2,Training,NULL,NULL,0,2
+748,575,1,Summary Records and Action Points,NULL,NULL,0,2
+749,575,2,Afghanistan,NULL,NULL,0,2
+750,575,2,CETI,NULL,NULL,0,2
+751,575,2,Democratic Republic of Korea,NULL,NULL,0,2
+752,575,2,Economic Sanctions,NULL,NULL,0,2
+753,575,2,IASC and ECHA,NULL,NULL,0,2
+754,575,2,Peace-Building,NULL,NULL,0,2
+755,575,2,Sudan,NULL,NULL,0,2
+747,573,1,Summary Records and Action Points,NULL,NULL,0,2
+740,572,1,Summary Records and Action Points,NULL,NULL,0,2
+741,572,2,Consolidated Appeals Process (CAP),NULL,NULL,0,2
+742,572,2,Coordination,NULL,NULL,0,2
+743,572,2,ECOSOC,NULL,NULL,0,2
+744,572,2,IASC Secretariat,NULL,NULL,0,2
+745,572,2,Recovery,NULL,NULL,0,2
+746,572,2,Sudan,NULL,NULL,0,2
+735,571,1,Summary Records and Action Points,NULL,NULL,0,2
+736,571,2,Coordination,NULL,NULL,0,2
+737,571,2,Economic Sanctions,NULL,NULL,0,2
+738,571,2,IASC,NULL,NULL,0,2
+739,571,2,Internally Displaced Persons (IDPs),NULL,NULL,0,2
+734,570,1,Summary Records,NULL,NULL,0,2
+725,569,1,Summary Records,NULL,NULL,0,2
+726,569,2,Angola,NULL,NULL,0,2
+727,569,2,Economic Sanctions,NULL,NULL,0,2
+728,569,2,ECOSOC,NULL,NULL,0,2
+729,569,2,Great Lakes,NULL,NULL,0,2
+730,569,2,Humanitarian Space,NULL,NULL,0,2
+731,569,2,Liberia,NULL,NULL,0,2
+732,569,2,Rwanda,NULL,NULL,0,2
+733,569,2,Sudan,NULL,NULL,0,2
+718,568,1,Summary Record,NULL,NULL,0,2
+719,568,2,Angola,NULL,NULL,0,2
+720,568,2,Coordination,NULL,NULL,0,2
+721,568,2,Economic Sanctions,NULL,NULL,0,2
+722,568,2,ECOSOC / Coordination,NULL,NULL,0,2
+723,568,2,Rwanda,NULL,NULL,0,2
+724,568,2,Somalia,NULL,NULL,0,2
+710,567,1,Summary Record,NULL,NULL,0,2
+711,567,2,Coordination,NULL,NULL,0,2
+712,567,2,Follow-up Matrix,NULL,NULL,0,2
+713,567,2,Former Yugoslavia,NULL,NULL,0,2
+714,567,2,Liberia,NULL,NULL,0,2
+715,567,2,Somalia,NULL,NULL,0,2
+716,567,2,Sri Lanka,NULL,NULL,0,2
+717,567,2,Training,NULL,NULL,0,2
+709,566,1,Summary Record,NULL,NULL,0,2
+703,565,1,Summary Records,NULL,NULL,0,2
+704,565,2,Civil / Military Coordination,NULL,NULL,0,2
+705,565,2,Coordination,NULL,NULL,0,2
+706,565,2,ECOSOC / Coordination,NULL,NULL,0,2
+707,565,2,Great Lakes,NULL,NULL,0,2
+708,565,2,Sierra Leone,NULL,NULL,0,2
+695,564,1,Summary Record,NULL,NULL,0,2
+696,564,2,Burundi,NULL,NULL,0,2
+697,564,2,CERF,NULL,NULL,0,2
+698,564,2,Chechnya,NULL,NULL,0,2
+699,564,2,Civil / Military Coordination,NULL,NULL,0,2
+700,564,2,Disaster Management Training Programme,NULL,NULL,0,2
+701,564,2,Rwanda,NULL,NULL,0,2
+702,564,2,Sierra Leone,NULL,NULL,0,2
+693,563,1,Summary Record,NULL,NULL,0,2
+694,563,2,Food Security,NULL,NULL,0,2
+684,562,1,Summary Record,NULL,NULL,0,2
+685,562,2,Civil / Military Coordination,NULL,NULL,0,2
+686,562,2,Complex Emergencies,NULL,NULL,0,2
+687,562,2,Consolidated Appeals Process (CAP),NULL,NULL,0,2
+688,562,2,Coordination,NULL,NULL,0,2
+689,562,2,Humanitarian Coordinators,NULL,NULL,0,2
+690,562,2,Internally Displaced Persons (IDPs),NULL,NULL,0,2
+691,562,2,Rwanda,NULL,NULL,0,2
+692,562,2,Somalia,NULL,NULL,0,2
+679,561,1,Action Points,,,0,0
+680,561,1,Summary Records,NULL,NULL,0,2
+681,561,2,Consolidated Appeals Process (CAP),NULL,NULL,0,2
+682,561,2,Rwanda,NULL,NULL,0,2
+683,561,2,Somalia,NULL,NULL,0,2
+677,560,1,Action Points,NULL,NULL,0,2
+678,560,2,Coordination,NULL,NULL,0,2
+669,559,1,Summary Records,NULL,NULL,0,2
+670,559,2,Angola,NULL,NULL,0,2
+671,559,2,Coordination,NULL,NULL,0,2
+672,559,2,Demobilization,NULL,NULL,0,2
+673,559,2,Financing,NULL,NULL,0,2
+674,559,2,Resource Mobilization,NULL,NULL,0,2
+675,559,2,Rwanda,NULL,NULL,0,2
+676,559,2,Zaire,NULL,NULL,0,2
+662,558,1,Action Points,NULL,NULL,0,2
+663,558,2,Angola,NULL,NULL,0,2
+664,558,2,Field Coordination,NULL,NULL,0,2
+665,558,2,Former Yugoslavia,NULL,NULL,0,2
+666,558,2,Internally Displaced Persons (IDPs),NULL,NULL,0,2
+667,558,2,Newly Independent States,NULL,NULL,0,2
+668,558,2,Zaire,NULL,NULL,0,2
+638,88,1,Agenda,NULL,NULL,0,2
+639,88,1,Information for Participants,NULL,NULL,0,2
+640,88,2,Consolidated Appeals Process (CAP),NULL,NULL,0,2
+641,88,3,Early Warning - Early Action,NULL,NULL,0,2
+642,88,4,Avian Flu and Human Influenza,NULL,NULL,0,2
+643,88,5,Discussion on Cluster Responsibility and Accountability,NULL,NULL,0,2
+644,88,6,Discussion on Cluster Responsibility and Accountability (Continuation),NULL,NULL,0,2
+645,88,7,Follow-up to the Humanitarian Response Review (HRR),NULL,NULL,0,2
+646,88,8,Humanitarian Common Services,NULL,NULL,0,3
+647,88,9,IASC Work Plan and Calendar 2006,NULL,NULL,0,2
+648,88,10,Preparations for the IASC Principals Meeting,NULL,NULL,0,2
+649,88,11,Review of the Work of Subsidiary Bodies,CAP,NULL,0,2
+650,88,12,Review of the Work of Subsidiary Bodies,Emergency Telecommunications,NULL,0,2
+651,88,12,Review of the Work of Subsidiary Bodies,Gender,NULL,0,2
+652,88,12,Review of the Work of Subsidiary Bodies,GHD,NULL,0,2
+653,88,12,Review of the Work of Subsidiary Bodies,HIV/AIDS,NULL,0,2
+654,88,12,Review of the Work of Subsidiary Bodies,Human Rights,NULL,0,2
+655,88,12,Review of the Work of Subsidiary Bodies,Mental Health,NULL,0,2
+656,88,12,Review of the Work of Subsidiary Bodies,Preparedness and Contingency Planning,NULL,0,2
+657,88,12,Review of the Work of Subsidiary Bodies,Training,NULL,0,2
+658,88,13,Strengthening the Humanitarian Coordinators System,NULL,NULL,0,2
+659,88,14,UNJLC Review,NULL,NULL,0,2
