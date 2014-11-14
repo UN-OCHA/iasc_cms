@@ -112,7 +112,9 @@ function iasc_scrape_schema() {
       ),
     ),
     'indexes' => array(
-      'record_changed' => array('changed'),
+      'legacy_id' => array('legacy_id'),
+      'entity_id' => array('entity_id'),
+      'legacy_meeting_id' => array('legacy_meeting_id'),
     ),
     'primary key' => array('id'),
   );
@@ -182,4 +184,13 @@ function iasc_scrape_update_7003() {
   foreach ($fields as $fieldname => $field_data) {
     db_add_field('iasc_scrape', $fieldname, $field_data);
   }
+}
+
+/**
+ * Add legacy_id, entity_id, legacy_meeting_id indexes.
+ */
+function iasc_scrape_update_7004() {
+  db_add_index('iasc_scrape', 'legacy_id', array('legacy_id'));
+  db_add_index('iasc_scrape', 'entity_id', array('entity_id'));
+  db_add_index('iasc_scrape', 'legacy_meeting_id', array('legacy_meeting_id'));
 }

@@ -288,7 +288,13 @@ function iasc_meeting_link_agendas($item, &$context) {
   $agenda_wrapper = entity_metadata_wrapper('field_collection_item', $collection);
 
   if ('NULL' != $item['agitem']) {
-    $agenda_wrapper->field_ai_title = $item['agitem'];
+    // If title is longer than 255, split into description.
+    $title = $item['agitem'];
+    if (strlen($title) > 255) {
+      $split_title = explode(' ', $title, 2);
+      $title = $split_title[0];
+    }
+    $agenda_wrapper->field_ai_title = $title;
   }
 
   $description = array();
@@ -296,6 +302,9 @@ function iasc_meeting_link_agendas($item, &$context) {
     $description[] = $item['agsubitem'];
   }
   if ('NULL' != $item['agdescription']) {
+    if (isset($split_title[1])) {
+      $description[] = $split_title[1];
+    }
     $description[] = $item['agdescription'];
   }
 
@@ -383,22 +392,13 @@ function iasc_meeting_get_nid_by_legacyid($id) {
  * Returns the nid associated with the legacy id or FALSE if no node exists.
  */
 function iasc_meeting_get_document_id_by_meeting_id($meeting_id) {
+  // Grab document entity by the legacy id of the meeting.
   $result = db_select('iasc_scrape', 'sc')
-    ->fields('sc', array('legacy_id'))
-    ->condition('type', 'meeting')
-    ->condition('entity_id', $meeting_id)
+    ->fields('sc', array('entity_id'))
+    ->condition('type', 'document')
+    ->condition('legacy_meeting_id', $meeting_id)
     ->execute()
     ->fetchAssoc();
-
-  // Now grab document entity by the legacy id of the meeting.
-  if ($result['legacy_id']) {
-    $result = db_select('iasc_scrape', 'sc')
-      ->fields('sc', array('entity_id'))
-      ->condition('type', 'document')
-      ->condition('legacy_meeting_id', $result['legacy_id'])
-      ->execute()
-      ->fetchAssoc();
-  }
 
   return isset($result['entity_id']) ? $result['entity_id'] : FALSE;
 }
