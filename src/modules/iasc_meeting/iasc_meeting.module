@@ -177,8 +177,8 @@ function iasc_meeting_check_file($file, &$messages) {
  */
 function iasc_meeting_meeting_agenda_batch_ops($file_handle, $options, &$messages, &$operations) {
   $meeting_items = array();
-  if ($header = fgetcsv($file_handle, 0, $options['delimiter'], $options['enclosure'])) {
-    while ($data = fgetcsv($file_handle, 0, $options['delimiter'], $options['enclosure'])) {
+  if ($header = fgetcsv($file_handle, 50000, $options['delimiter'], $options['enclosure'])) {
+    while ($data = fgetcsv($file_handle, 50000, $options['delimiter'], $options['enclosure'])) {
       if (is_array($data)) {
         $meeting_items[] = array_combine($header, $data);
       }
@@ -308,7 +308,7 @@ function iasc_meeting_link_agendas($item, &$context) {
     $description[] = $item['agdescription'];
   }
 
-  $description = (count($description) > 1) ? implode('<br />', $description) : $description;
+  $description = (count($description) > 1) ? implode(' ', $description) : $description;
   $description = (is_array($description)) ? reset($description) : $description;
   if (!empty($description)) {
     $agenda_wrapper->field_ai_description = array('value' => $description);
@@ -326,6 +326,11 @@ function iasc_meeting_link_agendas($item, &$context) {
     $agenda_wrapper->field_referenced_docs = array($document_id);
   }
   $agenda_wrapper->save();
+
+  // To fix improper document associations, remove any connection to media.
+  // None came over during migration and this was improperly set via the initial
+  // scrape.
+  $node_wrapper->field_oa_media->set(NULL);
 
   // Save the entity.
   $node_wrapper->save(TRUE);
