@@ -24,7 +24,7 @@
  * @ingroup views_templates
  */
 ?>
-<div class='oa-event'>
+<div class='oa-event clearfix'>
   <div class='oa-event-header'>
     <div class='oa-event-icon'>
       <?php if (!empty($field_oa_media)): ?>
@@ -35,13 +35,9 @@
     </div>
     <div class='oa-event-details'>
       <?php print $field_oa_date; ?>
-      <span class='oa-event-label'><?php print t('Timezone:');?></span> <?php print $field_time_zone; ?>
+      <div class="field-label-inline">
+        <span class='oa-event-label field-label'><?php print t('Timezone:');?> </span> <?php print $field_time_zone; ?>
+      </div>
     </div>
-  </div>
-  <div class='oa-event-description'>
-    <?php  print $field_oa_date_2; ?>
-    <?php print $body; ?>
-    <?php print $field_oa_media_1; ?>
-    <?php print $ops; ?>
   </div>
 </div>

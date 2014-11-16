@@ -8876,6 +8876,11 @@ img.bio-circled {
   display: block;
 }
 
+/* line 1, ../sass/components/_meetings.scss */
+p.oa-event-date {
+  margin-bottom: 0;
+}
+
 /* line 1, ../sass/components/_navigation.scss */
 .navbar {
   clear: left;

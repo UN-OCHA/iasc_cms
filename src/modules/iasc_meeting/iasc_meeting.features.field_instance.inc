@@ -262,6 +262,12 @@ function iasc_meeting_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'link_to_document' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -325,6 +331,12 @@ function iasc_meeting_field_default_field_instances() {
         'weight' => 0,
       ),
       'ical' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'link_to_document' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -404,6 +416,12 @@ function iasc_meeting_field_default_field_instances() {
         'weight' => 0,
       ),
       'ical' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'link_to_document' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -492,6 +510,12 @@ function iasc_meeting_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'link_to_document' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -560,6 +584,12 @@ function iasc_meeting_field_default_field_instances() {
         'weight' => 0,
       ),
       'ical' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'link_to_document' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -640,6 +670,12 @@ function iasc_meeting_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'link_to_document' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -713,6 +749,12 @@ function iasc_meeting_field_default_field_instances() {
         'weight' => 0,
       ),
       'ical' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'link_to_document' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -804,6 +846,12 @@ function iasc_meeting_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'link_to_document' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -889,6 +937,12 @@ function iasc_meeting_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'link_to_document' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -965,6 +1019,12 @@ function iasc_meeting_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'link_to_document' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'inline',
         'module' => 'list',
@@ -1031,6 +1091,12 @@ function iasc_meeting_field_default_field_instances() {
         'weight' => 0,
       ),
       'ical' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'link_to_document' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
