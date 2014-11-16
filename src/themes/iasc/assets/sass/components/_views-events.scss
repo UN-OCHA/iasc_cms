@@ -1,0 +1,12 @@
+.view-oa-event-list {
+  margin-bottom: $padding-large-vertical * 2;
+  .views-row {
+    margin-bottom: $padding-large-vertical * 2;
+    @media screen and (min-width: $screen-xs-min) {
+      clear: none;
+      float: left;
+      position: relative;
+      width: 50%;
+    }
+  }
+}
