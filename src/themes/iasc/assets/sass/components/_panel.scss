@@ -17,15 +17,21 @@
 
 .panel-success {
   .btn { background-color: $green; }
-  &.doc-icon li:before  { @extend .icons-page; }
-  &.arrow li:before  { @extend .icons-arrow; }
+  .views-row,
+  .field-item {
+    position: relative;
+    padding-left: 30px;
+  }
+  &.doc-icon a:before { @extend .icons-page; }
+  &.arrow a:before { @extend .icons-arrow; } 
   li { 
     line-height: 28px; 
   }
-  &:not(.none) li:before {
+  &:not(.none) a:before {
     @extend .icons;
     color: $green;
-    margin-right: 15px;
+    position: absolute;
+    left: 0; top: 4px;
     font-size: 16px;
   }
   a { color: #000; }
