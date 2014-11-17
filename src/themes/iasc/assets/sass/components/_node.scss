@@ -7,6 +7,9 @@
  * Contact Node
  */
 .node-contact {
+  h2 {
+    display: none;
+  }
   // Override default "all Featured image listing should be center align".
   .panel-primary .panel-body & { text-align: left; }
   .name {
