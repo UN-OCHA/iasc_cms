@@ -30,6 +30,10 @@ function iasc_meeting_install() {
     ->fields(array('weight' => $weight + 1))
     ->condition('name', 'iasc_meeting', '=')
     ->execute();
+
+  if ($instance = field_info_instance('node', 'field_oa_media', 'oa_event')) {
+    field_delete_instance($instance);
+  }
 }
 
 /**
@@ -68,4 +72,15 @@ function iasc_meeting_update_7001() {
     ->fields(array('weight' => $weight + 1))
     ->condition('name', 'iasc_meeting', '=')
     ->execute();
+}
+
+/**
+ * Implements hook_update_N().
+ *
+ * Remove field_oa_media from meetings.
+ */
+function iasc_meeting_update_7002() {
+  if ($instance = field_info_instance('node', 'field_oa_media', 'oa_event')) {
+    field_delete_instance($instance);
+  }
 }
