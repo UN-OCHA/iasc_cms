@@ -253,6 +253,7 @@ function iasc_configuration_features_override_default_overrides() {
       'locks' => array(),
       'uuid' => 'bf416e9c-7588-48cd-a156-db4e7d2a33ee',
     );
+  $overrides["panelizer_defaults.node:oa_space:default.display|layout"] = 'burr_flipped';
   $overrides["panelizer_defaults.node:oa_space:default.display|panels|contentmain|1"] = 'new-bf416e9c-7588-48cd-a156-db4e7d2a33ee';
   $overrides["panelizer_defaults.node:oa_space:default.display|panels|contentmain|2"] = 'new-9995e8b8-d8cb-4339-a7ad-1f0ea569d2de';
   $overrides["panelizer_defaults.node:oa_space:default.display|panels|sidebar|3"] = 'new-35ab60ac-d6d7-41b2-a57e-21ca28e5e974';
