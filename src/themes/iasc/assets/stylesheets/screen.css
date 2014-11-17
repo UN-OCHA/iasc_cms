@@ -8317,24 +8317,40 @@ h5, .h5,
 h6, .h6 {
   color: #6e0138;
 }
+/* line 14, ../sass/base/_elements.scss */
+h2 a, .node-type-oa-event .pane-node-field-info-private .field-label a,
+.node-type-oa-event .pane-node-field-info-private h3.pane-title a,
+.node-type-oa-event .pane-node-field-info-private .field-name-field-agenda-items .pane-title.field-name-field-ai-title a,
+.node-type-oa-event .field-name-field-agenda-items .pane-node-field-info-private .pane-title.field-name-field-ai-title a,
+.node-type-oa-event .pane-node-body .field-label a,
+.node-type-oa-event .pane-node-body h3.pane-title a,
+.node-type-oa-event .pane-node-body .field-name-field-agenda-items .pane-title.field-name-field-ai-title a,
+.node-type-oa-event .field-name-field-agenda-items .pane-node-body .pane-title.field-name-field-ai-title a, .node-type-oa-event .field-name-field-agenda-items > .field-label a, .h2 a,
+h3 a,
+.node-type-oa-event .field-name-field-agenda-items .field-name-field-ai-title a, .h3 a,
+h4 a, .h4 a,
+h5 a, .h5 a,
+h6 a, .h6 a {
+  color: #6e0138;
+}
 
-/* line 16, ../sass/base/_elements.scss */
+/* line 19, ../sass/base/_elements.scss */
 .pagination a {
   font-family: "Montserrat", sans-serif;
 }
 
-/* line 28, ../sass/base/_elements.scss */
+/* line 31, ../sass/base/_elements.scss */
 li {
   list-style: none;
 }
 
-/* line 32, ../sass/base/_elements.scss */
+/* line 35, ../sass/base/_elements.scss */
 .list-styled li,
 .wrapped-list li {
   padding-left: 15px;
   position: relative;
 }
-/* line 36, ../sass/base/_elements.scss */
+/* line 39, ../sass/base/_elements.scss */
 .list-styled li:before,
 .wrapped-list li:before {
   content: "\2022";
@@ -8346,70 +8362,80 @@ li {
   font-size: 22px;
 }
 
-/* line 44, ../sass/base/_elements.scss */
+/* line 47, ../sass/base/_elements.scss */
 .wrapped-list li {
   margin-bottom: 10px;
 }
 
-/* line 47, ../sass/base/_elements.scss */
+/* line 50, ../sass/base/_elements.scss */
 ol.ordered-styled li {
   list-style: decimal;
   list-style-position: inside;
 }
 
-/* line 55, ../sass/base/_elements.scss */
+/* line 58, ../sass/base/_elements.scss */
 figcaption,
 figure {
   font-size: 12px;
   font-style: italic;
 }
 
-/* line 60, ../sass/base/_elements.scss */
+/* line 63, ../sass/base/_elements.scss */
 q {
   font-style: italic;
 }
 
-/* line 65, ../sass/base/_elements.scss */
+/* line 68, ../sass/base/_elements.scss */
 .content img {
   padding: 10px;
 }
-/* line 66, ../sass/base/_elements.scss */
+/* line 69, ../sass/base/_elements.scss */
 .content p + img {
   padding-top: 0px;
 }
-/* line 67, ../sass/base/_elements.scss */
+/* line 70, ../sass/base/_elements.scss */
 .content img:not(.pull-right) {
   padding-left: 0;
 }
-/* line 68, ../sass/base/_elements.scss */
+/* line 71, ../sass/base/_elements.scss */
 .content img.pull-right {
   padding-right: 0;
 }
 
+/* line 76, ../sass/base/_elements.scss */
+.field-label-inline div, .field-label-inline span {
+  display: inline;
+}
+
+/* line 80, ../sass/base/_elements.scss */
+.views-label {
+  font-weight: bold;
+}
+
 /* Forms */
-/* line 73, ../sass/base/_elements.scss */
+/* line 87, ../sass/base/_elements.scss */
 form .field-multiple-table thead th {
   padding: 10px !important;
 }
 
-/* line 77, ../sass/base/_elements.scss */
+/* line 91, ../sass/base/_elements.scss */
 html.js fieldset.collapsed {
   height: auto;
   border-left-width: 1px;
   border-right-width: 1px;
 }
 
-/* line 83, ../sass/base/_elements.scss */
+/* line 97, ../sass/base/_elements.scss */
 legend {
   margin-bottom: 0;
 }
 
-/* line 86, ../sass/base/_elements.scss */
+/* line 100, ../sass/base/_elements.scss */
 label {
   margin-bottom: 0;
 }
 
-/* line 90, ../sass/base/_elements.scss */
+/* line 104, ../sass/base/_elements.scss */
 .chosen-container.form-control, .chosen-container.form-control .chosen-container.chosen-choices, form.navbar-form .form-type-textfield input.chosen-container[type="text"] {
   padding: 0;
   border: none;
@@ -8417,23 +8443,23 @@ label {
   display: block !important;
   width: 100% !important;
 }
-/* line 98, ../sass/base/_elements.scss */
+/* line 112, ../sass/base/_elements.scss */
 .chosen-container.form-control .chosen-choices input, form.navbar-form .form-type-textfield input.chosen-container[type="text"] .chosen-choices input {
   padding: 0 !important;
 }
 
-/* line 102, ../sass/base/_elements.scss */
+/* line 116, ../sass/base/_elements.scss */
 .form-control:focus, .chosen-container.form-control .chosen-choices:focus, form.navbar-form .form-type-textfield input[type="text"]:focus {
   -webkit-box-shadow: 0 0 0 white !important;
   box-shadow: 0 0 0 white !important;
 }
 
-/* line 107, ../sass/base/_elements.scss */
+/* line 121, ../sass/base/_elements.scss */
 html.js input.form-autocomplete {
   background-image: url('../images/throbber.gif?1412109687');
   background-position: 100% 9px;
 }
-/* line 111, ../sass/base/_elements.scss */
+/* line 125, ../sass/base/_elements.scss */
 html.js input.throbbing {
   background-image: url('../images/throbber.gif?1412109687');
   background-position: 100% -121px;

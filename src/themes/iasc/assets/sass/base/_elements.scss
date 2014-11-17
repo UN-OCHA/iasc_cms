@@ -11,6 +11,9 @@ h4, .h4,
 h5, .h5,
 h6, .h6 {
   color: $purple;
+  a {
+    color: $purple;
+  }
 }
 
 .pagination a {
@@ -67,6 +70,17 @@ q {
   img:not(.pull-right) { padding-left: 0 }
   img.pull-right { padding-right: 0 }
 }
+
+// Labels
+.field-label-inline {
+  div, span {
+    display: inline
+  }
+}
+.views-label {
+  font-weight: bold;
+}
+
 
 /* Forms */
 
