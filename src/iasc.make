@@ -68,80 +68,71 @@ projects[oa_core][type] = module
 projects[oa_core][subdir] = contrib
 projects[oa_core][download][url] = https://github.com/phase2/oa_core.git
 projects[oa_core][download][type] = git
-projects[oa_core][download][tag] = 7.x-2.22
-projects[oa_core][patch][] = oa_core-parent-cache.patch
+projects[oa_core][download][tag] = 7.x-2.27
 
 projects[oa_discussion][type] = module
 projects[oa_discussion][subdir] = contrib
 projects[oa_discussion][download][url] = https://github.com/phase2/oa_discussion.git
 projects[oa_discussion][download][type] = git
-projects[oa_discussion][download][tag] = 7.x-2.20
+projects[oa_discussion][download][tag] = 7.x-2.22
 
 projects[oa_wiki][type] = module
 projects[oa_wiki][subdir] = contrib
 projects[oa_wiki][download][url] = https://github.com/phase2/oa_wiki.git
 projects[oa_wiki][download][type] = git
-projects[oa_wiki][download][tag] = 7.x-2.20
+projects[oa_wiki][download][tag] = 7.x-2.21
 
 projects[oa_events][type] = module
 projects[oa_events][subdir] = contrib
 projects[oa_events][download][url] = https://github.com/phase2/oa_events.git
 projects[oa_events][download][type] = git
-projects[oa_events][download][tag] = 7.x-2.21
-projects[oa_events][patch][2333881] = https://www.drupal.org/files/issues/oa_events-update-fullcalendar-download-url-2333881-1.patch
+projects[oa_events][download][tag] = 7.x-2.23
 
 projects[oa_events_import][type] = module
 projects[oa_events_import][subdir] = contrib
 projects[oa_events_import][download][url] = https://github.com/phase2/oa_events_import.git
 projects[oa_events_import][download][type] = git
-projects[oa_events_import][download][tag] = 7.x-2.20
+projects[oa_events_import][download][tag] = 7.x-2.22
 
 projects[oa_contextual_tabs][type] = module
 projects[oa_contextual_tabs][subdir] = contrib
 projects[oa_contextual_tabs][download][url] = https://github.com/phase2/oa_contextual_tabs.git
 projects[oa_contextual_tabs][download][type] = git
-projects[oa_contextual_tabs][download][tag] = 7.x-2.21
+projects[oa_contextual_tabs][download][tag] = 7.x-2.22
 
 projects[oa_notifications][type] = module
 projects[oa_notifications][subdir] = contrib
 projects[oa_notifications][download][url] = https://github.com/phase2/oa_notifications.git
 projects[oa_notifications][download][type] = git
-projects[oa_notifications][download][tag] = 7.x-2.20
+projects[oa_notifications][download][tag] = 7.x-2.21
 
 projects[oa_media][type] = module
 projects[oa_media][subdir] = contrib
 projects[oa_media][download][url] = https://github.com/phase2/oa_media.git
 projects[oa_media][download][type] = git
-projects[oa_media][download][tag] = 7.x-2.20
+projects[oa_media][download][tag] = 7.x-2.21
 
 projects[oa_subspaces][type] = module
 projects[oa_subspaces][subdir] = contrib
 projects[oa_subspaces][download][url] = https://github.com/phase2/oa_subspaces.git
 projects[oa_subspaces][download][type] = git
-projects[oa_subspaces][download][revision] = 243ae8d5
+projects[oa_subspaces][download][tag] = 7.x-2.22
 
 projects[oa_radix][type] = theme
-projects[oa_radix][version] = 3.x-dev
 projects[oa_radix][download][url] = https://github.com/phase2/oa_radix.git
 projects[oa_radix][download][type] = git
-projects[oa_radix][download][branch] = 7.x-3.x
+projects[oa_radix][download][tag] = 7.x-3.3
 
 projects[openatrium][type] = profile
 projects[openatrium][download][type] = git
 projects[openatrium][download][url] = http://git.drupal.org/project/openatrium.git
-projects[openatrium][download][tag] = 7.x-2.22
+projects[openatrium][download][tag] = 7.x-2.24
 
 projects[oa_mailhandler][type] = module
 projects[oa_mailhandler][subdir] = contrib
 projects[oa_mailhandler][download][url] = http://git.drupal.org/project/oa_mailhandler.git
 projects[oa_mailhandler][download][type] = git
-projects[oa_mailhandler][download][revision] = 34596ff
-
-;projects[oa_workbench][type] = module
-;projects[oa_workbench][subdir] = contrib
-;projects[oa_workbench][download][type] = git
-;projects[oa_workbench][download][url] = https://github.com/phase2/oa_workbench.git
-;projects[oa_workbench][download][revision] = d0b8e7a
+projects[oa_mailhandler][download][tag] = 7.x-2.16
 
 ; =====================================
 ; PERFORMANCE MODULES
@@ -213,7 +204,7 @@ projects[menu_attributes][version] = 1.0-rc3
 
 ; Apache Solr modules
 projects[apachesolr][subdir] = contrib
-projects[apachesolr][version] = 1.6
+projects[apachesolr][version] = 1.7
 
 projects[apachesolr_autocomplete][subdir] = contrib
 projects[apachesolr_autocomplete][version] = 1.3
