@@ -69,7 +69,6 @@ projects[oa_core][subdir] = contrib
 projects[oa_core][download][url] = https://github.com/phase2/oa_core.git
 projects[oa_core][download][type] = git
 projects[oa_core][download][tag] = 7.x-2.27
-;projects[oa_core][patch][] = oa_core-parent-cache.patch
 
 projects[oa_discussion][type] = module
 projects[oa_discussion][subdir] = contrib
@@ -118,13 +117,10 @@ projects[oa_subspaces][subdir] = contrib
 projects[oa_subspaces][download][url] = https://github.com/phase2/oa_subspaces.git
 projects[oa_subspaces][download][type] = git
 projects[oa_subspaces][download][tag] = 7.x-2.22
-;projects[oa_subspaces][download][revision] = 243ae8d5
 
 projects[oa_radix][type] = theme
-;projects[oa_radix][version] = 3.x-dev
 projects[oa_radix][download][url] = https://github.com/phase2/oa_radix.git
 projects[oa_radix][download][type] = git
-;;projects[oa_radix][download][branch] = 7.x-3.x
 projects[oa_radix][download][tag] = 7.x-3.3
 
 projects[openatrium][type] = profile
@@ -137,13 +133,6 @@ projects[oa_mailhandler][subdir] = contrib
 projects[oa_mailhandler][download][url] = http://git.drupal.org/project/oa_mailhandler.git
 projects[oa_mailhandler][download][type] = git
 projects[oa_mailhandler][download][tag] = 7.x-2.16
-;;projects[oa_mailhandler][download][revision] = 34596ff
-
-;projects[oa_workbench][type] = module
-;projects[oa_workbench][subdir] = contrib
-;projects[oa_workbench][download][type] = git
-;projects[oa_workbench][download][url] = https://github.com/phase2/oa_workbench.git
-;projects[oa_workbench][download][revision] = d0b8e7a
 
 ; =====================================
 ; PERFORMANCE MODULES
