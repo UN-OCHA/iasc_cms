@@ -277,6 +277,7 @@ function iasc_configuration_panelizer_defaults_override_alter(&$data) {
           'locks' => array(),
           'uuid' => 'bf416e9c-7588-48cd-a156-db4e7d2a33ee',
         ); /* WAS: '' */
+    $data['node:oa_space:default']->display->layout = 'burr_flipped'; /* WAS: 'bryant_flipped_flipped' */
     $data['node:oa_space:default']->display->panels['contentmain'][1] = 'new-bf416e9c-7588-48cd-a156-db4e7d2a33ee'; /* WAS: 'new-9995e8b8-d8cb-4339-a7ad-1f0ea569d2de' */
     $data['node:oa_space:default']->display->panels['contentmain'][2] = 'new-9995e8b8-d8cb-4339-a7ad-1f0ea569d2de'; /* WAS: '' */
     $data['node:oa_space:default']->display->panels['sidebar'][3] = 'new-35ab60ac-d6d7-41b2-a57e-21ca28e5e974'; /* WAS: '' */
