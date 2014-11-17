@@ -42,6 +42,12 @@ function iasc_meeting_features_override_default_overrides() {
     'type' => 'hidden',
     'weight' => 0,
   );
+  $overrides["field_instance.node-oa_event-body.display|link_to_document"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
   $overrides["field_instance.node-oa_event-body.display|teaser|module"]["DELETED"] = TRUE;
   $overrides["field_instance.node-oa_event-body.display|teaser|settings|trim_length"]["DELETED"] = TRUE;
   $overrides["field_instance.node-oa_event-body.display|teaser|type"] = 'hidden';
@@ -95,6 +101,12 @@ function iasc_meeting_features_override_default_overrides() {
     'type' => 'hidden',
     'weight' => 0,
   );
+  $overrides["field_instance.node-oa_event-field_oa_media.display|link_to_document"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
   $overrides["field_instance.node-oa_event-oa_other_spaces_ref.display|bio_full"] = array(
     'label' => 'above',
     'settings' => array(),
@@ -133,6 +145,12 @@ function iasc_meeting_features_override_default_overrides() {
     'type' => 'hidden',
     'weight' => 0,
   );
+  $overrides["field_instance.node-oa_event-oa_section_ref.display|link_to_document"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
   $overrides["field_instance.node-oa_event-oa_section_ref.display|teaser|weight"] = 16;
   $overrides["field_instance.node-oa_event-oa_section_ref.label"] = 'Section';
   $overrides["field_instance.node-oa_event-oa_section_ref.options_limit_fields|oa_section_ref"]["DELETED"] = TRUE;
@@ -149,6 +167,12 @@ function iasc_meeting_features_override_default_overrides() {
     'weight' => 0,
   );
   $overrides["field_instance.node-oa_event-og_group_ref.display|bio_short"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
+  $overrides["field_instance.node-oa_event-og_group_ref.display|link_to_document"] = array(
     'label' => 'above',
     'settings' => array(),
     'type' => 'hidden',
@@ -223,7 +247,7 @@ function iasc_meeting_features_override_default_overrides() {
   // Exported overrides for: panelizer_defaults
   $overrides["panelizer_defaults.node:oa_event:default.display|content|new-024f971a-f875-4063-bf25-63926a5c9092"] = (object) array(
       'pid' => 'new-024f971a-f875-4063-bf25-63926a5c9092',
-      'panel' => 'contentmain',
+      'panel' => 'sidebar',
       'type' => 'entity_field',
       'subtype' => 'node:field_room',
       'shown' => TRUE,
@@ -264,13 +288,13 @@ function iasc_meeting_features_override_default_overrides() {
     );
   $overrides["panelizer_defaults.node:oa_event:default.display|content|new-19fe4e19-0d90-4acf-9c80-e1ffdf773880"] = (object) array(
       'pid' => 'new-19fe4e19-0d90-4acf-9c80-e1ffdf773880',
-      'panel' => 'contentmain',
+      'panel' => 'sidebar',
       'type' => 'entity_field',
       'subtype' => 'node:field_meeting_agendas',
       'shown' => TRUE,
       'access' => array(),
       'configuration' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'formatter' => 'entityreference_label',
         'delta_limit' => 0,
         'delta_offset' => 0,
@@ -279,16 +303,20 @@ function iasc_meeting_features_override_default_overrides() {
           'link' => 1,
         ),
         'context' => array(),
-        'override_title' => 0,
-        'override_title_text' => '',
+        'override_title' => 1,
+        'override_title_text' => 'Meeting Agenda',
       ),
       'cache' => array(),
       'style' => array(
-        'settings' => NULL,
+        'settings' => array(
+          'secondary_options' => 'panel-success',
+          'linked_list' => 'arrow',
+        ),
+        'style' => 'secondary',
       ),
       'css' => array(),
       'extras' => array(),
-      'position' => 4,
+      'position' => 6,
       'locks' => array(),
       'uuid' => '19fe4e19-0d90-4acf-9c80-e1ffdf773880',
     );
@@ -300,7 +328,7 @@ function iasc_meeting_features_override_default_overrides() {
       'shown' => TRUE,
       'access' => array(),
       'configuration' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'formatter' => 'entityreference_label',
         'delta_limit' => 0,
         'delta_offset' => 0,
@@ -315,18 +343,21 @@ function iasc_meeting_features_override_default_overrides() {
       'cache' => array(),
       'style' => array(
         'settings' => array(
-          'secondary_options' => 'panel-primary',
+          'secondary_options' => 'panel-success',
+          'linked_list' => 'arrow',
         ),
         'style' => 'secondary',
       ),
       'css' => array(),
       'extras' => array(),
-      'position' => 1,
+      'position' => 7,
       'locks' => array(),
       'uuid' => '213e8d65-ffde-47b2-bad5-b54b3f97dcfd',
     );
   $overrides["panelizer_defaults.node:oa_event:default.display|content|new-231244a5-ffbc-4013-a01e-cc85b4feeff0|configuration|override_title"] = 1;
   $overrides["panelizer_defaults.node:oa_event:default.display|content|new-231244a5-ffbc-4013-a01e-cc85b4feeff0|configuration|override_title_text"] = 'Security Level';
+  $overrides["panelizer_defaults.node:oa_event:default.display|content|new-231244a5-ffbc-4013-a01e-cc85b4feeff0|position"] = 8;
+  $overrides["panelizer_defaults.node:oa_event:default.display|content|new-231244a5-ffbc-4013-a01e-cc85b4feeff0|shown"] = FALSE;
   $overrides["panelizer_defaults.node:oa_event:default.display|content|new-231244a5-ffbc-4013-a01e-cc85b4feeff0|style|settings|secondary_options"] = 'panel-primary';
   $overrides["panelizer_defaults.node:oa_event:default.display|content|new-231244a5-ffbc-4013-a01e-cc85b4feeff0|style|style"] = 'secondary';
   $overrides["panelizer_defaults.node:oa_event:default.display|content|new-2832cb36-53a3-484e-bbf0-05b7084ea8f4"] = (object) array(
@@ -355,9 +386,40 @@ function iasc_meeting_features_override_default_overrides() {
       ),
       'css' => array(),
       'extras' => array(),
-      'position' => 5,
+      'position' => 4,
       'locks' => array(),
       'uuid' => '2832cb36-53a3-484e-bbf0-05b7084ea8f4',
+    );
+  $overrides["panelizer_defaults.node:oa_event:default.display|content|new-29d974b8-bef0-4ff8-af8c-38b369433a5c"] = (object) array(
+      'pid' => 'new-29d974b8-bef0-4ff8-af8c-38b369433a5c',
+      'panel' => 'contentmain',
+      'type' => 'entity_field',
+      'subtype' => 'node:field_referenced_docs',
+      'shown' => TRUE,
+      'access' => array(),
+      'configuration' => array(
+        'label' => 'title',
+        'formatter' => 'entityreference_entity_view',
+        'delta_limit' => 0,
+        'delta_offset' => 0,
+        'delta_reversed' => 0,
+        'formatter_settings' => array(
+          'view_mode' => 'link_to_document',
+          'links' => 1,
+        ),
+        'context' => array(),
+        'override_title' => 0,
+        'override_title_text' => '',
+      ),
+      'cache' => array(),
+      'style' => array(
+        'settings' => NULL,
+      ),
+      'css' => array(),
+      'extras' => array(),
+      'position' => 5,
+      'locks' => array(),
+      'uuid' => '29d974b8-bef0-4ff8-af8c-38b369433a5c',
     );
   $overrides["panelizer_defaults.node:oa_event:default.display|content|new-554e3ff8-5ae2-47d4-944e-53903613b9f5"] = (object) array(
       'pid' => 'new-554e3ff8-5ae2-47d4-944e-53903613b9f5',
@@ -396,7 +458,7 @@ function iasc_meeting_features_override_default_overrides() {
       ),
       'css' => array(),
       'extras' => array(),
-      'position' => 6,
+      'position' => 3,
       'locks' => array(),
       'uuid' => '554e3ff8-5ae2-47d4-944e-53903613b9f5',
     );
@@ -431,13 +493,13 @@ function iasc_meeting_features_override_default_overrides() {
       ),
       'css' => array(),
       'extras' => array(),
-      'position' => 2,
+      'position' => 5,
       'locks' => array(),
       'uuid' => '64975a0b-8b8d-4816-8d78-0a066a557a04',
     );
   $overrides["panelizer_defaults.node:oa_event:default.display|content|new-677802ea-6c46-4806-9759-35191c9cf1a8"] = (object) array(
       'pid' => 'new-677802ea-6c46-4806-9759-35191c9cf1a8',
-      'panel' => 'contentmain',
+      'panel' => 'sidebar',
       'type' => 'entity_field',
       'subtype' => 'node:field_venue',
       'shown' => TRUE,
@@ -459,13 +521,61 @@ function iasc_meeting_features_override_default_overrides() {
       ),
       'css' => array(),
       'extras' => array(),
-      'position' => 1,
+      'position' => 2,
       'locks' => array(),
       'uuid' => '677802ea-6c46-4806-9759-35191c9cf1a8',
     );
+  $overrides["panelizer_defaults.node:oa_event:default.display|content|new-721e6db6-a312-4742-8dd2-d7d879654919"] = (object) array(
+      'pid' => 'new-721e6db6-a312-4742-8dd2-d7d879654919',
+      'panel' => 'sidebar',
+      'type' => 'panels_mini',
+      'subtype' => 'iasc_location',
+      'shown' => TRUE,
+      'access' => array(),
+      'configuration' => array(
+        'override_title' => 0,
+        'override_title_text' => '',
+      ),
+      'cache' => array(),
+      'style' => array(
+        'settings' => array(
+          'secondary_options' => 'panel-primary',
+          'linked_list' => 'none',
+        ),
+        'style' => 'secondary',
+      ),
+      'css' => array(),
+      'extras' => array(),
+      'position' => 0,
+      'locks' => array(),
+      'uuid' => '721e6db6-a312-4742-8dd2-d7d879654919',
+    );
+  $overrides["panelizer_defaults.node:oa_event:default.display|content|new-9035b3e7-28dc-478f-a595-e89dca69718a|position"] = 1;
+  $overrides["panelizer_defaults.node:oa_event:default.display|content|new-9c1552e9-6b59-4811-ac8f-8278030a8f11"] = (object) array(
+      'pid' => 'new-9c1552e9-6b59-4811-ac8f-8278030a8f11',
+      'panel' => 'contentmain',
+      'type' => 'node_body',
+      'subtype' => 'node_body',
+      'shown' => TRUE,
+      'access' => array(),
+      'configuration' => array(
+        'context' => 'panelizer',
+        'override_title' => 1,
+        'override_title_text' => 'Description',
+      ),
+      'cache' => array(),
+      'style' => array(
+        'settings' => NULL,
+      ),
+      'css' => array(),
+      'extras' => array(),
+      'position' => 2,
+      'locks' => array(),
+      'uuid' => '9c1552e9-6b59-4811-ac8f-8278030a8f11',
+    );
   $overrides["panelizer_defaults.node:oa_event:default.display|content|new-b556a608-6c09-4e8b-99bb-f7cee89c1756"] = (object) array(
       'pid' => 'new-b556a608-6c09-4e8b-99bb-f7cee89c1756',
-      'panel' => 'contentmain',
+      'panel' => 'sidebar',
       'type' => 'entity_field',
       'subtype' => 'node:field_city',
       'shown' => TRUE,
@@ -487,19 +597,19 @@ function iasc_meeting_features_override_default_overrides() {
       ),
       'css' => array(),
       'extras' => array(),
-      'position' => 2,
+      'position' => 1,
       'locks' => array(),
       'uuid' => 'b556a608-6c09-4e8b-99bb-f7cee89c1756',
     );
   $overrides["panelizer_defaults.node:oa_event:default.display|content|new-ba879f23-61fc-4869-a081-d6663e9d1523"] = (object) array(
       'pid' => 'new-ba879f23-61fc-4869-a081-d6663e9d1523',
-      'panel' => 'contentmain',
+      'panel' => 'sidebar',
       'type' => 'entity_field',
       'subtype' => 'node:field_host',
       'shown' => TRUE,
       'access' => array(),
       'configuration' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'formatter' => 'taxonomy_term_reference_link',
         'delta_limit' => 0,
         'delta_offset' => 0,
@@ -515,29 +625,63 @@ function iasc_meeting_features_override_default_overrides() {
       ),
       'css' => array(),
       'extras' => array(),
-      'position' => 7,
+      'position' => 4,
       'locks' => array(),
       'uuid' => 'ba879f23-61fc-4869-a081-d6663e9d1523',
     );
-  $overrides["panelizer_defaults.node:oa_event:default.display|content|new-cf81af22-ac8b-4147-8462-a5fce1b76471|position"] = 3;
-  $overrides["panelizer_defaults.node:oa_event:default.display|content|new-cf81af22-ac8b-4147-8462-a5fce1b76471|style|settings|secondary_options"] = 'panel-primary';
-  $overrides["panelizer_defaults.node:oa_event:default.display|content|new-cf81af22-ac8b-4147-8462-a5fce1b76471|style|style"] = 'secondary';
+  $overrides["panelizer_defaults.node:oa_event:default.display|content|new-c84bd896-6873-41ab-89ea-5d0f2e0c2c7f"] = (object) array(
+      'pid' => 'new-c84bd896-6873-41ab-89ea-5d0f2e0c2c7f',
+      'panel' => 'contentmain',
+      'type' => 'node_title',
+      'subtype' => 'node_title',
+      'shown' => TRUE,
+      'access' => array(),
+      'configuration' => array(
+        'link' => 0,
+        'markup' => 'h1',
+        'id' => '',
+        'class' => '',
+        'context' => 'panelizer',
+        'override_title' => 1,
+        'override_title_text' => '',
+      ),
+      'cache' => array(),
+      'style' => array(
+        'settings' => NULL,
+      ),
+      'css' => array(),
+      'extras' => array(),
+      'position' => 0,
+      'locks' => array(),
+      'uuid' => 'c84bd896-6873-41ab-89ea-5d0f2e0c2c7f',
+    );
+  $overrides["panelizer_defaults.node:oa_event:default.display|content|new-cf81af22-ac8b-4147-8462-a5fce1b76471|position"] = 9;
+  $overrides["panelizer_defaults.node:oa_event:default.display|content|new-cf81af22-ac8b-4147-8462-a5fce1b76471|style|style"] = 'default';
   $overrides["panelizer_defaults.node:oa_event:default.display|content|new-e0f02a5b-dd4e-4ab9-8479-06a195d86fd0"]["DELETED"] = TRUE;
-  $overrides["panelizer_defaults.node:oa_event:default.display|panels|contentmain|1"] = 'new-024f971a-f875-4063-bf25-63926a5c9092';
-  $overrides["panelizer_defaults.node:oa_event:default.display|panels|contentmain|2"] = 'new-19fe4e19-0d90-4acf-9c80-e1ffdf773880';
-  $overrides["panelizer_defaults.node:oa_event:default.display|panels|contentmain|3"] = 'new-2832cb36-53a3-484e-bbf0-05b7084ea8f4';
-  $overrides["panelizer_defaults.node:oa_event:default.display|panels|contentmain|4"] = 'new-554e3ff8-5ae2-47d4-944e-53903613b9f5';
-  $overrides["panelizer_defaults.node:oa_event:default.display|panels|contentmain|5"] = 'new-677802ea-6c46-4806-9759-35191c9cf1a8';
-  $overrides["panelizer_defaults.node:oa_event:default.display|panels|contentmain|6"] = 'new-b556a608-6c09-4e8b-99bb-f7cee89c1756';
-  $overrides["panelizer_defaults.node:oa_event:default.display|panels|contentmain|7"] = 'new-ba879f23-61fc-4869-a081-d6663e9d1523';
-  $overrides["panelizer_defaults.node:oa_event:default.display|panels|sidebar|1"] = 'new-cf81af22-ac8b-4147-8462-a5fce1b76471';
-  $overrides["panelizer_defaults.node:oa_event:default.display|panels|sidebar|2"] = 'new-213e8d65-ffde-47b2-bad5-b54b3f97dcfd';
-  $overrides["panelizer_defaults.node:oa_event:default.display|panels|sidebar|3"] = 'new-64975a0b-8b8d-4816-8d78-0a066a557a04';
+  $overrides["panelizer_defaults.node:oa_event:default.display|hide_title"] = 1;
+  $overrides["panelizer_defaults.node:oa_event:default.display|panels|contentmain|0"] = 'new-c84bd896-6873-41ab-89ea-5d0f2e0c2c7f';
+  $overrides["panelizer_defaults.node:oa_event:default.display|panels|contentmain|1"] = 'new-9035b3e7-28dc-478f-a595-e89dca69718a';
+  $overrides["panelizer_defaults.node:oa_event:default.display|panels|contentmain|2"] = 'new-9c1552e9-6b59-4811-ac8f-8278030a8f11';
+  $overrides["panelizer_defaults.node:oa_event:default.display|panels|contentmain|3"] = 'new-554e3ff8-5ae2-47d4-944e-53903613b9f5';
+  $overrides["panelizer_defaults.node:oa_event:default.display|panels|contentmain|4"] = 'new-2832cb36-53a3-484e-bbf0-05b7084ea8f4';
+  $overrides["panelizer_defaults.node:oa_event:default.display|panels|contentmain|5"] = 'new-29d974b8-bef0-4ff8-af8c-38b369433a5c';
+  $overrides["panelizer_defaults.node:oa_event:default.display|panels|sidebar|0"] = 'new-721e6db6-a312-4742-8dd2-d7d879654919';
+  $overrides["panelizer_defaults.node:oa_event:default.display|panels|sidebar|1"] = 'new-b556a608-6c09-4e8b-99bb-f7cee89c1756';
+  $overrides["panelizer_defaults.node:oa_event:default.display|panels|sidebar|2"] = 'new-677802ea-6c46-4806-9759-35191c9cf1a8';
+  $overrides["panelizer_defaults.node:oa_event:default.display|panels|sidebar|3"] = 'new-024f971a-f875-4063-bf25-63926a5c9092';
+  $overrides["panelizer_defaults.node:oa_event:default.display|panels|sidebar|4"] = 'new-ba879f23-61fc-4869-a081-d6663e9d1523';
+  $overrides["panelizer_defaults.node:oa_event:default.display|panels|sidebar|5"] = 'new-64975a0b-8b8d-4816-8d78-0a066a557a04';
+  $overrides["panelizer_defaults.node:oa_event:default.display|panels|sidebar|6"] = 'new-19fe4e19-0d90-4acf-9c80-e1ffdf773880';
+  $overrides["panelizer_defaults.node:oa_event:default.display|panels|sidebar|7"] = 'new-213e8d65-ffde-47b2-bad5-b54b3f97dcfd';
+  $overrides["panelizer_defaults.node:oa_event:default.display|panels|sidebar|8"] = 'new-231244a5-ffbc-4013-a01e-cc85b4feeff0';
+  $overrides["panelizer_defaults.node:oa_event:default.display|panels|sidebar|9"] = 'new-cf81af22-ac8b-4147-8462-a5fce1b76471';
 
   // Exported overrides for: variable
   $overrides["variable.node_submitted_oa_event.value"] = 0;
 
   // Exported overrides for: views_view
+  $overrides["views_view.oa_event_detail.display|default|display_options|fields|field_oa_address"]["DELETED"] = TRUE;
+  $overrides["views_view.oa_event_detail.display|default|display_options|fields|field_oa_date|element_type"] = 'span';
   $overrides["views_view.oa_event_detail.display|default|display_options|fields|field_time_zone"] = array(
     'id' => 'field_time_zone',
     'table' => 'field_data_field_time_zone',

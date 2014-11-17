@@ -1,0 +1,39 @@
+.node-type-oa-event {
+  #contextual-tabs {
+    float: none;
+    text-align: right;
+  }
+  h1 { margin: 0 0 $padding-large-vertical * 2; }
+  p.oa-event-date {
+    margin-bottom: 0;
+  }
+  .pane-node-field-info-private,
+  .pane-node-body {
+    .field-label,
+    h3.pane-title {
+      @extend h2;
+    }
+  }
+  .field-name-field-agenda-items {
+    & > .field-label {
+      @extend h2;
+    }
+    .field-name-field-ai-title {
+      @extend h3;
+      margin-top: 0;
+    }
+  }
+  // Hack to fake fields to be in a panel
+  .panel-primary.none {
+    margin-bottom: 0;
+    .panel-body { padding-top: 0; }
+  }
+  .pane-node-field-city,
+  .pane-node-field-venue,
+  .pane-node-field-room,
+  .pane-node-field-host {
+    background-color: $panel-bg;
+    padding: 0 30px 20px;
+  }
+  .pane-node-field-host { margin-bottom: $padding-large-vertical; } 
+}
