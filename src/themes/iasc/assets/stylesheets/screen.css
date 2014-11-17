@@ -8402,40 +8402,29 @@ q {
   padding-right: 0;
 }
 
-/* line 76, ../sass/base/_elements.scss */
-.field-label-inline div, .field-label-inline span {
-  display: inline;
-}
-
-/* line 80, ../sass/base/_elements.scss */
-.views-label {
-  font-weight: bold;
-}
-
-/* Forms */
-/* line 87, ../sass/base/_elements.scss */
+/* line 75, ../sass/base/_elements.scss */
 form .field-multiple-table thead th {
   padding: 10px !important;
 }
 
-/* line 91, ../sass/base/_elements.scss */
+/* line 79, ../sass/base/_elements.scss */
 html.js fieldset.collapsed {
   height: auto;
   border-left-width: 1px;
   border-right-width: 1px;
 }
 
-/* line 97, ../sass/base/_elements.scss */
+/* line 85, ../sass/base/_elements.scss */
 legend {
   margin-bottom: 0;
 }
 
-/* line 100, ../sass/base/_elements.scss */
+/* line 88, ../sass/base/_elements.scss */
 label {
   margin-bottom: 0;
 }
 
-/* line 104, ../sass/base/_elements.scss */
+/* line 92, ../sass/base/_elements.scss */
 .chosen-container.form-control, .chosen-container.form-control .chosen-container.chosen-choices, form.navbar-form .form-type-textfield input.chosen-container[type="text"] {
   padding: 0;
   border: none;
@@ -8443,23 +8432,23 @@ label {
   display: block !important;
   width: 100% !important;
 }
-/* line 112, ../sass/base/_elements.scss */
+/* line 100, ../sass/base/_elements.scss */
 .chosen-container.form-control .chosen-choices input, form.navbar-form .form-type-textfield input.chosen-container[type="text"] .chosen-choices input {
   padding: 0 !important;
 }
 
-/* line 116, ../sass/base/_elements.scss */
+/* line 104, ../sass/base/_elements.scss */
 .form-control:focus, .chosen-container.form-control .chosen-choices:focus, form.navbar-form .form-type-textfield input[type="text"]:focus {
   -webkit-box-shadow: 0 0 0 white !important;
   box-shadow: 0 0 0 white !important;
 }
 
-/* line 121, ../sass/base/_elements.scss */
+/* line 109, ../sass/base/_elements.scss */
 html.js input.form-autocomplete {
   background-image: url('../images/throbber.gif?1412109687');
   background-position: 100% 9px;
 }
-/* line 125, ../sass/base/_elements.scss */
+/* line 113, ../sass/base/_elements.scss */
 html.js input.throbbing {
   background-image: url('../images/throbber.gif?1412109687');
   background-position: 100% -121px;
@@ -9406,11 +9395,15 @@ img.bio-circled {
   margin-bottom: 40px;
 }
 /* line 3, ../sass/components/_views-events.scss */
+.view-oa-event-list h4.title {
+  margin: 0 0 5px;
+}
+/* line 6, ../sass/components/_views-events.scss */
 .view-oa-event-list .views-row {
   margin-bottom: 40px;
 }
 @media screen and (min-width: 480px) {
-  /* line 3, ../sass/components/_views-events.scss */
+  /* line 6, ../sass/components/_views-events.scss */
   .view-oa-event-list .views-row {
     clear: none;
     float: left;
