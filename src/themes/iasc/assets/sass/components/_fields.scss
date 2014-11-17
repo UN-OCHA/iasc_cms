@@ -31,3 +31,16 @@
   color: $red;
   padding-bottom: 5px;
 }
+
+// OA Media
+.pane-node-field-oa-media {
+  .field-label {
+    font-weight: normal;
+    margin-bottom: 5px;
+  }
+  .icons-page {
+    font-size: 15px;
+    margin-right: 10px;
+    vertical-align: baseline;
+  }
+}
