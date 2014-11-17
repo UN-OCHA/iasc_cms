@@ -471,12 +471,12 @@ function iasc_meeting_features_override_default_overrides() {
       'access' => array(),
       'configuration' => array(
         'label' => 'title',
-        'formatter' => 'entityreference_label',
+        'formatter' => 'entityreference_entity_view',
         'delta_limit' => 0,
         'delta_offset' => 0,
         'delta_reversed' => 0,
         'formatter_settings' => array(
-          'view_mode' => 'teaser',
+          'view_mode' => 'bio_short',
           'links' => 1,
           'link' => 1,
         ),
