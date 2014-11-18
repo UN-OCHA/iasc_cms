@@ -882,3 +882,34 @@ function iasc_configuration_query_alter(QueryAlterableInterface $query) {
   }
 }
 
+/**
+ *  Implements hook_form_FORM_ID_alter().
+ *
+ * We want to hide unnecessary checkboxes from the user when the og group ref
+ * exposed filter is used.
+ */
+function iasc_configuration_form_views_exposed_form_alter(&$form, &$form_state, $form_id) {
+  if (!empty($form['og_group_ref_target_id']['#options'])) {
+    $view = $form_state['view'];
+
+    // We currently just limit these changes to these displays.
+    $change = FALSE;
+    $change = ('iasc_document' == $view->name) || ('oa_event_list' == $view->name);
+    if ($change) {
+      // Hide My Spaces checkbox.
+      if (!empty($form['og_group_ref_target_id_mine'])) {
+        $form['og_group_ref_target_id_mine']['#access'] = FALSE;
+      }
+
+      // Hide Show parent content checkbox.
+      if (!empty($form['og_subspaces_view_parent'])) {
+        $form['og_subspaces_view_parent']['#access'] = FALSE;
+      }
+
+      // Replace 'subspace' text with authoring bodies text for the checkbox.
+      if (!empty($form['og_subspaces_view_all'])) {
+        $form['og_subspaces_view_all']['#title'] = t('Show children authoring bodies');
+      }
+    }
+  }
+}

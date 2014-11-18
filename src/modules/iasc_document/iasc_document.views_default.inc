@@ -177,7 +177,7 @@ function iasc_document_views_default_views() {
   $handler->display->display_options['filters']['field_category_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_category_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_category_tid']['expose']['operator_id'] = 'field_category_tid_op';
-  $handler->display->display_options['filters']['field_category_tid']['expose']['label'] = 'Product Category (field_category)';
+  $handler->display->display_options['filters']['field_category_tid']['expose']['label'] = 'Product Category';
   $handler->display->display_options['filters']['field_category_tid']['expose']['operator'] = 'field_category_tid_op';
   $handler->display->display_options['filters']['field_category_tid']['expose']['identifier'] = 'field_category_tid';
   $handler->display->display_options['filters']['field_category_tid']['expose']['remember_roles'] = array(
@@ -225,6 +225,8 @@ function iasc_document_views_default_views() {
   $handler->display->display_options['filters']['field_document_type_tid']['group_info']['default_group'] = '1';
   $handler->display->display_options['filters']['field_document_type_tid']['group_info']['default_group_multiple'] = array(
     1 => '1',
+    2 => '2',
+    3 => '3',
   );
   $handler->display->display_options['filters']['field_document_type_tid']['group_info']['group_items'] = array(
     1 => array(
@@ -306,22 +308,6 @@ function iasc_document_views_default_views() {
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['content'] = '<h2>Resources</h2>';
   $handler->display->display_options['header']['area']['format'] = 'panopoly_wysiwyg_text';
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'oa_wiki_page' => 'oa_wiki_page',
-  );
   $handler->display->display_options['path'] = 'resources';
 
   /* Display: Recently Updated Documents */
