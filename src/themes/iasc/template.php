@@ -24,6 +24,13 @@ function iasc_css_alter(&$css) {
 }
 
 /**
+ * Implements hook_js_alter().
+ */
+function iasc_js_alter(&$javascript) {
+  //unset($javascript['sites/all/themes/radix/assets/javascripts/radix-script.js']);
+}
+
+/**
  * Implements template_preprocess_entity().
  */
 function iasc_preprocess_entity(&$vars) {
