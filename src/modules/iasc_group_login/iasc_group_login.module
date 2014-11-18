@@ -173,12 +173,20 @@ function iasc_user_register_submit($form, &$form_state) {
 
   watchdog('user', 'New user: %name (%email).', array('%name' => $form_state['values']['name'], '%email' => $form_state['values']['mail']), WATCHDOG_NOTICE, l(t('edit'), 'user/' . $account->uid . '/edit'));
 
+  // Get the groups that the current group account is associated with.
+  global $user;
+  $user_groups = og_get_entity_groups('user', $user);
+  foreach($user_groups['node'] as $gid) {
+    // Add the groups to the newly created account.
+    og_group('node', $gid, array('entity' => $account));
+  }
+
   // No e-mail verification required; log in user immediately.
   if ($account->status) {
     _user_mail_notify('register_no_approval_required', $account);
     $form_state['uid'] = $account->uid;
     user_login_submit(array(), $form_state);
-    drupal_set_message(t('Registration successful. You are now logged in.'));
+    drupal_set_message(t('Registration successful! You are now logged in.'));
     $form_state['redirect'] = '';
   }
 }
