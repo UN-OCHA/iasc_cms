@@ -327,11 +327,6 @@ function iasc_meeting_link_agendas($item, &$context) {
   }
   $agenda_wrapper->save();
 
-  // To fix improper document associations, remove any connection to media.
-  // None came over during migration and this was improperly set via the initial
-  // scrape.
-  $node_wrapper->field_oa_media->set(NULL);
-
   // Save the entity.
   $node_wrapper->save(TRUE);
   entity_save('node', $entity);
