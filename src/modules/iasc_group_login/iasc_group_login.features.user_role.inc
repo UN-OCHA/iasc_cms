@@ -16,5 +16,11 @@ function iasc_group_login_user_default_roles() {
     'weight' => 4,
   );
 
+  // Exported role: viewer.
+  $roles['viewer'] = array(
+    'name' => 'viewer',
+    'weight' => 5,
+  );
+
   return $roles;
 }

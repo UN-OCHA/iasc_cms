@@ -1,14 +1,10 @@
 <?php
 /**
  * @file
- * Code for the IASC Group Login feature.
+ * Functions to support editor account creation from a group login account.
  */
 
 include_once 'iasc_group_login.features.inc';
-/**
- * @file
- * Functions to support editor account creation from a group login account.
- */
 
 /**
  *  Implements hook_menu().
@@ -68,6 +64,15 @@ function iasc_user_register_access() {
   global $user;
   // Note that this ignores the Drupal user account registration rules.
   return ($user->uid > 0 && user_access('register new account'));
+}
+
+/**
+ * Implements hook_ctools_plugin_directory().
+ */
+function iasc_group_login_ctools_plugin_directory($owner, $plugin_type) {
+  if ($owner == 'ctools' && $plugin_type == 'content_types') {
+    return 'plugins/content_types';
+  }
 }
 
 /**
