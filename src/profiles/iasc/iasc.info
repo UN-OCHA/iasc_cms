@@ -159,3 +159,4 @@ dependencies[] = menu_attributes
 dependencies[] = title
 dependencies[] = nodequeue
 dependencies[] = access_code
+dependencies[] = og_role_override

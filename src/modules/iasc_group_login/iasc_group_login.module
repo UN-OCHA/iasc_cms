@@ -4,6 +4,8 @@
  * Functions to support editor account creation from a group login account.
  */
 
+include_once 'iasc_group_login.features.inc';
+
 /**
  *  Implements hook_menu().
  */
@@ -65,6 +67,15 @@ function iasc_user_register_access() {
 }
 
 /**
+ * Implements hook_ctools_plugin_directory().
+ */
+function iasc_group_login_ctools_plugin_directory($owner, $plugin_type) {
+  if ($owner == 'ctools' && $plugin_type == 'content_types') {
+    return 'plugins/content_types';
+  }
+}
+
+/**
  * Implements hook_form_FORM_ID_alter().
  *
  * Alter the Login form to include information about the access code.
@@ -92,6 +103,15 @@ function iasc_group_login_form_user_pass_alter(&$form, $form_state) {
  * @see iasc_user_register_submit()
  */
 function iasc_user_register_form($form, &$form_state) {
+  /*
+   * Only a logged in user with the role "group login" should be able to access
+   * this form. All other users should be redirected to their user page.
+   */
+  global $user;
+  if ($user->uid > 0 && !in_array('group login', $user->roles)) {
+    drupal_goto('user');
+  }
+
   $form['#user'] = drupal_anonymous_user();
   $form['#user_category'] = 'register';
 
@@ -117,11 +137,11 @@ function iasc_user_register_form($form, &$form_state) {
     '#value' => t('Create new account'),
   );
 
+  // We use regular user register validation.
   $form['#validate'][] = 'user_register_validate';
 
   // Add our user registration form submit handler.
   $form['#submit'][] = 'iasc_user_register_submit';
-
 
   return $form;
 }
@@ -134,7 +154,7 @@ function iasc_user_register_form($form, &$form_state) {
  * @see iasc_user_register_form()
  */
 function iasc_user_register_submit($form, &$form_state) {
-  // Get password.
+  // Get password. We are not requiring email verification so the password should be set.
   $pass = $form_state['values']['pass'];
 
   // Remove unneeded values.
@@ -143,42 +163,96 @@ function iasc_user_register_submit($form, &$form_state) {
   $form_state['values']['pass'] = $pass;
   $form_state['values']['init'] = $form_state['values']['mail'];
 
-  $account = $form['#user'];
+  // This is the new individual account to be created.
+  $individual_account = $form['#user'];
 
-  entity_form_submit_build_entity('user', $account, $form, $form_state);
+  entity_form_submit_build_entity('user', $individual_account, $form, $form_state);
 
-  // Populate $edit with the properties of $account, which have been edited on
-  // this form by taking over all values, which appear in the form values too.
-  $edit = array_intersect_key((array) $account, $form_state['values']);
+  /*
+   * Populate $individual_account_vals with the properties of $individual_account,
+   * which have been edited on this form by taking over all values, which appear
+   * in the form values too.
+   */
+  $individual_account_vals = array_intersect_key((array) $individual_account, $form_state['values']);
 
-  // Add the editor role to this new account.
-  if ($editor = user_role_load_by_name('editor')) {
-    $edit['roles'][$editor->rid] = TRUE;
+  // Get the og groups that the currently logged in group user account is associated with.
+  global $user;
+  $group_account_groups = og_get_entity_groups('user', $user);
 
-    // Unblock the account. Verification by the site admin/user email is unnecessary.
-    $edit['status'] = TRUE;
-  }
+  // Assign Drupal roles to the individual account based on group login account's groups.
+  iasc_assign_roles($individual_account_vals, $group_account_groups['node']);
 
-  $account = user_save($account, $edit);
+  // Unblock the account. Verification by the site admin/user email is unnecessary.
+  $individual_account_vals['status'] = TRUE;
+
+  // Create the individual account.
+  $individual_account = user_save($individual_account, $individual_account_vals);
 
   // Terminate if an error occurred during user_save().
-  if (!$account) {
+  if (!$individual_account) {
     drupal_set_message(t("Error saving user account."), 'error');
     $form_state['redirect'] = '';
     return;
   }
 
-  $form_state['user'] = $account;
-  $form_state['values']['uid'] = $account->uid;
+  $form_state['user'] = $individual_account;
+  $form_state['values']['uid'] = $individual_account->uid;
 
-  watchdog('user', 'New user: %name (%email).', array('%name' => $form_state['values']['name'], '%email' => $form_state['values']['mail']), WATCHDOG_NOTICE, l(t('edit'), 'user/' . $account->uid . '/edit'));
+  watchdog('user', 'New user: %name (%email).', array('%name' => $form_state['values']['name'], '%email' => $form_state['values']['mail']), WATCHDOG_NOTICE, l(t('edit'), 'user/' . $individual_account->uid . '/edit'));
+
+  // Add the groups to the newly created account.
+  foreach($group_account_groups['node'] as $gid) {
+    og_group('node', $gid, array('entity' => $individual_account));
+  }
 
   // No e-mail verification required; log in user immediately.
-  if ($account->status) {
-    _user_mail_notify('register_no_approval_required', $account);
-    $form_state['uid'] = $account->uid;
+  if ($individual_account->status) {
+    _user_mail_notify('register_no_approval_required', $individual_account);
+    $form_state['uid'] = $individual_account->uid;
     user_login_submit(array(), $form_state);
-    drupal_set_message(t('Registration successful. You are now logged in.'));
+    drupal_set_message(t('Registration successful! You are now logged in.'));
     $form_state['redirect'] = '';
   }
+}
+
+/**
+ * Helper function to determine appropriate user role based on given groups.
+ * @param array $individual_account_vals
+ *   The user array
+ * @param array $group_account_groups
+ *   The array of groups that will determine the assigned user roles.
+ */
+function iasc_assign_roles(&$individual_account_vals, $group_account_groups) {
+  $all_groups = iasc_group_login_get_all_groups();
+
+  foreach ($group_account_groups as $gid) {
+    if (!empty($all_groups[$gid])) {
+      switch ($all_groups[$gid]->title) {
+        case 'IASC':
+          if ($editor = user_role_load_by_name('editor')) {
+            $individual_account_vals['roles'][$editor->rid] = TRUE;
+          }
+          break;
+
+        case 'Donor':
+          if ($viewer = user_role_load_by_name('viewer')) {
+            $individual_account_vals['roles'][$viewer->rid] = TRUE;
+          }
+          break;
+      }
+    }
+  }
+}
+
+/**
+ * Return a list of all Groups
+ *
+ * @return
+ *    An array of Groups, keyed by the group nid.
+ */
+function iasc_group_login_get_all_groups() {
+  $query = db_select('node', 'n');
+  $query->fields('n', array('nid', 'title'))
+    ->condition('n.type', OA_GROUP_TYPE);
+  return $query->execute()->fetchAllAssoc('nid');
 }

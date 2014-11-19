@@ -33,27 +33,10 @@ function iasc_group_login_user_default_permissions() {
     'name' => 'change own username',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'viewer' => 'viewer',
     ),
     'module' => 'user',
-  );
-
-  // Exported permission: 'edit user profiles'.
-  $permissions['edit user profiles'] = array(
-    'name' => 'edit user profiles',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'editor' => 'editor',
-    ),
-    'module' => 'iasc_group_login',
-  );
-
-  // Exported permission: 'register new account'.
-  $permissions['register new account'] = array(
-    'name' => 'register new account',
-    'roles' => array(
-      'group login' => 'group login',
-    ),
-    'module' => 'iasc_group_login',
   );
 
   return $permissions;

@@ -243,3 +243,7 @@ projects[date_facets][download][revision] = 9037608
 projects[access_code][type] = module
 projects[access_code][version] = 1.1
 projects[access_code][subdir] = contrib
+
+projects[og_role_override][type] = module
+projects[og_role_override][version] = 2.2
+projects[og_role_override][subdir] = contrib
