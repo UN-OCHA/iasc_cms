@@ -86,6 +86,9 @@ function iasc_announcement_strongarm() {
         'path' => array(
           'weight' => '1',
         ),
+        'flag' => array(
+          'weight' => '10',
+        ),
       ),
       'display' => array(),
     ),

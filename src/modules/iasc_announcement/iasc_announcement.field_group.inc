@@ -23,8 +23,8 @@ function iasc_announcement_field_group_info() {
     'label' => 'Access',
     'weight' => '7',
     'children' => array(
-      0 => 'field_oa_section',
-      1 => 'og_group_ref',
+      0 => 'og_group_ref',
+      1 => 'oa_section_ref',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
