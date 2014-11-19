@@ -54,6 +54,12 @@ function iasc_configuration_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'link_to_document' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -121,6 +127,12 @@ function iasc_configuration_field_default_field_instances() {
         'weight' => 22,
       ),
       'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'link_to_document' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -196,6 +208,12 @@ function iasc_configuration_field_default_field_instances() {
         'weight' => 23,
       ),
       'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'link_to_document' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -284,6 +302,12 @@ function iasc_configuration_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'link_to_document' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -348,6 +372,12 @@ function iasc_configuration_field_default_field_instances() {
         'weight' => 25,
       ),
       'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'link_to_document' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -422,6 +452,12 @@ function iasc_configuration_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'link_to_document' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -486,6 +522,12 @@ function iasc_configuration_field_default_field_instances() {
         'weight' => 19,
       ),
       'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'link_to_document' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',

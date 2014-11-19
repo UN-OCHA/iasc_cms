@@ -1,5 +1,8 @@
 .view-oa-event-list {
   margin-bottom: $padding-large-vertical * 2;
+  h4.title {
+    margin: 0 0 5px;
+  }
   .views-row {
     margin-bottom: $padding-large-vertical * 2;
     @media screen and (min-width: $screen-xs-min) {
@@ -8,5 +11,5 @@
       position: relative;
       width: 50%;
     }
-  }
+  } 
 }
