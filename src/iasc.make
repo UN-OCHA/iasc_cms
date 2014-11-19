@@ -184,7 +184,7 @@ projects[references_dialog][subdir] = contrib
 projects[styleguide][version] = 1.1
 projects[styleguide][subdir] = contrib
 
-projects[radix_layouts][version] = 3.0
+projects[radix_layouts][version] = 3.3
 projects[radix_layouts][subdir] = contrib
 
 ; Supports grouping of fields for Agenda items
