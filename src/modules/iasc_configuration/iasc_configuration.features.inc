@@ -24,15 +24,6 @@ function iasc_configuration_views_api($module = NULL, $api = NULL) {
 }
 
 /**
- * Implements hook_node_info_alter().
- */
-function iasc_configuration_node_info_alter(&$data) {
-  if (isset($data['oa_space'])) {
-    $data['oa_space']['title_label'] = 'Full Name'; /* WAS: 'Title' */
-  }
-}
-
-/**
  * Implements hook_panelizer_defaults_override_alter().
  */
 function iasc_configuration_panelizer_defaults_override_alter(&$data) {
@@ -96,8 +87,8 @@ function iasc_configuration_panelizer_defaults_override_alter(&$data) {
           'locks' => array(),
           'uuid' => 'a8210476-3ab0-4ab6-974e-f511ec91f54b',
         ); /* WAS: '' */
-    $data['node:oa_section:calendar_section']->display->panels['contentmain'][0] = 'new-a8210476-3ab0-4ab6-974e-f511ec91f54b'; /* WAS: 'new-39b87a40-e27c-45b0-8bdf-6a9c3f117695' */
-    $data['node:oa_section:calendar_section']->display->panels['contentmain'][1] = 'new-9ea94d4c-567b-404f-9aec-386ae14a1aea'; /* WAS: '' */
+    $data['node:oa_section:calendar_section']->display->panels['contentmain'][0] = 'new-9ea94d4c-567b-404f-9aec-386ae14a1aea'; /* WAS: 'new-39b87a40-e27c-45b0-8bdf-6a9c3f117695' */
+    $data['node:oa_section:calendar_section']->display->panels['contentmain'][1] = 'new-a8210476-3ab0-4ab6-974e-f511ec91f54b'; /* WAS: '' */
     $data['node:oa_section:calendar_section']->display->panels['sidebar'][0] = 'new-5241f5c7-9e10-4e79-a1ce-84f68ad200f3'; /* WAS: 'new-81942150-4ee9-4396-8371-b94f72b18f6a' */
     unset($data['node:oa_section:calendar_section']->display->content['new-39b87a40-e27c-45b0-8bdf-6a9c3f117695']);
     unset($data['node:oa_section:calendar_section']->display->content['new-81942150-4ee9-4396-8371-b94f72b18f6a']);
@@ -278,11 +269,10 @@ function iasc_configuration_panelizer_defaults_override_alter(&$data) {
           'uuid' => 'bf416e9c-7588-48cd-a156-db4e7d2a33ee',
         ); /* WAS: '' */
     $data['node:oa_space:default']->display->layout = 'burr_flipped'; /* WAS: 'bryant_flipped_flipped' */
-    $data['node:oa_space:default']->display->panels['contentmain'][1] = 'new-bf416e9c-7588-48cd-a156-db4e7d2a33ee'; /* WAS: 'new-9995e8b8-d8cb-4339-a7ad-1f0ea569d2de' */
-    $data['node:oa_space:default']->display->panels['contentmain'][2] = 'new-9995e8b8-d8cb-4339-a7ad-1f0ea569d2de'; /* WAS: '' */
-    $data['node:oa_space:default']->display->panels['sidebar'][3] = 'new-35ab60ac-d6d7-41b2-a57e-21ca28e5e974'; /* WAS: '' */
-    $data['node:oa_space:default']->display->panels['sidebar'][4] = 'new-652e1d79-7e20-4a4b-8b66-4fc46244013e'; /* WAS: '' */
-    $data['node:oa_space:default']->display->panels['sidebar'][5] = 'new-003b40be-c976-41cd-9bcc-1fe83c4bd599'; /* WAS: '' */
+    $data['node:oa_space:default']->display->panels['contentmain'][2] = 'new-bf416e9c-7588-48cd-a156-db4e7d2a33ee'; /* WAS: '' */
+    $data['node:oa_space:default']->display->panels['sidebar'][3] = 'new-003b40be-c976-41cd-9bcc-1fe83c4bd599'; /* WAS: '' */
+    $data['node:oa_space:default']->display->panels['sidebar'][4] = 'new-35ab60ac-d6d7-41b2-a57e-21ca28e5e974'; /* WAS: '' */
+    $data['node:oa_space:default']->display->panels['sidebar'][5] = 'new-652e1d79-7e20-4a4b-8b66-4fc46244013e'; /* WAS: '' */
   }
 }
 
