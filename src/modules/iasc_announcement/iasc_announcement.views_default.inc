@@ -171,6 +171,19 @@ function iasc_announcement_views_default_views() {
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Special Announcements Nodequeue */
+  $handler->display->display_options['relationships']['nodequeue_rel']['id'] = 'nodequeue_rel';
+  $handler->display->display_options['relationships']['nodequeue_rel']['table'] = 'node';
+  $handler->display->display_options['relationships']['nodequeue_rel']['field'] = 'nodequeue_rel';
+  $handler->display->display_options['relationships']['nodequeue_rel']['ui_name'] = 'Special Announcements Nodequeue';
+  $handler->display->display_options['relationships']['nodequeue_rel']['required'] = TRUE;
+  $handler->display->display_options['relationships']['nodequeue_rel']['limit'] = 1;
+  $handler->display->display_options['relationships']['nodequeue_rel']['names'] = array(
+    'special_announcements' => 'special_announcements',
+    'featured_products' => 0,
+    'featured_home' => 0,
+  );
   $handler->display->display_options['path'] = 'other-news';
   $export['iasc_announcement'] = $view;
 
