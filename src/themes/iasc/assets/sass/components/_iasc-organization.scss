@@ -1,12 +1,12 @@
 .view-display-id-panel_pane_membership_logos {
   // remove padding and color from parent
-  margin: -20px -30px; 
-  background: #fff;
+  // margin: -20px -30px; 
+  // background: #fff;
   h4 {
     @extend .panel-heading;
-    color: #fff;
     background-color: $brand-primary;
     clear: both;
+    color: #fff;
     margin: 0;
   }
   ul {
@@ -17,12 +17,10 @@
     li {
       position: relative;
       float: left;
-      width: 50%;
+      min-width: 140px;
+      //width: 50%;
       text-align: center;
       padding: 0 8px;
-    }
-    li:nth-child(2n+3) {
-      clear: left;
     }
     a {
       height: 100px;

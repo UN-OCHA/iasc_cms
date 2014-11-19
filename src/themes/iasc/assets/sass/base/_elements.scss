@@ -11,6 +11,9 @@ h4, .h4,
 h5, .h5,
 h6, .h6 {
   color: $purple;
+  a {
+    color: $purple;
+  }
 }
 
 .pagination a {
@@ -68,8 +71,7 @@ q {
   img.pull-right { padding-right: 0 }
 }
 
-/* Forms */
-
+// Forms
 form .field-multiple-table thead th {
   padding: 10px !important;
 }
