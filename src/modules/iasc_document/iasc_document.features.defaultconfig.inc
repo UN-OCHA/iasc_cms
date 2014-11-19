@@ -97,7 +97,7 @@ function iasc_document_defaultconfig_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => 6,
         ),
         'teaser' => array(
           'label' => 'inline',
@@ -202,7 +202,7 @@ function iasc_document_defaultconfig_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => 5,
         ),
         'teaser' => array(
           'label' => 'inline',
@@ -312,7 +312,7 @@ function iasc_document_defaultconfig_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => 2,
         ),
         'teaser' => array(
           'label' => 'inline',
@@ -415,7 +415,7 @@ function iasc_document_defaultconfig_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => 1,
         ),
         'teaser' => array(
           'label' => 'above',
@@ -521,7 +521,7 @@ function iasc_document_defaultconfig_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => 4,
         ),
         'teaser' => array(
           'label' => 'hidden',
@@ -670,7 +670,7 @@ function iasc_document_defaultconfig_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => 3,
         ),
         'teaser' => array(
           'label' => 'inline',

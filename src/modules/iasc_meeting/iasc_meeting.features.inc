@@ -227,16 +227,6 @@ function iasc_meeting_field_default_field_instances_alter(&$data) {
 }
 
 /**
- * Implements hook_node_info_alter().
- */
-function iasc_meeting_node_info_alter(&$data) {
-  if (isset($data['oa_event'])) {
-    $data['oa_event']['description'] = 'Create a Meeting to hold information about the next meeting event and to reference Agenda and the Meeting Notes Documents.'; /* WAS: 'An Open Atrium Event' */
-    $data['oa_event']['name'] = 'Meeting'; /* WAS: 'Event' */
-  }
-}
-
-/**
  * Implements hook_default_page_manager_handlers_alter().
  */
 function iasc_meeting_default_page_manager_handlers_alter(&$data) {
@@ -266,8 +256,12 @@ function iasc_meeting_default_page_manager_handlers_alter(&$data) {
           'locks' => array(),
           'uuid' => '457a0b07-9259-4092-a16e-f542822ee2af',
         ); /* WAS: '' */
-    $data['node_edit_panel_context_7']->conf['display']->panels['sidebar'][1] = 'new-457a0b07-9259-4092-a16e-f542822ee2af'; /* WAS: 'new-08f897a0-7ee5-4c24-856e-e5d6e0aa8bb3' */
-    $data['node_edit_panel_context_7']->conf['display']->panels['sidebar'][2] = 'new-08f897a0-7ee5-4c24-856e-e5d6e0aa8bb3'; /* WAS: 'new-30f4398c-9f13-4195-b392-3f34ab0ddcee' */
+    $data['node_edit_panel_context_7']->conf['display']->panels['sidebar'][2] = 'new-c1b47a87-02a0-4882-a02f-5dd40ec016bb'; /* WAS: 'new-30f4398c-9f13-4195-b392-3f34ab0ddcee' */
+    $data['node_edit_panel_context_7']->conf['display']->panels['sidebar'][3] = 'new-84b3bfce-f79b-4397-8b67-d97d1b61347c'; /* WAS: 'new-c1b47a87-02a0-4882-a02f-5dd40ec016bb' */
+    $data['node_edit_panel_context_7']->conf['display']->panels['sidebar'][4] = 'new-020f676b-0f7d-4a37-93e2-44aa23df3980'; /* WAS: 'new-84b3bfce-f79b-4397-8b67-d97d1b61347c' */
+    $data['node_edit_panel_context_7']->conf['display']->panels['sidebar'][5] = 'new-0b869cc5-d419-48ed-bcd1-4e6ec0d15a34'; /* WAS: 'new-020f676b-0f7d-4a37-93e2-44aa23df3980' */
+    $data['node_edit_panel_context_7']->conf['display']->panels['sidebar'][6] = 'new-68f32ccd-0cec-45db-9ecd-112683c079ae'; /* WAS: 'new-0b869cc5-d419-48ed-bcd1-4e6ec0d15a34' */
+    $data['node_edit_panel_context_7']->conf['display']->panels['sidebar'][7] = 'new-457a0b07-9259-4092-a16e-f542822ee2af'; /* WAS: 'new-68f32ccd-0cec-45db-9ecd-112683c079ae' */
     unset($data['node_edit_panel_context_7']->conf['display']->content['new-30f4398c-9f13-4195-b392-3f34ab0ddcee']);
   }
 }
@@ -690,20 +684,22 @@ function iasc_meeting_panelizer_defaults_override_alter(&$data) {
     $data['node:oa_event:default']->display->content['new-cf81af22-ac8b-4147-8462-a5fce1b76471']->position = 9; /* WAS: 2 */
     $data['node:oa_event:default']->display->content['new-cf81af22-ac8b-4147-8462-a5fce1b76471']->style['style'] = 'default'; /* WAS: '' */
     $data['node:oa_event:default']->display->hide_title = 1; /* WAS: 0 */
-    $data['node:oa_event:default']->display->panels['contentmain'][1] = 'new-2832cb36-53a3-484e-bbf0-05b7084ea8f4'; /* WAS: '' */
-    $data['node:oa_event:default']->display->panels['contentmain'][2] = 'new-29d974b8-bef0-4ff8-af8c-38b369433a5c'; /* WAS: '' */
+    $data['node:oa_event:default']->display->panels['contentmain'][0] = 'new-c84bd896-6873-41ab-89ea-5d0f2e0c2c7f'; /* WAS: 'new-9035b3e7-28dc-478f-a595-e89dca69718a' */
+    $data['node:oa_event:default']->display->panels['contentmain'][1] = 'new-9035b3e7-28dc-478f-a595-e89dca69718a'; /* WAS: '' */
+    $data['node:oa_event:default']->display->panels['contentmain'][2] = 'new-9c1552e9-6b59-4811-ac8f-8278030a8f11'; /* WAS: '' */
     $data['node:oa_event:default']->display->panels['contentmain'][3] = 'new-554e3ff8-5ae2-47d4-944e-53903613b9f5'; /* WAS: '' */
-    $data['node:oa_event:default']->display->panels['contentmain'][4] = 'new-9c1552e9-6b59-4811-ac8f-8278030a8f11'; /* WAS: '' */
-    $data['node:oa_event:default']->display->panels['contentmain'][5] = 'new-c84bd896-6873-41ab-89ea-5d0f2e0c2c7f'; /* WAS: '' */
-    $data['node:oa_event:default']->display->panels['sidebar'][1] = 'new-cf81af22-ac8b-4147-8462-a5fce1b76471'; /* WAS: 'new-e0f02a5b-dd4e-4ab9-8479-06a195d86fd0' */
-    $data['node:oa_event:default']->display->panels['sidebar'][2] = 'new-024f971a-f875-4063-bf25-63926a5c9092'; /* WAS: 'new-cf81af22-ac8b-4147-8462-a5fce1b76471' */
-    $data['node:oa_event:default']->display->panels['sidebar'][3] = 'new-19fe4e19-0d90-4acf-9c80-e1ffdf773880'; /* WAS: '' */
-    $data['node:oa_event:default']->display->panels['sidebar'][4] = 'new-213e8d65-ffde-47b2-bad5-b54b3f97dcfd'; /* WAS: '' */
+    $data['node:oa_event:default']->display->panels['contentmain'][4] = 'new-2832cb36-53a3-484e-bbf0-05b7084ea8f4'; /* WAS: '' */
+    $data['node:oa_event:default']->display->panels['contentmain'][5] = 'new-29d974b8-bef0-4ff8-af8c-38b369433a5c'; /* WAS: '' */
+    $data['node:oa_event:default']->display->panels['sidebar'][0] = 'new-721e6db6-a312-4742-8dd2-d7d879654919'; /* WAS: 'new-231244a5-ffbc-4013-a01e-cc85b4feeff0' */
+    $data['node:oa_event:default']->display->panels['sidebar'][1] = 'new-b556a608-6c09-4e8b-99bb-f7cee89c1756'; /* WAS: 'new-e0f02a5b-dd4e-4ab9-8479-06a195d86fd0' */
+    $data['node:oa_event:default']->display->panels['sidebar'][2] = 'new-677802ea-6c46-4806-9759-35191c9cf1a8'; /* WAS: 'new-cf81af22-ac8b-4147-8462-a5fce1b76471' */
+    $data['node:oa_event:default']->display->panels['sidebar'][3] = 'new-024f971a-f875-4063-bf25-63926a5c9092'; /* WAS: '' */
+    $data['node:oa_event:default']->display->panels['sidebar'][4] = 'new-ba879f23-61fc-4869-a081-d6663e9d1523'; /* WAS: '' */
     $data['node:oa_event:default']->display->panels['sidebar'][5] = 'new-64975a0b-8b8d-4816-8d78-0a066a557a04'; /* WAS: '' */
-    $data['node:oa_event:default']->display->panels['sidebar'][6] = 'new-677802ea-6c46-4806-9759-35191c9cf1a8'; /* WAS: '' */
-    $data['node:oa_event:default']->display->panels['sidebar'][7] = 'new-721e6db6-a312-4742-8dd2-d7d879654919'; /* WAS: '' */
-    $data['node:oa_event:default']->display->panels['sidebar'][8] = 'new-b556a608-6c09-4e8b-99bb-f7cee89c1756'; /* WAS: '' */
-    $data['node:oa_event:default']->display->panels['sidebar'][9] = 'new-ba879f23-61fc-4869-a081-d6663e9d1523'; /* WAS: '' */
+    $data['node:oa_event:default']->display->panels['sidebar'][6] = 'new-19fe4e19-0d90-4acf-9c80-e1ffdf773880'; /* WAS: '' */
+    $data['node:oa_event:default']->display->panels['sidebar'][7] = 'new-213e8d65-ffde-47b2-bad5-b54b3f97dcfd'; /* WAS: '' */
+    $data['node:oa_event:default']->display->panels['sidebar'][8] = 'new-231244a5-ffbc-4013-a01e-cc85b4feeff0'; /* WAS: '' */
+    $data['node:oa_event:default']->display->panels['sidebar'][9] = 'new-cf81af22-ac8b-4147-8462-a5fce1b76471'; /* WAS: '' */
     unset($data['node:oa_event:default']->display->content['new-e0f02a5b-dd4e-4ab9-8479-06a195d86fd0']);
   }
 }
