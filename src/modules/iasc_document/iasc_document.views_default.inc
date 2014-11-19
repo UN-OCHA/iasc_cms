@@ -63,7 +63,7 @@ function iasc_document_views_default_views() {
   $handler->display->display_options['fields']['field_document_type']['element_type'] = 'span';
   $handler->display->display_options['fields']['field_document_type']['element_label_type'] = 'span';
   $handler->display->display_options['fields']['field_document_type']['type'] = 'taxonomy_term_reference_plain';
-  /* Field: Content: Authoring Bodies */
+  /* Field: Content: Groups audience */
   $handler->display->display_options['fields']['og_group_ref']['id'] = 'og_group_ref';
   $handler->display->display_options['fields']['og_group_ref']['table'] = 'og_membership';
   $handler->display->display_options['fields']['og_group_ref']['field'] = 'og_group_ref';
@@ -153,7 +153,7 @@ function iasc_document_views_default_views() {
     4 => 0,
   );
   $handler->display->display_options['filters']['field_published_date_value_1']['form_type'] = 'date_popup';
-  /* Filter criterion: Content: Authoring Bodies (og_group_ref) */
+  /* Filter criterion: Content: Groups audience (og_group_ref) */
   $handler->display->display_options['filters']['og_group_ref_target_id']['id'] = 'og_group_ref_target_id';
   $handler->display->display_options['filters']['og_group_ref_target_id']['table'] = 'og_membership';
   $handler->display->display_options['filters']['og_group_ref_target_id']['field'] = 'og_group_ref_target_id';
@@ -382,7 +382,7 @@ function iasc_document_views_default_views() {
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
-  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  $handler->display->display_options['row_options']['hide_empty'] = TRUE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Nodequeue: Queue */
@@ -397,6 +397,19 @@ function iasc_document_views_default_views() {
     'special_announcements' => 0,
   );
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Product Thumbnail */
+  $handler->display->display_options['fields']['field_product_thumbnail']['id'] = 'field_product_thumbnail';
+  $handler->display->display_options['fields']['field_product_thumbnail']['table'] = 'field_data_field_product_thumbnail';
+  $handler->display->display_options['fields']['field_product_thumbnail']['field'] = 'field_product_thumbnail';
+  $handler->display->display_options['fields']['field_product_thumbnail']['label'] = '';
+  $handler->display->display_options['fields']['field_product_thumbnail']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_product_thumbnail']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_product_thumbnail']['element_wrapper_class'] = 'product-thumbnail';
+  $handler->display->display_options['fields']['field_product_thumbnail']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_product_thumbnail']['settings'] = array(
+    'image_style' => '',
+    'image_link' => 'content',
+  );
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -404,6 +417,28 @@ function iasc_document_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Content: Product Category */
+  $handler->display->display_options['fields']['field_category']['id'] = 'field_category';
+  $handler->display->display_options['fields']['field_category']['table'] = 'field_data_field_category';
+  $handler->display->display_options['fields']['field_category']['field'] = 'field_category';
+  $handler->display->display_options['fields']['field_category']['label'] = '';
+  $handler->display->display_options['fields']['field_category']['element_type'] = 'em';
+  $handler->display->display_options['fields']['field_category']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_category']['type'] = 'taxonomy_term_reference_plain';
+  /* Field: Content: Published Date */
+  $handler->display->display_options['fields']['field_published_date']['id'] = 'field_published_date';
+  $handler->display->display_options['fields']['field_published_date']['table'] = 'field_data_field_published_date';
+  $handler->display->display_options['fields']['field_published_date']['field'] = 'field_published_date';
+  $handler->display->display_options['fields']['field_published_date']['label'] = '';
+  $handler->display->display_options['fields']['field_published_date']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_published_date']['settings'] = array(
+    'format_type' => 'panopoly_day',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'show_repeat_rule' => 'show',
+  );
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Nodequeue: Position */
   $handler->display->display_options['sorts']['position']['id'] = 'position';
