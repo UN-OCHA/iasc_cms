@@ -235,59 +235,6 @@ function iasc_announcement_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-announcement-field_oa_section'
-  $field_instances['node-announcement-field_oa_section'] = array(
-    'bundle' => 'announcement',
-    'comment_alter' => 0,
-    'default_value' => array(
-      0 => array(
-        'tid' => 5,
-      ),
-    ),
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'taxonomy',
-        'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 4,
-      ),
-      'featured' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_oa_section',
-    'label' => 'Section Type',
-    'options_limit' => FALSE,
-    'options_limit_empty_behaviour' => 0,
-    'options_limit_fields' => array(),
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'apply_chosen' => 0,
-      ),
-      'type' => 'options_select',
-      'weight' => 7,
-    ),
-  );
-
   // Exported field_instance: 'node-announcement-field_published_date'
   $field_instances['node-announcement-field_published_date'] = array(
     'bundle' => 'announcement',
@@ -413,6 +360,60 @@ function iasc_announcement_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-announcement-oa_section_ref'
+  $field_instances['node-announcement-oa_section_ref'] = array(
+    'bundle' => 'announcement',
+    'comment_alter' => 0,
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 9,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'oa_section_ref',
+    'label' => 'Section',
+    'options_limit' => 1,
+    'options_limit_empty_behaviour' => 1,
+    'options_limit_fields' => array(
+      'body' => 0,
+      'og_group_ref' => 'og_group_ref',
+    ),
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => 0,
+      ),
+      'type' => 'options_select',
+      'weight' => 7,
+    ),
+  );
+
   // Exported field_instance: 'node-announcement-og_group_ref'
   $field_instances['node-announcement-og_group_ref'] = array(
     'bundle' => 'announcement',
@@ -485,7 +486,7 @@ function iasc_announcement_field_default_field_instances() {
   t('Published Date');
   t('Relevant Documents');
   t('Relevant Links');
-  t('Section Type');
+  t('Section');
 
   return $field_instances;
 }
