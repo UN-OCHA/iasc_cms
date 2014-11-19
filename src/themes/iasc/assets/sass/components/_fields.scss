@@ -33,6 +33,7 @@
 }
 
 // OA Media
+.pane-node-field-agenda-items,
 .pane-node-field-oa-media {
   .field-label {
     font-weight: normal;
@@ -42,6 +43,15 @@
     font-size: 15px;
     margin-right: 10px;
     vertical-align: baseline;
+    color: $red;
+  }
+}
+
+// Hide node titles on these field collection fields
+.field-type-field-collection .node-oa-wiki-page {
+  margin-bottom: $padding-large-vertical;
+  h2 {
+    display: none; 
   }
 }
 
