@@ -27,7 +27,7 @@ function iasc_css_alter(&$css) {
  * Implements hook_js_alter().
  */
 function iasc_js_alter(&$javascript) {
-  //unset($javascript['sites/all/themes/radix/assets/javascripts/radix-script.js']);
+  unset($javascript['sites/all/themes/radix/assets/javascripts/radix-script.js']);
 }
 
 /**
