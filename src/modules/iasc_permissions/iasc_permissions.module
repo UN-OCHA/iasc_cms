@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the IASC Permissions feature.
- */
-
-include_once 'iasc_permissions.features.inc';

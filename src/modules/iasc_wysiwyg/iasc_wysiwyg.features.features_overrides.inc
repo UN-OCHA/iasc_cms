@@ -14,9 +14,5 @@ function iasc_wysiwyg_features_override_default_overrides() {
   // Exported overrides for: filter
   $overrides["filter.panopoly_wysiwyg_text.weight"] = -6;
 
-  // Exported overrides for: user_permission
-  $overrides["user_permission.use text format panopoly_wysiwyg_text.roles|authenticated user"]["DELETED"] = TRUE;
-  $overrides["user_permission.use text format panopoly_wysiwyg_text.roles|editor"]["DELETED"] = TRUE;
-
  return $overrides;
 }

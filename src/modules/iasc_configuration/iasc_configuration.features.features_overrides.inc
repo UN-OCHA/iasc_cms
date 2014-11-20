@@ -11,8 +11,6 @@ function iasc_configuration_features_override_default_overrides() {
   // This code is only used for UI in features. Exported alters hooks do the magic.
   $overrides = array();
 
-  // Exported overrides for: node
-
   // Exported overrides for: panelizer_defaults
   $overrides["panelizer_defaults.node:oa_section:calendar_section.display|content|new-39b87a40-e27c-45b0-8bdf-6a9c3f117695"]["DELETED"] = TRUE;
   $overrides["panelizer_defaults.node:oa_section:calendar_section.display|content|new-5241f5c7-9e10-4e79-a1ce-84f68ad200f3|position"] = 0;
