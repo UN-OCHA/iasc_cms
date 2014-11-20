@@ -63,7 +63,7 @@ function iasc_document_views_default_views() {
   $handler->display->display_options['fields']['field_document_type']['element_type'] = 'span';
   $handler->display->display_options['fields']['field_document_type']['element_label_type'] = 'span';
   $handler->display->display_options['fields']['field_document_type']['type'] = 'taxonomy_term_reference_plain';
-  /* Field: Content: Groups audience */
+  /* Field: Content: Authoring Bodies */
   $handler->display->display_options['fields']['og_group_ref']['id'] = 'og_group_ref';
   $handler->display->display_options['fields']['og_group_ref']['table'] = 'og_membership';
   $handler->display->display_options['fields']['og_group_ref']['field'] = 'og_group_ref';
@@ -96,10 +96,6 @@ function iasc_document_views_default_views() {
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  $handler->display->display_options['filter_groups']['groups'] = array(
-    1 => 'AND',
-    2 => 'OR',
-  );
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -153,7 +149,7 @@ function iasc_document_views_default_views() {
     4 => 0,
   );
   $handler->display->display_options['filters']['field_published_date_value_1']['form_type'] = 'date_popup';
-  /* Filter criterion: Content: Groups audience (og_group_ref) */
+  /* Filter criterion: Content: Authoring Bodies (og_group_ref) */
   $handler->display->display_options['filters']['og_group_ref_target_id']['id'] = 'og_group_ref_target_id';
   $handler->display->display_options['filters']['og_group_ref_target_id']['table'] = 'og_membership';
   $handler->display->display_options['filters']['og_group_ref_target_id']['field'] = 'og_group_ref_target_id';
@@ -199,13 +195,10 @@ function iasc_document_views_default_views() {
   $handler->display->display_options['filters']['field_document_type_tid']['id'] = 'field_document_type_tid';
   $handler->display->display_options['filters']['field_document_type_tid']['table'] = 'field_data_field_document_type';
   $handler->display->display_options['filters']['field_document_type_tid']['field'] = 'field_document_type_tid';
-  $handler->display->display_options['filters']['field_document_type_tid']['value'] = array(
-    204 => '204',
-  );
-  $handler->display->display_options['filters']['field_document_type_tid']['group'] = 2;
+  $handler->display->display_options['filters']['field_document_type_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_document_type_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_document_type_tid']['expose']['operator_id'] = 'field_document_type_tid_op';
-  $handler->display->display_options['filters']['field_document_type_tid']['expose']['label'] = 'Documents';
+  $handler->display->display_options['filters']['field_document_type_tid']['expose']['label'] = 'Document Type';
   $handler->display->display_options['filters']['field_document_type_tid']['expose']['operator'] = 'field_document_type_tid_op';
   $handler->display->display_options['filters']['field_document_type_tid']['expose']['identifier'] = 'field_document_type_tid';
   $handler->display->display_options['filters']['field_document_type_tid']['expose']['multiple'] = TRUE;
@@ -214,9 +207,9 @@ function iasc_document_views_default_views() {
     1 => 0,
     3 => 0,
     4 => 0,
+    5 => 0,
+    6 => 0,
   );
-  $handler->display->display_options['filters']['field_document_type_tid']['expose']['reduce'] = TRUE;
-  $handler->display->display_options['filters']['field_document_type_tid']['is_grouped'] = TRUE;
   $handler->display->display_options['filters']['field_document_type_tid']['group_info']['label'] = 'Type';
   $handler->display->display_options['filters']['field_document_type_tid']['group_info']['identifier'] = 'field_document_type_tid';
   $handler->display->display_options['filters']['field_document_type_tid']['group_info']['optional'] = FALSE;
@@ -258,7 +251,7 @@ function iasc_document_views_default_views() {
   $handler->display->display_options['filters']['keys']['id'] = 'keys';
   $handler->display->display_options['filters']['keys']['table'] = 'search_index';
   $handler->display->display_options['filters']['keys']['field'] = 'keys';
-  $handler->display->display_options['filters']['keys']['group'] = 2;
+  $handler->display->display_options['filters']['keys']['group'] = 1;
   $handler->display->display_options['filters']['keys']['exposed'] = TRUE;
   $handler->display->display_options['filters']['keys']['expose']['operator_id'] = 'keys_op';
   $handler->display->display_options['filters']['keys']['expose']['label'] = 'Search Terms';
