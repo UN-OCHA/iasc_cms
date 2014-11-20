@@ -226,9 +226,9 @@ function iasc_meeting_field_default_field_instances_alter(&$data) {
   }
 }
 
- /**
-  * Implements hook_node_info_alter().
-  */
+/**
+* Implements hook_node_info_alter().
+*/
 function iasc_meeting_node_info_alter(&$data) {
   if (isset($data['oa_event'])) {
     $data['oa_event']['description'] = 'Create a Meeting to hold information about the next meeting event and to reference Agenda and the Meeting Notes Documents.'; /* WAS: 'An Open Atrium Event' */
