@@ -48,8 +48,9 @@ li { list-style: none; }
 
 ol.ordered-styled {
   li {
-    list-style: decimal;
-    list-style-position: inside;
+    list-style: decimal outside none;
+    margin-bottom: 10px;
+    margin-left: 15px;
   }
 }
 
