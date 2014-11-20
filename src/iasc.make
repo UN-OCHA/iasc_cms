@@ -3,16 +3,27 @@ api = 2
 
 ; Drupal Core
 projects[drupal][type] = core
-projects[drupal][version] = 7.32
+projects[drupal][version] = 7.34
 
+; *********** PATCHES ************
 ; Patch for handling inherited profiles
 projects[drupal][patch][1356276] = http://drupal.org/files/1356276-make-D7-21.patch
+
+; Patch for fixing node_access across non-required Views relationships
+; NOTE: This patch is not fully reviewed/accepted yet, so review the latest status
+projects[drupal][patch][1349080] = http://drupal.org/files/d7_move_access_to_join_condition-1349080-89.patch
 
 ; Patch for simpletest
 projects[drupal][patch][911354] = http://drupal.org/files/911354-drupal-profile-85.patch
 
 ; Patch to allow install profile enabling to enable dependencies correctly.
 projects[drupal][patch][1093420] = http://drupal.org/files/1093420-22.patch
+
+; Patch to prevent empty titles when menu_check_access called more than once
+projects[drupal][patch][1697570] = http://drupal.org/files/drupal-menu_always_load_objects-1697570-5.patch
+
+; Patch to fix sanitization of titles in entity_reference
+projects[drupal][patch][1919338] = http://drupal.org/files/issues/options_drupal7-1919338-58.patch
 
 ; =====================================
 ; PANOPOLY
@@ -27,112 +38,40 @@ projects[drupal][patch][1093420] = http://drupal.org/files/1093420-22.patch
 ; and also does not support include[]
 ; so we need to copy the panopoly.make file here
 
-projects[panopoly_core][version] = 1.10
+projects[panopoly_core][version] = 1.14
 projects[panopoly_core][subdir] = panopoly
 
-projects[panopoly_images][version] = 1.10
+projects[panopoly_images][version] = 1.14
 projects[panopoly_images][subdir] = panopoly
 
-projects[panopoly_theme][version] = 1.10
+projects[panopoly_theme][version] = 1.14
 projects[panopoly_theme][subdir] = panopoly
 
-projects[panopoly_magic][version] = 1.10
+projects[panopoly_magic][version] = 1.14
 projects[panopoly_magic][subdir] = panopoly
 
-projects[panopoly_widgets][version] = 1.10
+projects[panopoly_widgets][version] = 1.14
 projects[panopoly_widgets][subdir] = panopoly
 
-projects[panopoly_admin][version] = 1.10
+projects[panopoly_admin][version] = 1.14
 projects[panopoly_admin][subdir] = panopoly
 
-projects[panopoly_users][version] = 1.10
+projects[panopoly_users][version] = 1.14
 projects[panopoly_users][subdir] = panopoly
 
-projects[panopoly_pages][version] = 1.10
+projects[panopoly_pages][version] = 1.14
 projects[panopoly_pages][subdir] = panopoly
 
-projects[panopoly_wysiwyg][version] = 1.10
+projects[panopoly_wysiwyg][version] = 1.14
 projects[panopoly_wysiwyg][subdir] = panopoly
 
-projects[panopoly_search][version] = 1.10
+projects[panopoly_search][version] = 1.14
 projects[panopoly_search][subdir] = panopoly
-
-projects[panopoly_test][version] = 1.10
-projects[panopoly_test][subdir] = panopoly
 
 ; =====================================
 ; Open Atrium 2.x
 ; =====================================
-
-projects[oa_core][type] = module
-projects[oa_core][subdir] = contrib
-projects[oa_core][download][url] = https://github.com/phase2/oa_core.git
-projects[oa_core][download][type] = git
-projects[oa_core][download][tag] = 7.x-2.27
-
-projects[oa_discussion][type] = module
-projects[oa_discussion][subdir] = contrib
-projects[oa_discussion][download][url] = https://github.com/phase2/oa_discussion.git
-projects[oa_discussion][download][type] = git
-projects[oa_discussion][download][tag] = 7.x-2.22
-
-projects[oa_wiki][type] = module
-projects[oa_wiki][subdir] = contrib
-projects[oa_wiki][download][url] = https://github.com/phase2/oa_wiki.git
-projects[oa_wiki][download][type] = git
-projects[oa_wiki][download][tag] = 7.x-2.21
-
-projects[oa_events][type] = module
-projects[oa_events][subdir] = contrib
-projects[oa_events][download][url] = https://github.com/phase2/oa_events.git
-projects[oa_events][download][type] = git
-projects[oa_events][download][tag] = 7.x-2.23
-
-projects[oa_events_import][type] = module
-projects[oa_events_import][subdir] = contrib
-projects[oa_events_import][download][url] = https://github.com/phase2/oa_events_import.git
-projects[oa_events_import][download][type] = git
-projects[oa_events_import][download][tag] = 7.x-2.22
-
-projects[oa_contextual_tabs][type] = module
-projects[oa_contextual_tabs][subdir] = contrib
-projects[oa_contextual_tabs][download][url] = https://github.com/phase2/oa_contextual_tabs.git
-projects[oa_contextual_tabs][download][type] = git
-projects[oa_contextual_tabs][download][tag] = 7.x-2.22
-
-projects[oa_notifications][type] = module
-projects[oa_notifications][subdir] = contrib
-projects[oa_notifications][download][url] = https://github.com/phase2/oa_notifications.git
-projects[oa_notifications][download][type] = git
-projects[oa_notifications][download][tag] = 7.x-2.21
-
-projects[oa_media][type] = module
-projects[oa_media][subdir] = contrib
-projects[oa_media][download][url] = https://github.com/phase2/oa_media.git
-projects[oa_media][download][type] = git
-projects[oa_media][download][tag] = 7.x-2.21
-
-projects[oa_subspaces][type] = module
-projects[oa_subspaces][subdir] = contrib
-projects[oa_subspaces][download][url] = https://github.com/phase2/oa_subspaces.git
-projects[oa_subspaces][download][type] = git
-projects[oa_subspaces][download][tag] = 7.x-2.22
-
-projects[oa_radix][type] = theme
-projects[oa_radix][download][url] = https://github.com/phase2/oa_radix.git
-projects[oa_radix][download][type] = git
-projects[oa_radix][download][tag] = 7.x-3.3
-
-projects[openatrium][type] = profile
-projects[openatrium][download][type] = git
-projects[openatrium][download][url] = http://git.drupal.org/project/openatrium.git
-projects[openatrium][download][tag] = 7.x-2.24
-
-projects[oa_mailhandler][type] = module
-projects[oa_mailhandler][subdir] = contrib
-projects[oa_mailhandler][download][url] = http://git.drupal.org/project/oa_mailhandler.git
-projects[oa_mailhandler][download][type] = git
-projects[oa_mailhandler][download][tag] = 7.x-2.16
+includes[openatrium] = openatrium.make
 
 ; =====================================
 ; PERFORMANCE MODULES
@@ -195,7 +134,6 @@ projects[field_collection][subdir] = contrib
 projects[addressfield][version] = 1.0-beta5
 projects[addressfield][subdir] = contrib
 
-
 projects[entity_view_mode][version] = 1.0-rc1
 projects[entity_view_mode][subdir] = contrib
 
@@ -248,6 +186,14 @@ projects[og_role_override][type] = module
 projects[og_role_override][version] = 2.2
 projects[og_role_override][subdir] = contrib
 
-projects[features][type] = module
-projects[features][version] = 2.2
-projects[features][subdir] = contrib
+; Views
+; Override oa_core.make: 3.8
+projects[views][version] = 3.8
+projects[views][subdir] = contrib
+; patches from Panopoly
+projects[views][patch][2037469] = http://drupal.org/files/views-exposed-sorts-2037469-1.patch
+; additional patches for OA
+projects[views][patch][1979926] = http://drupal.org/files/1979926-views-reset_fetch_data-2.patch
+projects[views][patch][1735096] = http://drupal.org/files/1735096-views-mltiple-instance-exposed-form-8.patch
+; fixes "Notice: Undefined index: data in views_plugin_cache->restore_headers()"
+projects[views][patch][2272439] = https://www.drupal.org/files/issues/views-views-undefined_index_data-2272439-18.patch
