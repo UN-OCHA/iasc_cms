@@ -184,6 +184,10 @@ function iasc_meeting_features_override_default_overrides() {
   $overrides["field_instance.node-oa_event-og_vocabulary.widget|weight"] = 14;
 
   // Exported overrides for: node
+  $overrides["node.oa_event.description"] = 'Create a Meeting to hold information about the next meeting event and to reference Agenda and the Meeting Notes Documents.';
+  $overrides["node.oa_event.name"] = 'Meeting';
+
+
 
   // Exported overrides for: page_manager_handlers
   $overrides["page_manager_handlers.node_edit_panel_context_7.conf|display|content|new-08f897a0-7ee5-4c24-856e-e5d6e0aa8bb3|position"] = 2;
