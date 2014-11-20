@@ -116,7 +116,7 @@ function iasc_group_login_default_page_manager_pages_alter(&$data) {
           ),
           'css' => array(),
           'extras' => array(),
-          'position' => 0,
+          'position' => 1,
           'locks' => array(),
           'uuid' => '7b3f16ff-6cf3-4870-8e7b-f435e5002ae0',
         ); /* WAS: '' */
@@ -138,7 +138,7 @@ function iasc_group_login_default_page_manager_pages_alter(&$data) {
             'image_size' => 'quarter',
             'show_description' => 0,
             'show_sections' => 0,
-            'show_links' => 1,
+            'show_links' => 0,
             'link_class' => 'btn',
             'num_per_page' => 15,
             'types' => array(
@@ -160,7 +160,6 @@ function iasc_group_login_default_page_manager_pages_alter(&$data) {
           'uuid' => '85991598-3ade-462c-9153-b6828b5375ea',
         ); /* WAS: '' */
     $data['user_actitivy']->default_handlers['page_user_actitivy_panel_context']->conf['display']->content['new-8ec62ea8-940b-4143-a050-3aa9de481a98']->configuration['formatter_settings']['image_style'] = 'bio_circled'; /* WAS: 'panopoly_image_quarter' */
-    $data['user_actitivy']->default_handlers['page_user_actitivy_panel_context']->conf['display']->content['new-8ec62ea8-940b-4143-a050-3aa9de481a98']->position = 1; /* WAS: 0 */
     $data['user_actitivy']->default_handlers['page_user_actitivy_panel_context']->conf['display']->layout = 'burr_flipped'; /* WAS: 'moscone_flipped' */
     $data['user_actitivy']->default_handlers['page_user_actitivy_panel_context']->conf['display']->panels['contentmain'][1] = 'new-3e710ae5-7960-4926-a739-1cdffc0b3826'; /* WAS: '' */
     $data['user_actitivy']->default_handlers['page_user_actitivy_panel_context']->conf['display']->panels['sidebar'][1] = 'new-7b3f16ff-6cf3-4870-8e7b-f435e5002ae0'; /* WAS: '' */
@@ -177,7 +176,6 @@ function iasc_group_login_panelizer_defaults_override_alter(&$data) {
   if (isset($data['user:user:default'])) {
     $data['user:user:default']->display->content['new-23b1f4f1-cda8-42ca-880a-afc2ae92f3e9']->configuration['formatter_settings']['image_style'] = 'bio_circled'; /* WAS: 'panopoly_image_full' */
     $data['user:user:default']->display->content['new-23b1f4f1-cda8-42ca-880a-afc2ae92f3e9']->panel = 'sidebar'; /* WAS: 'column2' */
-    $data['user:user:default']->display->content['new-23b1f4f1-cda8-42ca-880a-afc2ae92f3e9']->position = 1; /* WAS: 0 */
     $data['user:user:default']->display->content['new-35f3ad75-2f58-4569-8d07-c9b6447f4a89'] = (object) array(
           'pid' => 'new-35f3ad75-2f58-4569-8d07-c9b6447f4a89',
           'panel' => 'contentmain',
@@ -273,7 +271,7 @@ function iasc_group_login_panelizer_defaults_override_alter(&$data) {
           ),
           'css' => array(),
           'extras' => array(),
-          'position' => 0,
+          'position' => 1,
           'locks' => array(),
           'uuid' => '87215791-2a09-4404-a4b4-1e83b673fb16',
         ); /* WAS: '' */
@@ -295,7 +293,7 @@ function iasc_group_login_panelizer_defaults_override_alter(&$data) {
             'image_size' => 'quarter',
             'show_description' => 0,
             'show_sections' => 0,
-            'show_links' => 1,
+            'show_links' => 0,
             'link_class' => 'btn',
             'num_per_page' => 15,
             'types' => array(

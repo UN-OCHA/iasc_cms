@@ -101,7 +101,7 @@ function iasc_group_login_features_override_default_overrides() {
       ),
       'css' => array(),
       'extras' => array(),
-      'position' => 0,
+      'position' => 1,
       'locks' => array(),
       'uuid' => '7b3f16ff-6cf3-4870-8e7b-f435e5002ae0',
     );
@@ -123,7 +123,7 @@ function iasc_group_login_features_override_default_overrides() {
         'image_size' => 'quarter',
         'show_description' => 0,
         'show_sections' => 0,
-        'show_links' => 1,
+        'show_links' => 0,
         'link_class' => 'btn',
         'num_per_page' => 15,
         'types' => array(
@@ -145,7 +145,6 @@ function iasc_group_login_features_override_default_overrides() {
       'uuid' => '85991598-3ade-462c-9153-b6828b5375ea',
     );
   $overrides["page_manager_pages.user_actitivy.default_handlers|page_user_actitivy_panel_context|conf|display|content|new-8ec62ea8-940b-4143-a050-3aa9de481a98|configuration|formatter_settings|image_style"] = 'bio_circled';
-  $overrides["page_manager_pages.user_actitivy.default_handlers|page_user_actitivy_panel_context|conf|display|content|new-8ec62ea8-940b-4143-a050-3aa9de481a98|position"] = 1;
   $overrides["page_manager_pages.user_actitivy.default_handlers|page_user_actitivy_panel_context|conf|display|content|new-e8325655-b395-490f-bdd3-fe100bd92c0a"]["DELETED"] = TRUE;
   $overrides["page_manager_pages.user_actitivy.default_handlers|page_user_actitivy_panel_context|conf|display|layout"] = 'burr_flipped';
   $overrides["page_manager_pages.user_actitivy.default_handlers|page_user_actitivy_panel_context|conf|display|panels|contentmain|1"] = 'new-3e710ae5-7960-4926-a739-1cdffc0b3826';
@@ -156,7 +155,6 @@ function iasc_group_login_features_override_default_overrides() {
   // Exported overrides for: panelizer_defaults
   $overrides["panelizer_defaults.user:user:default.display|content|new-23b1f4f1-cda8-42ca-880a-afc2ae92f3e9|configuration|formatter_settings|image_style"] = 'bio_circled';
   $overrides["panelizer_defaults.user:user:default.display|content|new-23b1f4f1-cda8-42ca-880a-afc2ae92f3e9|panel"] = 'sidebar';
-  $overrides["panelizer_defaults.user:user:default.display|content|new-23b1f4f1-cda8-42ca-880a-afc2ae92f3e9|position"] = 1;
   $overrides["panelizer_defaults.user:user:default.display|content|new-35f3ad75-2f58-4569-8d07-c9b6447f4a89"] = (object) array(
       'pid' => 'new-35f3ad75-2f58-4569-8d07-c9b6447f4a89',
       'panel' => 'contentmain',
@@ -252,7 +250,7 @@ function iasc_group_login_features_override_default_overrides() {
       ),
       'css' => array(),
       'extras' => array(),
-      'position' => 0,
+      'position' => 1,
       'locks' => array(),
       'uuid' => '87215791-2a09-4404-a4b4-1e83b673fb16',
     );
@@ -275,7 +273,7 @@ function iasc_group_login_features_override_default_overrides() {
         'image_size' => 'quarter',
         'show_description' => 0,
         'show_sections' => 0,
-        'show_links' => 1,
+        'show_links' => 0,
         'link_class' => 'btn',
         'num_per_page' => 15,
         'types' => array(
