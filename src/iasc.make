@@ -247,3 +247,7 @@ projects[access_code][subdir] = contrib
 projects[og_role_override][type] = module
 projects[og_role_override][version] = 2.2
 projects[og_role_override][subdir] = contrib
+
+projects[features][type] = module
+projects[features][version] = 2.2
+projects[features][subdir] = contrib
