@@ -9388,6 +9388,11 @@ img.bio-circled {
   margin-bottom: 10px;
 }
 
+/* line 50, ../sass/components/_panel.scss */
+.node-type-oa-wiki-page h1.title {
+  display: none;
+}
+
 /* line 3, ../sass/components/_view.scss */
 .view-filters .container-inline-date .form-item {
   width: 100%;

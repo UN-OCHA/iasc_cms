@@ -45,6 +45,9 @@
   }
 }
 
-
+// Hide page titles on these nodes
+.node-type-oa-wiki-page {
+  h1.title { display: none; }
+}
 
 
