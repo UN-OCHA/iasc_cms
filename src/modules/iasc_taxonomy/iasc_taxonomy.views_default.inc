@@ -72,7 +72,7 @@ function iasc_taxonomy_views_default_views() {
   $handler->display->display_options['fields']['field_logo']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_logo']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_logo']['settings'] = array(
-    'image_style' => 'apps_logo',
+    'image_style' => 'organizations_logo',
     'image_link' => '',
   );
   $handler->display->display_options['fields']['field_logo']['group_column'] = 'entity_id';
