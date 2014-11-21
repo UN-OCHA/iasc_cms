@@ -96,6 +96,7 @@ function iasc_configuration_features_override_default_overrides() {
         'view_settings' => 'fields',
         'header_type' => 'none',
         'view_mode' => 'teaser',
+        'show_exposed_form' => 1,
       ),
       'cache' => array(),
       'style' => array(
@@ -155,43 +156,6 @@ function iasc_configuration_features_override_default_overrides() {
   $overrides["panelizer_defaults.node:oa_space:default.display|content|new-18865aa1-e2a6-4d3d-93c2-3f80adf44c54|configuration|widget_title"] = 'Sections';
   $overrides["panelizer_defaults.node:oa_space:default.display|content|new-18865aa1-e2a6-4d3d-93c2-3f80adf44c54|style|settings|secondary_options"] = 'panel-primary';
   $overrides["panelizer_defaults.node:oa_space:default.display|content|new-18865aa1-e2a6-4d3d-93c2-3f80adf44c54|style|style"] = 'secondary';
-  $overrides["panelizer_defaults.node:oa_space:default.display|content|new-289406c0-261d-4fdf-a90a-0c72725085a3"] = (object) array(
-      'pid' => 'new-289406c0-261d-4fdf-a90a-0c72725085a3',
-      'panel' => 'contentmain',
-      'type' => 'views_panes',
-      'subtype' => 'oa_event_list-panel_pane_2',
-      'shown' => TRUE,
-      'access' => array(),
-      'configuration' => array(
-        'exposed' => array(
-          'og_group_ref_target_id' => '',
-          'og_group_ref_target_id_mine' => 0,
-          'og_subspaces_view_all' => 1,
-          'og_subspaces_view_parent' => 0,
-          'oa_section_ref_target_id' => '',
-          'flagged' => 0,
-        ),
-        'more_link' => 0,
-        'use_pager' => 1,
-        'pager_id' => 0,
-        'items_per_page' => 10,
-        'override_title' => '',
-        'override_title_text' => '',
-        'view_settings' => 'fields',
-        'header_type' => 'none',
-        'view_mode' => 'teaser',
-        'widget_title' => 'Upcoming Meetings',
-      ),
-      'cache' => array(),
-      'style' => array(
-        'settings' => NULL,
-      ),
-      'css' => array(),
-      'extras' => array(),
-      'position' => 1,
-      'locks' => array(),
-      'uuid' => '289406c0-261d-4fdf-a90a-0c72725085a3',
-    );
   $overrides["panelizer_defaults.node:oa_space:default.display|content|new-2b5ef25a-4dce-4b89-99b7-f940adbd5e95|access|plugins"] = array(
     0 => array(
       'name' => 'role',
@@ -238,6 +202,47 @@ function iasc_configuration_features_override_default_overrides() {
       'locks' => array(),
       'uuid' => '35ab60ac-d6d7-41b2-a57e-21ca28e5e974',
     );
+  $overrides["panelizer_defaults.node:oa_space:default.display|content|new-5d177b59-acd0-4bd8-b8fa-2d8ca508b696"] = (object) array(
+      'pid' => 'new-5d177b59-acd0-4bd8-b8fa-2d8ca508b696',
+      'panel' => 'contentmain',
+      'type' => 'views_panes',
+      'subtype' => 'oa_event_list-panel_pane_upcoming_meetings_filterable',
+      'shown' => TRUE,
+      'access' => array(),
+      'configuration' => array(
+        'exposed' => array(
+          'field_oa_date_value' => array(
+            'value' => '2014-11-01',
+          ),
+          'field_oa_date_value_1' => array(
+            'value' => NULL,
+          ),
+          'field_city_value' => '',
+          'og_group_ref_target_id' => '',
+          'og_group_ref_target_id_mine' => 0,
+          'og_subspaces_view_all' => 0,
+          'og_subspaces_view_parent' => 0,
+          'oa_section_ref_target_id' => 'All',
+          'keys' => '',
+        ),
+        'show_exposed_form' => 0,
+        'use_pager' => 1,
+        'pager_id' => 0,
+        'items_per_page' => 10,
+        'view_settings' => 'fields',
+        'header_type' => 'none',
+        'view_mode' => 'teaser',
+      ),
+      'cache' => array(),
+      'style' => array(
+        'settings' => NULL,
+      ),
+      'css' => array(),
+      'extras' => array(),
+      'position' => 1,
+      'locks' => array(),
+      'uuid' => '5d177b59-acd0-4bd8-b8fa-2d8ca508b696',
+    );
   $overrides["panelizer_defaults.node:oa_space:default.display|content|new-652e1d79-7e20-4a4b-8b66-4fc46244013e"] = (object) array(
       'pid' => 'new-652e1d79-7e20-4a4b-8b66-4fc46244013e',
       'panel' => 'sidebar',
@@ -277,7 +282,7 @@ function iasc_configuration_features_override_default_overrides() {
   $overrides["panelizer_defaults.node:oa_space:default.display|content|new-801d2668-fa45-4031-83ba-e7d47830a8a6|style|style"] = 'secondary';
   $overrides["panelizer_defaults.node:oa_space:default.display|content|new-9995e8b8-d8cb-4339-a7ad-1f0ea569d2de"]["DELETED"] = TRUE;
   $overrides["panelizer_defaults.node:oa_space:default.display|layout"] = 'burr_flipped';
-  $overrides["panelizer_defaults.node:oa_space:default.display|panels|contentmain|1"] = 'new-289406c0-261d-4fdf-a90a-0c72725085a3';
+  $overrides["panelizer_defaults.node:oa_space:default.display|panels|contentmain|1"] = 'new-5d177b59-acd0-4bd8-b8fa-2d8ca508b696';
   $overrides["panelizer_defaults.node:oa_space:default.display|panels|sidebar|3"] = 'new-003b40be-c976-41cd-9bcc-1fe83c4bd599';
   $overrides["panelizer_defaults.node:oa_space:default.display|panels|sidebar|4"] = 'new-35ab60ac-d6d7-41b2-a57e-21ca28e5e974';
   $overrides["panelizer_defaults.node:oa_space:default.display|panels|sidebar|5"] = 'new-652e1d79-7e20-4a4b-8b66-4fc46244013e';
