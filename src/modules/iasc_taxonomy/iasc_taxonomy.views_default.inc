@@ -117,7 +117,13 @@ function iasc_taxonomy_views_default_views() {
   $handler->display->display_options['allow']['path_override'] = 0;
   $handler->display->display_options['allow']['title_override'] = 0;
   $handler->display->display_options['allow']['exposed_form'] = 'exposed_form';
+  $handler->display->display_options['allow']['exposed_form_configure'] = 0;
   $handler->display->display_options['allow']['fields_override'] = 0;
+  $handler->display->display_options['exposed_form_overrides'] = array(
+    'filters' => array(
+      'field_membership_level_value' => '',
+    ),
+  );
   $export['iasc_organizations'] = $view;
 
   $view = new view();
@@ -298,7 +304,17 @@ function iasc_taxonomy_views_default_views() {
   $handler->display->display_options['allow']['path_override'] = 0;
   $handler->display->display_options['allow']['title_override'] = 'title_override';
   $handler->display->display_options['allow']['exposed_form'] = 'exposed_form';
+  $handler->display->display_options['allow']['exposed_form_configure'] = 0;
   $handler->display->display_options['allow']['fields_override'] = 0;
+  $handler->display->display_options['exposed_form_overrides'] = array(
+    'filters' => array(
+      'type' => '',
+      'term_node_tid_depth_1' => '',
+      'term_node_tid_depth' => '',
+      'term_node_tid_depth_2' => '',
+      'keys' => '',
+    ),
+  );
   $export['iasc_recent_activity_by_term'] = $view;
 
   return $export;
