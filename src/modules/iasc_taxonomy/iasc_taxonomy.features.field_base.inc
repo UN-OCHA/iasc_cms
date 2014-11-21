@@ -86,9 +86,9 @@ function iasc_taxonomy_field_default_field_bases() {
     'module' => 'list',
     'settings' => array(
       'allowed_values' => array(
-        1 => 'Full Member',
-        2 => 'Standing Invitee',
-        3 => 'Observer',
+        1 => 'Full Members',
+        2 => 'Standing Invitees',
+        3 => 'Observers',
       ),
       'allowed_values_function' => '',
     ),
