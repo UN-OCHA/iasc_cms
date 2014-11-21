@@ -184,6 +184,8 @@ function iasc_document_features_override_default_overrides() {
   $overrides["field_instance.node-oa_wiki_page-og_vocabulary.widget|weight"] = 9;
 
   // Exported overrides for: node
+  $overrides["node.oa_wiki_page.description"] = 'A Document or Product page.';
+  $overrides["node.oa_wiki_page.name"] = 'Document/Product';
 
   // Exported overrides for: page_manager_handlers
   $overrides["page_manager_handlers.node_edit_panel_context_6.conf|display|content|new-2362dc2f-60f2-42e4-b13f-82918fd4b1a8|position"] = 2;

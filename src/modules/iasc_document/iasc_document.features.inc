@@ -198,6 +198,16 @@ function iasc_document_field_default_field_instances_alter(&$data) {
 }
 
 /**
+ * Implements hook_node_info_alter().
+ */
+function iasc_document_node_info_alter(&$data) {
+  if (isset($data['oa_wiki_page'])) {
+    $data['oa_wiki_page']['description'] = 'A Document or Product page.'; /* WAS: 'An Open Atrium Document/Wiki page' */
+    $data['oa_wiki_page']['name'] = 'Document/Product'; /* WAS: 'Document Page' */
+  }
+}
+
+/**
  * Implements hook_default_page_manager_handlers_alter().
  */
 function iasc_document_default_page_manager_handlers_alter(&$data) {
