@@ -351,7 +351,6 @@ function iasc_group_login_panelizer_defaults_override_alter(&$data) {
     $data['user:user:default:default']->display->content['new-7b58bea7-aa6f-4daa-9180-9eedc586bde2']->position = 2; /* WAS: 1 */
     $data['user:user:default:default']->display->content['new-a48325fb-5137-4640-8fe6-9228d15745b4']->position = 3; /* WAS: 2 */
     $data['user:user:default:default']->display->content['new-a48325fb-5137-4640-8fe6-9228d15745b4']->shown = FALSE; /* WAS: TRUE */
-    $data['user:user:default:default']->display->content['new-da014954-335f-4dba-9540-79c1c2ef5b2a']->position = 1; /* WAS: 0 */
     $data['user:user:default:default']->display->panels['contentmain'][3] = 'new-2e2e24f1-3d7f-48b0-a82b-449ffb9aab67'; /* WAS: '' */
   }
 }
