@@ -34,7 +34,7 @@ function iasc_configuration_features_override_default_overrides() {
         'view_settings' => 'fields',
         'header_type' => 'none',
         'view_mode' => 'teaser',
-        'widget_title' => 'Past Events',
+        'widget_title' => 'Past Meetings',
       ),
       'cache' => array(),
       'style' => array(
@@ -155,11 +155,11 @@ function iasc_configuration_features_override_default_overrides() {
   $overrides["panelizer_defaults.node:oa_space:default.display|content|new-18865aa1-e2a6-4d3d-93c2-3f80adf44c54|configuration|widget_title"] = 'Sections';
   $overrides["panelizer_defaults.node:oa_space:default.display|content|new-18865aa1-e2a6-4d3d-93c2-3f80adf44c54|style|settings|secondary_options"] = 'panel-primary';
   $overrides["panelizer_defaults.node:oa_space:default.display|content|new-18865aa1-e2a6-4d3d-93c2-3f80adf44c54|style|style"] = 'secondary';
-  $overrides["panelizer_defaults.node:oa_space:default.display|content|new-231123de-0c7f-4173-be3a-4cac67b6150c"] = (object) array(
-      'pid' => 'new-231123de-0c7f-4173-be3a-4cac67b6150c',
+  $overrides["panelizer_defaults.node:oa_space:default.display|content|new-289406c0-261d-4fdf-a90a-0c72725085a3"] = (object) array(
+      'pid' => 'new-289406c0-261d-4fdf-a90a-0c72725085a3',
       'panel' => 'contentmain',
       'type' => 'views_panes',
-      'subtype' => 'oa_event_list-oa_events_upcoming_small',
+      'subtype' => 'oa_event_list-panel_pane_2',
       'shown' => TRUE,
       'access' => array(),
       'configuration' => array(
@@ -171,13 +171,16 @@ function iasc_configuration_features_override_default_overrides() {
           'oa_section_ref_target_id' => '',
           'flagged' => 0,
         ),
+        'more_link' => 0,
+        'use_pager' => 1,
+        'pager_id' => 0,
         'items_per_page' => 10,
         'override_title' => '',
         'override_title_text' => '',
         'view_settings' => 'fields',
         'header_type' => 'none',
         'view_mode' => 'teaser',
-        'widget_title' => 'Upcoming Events',
+        'widget_title' => 'Upcoming Meetings',
       ),
       'cache' => array(),
       'style' => array(
@@ -187,7 +190,7 @@ function iasc_configuration_features_override_default_overrides() {
       'extras' => array(),
       'position' => 1,
       'locks' => array(),
-      'uuid' => '231123de-0c7f-4173-be3a-4cac67b6150c',
+      'uuid' => '289406c0-261d-4fdf-a90a-0c72725085a3',
     );
   $overrides["panelizer_defaults.node:oa_space:default.display|content|new-2b5ef25a-4dce-4b89-99b7-f940adbd5e95|access|plugins"] = array(
     0 => array(
@@ -274,7 +277,7 @@ function iasc_configuration_features_override_default_overrides() {
   $overrides["panelizer_defaults.node:oa_space:default.display|content|new-801d2668-fa45-4031-83ba-e7d47830a8a6|style|style"] = 'secondary';
   $overrides["panelizer_defaults.node:oa_space:default.display|content|new-9995e8b8-d8cb-4339-a7ad-1f0ea569d2de"]["DELETED"] = TRUE;
   $overrides["panelizer_defaults.node:oa_space:default.display|layout"] = 'burr_flipped';
-  $overrides["panelizer_defaults.node:oa_space:default.display|panels|contentmain|1"] = 'new-231123de-0c7f-4173-be3a-4cac67b6150c';
+  $overrides["panelizer_defaults.node:oa_space:default.display|panels|contentmain|1"] = 'new-289406c0-261d-4fdf-a90a-0c72725085a3';
   $overrides["panelizer_defaults.node:oa_space:default.display|panels|sidebar|3"] = 'new-003b40be-c976-41cd-9bcc-1fe83c4bd599';
   $overrides["panelizer_defaults.node:oa_space:default.display|panels|sidebar|4"] = 'new-35ab60ac-d6d7-41b2-a57e-21ca28e5e974';
   $overrides["panelizer_defaults.node:oa_space:default.display|panels|sidebar|5"] = 'new-652e1d79-7e20-4a4b-8b66-4fc46244013e';
