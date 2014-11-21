@@ -39,7 +39,10 @@ function theme_iasc_secondary_style_render_pane(&$vars) {
 
   $class[] = 'panel panel-default';
   $class[] = $settings['secondary_options'];
-  $class[] = $settings['linked_list'];
+
+  if (!empty($settings['linked_list'])) {
+    $class[] = $settings['linked_list'];
+  }
 
   $output = theme('secondary', array(
     'content' => $content,
