@@ -1,3 +1,8 @@
+api = 2
+core = 7.x
+
+; MAKE file for Open Atrium.
+
 ; ******************** RELEASE *******************
 
 projects[oa_core][subdir] = contrib
@@ -120,5 +125,3 @@ projects[oa_radix][version] = 3.5
 
 ; *********** End Open Atrium Themes *************
 ; ************************************************
-
-
