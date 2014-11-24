@@ -76,7 +76,7 @@
           <?php if (!empty($primarytabs)): ?><?php print $primarytabs; ?><?php endif; ?>
           <a id="main-content"></a>
           <?php print render($title_prefix); ?>
-          <?php if ($title): ?><h1 class="title" id="page-title"><?php print $title; ?></h1><?php endif; ?>
+          <?php if ($title): ?><div class="col-xs-12"><h1 class="title" id="page-title"><?php print $title; ?></h1></div><?php endif; ?>
           <?php print render($title_suffix); ?>
           <?php if (!empty($tabs['#primary']) || !empty($tabs['#secondary'])): ?><div class="tabs main-tabs"><?php print render($tabs); ?></div><?php endif; ?>
           <?php print render($page['help']); ?>
