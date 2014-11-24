@@ -108,53 +108,65 @@ function iasc_configuration_features_override_default_overrides() {
       'uuid' => 'a8210476-3ab0-4ab6-974e-f511ec91f54b',
     );
   $overrides["panelizer_defaults.node:oa_section:calendar_section.display|content|new-f7576cce-3df6-4498-89b5-77da59c5f99c"]["DELETED"] = TRUE;
-  $overrides["panelizer_defaults.node:oa_section:calendar_section.display|panels|contentmain|0"] = 'new-9ea94d4c-567b-404f-9aec-386ae14a1aea';
-  $overrides["panelizer_defaults.node:oa_section:calendar_section.display|panels|contentmain|1"] = 'new-a8210476-3ab0-4ab6-974e-f511ec91f54b';
-  $overrides["panelizer_defaults.node:oa_section:calendar_section.display|panels|contentmain|2"] = 'new-078ef339-4031-483a-8dfb-8837db7d7d95';
+  $overrides["panelizer_defaults.node:oa_section:calendar_section.display|panels|contentmain|0"] = 'new-078ef339-4031-483a-8dfb-8837db7d7d95';
+  $overrides["panelizer_defaults.node:oa_section:calendar_section.display|panels|contentmain|1"] = 'new-9ea94d4c-567b-404f-9aec-386ae14a1aea';
+  $overrides["panelizer_defaults.node:oa_section:calendar_section.display|panels|contentmain|2"] = 'new-a8210476-3ab0-4ab6-974e-f511ec91f54b';
   $overrides["panelizer_defaults.node:oa_section:calendar_section.display|panels|sidebar|0"] = 'new-5241f5c7-9e10-4e79-a1ce-84f68ad200f3';
   $overrides["panelizer_defaults.node:oa_section:calendar_section.display|panels|sidebar|1"]["DELETED"] = TRUE;
   $overrides["panelizer_defaults.node:oa_section:calendar_section.display|panels|sidebar|2"]["DELETED"] = TRUE;
-  $overrides["panelizer_defaults.node:oa_space:default.display|content|new-003b40be-c976-41cd-9bcc-1fe83c4bd599"] = (object) array(
-      'pid' => 'new-003b40be-c976-41cd-9bcc-1fe83c4bd599',
+  $overrides["panelizer_defaults.node:oa_space:default.display|content|new-18865aa1-e2a6-4d3d-93c2-3f80adf44c54|configuration|widget_title"] = 'Sections';
+  $overrides["panelizer_defaults.node:oa_space:default.display|content|new-18865aa1-e2a6-4d3d-93c2-3f80adf44c54|style|settings|secondary_options"] = 'panel-primary';
+  $overrides["panelizer_defaults.node:oa_space:default.display|content|new-18865aa1-e2a6-4d3d-93c2-3f80adf44c54|style|style"] = 'secondary';
+  $overrides["panelizer_defaults.node:oa_space:default.display|content|new-231a7676-b37f-4d85-bd32-996525f4e9d2"] = (object) array(
+      'pid' => 'new-231a7676-b37f-4d85-bd32-996525f4e9d2',
       'panel' => 'sidebar',
       'type' => 'views_panes',
       'subtype' => 'search_contacts-panel_pane_contacts',
       'shown' => TRUE,
       'access' => array(),
       'configuration' => array(
-        'use_pager' => 1,
+        'use_pager' => 0,
         'pager_id' => 0,
-        'items_per_page' => 10,
+        'items_per_page' => 0,
+        'fields_override' => array(
+          'field_photo' => 1,
+          'title' => 1,
+          'field_homepage' => 0,
+          'field_organisation' => 1,
+          'field_position' => 0,
+          'field_body_membership' => 0,
+          'field_org_address_locality' => 0,
+          'field_email' => 0,
+          'field_phone' => 0,
+        ),
         'exposed' => array(
           'title' => '',
           'field_body_membership_target_id' => array(),
           'field_organisation_tid' => array(),
           'field_department_value' => '',
-          'field_position_value' => '',
-          'sort_order' => 'ASC',
-          'sort_by' => 'title',
+          'field_position_value' => 'Chair Co-Chairs Members Secondary',
         ),
         'override_title' => '',
         'override_title_text' => '',
-        'view_mode' => 'bio_short',
-        'widget_title' => 'Contacts',
+        'view_settings' => 'fields',
+        'header_type' => 'none',
+        'view_mode' => 'teaser',
+        'widget_title' => '',
       ),
       'cache' => array(),
       'style' => array(
         'settings' => array(
           'secondary_options' => 'panel-primary',
+          'linked_list' => 'none',
         ),
         'style' => 'secondary',
       ),
       'css' => array(),
       'extras' => array(),
-      'position' => 3,
+      'position' => 5,
       'locks' => array(),
-      'uuid' => '003b40be-c976-41cd-9bcc-1fe83c4bd599',
+      'uuid' => '231a7676-b37f-4d85-bd32-996525f4e9d2',
     );
-  $overrides["panelizer_defaults.node:oa_space:default.display|content|new-18865aa1-e2a6-4d3d-93c2-3f80adf44c54|configuration|widget_title"] = 'Sections';
-  $overrides["panelizer_defaults.node:oa_space:default.display|content|new-18865aa1-e2a6-4d3d-93c2-3f80adf44c54|style|settings|secondary_options"] = 'panel-primary';
-  $overrides["panelizer_defaults.node:oa_space:default.display|content|new-18865aa1-e2a6-4d3d-93c2-3f80adf44c54|style|style"] = 'secondary';
   $overrides["panelizer_defaults.node:oa_space:default.display|content|new-289406c0-261d-4fdf-a90a-0c72725085a3"] = (object) array(
       'pid' => 'new-289406c0-261d-4fdf-a90a-0c72725085a3',
       'panel' => 'contentmain',
@@ -234,7 +246,7 @@ function iasc_configuration_features_override_default_overrides() {
       ),
       'css' => array(),
       'extras' => array(),
-      'position' => 4,
+      'position' => 3,
       'locks' => array(),
       'uuid' => '35ab60ac-d6d7-41b2-a57e-21ca28e5e974',
     );
@@ -266,7 +278,7 @@ function iasc_configuration_features_override_default_overrides() {
       ),
       'css' => array(),
       'extras' => array(),
-      'position' => 5,
+      'position' => 4,
       'locks' => array(),
       'uuid' => '652e1d79-7e20-4a4b-8b66-4fc46244013e',
     );
@@ -276,11 +288,62 @@ function iasc_configuration_features_override_default_overrides() {
   $overrides["panelizer_defaults.node:oa_space:default.display|content|new-801d2668-fa45-4031-83ba-e7d47830a8a6|style|settings|secondary_options"] = 'panel-primary';
   $overrides["panelizer_defaults.node:oa_space:default.display|content|new-801d2668-fa45-4031-83ba-e7d47830a8a6|style|style"] = 'secondary';
   $overrides["panelizer_defaults.node:oa_space:default.display|content|new-9995e8b8-d8cb-4339-a7ad-1f0ea569d2de"]["DELETED"] = TRUE;
+  $overrides["panelizer_defaults.node:oa_space:default.display|content|new-b1dbb2ba-786d-47d1-a861-30c45ad473d4"] = (object) array(
+      'pid' => 'new-b1dbb2ba-786d-47d1-a861-30c45ad473d4',
+      'panel' => 'sidebar',
+      'type' => 'views_panes',
+      'subtype' => 'search_contacts-panel_pane_contacts',
+      'shown' => TRUE,
+      'access' => array(),
+      'configuration' => array(
+        'use_pager' => 1,
+        'pager_id' => 0,
+        'items_per_page' => 0,
+        'fields_override' => array(
+          'field_photo' => 0,
+          'title' => 1,
+          'field_homepage' => 0,
+          'field_organisation' => 1,
+          'field_position' => 0,
+          'field_body_membership' => 0,
+          'field_org_address_locality' => 1,
+          'field_email' => 1,
+          'field_phone' => 1,
+        ),
+        'exposed' => array(
+          'title' => '',
+          'field_body_membership_target_id' => array(),
+          'field_organisation_tid' => array(),
+          'field_department_value' => '',
+          'field_position_value' => 'Contact',
+        ),
+        'override_title' => '',
+        'override_title_text' => '',
+        'view_settings' => 'fields',
+        'header_type' => 'none',
+        'view_mode' => 'teaser',
+        'widget_title' => '',
+      ),
+      'cache' => array(),
+      'style' => array(
+        'settings' => array(
+          'secondary_options' => 'panel-primary',
+          'linked_list' => 'none',
+        ),
+        'style' => 'secondary',
+      ),
+      'css' => array(),
+      'extras' => array(),
+      'position' => 6,
+      'locks' => array(),
+      'uuid' => 'b1dbb2ba-786d-47d1-a861-30c45ad473d4',
+    );
   $overrides["panelizer_defaults.node:oa_space:default.display|layout"] = 'burr_flipped';
   $overrides["panelizer_defaults.node:oa_space:default.display|panels|contentmain|1"] = 'new-289406c0-261d-4fdf-a90a-0c72725085a3';
-  $overrides["panelizer_defaults.node:oa_space:default.display|panels|sidebar|3"] = 'new-003b40be-c976-41cd-9bcc-1fe83c4bd599';
-  $overrides["panelizer_defaults.node:oa_space:default.display|panels|sidebar|4"] = 'new-35ab60ac-d6d7-41b2-a57e-21ca28e5e974';
-  $overrides["panelizer_defaults.node:oa_space:default.display|panels|sidebar|5"] = 'new-652e1d79-7e20-4a4b-8b66-4fc46244013e';
+  $overrides["panelizer_defaults.node:oa_space:default.display|panels|sidebar|3"] = 'new-35ab60ac-d6d7-41b2-a57e-21ca28e5e974';
+  $overrides["panelizer_defaults.node:oa_space:default.display|panels|sidebar|4"] = 'new-652e1d79-7e20-4a4b-8b66-4fc46244013e';
+  $overrides["panelizer_defaults.node:oa_space:default.display|panels|sidebar|5"] = 'new-231a7676-b37f-4d85-bd32-996525f4e9d2';
+  $overrides["panelizer_defaults.node:oa_space:default.display|panels|sidebar|6"] = 'new-b1dbb2ba-786d-47d1-a861-30c45ad473d4';
 
   // Exported overrides for: panels_mini
   $overrides["panels_mini.default_section_sidebar.display|content|new-e88f722e-09b5-451c-b694-f6b79c2d8554|style|settings|secondary_options"] = 'panel-primary';
