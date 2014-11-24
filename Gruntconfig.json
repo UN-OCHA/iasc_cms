@@ -1,6 +1,6 @@
 {
   "srcPaths": {
-    "make": "src/iasc.make",
+    "make": "src/make/iasc.make",
     "drupal": "src"
   },
   "phpcs": {

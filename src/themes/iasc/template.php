@@ -290,3 +290,34 @@ function iasc_pager($variables) {
     ));
   }
 }
+
+/**
+ * Implements hook_preprocess_views_view_field().
+ *
+ * Generic preprocess that is needed to call more specific templates.
+ */
+function iasc_preprocess_views_view_field(&$vars) {
+  if (isset($vars['view']->name)) {
+    $function = __FUNCTION__ . '__' . $vars['view']->name;
+
+    if (function_exists($function)) {
+      $function($vars);
+    }
+  }
+}
+
+/**
+ * Custom preprocess for oa_event_list view.
+ *
+ * @param $vars
+ *
+ * @see iasc_preprocess_views_view_field().
+ */
+function iasc_preprocess_views_view_field__oa_event_list(&$vars) {
+  if ('og_group_ref' == $vars['field']->field) {
+    $space_id = oa_core_get_space_context();
+    if ($vars['view']->exposed_data['og_group_ref_target_id'] == $space_id) {
+      $vars['output'] = '';
+    }
+  }
+}
