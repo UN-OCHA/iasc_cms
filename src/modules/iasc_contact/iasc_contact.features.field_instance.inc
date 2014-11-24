@@ -175,7 +175,7 @@ function iasc_contact_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 6,
+        'weight' => 9,
       ),
       'default' => array(
         'label' => 'hidden',
@@ -185,6 +185,12 @@ function iasc_contact_field_default_field_instances() {
         'weight' => 0,
       ),
       'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'link_to_document' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -274,7 +280,7 @@ function iasc_contact_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 12,
+        'weight' => 15,
       ),
       'default' => array(
         'label' => 'above',
@@ -289,6 +295,12 @@ function iasc_contact_field_default_field_instances() {
         'weight' => 10,
       ),
       'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'link_to_document' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -400,7 +412,7 @@ function iasc_contact_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 8,
+        'weight' => 11,
       ),
       'default' => array(
         'label' => 'above',
@@ -410,6 +422,12 @@ function iasc_contact_field_default_field_instances() {
         'weight' => 3,
       ),
       'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'link_to_document' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -477,7 +495,7 @@ function iasc_contact_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 7,
+        'weight' => 10,
       ),
       'default' => array(
         'label' => 'above',
@@ -487,6 +505,12 @@ function iasc_contact_field_default_field_instances() {
         'weight' => 2,
       ),
       'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'link_to_document' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -553,13 +577,8 @@ function iasc_contact_field_default_field_instances() {
       ),
       'bio_short' => array(
         'label' => 'inline',
-        'module' => 'text',
-        'settings' => array(
-          'title_class' => '',
-          'title_link' => '',
-          'title_style' => '',
-        ),
-        'type' => 'text_default',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 3,
       ),
       'default' => array(
@@ -570,6 +589,12 @@ function iasc_contact_field_default_field_instances() {
         'weight' => 9,
       ),
       'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'link_to_document' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -637,7 +662,7 @@ function iasc_contact_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 9,
+        'weight' => 12,
       ),
       'default' => array(
         'label' => 'above',
@@ -647,6 +672,12 @@ function iasc_contact_field_default_field_instances() {
         'weight' => 4,
       ),
       'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'link_to_document' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -712,14 +743,9 @@ function iasc_contact_field_default_field_instances() {
       ),
       'bio_short' => array(
         'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(
-          'title_class' => '',
-          'title_link' => '',
-          'title_style' => '',
-        ),
-        'type' => 'text_default',
-        'weight' => 3,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 7,
       ),
       'default' => array(
         'label' => 'above',
@@ -728,6 +754,12 @@ function iasc_contact_field_default_field_instances() {
         'weight' => 16,
       ),
       'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'link_to_document' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -795,7 +827,7 @@ function iasc_contact_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 10,
+        'weight' => 13,
       ),
       'default' => array(
         'label' => 'above',
@@ -805,6 +837,12 @@ function iasc_contact_field_default_field_instances() {
         'weight' => 5,
       ),
       'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'link_to_document' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -822,6 +860,7 @@ function iasc_contact_field_default_field_instances() {
     'label' => 'Homepage URL',
     'required' => 0,
     'settings' => array(
+      'absolute_url' => 1,
       'attributes' => array(
         'class' => '',
         'configurable_title' => 0,
@@ -839,6 +878,7 @@ function iasc_contact_field_default_field_instances() {
       ),
       'rel_remove' => 'default',
       'title' => 'optional',
+      'title_label_use_field_label' => FALSE,
       'title_maxlength' => 128,
       'title_value' => '',
       'url' => 0,
@@ -884,14 +924,9 @@ function iasc_contact_field_default_field_instances() {
       ),
       'bio_short' => array(
         'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(
-          'title_class' => '',
-          'title_link' => '',
-          'title_style' => '',
-        ),
-        'type' => 'text_default',
-        'weight' => 4,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 6,
       ),
       'default' => array(
         'label' => 'above',
@@ -900,6 +935,12 @@ function iasc_contact_field_default_field_instances() {
         'weight' => 15,
       ),
       'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'link_to_document' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -965,7 +1006,7 @@ function iasc_contact_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 18,
+        'weight' => 19,
       ),
       'default' => array(
         'label' => 'above',
@@ -974,6 +1015,12 @@ function iasc_contact_field_default_field_instances() {
         'weight' => 14,
       ),
       'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'link_to_document' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1047,9 +1094,12 @@ function iasc_contact_field_default_field_instances() {
       ),
       'bio_short' => array(
         'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 14,
+        'module' => 'field_collection',
+        'settings' => array(
+          'view_mode' => 'full',
+        ),
+        'type' => 'field_collection_fields',
+        'weight' => 3,
       ),
       'default' => array(
         'label' => 'above',
@@ -1065,6 +1115,12 @@ function iasc_contact_field_default_field_instances() {
         'weight' => 12,
       ),
       'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'link_to_document' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1126,7 +1182,7 @@ function iasc_contact_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 11,
+        'weight' => 14,
       ),
       'default' => array(
         'label' => 'above',
@@ -1136,6 +1192,12 @@ function iasc_contact_field_default_field_instances() {
         'weight' => 8,
       ),
       'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'link_to_document' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1229,7 +1291,7 @@ function iasc_contact_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 15,
+        'weight' => 16,
       ),
       'default' => array(
         'label' => 'above',
@@ -1244,6 +1306,12 @@ function iasc_contact_field_default_field_instances() {
         'weight' => 17,
       ),
       'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'link_to_document' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1313,7 +1381,7 @@ function iasc_contact_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 17,
+        'weight' => 18,
       ),
       'default' => array(
         'label' => 'above',
@@ -1323,6 +1391,12 @@ function iasc_contact_field_default_field_instances() {
         'weight' => 19,
       ),
       'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'link_to_document' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1390,7 +1464,7 @@ function iasc_contact_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 16,
+        'weight' => 17,
       ),
       'default' => array(
         'label' => 'above',
@@ -1400,6 +1474,12 @@ function iasc_contact_field_default_field_instances() {
         'weight' => 18,
       ),
       'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'link_to_document' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1465,9 +1545,10 @@ function iasc_contact_field_default_field_instances() {
       ),
       'bio_short' => array(
         'label' => 'above',
+        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 13,
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 2,
       ),
       'default' => array(
         'label' => 'above',
@@ -1477,6 +1558,12 @@ function iasc_contact_field_default_field_instances() {
         'weight' => 11,
       ),
       'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'link_to_document' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1546,9 +1633,8 @@ function iasc_contact_field_default_field_instances() {
       ),
       'bio_short' => array(
         'label' => 'inline',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
+        'type' => 'hidden',
         'weight' => 4,
       ),
       'default' => array(
@@ -1559,6 +1645,12 @@ function iasc_contact_field_default_field_instances() {
         'weight' => 7,
       ),
       'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'link_to_document' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1632,9 +1724,13 @@ function iasc_contact_field_default_field_instances() {
       ),
       'bio_short' => array(
         'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 5,
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => 'bio_circled',
+        ),
+        'type' => 'image',
+        'weight' => 0,
       ),
       'default' => array(
         'label' => 'above',
@@ -1647,6 +1743,12 @@ function iasc_contact_field_default_field_instances() {
         'weight' => 6,
       ),
       'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'link_to_document' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1749,11 +1851,10 @@ function iasc_contact_field_default_field_instances() {
         'weight' => 2,
       ),
       'bio_short' => array(
-        'label' => 'hidden',
-        'module' => 'text',
+        'label' => 'inline',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 1,
+        'type' => 'hidden',
+        'weight' => 5,
       ),
       'default' => array(
         'label' => 'above',
@@ -1763,6 +1864,12 @@ function iasc_contact_field_default_field_instances() {
         'weight' => 1,
       ),
       'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'link_to_document' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1828,10 +1935,9 @@ function iasc_contact_field_default_field_instances() {
       ),
       'bio_short' => array(
         'label' => 'hidden',
-        'module' => 'list',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 2,
+        'type' => 'hidden',
+        'weight' => 4,
       ),
       'default' => array(
         'label' => 'above',
@@ -1840,6 +1946,12 @@ function iasc_contact_field_default_field_instances() {
         'weight' => 13,
       ),
       'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'link_to_document' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -1867,6 +1979,83 @@ function iasc_contact_field_default_field_instances() {
       ),
       'type' => 'options_select',
       'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'node-contact-title_field'
+  $field_instances['node-contact-title_field'] = array(
+    'bundle' => 'contact',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'bio_full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'bio_long' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'bio_short' => array(
+        'label' => 'hidden',
+        'module' => 'title',
+        'settings' => array(
+          'title_class' => 'name',
+          'title_link' => 'content',
+          'title_style' => 'h4',
+        ),
+        'type' => 'title_linked',
+        'weight' => 1,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 20,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'link_to_document' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'title_field',
+    'label' => 'Title',
+    'required' => TRUE,
+    'settings' => array(
+      'hide_label' => array(
+        'entity' => FALSE,
+        'page' => FALSE,
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => -5,
     ),
   );
 
