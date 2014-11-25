@@ -21,15 +21,9 @@ function iasc_search_ctools_plugin_api($module = NULL, $api = NULL) {
  */
 function iasc_search_apachesolr_environments_alter(&$data) {
   if (isset($data['solr'])) {
-    $data['solr']->conf['apachesolr_direct_commit'] = 0; /* WAS: '' */
+    $data['solr']->conf['apachesolr_direct_commit'] = 1; /* WAS: '' */
     $data['solr']->conf['apachesolr_read_only'] = 0; /* WAS: '' */
-    $data['solr']->conf['apachesolr_soft_commit'] = 0; /* WAS: '' */
-    $data['solr']->index_bundles['file'] = array(
-      0 => 'audio',
-      1 => 'document',
-      2 => 'image',
-      3 => 'video',
-    ); /* WAS: '' */
+    $data['solr']->conf['apachesolr_soft_commit'] = 1; /* WAS: '' */
     $data['solr']->index_bundles['node'][0] = 'announcement'; /* WAS: 'oa_discussion_post' */
     $data['solr']->index_bundles['node'][3] = 'oa_space'; /* WAS: 'oa_ical_importer' */
     $data['solr']->index_bundles['node'][4] = 'oa_wiki_page'; /* WAS: 'oa_section' */

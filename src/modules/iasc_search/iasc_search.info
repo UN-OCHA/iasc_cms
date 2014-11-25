@@ -25,7 +25,6 @@ features[features_override_items][] = page_manager_handlers.search_node_panel_co
 features[features_overrides][] = apachesolr_environment.solr.conf|apachesolr_direct_commit
 features[features_overrides][] = apachesolr_environment.solr.conf|apachesolr_read_only
 features[features_overrides][] = apachesolr_environment.solr.conf|apachesolr_soft_commit
-features[features_overrides][] = apachesolr_environment.solr.index_bundles|file
 features[features_overrides][] = apachesolr_environment.solr.index_bundles|node|0
 features[features_overrides][] = apachesolr_environment.solr.index_bundles|node|10
 features[features_overrides][] = apachesolr_environment.solr.index_bundles|node|3

@@ -12,15 +12,9 @@ function iasc_search_features_override_default_overrides() {
   $overrides = array();
 
   // Exported overrides for: apachesolr_environment
-  $overrides["apachesolr_environment.solr.conf|apachesolr_direct_commit"] = 0;
+  $overrides["apachesolr_environment.solr.conf|apachesolr_direct_commit"] = 1;
   $overrides["apachesolr_environment.solr.conf|apachesolr_read_only"] = 0;
-  $overrides["apachesolr_environment.solr.conf|apachesolr_soft_commit"] = 0;
-  $overrides["apachesolr_environment.solr.index_bundles|file"] = array(
-    0 => 'audio',
-    1 => 'document',
-    2 => 'image',
-    3 => 'video',
-  );
+  $overrides["apachesolr_environment.solr.conf|apachesolr_soft_commit"] = 1;
   $overrides["apachesolr_environment.solr.index_bundles|node|0"] = 'announcement';
   $overrides["apachesolr_environment.solr.index_bundles|node|10"]["DELETED"] = TRUE;
   $overrides["apachesolr_environment.solr.index_bundles|node|3"] = 'oa_space';
