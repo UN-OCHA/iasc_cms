@@ -359,7 +359,7 @@ function iasc_configuration_panelizer_defaults_override_alter(&$data) {
     $data['node:oa_space:default']->display->panels['contentmain'][1] = 'new-289406c0-261d-4fdf-a90a-0c72725085a3'; /* WAS: 'new-9995e8b8-d8cb-4339-a7ad-1f0ea569d2de' */
     $data['node:oa_space:default']->display->panels['sidebar'][3] = 'new-35ab60ac-d6d7-41b2-a57e-21ca28e5e974'; /* WAS: '' */
     $data['node:oa_space:default']->display->panels['sidebar'][4] = 'new-652e1d79-7e20-4a4b-8b66-4fc46244013e'; /* WAS: '' */
-    $data['node:oa_space:default']->display->panels['sidebar'][5] = 'new-231a7676-b37f-4d85-bd32-996525f4e9d2'; /* WAS: '' */    
+    $data['node:oa_space:default']->display->panels['sidebar'][5] = 'new-231a7676-b37f-4d85-bd32-996525f4e9d2'; /* WAS: '' */
     $data['node:oa_space:default']->display->panels['sidebar'][6] = 'new-b1dbb2ba-786d-47d1-a861-30c45ad473d4'; /* WAS: '' */
     unset($data['node:oa_space:default']->display->content['new-9995e8b8-d8cb-4339-a7ad-1f0ea569d2de']);
   }
