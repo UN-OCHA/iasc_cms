@@ -8965,6 +8965,21 @@ form.navbar-form .form-type-textfield:after {
   }
 }
 
+/* line 41, ../sass/components/_form.scss */
+#apachesolr-panels-search-form {
+  position: relative;
+}
+/* line 43, ../sass/components/_form.scss */
+#apachesolr-panels-search-form .form-type-textfield {
+  padding-right: 100px;
+}
+/* line 46, ../sass/components/_form.scss */
+#apachesolr-panels-search-form .form-actions {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
 /* line 1, ../sass/components/_header.scss */
 header.container .top {
   position: relative;
