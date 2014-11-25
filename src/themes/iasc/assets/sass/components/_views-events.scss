@@ -1,15 +1,26 @@
 .view-oa-event-list {
+  @include clearfix;
   margin-bottom: $padding-large-vertical * 2;
   h4.title {
     margin: 0 0 5px;
   }
+
+  .views-field-field-oa-date {
+    position: absolute;
+    left: 0; top: 0;
+  }
+
   .views-row {
+    padding-left: 80px + $padding-large-vertical;
     margin-bottom: $padding-large-vertical * 2;
+    position: relative;
     @media screen and (min-width: $screen-xs-min) {
       clear: none;
       float: left;
-      position: relative;
       width: 50%;
+      &:nth-child(odd) { padding-right: $padding-large-vertical / 2; }
     }
-  } 
+  }
+
+
 }
