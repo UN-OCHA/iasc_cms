@@ -8965,6 +8965,21 @@ form.navbar-form .form-type-textfield:after {
   }
 }
 
+/* line 41, ../sass/components/_form.scss */
+#apachesolr-panels-search-form {
+  position: relative;
+}
+/* line 43, ../sass/components/_form.scss */
+#apachesolr-panels-search-form .form-type-textfield {
+  padding-right: 100px;
+}
+/* line 46, ../sass/components/_form.scss */
+#apachesolr-panels-search-form .form-actions {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
 /* line 1, ../sass/components/_header.scss */
 header.container .top {
   position: relative;
@@ -9477,21 +9492,41 @@ img.bio-circled {
 .view-oa-event-list {
   margin-bottom: 40px;
 }
-/* line 3, ../sass/components/_views-events.scss */
+/* line 15, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/mixins/_clearfix.scss */
+.view-oa-event-list:before, .view-oa-event-list:after {
+  content: " ";
+  display: table;
+}
+/* line 19, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/mixins/_clearfix.scss */
+.view-oa-event-list:after {
+  clear: both;
+}
+/* line 4, ../sass/components/_views-events.scss */
 .view-oa-event-list h4.title {
   margin: 0 0 5px;
 }
-/* line 6, ../sass/components/_views-events.scss */
+/* line 8, ../sass/components/_views-events.scss */
+.view-oa-event-list .views-field-field-oa-date {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+/* line 13, ../sass/components/_views-events.scss */
 .view-oa-event-list .views-row {
+  padding-left: 100px;
   margin-bottom: 40px;
+  position: relative;
 }
 @media screen and (min-width: 480px) {
-  /* line 6, ../sass/components/_views-events.scss */
+  /* line 13, ../sass/components/_views-events.scss */
   .view-oa-event-list .views-row {
     clear: none;
     float: left;
-    position: relative;
     width: 50%;
+  }
+  /* line 21, ../sass/components/_views-events.scss */
+  .view-oa-event-list .views-row:nth-child(odd) {
+    padding-right: 10px;
   }
 }
 

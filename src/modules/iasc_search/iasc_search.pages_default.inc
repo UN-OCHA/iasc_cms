@@ -61,6 +61,9 @@ function iasc_search_default_page_manager_pages() {
       'sidebar' => NULL,
       'contentmain' => NULL,
     ),
+    'sidebar' => array(
+      'style' => 'oa_styles_well',
+    ),
   );
   $display->cache = array();
   $display->title = 'Search';
@@ -132,15 +135,22 @@ function iasc_search_default_page_manager_pages() {
       'sort_action' => 'none',
       'sort' => '',
       'breadcrumb' => 1,
-      'title_override' => 0,
+      'title_override' => 1,
       'title_override_text' => '',
       'empty_override' => 0,
       'empty_override_title' => '',
-      'empty_override_text' => '',
-      'empty_override_format' => '1',
+      'empty_override_text' => array(
+        'value' => '',
+        'format' => 'iasc_wysiwyg',
+      ),
+      'empty_override_format' => 'iasc_wysiwyg',
       'log' => 0,
       'substitute' => 0,
       'context' => 'argument_string_1',
+      'path_type' => 'same',
+      'path' => '',
+      'rows' => '10',
+      'env_id' => '',
     );
     $pane->cache = array();
     $pane->style = array(
