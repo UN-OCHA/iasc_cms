@@ -12,9 +12,15 @@ function iasc_search_features_override_default_overrides() {
   $overrides = array();
 
   // Exported overrides for: apachesolr_environment
-  $overrides["apachesolr_environment.solr.conf|apachesolr_direct_commit"] = 1;
+  $overrides["apachesolr_environment.solr.conf|apachesolr_direct_commit"] = 0;
   $overrides["apachesolr_environment.solr.conf|apachesolr_read_only"] = 0;
-  $overrides["apachesolr_environment.solr.conf|apachesolr_soft_commit"] = 1;
+  $overrides["apachesolr_environment.solr.conf|apachesolr_soft_commit"] = 0;
+  $overrides["apachesolr_environment.solr.index_bundles|file"] = array(
+    0 => 'audio',
+    1 => 'document',
+    2 => 'image',
+    3 => 'video',
+  );
   $overrides["apachesolr_environment.solr.index_bundles|node|0"] = 'announcement';
   $overrides["apachesolr_environment.solr.index_bundles|node|10"]["DELETED"] = TRUE;
   $overrides["apachesolr_environment.solr.index_bundles|node|3"] = 'oa_space';
@@ -160,6 +166,19 @@ function iasc_search_features_override_default_overrides() {
   $overrides["page_manager_handlers.search_node_panel_context_apachesolr.conf|display|panels|sidebar|4"] = 'new-8a7e45ba-2ffc-4ec8-84f0-20bbd6ca08ea';
   $overrides["page_manager_handlers.search_node_panel_context_apachesolr.conf|display|panels|sidebar|5"] = 'new-ac601488-2d1a-4098-b231-f9acd96ec8fc';
   $overrides["page_manager_handlers.search_node_panel_context_apachesolr.conf|display|panels|sidebar|6"] = 'new-d20db8aa-7a1c-4920-be9d-ebcdaa896b4b';
+
+  // Exported overrides for: page_manager_pages
+  $overrides["page_manager_pages.solr.default_handlers|page_solr_panel_context|conf|display|content|new-5f9beaf3-4d74-4180-861f-74dba8b68bb3|configuration|empty_override_format"] = 'iasc_wysiwyg';
+  $overrides["page_manager_pages.solr.default_handlers|page_solr_panel_context|conf|display|content|new-5f9beaf3-4d74-4180-861f-74dba8b68bb3|configuration|empty_override_text|format"] = 'iasc_wysiwyg';
+  $overrides["page_manager_pages.solr.default_handlers|page_solr_panel_context|conf|display|content|new-5f9beaf3-4d74-4180-861f-74dba8b68bb3|configuration|empty_override_text|value"] = '';
+  $overrides["page_manager_pages.solr.default_handlers|page_solr_panel_context|conf|display|content|new-5f9beaf3-4d74-4180-861f-74dba8b68bb3|configuration|env_id"] = '';
+  $overrides["page_manager_pages.solr.default_handlers|page_solr_panel_context|conf|display|content|new-5f9beaf3-4d74-4180-861f-74dba8b68bb3|configuration|path"] = '';
+  $overrides["page_manager_pages.solr.default_handlers|page_solr_panel_context|conf|display|content|new-5f9beaf3-4d74-4180-861f-74dba8b68bb3|configuration|path_type"] = 'same';
+  $overrides["page_manager_pages.solr.default_handlers|page_solr_panel_context|conf|display|content|new-5f9beaf3-4d74-4180-861f-74dba8b68bb3|configuration|rows"] = 10;
+  $overrides["page_manager_pages.solr.default_handlers|page_solr_panel_context|conf|display|content|new-5f9beaf3-4d74-4180-861f-74dba8b68bb3|configuration|title_override"] = 1;
+  $overrides["page_manager_pages.solr.default_handlers|page_solr_panel_context|conf|display|panel_settings|sidebar"] = array(
+    'style' => 'oa_styles_well',
+  );
 
  return $overrides;
 }
