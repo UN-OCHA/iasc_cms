@@ -9018,12 +9018,16 @@ header.container .top {
   text-align: center;
   padding: 0 8px;
 }
-/* line 25, ../sass/components/_iasc-organization.scss */
+/* line 21, ../sass/components/_iasc-organization.scss */
+.radix-layouts-contentfooter .view-display-id-panel_pane_membership_logos ul li {
+  min-width: 108px;
+}
+/* line 27, ../sass/components/_iasc-organization.scss */
 .view-display-id-panel_pane_membership_logos ul a {
   height: 100px;
   line-height: 100px;
 }
-/* line 29, ../sass/components/_iasc-organization.scss */
+/* line 31, ../sass/components/_iasc-organization.scss */
 .view-display-id-panel_pane_membership_logos ul img {
   vertical-align: middle;
   margin-bottom: 44px;
@@ -9355,17 +9359,18 @@ img.bio-circled {
 .panel-success .btn, .panel-success .node-readmore a, .node-readmore .panel-success a {
   background-color: #437a75;
 }
-/* line 21, ../sass/components/_panel.scss */
-.panel-success .views-row,
-.panel-success .field-item {
+/* line 22, ../sass/components/_panel.scss */
+.panel-success.doc-icon .views-row,
+.panel-success.doc-icon .field-item, .panel-success.arrow .views-row,
+.panel-success.arrow .field-item {
   position: relative;
   padding-left: 30px;
 }
-/* line 27, ../sass/components/_panel.scss */
+/* line 29, ../sass/components/_panel.scss */
 .panel-success li {
   line-height: 28px;
 }
-/* line 30, ../sass/components/_panel.scss */
+/* line 32, ../sass/components/_panel.scss */
 .panel-success:not(.none) a:before {
   color: #437a75;
   position: absolute;
@@ -9373,22 +9378,22 @@ img.bio-circled {
   top: 4px;
   font-size: 16px;
 }
-/* line 37, ../sass/components/_panel.scss */
+/* line 39, ../sass/components/_panel.scss */
 .panel-success a {
   color: #000;
 }
 
-/* line 40, ../sass/components/_panel.scss */
+/* line 42, ../sass/components/_panel.scss */
 .well {
   border: 0;
   border-radius: 0;
 }
-/* line 43, ../sass/components/_panel.scss */
+/* line 45, ../sass/components/_panel.scss */
 .node-type-announcement .well .panel-separator {
   margin-bottom: 10px;
 }
 
-/* line 50, ../sass/components/_panel.scss */
+/* line 52, ../sass/components/_panel.scss */
 .node-type-oa-wiki-page h1.title {
   display: none;
 }

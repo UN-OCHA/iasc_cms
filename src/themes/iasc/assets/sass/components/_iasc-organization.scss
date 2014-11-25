@@ -16,9 +16,11 @@
     margin-bottom: 20px;
     li {
       position: relative;
-      float: left;
+      float: left; 
       min-width: 140px;
-      //width: 50%;
+      .radix-layouts-contentfooter & {
+        min-width: 108px;
+      }
       text-align: center;
       padding: 0 8px;
     }
