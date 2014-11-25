@@ -436,6 +436,15 @@ function iasc_configuration_default_panels_mini_alter(&$data) {
 }
 
 /**
+ * Implements hook_strongarm_alter().
+ */
+function iasc_configuration_strongarm_alter(&$data) {
+  if (isset($data['bootstrap_library_settings'])) {
+    $data['bootstrap_library_settings']->value['theme']['themes']['iasc'] = 'iasc'; /* WAS: '' */
+  }
+}
+
+/**
  * Implements hook_flag_default_flags().
  */
 function iasc_configuration_flag_default_flags() {
