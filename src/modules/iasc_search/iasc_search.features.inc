@@ -24,19 +24,11 @@ function iasc_search_apachesolr_environments_alter(&$data) {
     $data['solr']->conf['apachesolr_direct_commit'] = 1; /* WAS: '' */
     $data['solr']->conf['apachesolr_read_only'] = 0; /* WAS: '' */
     $data['solr']->conf['apachesolr_soft_commit'] = 1; /* WAS: '' */
-    $data['solr']->index_bundles['file'] = array(
-      0 => 'audio',
-      1 => 'document',
-      2 => 'image',
-      3 => 'video',
-    ); /* WAS: '' */
-    $data['solr']->index_bundles['node'][0] = 'oa_event'; /* WAS: 'oa_discussion_post' */
-    $data['solr']->index_bundles['node'][1] = 'oa_space'; /* WAS: 'oa_event' */
-    $data['solr']->index_bundles['node'][2] = 'oa_wiki_page'; /* WAS: 'oa_group' */
-    $data['solr']->index_bundles['node'][3] = 'panopoly_page'; /* WAS: 'oa_ical_importer' */
+    $data['solr']->index_bundles['node'][0] = 'announcement'; /* WAS: 'oa_discussion_post' */
+    $data['solr']->index_bundles['node'][3] = 'oa_space'; /* WAS: 'oa_ical_importer' */
+    $data['solr']->index_bundles['node'][4] = 'oa_wiki_page'; /* WAS: 'oa_section' */
+    $data['solr']->index_bundles['node'][5] = 'panopoly_page'; /* WAS: 'oa_space' */
     unset($data['solr']->index_bundles['node'][10]);
-    unset($data['solr']->index_bundles['node'][4]);
-    unset($data['solr']->index_bundles['node'][5]);
     unset($data['solr']->index_bundles['node'][6]);
     unset($data['solr']->index_bundles['node'][7]);
     unset($data['solr']->index_bundles['node'][8]);
@@ -190,11 +182,11 @@ function iasc_search_default_page_manager_handlers_alter(&$data) {
           'uuid' => 'd20db8aa-7a1c-4920-be9d-ebcdaa896b4b',
         ); /* WAS: '' */
     $data['search_node_panel_context_apachesolr']->conf['display']->panels['sidebar'][1] = 'new-693a6a4c-b829-490a-b985-ef3b1452bc62'; /* WAS: 'new-f3bdafc7-f1bc-4d50-9522-6c9595542d2d' */
-    $data['search_node_panel_context_apachesolr']->conf['display']->panels['sidebar'][2] = 'new-d20db8aa-7a1c-4920-be9d-ebcdaa896b4b'; /* WAS: 'new-eed5638b-f350-4b54-b718-1ad25538945c' */
-    $data['search_node_panel_context_apachesolr']->conf['display']->panels['sidebar'][3] = 'new-8a7e45ba-2ffc-4ec8-84f0-20bbd6ca08ea'; /* WAS: 'new-693a6a4c-b829-490a-b985-ef3b1452bc62' */
-    $data['search_node_panel_context_apachesolr']->conf['display']->panels['sidebar'][4] = 'new-7ed46a82-19a3-409e-b5bb-9b4036327874'; /* WAS: '' */
-    $data['search_node_panel_context_apachesolr']->conf['display']->panels['sidebar'][5] = 'new-6724ddeb-08bf-4792-bcd9-6bb074e1b26d'; /* WAS: '' */
-    $data['search_node_panel_context_apachesolr']->conf['display']->panels['sidebar'][6] = 'new-ac601488-2d1a-4098-b231-f9acd96ec8fc'; /* WAS: '' */
+    $data['search_node_panel_context_apachesolr']->conf['display']->panels['sidebar'][2] = 'new-6724ddeb-08bf-4792-bcd9-6bb074e1b26d'; /* WAS: 'new-eed5638b-f350-4b54-b718-1ad25538945c' */
+    $data['search_node_panel_context_apachesolr']->conf['display']->panels['sidebar'][3] = 'new-7ed46a82-19a3-409e-b5bb-9b4036327874'; /* WAS: 'new-693a6a4c-b829-490a-b985-ef3b1452bc62' */
+    $data['search_node_panel_context_apachesolr']->conf['display']->panels['sidebar'][4] = 'new-8a7e45ba-2ffc-4ec8-84f0-20bbd6ca08ea'; /* WAS: '' */
+    $data['search_node_panel_context_apachesolr']->conf['display']->panels['sidebar'][5] = 'new-ac601488-2d1a-4098-b231-f9acd96ec8fc'; /* WAS: '' */
+    $data['search_node_panel_context_apachesolr']->conf['display']->panels['sidebar'][6] = 'new-d20db8aa-7a1c-4920-be9d-ebcdaa896b4b'; /* WAS: '' */
     unset($data['search_node_panel_context_apachesolr']->conf['display']->content['new-eed5638b-f350-4b54-b718-1ad25538945c']);
     unset($data['search_node_panel_context_apachesolr']->conf['display']->content['new-f3bdafc7-f1bc-4d50-9522-6c9595542d2d']);
   }

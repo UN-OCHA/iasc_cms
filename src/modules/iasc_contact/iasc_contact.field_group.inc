@@ -97,12 +97,12 @@ function iasc_contact_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Info',
-    'weight' => '2',
+    'weight' => '8',
     'children' => array(
       0 => 'field_email',
       1 => 'field_phone',
     ),
-    'format_type' => 'html-element',
+    'format_type' => 'hidden',
     'format_settings' => array(
       'label' => 'Info',
       'instance_settings' => array(
@@ -112,6 +112,7 @@ function iasc_contact_field_group_info() {
         'label_element' => 'div',
         'attributes' => '',
       ),
+      'formatter' => '',
     ),
   );
   $export['group_contact_info|node|contact|bio_short'] = $field_group;

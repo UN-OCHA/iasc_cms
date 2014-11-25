@@ -74,13 +74,9 @@ function iasc_configuration_panelizer_defaults() {
         'og_group_ref_target_id' => '',
         'og_group_ref_target_id_mine' => 0,
         'og_subspaces_view_all' => 1,
-        'og_subspaces_view_parent' => 1,
+        'og_subspaces_view_parent' => 0,
         'field_category_tid' => '',
-        'field_document_type_tid' => array(
-          1 => '1',
-          2 => '2',
-          3 => '3',
-        ),
+        'field_document_type_tid' => array(),
       ),
       'view_settings' => 'fields',
       'header_type' => 'none',
@@ -223,51 +219,6 @@ function iasc_configuration_panelizer_defaults() {
     $display->content['new-93022d25-a41c-4fb0-b7e7-84d54b472396'] = $pane;
     $display->panels['contentmain'][1] = 'new-93022d25-a41c-4fb0-b7e7-84d54b472396';
     $pane = new stdClass();
-    $pane->pid = 'new-9995e8b8-d8cb-4339-a7ad-1f0ea569d2de';
-    $pane->panel = 'contentmain';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'oa_recent_activity-section_activity';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'context' => array(
-        0 => 'panelizer',
-      ),
-      'view_mode' => 'full',
-      'widget_title' => NULL,
-      'items_per_page' => '5',
-      'exposed' => array(
-        'type' => array(),
-        'realname' => '',
-        'og_group_ref_target_id' => '',
-        'og_group_ref_target_id_mine' => 0,
-        'og_subspaces_view_all' => 1,
-        'og_subspaces_view_parent' => 0,
-        'oa_section_ref_target_id' => 'All',
-      ),
-      'use_pager' => 0,
-      'pager_id' => '',
-      'offset' => NULL,
-      'link_to_view' => NULL,
-      'more_link' => NULL,
-      'path' => NULL,
-      'view_settings' => 'fields',
-      'header_type' => 'none',
-      'show_exposed_form' => 1,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-      'style' => 'oa_styles_oa_pane',
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 2;
-    $pane->locks = array();
-    $pane->uuid = '9995e8b8-d8cb-4339-a7ad-1f0ea569d2de';
-    $display->content['new-9995e8b8-d8cb-4339-a7ad-1f0ea569d2de'] = $pane;
-    $display->panels['contentmain'][2] = 'new-9995e8b8-d8cb-4339-a7ad-1f0ea569d2de';
-    $pane = new stdClass();
     $pane->pid = 'new-fc9a5ced-e22c-49aa-9d2b-f8b2135a3a4b';
     $pane->panel = 'contentmain';
     $pane->type = 'views_panes';
@@ -295,11 +246,11 @@ function iasc_configuration_panelizer_defaults() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 3;
+    $pane->position = 2;
     $pane->locks = array();
     $pane->uuid = 'fc9a5ced-e22c-49aa-9d2b-f8b2135a3a4b';
     $display->content['new-fc9a5ced-e22c-49aa-9d2b-f8b2135a3a4b'] = $pane;
-    $display->panels['contentmain'][3] = 'new-fc9a5ced-e22c-49aa-9d2b-f8b2135a3a4b';
+    $display->panels['contentmain'][2] = 'new-fc9a5ced-e22c-49aa-9d2b-f8b2135a3a4b';
     $pane = new stdClass();
     $pane->pid = 'new-0d484813-4380-4e64-bb7f-8710b7c7eeb8';
     $pane->panel = 'contentmain';
@@ -327,11 +278,11 @@ function iasc_configuration_panelizer_defaults() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 4;
+    $pane->position = 3;
     $pane->locks = array();
     $pane->uuid = '0d484813-4380-4e64-bb7f-8710b7c7eeb8';
     $display->content['new-0d484813-4380-4e64-bb7f-8710b7c7eeb8'] = $pane;
-    $display->panels['contentmain'][4] = 'new-0d484813-4380-4e64-bb7f-8710b7c7eeb8';
+    $display->panels['contentmain'][3] = 'new-0d484813-4380-4e64-bb7f-8710b7c7eeb8';
     $pane = new stdClass();
     $pane->pid = 'new-801d2668-fa45-4031-83ba-e7d47830a8a6';
     $pane->panel = 'sidebar';
@@ -460,6 +411,100 @@ function iasc_configuration_panelizer_defaults() {
     $pane->uuid = '18865aa1-e2a6-4d3d-93c2-3f80adf44c54';
     $display->content['new-18865aa1-e2a6-4d3d-93c2-3f80adf44c54'] = $pane;
     $display->panels['sidebar'][2] = 'new-18865aa1-e2a6-4d3d-93c2-3f80adf44c54';
+    $pane = new stdClass();
+    $pane->pid = 'new-36245c7e-59f9-46bc-ac31-d01c99c4836a';
+    $pane->panel = 'sidebar';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'search_contacts-panel_pane_contacts';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'use_pager' => 0,
+      'pager_id' => '0',
+      'items_per_page' => '0',
+      'fields_override' => array(
+        'field_photo' => 1,
+        'title' => 1,
+        'field_homepage' => 0,
+        'field_organisation' => 1,
+        'field_position' => 0,
+        'field_body_membership' => 0,
+        'field_org_address_locality' => 0,
+        'field_email' => 0,
+        'field_phone' => 0,
+      ),
+      'exposed' => array(
+        'title' => '',
+        'field_body_membership_target_id' => array(),
+        'field_organisation_tid' => array(),
+        'field_department_value' => '',
+        'field_position_value' => 'Chair Co-Chairs Members Secondary',
+      ),
+      'override_title' => '',
+      'override_title_text' => '',
+      'view_settings' => 'fields',
+      'header_type' => 'none',
+      'view_mode' => 'teaser',
+      'widget_title' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 3;
+    $pane->locks = array();
+    $pane->uuid = '36245c7e-59f9-46bc-ac31-d01c99c4836a';
+    $display->content['new-36245c7e-59f9-46bc-ac31-d01c99c4836a'] = $pane;
+    $display->panels['sidebar'][3] = 'new-36245c7e-59f9-46bc-ac31-d01c99c4836a';
+    $pane = new stdClass();
+    $pane->pid = 'new-41f70bbc-1472-4fd8-a2d9-0496014c521f';
+    $pane->panel = 'sidebar';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'search_contacts-panel_pane_contacts';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'use_pager' => 0,
+      'pager_id' => '0',
+      'items_per_page' => '0',
+      'fields_override' => array(
+        'field_photo' => 0,
+        'title' => 1,
+        'field_homepage' => 0,
+        'field_organisation' => 1,
+        'field_position' => 0,
+        'field_body_membership' => 0,
+        'field_org_address_locality' => 1,
+        'field_email' => 1,
+        'field_phone' => 1,
+      ),
+      'exposed' => array(
+        'title' => '',
+        'field_body_membership_target_id' => array(),
+        'field_organisation_tid' => array(),
+        'field_department_value' => '',
+        'field_position_value' => 'Contact',
+      ),
+      'override_title' => '',
+      'override_title_text' => '',
+      'view_settings' => 'fields',
+      'header_type' => 'none',
+      'view_mode' => 'teaser',
+      'widget_title' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 4;
+    $pane->locks = array();
+    $pane->uuid = '41f70bbc-1472-4fd8-a2d9-0496014c521f';
+    $display->content['new-41f70bbc-1472-4fd8-a2d9-0496014c521f'] = $pane;
+    $display->panels['sidebar'][4] = 'new-41f70bbc-1472-4fd8-a2d9-0496014c521f';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $panelizer->display = $display;
@@ -765,6 +810,100 @@ function iasc_configuration_panelizer_defaults() {
     $pane->uuid = '18865aa1-e2a6-4d3d-93c2-3f80adf44c54';
     $display->content['new-18865aa1-e2a6-4d3d-93c2-3f80adf44c54'] = $pane;
     $display->panels['sidebar'][2] = 'new-18865aa1-e2a6-4d3d-93c2-3f80adf44c54';
+    $pane = new stdClass();
+    $pane->pid = 'new-2c6fca0c-5f02-4026-974a-28a2568238ed';
+    $pane->panel = 'sidebar';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'search_contacts-panel_pane_contacts';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'use_pager' => 0,
+      'pager_id' => '0',
+      'items_per_page' => '0',
+      'fields_override' => array(
+        'field_photo' => 1,
+        'title' => 1,
+        'field_homepage' => 0,
+        'field_organisation' => 1,
+        'field_position' => 0,
+        'field_body_membership' => 0,
+        'field_org_address_locality' => 0,
+        'field_email' => 0,
+        'field_phone' => 0,
+      ),
+      'exposed' => array(
+        'title' => '',
+        'field_body_membership_target_id' => array(),
+        'field_organisation_tid' => array(),
+        'field_department_value' => '',
+        'field_position_value' => 'Chair Co-Chairs Members Secondary',
+      ),
+      'override_title' => '',
+      'override_title_text' => '',
+      'view_settings' => 'fields',
+      'header_type' => 'none',
+      'view_mode' => 'teaser',
+      'widget_title' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 3;
+    $pane->locks = array();
+    $pane->uuid = '2c6fca0c-5f02-4026-974a-28a2568238ed';
+    $display->content['new-2c6fca0c-5f02-4026-974a-28a2568238ed'] = $pane;
+    $display->panels['sidebar'][3] = 'new-2c6fca0c-5f02-4026-974a-28a2568238ed';
+    $pane = new stdClass();
+    $pane->pid = 'new-335e5662-a92a-46a9-b492-406700a0ef03';
+    $pane->panel = 'sidebar';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'search_contacts-panel_pane_contacts';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'use_pager' => 0,
+      'pager_id' => '0',
+      'items_per_page' => '0',
+      'fields_override' => array(
+        'field_photo' => 0,
+        'title' => 1,
+        'field_homepage' => 0,
+        'field_organisation' => 1,
+        'field_position' => 0,
+        'field_body_membership' => 0,
+        'field_org_address_locality' => 1,
+        'field_email' => 1,
+        'field_phone' => 1,
+      ),
+      'exposed' => array(
+        'title' => '',
+        'field_body_membership_target_id' => array(),
+        'field_organisation_tid' => array(),
+        'field_department_value' => '',
+        'field_position_value' => 'Contact',
+      ),
+      'override_title' => '',
+      'override_title_text' => '',
+      'view_settings' => 'fields',
+      'header_type' => 'none',
+      'view_mode' => 'teaser',
+      'widget_title' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 4;
+    $pane->locks = array();
+    $pane->uuid = '335e5662-a92a-46a9-b492-406700a0ef03';
+    $display->content['new-335e5662-a92a-46a9-b492-406700a0ef03'] = $pane;
+    $display->panels['sidebar'][4] = 'new-335e5662-a92a-46a9-b492-406700a0ef03';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $panelizer->display = $display;
