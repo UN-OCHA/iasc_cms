@@ -29,9 +29,6 @@ stylesheets[print][]   = assets/stylesheets/print.css
 stylesheets-conditional[IE 7][all][] = assets/stylesheets/ie7.css
 stylesheets-conditional[IE 8][all][] = assets/stylesheets/ie8.css
 
-; Overwrite Parent, removed parent in template.php
-scripts[] = assets/javascripts/radix-script.js
-
 ; Javascript
 scripts[] = assets/javascripts/script.js
 
