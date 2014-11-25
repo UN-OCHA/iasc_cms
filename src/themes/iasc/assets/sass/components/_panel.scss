@@ -17,10 +17,12 @@
 
 .panel-success {
   .btn { background-color: $green; }
-  .views-row,
-  .field-item {
-    position: relative;
-    padding-left: 30px;
+  &.doc-icon, &.arrow {
+    .views-row,
+    .field-item {
+      position: relative;
+      padding-left: 30px;
+    }
   }
   &.doc-icon a:before { @extend .icons-page; }
   &.arrow a:before { @extend .icons-arrow; } 
