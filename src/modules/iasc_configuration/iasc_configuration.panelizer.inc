@@ -445,7 +445,7 @@ function iasc_configuration_panelizer_defaults() {
       'view_settings' => 'fields',
       'header_type' => 'none',
       'view_mode' => 'teaser',
-      'widget_title' => '',
+      'widget_title' => 'Members',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -844,7 +844,7 @@ function iasc_configuration_panelizer_defaults() {
       'view_settings' => 'fields',
       'header_type' => 'none',
       'view_mode' => 'teaser',
-      'widget_title' => '',
+      'widget_title' => 'Members',
     );
     $pane->cache = array();
     $pane->style = array(

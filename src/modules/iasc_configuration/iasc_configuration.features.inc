@@ -169,7 +169,7 @@ function iasc_configuration_panelizer_defaults_override_alter(&$data) {
             'view_settings' => 'fields',
             'header_type' => 'none',
             'view_mode' => 'teaser',
-            'widget_title' => '',
+            'widget_title' => 'Members',
           ),
           'cache' => array(),
           'style' => array(

@@ -151,7 +151,7 @@ function iasc_configuration_features_override_default_overrides() {
         'view_settings' => 'fields',
         'header_type' => 'none',
         'view_mode' => 'teaser',
-        'widget_title' => '',
+        'widget_title' => 'Members',
       ),
       'cache' => array(),
       'style' => array(
