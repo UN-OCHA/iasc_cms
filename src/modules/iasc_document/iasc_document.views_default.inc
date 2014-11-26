@@ -64,7 +64,7 @@ function iasc_document_views_default_views() {
   $handler->display->display_options['fields']['field_document_type']['element_type'] = 'span';
   $handler->display->display_options['fields']['field_document_type']['element_label_type'] = 'span';
   $handler->display->display_options['fields']['field_document_type']['type'] = 'taxonomy_term_reference_plain';
-  /* Field: Content: Groups audience */
+  /* Field: Content: Authoring Bodies */
   $handler->display->display_options['fields']['og_group_ref']['id'] = 'og_group_ref';
   $handler->display->display_options['fields']['og_group_ref']['table'] = 'og_membership';
   $handler->display->display_options['fields']['og_group_ref']['field'] = 'og_group_ref';
@@ -132,6 +132,7 @@ function iasc_document_views_default_views() {
   );
   $handler->display->display_options['filters']['field_published_date_value']['form_type'] = 'date_popup';
   $handler->display->display_options['filters']['field_published_date_value']['default_to_date'] = 'today';
+  $handler->display->display_options['filters']['field_published_date_value']['year_range'] = '-10:+3';
   /* Filter criterion: End Date Range */
   $handler->display->display_options['filters']['field_published_date_value_1']['id'] = 'field_published_date_value_1';
   $handler->display->display_options['filters']['field_published_date_value_1']['table'] = 'field_data_field_published_date';
@@ -150,7 +151,8 @@ function iasc_document_views_default_views() {
     4 => 0,
   );
   $handler->display->display_options['filters']['field_published_date_value_1']['form_type'] = 'date_popup';
-  /* Filter criterion: Content: Groups audience (og_group_ref) */
+  $handler->display->display_options['filters']['field_published_date_value_1']['year_range'] = '-10:+3';
+  /* Filter criterion: Content: Authoring Bodies (og_group_ref) */
   $handler->display->display_options['filters']['og_group_ref_target_id']['id'] = 'og_group_ref_target_id';
   $handler->display->display_options['filters']['og_group_ref_target_id']['table'] = 'og_membership';
   $handler->display->display_options['filters']['og_group_ref_target_id']['field'] = 'og_group_ref_target_id';
