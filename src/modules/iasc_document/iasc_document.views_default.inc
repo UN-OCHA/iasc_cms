@@ -167,23 +167,27 @@ function iasc_document_views_default_views() {
     1 => 0,
     3 => 0,
     4 => 0,
+    5 => 0,
+    6 => 0,
   );
   /* Filter criterion: Content: Product Category (field_category) */
   $handler->display->display_options['filters']['field_category_tid']['id'] = 'field_category_tid';
   $handler->display->display_options['filters']['field_category_tid']['table'] = 'field_data_field_category';
   $handler->display->display_options['filters']['field_category_tid']['field'] = 'field_category_tid';
-  $handler->display->display_options['filters']['field_category_tid']['value'] = '';
   $handler->display->display_options['filters']['field_category_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_category_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_category_tid']['expose']['operator_id'] = 'field_category_tid_op';
   $handler->display->display_options['filters']['field_category_tid']['expose']['label'] = 'Product Category';
   $handler->display->display_options['filters']['field_category_tid']['expose']['operator'] = 'field_category_tid_op';
   $handler->display->display_options['filters']['field_category_tid']['expose']['identifier'] = 'field_category_tid';
+  $handler->display->display_options['filters']['field_category_tid']['expose']['multiple'] = TRUE;
   $handler->display->display_options['filters']['field_category_tid']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
     3 => 0,
     4 => 0,
+    5 => 0,
+    6 => 0,
   );
   $handler->display->display_options['filters']['field_category_tid']['group_info']['label'] = 'Product Category (field_category)';
   $handler->display->display_options['filters']['field_category_tid']['group_info']['identifier'] = 'field_category_tid';
@@ -193,7 +197,9 @@ function iasc_document_views_default_views() {
     2 => array(),
     3 => array(),
   );
+  $handler->display->display_options['filters']['field_category_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_category_tid']['vocabulary'] = 'product_categories';
+  $handler->display->display_options['filters']['field_category_tid']['hierarchy'] = 1;
   /* Filter criterion: Content: Document Type (field_document_type) */
   $handler->display->display_options['filters']['field_document_type_tid']['id'] = 'field_document_type_tid';
   $handler->display->display_options['filters']['field_document_type_tid']['table'] = 'field_data_field_document_type';
@@ -250,6 +256,7 @@ function iasc_document_views_default_views() {
   );
   $handler->display->display_options['filters']['field_document_type_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_document_type_tid']['vocabulary'] = 'document_types';
+  $handler->display->display_options['filters']['field_document_type_tid']['hierarchy'] = 1;
   /* Filter criterion: Search: Search Terms */
   $handler->display->display_options['filters']['keys']['id'] = 'keys';
   $handler->display->display_options['filters']['keys']['table'] = 'search_index';

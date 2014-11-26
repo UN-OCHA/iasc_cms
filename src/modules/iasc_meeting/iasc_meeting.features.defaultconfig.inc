@@ -82,7 +82,7 @@ function iasc_meeting_defaultconfig_field_default_fields() {
           'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 6,
+          'weight' => 9,
         ),
         'default' => array(
           'label' => 'hidden',
