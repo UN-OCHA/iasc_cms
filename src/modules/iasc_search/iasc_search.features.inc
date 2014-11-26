@@ -191,3 +191,22 @@ function iasc_search_default_page_manager_handlers_alter(&$data) {
     unset($data['search_node_panel_context_apachesolr']->conf['display']->content['new-f3bdafc7-f1bc-4d50-9522-6c9595542d2d']);
   }
 }
+
+/**
+ * Implements hook_default_page_manager_pages_alter().
+ */
+function iasc_search_default_page_manager_pages_alter(&$data) {
+  if (isset($data['solr'])) {
+    $data['solr']->default_handlers['page_solr_panel_context']->conf['display']->content['new-5f9beaf3-4d74-4180-861f-74dba8b68bb3']->configuration['empty_override_format'] = 'iasc_wysiwyg'; /* WAS: 1 */
+    $data['solr']->default_handlers['page_solr_panel_context']->conf['display']->content['new-5f9beaf3-4d74-4180-861f-74dba8b68bb3']->configuration['empty_override_text']['format'] = 'iasc_wysiwyg'; /* WAS: '' */
+    $data['solr']->default_handlers['page_solr_panel_context']->conf['display']->content['new-5f9beaf3-4d74-4180-861f-74dba8b68bb3']->configuration['empty_override_text']['value'] = ''; /* WAS: '' */
+    $data['solr']->default_handlers['page_solr_panel_context']->conf['display']->content['new-5f9beaf3-4d74-4180-861f-74dba8b68bb3']->configuration['env_id'] = ''; /* WAS: '' */
+    $data['solr']->default_handlers['page_solr_panel_context']->conf['display']->content['new-5f9beaf3-4d74-4180-861f-74dba8b68bb3']->configuration['path'] = ''; /* WAS: '' */
+    $data['solr']->default_handlers['page_solr_panel_context']->conf['display']->content['new-5f9beaf3-4d74-4180-861f-74dba8b68bb3']->configuration['path_type'] = 'same'; /* WAS: '' */
+    $data['solr']->default_handlers['page_solr_panel_context']->conf['display']->content['new-5f9beaf3-4d74-4180-861f-74dba8b68bb3']->configuration['rows'] = 10; /* WAS: '' */
+    $data['solr']->default_handlers['page_solr_panel_context']->conf['display']->content['new-5f9beaf3-4d74-4180-861f-74dba8b68bb3']->configuration['title_override'] = 1; /* WAS: 0 */
+    $data['solr']->default_handlers['page_solr_panel_context']->conf['display']->panel_settings['sidebar'] = array(
+      'style' => 'oa_styles_well',
+    ); /* WAS: '' */
+  }
+}

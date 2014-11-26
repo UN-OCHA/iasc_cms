@@ -407,5 +407,8 @@ function iasc_configuration_features_override_default_overrides() {
   $overrides["panels_mini.oa_toolbar_panel.display|panels|footer|5"] = 'new-70813a7e-2551-49da-bd7c-4acaff4cae42';
   $overrides["panels_mini.oa_toolbar_panel.display|panels|footer|6"]["DELETED"] = TRUE;
 
+  // Exported overrides for: variable
+  $overrides["variable.bootstrap_library_settings.value|theme|themes|iasc"] = 'iasc';
+
  return $overrides;
 }
