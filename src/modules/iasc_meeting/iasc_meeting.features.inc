@@ -693,7 +693,6 @@ function iasc_meeting_panelizer_defaults_override_alter(&$data) {
         ); /* WAS: '' */
     $data['node:oa_event:default']->display->content['new-cf81af22-ac8b-4147-8462-a5fce1b76471']->position = 9; /* WAS: 2 */
     $data['node:oa_event:default']->display->content['new-cf81af22-ac8b-4147-8462-a5fce1b76471']->style['style'] = 'default'; /* WAS: '' */
-    $data['node:oa_event:default']->display->hide_title = 1; /* WAS: 0 */
     $data['node:oa_event:default']->display->panels['contentmain'][0] = 'new-c84bd896-6873-41ab-89ea-5d0f2e0c2c7f'; /* WAS: 'new-9035b3e7-28dc-478f-a595-e89dca69718a' */
     $data['node:oa_event:default']->display->panels['contentmain'][1] = 'new-9035b3e7-28dc-478f-a595-e89dca69718a'; /* WAS: '' */
     $data['node:oa_event:default']->display->panels['contentmain'][2] = 'new-9c1552e9-6b59-4811-ac8f-8278030a8f11'; /* WAS: '' */
