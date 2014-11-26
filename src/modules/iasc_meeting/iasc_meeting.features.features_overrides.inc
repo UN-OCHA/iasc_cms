@@ -635,7 +635,6 @@ function iasc_meeting_features_override_default_overrides() {
   $overrides["panelizer_defaults.node:oa_event:default.display|content|new-cf81af22-ac8b-4147-8462-a5fce1b76471|position"] = 9;
   $overrides["panelizer_defaults.node:oa_event:default.display|content|new-cf81af22-ac8b-4147-8462-a5fce1b76471|style|style"] = 'default';
   $overrides["panelizer_defaults.node:oa_event:default.display|content|new-e0f02a5b-dd4e-4ab9-8479-06a195d86fd0"]["DELETED"] = TRUE;
-  $overrides["panelizer_defaults.node:oa_event:default.display|hide_title"] = 1;
   $overrides["panelizer_defaults.node:oa_event:default.display|panels|contentmain|0"] = 'new-c84bd896-6873-41ab-89ea-5d0f2e0c2c7f';
   $overrides["panelizer_defaults.node:oa_event:default.display|panels|contentmain|1"] = 'new-9035b3e7-28dc-478f-a595-e89dca69718a';
   $overrides["panelizer_defaults.node:oa_event:default.display|panels|contentmain|2"] = 'new-9c1552e9-6b59-4811-ac8f-8278030a8f11';

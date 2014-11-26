@@ -9408,7 +9408,8 @@ img.bio-circled {
   margin-bottom: 10px;
 }
 
-/* line 52, ../sass/components/_panel.scss */
+/* line 53, ../sass/components/_panel.scss */
+.node-type-oa-event h1.title,
 .node-type-oa-wiki-page h1.title {
   display: none;
 }
