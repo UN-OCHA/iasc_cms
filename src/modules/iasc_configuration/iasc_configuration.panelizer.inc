@@ -395,13 +395,19 @@ function iasc_configuration_panelizer_defaults() {
     $pane->configuration = array(
       'use_pager' => 0,
       'pager_id' => '0',
-      'items_per_page' => '10',
+      'items_per_page' => '5',
       'override_title' => '',
       'override_title_text' => '',
       'view_settings' => 'fields',
       'header_type' => 'none',
       'view_mode' => 'teaser',
       'widget_title' => 'Recent Documents',
+      'exposed' => array(
+        'og_group_ref_target_id' => '',
+        'og_group_ref_target_id_mine' => 0,
+        'og_subspaces_view_all' => 1,
+        'og_subspaces_view_parent' => 0,
+      ),
     );
     $pane->cache = array();
     $pane->style = array(
@@ -729,7 +735,7 @@ function iasc_configuration_panelizer_defaults() {
       'override_title' => '',
       'override_title_text' => '',
       'view_mode' => 'teaser',
-      'widget_title' => '',
+      'widget_title' => 'Sections',
       'exposed' => array(
         'flagged' => '0',
       ),
@@ -741,7 +747,11 @@ function iasc_configuration_panelizer_defaults() {
     );
     $pane->cache = array();
     $pane->style = array(
-      'settings' => NULL,
+      'settings' => array(
+        'secondary_options' => 'panel-primary',
+        'linked_list' => 'none',
+      ),
+      'style' => 'secondary',
     );
     $pane->css = array();
     $pane->extras = array();
@@ -760,13 +770,19 @@ function iasc_configuration_panelizer_defaults() {
     $pane->configuration = array(
       'use_pager' => 0,
       'pager_id' => '0',
-      'items_per_page' => '10',
+      'items_per_page' => '5',
       'override_title' => '',
       'override_title_text' => '',
       'view_settings' => 'fields',
       'header_type' => 'none',
       'view_mode' => 'teaser',
       'widget_title' => 'Recent Documents',
+      'exposed' => array(
+        'og_group_ref_target_id' => '',
+        'og_group_ref_target_id_mine' => 0,
+        'og_subspaces_view_all' => 1,
+        'og_subspaces_view_parent' => 0,
+      ),
     );
     $pane->cache = array();
     $pane->style = array(

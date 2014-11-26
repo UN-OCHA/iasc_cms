@@ -240,7 +240,7 @@ function iasc_configuration_panelizer_defaults_override_alter(&$data) {
             'view_mode' => 'featured',
             'use_pager' => 0,
             'pager_id' => 0,
-            'items_per_page' => 5,
+            'items_per_page' => 0,
             'override_title' => '',
             'override_title_text' => '',
             'widget_title' => 'Featured Products',
@@ -276,6 +276,12 @@ function iasc_configuration_panelizer_defaults_override_alter(&$data) {
             'override_title' => '',
             'override_title_text' => '',
             'widget_title' => 'Recent Documents',
+            'exposed' => array(
+              'og_group_ref_target_id' => '',
+              'og_group_ref_target_id_mine' => 0,
+              'og_subspaces_view_all' => 1,
+              'og_subspaces_view_parent' => 0,
+            ),
           ),
           'cache' => array(),
           'style' => array(
