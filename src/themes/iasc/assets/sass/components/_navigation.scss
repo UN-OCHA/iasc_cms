@@ -30,7 +30,7 @@
 
   .expanded { @extend .dropdown; }
   a.menu { @extend .dropdown-toggle; }
-  ul.menu { @extend .dropdown-menu; } 
+  .navbar ul.menu { @extend .dropdown-menu; } 
 
 
 .navbar-top {
