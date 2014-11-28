@@ -2,7 +2,7 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
 <svg xmlns="http://www.w3.org/2000/svg">
 <metadata>
-Created by FontForge 20120731 at Fri Nov 28 08:02:19 2014
+Created by FontForge 20120731 at Fri Nov 28 12:41:17 2014
  By Denis Babineau
 Created by Denis Babineau with FontForge 2.0 (http://fontforge.sf.net)
 </metadata>
@@ -19,7 +19,7 @@ Created by Denis Babineau with FontForge 2.0 (http://fontforge.sf.net)
     bbox="0 -169 512.071 448"
     underline-thickness="25"
     underline-position="-52"
-    unicode-range="U+F101-F10C"
+    unicode-range="U+F101-F10D"
   />
 <missing-glyph horiz-adv-x="187" 
 d="M17 0v341h136v-341h-136zM34 17h102v307h-102v-307z" />
@@ -49,13 +49,15 @@ d="M384 128v64h-160v64h160v64l96 -96zM352 160v-128h-160v-96l-192 96v416h352v-160
 d="M256 306q-91 0 -155 -64t-64 -155t64 -155.5t155 -64.5t155 64.5t64 155.5t-64 155t-155 64zM256 343q107 0 181.5 -74.5t74.5 -181.5t-74.5 -181.5t-181.5 -74.5t-181.5 74.5t-74.5 181.5t74.5 181.5t181.5 74.5zM176 10l157 73l-157 77v36l190 -98v-26l-190 -99v37z
 " />
     <glyph glyph-name="uniF109" unicode="&#xf109;" 
+d="M475 87q0 91 -64 155t-155 64t-155 -64t-64 -155t64 -155.5t155 -64.5t155 64.5t64 155.5zM512 87q0 -107 -74.5 -181.5t-181.5 -74.5t-181.5 74.5t-74.5 181.5t74.5 181.5t181.5 74.5t181.5 -74.5t74.5 -181.5zM179 167l73 -157l77 157h37l-99 -190h-26l-98 190h36z" />
+    <glyph glyph-name="uniF10A" unicode="&#xf10a;" 
 d="M128 288q0 53 37.5 90.5t90.5 37.5t90.5 -37.5t37.5 -90.5t-37.5 -90.5t-90.5 -37.5t-90.5 37.5t-37.5 90.5zM384 128q53 0 90.5 -37.5t37.5 -90.5v-32h-4h-504h-4v32q0 53 37.5 90.5t90.5 37.5h256z" />
-    <glyph glyph-name="uniF10A" unicode="&#xf10a;" horiz-adv-x="400" 
+    <glyph glyph-name="uniF10B" unicode="&#xf10b;" horiz-adv-x="400" 
 d="M254 448l146 -149v-363h-400v512h254zM261 381v-70h69zM42 -22h316v302h-129v126h-187v-428z" />
-    <glyph glyph-name="uniF10B" unicode="&#xf10b;" horiz-adv-x="320" 
+    <glyph glyph-name="uniF10C" unicode="&#xf10c;" horiz-adv-x="320" 
 d="M224 32q0 -16 -16 -16h-96q-16 0 -16 16t16 16h96q16 0 16 -16zM208 0q16 0 16 -16t-16 -16q0 -14 -9 -23t-23 -9h-32q-14 0 -23 9t-9 23q-16 0 -16 16t16 16h96zM160 416q-53 0 -90.5 -37.5t-37.5 -90.5q0 -73 64 -110l16 -9v-73h96v73l16 9q64 37 64 110
 q0 53 -37.5 90.5t-90.5 37.5zM160 448q66 0 113 -47t47 -113q0 -44 -21.5 -80.5t-58.5 -57.5v-54q0 -14 -9 -23t-23 -9h-96q-14 0 -23 9t-9 23v54q-37 21 -58.5 57.5t-21.5 80.5q0 66 47 113t113 47z" />
-    <glyph glyph-name="uniF10C" unicode="&#xf10c;" 
+    <glyph glyph-name="uniF10D" unicode="&#xf10d;" 
 d="M0 448zM496 12q15 -14 16 -32t-12 -32q-14 -13 -32 -12t-32 16l-103 121q-16 19 -16 37q-54 -46 -125 -46q-80 0 -136 56t-56 136t56 136t136 56t136 -56t56 -136q0 -71 -46 -125q18 0 37 -16zM192 128q53 0 90.5 37.5t37.5 90.5t-37.5 90.5t-90.5 37.5t-90.5 -37.5
 t-37.5 -90.5t37.5 -90.5t90.5 -37.5z" />
   </font>
