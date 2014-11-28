@@ -8466,15 +8466,15 @@ html.js input.throbbing {
 
 @font-face {
   font-family: "icons";
-  src: url("../fonts/icons-29be5025a89b0ad762585bb0f75e91a9.eot");
+  src: url("../fonts/icons-2efb5b042fd107b9211b247ab98ea6b7.eot");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "icons";
-  src: url("../fonts/icons-29be5025a89b0ad762585bb0f75e91a9.eot");
-  src: url("../fonts/icons-29be5025a89b0ad762585bb0f75e91a9.eot?#iefix") format("embedded-opentype"), url("../fonts/icons-29be5025a89b0ad762585bb0f75e91a9.woff") format("woff"), url("../fonts/icons-29be5025a89b0ad762585bb0f75e91a9.ttf") format("truetype"), url("../fonts/icons-29be5025a89b0ad762585bb0f75e91a9.svg?#icons") format("svg");
+  src: url("../fonts/icons-2efb5b042fd107b9211b247ab98ea6b7.eot");
+  src: url("../fonts/icons-2efb5b042fd107b9211b247ab98ea6b7.eot?#iefix") format("embedded-opentype"), url("../fonts/icons-2efb5b042fd107b9211b247ab98ea6b7.woff") format("woff"), url("../fonts/icons-2efb5b042fd107b9211b247ab98ea6b7.ttf") format("truetype"), url("../fonts/icons-2efb5b042fd107b9211b247ab98ea6b7.svg?#icons") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -8566,43 +8566,53 @@ html.js input.throbbing {
 }
 
 /* line 96, ../sass/base/_icons.scss */
-.icons-myaccount {
+.icons-morearrow {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf108;');
 }
 
 /* line 100, ../sass/base/_icons.scss */
-.icons-myaccount:before {
+.icons-morearrow:before, .pager-load-more li > a:after {
   content: "\f108";
 }
 
 /* line 104, ../sass/base/_icons.scss */
-.icons-page, .panel-success.doc-icon a:before {
+.icons-myaccount {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf109;');
 }
 
 /* line 108, ../sass/base/_icons.scss */
-.icons-page:before, .panel-success.doc-icon a:before {
+.icons-myaccount:before {
   content: "\f109";
 }
 
 /* line 112, ../sass/base/_icons.scss */
-.icons-resources {
+.icons-page, .panel-success.doc-icon a:before {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf10a;');
 }
 
 /* line 116, ../sass/base/_icons.scss */
-.icons-resources:before {
+.icons-page:before, .panel-success.doc-icon a:before {
   content: "\f10a";
 }
 
 /* line 120, ../sass/base/_icons.scss */
-.icons-search {
+.icons-resources {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf10b;');
 }
 
 /* line 124, ../sass/base/_icons.scss */
-.icons-search:before {
+.icons-resources:before {
   content: "\f10b";
+}
+
+/* line 128, ../sass/base/_icons.scss */
+.icons-search {
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf10c;');
+}
+
+/* line 132, ../sass/base/_icons.scss */
+.icons-search:before, form.navbar-form .form-type-textfield:after {
+  content: "\f10c";
 }
 
 /**
@@ -8818,6 +8828,12 @@ form .form-actions .node-readmore a,
   text-transform: uppercase;
 }
 /* line 24, ../sass/components/_buttons.scss */
+.pager-load-more li > a:after {
+  font-family: icons;
+  margin-left: 10px;
+  vertical-align: top;
+}
+/* line 30, ../sass/components/_buttons.scss */
 .pager-load-more li > a:hover {
   background: #af1407;
 }
@@ -8949,7 +8965,6 @@ form.navbar-form .form-type-textfield input[type="text"] {
 /* line 23, ../sass/components/_form.scss */
 form.navbar-form .form-type-textfield:after {
   font-family: icons;
-  content: '\f10b';
   z-index: 2;
   position: absolute;
   right: 8px;
