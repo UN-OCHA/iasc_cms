@@ -13,6 +13,7 @@ form .form-actions .node-readmore a,
 
 .pager-load-more {
   text-align: left;
+  clear: left;
   li > a {
     background: $btn-primary-bg;
     border: 0;
@@ -20,6 +21,12 @@ form .form-actions .node-readmore a,
     color: $btn-primary-color;
     font-family: $font-family-sans-serif;
     text-transform: uppercase;
+    &:after {
+      @extend .icons-morearrow:before;
+      font-family: icons;
+      margin-left: 10px;
+      vertical-align: top;
+    }
     &:hover {
       background: #af1407;
     }
