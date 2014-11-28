@@ -9507,6 +9507,7 @@ img.bio-circled {
   margin: 0 0 5px;
 }
 /* line 8, ../sass/components/_views-events.scss */
+.view-oa-event-list .iasc-event-date-wrapper,
 .view-oa-event-list .views-field-field-oa-date {
   position: absolute;
   left: 0;
@@ -9528,6 +9529,7 @@ img.bio-circled {
   /* line 21, ../sass/components/_views-events.scss */
   .view-oa-event-list .views-row:nth-child(odd) {
     padding-right: 10px;
+    clear: left;
   }
 }
 

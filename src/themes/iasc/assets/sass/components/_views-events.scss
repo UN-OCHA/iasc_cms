@@ -4,7 +4,7 @@
   h4.title {
     margin: 0 0 5px;
   }
-
+  .iasc-event-date-wrapper,
   .views-field-field-oa-date {
     position: absolute;
     left: 0; top: 0;
@@ -18,7 +18,7 @@
       clear: none;
       float: left;
       width: 50%;
-      &:nth-child(odd) { padding-right: $padding-large-vertical / 2; }
+      &:nth-child(odd) { padding-right: $padding-large-vertical / 2; clear: left;}
     }
   }
 
