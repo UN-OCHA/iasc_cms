@@ -4,17 +4,17 @@
 
 @font-face {
 	font-family:"icons";
-	src:url("../fonts/icons-2efb5b042fd107b9211b247ab98ea6b7.eot");
+	src:url("../fonts/icons-9b45c53249600cba610cf12d73c255f0.eot");
 	font-weight:normal;
 	font-style:normal;
 }
 @font-face {
 	font-family:"icons";
-	src:url("../fonts/icons-2efb5b042fd107b9211b247ab98ea6b7.eot");
-	src:url("../fonts/icons-2efb5b042fd107b9211b247ab98ea6b7.eot?#iefix") format("embedded-opentype"),
-		url("../fonts/icons-2efb5b042fd107b9211b247ab98ea6b7.woff") format("woff"),
-		url("../fonts/icons-2efb5b042fd107b9211b247ab98ea6b7.ttf") format("truetype"),
-		url("../fonts/icons-2efb5b042fd107b9211b247ab98ea6b7.svg?#icons") format("svg");
+	src:url("../fonts/icons-9b45c53249600cba610cf12d73c255f0.eot");
+	src:url("../fonts/icons-9b45c53249600cba610cf12d73c255f0.eot?#iefix") format("embedded-opentype"),
+		url("../fonts/icons-9b45c53249600cba610cf12d73c255f0.woff") format("woff"),
+		url("../fonts/icons-9b45c53249600cba610cf12d73c255f0.ttf") format("truetype"),
+		url("../fonts/icons-9b45c53249600cba610cf12d73c255f0.svg?#icons") format("svg");
 	font-weight:normal;
 	font-style:normal;
 }
@@ -101,34 +101,42 @@
 	content:"\f108";
 }
 
-.icons-myaccount {
+.icons-morearrowdown {
 	*zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf109;');
 }
 
-.icons-myaccount:before {
+.icons-morearrowdown:before {
 	content:"\f109";
 }
 
-.icons-page {
+.icons-myaccount {
 	*zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf10a;');
 }
 
-.icons-page:before {
+.icons-myaccount:before {
 	content:"\f10a";
 }
 
-.icons-resources {
+.icons-page {
 	*zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf10b;');
 }
 
-.icons-resources:before {
+.icons-page:before {
 	content:"\f10b";
 }
 
-.icons-search {
+.icons-resources {
 	*zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf10c;');
 }
 
-.icons-search:before {
+.icons-resources:before {
 	content:"\f10c";
+}
+
+.icons-search {
+	*zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf10d;');
+}
+
+.icons-search:before {
+	content:"\f10d";
 }

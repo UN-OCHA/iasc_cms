@@ -1,3 +1,7 @@
+.btn {
+  font-family: $font-family-sans-serif;
+}
+
 .btn-inverse {
   color: $btn-inverse-color !important;
   background-color: $btn-inverse-bg;
@@ -11,6 +15,27 @@ form .form-actions .node-readmore a,
   margin-right: 10px;
 }
 
+.filter-btn {
+  margin-bottom: $padding-base-vertical;
+  .btn {
+    background: $green;
+    color: #fff;
+    text-transform: uppercase;
+    .caret {
+      @extend .icons-morearrowdown;
+      border: 0;
+      height: auto; width: auto;
+      font-family: icons;
+      margin-left: 10px;
+      vertical-align: top;
+      font-weight: normal;
+    }
+    &:hover {
+      background: darken($green, 10%);
+    }
+  }
+}
+
 .pager-load-more {
   text-align: left;
   clear: left;
@@ -19,7 +44,6 @@ form .form-actions .node-readmore a,
     border: 0;
     border-radius:  $border-radius-base;
     color: $btn-primary-color;
-    font-family: $font-family-sans-serif;
     text-transform: uppercase;
     &:after {
       @extend .icons-morearrow:before;
