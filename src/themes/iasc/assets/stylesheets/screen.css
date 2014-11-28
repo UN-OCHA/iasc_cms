@@ -8806,8 +8806,9 @@ form .form-actions .node-readmore a,
 /* line 14, ../sass/components/_buttons.scss */
 .pager-load-more {
   text-align: left;
+  clear: left;
 }
-/* line 16, ../sass/components/_buttons.scss */
+/* line 17, ../sass/components/_buttons.scss */
 .pager-load-more li > a {
   background: #d9190a;
   border: 0;
@@ -8816,7 +8817,7 @@ form .form-actions .node-readmore a,
   font-family: "Montserrat", sans-serif;
   text-transform: uppercase;
 }
-/* line 23, ../sass/components/_buttons.scss */
+/* line 24, ../sass/components/_buttons.scss */
 .pager-load-more li > a:hover {
   background: #af1407;
 }
