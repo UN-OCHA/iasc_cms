@@ -34,39 +34,16 @@ function iasc_configuration_features_override_default_overrides() {
       ),
       'css' => array(),
       'extras' => array(),
-      'position' => 2,
+      'position' => 1,
       'locks' => array(),
       'uuid' => '11c7782e-baf7-4383-8a84-80f416b02190',
     );
-  $overrides["page_manager_pages.panels_customerror_404.default_handlers|page_panels_customerror_404_panel_context|conf|display|content|new-73bbb29a-d366-4f5d-84a6-c9276b139c51"] = (object) array(
-      'pid' => 'new-73bbb29a-d366-4f5d-84a6-c9276b139c51',
-      'panel' => 'contentmain',
-      'type' => 'fieldable_panels_pane',
-      'subtype' => 'fpid:7',
-      'shown' => TRUE,
-      'access' => array(),
-      'configuration' => array(
-        'view_mode' => 'full',
-      ),
-      'cache' => array(),
-      'style' => array(
-        'settings' => NULL,
-      ),
-      'css' => array(),
-      'extras' => array(),
-      'position' => 0,
-      'locks' => array(),
-      'uuid' => '73bbb29a-d366-4f5d-84a6-c9276b139c51',
-    );
   $overrides["page_manager_pages.panels_customerror_404.default_handlers|page_panels_customerror_404_panel_context|conf|display|content|new-c2b62bd5-89d0-45c6-85f7-9560a772726c|panel"] = 'contentmain';
-  $overrides["page_manager_pages.panels_customerror_404.default_handlers|page_panels_customerror_404_panel_context|conf|display|content|new-c2b62bd5-89d0-45c6-85f7-9560a772726c|position"] = 1;
-  $overrides["page_manager_pages.panels_customerror_404.default_handlers|page_panels_customerror_404_panel_context|conf|display|content|new-c2b62bd5-89d0-45c6-85f7-9560a772726c|shown"] = FALSE;
   $overrides["page_manager_pages.panels_customerror_404.default_handlers|page_panels_customerror_404_panel_context|conf|display|layout"] = 'radix_boxton';
   $overrides["page_manager_pages.panels_customerror_404.default_handlers|page_panels_customerror_404_panel_context|conf|display|panel_settings|style_settings|contentmain"] = NULL;
   $overrides["page_manager_pages.panels_customerror_404.default_handlers|page_panels_customerror_404_panel_context|conf|display|panels|contentmain"] = array(
-    0 => 'new-73bbb29a-d366-4f5d-84a6-c9276b139c51',
-    1 => 'new-c2b62bd5-89d0-45c6-85f7-9560a772726c',
-    2 => 'new-11c7782e-baf7-4383-8a84-80f416b02190',
+    0 => 'new-c2b62bd5-89d0-45c6-85f7-9560a772726c',
+    1 => 'new-11c7782e-baf7-4383-8a84-80f416b02190',
   );
   $overrides["page_manager_pages.panels_customerror_404.default_handlers|page_panels_customerror_404_panel_context|conf|display|panels|middle"]["DELETED"] = TRUE;
 
