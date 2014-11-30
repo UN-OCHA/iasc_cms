@@ -24,6 +24,13 @@ function iasc_css_alter(&$css) {
 }
 
 /**
+ * Implements hook_js_alter().
+ */
+function iasc_js_alter(&$javascript) {
+  unset($javascript['sites/all/libraries/respondjs/respond.min.js']);
+}
+
+/**
  * Implements template_preprocess_entity().
  */
 function iasc_preprocess_entity(&$vars) {
@@ -76,6 +83,12 @@ function iasc_preprocess_page(&$variables) {
     unset($variables['page']['page_bottom']['panels_ipe']);
     array_push($variables['page']['panelipe'], $panels_ipe);
   }
+
+  drupal_add_js(libraries_get_path('respondjs') . '/src/respond.js', array(
+    'group' => JS_THEME,
+    'weight' => 20,
+  ));
+
 }
 
 /**
