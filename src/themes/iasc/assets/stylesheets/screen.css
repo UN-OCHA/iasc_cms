@@ -8498,132 +8498,67 @@ html.js input.throbbing {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* line 40, ../sass/base/_icons.scss */
-.icons-arrow, .panel-success.arrow a:before {
-  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf101;');
-}
-
-/* line 44, ../sass/base/_icons.scss */
+/* line 41, ../sass/base/_icons.scss */
 .icons-arrow:before, .panel-success.arrow a:before {
   content: "\f101";
 }
 
-/* line 48, ../sass/base/_icons.scss */
-.icons-calendar {
-  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf102;');
-}
-
-/* line 52, ../sass/base/_icons.scss */
+/* line 46, ../sass/base/_icons.scss */
 .icons-calendar:before {
   content: "\f102";
 }
 
-/* line 56, ../sass/base/_icons.scss */
-.icons-contact {
-  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf103;');
-}
-
-/* line 60, ../sass/base/_icons.scss */
+/* line 51, ../sass/base/_icons.scss */
 .icons-contact:before {
   content: "\f103";
 }
 
-/* line 64, ../sass/base/_icons.scss */
-.icons-home {
-  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf104;');
-}
-
-/* line 68, ../sass/base/_icons.scss */
+/* line 56, ../sass/base/_icons.scss */
 .icons-home:before {
   content: "\f104";
 }
 
-/* line 72, ../sass/base/_icons.scss */
-.icons-layout {
-  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf105;');
-}
-
-/* line 76, ../sass/base/_icons.scss */
+/* line 61, ../sass/base/_icons.scss */
 .icons-layout:before {
   content: "\f105";
 }
 
-/* line 80, ../sass/base/_icons.scss */
-.icons-login {
-  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf106;');
-}
-
-/* line 84, ../sass/base/_icons.scss */
+/* line 66, ../sass/base/_icons.scss */
 .icons-login:before {
   content: "\f106";
 }
 
-/* line 88, ../sass/base/_icons.scss */
-.icons-logout {
-  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf107;');
-}
-
-/* line 92, ../sass/base/_icons.scss */
+/* line 71, ../sass/base/_icons.scss */
 .icons-logout:before {
   content: "\f107";
 }
 
-/* line 96, ../sass/base/_icons.scss */
-.icons-morearrow {
-  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf108;');
-}
-
-/* line 100, ../sass/base/_icons.scss */
+/* line 76, ../sass/base/_icons.scss */
 .icons-morearrow:before, .pager-load-more li > a:after {
   content: "\f108";
 }
 
-/* line 104, ../sass/base/_icons.scss */
-.icons-morearrowdown, .filter-btn .btn .caret, .filter-btn .node-readmore a .caret, .node-readmore .filter-btn a .caret {
-  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf109;');
-}
-
-/* line 108, ../sass/base/_icons.scss */
+/* line 81, ../sass/base/_icons.scss */
 .icons-morearrowdown:before, .filter-btn .btn .caret:before, .filter-btn .node-readmore a .caret:before, .node-readmore .filter-btn a .caret:before {
   content: "\f109";
 }
 
-/* line 112, ../sass/base/_icons.scss */
-.icons-myaccount {
-  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf10a;');
-}
-
-/* line 116, ../sass/base/_icons.scss */
+/* line 86, ../sass/base/_icons.scss */
 .icons-myaccount:before {
   content: "\f10a";
 }
 
-/* line 120, ../sass/base/_icons.scss */
-.icons-page, .panel-success.doc-icon a:before {
-  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf10b;');
-}
-
-/* line 124, ../sass/base/_icons.scss */
+/* line 91, ../sass/base/_icons.scss */
 .icons-page:before, .panel-success.doc-icon a:before {
   content: "\f10b";
 }
 
-/* line 128, ../sass/base/_icons.scss */
-.icons-resources {
-  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf10c;');
-}
-
-/* line 132, ../sass/base/_icons.scss */
+/* line 96, ../sass/base/_icons.scss */
 .icons-resources:before {
   content: "\f10c";
 }
 
-/* line 136, ../sass/base/_icons.scss */
-.icons-search {
-  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf10d;');
-}
-
-/* line 140, ../sass/base/_icons.scss */
+/* line 101, ../sass/base/_icons.scss */
 .icons-search:before, form.navbar-form .form-type-textfield:after {
   content: "\f10d";
 }
@@ -9222,22 +9157,22 @@ img.bio-circled {
 .navbar-top a:before {
   font-size: 24px;
 }
-/* line 41, ../sass/components/_navigation.scss */
-.navbar-top a span {
+/* line 43, ../sass/components/_navigation.scss */
+.csstransitions .navbar-top a span {
   display: none;
 }
 @media screen and (min-width: 1200px) {
-  /* line 43, ../sass/components/_navigation.scss */
+  /* line 46, ../sass/components/_navigation.scss */
   .navbar-top a:before {
     font-size: 19px;
   }
 }
-/* line 47, ../sass/components/_navigation.scss */
+/* line 50, ../sass/components/_navigation.scss */
 .navbar-top a:hover {
   color: #a10152;
 }
 @media screen and (max-width: 480px) {
-  /* line 52, ../sass/components/_navigation.scss */
+  /* line 55, ../sass/components/_navigation.scss */
   .navbar-top a:before {
     font-size: 19px;
   }
@@ -9247,14 +9182,14 @@ img.bio-circled {
   .navbar-top {
     padding-left: 0;
   }
-  /* line 56, ../sass/components/_navigation.scss */
+  /* line 59, ../sass/components/_navigation.scss */
   .navbar-top li {
     width: 25%;
     padding: 0;
     text-align: center;
     float: left;
   }
-  /* line 62, ../sass/components/_navigation.scss */
+  /* line 65, ../sass/components/_navigation.scss */
   .logged-in .navbar-top li {
     width: 20%;
   }
@@ -9586,22 +9521,21 @@ img.bio-circled {
   }
   /* line 21, ../sass/components/_views-events.scss */
   .view-oa-event-list .views-row:nth-child(odd) {
-    padding-right: 10px;
+    padding-right: 20px;
     clear: left;
   }
 }
 
 @media screen and (min-width: 1200px) {
-  /* line 2, ../sass/state/_animation.scss */
-  form.navbar-form {
+  /* line 3, ../sass/state/_animation.scss */
+  .csstransitions form.navbar-form {
     -webkit-transition: max-width, 0.5s;
     -o-transition: max-width, 0.5s;
     transition: max-width, 0.5s;
     max-width: 30px;
   }
-
-  /* line 6, ../sass/state/_animation.scss */
-  form.navbar-form.grow {
+  /* line 7, ../sass/state/_animation.scss */
+  .csstransitions form.navbar-form.grow {
     -webkit-transition: max-width, 0.2s;
     -o-transition: max-width, 0.2s;
     transition: max-width, 0.2s;

@@ -38,7 +38,10 @@
   a {  
     color: $brand-primary;
     &:before { font-size: 24px; }
-    span { display: none; }
+    // Use the no transition to detect IE8 to not hide text because icons are not working. 
+    .csstransitions & {
+      span { display: none; }
+    }
     @media screen and (min-width: $screen-lg-min) {
       &:before { font-size: 19px; }
     }

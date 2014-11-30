@@ -18,7 +18,7 @@
       clear: none;
       float: left;
       width: 50%;
-      &:nth-child(odd) { padding-right: $padding-large-vertical / 2; clear: left;}
+      &:nth-child(odd) { padding-right: $padding-large-vertical; clear: left;}
     }
   }
 
