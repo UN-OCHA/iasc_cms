@@ -8463,7 +8463,7 @@ html.js input.throbbing {
  * Helpers not included in bootsrap
  */
 /* line 6, ../sass/base/_helpers.scss */
-.radius {
+.radius, .page-page-not-found .panel-panel {
   border-radius: 4px;
 }
 
@@ -8624,7 +8624,7 @@ html.js input.throbbing {
 }
 
 /* line 140, ../sass/base/_icons.scss */
-.icons-search:before, form.navbar-form .form-type-textfield:after {
+.icons-search:before, .page-page-not-found #apachesolr-panels-search-form .form-type-textfield:after, form.navbar-form .form-type-textfield:after {
   content: "\f10d";
 }
 
@@ -8809,6 +8809,103 @@ body.ctools-modal-open {
   #main-wrapper > .container {
     padding-bottom: 100px;
   }
+}
+
+/* line 2, ../sass/components/_404.scss */
+.page-page-not-found .panel-panel {
+  background: #faf9f9;
+  text-align: center;
+  border: 1px solid #fcb9b3;
+  font-size: 16px;
+}
+@media screen and (min-width: 768px) {
+  /* line 2, ../sass/components/_404.scss */
+  .page-page-not-found .panel-panel {
+    margin-top: 70px;
+  }
+}
+/* line 11, ../sass/components/_404.scss */
+.page-page-not-found .panel-panel p {
+  margin-bottom: 30px;
+}
+/* line 14, ../sass/components/_404.scss */
+.page-page-not-found .panel-panel h1 {
+  margin-top: 0;
+  font-size: 70px;
+}
+@media screen and (min-width: 768px) {
+  /* line 2, ../sass/components/_404.scss */
+  .page-page-not-found .panel-panel {
+    position: relative;
+    min-height: 1px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+@media screen and (min-width: 768px) and (min-width: 992px) {
+  /* line 2, ../sass/components/_404.scss */
+  .page-page-not-found .panel-panel {
+    float: left;
+    width: 50%;
+  }
+}
+@media screen and (min-width: 768px) and (min-width: 992px) {
+  /* line 2, ../sass/components/_404.scss */
+  .page-page-not-found .panel-panel {
+    margin-left: 25%;
+  }
+}
+/* line 22, ../sass/components/_404.scss */
+.page-page-not-found .panel-panel .form-actions {
+  display: none;
+}
+/* line 26, ../sass/components/_404.scss */
+.page-page-not-found .panel-panel-inner {
+  padding: 60px;
+}
+/* line 29, ../sass/components/_404.scss */
+.page-page-not-found #apachesolr-panels-search-form .form-type-textfield {
+  padding-right: 0;
+}
+/* line 31, ../sass/components/_404.scss */
+.page-page-not-found #apachesolr-panels-search-form .form-type-textfield input {
+  -webkit-box-shadow: #dde3ef 0 0 0 inset;
+  box-shadow: #dde3ef 0 0 0 inset;
+  background: #dde3e5;
+  border: none;
+  color: #701616;
+  font-size: 17px;
+  /* Firefox 18- */
+  /* Firefox 19+ */
+}
+/* line 37, ../sass/components/_404.scss */
+.page-page-not-found #apachesolr-panels-search-form .form-type-textfield input::-webkit-input-placeholder {
+  color: #701616;
+  font-family: "Montserrat", sans-serif;
+}
+/* line 38, ../sass/components/_404.scss */
+.page-page-not-found #apachesolr-panels-search-form .form-type-textfield input:-moz-placeholder {
+  color: #701616;
+  font-family: "Montserrat", sans-serif;
+}
+/* line 39, ../sass/components/_404.scss */
+.page-page-not-found #apachesolr-panels-search-form .form-type-textfield input::-moz-placeholder {
+  color: #701616;
+  font-family: "Montserrat", sans-serif;
+}
+/* line 40, ../sass/components/_404.scss */
+.page-page-not-found #apachesolr-panels-search-form .form-type-textfield input:-ms-input-placeholder {
+  color: #701616;
+  font-family: "Montserrat", sans-serif;
+}
+/* line 42, ../sass/components/_404.scss */
+.page-page-not-found #apachesolr-panels-search-form .form-type-textfield:after {
+  font-family: icons;
+  z-index: 2;
+  position: absolute;
+  right: 8px;
+  top: 7px;
+  color: black;
 }
 
 /* line 1, ../sass/components/_buttons.scss */
@@ -9466,7 +9563,8 @@ img.bio-circled {
   margin-bottom: 10px;
 }
 
-/* line 53, ../sass/components/_panel.scss */
+/* line 54, ../sass/components/_panel.scss */
+.page-page-not-found h1.title,
 .node-type-oa-event h1.title,
 .node-type-oa-wiki-page h1.title {
   display: none;

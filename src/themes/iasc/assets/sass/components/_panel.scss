@@ -48,6 +48,7 @@
 }
 
 // Hide page titles on these nodes
+.page-page-not-found,
 .node-type-oa-event,
 .node-type-oa-wiki-page {
   h1.title { display: none; }
