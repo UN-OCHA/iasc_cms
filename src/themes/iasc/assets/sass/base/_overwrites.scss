@@ -18,5 +18,11 @@ div#panels-ipe-control-container {
   position: relative;
   top: auto;
   background-color: transparent;
-  .panels-ipe-button-container { text-align: right;}
+  .panels-ipe-button-container { 
+    text-align: right; 
+    margin: 0; 
+  }
+  .panels-ipe-pseudobutton-container:last-child {
+    margin-right: 0;
+  }
 }

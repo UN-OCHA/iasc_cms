@@ -37,105 +37,66 @@
 
 // Icons
 
-.icons-arrow {
-	*zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf101;');
-}
 
 .icons-arrow:before {
 	content:"\f101";
 }
 
-.icons-calendar {
-	*zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf102;');
-}
 
 .icons-calendar:before {
 	content:"\f102";
 }
 
-.icons-contact {
-	*zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf103;');
-}
 
 .icons-contact:before {
 	content:"\f103";
 }
 
-.icons-home {
-	*zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf104;');
-}
 
 .icons-home:before {
 	content:"\f104";
 }
 
-.icons-layout {
-	*zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf105;');
-}
 
 .icons-layout:before {
 	content:"\f105";
 }
 
-.icons-login {
-	*zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf106;');
-}
 
 .icons-login:before {
 	content:"\f106";
 }
 
-.icons-logout {
-	*zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf107;');
-}
 
 .icons-logout:before {
 	content:"\f107";
 }
 
-.icons-morearrow {
-	*zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf108;');
-}
 
 .icons-morearrow:before {
 	content:"\f108";
 }
 
-.icons-morearrowdown {
-	*zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf109;');
-}
 
 .icons-morearrowdown:before {
 	content:"\f109";
 }
 
-.icons-myaccount {
-	*zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf10a;');
-}
 
 .icons-myaccount:before {
 	content:"\f10a";
 }
 
-.icons-page {
-	*zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf10b;');
-}
 
 .icons-page:before {
 	content:"\f10b";
 }
 
-.icons-resources {
-	*zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf10c;');
-}
 
 .icons-resources:before {
 	content:"\f10c";
 }
 
-.icons-search {
-	*zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf10d;');
-}
 
 .icons-search:before {
 	content:"\f10d";
