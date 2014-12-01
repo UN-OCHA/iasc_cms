@@ -1,10 +1,13 @@
 @media screen and (min-width: $screen-lg-min) {
-  form.navbar-form {
-      @include transition(max-width, .5s);
-      max-width: 30px;
-  }
-  form.navbar-form.grow {
-    @include transition(max-width, .2s); 
-    max-width: 200px;
+  .csstransitions {
+    form.navbar-form {
+        @include transition(max-width, .5s);
+        max-width: 30px;
+    }
+    form.navbar-form.grow {
+      @include transition(max-width, .2s); 
+      max-width: 200px;
+    }
   }
 }
+
