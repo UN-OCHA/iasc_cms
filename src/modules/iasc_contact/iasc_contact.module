@@ -13,7 +13,7 @@ function iasc_contact_form_node_form_alter(&$form, &$form_state, $form_id) {
   $content_type = $form['#node']->type;
   if ('contact' == $content_type) {
     // Make the node title the full name of the contact.
-    $form['title']['#access'] = FALSE;
+    $form['title_field']['#access'] = FALSE;
     $form['#submit'][] = 'iasc_contact_form_submit';
 
     // Change the labels for Building and Room. These are part of addressfield.
@@ -53,7 +53,8 @@ function iasc_contact_form_submit($form, &$form_state) {
 
   // Ensure the generated title isn't too long.
   $title = substr($title, 0, 255);
-  $form_state['values']['title'] = $title;
+  
+  $form_state['values']['title_field'][LANGUAGE_NONE][0]['value'] = $title;
 }
 
 /**
