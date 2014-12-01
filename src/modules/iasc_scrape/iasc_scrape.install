@@ -194,3 +194,32 @@ function iasc_scrape_update_7004() {
   db_add_index('iasc_scrape', 'entity_id', array('entity_id'));
   db_add_index('iasc_scrape', 'legacy_meeting_id', array('legacy_meeting_id'));
 }
+
+/**
+ * Add agenda items to scrape table.
+ */
+function iasc_scrape_update_7005() {
+  $result = db_query("SELECT agendaID FROM {iasc_scrape_agendas} isa")
+    ->fetchAll();
+
+  if (is_array($result)) {
+    $query = db_insert('iasc_scrape')
+      ->fields(array(
+        'status',
+        'scrape',
+        'legacy_id',
+        'data',
+        'type',
+      ));
+    foreach ($result as $agenda_item) {
+      $query->values(array(
+        'status' => 0,
+        'scrape' => 1,
+        'legacy_id' => $agenda_item->agendaID,
+        'data' => serialize(array()),
+        'type' => 'agenda',
+      ));
+    }
+    $query->execute();
+  }
+}
