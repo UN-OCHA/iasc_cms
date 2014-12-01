@@ -42,3 +42,43 @@ function iasc_contact_update_7001() {
   field_delete_field('field_suffix');
   field_purge_batch(10);
 }
+
+/**
+ * Implements hook_update_N().
+ *
+ * Update all contacts missing value for title_field.
+ */
+function iasc_contact_update_7002() {
+  // Get all contacts that don't have an entry in title_field.
+  $result = db_query("
+      SELECT n.nid, n.title FROM {node} n
+      LEFT OUTER JOIN {field_data_title_field} t
+      ON n.nid = t.entity_id
+      WHERE t.entity_id IS NULL
+      AND n.type = 'contact'"
+    )
+    ->fetchAll();
+
+
+  if ($result) {
+    foreach ($result as $contact) {
+      $node = node_load($contact->nid);
+
+      // Update the title fields.
+      $node->title = $contact->title;
+      $node->title_original = $contact->title;
+      $node->title_field[LANGUAGE_NONE][0] = array(
+        'value' => $contact->title,
+        'format' => NULL,
+        'safe_value' => $contact->title,
+      );
+
+      node_save($node);
+
+      watchdog('iasc_contact', "Updated contact: %nid, %title", array(
+        '%nid' => $contact->nid,
+        '%title' => $contact->title)
+      );
+    }
+  }
+}
