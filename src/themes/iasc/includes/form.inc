@@ -12,6 +12,10 @@ function iasc_form_search_form_alter(&$form, &$form_state, $form_id) {
   $form['basic']['submit']['#attributes']['class'][] = 'hidden';
 }
 
+function iasc_form_apachesolr_panels_search_form_alter(&$form, &$form_state, $form_id) {
+  $form['apachesolr_panels_search_form']['#attributes']['placeholder'] = array('placeholder' => t('Search'));
+}
+
 /**
  * Implements theme_file_managed_file().
  */

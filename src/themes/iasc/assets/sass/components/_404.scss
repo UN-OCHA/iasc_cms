@@ -1,0 +1,51 @@
+.page-page-not-found {
+  .panel-panel {
+    @media screen and (min-width: $screen-sm-min) {
+      margin-top: 70px;
+    }
+    background: $gray-lightess;
+    text-align: center;
+    @extend .radius;
+    border: 1px solid lighten($red, 40%);
+    font-size: 16px;
+    p {
+      margin-bottom: 30px;
+    }
+    h1 {
+      margin-top: 0;
+      font-size: 70px;
+    }
+    @media screen and (min-width: $screen-sm-min) {
+      @include make-md-column(6);
+      @include make-md-column-offset(3);
+    }
+    .form-actions {
+      display: none;
+    }
+  }
+  .panel-panel-inner {
+    padding: 60px;
+  }
+  #apachesolr-panels-search-form .form-type-textfield {
+    padding-right: 0;
+    input {
+      @include box-shadow(#dde3ef 0 0 0 inset);
+      background: #dde3e5;
+      border: none;
+      color: #701616;
+      font-size: 17px;
+      &::-webkit-input-placeholder { color: #701616; font-family: $font-family-sans-serif;}
+      &:-moz-placeholder { color: #701616; font-family: $font-family-sans-serif;} /* Firefox 18- */
+      &::-moz-placeholder { color: #701616; font-family: $font-family-sans-serif;} /* Firefox 19+ */
+      &:-ms-input-placeholder {  color: #701616;  font-family: $font-family-sans-serif;}
+    }
+    &:after {
+      @extend .icons-search:before;
+      font-family: icons;
+      z-index: 2;
+      position: absolute;
+      right: 8px; top: 7px;
+      color: $black;
+    }
+  }
+}
