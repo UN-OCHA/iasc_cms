@@ -419,13 +419,6 @@ function iasc_contact_views_default_views() {
   $handler->display->display_options['pager']['options']['quantity'] = '9';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['style_options']['grouping'] = array(
-    0 => array(
-      'field' => 'field_position',
-      'rendered' => 1,
-      'rendered_strip' => 0,
-    ),
-  );
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
@@ -437,6 +430,10 @@ function iasc_contact_views_default_views() {
   $handler->display->display_options['relationships']['field_membership_value']['table'] = 'field_data_field_membership';
   $handler->display->display_options['relationships']['field_membership_value']['field'] = 'field_membership_value';
   $handler->display->display_options['relationships']['field_membership_value']['delta'] = '-1';
+  /* Relationship: Content: Organization (field_organisation) */
+  $handler->display->display_options['relationships']['field_organisation_tid']['id'] = 'field_organisation_tid';
+  $handler->display->display_options['relationships']['field_organisation_tid']['table'] = 'field_data_field_organisation';
+  $handler->display->display_options['relationships']['field_organisation_tid']['field'] = 'field_organisation_tid';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Photo */
   $handler->display->display_options['fields']['field_photo']['id'] = 'field_photo';
@@ -520,12 +517,14 @@ function iasc_contact_views_default_views() {
   $handler->display->display_options['sorts']['field_position_value']['table'] = 'field_data_field_position';
   $handler->display->display_options['sorts']['field_position_value']['field'] = 'field_position_value';
   $handler->display->display_options['sorts']['field_position_value']['relationship'] = 'field_membership_value';
+  $handler->display->display_options['sorts']['field_position_value']['exposed'] = TRUE;
   $handler->display->display_options['sorts']['field_position_value']['expose']['label'] = 'Position';
   /* Sort criterion: Content: Last Name (field_last_name) */
   $handler->display->display_options['sorts']['field_last_name_value']['id'] = 'field_last_name_value';
   $handler->display->display_options['sorts']['field_last_name_value']['table'] = 'field_data_field_last_name';
   $handler->display->display_options['sorts']['field_last_name_value']['field'] = 'field_last_name_value';
-  $handler->display->display_options['sorts']['field_last_name_value']['expose']['label'] = 'Last Name (field_last_name)';
+  $handler->display->display_options['sorts']['field_last_name_value']['exposed'] = TRUE;
+  $handler->display->display_options['sorts']['field_last_name_value']['expose']['label'] = 'Last Name';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Type */
@@ -645,6 +644,25 @@ function iasc_contact_views_default_views() {
   $handler->display->display_options['filters']['field_position_value']['expose']['autocomplete_raw_suggestion'] = 1;
   $handler->display->display_options['filters']['field_position_value']['expose']['autocomplete_raw_dropdown'] = 1;
   $handler->display->display_options['filters']['field_position_value']['expose']['autocomplete_dependent'] = 0;
+  /* Filter criterion: Taxonomy term: Membership (field_membership_level) */
+  $handler->display->display_options['filters']['field_membership_level_value']['id'] = 'field_membership_level_value';
+  $handler->display->display_options['filters']['field_membership_level_value']['table'] = 'field_data_field_membership_level';
+  $handler->display->display_options['filters']['field_membership_level_value']['field'] = 'field_membership_level_value';
+  $handler->display->display_options['filters']['field_membership_level_value']['relationship'] = 'field_organisation_tid';
+  $handler->display->display_options['filters']['field_membership_level_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_membership_level_value']['expose']['operator_id'] = 'field_membership_level_value_op';
+  $handler->display->display_options['filters']['field_membership_level_value']['expose']['label'] = 'Membership Level';
+  $handler->display->display_options['filters']['field_membership_level_value']['expose']['description'] = 'Membership Level of Organization (Full Member, Standing Invitee, etc)';
+  $handler->display->display_options['filters']['field_membership_level_value']['expose']['operator'] = 'field_membership_level_value_op';
+  $handler->display->display_options['filters']['field_membership_level_value']['expose']['identifier'] = 'field_membership_level_value';
+  $handler->display->display_options['filters']['field_membership_level_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    5 => 0,
+    6 => 0,
+  );
   $handler->display->display_options['pane_category']['name'] = 'IASC Contacts';
   $handler->display->display_options['pane_category']['weight'] = '0';
   $handler->display->display_options['allow']['use_pager'] = 'use_pager';
