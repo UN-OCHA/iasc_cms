@@ -256,7 +256,7 @@ function iasc_scrape_save_agenda($nid) {
 
   // Update the scrape table.
   foreach ($agenda_items as $agenda_item) {
-    iasc_scrape_update($agenda_item['agendaID'], $meeting->nid, 'agenda');
+    iasc_scrape_update($agenda_item->agendaID, $meeting->nid, 'agenda');
   }
 
   drupal_set_message(t(
@@ -289,6 +289,7 @@ function iasc_scrape_all_agenda_items($legacy_meeting_id) {
   $result = db_select('iasc_scrape_agendas', 'sca')
     ->fields('sca', array(
       'agendaID',
+      'calmeetID',
       'agorder',
       'agitem',
       'agsubitem',
@@ -298,7 +299,7 @@ function iasc_scrape_all_agenda_items($legacy_meeting_id) {
     ->condition('calmeetID', $legacy_meeting_id)
     ->orderBy('agorder', 'ASC')
     ->execute()
-    ->fetchAssoc();
+    ->fetchAllAssoc('agorder');
 
   return $result;
 }
@@ -411,9 +412,9 @@ function iasc_scrape_set_agenda_items(&$meeting_wrapper, $agenda_items) {
     // Wrap collection with Entity API.
     $agenda_wrapper = entity_metadata_wrapper('field_collection_item', $raw_collection);
 
-    if ('NULL' != $agenda_item['agitem']) {
+    if ('NULL' != $agenda_item->agitem) {
       // If title is longer than 255, split into description.
-      $title = $agenda_item['agitem'];
+      $title = $agenda_item->agitem;
       if (strlen($title) > 255) {
         $split_title = explode(' ', $title, 2);
         $title = $split_title[0];
@@ -422,14 +423,14 @@ function iasc_scrape_set_agenda_items(&$meeting_wrapper, $agenda_items) {
     }
 
     $description = array();
-    if ('NULL' != $agenda_item['agsubitem']) {
-      $description[] = $agenda_item['agsubitem'];
+    if ('NULL' != $agenda_item->agsubitem) {
+      $description[] = $agenda_item->agsubitem;
     }
-    if ('NULL' != $agenda_item['agdescription']) {
+    if ('NULL' != $agenda_item->agdescription) {
       if (isset($split_title[1])) {
         $description[] = $split_title[1];
       }
-      $description[] = $agenda_item['agdescription'];
+      $description[] = $agenda_item->agdescription;
     }
 
     $description = (count($description) > 1) ? implode(' ', $description) : $description;
@@ -439,20 +440,36 @@ function iasc_scrape_set_agenda_items(&$meeting_wrapper, $agenda_items) {
     }
 
     // Set contact.
-    $contact_id = iasc_contact_get_nid_by_legacyid($agenda_item['presenterID']);
+    $contact_id = iasc_contact_get_nid_by_legacyid($agenda_item->presenterID);
     if ($contact_id) {
       $agenda_wrapper->field_contact = array($contact_id);
     }
 
-    // Set document, only on first agenda item.
-    if ($key === 0) {
-      $document_id = iasc_meeting_get_document_id_by_meeting_id($agenda_item['calmeetID']);
-      if ($document_id) {
-        $agenda_wrapper->field_referenced_docs = array($document_id);
-      }
+    // Get all documents for agenda.
+    $documents = iasc_scrape_get_documents_by_agendaid($agenda_item->agendaID);
+    if (!empty($documents)) {
+      $agenda_wrapper->field_referenced_docs = $documents;
+    }
+    else {
+      $agenda_wrapper->field_referenced_docs = NULL;
     }
 
     // Save the changes to the entity.
     $agenda_wrapper->save();
   }
+}
+
+/**
+ * Grab document entities by the legacy id of the agenda.
+ */
+function iasc_scrape_get_documents_by_agendaid($agenda_id) {
+  $result = db_select('iasc_scrape', 'sc')
+    ->fields('sc', array('entity_id', 'data'))
+    ->condition('type', 'document')
+    ->condition('legacy_agenda_id', $agenda_id)
+    ->orderBy('legacy_agenda_id', 'ASC')
+    ->execute()
+    ->fetchAllAssoc('entity_id');
+
+  return array_keys($result);
 }
