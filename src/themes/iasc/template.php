@@ -92,6 +92,17 @@ function iasc_preprocess_page(&$variables) {
 }
 
 /**
+ * Implements hook_page_alter().
+ */
+function iasc_page_alter(&$page) {
+  // Only print class="row" on pages that uses panels to align the ones that don't
+  if (panels_get_current_page_display()) { 
+    $page['content']['#prefix'] = '<div class="row">';
+    $page['content']['#suffix'] = '</div>';
+  }
+}
+
+/**
  * Implements template_preprocess_node().
  */
 function iasc_preprocess_node(&$vars) {

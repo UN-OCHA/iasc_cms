@@ -150,6 +150,61 @@ function iasc_configuration_features_override_default_overrides() {
   $overrides["panelizer_defaults.node:oa_section:calendar_section.display|panels|sidebar|0"] = 'new-5241f5c7-9e10-4e79-a1ce-84f68ad200f3';
   $overrides["panelizer_defaults.node:oa_section:calendar_section.display|panels|sidebar|1"]["DELETED"] = TRUE;
   $overrides["panelizer_defaults.node:oa_section:calendar_section.display|panels|sidebar|2"]["DELETED"] = TRUE;
+  $overrides["panelizer_defaults.node:oa_section:oa_section_news.display|content|new-16ff2951-2241-4d47-b6d0-1ad702a78848"] = (object) array(
+      'pid' => 'new-16ff2951-2241-4d47-b6d0-1ad702a78848',
+      'panel' => 'contentmain',
+      'type' => 'views_panes',
+      'subtype' => 'iasc_recent_activity_by_term-panel_pane_iasc_recent_by_term',
+      'shown' => TRUE,
+      'access' => array(),
+      'configuration' => array(
+        'exposed' => array(
+          'og_group_ref_target_id' => '',
+          'og_group_ref_target_id_mine' => 0,
+          'og_subspaces_view_all' => 1,
+          'og_subspaces_view_parent' => 0,
+          'oa_section_ref_target_id' => '',
+          'type' => 'announcement',
+          'term_node_tid_depth_1' => 'All',
+          'term_node_tid_depth' => 'All',
+          'term_node_tid_depth_2' => 'All',
+          'keys' => '',
+          'sort_order' => 'DESC',
+          'sort_by' => 'field_published_date_value',
+        ),
+        'use_pager' => 1,
+        'pager_id' => 0,
+        'items_per_page' => 10,
+        'override_title' => '',
+        'override_title_text' => '',
+        'view_settings' => 'rendered_entity',
+        'header_type' => 'none',
+        'view_mode' => 'teaser',
+        'widget_title' => '',
+        'fields_override' => array(
+          'title' => 1,
+          'field_published_date' => 1,
+        ),
+      ),
+      'cache' => array(),
+      'style' => array(
+        'settings' => NULL,
+      ),
+      'css' => array(),
+      'extras' => array(),
+      'position' => 0,
+      'locks' => array(),
+      'uuid' => '16ff2951-2241-4d47-b6d0-1ad702a78848',
+    );
+  $overrides["panelizer_defaults.node:oa_section:oa_section_news.display|content|new-2010ab8d-8b3a-4f76-8bcd-a9b92ba1417b"]["DELETED"] = TRUE;
+  $overrides["panelizer_defaults.node:oa_section:oa_section_news.display|content|new-60eba777-8bd7-4984-aefb-7777899f42d9"]["DELETED"] = TRUE;
+  $overrides["panelizer_defaults.node:oa_section:oa_section_news.display|content|new-a1345e0e-4ffb-4445-b615-b8922b7dba10"]["DELETED"] = TRUE;
+  $overrides["panelizer_defaults.node:oa_section:oa_section_news.display|content|new-d2e48391-04fd-4e47-a3ee-9442c060a4e8"]["DELETED"] = TRUE;
+  $overrides["panelizer_defaults.node:oa_section:oa_section_news.display|content|new-e7915e9b-dd20-424f-b4e9-4bc4d9a81cbc"]["DELETED"] = TRUE;
+  $overrides["panelizer_defaults.node:oa_section:oa_section_news.display|panels|contentmain|0"] = 'new-16ff2951-2241-4d47-b6d0-1ad702a78848';
+  $overrides["panelizer_defaults.node:oa_section:oa_section_news.display|panels|contentmain|1"]["DELETED"] = TRUE;
+  $overrides["panelizer_defaults.node:oa_section:oa_section_news.display|panels|contentmain|2"]["DELETED"] = TRUE;
+  $overrides["panelizer_defaults.node:oa_section:oa_section_news.display|panels|sidebar"]["DELETED"] = TRUE;
   $overrides["panelizer_defaults.node:oa_space:default.display|content|new-02b7adcf-d6d0-41cc-9e74-71ce68194477"] = (object) array(
       'pid' => 'new-02b7adcf-d6d0-41cc-9e74-71ce68194477',
       'panel' => 'contentmain',

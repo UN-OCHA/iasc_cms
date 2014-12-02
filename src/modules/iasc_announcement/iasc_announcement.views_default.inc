@@ -90,7 +90,7 @@ function iasc_announcement_views_default_views() {
   $handler->display->display_options['display_description'] = 'Panel Pane of items in the nodequeue: Featured on Home';
   $handler->display->display_options['defaults']['link_display'] = FALSE;
   $handler->display->display_options['link_display'] = 'page_featured_home';
-  $handler->display->display_options['pane_category']['name'] = 'IASC';
+  $handler->display->display_options['pane_category']['name'] = 'IASC News';
   $handler->display->display_options['pane_category']['weight'] = '0';
   $handler->display->display_options['allow']['use_pager'] = 0;
   $handler->display->display_options['allow']['items_per_page'] = 0;
@@ -125,7 +125,7 @@ function iasc_announcement_views_default_views() {
     'featured_products' => 0,
     'featured_home' => 0,
   );
-  $handler->display->display_options['pane_category']['name'] = 'IASC';
+  $handler->display->display_options['pane_category']['name'] = 'IASC News';
   $handler->display->display_options['pane_category']['weight'] = '0';
   $handler->display->display_options['allow']['use_pager'] = 0;
   $handler->display->display_options['allow']['items_per_page'] = 0;

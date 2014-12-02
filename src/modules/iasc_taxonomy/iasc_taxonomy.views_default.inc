@@ -184,6 +184,14 @@ function iasc_taxonomy_views_default_views() {
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  $handler->display->display_options['sorts']['created']['exposed'] = TRUE;
+  $handler->display->display_options['sorts']['created']['expose']['label'] = 'Post date';
+  /* Sort criterion: Content: Published Date (field_published_date) */
+  $handler->display->display_options['sorts']['field_published_date_value']['id'] = 'field_published_date_value';
+  $handler->display->display_options['sorts']['field_published_date_value']['table'] = 'field_data_field_published_date';
+  $handler->display->display_options['sorts']['field_published_date_value']['field'] = 'field_published_date_value';
+  $handler->display->display_options['sorts']['field_published_date_value']['exposed'] = TRUE;
+  $handler->display->display_options['sorts']['field_published_date_value']['expose']['label'] = 'Published Date';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -202,6 +210,24 @@ function iasc_taxonomy_views_default_views() {
   $handler->display->display_options['filters']['og_group_ref_target_id']['expose']['operator'] = 'og_group_ref_target_id_op';
   $handler->display->display_options['filters']['og_group_ref_target_id']['expose']['identifier'] = 'og_group_ref_target_id';
   $handler->display->display_options['filters']['og_group_ref_target_id']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    5 => 0,
+    6 => 0,
+  );
+  /* Filter criterion: Content: Section (oa_section_ref) */
+  $handler->display->display_options['filters']['oa_section_ref_target_id']['id'] = 'oa_section_ref_target_id';
+  $handler->display->display_options['filters']['oa_section_ref_target_id']['table'] = 'field_data_oa_section_ref';
+  $handler->display->display_options['filters']['oa_section_ref_target_id']['field'] = 'oa_section_ref_target_id';
+  $handler->display->display_options['filters']['oa_section_ref_target_id']['group'] = 1;
+  $handler->display->display_options['filters']['oa_section_ref_target_id']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['oa_section_ref_target_id']['expose']['operator_id'] = 'oa_section_ref_target_id_op';
+  $handler->display->display_options['filters']['oa_section_ref_target_id']['expose']['label'] = 'Section';
+  $handler->display->display_options['filters']['oa_section_ref_target_id']['expose']['operator'] = 'oa_section_ref_target_id_op';
+  $handler->display->display_options['filters']['oa_section_ref_target_id']['expose']['identifier'] = 'oa_section_ref_target_id';
+  $handler->display->display_options['filters']['oa_section_ref_target_id']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
     3 => 0,
