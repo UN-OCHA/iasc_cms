@@ -249,7 +249,7 @@ function iasc_scrape_save_agenda($nid) {
 
   // Set agenda items with order.
   // Get all documents associated.
-  // Assign documents to first agenda item.
+  // Assign documents to each respective agenda item.
   iasc_scrape_set_agenda_items($meeting_wrapper, $agenda_items);
 
   // Save the meeting with updated info.
