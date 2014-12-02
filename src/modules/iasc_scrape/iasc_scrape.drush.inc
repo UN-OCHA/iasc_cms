@@ -131,11 +131,12 @@ function drush_iasc_scrape_save_node($type) {
 /**
  * Callback to execute 'iasc-scrape-save-agenda'.
  */
-function drush_iasc_scrape_save_agenda($nid = NULL) {
+function drush_iasc_scrape_save_agenda() {
   // Start process.
   drush_print('Checking options...');
 
   // Save.
+  $nid = drush_get_option('nid');
   iasc_scrape_save_agenda($nid);
 }
 
