@@ -187,7 +187,7 @@ function iasc_configuration_panelizer_defaults_override_alter(&$data) {
               'og_group_ref_target_id_mine' => 0,
               'og_subspaces_view_all' => 1,
               'og_subspaces_view_parent' => 0,
-              'oa_section_ref_target_id' => 'All',
+              'oa_section_ref_target_id' => '',
               'type' => 'announcement',
               'term_node_tid_depth_1' => 'All',
               'term_node_tid_depth' => 'All',
