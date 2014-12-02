@@ -38,6 +38,13 @@ function iasc_scrape_schema() {
         'not null' => TRUE,
         'default' => 0,
       ),
+      'legacy_agenda_id' => array(
+        'description' => 'The legacy agenda id from the old IASC site.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ),
       'entity_id' => array(
         'description' => 'The entity id of the saved Drupal entity.',
         'type' => 'int',
@@ -115,6 +122,7 @@ function iasc_scrape_schema() {
       'legacy_id' => array('legacy_id'),
       'entity_id' => array('entity_id'),
       'legacy_meeting_id' => array('legacy_meeting_id'),
+      'legacy_agenda_id' => array('legacy_agenda_id'),
     ),
     'primary key' => array('id'),
   );
@@ -221,5 +229,53 @@ function iasc_scrape_update_7005() {
       ));
     }
     $query->execute();
+  }
+}
+
+/**
+ * Add legacy agenda id field for IASC scrape schema.
+ */
+function iasc_scrape_update_7006() {
+  $fields = array(
+    'legacy_agenda_id' => array(
+      'description' => 'The legacy agenda id from the old IASC site.',
+      'type' => 'int',
+      'unsigned' => TRUE,
+      'not null' => TRUE,
+      'default' => 0,
+    ),
+  );
+
+  foreach ($fields as $fieldname => $field_data) {
+    db_add_field('iasc_scrape', $fieldname, $field_data);
+  }
+
+  db_add_index('iasc_scrape', 'legacy_agenda_id', array('legacy_agenda_id'));
+}
+
+/**
+ * Add agenda ids to scrape table.
+ */
+function iasc_scrape_update_7007() {
+  $result = db_query("SELECT entity_id, data FROM {iasc_scrape} isc WHERE type = 'document'")
+    ->fetchAll();
+
+  if (is_array($result)) {
+    foreach ($result as $document) {
+      $data = unserialize($document->data);
+      $linked_agenda = $data['field_linked_agendas'];
+
+      // Grab the id.
+      preg_match("/(?=agendaid\=)?\d+/", $linked_agenda, $id);
+      $legacy_agenda_id = isset($id[0]) ? $id[0] : 0;
+      db_merge('iasc_scrape')
+        ->key(array(
+          'entity_id' => $document->entity_id,
+        ))
+        ->fields(array(
+          'legacy_agenda_id' => $legacy_agenda_id,
+        ))
+        ->execute();
+    }
   }
 }
