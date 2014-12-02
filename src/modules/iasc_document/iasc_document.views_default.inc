@@ -277,7 +277,7 @@ function iasc_document_views_default_views() {
   /* Display: Filterable Documents */
   $handler = $view->new_display('panel_pane', 'Filterable Documents', 'panel_pane_filterable_docs');
   $handler->display->display_options['display_description'] = 'Content pane';
-  $handler->display->display_options['pane_category']['name'] = 'IASC';
+  $handler->display->display_options['pane_category']['name'] = 'IASC Documents';
   $handler->display->display_options['pane_category']['weight'] = '0';
   $handler->display->display_options['allow']['use_pager'] = 0;
   $handler->display->display_options['allow']['items_per_page'] = 0;
@@ -380,7 +380,7 @@ function iasc_document_views_default_views() {
     5 => 0,
     6 => 0,
   );
-  $handler->display->display_options['pane_category']['name'] = 'IASC';
+  $handler->display->display_options['pane_category']['name'] = 'IASC Documents';
   $handler->display->display_options['pane_category']['weight'] = '0';
   $handler->display->display_options['allow']['use_pager'] = 'use_pager';
   $handler->display->display_options['allow']['items_per_page'] = 'items_per_page';
@@ -479,7 +479,7 @@ function iasc_document_views_default_views() {
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  $handler->display->display_options['pane_category']['name'] = 'IASC';
+  $handler->display->display_options['pane_category']['name'] = 'IASC Documents';
   $handler->display->display_options['pane_category']['weight'] = '0';
   $handler->display->display_options['allow']['use_pager'] = 'use_pager';
   $handler->display->display_options['allow']['items_per_page'] = 'items_per_page';

@@ -145,7 +145,7 @@ function iasc_configuration_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_attributes_title_enable';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['menu_attributes_title_enable'] = $strongarm;
 
   return $export;
