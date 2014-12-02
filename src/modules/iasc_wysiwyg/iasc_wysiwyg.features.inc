@@ -12,3 +12,12 @@ function iasc_wysiwyg_filter_default_formats_alter(&$data) {
     $data['panopoly_wysiwyg_text']['weight'] = -6; /* WAS: -10 */
   }
 }
+
+/**
+ * Implements hook_default_linkit_profiles_alter().
+ */
+function iasc_wysiwyg_default_linkit_profiles_alter(&$data) {
+  if (isset($data['content_editors'])) {
+    $data['content_editors']->data['text_formats']['iasc_wysiwyg'] = 'iasc_wysiwyg'; /* WAS: '' */
+  }
+}
