@@ -243,6 +243,8 @@ function iasc_scrape_save_agenda($nid) {
 
   // Wrap meeting with Entity API.
   $meeting = node_load($meeting_id);
+  drush_print(t('Loading meeting @nid', array('@nid' => $meeting->nid)));
+
   $meeting_wrapper = entity_metadata_wrapper('node', $meeting);
 
   // Set agenda items with order.
@@ -251,13 +253,8 @@ function iasc_scrape_save_agenda($nid) {
   iasc_scrape_set_agenda_items($meeting_wrapper, $agenda_items);
 
   // Save the meeting with updated info.
-  $meeting_wrapper->save(TRUE);
+  $meeting_wrapper->save();
   entity_save('node', $meeting);
-
-  // Update the scrape table.
-  foreach ($agenda_items as $agenda_item) {
-    iasc_scrape_update($agenda_item->agendaID, $meeting->nid, 'agenda');
-  }
 
   drupal_set_message(t(
     '@type saved on Meeting. Nid: @nid Title: @title',
@@ -267,6 +264,11 @@ function iasc_scrape_save_agenda($nid) {
       '@title' => $meeting->title,
     )
   ));
+
+  // Update the scrape table.
+  foreach ($agenda_items as $agenda_item) {
+    iasc_scrape_update($agenda_item->agendaID, $meeting->nid, 'agenda');
+  }
 }
 
 /**
@@ -406,13 +408,20 @@ function iasc_scrape_update_legacy_fid($legacy_fid) {
 function iasc_scrape_set_agenda_items(&$meeting_wrapper, $agenda_items) {
   foreach ($agenda_items as $key => $agenda_item) {
     // Get the item from the field collection.
-    // Purposefully override the existing array key so as not to add more items.
-    $raw_collection = $meeting_wrapper->field_agenda_items[$key]->value();
 
-    // Wrap collection with Entity API.
-    $agenda_wrapper = entity_metadata_wrapper('field_collection_item', $raw_collection);
+    // Delete all existing items.
+    $meeting_wrapper->field_agenda_items = NULL;
 
-    if ('NULL' != $agenda_item->agitem) {
+    // Prepare collection.
+    $collection = entity_create('field_collection_item', array('field_name' => 'field_agenda_items'));
+    $collection->setHostEntity('node', $meeting_wrapper->value());
+    $agenda_wrapper = entity_metadata_wrapper('field_collection_item', $collection);
+
+    drush_print(t('Loading legacy agenda item @legacy_agenda_id', array(
+      '@legacy_agenda_id' => $agenda_item->agendaID,
+    )));
+
+    if (!iasc_scrape_blank_or_null($agenda_item->agitem)) {
       // If title is longer than 255, split into description.
       $title = $agenda_item->agitem;
       if (strlen($title) > 255) {
@@ -423,10 +432,10 @@ function iasc_scrape_set_agenda_items(&$meeting_wrapper, $agenda_items) {
     }
 
     $description = array();
-    if ('NULL' != $agenda_item->agsubitem) {
+    if (!iasc_scrape_blank_or_null($agenda_item->agsubitem)) {
       $description[] = $agenda_item->agsubitem;
     }
-    if ('NULL' != $agenda_item->agdescription) {
+    if (!iasc_scrape_blank_or_null($agenda_item->agdescription)) {
       if (isset($split_title[1])) {
         $description[] = $split_title[1];
       }
@@ -435,19 +444,19 @@ function iasc_scrape_set_agenda_items(&$meeting_wrapper, $agenda_items) {
 
     $description = (count($description) > 1) ? implode(' ', $description) : $description;
     $description = (is_array($description)) ? reset($description) : $description;
-    if (!empty($description)) {
+    if (!iasc_scrape_blank_or_null($description)) {
       $agenda_wrapper->field_ai_description = array('value' => $description);
     }
 
     // Set contact.
     $contact_id = iasc_contact_get_nid_by_legacyid($agenda_item->presenterID);
-    if ($contact_id) {
+    if (!iasc_scrape_blank_or_null($contact_id)) {
       $agenda_wrapper->field_contact = array($contact_id);
     }
 
     // Get all documents for agenda.
     $documents = iasc_scrape_get_documents_by_agendaid($agenda_item->agendaID);
-    if (!empty($documents)) {
+    if (!iasc_scrape_blank_or_null($documents)) {
       $agenda_wrapper->field_referenced_docs = $documents;
     }
     else {
@@ -472,4 +481,19 @@ function iasc_scrape_get_documents_by_agendaid($agenda_id) {
     ->fetchAllAssoc('entity_id');
 
   return array_keys($result);
+}
+
+/**
+ * Check if blank or null.
+ */
+function iasc_scrape_blank_or_null($field) {
+  $blank = TRUE;
+  if (!empty($field)) {
+    if ($field != 'NULL') {
+      if ($field != '') {
+        $blank = FALSE;
+      }
+    }
+  }
+  return $blank;
 }
