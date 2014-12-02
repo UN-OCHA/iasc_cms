@@ -57,6 +57,19 @@ function iasc_scrape_drush_command() {
     ),
   );
 
+  $items['iasc-scrape-save-agenda'] = array(
+    'description' => 'Save agenda from iasc scrape agendas table',
+    'bootstrap' => DRUSH_BOOTSTRAP_DRUPAL_LOGIN,
+    'callback' => 'drush_iasc_scrape_save_agenda',
+    'aliases' => array('iasc-sa'),
+    'options' => array(
+      'nid' => 'The nid to save',
+    ),
+    'examples' => array(
+      'drush iasc-sa --nid=999' => 'Save a meeting node and update it\'s agenda using the latest unsaved.',
+    ),
+  );
+
   return $items;
 }
 
@@ -113,6 +126,18 @@ function drush_iasc_scrape_save_node($type) {
 
   // Save.
   iasc_scrape_save_node($type);
+}
+
+/**
+ * Callback to execute 'iasc-scrape-save-agenda'.
+ */
+function drush_iasc_scrape_save_agenda() {
+  // Start process.
+  drush_print('Checking options...');
+
+  // Save.
+  $nid = drush_get_option('nid');
+  iasc_scrape_save_agenda($nid);
 }
 
 /**
