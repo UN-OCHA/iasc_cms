@@ -14,5 +14,8 @@ function iasc_wysiwyg_features_override_default_overrides() {
   // Exported overrides for: filter
   $overrides["filter.panopoly_wysiwyg_text.weight"] = -6;
 
+  // Exported overrides for: linkit_profiles
+  $overrides["linkit_profiles.content_editors.data|text_formats|iasc_wysiwyg"] = 'iasc_wysiwyg';
+
  return $overrides;
 }

@@ -27,6 +27,7 @@ function iasc_wysiwyg_wysiwyg_default_profiles() {
           'strikethrough' => 1,
           'bullist' => 1,
           'numlist' => 1,
+          'unlink' => 1,
           'formatselect' => 1,
           'styleselect' => 1,
           'removeformat' => 1,
