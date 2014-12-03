@@ -53,7 +53,8 @@ class IASCDefault {
     }
 
     // Set the field values.
-    $this->wrapper->title->set($this->values['data']['title']);
+    $title = ($this->values['data']['title']) ? $this->values['data']['title'] : '-- No Title --';
+    $this->wrapper->title->set($title);
     $this->setCreated();
     $this->setHardcoded();
     $this->setFields();
@@ -134,6 +135,7 @@ class IASCDefault {
   protected function setSummaryFields() {
     $summary = array();
     $summaries = $this->summaryFields['summary'];
+    $summaries = (!is_array($summaries)) ? (array) $summaries : $summaries;
 
     // Combine summary fields.
     foreach ($summaries as $summary_field) {
