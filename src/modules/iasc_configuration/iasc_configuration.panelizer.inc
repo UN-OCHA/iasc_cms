@@ -965,7 +965,7 @@ function iasc_configuration_panelizer_defaults() {
         'field_position_value' => 'Co-Chair',
         'field_membership_level_value' => 'All',
         'sort_order' => 'ASC',
-        'sort_by' => 'field_position_value',
+        'sort_by' => 'field_last_name_value',
       ),
       'override_title' => '',
       'override_title_text' => '',
