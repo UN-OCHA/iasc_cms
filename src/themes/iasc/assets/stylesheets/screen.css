@@ -9419,15 +9419,16 @@ img.bio-circled {
 }
 
 /* Annoucements */
-/* line 62, ../sass/components/_node.scss */
+/* line 63, ../sass/components/_node.scss */
+.node-type-announcement .pane-node-title h1,
 .node-type-announcement .title {
-  margin-bottom: 0;
+  margin: 0;
 }
-/* line 65, ../sass/components/_node.scss */
+/* line 66, ../sass/components/_node.scss */
 .node-type-announcement .field-name-field-published-date {
   margin-bottom: 10px;
 }
-/* line 68, ../sass/components/_node.scss */
+/* line 69, ../sass/components/_node.scss */
 .node-type-announcement .node-oa-wiki-page h2, .node-type-announcement .node-oa-wiki-page .node-type-oa-event .pane-node-field-info-private .field-label, .node-type-oa-event .pane-node-field-info-private .node-type-announcement .node-oa-wiki-page .field-label,
 .node-type-announcement .node-oa-wiki-page .node-type-oa-event .pane-node-field-info-private h3.pane-title,
 .node-type-oa-event .pane-node-field-info-private .node-type-announcement .node-oa-wiki-page h3.pane-title,
@@ -9508,7 +9509,8 @@ img.bio-circled {
   margin-bottom: 10px;
 }
 
-/* line 56, ../sass/components/_panel.scss */
+/* line 57, ../sass/components/_panel.scss */
+.node-type-announcement h1.title,
 .page-page-not-found h1.title,
 .node-type-oa-event h1.title,
 .node-type-oa-wiki-page h1.title {
