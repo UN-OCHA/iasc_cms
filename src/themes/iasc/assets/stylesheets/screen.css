@@ -8894,6 +8894,11 @@ body.ctools-modal-open {
   font-size: 11px;
 }
 
+/* line 44, ../sass/components/_block.scss */
+.menu-block-wrapper .nav > li > a {
+  padding: 0;
+}
+
 /* line 1, ../sass/components/_buttons.scss */
 .btn, .node-readmore a {
   font-family: "Montserrat", sans-serif;
