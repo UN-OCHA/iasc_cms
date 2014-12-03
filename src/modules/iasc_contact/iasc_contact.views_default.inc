@@ -663,6 +663,11 @@ function iasc_contact_views_default_views() {
     5 => 0,
     6 => 0,
   );
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = '1';
   $handler->display->display_options['pane_category']['name'] = 'IASC Contacts';
   $handler->display->display_options['pane_category']['weight'] = '0';
   $handler->display->display_options['allow']['use_pager'] = 'use_pager';
@@ -700,6 +705,7 @@ function iasc_contact_views_default_views() {
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['empty'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Field: Homepage URL */
   $handler->display->display_options['fields']['field_homepage']['id'] = 'field_homepage';
@@ -731,7 +737,7 @@ function iasc_contact_views_default_views() {
   $handler->display->display_options['fields']['field_branch']['id'] = 'field_branch';
   $handler->display->display_options['fields']['field_branch']['table'] = 'field_data_field_branch';
   $handler->display->display_options['fields']['field_branch']['field'] = 'field_branch';
-  /* Field: Content: Body */
+  /* Field: Content: Description */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
