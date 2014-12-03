@@ -271,9 +271,10 @@ function iasc_scrape_update_7007() {
       db_merge('iasc_scrape')
         ->key(array(
           'entity_id' => $document->entity_id,
+          'type' => 'document',
         ))
         ->fields(array(
-          'legacy_agenda_id' => $legacy_agenda_id,
+          'legacy_agenda_id' => (0 != $legacy_agenda_id) ? ($legacy_agenda_id) : 0,
         ))
         ->execute();
     }
