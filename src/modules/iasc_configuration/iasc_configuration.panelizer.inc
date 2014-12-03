@@ -936,57 +936,6 @@ function iasc_configuration_panelizer_defaults() {
     $display->content['new-b7c206cc-5e8a-48d3-ac90-9fc6e666d0f3'] = $pane;
     $display->panels['sidebar'][4] = 'new-b7c206cc-5e8a-48d3-ac90-9fc6e666d0f3';
     $pane = new stdClass();
-    $pane->pid = 'new-2c6fca0c-5f02-4026-974a-28a2568238ed';
-    $pane->panel = 'sidebar';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'search_contacts-panel_pane_contacts';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'use_pager' => 0,
-      'pager_id' => '0',
-      'items_per_page' => '0',
-      'fields_override' => array(
-        'field_photo' => 1,
-        'title' => 1,
-        'field_homepage' => 0,
-        'field_organisation' => 1,
-        'field_position' => 0,
-        'field_body_membership' => 0,
-        'field_org_address_locality' => 0,
-        'field_email' => 0,
-        'field_phone' => 0,
-      ),
-      'exposed' => array(
-        'title' => '',
-        'field_body_membership_target_id' => array(),
-        'field_organisation_tid' => array(),
-        'field_department_value' => '',
-        'field_position_value' => 'Chair Co-Chairs Members Secondary',
-      ),
-      'override_title' => '',
-      'override_title_text' => '',
-      'view_settings' => 'fields',
-      'header_type' => 'none',
-      'view_mode' => 'teaser',
-      'widget_title' => 'Members',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => array(
-        'secondary_options' => 'panel-primary',
-        'linked_list' => 'none',
-      ),
-      'style' => 'secondary',
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 5;
-    $pane->locks = array();
-    $pane->uuid = '2c6fca0c-5f02-4026-974a-28a2568238ed';
-    $display->content['new-2c6fca0c-5f02-4026-974a-28a2568238ed'] = $pane;
-    $display->panels['sidebar'][5] = 'new-2c6fca0c-5f02-4026-974a-28a2568238ed';
-    $pane = new stdClass();
     $pane->pid = 'new-335e5662-a92a-46a9-b492-406700a0ef03';
     $pane->panel = 'sidebar';
     $pane->type = 'views_panes';
@@ -1013,14 +962,17 @@ function iasc_configuration_panelizer_defaults() {
         'field_body_membership_target_id' => array(),
         'field_organisation_tid' => array(),
         'field_department_value' => '',
-        'field_position_value' => 'Contact',
+        'field_position_value' => 'Co-Chair',
+        'field_membership_level_value' => 'All',
+        'sort_order' => 'ASC',
+        'sort_by' => 'field_position_value',
       ),
       'override_title' => '',
       'override_title_text' => '',
       'view_settings' => 'fields',
       'header_type' => 'none',
       'view_mode' => 'teaser',
-      'widget_title' => '',
+      'widget_title' => 'Contact',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -1032,11 +984,11 @@ function iasc_configuration_panelizer_defaults() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 6;
+    $pane->position = 5;
     $pane->locks = array();
     $pane->uuid = '335e5662-a92a-46a9-b492-406700a0ef03';
     $display->content['new-335e5662-a92a-46a9-b492-406700a0ef03'] = $pane;
-    $display->panels['sidebar'][6] = 'new-335e5662-a92a-46a9-b492-406700a0ef03';
+    $display->panels['sidebar'][5] = 'new-335e5662-a92a-46a9-b492-406700a0ef03';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $panelizer->display = $display;
