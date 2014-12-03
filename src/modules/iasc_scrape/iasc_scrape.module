@@ -406,11 +406,11 @@ function iasc_scrape_update_legacy_fid($legacy_fid) {
  * Set agenda items.
  */
 function iasc_scrape_set_agenda_items(&$meeting_wrapper, $agenda_items) {
-  foreach ($agenda_items as $key => $agenda_item) {
-    // Get the item from the field collection.
+  // Delete all existing items.
+  $meeting_wrapper->field_agenda_items = NULL;
 
-    // Delete all existing items.
-    $meeting_wrapper->field_agenda_items = NULL;
+  foreach ($agenda_items as $agenda_item) {
+    // Get the item from the field collection.
 
     // Prepare collection.
     $collection = entity_create('field_collection_item', array('field_name' => 'field_agenda_items'));
