@@ -38,3 +38,10 @@
     }
   }
 }
+
+// Override .nav that are set in blocks menu
+.menu-block-wrapper {
+  .nav > li > a {
+    padding: 0;
+  }
+}
