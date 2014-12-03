@@ -235,39 +235,49 @@ function iasc_scrape_save_agenda($nid) {
     $legacy_meeting_id = iasc_scrape_get_legacy_meeting($nid);
   }
 
-  // Get all agenda items associated with legacy meeting.
-  $agenda_items = iasc_scrape_all_agenda_items($legacy_meeting_id);
+  if ($legacy_meeting_id) {
+    // Get all agenda items associated with legacy meeting.
+    $agenda_items = iasc_scrape_all_agenda_items($legacy_meeting_id);
 
-  // Get existing meeting from legacy meeting id.
-  $meeting_id = iasc_scrape_get_meeting($legacy_meeting_id);
+    // Get existing meeting from legacy meeting id.
+    $meeting_id = iasc_scrape_get_meeting($legacy_meeting_id);
 
-  // Wrap meeting with Entity API.
-  $meeting = node_load($meeting_id);
-  drush_print(t('Loading meeting @nid', array('@nid' => $meeting->nid)));
+    // Wrap meeting with Entity API.
+    $meeting = node_load($meeting_id);
+    drush_print(t('Loading meeting @nid', array('@nid' => $meeting->nid)));
 
-  $meeting_wrapper = entity_metadata_wrapper('node', $meeting);
+    $meeting_wrapper = entity_metadata_wrapper('node', $meeting);
 
-  // Set agenda items with order.
-  // Get all documents associated.
-  // Assign documents to each respective agenda item.
-  iasc_scrape_set_agenda_items($meeting_wrapper, $agenda_items);
+    // Set agenda items with order.
+    // Get all documents associated.
+    // Assign documents to each respective agenda item.
+    iasc_scrape_set_agenda_items($meeting_wrapper, $agenda_items);
 
-  // Save the meeting with updated info.
-  $meeting_wrapper->save();
-  entity_save('node', $meeting);
+    // Save the meeting with updated info.
+    $meeting_wrapper->save();
+    entity_save('node', $meeting);
 
-  drupal_set_message(t(
-    '@type saved on Meeting. Nid: @nid Title: @title',
-    array(
-      '@type' => 'Agenda',
-      '@nid' => $meeting->nid,
-      '@title' => $meeting->title,
-    )
-  ));
+    drupal_set_message(t(
+      '@type saved on Meeting. Nid: @nid Title: @title',
+      array(
+        '@type' => 'Agenda',
+        '@nid' => $meeting->nid,
+        '@title' => $meeting->title,
+      )
+    ));
 
-  // Update the scrape table.
-  foreach ($agenda_items as $agenda_item) {
-    iasc_scrape_update($agenda_item->agendaID, $meeting->nid, 'agenda');
+    // Update the scrape table.
+    foreach ($agenda_items as $agenda_item) {
+      iasc_scrape_update($agenda_item->agendaID, $meeting->nid, 'agenda');
+    }
+  }
+  else {
+    if (isset($values['legacy_id'])) {
+      drush_print(t('No legacy meeting id with agenda legacy id @agenda_legacy_id', array(
+        '@agenda_legacy_id' => $values['legacy_id'],
+      )));
+      iasc_scrape_update($values['legacy_id'], 0, 'agenda');
+    }
   }
 }
 
