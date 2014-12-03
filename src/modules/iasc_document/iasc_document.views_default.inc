@@ -22,6 +22,7 @@ function iasc_document_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Resources';
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
@@ -305,12 +306,6 @@ function iasc_document_views_default_views() {
   $handler = $view->new_display('page', 'Resources', 'page_resources');
   $handler->display->display_options['display_description'] = 'An alphabetical list of all Document nodes.';
   $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Header: Global: Text area */
-  $handler->display->display_options['header']['area']['id'] = 'area';
-  $handler->display->display_options['header']['area']['table'] = 'views';
-  $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<h2>Resources</h2>';
-  $handler->display->display_options['header']['area']['format'] = 'panopoly_wysiwyg_text';
   $handler->display->display_options['path'] = 'resources';
 
   /* Display: Recently Updated Documents */
