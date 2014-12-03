@@ -512,6 +512,12 @@ function iasc_contact_views_default_views() {
   $handler->display->display_options['fields']['field_phone']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_phone']['delta_offset'] = '0';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Last Name (field_last_name) */
+  $handler->display->display_options['sorts']['field_last_name_value']['id'] = 'field_last_name_value';
+  $handler->display->display_options['sorts']['field_last_name_value']['table'] = 'field_data_field_last_name';
+  $handler->display->display_options['sorts']['field_last_name_value']['field'] = 'field_last_name_value';
+  $handler->display->display_options['sorts']['field_last_name_value']['exposed'] = TRUE;
+  $handler->display->display_options['sorts']['field_last_name_value']['expose']['label'] = 'Last Name';
   /* Sort criterion: Field: Position (field_position) */
   $handler->display->display_options['sorts']['field_position_value']['id'] = 'field_position_value';
   $handler->display->display_options['sorts']['field_position_value']['table'] = 'field_data_field_position';
@@ -519,12 +525,6 @@ function iasc_contact_views_default_views() {
   $handler->display->display_options['sorts']['field_position_value']['relationship'] = 'field_membership_value';
   $handler->display->display_options['sorts']['field_position_value']['exposed'] = TRUE;
   $handler->display->display_options['sorts']['field_position_value']['expose']['label'] = 'Position';
-  /* Sort criterion: Content: Last Name (field_last_name) */
-  $handler->display->display_options['sorts']['field_last_name_value']['id'] = 'field_last_name_value';
-  $handler->display->display_options['sorts']['field_last_name_value']['table'] = 'field_data_field_last_name';
-  $handler->display->display_options['sorts']['field_last_name_value']['field'] = 'field_last_name_value';
-  $handler->display->display_options['sorts']['field_last_name_value']['exposed'] = TRUE;
-  $handler->display->display_options['sorts']['field_last_name_value']['expose']['label'] = 'Last Name';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Type */
@@ -737,7 +737,7 @@ function iasc_contact_views_default_views() {
   $handler->display->display_options['fields']['field_branch']['id'] = 'field_branch';
   $handler->display->display_options['fields']['field_branch']['table'] = 'field_data_field_branch';
   $handler->display->display_options['fields']['field_branch']['field'] = 'field_branch';
-  /* Field: Content: Description */
+  /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
