@@ -7,7 +7,10 @@
   .icons-home { 
     position: relative;
     font-weight: 900;
-    letter-spacing: initial;      
+    letter-spacing: initial;    
+    @media screen and (max-width: $screen-sm-min) {
+      &:before {  display: none; }
+    }  
     @media screen and (min-width: $screen-sm-min) {
       padding-left: 30px;
       &:before {
@@ -17,6 +20,12 @@
         left: 0;
         position: absolute;
       }
+    }
+  }
+  
+  .dropdown-menu > li > a {
+    @media screen and (max-width: $screen-sm-min) {
+      color: #fff;
     }
   }
 }
