@@ -1,0 +1,47 @@
+.view-display-id-panel_pane_featured_products {
+  .views-row {
+    position: relative;
+    padding-left: 142px;
+    line-height: 18px;
+    margin-bottom: $padding-large-vertical;
+    min-height: 122px;
+    &:nth-child(1n+2){
+      border-top: 1px solid #fff;
+      padding-top: $padding-large-vertical;
+      img {
+        padding-top: $padding-large-vertical;
+      }
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+    img {
+      position: absolute;
+      top: 0; left: 0;
+      max-width: 122px;
+      padding: 0;
+    }
+    .views-field-title { 
+      font-weight: bold;
+      font-size: 12px;
+      margin-bottom: $padding-base-vertical;
+      &:after {
+        @extend .icons-arrow:before;
+        @extend .icons;
+        margin-left: 5px;
+        color: $green;
+      }
+    }
+    .views-field-field-category,
+    .views-field-field-published-date {
+      font-size: 11px;
+    }
+  }
+}
+
+// Override .nav that are set in blocks menu
+.menu-block-wrapper {
+  .nav > li > a {
+    padding: 0;
+  }
+}

@@ -59,8 +59,9 @@
 
 /* Annoucements */
 .node-type-announcement {
+  .pane-node-title h1,
   .title {
-    margin-bottom: 0;
+    margin: 0;
   }
   .field-name-field-published-date {
     margin-bottom: 10px;

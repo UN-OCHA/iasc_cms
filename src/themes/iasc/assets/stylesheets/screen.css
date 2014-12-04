@@ -8483,7 +8483,7 @@ html.js input.throbbing {
 }
 
 /* line 22, ../sass/base/_icons.scss */
-.icons, .panel-success:not(.none) a:before, [class*="icons-"] {
+.icons, .view-display-id-panel_pane_featured_products .views-row .views-field-title:after, .panel-success:not(.none) a:before, [class*="icons-"] {
   font-family: "icons";
   display: inline-block;
   vertical-align: middle;
@@ -8499,7 +8499,7 @@ html.js input.throbbing {
 }
 
 /* line 41, ../sass/base/_icons.scss */
-.icons-arrow:before, .panel-success.arrow a:before {
+.icons-arrow:before, .view-display-id-panel_pane_featured_products .views-row .views-field-title:after, .panel-success.arrow a:before {
   content: "\f101";
 }
 
@@ -8846,6 +8846,57 @@ body.ctools-modal-open {
   right: 8px;
   top: 7px;
   color: black;
+}
+
+/* line 2, ../sass/components/_block.scss */
+.view-display-id-panel_pane_featured_products .views-row {
+  position: relative;
+  padding-left: 142px;
+  line-height: 18px;
+  margin-bottom: 20px;
+  min-height: 122px;
+}
+/* line 8, ../sass/components/_block.scss */
+.view-display-id-panel_pane_featured_products .views-row:nth-child(1n+2) {
+  border-top: 1px solid #fff;
+  padding-top: 20px;
+}
+/* line 11, ../sass/components/_block.scss */
+.view-display-id-panel_pane_featured_products .views-row:nth-child(1n+2) img {
+  padding-top: 20px;
+}
+/* line 15, ../sass/components/_block.scss */
+.view-display-id-panel_pane_featured_products .views-row:last-child {
+  margin-bottom: 0;
+}
+/* line 18, ../sass/components/_block.scss */
+.view-display-id-panel_pane_featured_products .views-row img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 122px;
+  padding: 0;
+}
+/* line 24, ../sass/components/_block.scss */
+.view-display-id-panel_pane_featured_products .views-row .views-field-title {
+  font-weight: bold;
+  font-size: 12px;
+  margin-bottom: 6px;
+}
+/* line 28, ../sass/components/_block.scss */
+.view-display-id-panel_pane_featured_products .views-row .views-field-title:after {
+  margin-left: 5px;
+  color: #437a75;
+}
+/* line 36, ../sass/components/_block.scss */
+.view-display-id-panel_pane_featured_products .views-row .views-field-field-category,
+.view-display-id-panel_pane_featured_products .views-row .views-field-field-published-date {
+  font-size: 11px;
+}
+
+/* line 44, ../sass/components/_block.scss */
+.menu-block-wrapper .nav > li > a {
+  padding: 0;
 }
 
 /* line 1, ../sass/components/_buttons.scss */
@@ -9419,15 +9470,16 @@ img.bio-circled {
 }
 
 /* Annoucements */
-/* line 62, ../sass/components/_node.scss */
+/* line 63, ../sass/components/_node.scss */
+.node-type-announcement .pane-node-title h1,
 .node-type-announcement .title {
-  margin-bottom: 0;
+  margin: 0;
 }
-/* line 65, ../sass/components/_node.scss */
+/* line 66, ../sass/components/_node.scss */
 .node-type-announcement .field-name-field-published-date {
   margin-bottom: 10px;
 }
-/* line 68, ../sass/components/_node.scss */
+/* line 69, ../sass/components/_node.scss */
 .node-type-announcement .node-oa-wiki-page h2, .node-type-announcement .node-oa-wiki-page .node-type-oa-event .pane-node-field-info-private .field-label, .node-type-oa-event .pane-node-field-info-private .node-type-announcement .node-oa-wiki-page .field-label,
 .node-type-announcement .node-oa-wiki-page .node-type-oa-event .pane-node-field-info-private h3.pane-title,
 .node-type-oa-event .pane-node-field-info-private .node-type-announcement .node-oa-wiki-page h3.pane-title,
@@ -9508,7 +9560,8 @@ img.bio-circled {
   margin-bottom: 10px;
 }
 
-/* line 56, ../sass/components/_panel.scss */
+/* line 57, ../sass/components/_panel.scss */
+.node-type-announcement h1.title,
 .page-page-not-found h1.title,
 .node-type-oa-event h1.title,
 .node-type-oa-wiki-page h1.title {

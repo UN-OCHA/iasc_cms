@@ -443,20 +443,23 @@ class IASCDefault {
       $start_hour = $this->values['data'][$date['start']['hour']];
       $end_hour = $this->values['data'][$date['end']['hour']];
 
-      // Adjust for timezone.
-      switch ($this->values['data']['field_time_zone']) {
-        case 'Geneva':
-          $start_hour += 1;
-          break;
+      // If the event is not an all day event, adjust for timezone.
+      if ('All' != $start_hour) {
+        switch ($this->values['data']['field_time_zone']) {
+          case 'Geneva':
+            $start_hour += 1;
+            break;
 
-        case 'New York':
-          $start_hour -= 5;
-          break;
+          case 'New York':
+            $start_hour -= 5;
+            break;
 
-        case 'Uganda':
-          $start_hour += 3;
-          break;
+          case 'Uganda':
+            $start_hour += 3;
+            break;
+        }
       }
+
       // Reformat date.
       $fixed_date = array();
       foreach (array(
@@ -465,18 +468,29 @@ class IASCDefault {
                ) as $weird_date) {
         $fixed_date[] = str_replace('/', '-', $weird_date);
       }
-      $start = $fixed_date[0]
-        . ' '
-        . $start_hour
-        . ':'
-        . $this->values['data'][$date['start']['min']];
-      $end = $fixed_date[1]
-        . ' '
-        . $end_hour
-        . ':'
-        . $this->values['data'][$date['end']['min']];
-      $unix_start = strtotime($start);
-      $unix_end = strtotime($end);
+
+      // Store All Day meeting date times as the date @ midnight.
+      if ('All' == $start_hour && 'Day' == $this->values['data'][$date['start']['min']]) {
+        $unix_start = strtotime($fixed_date[0] . ' ' . '00:00');
+        $unix_end = $unix_start;
+      }
+      else {
+        // Massage that date time to what's right.
+        $start = $fixed_date[0]
+          . ' '
+          . $start_hour
+          . ':'
+          . $this->values['data'][$date['start']['min']];
+        $end = $fixed_date[1]
+          . ' '
+          . $end_hour
+          . ':'
+          . $this->values['data'][$date['end']['min']];
+
+        $unix_start = strtotime($start);
+        $unix_end = strtotime($end);
+      }
+
       if (!empty($unix_start) && (!empty($unix_end))) {
         try {
           $this->wrapper->{$date_field}[0]->set(array(
