@@ -311,7 +311,7 @@ function iasc_scrape_all_agenda_items($legacy_meeting_id) {
     ->condition('calmeetID', $legacy_meeting_id)
     ->orderBy('agorder', 'ASC')
     ->execute()
-    ->fetchAllAssoc('agorder');
+    ->fetchAllAssoc('agendaID');
 
   return $result;
 }
