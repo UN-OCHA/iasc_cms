@@ -606,3 +606,8 @@ $conf['404_fast_html'] = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
 # $conf['pressflow_smart_start'] = TRUE;
 
 $conf['site_name'] = t('IASC');
+
+if (file_exists(dirname(__FILE__) . '/settings.local.inc')) {
+  @include dirname(__FILE__) . '/settings.local.inc';
+}
+
