@@ -83,6 +83,10 @@ class IASCDefault {
     if (($this->values['data'][$this->created])) {
       $fixed_date = str_replace('/', '-', $this->values['data'][$this->created]);
       $unix = strtotime($fixed_date);
+      // Some dates are set improperly. Use the current time.
+      if ($unix < 0) {
+        $unix = time();
+      }
       $this->wrapper->created->set($unix);
     }
   }
