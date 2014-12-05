@@ -185,6 +185,7 @@ features[features_overrides][] = views_view.oa_event_list.display|default|displa
 features[features_overrides][] = views_view.oa_event_list.display|default|display_options|exposed_form|options
 features[features_overrides][] = views_view.oa_event_list.display|default|display_options|exposed_form|type
 features[features_overrides][] = views_view.oa_event_list.display|default|display_options|fields|field_oa_address
+features[features_overrides][] = views_view.oa_event_list.display|default|display_options|filters|field_oa_date_value|year_range
 features[features_overrides][] = views_view.oa_event_list.display|oa_calendar_month|display_options|allow|exposed_form_configure
 features[features_overrides][] = views_view.oa_event_list.display|oa_calendar_month|display_options|exposed_form_overrides
 features[features_overrides][] = views_view.oa_event_list.display|oa_events_ical|display_options|defaults|empty
