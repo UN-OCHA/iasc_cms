@@ -15,7 +15,7 @@
   margin-right: 20px;
 }
 .iasc-event-date-month-wrapper {
-  background: $red;
+  background: $brand-primary;
   padding: 3px 0;
   margin-bottom: 10px;
 }
@@ -25,10 +25,10 @@
 }
 .iasc-event-date-day {
   font-size: 26px;
-  color: $red;
+  color: $brand-primary;
 }
 .iasc-event-date-year-wrapper {
-  color: $red;
+  color: $brand-primary;
   padding-bottom: 5px;
 }
 
@@ -43,7 +43,7 @@
     font-size: 15px;
     margin-right: 10px;
     vertical-align: baseline;
-    color: $red;
+    color: $brand-primary;
   }
 }
 
