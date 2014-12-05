@@ -32,10 +32,10 @@ $gray-light:             #ccc;
 // $gray-lighter:           lighten(#000, 93.5%) // #eee
 $gray-lightess:           #faf9f9;
 
-$brand-primary:            #00817B;
-$brand-secondary:          #066281;
-$brand-tertiary:           #6b0326;
-$brand-quaternary:         #b6c0d4;
+$brand-primary:            #00817B; // Green
+$brand-secondary:          #066281; // Blue
+$brand-tertiary:           #6b0326; // Dark red
+$brand-quaternary:         #b6c0d4; // Gray
 // $brand-success:         #5cb85c
 // $brand-info:            #5bc0de
 // $brand-warning:         #f0ad4e
@@ -347,23 +347,23 @@ $grid-gutter-width:         40px;
 //##
 
 // Basics of a navbar
-$navbar-height:                       40px;
-$navbar-margin-bottom:                $line-height-computed;
-$navbar-border-radius:                8px;
+$navbar-height:                       58px;
+$navbar-margin-bottom:                0;
+$navbar-border-radius:                0;
 // $navbar-padding-horizontal:        floor(($grid-gutter-width / 2))
 // $navbar-padding-vertical:          (($navbar-height - $line-height-computed) / 2)
 // $navbar-collapse-max-height:       340px
 
 // $navbar-default-color:             #777
 $navbar-default-bg:                   $brand-primary; // #f8f8f8
-$navbar-default-border:               $brand-primary; //darken($navbar-default-bg, 6.5%)
+$navbar-default-border:               $white; 
 
 // Navbar links
 $navbar-default-link-color:                   #fff; 
 $navbar-default-link-hover-color:             #fff;
 $navbar-default-link-hover-bg:                transparent;
 $navbar-default-link-active-color:            #fff;
-$navbar-default-link-active-bg:               $brand-primary;
+$navbar-default-link-active-bg:               transparent;
 // $navbar-default-link-disabled-color:       #ccc
 // $navbar-default-link-disabled-bg:          transparent
 

@@ -5262,8 +5262,8 @@ form.navbar-form .form-type-textfield .input-group input[type="text"]:not(:first
 /* line 11, ../../../../../../../../.rvm/gems/ruby-2.0.0-p598/gems/bootstrap-sass-3.3.1.0/assets/stylesheets/bootstrap/_navbar.scss */
 .navbar {
   position: relative;
-  min-height: 40px;
-  margin-bottom: 20px;
+  min-height: 58px;
+  margin-bottom: 0;
   border: 1px solid transparent;
 }
 /* line 15, ../../../../../../../../.rvm/gems/ruby-2.0.0-p598/gems/bootstrap-sass-3.3.1.0/assets/stylesheets/bootstrap/mixins/_clearfix.scss */
@@ -5278,7 +5278,7 @@ form.navbar-form .form-type-textfield .input-group input[type="text"]:not(:first
 @media (min-width: 768px) {
   /* line 11, ../../../../../../../../.rvm/gems/ruby-2.0.0-p598/gems/bootstrap-sass-3.3.1.0/assets/stylesheets/bootstrap/_navbar.scss */
   .navbar {
-    border-radius: 8px;
+    border-radius: 0;
   }
 }
 
@@ -5422,10 +5422,10 @@ form.navbar-form .form-type-textfield .input-group input[type="text"]:not(:first
 /* line 164, ../../../../../../../../.rvm/gems/ruby-2.0.0-p598/gems/bootstrap-sass-3.3.1.0/assets/stylesheets/bootstrap/_navbar.scss */
 .navbar-brand {
   float: left;
-  padding: 10px 20px;
+  padding: 19px 20px;
   font-size: 17px;
   line-height: 20px;
-  height: 40px;
+  height: 58px;
 }
 /* line 172, ../../../../../../../../.rvm/gems/ruby-2.0.0-p598/gems/bootstrap-sass-3.3.1.0/assets/stylesheets/bootstrap/_navbar.scss */
 .navbar-brand:hover, .navbar-brand:focus {
@@ -5448,8 +5448,8 @@ form.navbar-form .form-type-textfield .input-group input[type="text"]:not(:first
   float: right;
   margin-right: 20px;
   padding: 9px 10px;
-  margin-top: 3px;
-  margin-bottom: 3px;
+  margin-top: 12px;
+  margin-bottom: 12px;
   background-color: transparent;
   background-image: none;
   border: 1px solid transparent;
@@ -5479,7 +5479,7 @@ form.navbar-form .form-type-textfield .input-group input[type="text"]:not(:first
 
 /* line 233, ../../../../../../../../.rvm/gems/ruby-2.0.0-p598/gems/bootstrap-sass-3.3.1.0/assets/stylesheets/bootstrap/_navbar.scss */
 .navbar-nav {
-  margin: 5px -20px;
+  margin: 9.5px -20px;
 }
 /* line 236, ../../../../../../../../.rvm/gems/ruby-2.0.0-p598/gems/bootstrap-sass-3.3.1.0/assets/stylesheets/bootstrap/_navbar.scss */
 .navbar-nav > li > a {
@@ -5526,8 +5526,8 @@ form.navbar-form .form-type-textfield .input-group input[type="text"]:not(:first
   }
   /* line 273, ../../../../../../../../.rvm/gems/ruby-2.0.0-p598/gems/bootstrap-sass-3.3.1.0/assets/stylesheets/bootstrap/_navbar.scss */
   .navbar-nav > li > a {
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 19px;
+    padding-bottom: 19px;
   }
 }
 
@@ -5540,8 +5540,8 @@ form.navbar-form .form-type-textfield .input-group input[type="text"]:not(:first
   border-bottom: 1px solid transparent;
   -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1);
-  margin-top: 3px;
-  margin-bottom: 3px;
+  margin-top: 12px;
+  margin-bottom: 12px;
 }
 @media (min-width: 768px) {
   /* line 410, ../../../../../../../../.rvm/gems/ruby-2.0.0-p598/gems/bootstrap-sass-3.3.1.0/assets/stylesheets/bootstrap/_forms.scss */
@@ -5641,32 +5641,32 @@ form.navbar-form .form-type-textfield .input-group input[type="text"]:not(:first
 
 /* line 333, ../../../../../../../../.rvm/gems/ruby-2.0.0-p598/gems/bootstrap-sass-3.3.1.0/assets/stylesheets/bootstrap/_navbar.scss */
 .navbar-fixed-bottom .navbar-nav > li > .dropdown-menu, .navbar-fixed-bottom .navbar .navbar-nav > li > ul.menu, .navbar .navbar-fixed-bottom .navbar-nav > li > ul.menu {
-  border-top-right-radius: 8px;
-  border-top-left-radius: 8px;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
 
 /* line 343, ../../../../../../../../.rvm/gems/ruby-2.0.0-p598/gems/bootstrap-sass-3.3.1.0/assets/stylesheets/bootstrap/_navbar.scss */
 .navbar-btn {
-  margin-top: 3px;
-  margin-bottom: 3px;
+  margin-top: 12px;
+  margin-bottom: 12px;
 }
 /* line 346, ../../../../../../../../.rvm/gems/ruby-2.0.0-p598/gems/bootstrap-sass-3.3.1.0/assets/stylesheets/bootstrap/_navbar.scss */
 .navbar-btn.btn-sm, .btn-group-sm > .navbar-btn.btn, .node-readmore .btn-group-sm > a.navbar-btn {
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-top: 14px;
+  margin-bottom: 14px;
 }
 /* line 349, ../../../../../../../../.rvm/gems/ruby-2.0.0-p598/gems/bootstrap-sass-3.3.1.0/assets/stylesheets/bootstrap/_navbar.scss */
 .navbar-btn.btn-xs, .btn-group-xs > .navbar-btn.btn, .node-readmore .btn-group-xs > a.navbar-btn {
-  margin-top: 9px;
-  margin-bottom: 9px;
+  margin-top: 18px;
+  margin-bottom: 18px;
 }
 
 /* line 359, ../../../../../../../../.rvm/gems/ruby-2.0.0-p598/gems/bootstrap-sass-3.3.1.0/assets/stylesheets/bootstrap/_navbar.scss */
 .navbar-text {
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 19px;
+  margin-bottom: 19px;
 }
 @media (min-width: 768px) {
   /* line 359, ../../../../../../../../.rvm/gems/ruby-2.0.0-p598/gems/bootstrap-sass-3.3.1.0/assets/stylesheets/bootstrap/_navbar.scss */
@@ -5696,7 +5696,7 @@ form.navbar-form .form-type-textfield .input-group input[type="text"]:not(:first
 /* line 397, ../../../../../../../../.rvm/gems/ruby-2.0.0-p598/gems/bootstrap-sass-3.3.1.0/assets/stylesheets/bootstrap/_navbar.scss */
 .navbar-default {
   background-color: #00817b;
-  border-color: #00817b;
+  border-color: white;
 }
 /* line 401, ../../../../../../../../.rvm/gems/ruby-2.0.0-p598/gems/bootstrap-sass-3.3.1.0/assets/stylesheets/bootstrap/_navbar.scss */
 .navbar-default .navbar-brand {
@@ -5723,7 +5723,7 @@ form.navbar-form .form-type-textfield .input-group input[type="text"]:not(:first
 /* line 427, ../../../../../../../../.rvm/gems/ruby-2.0.0-p598/gems/bootstrap-sass-3.3.1.0/assets/stylesheets/bootstrap/_navbar.scss */
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
   color: white;
-  background-color: #00817b;
+  background-color: transparent;
 }
 /* line 435, ../../../../../../../../.rvm/gems/ruby-2.0.0-p598/gems/bootstrap-sass-3.3.1.0/assets/stylesheets/bootstrap/_navbar.scss */
 .navbar-default .navbar-nav > .disabled > a, .navbar-default .navbar-nav > .disabled > a:hover, .navbar-default .navbar-nav > .disabled > a:focus {
@@ -5745,11 +5745,11 @@ form.navbar-form .form-type-textfield .input-group input[type="text"]:not(:first
 /* line 454, ../../../../../../../../.rvm/gems/ruby-2.0.0-p598/gems/bootstrap-sass-3.3.1.0/assets/stylesheets/bootstrap/_navbar.scss */
 .navbar-default .navbar-collapse,
 .navbar-default .navbar-form {
-  border-color: #00817b;
+  border-color: white;
 }
 /* line 464, ../../../../../../../../.rvm/gems/ruby-2.0.0-p598/gems/bootstrap-sass-3.3.1.0/assets/stylesheets/bootstrap/_navbar.scss */
 .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
-  background-color: #00817b;
+  background-color: transparent;
   color: white;
 }
 @media (max-width: 767px) {
@@ -5765,7 +5765,7 @@ form.navbar-form .form-type-textfield .input-group input[type="text"]:not(:first
   /* line 484, ../../../../../../../../.rvm/gems/ruby-2.0.0-p598/gems/bootstrap-sass-3.3.1.0/assets/stylesheets/bootstrap/_navbar.scss */
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .navbar ul.menu > .active > a, .navbar .navbar-default .navbar-nav .open ul.menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .navbar ul.menu > .active > a:hover, .navbar .navbar-default .navbar-nav .open ul.menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus, .navbar-default .navbar-nav .open .navbar ul.menu > .active > a:focus, .navbar .navbar-default .navbar-nav .open ul.menu > .active > a:focus {
     color: white;
-    background-color: #00817b;
+    background-color: transparent;
   }
   /* line 492, ../../../../../../../../.rvm/gems/ruby-2.0.0-p598/gems/bootstrap-sass-3.3.1.0/assets/stylesheets/bootstrap/_navbar.scss */
   .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a, .navbar-default .navbar-nav .open .navbar ul.menu > .disabled > a, .navbar .navbar-default .navbar-nav .open ul.menu > .disabled > a, .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:hover, .navbar-default .navbar-nav .open .navbar ul.menu > .disabled > a:hover, .navbar .navbar-default .navbar-nav .open ul.menu > .disabled > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:focus, .navbar-default .navbar-nav .open .navbar ul.menu > .disabled > a:focus, .navbar .navbar-default .navbar-nav .open ul.menu > .disabled > a:focus {
@@ -8396,7 +8396,7 @@ ul.panels-ipe-linkbar > li a {
  */
 /* line 5, ../sass/base/_elements.scss */
 h1, .h1 {
-  color: #00817b;
+  color: #066281;
 }
 
 /* line 12, ../sass/base/_elements.scss */
@@ -9160,6 +9160,7 @@ form .form-actions .node-readmore a,
  */
 /* line 6, ../sass/components/_form.scss */
 form.navbar-form {
+  clear: left;
   margin: 0;
   padding: 0;
 }
@@ -9169,47 +9170,42 @@ form.navbar-form {
     margin-left: 20px;
   }
 }
-/* line 11, ../sass/components/_form.scss */
+/* line 12, ../sass/components/_form.scss */
 form.navbar-form .form-type-textfield {
   position: relative;
   width: 100%;
   display: block;
 }
-/* line 15, ../sass/components/_form.scss */
+/* line 16, ../sass/components/_form.scss */
 form.navbar-form .form-type-textfield input[type="text"] {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
   padding: 5px 11px;
   width: 100%;
   height: 30px;
-  text-indent: 8px;
+  border: none;
+  background-color: #cde2e0;
 }
-/* line 23, ../sass/components/_form.scss */
+/* line 25, ../sass/components/_form.scss */
 form.navbar-form .form-type-textfield:after {
   font-family: icons;
   z-index: 2;
   position: absolute;
   right: 8px;
   top: 7px;
-  color: #92918d;
-}
-@media screen and (min-width: 1200px) {
-  /* line 6, ../sass/components/_form.scss */
-  form.navbar-form {
-    position: absolute;
-    bottom: -36px;
-    right: 6px;
-    z-index: 1;
-  }
+  color: #00817b;
 }
 
-/* line 41, ../sass/components/_form.scss */
+/* line 37, ../sass/components/_form.scss */
 #apachesolr-panels-search-form {
   position: relative;
 }
-/* line 43, ../sass/components/_form.scss */
+/* line 39, ../sass/components/_form.scss */
 #apachesolr-panels-search-form .form-type-textfield {
   padding-right: 100px;
 }
-/* line 46, ../sass/components/_form.scss */
+/* line 42, ../sass/components/_form.scss */
 #apachesolr-panels-search-form .form-actions {
   position: absolute;
   right: 0;
@@ -9217,24 +9213,32 @@ form.navbar-form .form-type-textfield:after {
 }
 
 /* line 1, ../sass/components/_header.scss */
-header.container .top {
+header.header {
+  background: #7eb5af;
+  background: -webkit-linear-gradient(bottom, #ffffff 0px, #ffffff 20px, #7eb5af 20px, #7eb5af 27px, #ffffff 27px, #ffffff 29px, #7eb5af 29px);
+  background: -moz-linear-gradient(bottom, #ffffff 0px, #ffffff 20px, #7eb5af 20px, #7eb5af 27px, #ffffff 27px, #ffffff 29px, #7eb5af 29px);
+  background: -o-linear-gradient(bottom, #ffffff 0px, #ffffff 20px, #7eb5af 20px, #7eb5af 27px, #ffffff 27px, #ffffff 29px, #7eb5af 29px);
+  background: linear-gradient(to top, #ffffff 0px, #ffffff 20px, #7eb5af 20px, #7eb5af 27px, #ffffff 27px, #ffffff 29px, #7eb5af 29px);
+}
+/* line 6, ../sass/components/_header.scss */
+header.header .top {
   position: relative;
   padding: 10px 0;
 }
 @media screen and (min-width: 768px) {
-  /* line 1, ../sass/components/_header.scss */
-  header.container .top {
-    padding: 43px 0 21px 0;
+  /* line 6, ../sass/components/_header.scss */
+  header.header .top {
+    padding: 22px 0 11px 0;
   }
 }
 
-/* line 9, ../sass/components/_header.scss */
+/* line 16, ../sass/components/_header.scss */
 .brand {
   display: block;
   max-width: 238px;
 }
 @media screen and (min-width: 1200px) {
-  /* line 9, ../sass/components/_header.scss */
+  /* line 16, ../sass/components/_header.scss */
   .brand {
     max-width: 360px;
   }
@@ -9340,117 +9344,123 @@ img.bio-circled {
 /* line 1, ../sass/components/_navigation.scss */
 .navbar {
   clear: left;
-}
-/* line 3, ../sass/components/_navigation.scss */
-.navbar a {
-  font-family: "Montserrat", sans-serif;
-}
-/* line 7, ../sass/components/_navigation.scss */
-.navbar .icons-home {
-  position: relative;
-  font-weight: 900;
-  letter-spacing: initial;
-}
-@media screen and (max-width: 768px) {
-  /* line 12, ../sass/components/_navigation.scss */
-  .navbar .icons-home:before {
-    display: none;
-  }
+  border-width: 2px;
 }
 @media screen and (min-width: 768px) {
-  /* line 7, ../sass/components/_navigation.scss */
-  .navbar .icons-home {
-    padding-left: 30px;
-  }
-  /* line 16, ../sass/components/_navigation.scss */
-  .navbar .icons-home:before {
-    font-family: "icons";
-    display: inline-block;
-    vertical-align: middle;
-    line-height: 1;
-    font-weight: normal;
-    font-style: normal;
-    speak: none;
-    text-decoration: inherit;
-    text-transform: none;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    font-size: 20px;
-    top: 8px;
-    left: 0;
-    position: absolute;
+  /* line 1, ../sass/components/_navigation.scss */
+  .navbar {
+    float: right;
   }
 }
+/* line 5, ../sass/components/_navigation.scss */
+.navbar li:not(:last-child) {
+  position: relative;
+}
+/* line 7, ../sass/components/_navigation.scss */
+.navbar li:not(:last-child) > a:after {
+  -webkit-transform: rotate(25deg);
+  -ms-transform: rotate(25deg);
+  -o-transform: rotate(25deg);
+  transform: rotate(25deg);
+  content: "";
+  width: 1px;
+  height: 60%;
+  position: absolute;
+  top: 20%;
+  right: 0;
+  background: #fff;
+  opacity: .5;
+}
+/* line 18, ../sass/components/_navigation.scss */
+.navbar a {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+}
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  /* line 24, ../sass/components/_navigation.scss */
+  .navbar .navbar-nav a {
+    font-size: 11px;
+    padding: 10px 13px;
+  }
+}
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+  /* line 24, ../sass/components/_navigation.scss */
+  .navbar .navbar-nav a {
+    font-size: 14px;
+  }
+}
+/* line 28, ../sass/components/_navigation.scss */
+.navbar .navbar-collapse {
+  padding: 0;
+}
 @media screen and (max-width: 768px) {
-  /* line 26, ../sass/components/_navigation.scss */
+  /* line 31, ../sass/components/_navigation.scss */
   .navbar .dropdown-menu > li > a, .navbar ul.menu > li > a {
     color: #fff;
   }
 }
 
-/* line 33, ../sass/components/_navigation.scss */
-.nav-holder, form.navbar-form .form-type-textfield input[type="text"] {
-  background: #eeeeee;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-  border: 0px;
-}
-
 /* line 46, ../sass/components/_navigation.scss */
+.navbar-top {
+  background-color: #96c1bc;
+  border: 1px solid #b6d5d2;
+}
+/* line 49, ../sass/components/_navigation.scss */
 .navbar-top ul {
   margin-bottom: 0;
+  margin-left: 0;
 }
-/* line 47, ../sass/components/_navigation.scss */
+/* line 50, ../sass/components/_navigation.scss */
 .navbar-top a {
   color: #00817b;
   padding: 5px;
   text-decoration: none;
 }
-/* line 49, ../sass/components/_navigation.scss */
+/* line 52, ../sass/components/_navigation.scss */
 .navbar-top a:before {
   font-size: 24px;
 }
-/* line 52, ../sass/components/_navigation.scss */
+/* line 55, ../sass/components/_navigation.scss */
 .csstransitions .navbar-top a span {
   display: none;
 }
 @media screen and (min-width: 1200px) {
-  /* line 55, ../sass/components/_navigation.scss */
+  /* line 58, ../sass/components/_navigation.scss */
   .navbar-top a:before {
     font-size: 19px;
   }
 }
-/* line 59, ../sass/components/_navigation.scss */
+/* line 62, ../sass/components/_navigation.scss */
 .navbar-top a:hover {
   color: #00b4ac;
 }
 @media screen and (max-width: 480px) {
-  /* line 64, ../sass/components/_navigation.scss */
+  /* line 67, ../sass/components/_navigation.scss */
   .navbar-top a:before {
     font-size: 19px;
   }
 }
 @media screen and (max-width: 768px) {
-  /* line 45, ../sass/components/_navigation.scss */
+  /* line 46, ../sass/components/_navigation.scss */
   .navbar-top {
     padding-left: 0;
   }
-  /* line 68, ../sass/components/_navigation.scss */
+  /* line 71, ../sass/components/_navigation.scss */
   .navbar-top li {
     width: 25%;
     padding: 0;
     text-align: center;
     float: left;
   }
-  /* line 74, ../sass/components/_navigation.scss */
+  /* line 77, ../sass/components/_navigation.scss */
   .logged-in .navbar-top li {
     width: 20%;
   }
 }
 @media screen and (min-width: 768px) {
-  /* line 45, ../sass/components/_navigation.scss */
+  /* line 46, ../sass/components/_navigation.scss */
   .navbar-top {
     width: auto !important;
   }
@@ -9787,22 +9797,5 @@ img.bio-circled {
   .view-oa-event-list .views-row:nth-child(odd) {
     padding-right: 20px;
     clear: left;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  /* line 3, ../sass/state/_animation.scss */
-  .csstransitions form.navbar-form {
-    -webkit-transition: max-width, 0.5s;
-    -o-transition: max-width, 0.5s;
-    transition: max-width, 0.5s;
-    max-width: 30px;
-  }
-  /* line 7, ../sass/state/_animation.scss */
-  .csstransitions form.navbar-form.grow {
-    -webkit-transition: max-width, 0.2s;
-    -o-transition: max-width, 0.2s;
-    transition: max-width, 0.2s;
-    max-width: 200px;
   }
 }

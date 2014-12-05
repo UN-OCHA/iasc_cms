@@ -1,9 +1,16 @@
-header.container .top {
-  position: relative;
-  padding: 10px 0;
-  @media screen and (min-width: $screen-sm-min) {
-    padding: 43px 0 21px 0;
-  }
+header.header {
+    background: #7eb5af;
+    @include background(
+      linear-gradient(to top, #fff 0px, #fff 20px, #7eb5af 20px, #7eb5af 27px, #fff 27px, #fff 29px, #7eb5af 29px)
+    );
+    .top {
+      position: relative;
+      padding: 10px 0;
+      @media screen and (min-width: $screen-sm-min) {
+        padding: 22px 0 11px 0;
+      }
+    }
+
 }
 
 .brand {
