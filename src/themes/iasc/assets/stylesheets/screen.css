@@ -8483,7 +8483,7 @@ html.js input.throbbing {
 }
 
 /* line 22, ../sass/base/_icons.scss */
-.icons, .view-display-id-panel_pane_featured_products .views-row .views-field-title:after, .panel-success:not(.none) a:before, [class*="icons-"] {
+.icons, .view-display-id-panel_pane_featured_products .views-row .content a:after, .panel-success:not(.none) a:before, [class*="icons-"] {
   font-family: "icons";
   display: inline-block;
   vertical-align: middle;
@@ -8499,7 +8499,7 @@ html.js input.throbbing {
 }
 
 /* line 41, ../sass/base/_icons.scss */
-.icons-arrow:before, .view-display-id-panel_pane_featured_products .views-row .views-field-title:after, .panel-success.arrow a:before {
+.icons-arrow:before, .view-display-id-panel_pane_featured_products .views-row .content a:after, .panel-success.arrow a:before {
   content: "\f101";
 }
 
@@ -8851,50 +8851,45 @@ body.ctools-modal-open {
 /* line 2, ../sass/components/_block.scss */
 .view-display-id-panel_pane_featured_products .views-row {
   position: relative;
-  padding-left: 142px;
   line-height: 18px;
   margin-bottom: 20px;
-  min-height: 122px;
 }
-/* line 8, ../sass/components/_block.scss */
+/* line 6, ../sass/components/_block.scss */
 .view-display-id-panel_pane_featured_products .views-row:nth-child(1n+2) {
   border-top: 1px solid #fff;
   padding-top: 20px;
 }
-/* line 11, ../sass/components/_block.scss */
-.view-display-id-panel_pane_featured_products .views-row:nth-child(1n+2) img {
-  padding-top: 20px;
-}
-/* line 15, ../sass/components/_block.scss */
+/* line 10, ../sass/components/_block.scss */
 .view-display-id-panel_pane_featured_products .views-row:last-child {
   margin-bottom: 0;
 }
-/* line 18, ../sass/components/_block.scss */
+/* line 13, ../sass/components/_block.scss */
 .view-display-id-panel_pane_featured_products .views-row img {
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: relative;
+  float: left;
   max-width: 122px;
   padding: 0;
+  margin-right: 20px;
 }
-/* line 24, ../sass/components/_block.scss */
-.view-display-id-panel_pane_featured_products .views-row .views-field-title {
+/* line 20, ../sass/components/_block.scss */
+.view-display-id-panel_pane_featured_products .views-row .content {
+  overflow: hidden;
+  font-size: 11px;
+}
+/* line 23, ../sass/components/_block.scss */
+.view-display-id-panel_pane_featured_products .views-row .content a {
   font-weight: bold;
   font-size: 12px;
   margin-bottom: 6px;
+  display: block;
 }
 /* line 28, ../sass/components/_block.scss */
-.view-display-id-panel_pane_featured_products .views-row .views-field-title:after {
+.view-display-id-panel_pane_featured_products .views-row .content a:after {
   margin-left: 5px;
   color: #437a75;
 }
-/* line 36, ../sass/components/_block.scss */
-.view-display-id-panel_pane_featured_products .views-row .views-field-field-category,
-.view-display-id-panel_pane_featured_products .views-row .views-field-field-published-date {
-  font-size: 11px;
-}
 
-/* line 44, ../sass/components/_block.scss */
+/* line 41, ../sass/components/_block.scss */
 .menu-block-wrapper .nav > li > a {
   padding: 0;
 }
@@ -9261,12 +9256,18 @@ img.bio-circled {
   font-weight: 900;
   letter-spacing: initial;
 }
+@media screen and (max-width: 768px) {
+  /* line 12, ../sass/components/_navigation.scss */
+  .navbar .icons-home:before {
+    display: none;
+  }
+}
 @media screen and (min-width: 768px) {
   /* line 7, ../sass/components/_navigation.scss */
   .navbar .icons-home {
     padding-left: 30px;
   }
-  /* line 13, ../sass/components/_navigation.scss */
+  /* line 16, ../sass/components/_navigation.scss */
   .navbar .icons-home:before {
     font-family: "icons";
     display: inline-block;
@@ -9286,8 +9287,14 @@ img.bio-circled {
     position: absolute;
   }
 }
+@media screen and (max-width: 768px) {
+  /* line 26, ../sass/components/_navigation.scss */
+  .navbar .dropdown-menu > li > a, .navbar ul.menu > li > a {
+    color: #fff;
+  }
+}
 
-/* line 24, ../sass/components/_navigation.scss */
+/* line 33, ../sass/components/_navigation.scss */
 .nav-holder, form.navbar-form .form-type-textfield input[type="text"] {
   background: #eeeeee;
   -webkit-border-radius: 4px;
@@ -9296,63 +9303,63 @@ img.bio-circled {
   border: 0px;
 }
 
-/* line 37, ../sass/components/_navigation.scss */
+/* line 46, ../sass/components/_navigation.scss */
 .navbar-top ul {
   margin-bottom: 0;
 }
-/* line 38, ../sass/components/_navigation.scss */
+/* line 47, ../sass/components/_navigation.scss */
 .navbar-top a {
   color: #6e0138;
   padding: 5px;
   text-decoration: none;
 }
-/* line 40, ../sass/components/_navigation.scss */
+/* line 49, ../sass/components/_navigation.scss */
 .navbar-top a:before {
   font-size: 24px;
 }
-/* line 43, ../sass/components/_navigation.scss */
+/* line 52, ../sass/components/_navigation.scss */
 .csstransitions .navbar-top a span {
   display: none;
 }
 @media screen and (min-width: 1200px) {
-  /* line 46, ../sass/components/_navigation.scss */
-  .navbar-top a:before {
-    font-size: 19px;
-  }
-}
-/* line 50, ../sass/components/_navigation.scss */
-.navbar-top a:hover {
-  color: #a10152;
-}
-@media screen and (max-width: 480px) {
   /* line 55, ../sass/components/_navigation.scss */
   .navbar-top a:before {
     font-size: 19px;
   }
 }
+/* line 59, ../sass/components/_navigation.scss */
+.navbar-top a:hover {
+  color: #a10152;
+}
+@media screen and (max-width: 480px) {
+  /* line 64, ../sass/components/_navigation.scss */
+  .navbar-top a:before {
+    font-size: 19px;
+  }
+}
 @media screen and (max-width: 768px) {
-  /* line 36, ../sass/components/_navigation.scss */
+  /* line 45, ../sass/components/_navigation.scss */
   .navbar-top {
     padding-left: 0;
   }
-  /* line 59, ../sass/components/_navigation.scss */
+  /* line 68, ../sass/components/_navigation.scss */
   .navbar-top li {
     width: 25%;
     padding: 0;
     text-align: center;
     float: left;
   }
-  /* line 65, ../sass/components/_navigation.scss */
+  /* line 74, ../sass/components/_navigation.scss */
   .logged-in .navbar-top li {
     width: 20%;
   }
 }
 @media screen and (min-width: 768px) {
-  /* line 36, ../sass/components/_navigation.scss */
+  /* line 45, ../sass/components/_navigation.scss */
   .navbar-top {
     width: auto !important;
   }
-  /* line 71, ../sass/components/_navigation.scss */
+  /* line 80, ../sass/components/_navigation.scss */
   .navbar-top.navbar-right {
     padding-right: 0;
   }

@@ -435,14 +435,18 @@ function iasc_document_views_default_views() {
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   /* Field: Content: Product Category */
   $handler->display->display_options['fields']['field_category']['id'] = 'field_category';
   $handler->display->display_options['fields']['field_category']['table'] = 'field_data_field_category';
   $handler->display->display_options['fields']['field_category']['field'] = 'field_category';
   $handler->display->display_options['fields']['field_category']['label'] = '';
+  $handler->display->display_options['fields']['field_category']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_category']['element_type'] = 'em';
+  $handler->display->display_options['fields']['field_category']['element_label_type'] = 'em';
   $handler->display->display_options['fields']['field_category']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_category']['type'] = 'taxonomy_term_reference_plain';
   /* Field: Content: Published Date */
@@ -450,6 +454,7 @@ function iasc_document_views_default_views() {
   $handler->display->display_options['fields']['field_published_date']['table'] = 'field_data_field_published_date';
   $handler->display->display_options['fields']['field_published_date']['field'] = 'field_published_date';
   $handler->display->display_options['fields']['field_published_date']['label'] = '';
+  $handler->display->display_options['fields']['field_published_date']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_published_date']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_published_date']['settings'] = array(
     'format_type' => 'panopoly_day',
@@ -459,6 +464,13 @@ function iasc_document_views_default_views() {
     'multiple_to' => '',
     'show_repeat_rule' => 'show',
   );
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="content">[title] <em>[field_category]</em><br /> [field_published_date]</div>';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Nodequeue: Position */
   $handler->display->display_options['sorts']['position']['id'] = 'position';

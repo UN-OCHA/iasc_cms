@@ -580,7 +580,7 @@ function iasc_meeting_defaultconfig_field_default_fields() {
       'options_limit' => FALSE,
       'options_limit_empty_behaviour' => 0,
       'options_limit_fields' => array(),
-      'required' => 1,
+      'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
       ),
