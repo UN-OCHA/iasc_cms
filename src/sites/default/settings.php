@@ -618,9 +618,9 @@ $conf['cache_default_class'] = 'MemCacheDrupal';
 // The 'cache_form' bin must be assigned to non-volatile storage.
 $conf['cache_class_cache_form'] = 'DrupalDatabaseCache';
 
-// $conf['memcache_servers'] will be set in the local settings file, so set it
-// to empty to prevent mishaps.
-$conf['memcache_servers'] = array();
+// $conf['memcache_servers'] should be overridden per-env in the local settings file.
+$conf['memcache_key_prefix'] = 'iasc';
+$conf['memcache_servers'] = array('localhost:11211' => 'default');
 
 if (file_exists(dirname(__FILE__) . '/settings.local.inc')) {
   @include dirname(__FILE__) . '/settings.local.inc';
