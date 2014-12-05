@@ -18,7 +18,7 @@ form .form-actions .node-readmore a,
 .filter-btn {
   margin-bottom: $padding-base-vertical;
   .btn {
-    background: $green;
+    background: $brand-tertiary;
     color: $white;
     text-transform: uppercase;
     .caret {
@@ -31,7 +31,7 @@ form .form-actions .node-readmore a,
       font-weight: normal;
     }
     &:hover {
-      background: darken($green, 10%);
+      background: darken($brand-tertiary, 10%);
     }
   }
 }

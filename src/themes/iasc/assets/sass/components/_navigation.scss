@@ -77,9 +77,6 @@
   }
   @media screen and (min-width: $screen-sm-min) {
     width: auto !important;
-    &.navbar-right {
-      padding-right: 0;
-    }
   }
 }
 
