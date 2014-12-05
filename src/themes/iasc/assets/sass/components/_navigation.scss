@@ -1,28 +1,37 @@
 .navbar { 
   clear: left; 
-  a {
-    font-family: $font-family-sans-serif;
-  }
-  
-  .icons-home { 
+  border-width: 2px;
+
+
+  @media screen and (min-width: $screen-sm-min) { float: right; }
+  li:not(:last-child) {
     position: relative;
-    font-weight: 900;
-    letter-spacing: initial;    
-    @media screen and (max-width: $screen-sm-min) {
-      &:before {  display: none; }
-    }  
-    @media screen and (min-width: $screen-sm-min) {
-      padding-left: 30px;
-      &:before {
-        @include icomoon();
-        font-size: 20px; 
-        top: 8px;
-        left: 0;
-        position: absolute;
-      }
+    > a:after {
+      @include rotate(25deg);
+      content: "";
+      width: 1px; height: 60%;
+      position: absolute;
+      top: 20%; right: 0;
+      background: #fff;
+      opacity: .5;
     }
   }
-  
+
+  a {
+    font-family: $font-family-sans-serif;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+  }
+  .navbar-nav {
+    a {
+      @media screen and (min-width: $screen-sm-min) and (max-width: $screen-md-min) { font-size: 11px; padding: 10px 13px;}
+      @media screen and (min-width: $screen-md-min) and (max-width: $screen-lg-min) { font-size: 14px; }
+    }
+  }
+  .navbar-collapse {
+    padding: 0;
+  }
   .dropdown-menu > li > a {
     @media screen and (max-width: $screen-sm-min) {
       color: #fff;
@@ -30,11 +39,7 @@
   }
 }
 
-.nav-holder {
-  background: $gray-lighter;
-  @include border-radius($border-radius-base);
-  border: 0px;
-}
+
 
 
   .expanded { @extend .dropdown; }
@@ -43,7 +48,9 @@
 
 
 .navbar-top {
-  ul {margin-bottom: 0;}
+  background-color: #96c1bc;
+  border: 1px solid #b6d5d2;
+  ul {margin-bottom: 0; margin-left: 0;}
   a {  
     color: $brand-primary;
     &:before { font-size: 24px; }

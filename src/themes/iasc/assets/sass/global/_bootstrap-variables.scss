@@ -10,14 +10,11 @@
 // --------------------------------------------------
 
 /* Custom colors*/
-$brand-primary: #d9190a;
 $blue: #1863b6;
 $green: #437a75;
 $purple: #6e0138;
 $gray: #92918d;
-$brand-secondary: #d9190a;
-$brand-primary: #d9190a;
-
+$red: #d9190a;
 
 $white: #fff;
 $black: #000;
@@ -28,14 +25,14 @@ $calendar-icon-bg: #f1f1f1;
 // $gray-darker:            lighten(#000, 13.5%) // #222
 // $gray-dark:              lighten(#000, 20%)   // #333
 // $gray:                   lighten(#000, 33.5%) // #555 
-$gray-light:             #ccc;
+$gray-light:             #eceff0;
 // $gray-lighter:           lighten(#000, 93.5%) // #eee
 $gray-lightess:           #faf9f9;
 
-$brand-primary:            #00817B;
-$brand-secondary:          #066281;
-$brand-tertiary:           #6b0326;
-$brand-quaternary:         #b6c0d4;
+$brand-primary:            #00817B; // Green
+$brand-secondary:          #066281; // Blue
+$brand-tertiary:           #6b0326; // Dark red
+$brand-quaternary:         #b6c0d4; // Gray
 // $brand-success:         #5cb85c
 // $brand-info:            #5bc0de
 // $brand-warning:         #f0ad4e
@@ -238,9 +235,9 @@ $dropdown-border:                $brand-primary;
 //* Dropdown link text color.
 $dropdown-link-color:            $brand-primary;
 //* Hover color for dropdown links.
-$dropdown-link-hover-color:      #fff; 
+$dropdown-link-hover-color:      $white; 
 //* Hover background for dropdown links.
-$dropdown-link-hover-bg:         #7c435f;
+$dropdown-link-hover-bg:         $brand-primary;
 
 //* Active dropdown menu item text color.
 // $dropdown-link-active-color:     $component-active-color
@@ -347,23 +344,23 @@ $grid-gutter-width:         40px;
 //##
 
 // Basics of a navbar
-$navbar-height:                       40px;
-$navbar-margin-bottom:                $line-height-computed;
-$navbar-border-radius:                8px;
+$navbar-height:                       58px;
+$navbar-margin-bottom:                0;
+$navbar-border-radius:                0;
 // $navbar-padding-horizontal:        floor(($grid-gutter-width / 2))
 // $navbar-padding-vertical:          (($navbar-height - $line-height-computed) / 2)
 // $navbar-collapse-max-height:       340px
 
 // $navbar-default-color:             #777
 $navbar-default-bg:                   $brand-primary; // #f8f8f8
-$navbar-default-border:               $brand-primary; //darken($navbar-default-bg, 6.5%)
+$navbar-default-border:               $white; 
 
 // Navbar links
 $navbar-default-link-color:                   #fff; 
 $navbar-default-link-hover-color:             #fff;
 $navbar-default-link-hover-bg:                transparent;
 $navbar-default-link-active-color:            #fff;
-$navbar-default-link-active-bg:               $brand-primary;
+$navbar-default-link-active-bg:               transparent;
 // $navbar-default-link-disabled-color:       #ccc
 // $navbar-default-link-disabled-bg:          transparent
 
@@ -677,7 +674,7 @@ $pager-border-radius:                  0;
 //
 //##
 
-$panel-bg:                       $brand-quaternary;
+$panel-bg:                       #f1f4ff;
 $panel-body-padding:             20px 30px;
 // $panel-heading-padding:       10px 15px
 // $panel-footer-padding:        $panel-heading-padding
@@ -693,15 +690,15 @@ $panel-inner-border:             none;
 
 // $panel-primary-text:          #fff
 $panel-primary-border:           $brand-primary;
-// $panel-primary-heading-bg:    $brand-primary
+$panel-primary-heading-bg:        $brand-primary;
 
 $panel-success-text:              #fff;//$state-success-text
 // $panel-success-border:        $state-success-border
-$panel-success-heading-bg:        $green; //$state-success-bg
+$panel-success-heading-bg:       $brand-tertiary; //$state-success-bg
 
 $panel-info-text:                #fff; //$state-info-text
 // $panel-info-border:           $green;
-$panel-info-heading-bg:          $brand-primary; //$state-info-bg 
+$panel-info-heading-bg:          $red;
 
 // $panel-warning-text:          $state-warning-text
 // $panel-warning-border:        $state-warning-border
