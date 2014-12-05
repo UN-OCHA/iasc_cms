@@ -671,6 +671,107 @@ function iasc_meeting_features_override_default_overrides() {
   $overrides["views_view.oa_event_list.display|default|display_options|cache|output_lifespan_custom"] = 0;
   $overrides["views_view.oa_event_list.display|default|display_options|cache|results_lifespan"] = 3600;
   $overrides["views_view.oa_event_list.display|default|display_options|cache|results_lifespan_custom"] = 0;
+  $overrides["views_view.oa_event_detail.display|event_details|display_options|defaults|fields"] = FALSE;
+  $overrides["views_view.oa_event_detail.display|event_details|display_options|fields"] = array(
+    'field_oa_date_1' => array(
+      'id' => 'field_oa_date_1',
+      'table' => 'field_data_field_oa_date',
+      'field' => 'field_oa_date',
+      'label' => '',
+      'element_label_colon' => FALSE,
+      'type' => 'oa_events_date_formatter',
+      'settings' => array(
+        'format_type' => 'long',
+        'fromto' => 'both',
+        'multiple_number' => '',
+        'multiple_from' => '',
+        'multiple_to' => '',
+        'show_repeat_rule' => 'show',
+      ),
+      'delta_offset' => 0,
+    ),
+    'field_oa_date' => array(
+      'id' => 'field_oa_date',
+      'table' => 'field_data_field_oa_date',
+      'field' => 'field_oa_date',
+      'label' => 'Date',
+      'element_type' => 'span',
+      'element_label_colon' => FALSE,
+      'settings' => array(
+        'format_type' => 'panopoly_time',
+        'fromto' => 'both',
+        'multiple_number' => '',
+        'multiple_from' => '',
+        'multiple_to' => '',
+        'show_repeat_rule' => 'show',
+      ),
+      'delta_offset' => 0,
+    ),
+    'field_oa_date_2' => array(
+      'id' => 'field_oa_date_2',
+      'table' => 'field_data_field_oa_date',
+      'field' => 'field_oa_date',
+      'label' => '',
+      'element_label_colon' => FALSE,
+      'type' => 'oa_events_addthis',
+      'settings' => array(
+        'format_type' => 'long',
+        'fromto' => 'both',
+        'multiple_number' => '',
+        'multiple_from' => '',
+        'multiple_to' => '',
+        'show_repeat_rule' => 'show',
+      ),
+      'delta_offset' => 0,
+    ),
+    'body' => array(
+      'id' => 'body',
+      'table' => 'field_data_body',
+      'field' => 'body',
+      'element_label_colon' => FALSE,
+      'settings' => array(
+        'trim_length' => 600,
+      ),
+    ),
+    'field_oa_media' => array(
+      'id' => 'field_oa_media',
+      'table' => 'field_data_field_oa_media',
+      'field' => 'field_oa_media',
+      'label' => '',
+      'element_label_colon' => FALSE,
+      'hide_empty' => TRUE,
+      'click_sort_column' => 'fid',
+      'type' => 'oa_media_formatter',
+      'settings' => array(
+        'image_style' => 'thumbnail',
+      ),
+      'delta_offset' => 0,
+    ),
+    'ops' => array(
+      'id' => 'ops',
+      'table' => 'flag_content',
+      'field' => 'ops',
+      'relationship' => 'flag_content_rel',
+      'label' => '',
+      'element_label_colon' => FALSE,
+    ),
+    'field_oa_media_1' => array(
+      'id' => 'field_oa_media_1',
+      'table' => 'field_data_field_oa_media',
+      'field' => 'field_oa_media',
+      'click_sort_column' => 'fid',
+      'type' => 'file_table',
+      'delta_offset' => 0,
+    ),
+    'field_time_zone' => array(
+      'id' => 'field_time_zone',
+      'table' => 'field_data_field_time_zone',
+      'field' => 'field_time_zone',
+      'element_type' => 0,
+      'element_label_type' => 0,
+      'element_default_classes' => FALSE,
+    ),
+  );
   $overrides["views_view.oa_event_list.display|default|display_options|cache|type"] = 'time';
   $overrides["views_view.oa_event_list.display|default|display_options|empty"] = array(
     'area' => array(
