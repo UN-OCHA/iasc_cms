@@ -9281,88 +9281,88 @@ img.bio-circled {
   letter-spacing: -1px;
 }
 @media screen and (min-width: 768px) and (max-width: 992px) {
-  /* line 31, ../sass/components/_navigation.scss */
+  /* line 27, ../sass/components/_navigation.scss */
   .navbar .navbar-nav a {
     font-size: 11px;
     padding: 10px 13px;
   }
 }
 @media screen and (min-width: 992px) and (max-width: 1200px) {
-  /* line 31, ../sass/components/_navigation.scss */
+  /* line 27, ../sass/components/_navigation.scss */
   .navbar .navbar-nav a {
     font-size: 14px;
   }
 }
-/* line 36, ../sass/components/_navigation.scss */
+/* line 32, ../sass/components/_navigation.scss */
 .navbar .navbar-collapse {
   padding: 0;
 }
 @media screen and (max-width: 768px) {
-  /* line 39, ../sass/components/_navigation.scss */
+  /* line 35, ../sass/components/_navigation.scss */
   .navbar .dropdown-menu > li > a, .navbar ul.menu > li > a {
     color: #fff;
   }
 }
 
-/* line 54, ../sass/components/_navigation.scss */
+/* line 50, ../sass/components/_navigation.scss */
 .navbar-top {
   background-color: #96c1bc;
   border: 1px solid #b6d5d2;
 }
-/* line 57, ../sass/components/_navigation.scss */
+/* line 53, ../sass/components/_navigation.scss */
 .navbar-top ul {
   margin-bottom: 0;
   margin-left: 0;
 }
-/* line 58, ../sass/components/_navigation.scss */
+/* line 54, ../sass/components/_navigation.scss */
 .navbar-top a {
   color: #00817b;
   padding: 5px;
   text-decoration: none;
 }
-/* line 60, ../sass/components/_navigation.scss */
+/* line 56, ../sass/components/_navigation.scss */
 .navbar-top a:before {
   font-size: 24px;
 }
-/* line 63, ../sass/components/_navigation.scss */
+/* line 59, ../sass/components/_navigation.scss */
 .csstransitions .navbar-top a span {
   display: none;
 }
 @media screen and (min-width: 1200px) {
-  /* line 66, ../sass/components/_navigation.scss */
+  /* line 62, ../sass/components/_navigation.scss */
   .navbar-top a:before {
     font-size: 19px;
   }
 }
-/* line 70, ../sass/components/_navigation.scss */
+/* line 66, ../sass/components/_navigation.scss */
 .navbar-top a:hover {
   color: #00b4ac;
 }
 @media screen and (max-width: 480px) {
-  /* line 75, ../sass/components/_navigation.scss */
+  /* line 71, ../sass/components/_navigation.scss */
   .navbar-top a:before {
     font-size: 19px;
   }
 }
 @media screen and (max-width: 768px) {
-  /* line 54, ../sass/components/_navigation.scss */
+  /* line 50, ../sass/components/_navigation.scss */
   .navbar-top {
     padding-left: 0;
   }
-  /* line 79, ../sass/components/_navigation.scss */
+  /* line 75, ../sass/components/_navigation.scss */
   .navbar-top li {
     width: 25%;
     padding: 0;
     text-align: center;
     float: left;
   }
-  /* line 85, ../sass/components/_navigation.scss */
+  /* line 81, ../sass/components/_navigation.scss */
   .logged-in .navbar-top li {
     width: 20%;
   }
 }
 @media screen and (min-width: 768px) {
-  /* line 54, ../sass/components/_navigation.scss */
+  /* line 50, ../sass/components/_navigation.scss */
   .navbar-top {
     width: auto !important;
   }
