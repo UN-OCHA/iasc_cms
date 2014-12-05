@@ -17,7 +17,7 @@ $purple: #6e0138;
 $gray: #92918d;
 $brand-secondary: #d9190a;
 $brand-primary: #d9190a;
-
+$red: #d9190a;
 
 $white: #fff;
 $black: #000;
@@ -28,7 +28,7 @@ $calendar-icon-bg: #f1f1f1;
 // $gray-darker:            lighten(#000, 13.5%) // #222
 // $gray-dark:              lighten(#000, 20%)   // #333
 // $gray:                   lighten(#000, 33.5%) // #555 
-$gray-light:             #ccc;
+$gray-light:             #eceff0;
 // $gray-lighter:           lighten(#000, 93.5%) // #eee
 $gray-lightess:           #faf9f9;
 
@@ -238,9 +238,9 @@ $dropdown-border:                $brand-primary;
 //* Dropdown link text color.
 $dropdown-link-color:            $brand-primary;
 //* Hover color for dropdown links.
-$dropdown-link-hover-color:      #fff; 
+$dropdown-link-hover-color:      $white; 
 //* Hover background for dropdown links.
-$dropdown-link-hover-bg:         #7c435f;
+$dropdown-link-hover-bg:         $brand-primary;
 
 //* Active dropdown menu item text color.
 // $dropdown-link-active-color:     $component-active-color
@@ -677,7 +677,7 @@ $pager-border-radius:                  0;
 //
 //##
 
-$panel-bg:                       $brand-quaternary;
+$panel-bg:                       #f1f4ff;
 $panel-body-padding:             20px 30px;
 // $panel-heading-padding:       10px 15px
 // $panel-footer-padding:        $panel-heading-padding
@@ -693,15 +693,15 @@ $panel-inner-border:             none;
 
 // $panel-primary-text:          #fff
 $panel-primary-border:           $brand-primary;
-// $panel-primary-heading-bg:    $brand-primary
+$panel-primary-heading-bg:        $brand-primary;
 
 $panel-success-text:              #fff;//$state-success-text
 // $panel-success-border:        $state-success-border
-$panel-success-heading-bg:        $green; //$state-success-bg
+$panel-success-heading-bg:       $brand-tertiary; //$state-success-bg
 
 $panel-info-text:                #fff; //$state-info-text
 // $panel-info-border:           $green;
-$panel-info-heading-bg:          $brand-primary; //$state-info-bg 
+$panel-info-heading-bg:          $red;
 
 // $panel-warning-text:          $state-warning-text
 // $panel-warning-border:        $state-warning-border

@@ -1,6 +1,8 @@
 .navbar { 
   clear: left; 
   border-width: 2px;
+
+
   @media screen and (min-width: $screen-sm-min) { float: right; }
   li:not(:last-child) {
     position: relative;
@@ -21,9 +23,15 @@
     text-transform: uppercase;
     letter-spacing: -1px;
   }
-  .navbar-nav a {
-    @media screen and (min-width: $screen-sm-min) and (max-width: $screen-md-min) { font-size: 11px; padding: 10px 13px;}
-    @media screen and (min-width: $screen-md-min) and (max-width: $screen-lg-min) { font-size: 14px; }
+  .navbar-nav {
+    // min-height: 20px;
+    // @media screen and (min-width: $screen-lg-min) {
+    //   min-height: 58px;
+    // }
+    a {
+      @media screen and (min-width: $screen-sm-min) and (max-width: $screen-md-min) { font-size: 11px; padding: 10px 13px;}
+      @media screen and (min-width: $screen-md-min) and (max-width: $screen-lg-min) { font-size: 14px; }
+    }
   }
   .navbar-collapse {
     padding: 0;

@@ -11,12 +11,13 @@
   border: none;
   .panel-heading { text-transform: uppercase; }
 }
+
 .panel-primary {
   .panel-heading { text-align: center; }
 }
 
 .panel-success {
-  .btn { background-color: $green; }
+  .btn { background-color: $brand-primary; }
   &.doc-icon, &.arrow {
     .views-row,
     .field-item {
@@ -31,12 +32,18 @@
   }
   &:not(.none) a:before {
     @extend .icons;
-    color: $green;
+    color: $brand-tertiary;
     position: absolute;
     left: 0; top: 4px;
     font-size: 16px;
   }
   a { color: #000; }
+}
+
+.panel-info {
+  a {
+    color: $red;
+  }
 }
 
 .well {
