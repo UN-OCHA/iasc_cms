@@ -6,6 +6,7 @@
 /**
  * Contact Node
  */
+ .view-id-search_contacts,
 .node-contact {
   h2 {
     display: none;
@@ -23,6 +24,7 @@
   }
   .field-label { word-wrap: normal; }
   .field-label-inline div { display: inline; float: initial; }
+  .views-label { font-weight: bold; }
   .name, .field-name-field-position {
     text-align: center;
   }
@@ -49,8 +51,9 @@
 }
 .view-search-contacts {
   h2 { display: none; }
-  h4 { margin-top: 0; }
-  li {
+  h4 { margin: 0; }
+  .views-row:not(:last-child),
+  li:not(:last-child) {
     padding-bottom: 20px;
     margin-bottom: 20px;
     border-bottom: 1px solid #fff;
