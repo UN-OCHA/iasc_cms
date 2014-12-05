@@ -73,7 +73,7 @@ projects[radix_layouts][version] = 3.3
 projects[radix_layouts][subdir] = contrib
 
 ; Supports grouping of fields for Agenda items
-projects[field_collection][version] = 1.0-beta7
+projects[field_collection][version] = 1.0-beta8
 projects[field_collection][subdir] = contrib
 
 ; Supports more standardized addresses.
