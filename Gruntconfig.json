@@ -24,6 +24,11 @@
     "srcFiles": ["!sites/*/files/**", "!xmlrpc.php", "!modules/php/*"],
     "projFiles": ["README*", "bin/**"]
   },
+  "drush": {
+    "make": {
+      "args": ["--concurrency=8"]
+    }
+  },
   "phpcs": {
     "path": "bin/phpcs",
     "standard": "vendor/drupal/coder/coder_sniffer/Drupal"
