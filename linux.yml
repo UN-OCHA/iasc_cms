@@ -1,0 +1,37 @@
+varnish:
+  image: unocha/varnish
+  environment:
+    DNSDOCK_NAME: www
+    DNSDOCK_IMAGE: iasc
+    LISTEN_PORT: 80
+  volumes:
+    - config/etc/varnish:/etc/varnish
+  links:
+    - nginx:nginx
+nginx:
+  image: unocha/nginx16
+  volumes:
+    - config/etc/nginx:/etc/nginx
+  environment:
+    DNSDOCK_NAME: nginx
+    DNSDOCK_IMAGE: iasc
+  links:
+    - php:php
+php:
+  image: unocha/php-fpm53
+  volumes:
+    - config/etc/php.d:/etc/php.d
+    - config/etc/php.ini:/etc/php.ini
+    - config/etc/php-fpm.d:/etc/php-fpm.d
+  environment:
+    DNSDOCK_NAME: php
+    DNSDOCK_IMAGE: iasc
+  links:
+    - mysql:mysql
+mysql:
+  image: unocha/percona55
+  volumes:
+    - data/mysql:/etc/mysql
+  environment:
+    DNSDOCK_NAME: mysql
+    DNSDOCK_IMAGE: iasc

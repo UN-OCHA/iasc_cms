@@ -1,6 +1,6 @@
 {
-  "name": "drupal-grunt-example",
-  "description": "Example package.json for a Drupal project built with drupal-grunt-tools.",
+  "name": "iasc-cms",
+  "description": "The Open Atrium-based intranet for the IASC of UN OCHA.",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
