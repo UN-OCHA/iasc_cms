@@ -607,6 +607,21 @@ $conf['404_fast_html'] = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
 
 $conf['site_name'] = t('IASC');
 
+# Add common settings for all local/BlackMesh envs.
+$conf['reverse_proxy'] = TRUE;
+$conf['reverse_proxy_addresses'] = array('127.0.0.1');
+
+$conf['cache_backends'][] = 'sites/all/modules/contrib/memcache/memcache.inc';
+$conf['lock_inc'] = 'sites/all/modules/contrib/memcache/memcache-lock.inc';
+$conf['cache_default_class'] = 'MemCacheDrupal';
+
+// The 'cache_form' bin must be assigned to non-volatile storage.
+$conf['cache_class_cache_form'] = 'DrupalDatabaseCache';
+
+// $conf['memcache_servers'] should be overridden per-env in the local settings file.
+$conf['memcache_key_prefix'] = 'iasc';
+$conf['memcache_servers'] = array('localhost:11211' => 'default');
+
 if (file_exists(dirname(__FILE__) . '/settings.local.inc')) {
   @include dirname(__FILE__) . '/settings.local.inc';
 }
