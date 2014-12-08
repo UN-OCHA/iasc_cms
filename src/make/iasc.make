@@ -145,3 +145,7 @@ projects[views][patch][1979926] = http://drupal.org/files/1979926-views-reset_fe
 projects[views][patch][1735096] = http://drupal.org/files/1735096-views-mltiple-instance-exposed-form-8.patch
 ; fixes "Notice: Undefined index: data in views_plugin_cache->restore_headers()"
 projects[views][patch][2272439] = https://www.drupal.org/files/issues/views-views-undefined_index_data-2272439-18.patch
+
+projects[securelogin][type] = module
+projects[securelogin][subdir] = contrib
+projects[securelogin][version] = 1.4
