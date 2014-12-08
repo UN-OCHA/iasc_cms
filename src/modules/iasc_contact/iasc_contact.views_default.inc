@@ -508,14 +508,15 @@ function iasc_contact_views_default_views() {
   $handler->display->display_options['fields']['nothing_1']['label'] = '';
   $handler->display->display_options['fields']['nothing_1']['alter']['text'] = '<br>';
   $handler->display->display_options['fields']['nothing_1']['element_label_colon'] = FALSE;
-  /* Field: Content: Organization Address - Locality (i.e. City) */
-  $handler->display->display_options['fields']['field_org_address_locality']['id'] = 'field_org_address_locality';
-  $handler->display->display_options['fields']['field_org_address_locality']['table'] = 'field_data_field_org_address';
-  $handler->display->display_options['fields']['field_org_address_locality']['field'] = 'field_org_address_locality';
-  $handler->display->display_options['fields']['field_org_address_locality']['label'] = 'City';
-  $handler->display->display_options['fields']['field_org_address_locality']['element_label_type'] = 'div';
-  $handler->display->display_options['fields']['field_org_address_locality']['element_wrapper_class'] = 'field-label-inline';
-  $handler->display->display_options['fields']['field_org_address_locality']['hide_empty'] = TRUE;
+  /* Field: Content: Address - Locality (i.e. City) */
+  $handler->display->display_options['fields']['field_address_locality']['id'] = 'field_address_locality';
+  $handler->display->display_options['fields']['field_address_locality']['table'] = 'field_data_field_address';
+  $handler->display->display_options['fields']['field_address_locality']['field'] = 'field_address_locality';
+  $handler->display->display_options['fields']['field_address_locality']['label'] = 'City';
+  $handler->display->display_options['fields']['field_address_locality']['element_label_type'] = 'div';
+  $handler->display->display_options['fields']['field_address_locality']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_address_locality']['element_wrapper_class'] = 'field-label-inline';
+  $handler->display->display_options['fields']['field_address_locality']['hide_empty'] = TRUE;
   /* Field: Content: Email */
   $handler->display->display_options['fields']['field_email']['id'] = 'field_email';
   $handler->display->display_options['fields']['field_email']['table'] = 'field_data_field_email';
@@ -525,11 +526,13 @@ function iasc_contact_views_default_views() {
   $handler->display->display_options['fields']['field_email']['element_label_type'] = 'div';
   $handler->display->display_options['fields']['field_email']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_email']['element_wrapper_class'] = 'field-label-inline';
+  $handler->display->display_options['fields']['field_email']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_email']['settings'] = array(
     'title_style' => '_none',
     'title_link' => '',
     'title_class' => '',
   );
+  $handler->display->display_options['fields']['field_email']['delta_limit'] = '1';
   $handler->display->display_options['fields']['field_email']['delta_offset'] = '0';
   /* Field: Content: Phone */
   $handler->display->display_options['fields']['field_phone']['id'] = 'field_phone';
@@ -538,6 +541,7 @@ function iasc_contact_views_default_views() {
   $handler->display->display_options['fields']['field_phone']['element_label_type'] = 'div';
   $handler->display->display_options['fields']['field_phone']['element_wrapper_class'] = 'field-label-inline';
   $handler->display->display_options['fields']['field_phone']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_phone']['delta_limit'] = '1';
   $handler->display->display_options['fields']['field_phone']['delta_offset'] = '0';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Content: Last Name (field_last_name) */
