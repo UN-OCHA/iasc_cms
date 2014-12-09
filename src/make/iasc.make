@@ -153,3 +153,7 @@ projects[views][patch][2272439] = https://www.drupal.org/files/issues/views-view
 projects[securelogin][type] = module
 projects[securelogin][subdir] = contrib
 projects[securelogin][version] = 1.4
+
+; Override location of respond.js library file
+libraries[respondjs][download][type] = get
+libraries[respondjs][download][url] = https://github.com/scottjehl/Respond/blob/master/dest/respond.min.js
