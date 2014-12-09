@@ -34,7 +34,7 @@ form.navbar-form {
 }
 
 // Solr Search Form
-#apachesolr-panels-search-form {
+#apachesolr-panels-search-form { 
   position: relative;
   .form-type-textfield {
     padding-right: 100px;
@@ -43,4 +43,38 @@ form.navbar-form {
     position: absolute;
     right: 0; top: 0;
   }
+}
+
+// Mail Chimp Extend Bootsrap Classes
+form.validate {
+  @extend .clearfix;
+}
+.mc-field-group {
+  @extend .form-group;
+  @extend .form-inline;
+  @extend .row;
+  padding-right: $grid-gutter-width / 2;
+  label {
+    @include make-sm-column(5); 
+  }
+
+  input[type="email"],
+  input[type="text"] {
+    @extend .form-control;
+    @include make-sm-column(7, 0);
+
+  }
+}
+.clear {
+  @extend .pull-right;
+}
+.indicates-required {
+  @extend .pull-left;
+}
+#mc-embedded-subscribe {
+  @extend .btn;
+  @extend .btn-default;
+  @extend .pull-right;
+  margin-bottom: $padding-base-vertical;
+  clear: right;
 }
