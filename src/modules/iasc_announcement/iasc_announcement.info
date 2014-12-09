@@ -55,5 +55,5 @@ features[variable][] = node_preview_announcement
 features[variable][] = node_submitted_announcement
 features[variable][] = panelizer_defaults_node_announcement
 features[views_view][] = iasc_announcement
-mtime = 1417634260
+mtime = 1418084711
 project path = sites/all/modules/custom

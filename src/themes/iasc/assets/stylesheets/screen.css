@@ -9322,6 +9322,11 @@ form .form-actions .node-readmore a,
   display: none;
 }
 
+/* line 60, ../sass/components/_fields.scss */
+.field-name-field-links .field-item {
+  margin-bottom: 9px;
+}
+
 /**
  * @file
  * Form elements overides from global defaults
