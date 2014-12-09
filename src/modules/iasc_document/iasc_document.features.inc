@@ -71,7 +71,7 @@ function iasc_document_field_default_field_instances_alter(&$data) {
       'label' => 'hidden',
       'module' => 'file_entity',
       'settings' => array(
-        'text' => 'Download [file:name]',
+        'text' => '[file:name]',
       ),
       'type' => 'file_download_link',
       'weight' => 0,

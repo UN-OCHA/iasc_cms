@@ -375,7 +375,7 @@ function iasc_meeting_features_override_default_overrides() {
       'shown' => TRUE,
       'access' => array(),
       'configuration' => array(
-        'label' => 'title',
+        'label' => 'hidden',
         'formatter' => 'entityreference_entity_view',
         'delta_limit' => 0,
         'delta_offset' => 0,
