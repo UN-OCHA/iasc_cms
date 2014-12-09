@@ -434,7 +434,7 @@ function iasc_meeting_panelizer_defaults_override_alter(&$data) {
           'shown' => TRUE,
           'access' => array(),
           'configuration' => array(
-            'label' => 'title',
+            'label' => 'hidden',
             'formatter' => 'entityreference_entity_view',
             'delta_limit' => 0,
             'delta_offset' => 0,
