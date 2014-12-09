@@ -20,11 +20,6 @@ h6, .h6 {
   font-family: $font-family-sans-serif;
 }
 
-.node-readmore a {
-  @extend .btn-primary;
-  @extend .btn;
-}
-
 ul, ol {
   @extend .list-unstyled;
 }

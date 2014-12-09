@@ -15,6 +15,12 @@ form .form-actions .node-readmore a,
   margin-right: 10px;
 }
 
+.node-readmore a {
+  @extend .btn-primary;
+  @extend .btn;
+  text-transform: uppercase;
+}
+
 .filter-btn {
   margin-bottom: $padding-base-vertical;
   .btn {
@@ -44,6 +50,7 @@ form .form-actions .node-readmore a,
     border: 0;
     border-radius:  $border-radius-base;
     color: $btn-primary-color;
+    font-family: $font-family-sans-serif;
     text-transform: uppercase;
     &:after {
       @extend .icons-morearrow:before;
