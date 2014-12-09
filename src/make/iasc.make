@@ -134,6 +134,10 @@ projects[og_role_override][type] = module
 projects[og_role_override][version] = 2.2
 projects[og_role_override][subdir] = contrib
 
+projects[shield][type] = module
+projects[shield][version] = 1.2
+projects[shield][subdir] = contrib
+
 ; Views
 ; Override oa_core.make: 3.8
 projects[views][version] = 3.8
