@@ -65,7 +65,7 @@ function iasc_document_features_override_default_overrides() {
     'label' => 'hidden',
     'module' => 'file_entity',
     'settings' => array(
-      'text' => 'Download [file:name]',
+      'text' => '[file:name]',
     ),
     'type' => 'file_download_link',
     'weight' => 0,
