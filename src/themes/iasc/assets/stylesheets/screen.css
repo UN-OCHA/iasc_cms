@@ -8943,22 +8943,22 @@ body.ctools-modal-open {
   color: black;
 }
 
-/* line 2, ../sass/components/_block.scss */
+/* line 3, ../sass/components/_block.scss */
 .view-display-id-panel_pane_featured_products .views-row {
   position: relative;
   line-height: 18px;
   margin-bottom: 20px;
 }
-/* line 6, ../sass/components/_block.scss */
+/* line 7, ../sass/components/_block.scss */
 .view-display-id-panel_pane_featured_products .views-row:nth-child(1n+2) {
   border-top: 1px solid #fff;
   padding-top: 20px;
 }
-/* line 10, ../sass/components/_block.scss */
+/* line 11, ../sass/components/_block.scss */
 .view-display-id-panel_pane_featured_products .views-row:last-child {
   margin-bottom: 0;
 }
-/* line 13, ../sass/components/_block.scss */
+/* line 14, ../sass/components/_block.scss */
 .view-display-id-panel_pane_featured_products .views-row img {
   position: relative;
   float: left;
@@ -8966,25 +8966,25 @@ body.ctools-modal-open {
   padding: 0;
   margin-right: 20px;
 }
-/* line 20, ../sass/components/_block.scss */
+/* line 21, ../sass/components/_block.scss */
 .view-display-id-panel_pane_featured_products .views-row .content {
   overflow: hidden;
   font-size: 11px;
 }
-/* line 23, ../sass/components/_block.scss */
+/* line 24, ../sass/components/_block.scss */
 .view-display-id-panel_pane_featured_products .views-row .content a {
   font-weight: bold;
   font-size: 12px;
   margin-bottom: 6px;
   display: block;
 }
-/* line 28, ../sass/components/_block.scss */
+/* line 29, ../sass/components/_block.scss */
 .view-display-id-panel_pane_featured_products .views-row .content a:after {
   margin-left: 5px;
   color: #6b0326;
 }
 
-/* line 41, ../sass/components/_block.scss */
+/* line 42, ../sass/components/_block.scss */
 .menu-block-wrapper .nav > li > a {
   padding: 0;
 }
