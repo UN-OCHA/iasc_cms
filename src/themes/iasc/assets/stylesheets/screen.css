@@ -9381,32 +9381,21 @@ form.navbar-form .form-type-textfield:after {
 /* line 57, ../sass/components/_form.scss */
 .mc-field-group label {
   position: relative;
+  float: left;
+  width: 41.6666666667%;
   min-height: 1px;
   padding-left: 20px;
   padding-right: 20px;
-}
-@media (min-width: 768px) {
-  /* line 57, ../sass/components/_form.scss */
-  .mc-field-group label {
-    float: left;
-    width: 41.6666666667%;
-  }
 }
 /* line 62, ../sass/components/_form.scss */
 .mc-field-group input[type="email"],
 .mc-field-group input[type="text"] {
   position: relative;
+  float: left;
+  width: 58.3333333333%;
   min-height: 1px;
   padding-left: 0;
   padding-right: 0;
-}
-@media (min-width: 768px) {
-  /* line 62, ../sass/components/_form.scss */
-  .mc-field-group input[type="email"],
-  .mc-field-group input[type="text"] {
-    float: left;
-    width: 58.3333333333%;
-  }
 }
 
 /* line 74, ../sass/components/_form.scss */

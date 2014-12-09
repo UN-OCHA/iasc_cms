@@ -55,13 +55,13 @@ form.validate {
   @extend .row;
   padding-right: $grid-gutter-width / 2;
   label {
-    @include make-sm-column(5); 
+    @include make-xs-column(5); 
   }
 
   input[type="email"],
   input[type="text"] {
     @extend .form-control;
-    @include make-sm-column(7, 0);
+    @include make-xs-column(7, 0);
 
   }
 }
