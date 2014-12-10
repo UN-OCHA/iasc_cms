@@ -26,6 +26,9 @@ function iasc_document_form_node_form_alter(&$form, &$form_state, $form_id) {
 
       // Show Product Thumbnail only for Products.
       $form['field_product_thumbnail']['#states'] = $state;
+
+      // Show Feature flag only for Products.
+      $form['flag']['featured']['#states'] = $state;
     }
 
     // Label should be Published date if Document is selected.

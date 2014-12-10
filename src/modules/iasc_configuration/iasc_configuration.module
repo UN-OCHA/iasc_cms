@@ -757,34 +757,14 @@ function iasc_configuration_add_section($parent_nid, $name, $details) {
 }
 
 /**
- * Implements hook_flag_access().
- */
-function iasc_configuration_flag_access($flag, $content_id, $action, $account) {
-  // Only Document nodes of type Product can use the Featured flag at this time.
-  if ('featured' == $flag->name) {
-    if (empty($content_id) || !($node = node_load($content_id))) {
-      return FALSE;
-    }
-
-    if ('oa_wiki_page' == $node->type) {
-      $wrapper = entity_metadata_wrapper('node', $node);
-      $type = $wrapper->field_document_type->value();
-
-      if ('Product' != $type->name) {
-        return FALSE;
-      }
-    }
-  }
-}
-
-/**
  * Implements hook_flag().
  *
  * Remove from featured, show on home, special nodequeues.
  */
 function iasc_configuration_flag($action, $flag, $content_id, $account) {
   if ('featured' == $flag->name) {
-    $node = node_load($content_id);
+    // Invalidate cache because this might be a newly created node.
+    $node = node_load($content_id, NULL, TRUE);
 
     // Determine the queue for Featured Document nodes.
     if ('oa_wiki_page' == $node->type) {
