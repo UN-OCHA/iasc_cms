@@ -351,7 +351,7 @@ function iasc_configuration_panelizer_defaults_override_alter(&$data) {
           'style' => array(
             'settings' => array(
               'secondary_options' => 'panel-success',
-              'linked_list' => 'doc-icon',
+              'linked_list' => 'none',
             ),
             'style' => 'secondary',
           ),
@@ -483,7 +483,7 @@ function iasc_configuration_panelizer_defaults_override_alter(&$data) {
           'locks' => array(),
           'uuid' => 'ef209430-cd92-42f8-ab1a-66dd810461e2',
         ); /* WAS: '' */
-    $data['node:oa_space:default']->display->layout = 'burr_flipped'; /* WAS: 'radix_bryant_flipped' */
+    $data['node:oa_space:default']->display->layout = 'burr_flipped'; /* WAS: 'bryant_flipped_flipped' */
     $data['node:oa_space:default']->display->panels['contentmain'][1] = 'new-02b7adcf-d6d0-41cc-9e74-71ce68194477'; /* WAS: 'new-9995e8b8-d8cb-4339-a7ad-1f0ea569d2de' */
     $data['node:oa_space:default']->display->panels['contentmain'][2] = 'new-ef209430-cd92-42f8-ab1a-66dd810461e2'; /* WAS: '' */
     $data['node:oa_space:default']->display->panels['sidebar'][0] = 'new-18865aa1-e2a6-4d3d-93c2-3f80adf44c54'; /* WAS: 'new-801d2668-fa45-4031-83ba-e7d47830a8a6' */

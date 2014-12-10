@@ -323,7 +323,7 @@ function iasc_configuration_features_override_default_overrides() {
       'style' => array(
         'settings' => array(
           'secondary_options' => 'panel-success',
-          'linked_list' => 'doc-icon',
+          'linked_list' => 'none',
         ),
         'style' => 'secondary',
       ),
