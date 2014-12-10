@@ -42,6 +42,9 @@
 }
 
 .panel-info {
+  .views-row {
+    margin-bottom: $padding-large-vertical;
+  }
   a {
     color: $red;
   }
