@@ -626,3 +626,9 @@ if (file_exists(dirname(__FILE__) . '/settings.local.inc')) {
   @include dirname(__FILE__) . '/settings.local.inc';
 }
 
+// Disable shield for the load balancer.
+if (isset($_SERVER['HTTP_X_HEALTH_CHECK']) && ($_SERVER['HTTP_X_HEALTH_CHECK'] == 'HAPROXY')) {
+  header('Cache-Control: no-cache,no-store,must-revalidate');
+  die('Hi, HAPROXY!');
+}
+
