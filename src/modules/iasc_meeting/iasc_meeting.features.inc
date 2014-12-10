@@ -266,12 +266,8 @@ function iasc_meeting_default_page_manager_handlers_alter(&$data) {
           'locks' => array(),
           'uuid' => '457a0b07-9259-4092-a16e-f542822ee2af',
         ); /* WAS: '' */
-    $data['node_edit_panel_context_7']->conf['display']->panels['sidebar'][2] = 'new-c1b47a87-02a0-4882-a02f-5dd40ec016bb'; /* WAS: 'new-30f4398c-9f13-4195-b392-3f34ab0ddcee' */
-    $data['node_edit_panel_context_7']->conf['display']->panels['sidebar'][3] = 'new-84b3bfce-f79b-4397-8b67-d97d1b61347c'; /* WAS: 'new-c1b47a87-02a0-4882-a02f-5dd40ec016bb' */
-    $data['node_edit_panel_context_7']->conf['display']->panels['sidebar'][4] = 'new-020f676b-0f7d-4a37-93e2-44aa23df3980'; /* WAS: 'new-84b3bfce-f79b-4397-8b67-d97d1b61347c' */
-    $data['node_edit_panel_context_7']->conf['display']->panels['sidebar'][5] = 'new-0b869cc5-d419-48ed-bcd1-4e6ec0d15a34'; /* WAS: 'new-020f676b-0f7d-4a37-93e2-44aa23df3980' */
-    $data['node_edit_panel_context_7']->conf['display']->panels['sidebar'][6] = 'new-68f32ccd-0cec-45db-9ecd-112683c079ae'; /* WAS: 'new-0b869cc5-d419-48ed-bcd1-4e6ec0d15a34' */
-    $data['node_edit_panel_context_7']->conf['display']->panels['sidebar'][7] = 'new-457a0b07-9259-4092-a16e-f542822ee2af'; /* WAS: 'new-68f32ccd-0cec-45db-9ecd-112683c079ae' */
+    $data['node_edit_panel_context_7']->conf['display']->panels['sidebar'][1] = 'new-457a0b07-9259-4092-a16e-f542822ee2af'; /* WAS: 'new-08f897a0-7ee5-4c24-856e-e5d6e0aa8bb3' */
+    $data['node_edit_panel_context_7']->conf['display']->panels['sidebar'][2] = 'new-08f897a0-7ee5-4c24-856e-e5d6e0aa8bb3'; /* WAS: 'new-30f4398c-9f13-4195-b392-3f34ab0ddcee' */
     unset($data['node_edit_panel_context_7']->conf['display']->content['new-30f4398c-9f13-4195-b392-3f34ab0ddcee']);
   }
 }
