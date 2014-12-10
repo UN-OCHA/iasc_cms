@@ -156,7 +156,6 @@ function _iasc_configuration_default_nodequeues() {
   }
 }
 
-
 /**
  * Implements hook_update_N().
  *
@@ -175,4 +174,34 @@ function iasc_configuration_update_7003() {
     ->fields(array('weight' => $weight + 1))
     ->condition('name', 'iasc_configuration', '=')
     ->execute();
+}
+
+/**
+ * Implements hook_update_N().
+ *
+ * Change the titles of public Documents, Meetings, and News sections.
+ */
+function iasc_configuration_update_7004() {
+  // Public sections should also include the text: (Public) in the node title.
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'oa_section')
+    ->propertyCondition('title', array('Documents', 'Meetings',
+    'News'))
+    ->propertyOrderBy('nid', 'ASC');
+
+  $result = $query->execute();
+
+  if (isset($result['node'])) {
+    $nids = array_keys($result['node']);
+    $nodes = node_load_multiple($nids);
+
+    foreach ($nodes as $node) {
+      // We want to be sure that we're getting sections that aren't associated with a group.
+      if (empty($node->field_oa_group_ref)) {
+        $node->title = t("{$node->title} (Public)");
+        node_save($node);
+      }
+    }
+  }
 }
