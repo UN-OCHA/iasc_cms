@@ -19,6 +19,7 @@
 .panel-success {
   .btn { background-color: $brand-primary; }
   &.doc-icon, &.arrow {
+    .menu li,
     .views-row,
     .field-item {
       position: relative;
