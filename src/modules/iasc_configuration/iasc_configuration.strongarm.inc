@@ -33,6 +33,12 @@ function iasc_configuration_strongarm() {
         'custom settings' => 1,
       ),
     ),
+    'file' => array(
+      'large_image' => array(
+        'label' => 'Large Image',
+        'custom settings' => 1,
+      ),
+    ),
   );
   $export['entity_view_modes'] = $strongarm;
 
