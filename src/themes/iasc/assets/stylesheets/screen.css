@@ -9824,18 +9824,20 @@ img.bio-circled {
 .panel-success .btn, .panel-success .node-readmore a, .node-readmore .panel-success a, .panel-success #mc-embedded-subscribe {
   background-color: #00817b;
 }
-/* line 23, ../sass/components/_panel.scss */
+/* line 24, ../sass/components/_panel.scss */
+.panel-success.doc-icon .menu li,
 .panel-success.doc-icon .views-row,
-.panel-success.doc-icon .field-item, .panel-success.arrow .views-row,
+.panel-success.doc-icon .field-item, .panel-success.arrow .menu li,
+.panel-success.arrow .views-row,
 .panel-success.arrow .field-item {
   position: relative;
   padding-left: 30px;
 }
-/* line 30, ../sass/components/_panel.scss */
+/* line 31, ../sass/components/_panel.scss */
 .panel-success li {
   line-height: 28px;
 }
-/* line 33, ../sass/components/_panel.scss */
+/* line 34, ../sass/components/_panel.scss */
 .panel-success:not(.none) a:before {
   color: #6b0326;
   position: absolute;
@@ -9843,32 +9845,32 @@ img.bio-circled {
   top: 4px;
   font-size: 16px;
 }
-/* line 40, ../sass/components/_panel.scss */
+/* line 41, ../sass/components/_panel.scss */
 .panel-success a {
   color: #000;
 }
 
-/* line 44, ../sass/components/_panel.scss */
+/* line 45, ../sass/components/_panel.scss */
 .panel-info .views-row {
   margin-bottom: 20px;
 }
-/* line 47, ../sass/components/_panel.scss */
+/* line 48, ../sass/components/_panel.scss */
 .panel-info a {
   color: #d9190a;
 }
 
-/* line 52, ../sass/components/_panel.scss */
+/* line 53, ../sass/components/_panel.scss */
 .well {
   border: 0;
   border-radius: 0;
   overflow: visible !important;
 }
-/* line 57, ../sass/components/_panel.scss */
+/* line 58, ../sass/components/_panel.scss */
 .node-type-announcement .well .panel-separator {
   margin-bottom: 10px;
 }
 
-/* line 67, ../sass/components/_panel.scss */
+/* line 68, ../sass/components/_panel.scss */
 .node-type-announcement h1.title,
 .page-page-not-found h1.title,
 .node-type-oa-event h1.title,
