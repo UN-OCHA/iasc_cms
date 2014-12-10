@@ -9794,8 +9794,25 @@ img.bio-circled {
   margin-bottom: 0;
 }
 
-/* line 53, ../sass/components/_node.scss */
-.view-search-contacts h2, .view-search-contacts .node-type-oa-event .pane-node-field-info-private .field-label, .node-type-oa-event .pane-node-field-info-private .view-search-contacts .field-label,
+/* line 54, ../sass/components/_node.scss */
+.node-contact h2, .node-contact .node-type-oa-event .pane-node-field-info-private .field-label, .node-type-oa-event .pane-node-field-info-private .node-contact .field-label,
+.node-contact .node-type-oa-event .pane-node-field-info-private h3.pane-title,
+.node-type-oa-event .pane-node-field-info-private .node-contact h3.pane-title,
+.node-contact .node-type-oa-event .pane-node-field-info-private .field-name-field-agenda-items .pane-title.field-name-field-ai-title,
+.node-type-oa-event .pane-node-field-info-private .field-name-field-agenda-items .node-contact .pane-title.field-name-field-ai-title,
+.node-contact .node-type-oa-event .field-name-field-agenda-items .pane-node-field-info-private .pane-title.field-name-field-ai-title,
+.node-type-oa-event .field-name-field-agenda-items .pane-node-field-info-private .node-contact .pane-title.field-name-field-ai-title,
+.node-contact .node-type-oa-event .pane-node-body .field-label,
+.node-type-oa-event .pane-node-body .node-contact .field-label,
+.node-contact .node-type-oa-event .pane-node-body h3.pane-title,
+.node-type-oa-event .pane-node-body .node-contact h3.pane-title,
+.node-contact .node-type-oa-event .pane-node-body .field-name-field-agenda-items .pane-title.field-name-field-ai-title,
+.node-type-oa-event .pane-node-body .field-name-field-agenda-items .node-contact .pane-title.field-name-field-ai-title,
+.node-contact .node-type-oa-event .field-name-field-agenda-items .pane-node-body .pane-title.field-name-field-ai-title,
+.node-type-oa-event .field-name-field-agenda-items .pane-node-body .node-contact .pane-title.field-name-field-ai-title, .node-contact .node-type-oa-event .field-name-field-agenda-items > .field-label, .node-type-oa-event .node-contact .field-name-field-agenda-items > .field-label,
+.view-search-contacts h2,
+.view-search-contacts .node-type-oa-event .pane-node-field-info-private .field-label,
+.node-type-oa-event .pane-node-field-info-private .view-search-contacts .field-label,
 .view-search-contacts .node-type-oa-event .pane-node-field-info-private h3.pane-title,
 .node-type-oa-event .pane-node-field-info-private .view-search-contacts h3.pane-title,
 .view-search-contacts .node-type-oa-event .pane-node-field-info-private .field-name-field-agenda-items .pane-title.field-name-field-ai-title,
@@ -9809,14 +9826,20 @@ img.bio-circled {
 .view-search-contacts .node-type-oa-event .pane-node-body .field-name-field-agenda-items .pane-title.field-name-field-ai-title,
 .node-type-oa-event .pane-node-body .field-name-field-agenda-items .view-search-contacts .pane-title.field-name-field-ai-title,
 .view-search-contacts .node-type-oa-event .field-name-field-agenda-items .pane-node-body .pane-title.field-name-field-ai-title,
-.node-type-oa-event .field-name-field-agenda-items .pane-node-body .view-search-contacts .pane-title.field-name-field-ai-title, .view-search-contacts .node-type-oa-event .field-name-field-agenda-items > .field-label, .node-type-oa-event .view-search-contacts .field-name-field-agenda-items > .field-label {
+.node-type-oa-event .field-name-field-agenda-items .pane-node-body .view-search-contacts .pane-title.field-name-field-ai-title,
+.view-search-contacts .node-type-oa-event .field-name-field-agenda-items > .field-label,
+.node-type-oa-event .view-search-contacts .field-name-field-agenda-items > .field-label {
   display: none;
 }
-/* line 54, ../sass/components/_node.scss */
+/* line 55, ../sass/components/_node.scss */
+.node-contact h4,
 .view-search-contacts h4 {
   margin: 0;
+  text-align: center;
 }
-/* line 56, ../sass/components/_node.scss */
+/* line 57, ../sass/components/_node.scss */
+.node-contact .views-row:not(:last-child),
+.node-contact li:not(:last-child),
 .view-search-contacts .views-row:not(:last-child),
 .view-search-contacts li:not(:last-child) {
   padding-bottom: 20px;
@@ -9824,17 +9847,23 @@ img.bio-circled {
   border-bottom: 1px solid #fff;
 }
 
+/* line 64, ../sass/components/_node.scss */
+.field-name-field-organisation {
+  text-align: center;
+  margin-bottom: 6px;
+}
+
 /* Annoucements */
-/* line 66, ../sass/components/_node.scss */
+/* line 72, ../sass/components/_node.scss */
 .node-type-announcement .pane-node-title h1,
 .node-type-announcement .title {
   margin: 0;
 }
-/* line 69, ../sass/components/_node.scss */
+/* line 75, ../sass/components/_node.scss */
 .node-type-announcement .field-name-field-published-date {
   margin-bottom: 10px;
 }
-/* line 72, ../sass/components/_node.scss */
+/* line 78, ../sass/components/_node.scss */
 .node-type-announcement .node-oa-wiki-page h2, .node-type-announcement .node-oa-wiki-page .node-type-oa-event .pane-node-field-info-private .field-label, .node-type-oa-event .pane-node-field-info-private .node-type-announcement .node-oa-wiki-page .field-label,
 .node-type-announcement .node-oa-wiki-page .node-type-oa-event .pane-node-field-info-private h3.pane-title,
 .node-type-oa-event .pane-node-field-info-private .node-type-announcement .node-oa-wiki-page h3.pane-title,
