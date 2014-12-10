@@ -214,12 +214,8 @@ function iasc_meeting_features_override_default_overrides() {
       'locks' => array(),
       'uuid' => '457a0b07-9259-4092-a16e-f542822ee2af',
     );
-  $overrides["page_manager_handlers.node_edit_panel_context_7.conf|display|panels|sidebar|2"] = 'new-c1b47a87-02a0-4882-a02f-5dd40ec016bb';
-  $overrides["page_manager_handlers.node_edit_panel_context_7.conf|display|panels|sidebar|3"] = 'new-84b3bfce-f79b-4397-8b67-d97d1b61347c';
-  $overrides["page_manager_handlers.node_edit_panel_context_7.conf|display|panels|sidebar|4"] = 'new-020f676b-0f7d-4a37-93e2-44aa23df3980';
-  $overrides["page_manager_handlers.node_edit_panel_context_7.conf|display|panels|sidebar|5"] = 'new-0b869cc5-d419-48ed-bcd1-4e6ec0d15a34';
-  $overrides["page_manager_handlers.node_edit_panel_context_7.conf|display|panels|sidebar|6"] = 'new-68f32ccd-0cec-45db-9ecd-112683c079ae';
-  $overrides["page_manager_handlers.node_edit_panel_context_7.conf|display|panels|sidebar|7"] = 'new-457a0b07-9259-4092-a16e-f542822ee2af';
+  $overrides["page_manager_handlers.node_edit_panel_context_7.conf|display|panels|sidebar|1"] = 'new-457a0b07-9259-4092-a16e-f542822ee2af';
+  $overrides["page_manager_handlers.node_edit_panel_context_7.conf|display|panels|sidebar|2"] = 'new-08f897a0-7ee5-4c24-856e-e5d6e0aa8bb3';
 
   // Exported overrides for: panelizer_defaults
   $overrides["panelizer_defaults.node:oa_event:default.display|content|new-024f971a-f875-4063-bf25-63926a5c9092"] = (object) array(
