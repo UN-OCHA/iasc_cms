@@ -49,15 +49,21 @@
     }
   }
 }
+.node-contact,
 .view-search-contacts {
   h2 { display: none; }
-  h4 { margin: 0; }
+  h4 { margin: 0; text-align: center;}
   .views-row:not(:last-child),
   li:not(:last-child) {
     padding-bottom: 20px;
     margin-bottom: 20px;
     border-bottom: 1px solid #fff;
   }
+}
+
+.field-name-field-organisation {
+  text-align: center;
+  margin-bottom: $padding-base-vertical;
 }
 
 /* Annoucements */

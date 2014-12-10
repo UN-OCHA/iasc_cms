@@ -98,10 +98,7 @@ function iasc_contact_field_group_info() {
   $field_group->data = array(
     'label' => 'Info',
     'weight' => '8',
-    'children' => array(
-      0 => 'field_email',
-      1 => 'field_phone',
-    ),
+    'children' => array(),
     'format_type' => 'hidden',
     'format_settings' => array(
       'label' => 'Info',
@@ -190,7 +187,7 @@ function iasc_contact_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Name',
-    'weight' => '0',
+    'weight' => '5',
     'children' => array(
       0 => 'field_first_name',
       1 => 'field_last_name',
