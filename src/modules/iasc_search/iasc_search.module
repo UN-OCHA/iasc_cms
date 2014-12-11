@@ -19,6 +19,22 @@ function iasc_search_form_alter(&$form, &$form_state, $form_id) {
 }
 
 /**
+ *  Implements hook_form_FORM_ID_alter().
+ *
+ * Expose additional indexed fields are exposed.
+ * By default only show text fields are displayed.
+ */
+function iasc_search_form_apachesolr_search_bias_form_alter(&$form, &$form_state, $form_id) {
+  $fields = element_children($form['field_bias']);
+  if ($fields) {
+    foreach ($fields as $field_name) {
+      // Show all the fields!
+      $form['field_bias'][$field_name]['#access'] = TRUE;
+    }
+  }
+}
+
+/**
  * Custom form submit handler to change redirect state of the form.
  */
 function iasc_search_all_form_submit($form, &$form_state) {
