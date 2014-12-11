@@ -327,12 +327,7 @@ function iasc_meeting_features_override_default_overrides() {
       'locks' => array(),
       'uuid' => '213e8d65-ffde-47b2-bad5-b54b3f97dcfd',
     );
-  $overrides["panelizer_defaults.node:oa_event:default.display|content|new-231244a5-ffbc-4013-a01e-cc85b4feeff0|configuration|override_title"] = 1;
-  $overrides["panelizer_defaults.node:oa_event:default.display|content|new-231244a5-ffbc-4013-a01e-cc85b4feeff0|configuration|override_title_text"] = 'Security Level';
-  $overrides["panelizer_defaults.node:oa_event:default.display|content|new-231244a5-ffbc-4013-a01e-cc85b4feeff0|position"] = 8;
-  $overrides["panelizer_defaults.node:oa_event:default.display|content|new-231244a5-ffbc-4013-a01e-cc85b4feeff0|shown"] = FALSE;
-  $overrides["panelizer_defaults.node:oa_event:default.display|content|new-231244a5-ffbc-4013-a01e-cc85b4feeff0|style|settings|secondary_options"] = 'panel-primary';
-  $overrides["panelizer_defaults.node:oa_event:default.display|content|new-231244a5-ffbc-4013-a01e-cc85b4feeff0|style|style"] = 'secondary';
+  $overrides["panelizer_defaults.node:oa_event:default.display|content|new-231244a5-ffbc-4013-a01e-cc85b4feeff0"]["DELETED"] = TRUE;
   $overrides["panelizer_defaults.node:oa_event:default.display|content|new-2832cb36-53a3-484e-bbf0-05b7084ea8f4"] = (object) array(
       'pid' => 'new-2832cb36-53a3-484e-bbf0-05b7084ea8f4',
       'panel' => 'contentmain',
@@ -628,8 +623,7 @@ function iasc_meeting_features_override_default_overrides() {
       'locks' => array(),
       'uuid' => 'c84bd896-6873-41ab-89ea-5d0f2e0c2c7f',
     );
-  $overrides["panelizer_defaults.node:oa_event:default.display|content|new-cf81af22-ac8b-4147-8462-a5fce1b76471|position"] = 9;
-  $overrides["panelizer_defaults.node:oa_event:default.display|content|new-cf81af22-ac8b-4147-8462-a5fce1b76471|style|style"] = 'default';
+  $overrides["panelizer_defaults.node:oa_event:default.display|content|new-cf81af22-ac8b-4147-8462-a5fce1b76471"]["DELETED"] = TRUE;
   $overrides["panelizer_defaults.node:oa_event:default.display|content|new-e0f02a5b-dd4e-4ab9-8479-06a195d86fd0"]["DELETED"] = TRUE;
   $overrides["panelizer_defaults.node:oa_event:default.display|panels|contentmain|0"] = 'new-c84bd896-6873-41ab-89ea-5d0f2e0c2c7f';
   $overrides["panelizer_defaults.node:oa_event:default.display|panels|contentmain|1"] = 'new-9035b3e7-28dc-478f-a595-e89dca69718a';
@@ -645,8 +639,6 @@ function iasc_meeting_features_override_default_overrides() {
   $overrides["panelizer_defaults.node:oa_event:default.display|panels|sidebar|5"] = 'new-64975a0b-8b8d-4816-8d78-0a066a557a04';
   $overrides["panelizer_defaults.node:oa_event:default.display|panels|sidebar|6"] = 'new-19fe4e19-0d90-4acf-9c80-e1ffdf773880';
   $overrides["panelizer_defaults.node:oa_event:default.display|panels|sidebar|7"] = 'new-213e8d65-ffde-47b2-bad5-b54b3f97dcfd';
-  $overrides["panelizer_defaults.node:oa_event:default.display|panels|sidebar|8"] = 'new-231244a5-ffbc-4013-a01e-cc85b4feeff0';
-  $overrides["panelizer_defaults.node:oa_event:default.display|panels|sidebar|9"] = 'new-cf81af22-ac8b-4147-8462-a5fce1b76471';
 
   // Exported overrides for: variable
   $overrides["variable.node_submitted_oa_event.value"] = 0;
