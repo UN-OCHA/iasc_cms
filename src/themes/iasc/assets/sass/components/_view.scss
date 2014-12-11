@@ -1,5 +1,7 @@
 .view-filters {
 
+  margin-bottom: $padding-large-vertical;
+
   .container-inline-date .form-item {
     width: 100%;
     div, input { width: 100%; }
@@ -19,9 +21,10 @@
     }
   }
 
-  .views-exposed-widget {
+  .views-exposed-widget { 
     width: 100%;
     padding-right: 0;
+    margin-bottom: 0 !important;
     @media screen and (min-width: $screen-sm-min) and (max-width: $screen-md-min) {
       width: 50%;
       &:nth-child(odd) {
@@ -35,7 +38,6 @@
     @media screen and (min-width: $screen-md-min) {
       width: 25%;
       padding-right: 20px;
-      margin-bottom: 20px;
       .view-iasc-document &:not(.views-submit-button) {
         width: 33%;
         float: left;
@@ -47,6 +49,8 @@
   .views-submit-button {
     width: 100%;
     padding-top: 2rem;
+    padding-right: 0 !important;
+    @media screen and (min-width: $screen-md-min) { padding: 0 20px 0 0 !important; }
     input, .form-item {
       float: right;
     }
