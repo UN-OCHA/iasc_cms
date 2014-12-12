@@ -486,9 +486,7 @@ function iasc_contact_views_default_views() {
   $handler->display->display_options['fields']['field_position']['id'] = 'field_position';
   $handler->display->display_options['fields']['field_position']['table'] = 'field_data_field_position';
   $handler->display->display_options['fields']['field_position']['field'] = 'field_position';
-  $handler->display->display_options['fields']['field_position']['relationship'] = 'field_membership_value';
   $handler->display->display_options['fields']['field_position']['label'] = '';
-  $handler->display->display_options['fields']['field_position']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_position']['element_label_colon'] = FALSE;
   /* Field: Field collection item: Body */
   $handler->display->display_options['fields']['field_body_membership']['id'] = 'field_body_membership';
