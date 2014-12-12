@@ -51,8 +51,8 @@ function iasc_preprocess_entity(&$vars) {
  */
 function iasc_preprocess_html(&$vars) {
   // Add Google fonts.
-  drupal_add_css('http://fonts.googleapis.com/css?family=Montserrat:400,700', 'external');
-  drupal_add_css('http://fonts.googleapis.com/css?family=Merriweather:400,400italic,700,700italic', 'external');
+  drupal_add_css('//fonts.googleapis.com/css?family=Montserrat:400,700', 'external');
+  drupal_add_css('//fonts.googleapis.com/css?family=Merriweather:400,400italic,700,700italic', 'external');
 
   // Don't need the navbar for our theme.
   unset($vars['page']['page_top']['navbar']);
