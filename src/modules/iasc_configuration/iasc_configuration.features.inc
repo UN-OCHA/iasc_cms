@@ -39,8 +39,8 @@ function iasc_configuration_default_page_manager_pages_alter(&$data) {
           'shown' => TRUE,
           'access' => array(),
           'configuration' => array(
-            'path_type' => 'same',
-            'path' => '',
+            'path_type' => 'custom',
+            'path' => 'site/search',
             'override_prompt' => 0,
             'prompt' => '',
             'show_keys' => 1,
