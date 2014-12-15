@@ -2,18 +2,34 @@
   clear: left; 
   border-width: 2px;
 
+  @media screen and (max-width: $screen-md-min) {
+    min-height: 36px; 
+    .navbar-toggle {
+      margin: 0;
+    }
+  }
 
-  @media screen and (min-width: $screen-sm-min) { float: right; }
+  @media screen and (min-width: $screen-sm-min) { 
+    float: right;
+  }  
+  
+  .navbar-collapse {
+    @include box-shadow(#fff 0 0 0);
+    border: 0;
+  }
+
   li:not(:last-child) {
     position: relative;
-    > a:after {
-      @include rotate(25deg);
-      content: "";
-      width: 1px; height: 60%;
-      position: absolute;
-      top: 20%; right: 0;
-      background: #fff;
-      opacity: .5;
+    @media screen and (min-width: $screen-md-min) {
+      > a:after {
+        @include rotate(25deg);
+        content: "";
+        width: 1px; height: 60%;
+        position: absolute;
+        top: 20%; right: 0;
+        background: #fff;
+        opacity: .5;
+      }
     }
   }
 
@@ -24,6 +40,9 @@
     letter-spacing: -1px;
   }
   .navbar-nav {
+    @media screen and (max-width: $screen-sm-min) {
+      margin: 0;
+    }
     a {
       @media screen and (min-width: $screen-sm-min) and (max-width: $screen-md-min) { font-size: 11px; padding: 10px 13px;}
       @media screen and (min-width: $screen-md-min) and (max-width: $screen-lg-min) { font-size: 14px; }
@@ -39,51 +58,46 @@
   }
 }
 
-
-
-
-  .expanded { @extend .dropdown; }
-  a.menu { @extend .dropdown-toggle; }
-  .navbar ul.menu { @extend .dropdown-menu; } 
-
+.expanded { @extend .dropdown; }
+a.menu { @extend .dropdown-toggle; }
+.navbar ul.menu { @extend .dropdown-menu; } 
 
 .navbar-top {
-  background-color: #96c1bc;
-  border: 1px solid #b6d5d2;
-  ul {margin-bottom: 0; margin-left: 0;}
+  ul {
+    background-color: #96c1bc;
+    border: 1px solid #b6d5d2;
+    margin-bottom: 0; 
+    margin-left: 0;
+  }
   a {  
     color: $brand-primary;
-    &:before { font-size: 24px; }
-    // Use the no transition to detect IE8 to not hide text because icons are not working. 
-    .csstransitions & {
-      span { display: none; }
-    }
-    @media screen and (min-width: $screen-lg-min) {
-      &:before { font-size: 19px; }
-    }
+    font-size: 19px;
     padding: 5px;
     text-decoration: none;
-    &:hover {
-      color: lighten($brand-primary, 10%);
+    span { display: none; }
+    &:hover { color: lighten($brand-primary, 10%); 
     }
   }
-  @media screen and (max-width: $screen-xs-min) {
-    a:before { font-size: 19px; }
-  }
+
   @media screen and (max-width: $screen-sm-min) {
-    padding-left: 0;
+    @include make-xs-column(6);
+    padding: 0 10px 0 0;
     li {
       width: 25%; 
       padding: 0;
       text-align: center;
       float: left;
     }
+    a {
+      padding: 5px 0 4px;
+    }
     .logged-in & li {
       width: 20%; 
     }
   }
   @media screen and (min-width: $screen-sm-min) {
-    width: auto !important;
+    position: relative;
+    float: right;
   }
 }
 
