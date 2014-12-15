@@ -162,17 +162,31 @@ function iasc_search_features_override_default_overrides() {
   $overrides["page_manager_handlers.search_node_panel_context_apachesolr.conf|display|panels|sidebar|6"] = 'new-d20db8aa-7a1c-4920-be9d-ebcdaa896b4b';
 
   // Exported overrides for: page_manager_pages
-  $overrides["page_manager_pages.solr.default_handlers|page_solr_panel_context|conf|display|content|new-5f9beaf3-4d74-4180-861f-74dba8b68bb3|configuration|empty_override_format"] = 'iasc_wysiwyg';
-  $overrides["page_manager_pages.solr.default_handlers|page_solr_panel_context|conf|display|content|new-5f9beaf3-4d74-4180-861f-74dba8b68bb3|configuration|empty_override_text|format"] = 'iasc_wysiwyg';
-  $overrides["page_manager_pages.solr.default_handlers|page_solr_panel_context|conf|display|content|new-5f9beaf3-4d74-4180-861f-74dba8b68bb3|configuration|empty_override_text|value"] = '';
-  $overrides["page_manager_pages.solr.default_handlers|page_solr_panel_context|conf|display|content|new-5f9beaf3-4d74-4180-861f-74dba8b68bb3|configuration|env_id"] = '';
-  $overrides["page_manager_pages.solr.default_handlers|page_solr_panel_context|conf|display|content|new-5f9beaf3-4d74-4180-861f-74dba8b68bb3|configuration|path"] = '';
-  $overrides["page_manager_pages.solr.default_handlers|page_solr_panel_context|conf|display|content|new-5f9beaf3-4d74-4180-861f-74dba8b68bb3|configuration|path_type"] = 'same';
-  $overrides["page_manager_pages.solr.default_handlers|page_solr_panel_context|conf|display|content|new-5f9beaf3-4d74-4180-861f-74dba8b68bb3|configuration|rows"] = 10;
-  $overrides["page_manager_pages.solr.default_handlers|page_solr_panel_context|conf|display|content|new-5f9beaf3-4d74-4180-861f-74dba8b68bb3|configuration|title_override"] = 1;
-  $overrides["page_manager_pages.solr.default_handlers|page_solr_panel_context|conf|display|panel_settings|sidebar"] = array(
-    'style' => 'oa_styles_well',
-  );
+  $overrides["page_manager_pages.solr.default_handlers|page_solr_panel_context|conf|display|content|new-15c4fdb7-8600-4bf7-a414-2ecea16a27f4|position"] = 2;
+  $overrides["page_manager_pages.solr.default_handlers|page_solr_panel_context|conf|display|content|new-5f9beaf3-4d74-4180-861f-74dba8b68bb3|position"] = 3;
+  $overrides["page_manager_pages.solr.default_handlers|page_solr_panel_context|conf|display|content|new-7d3aea5e-9724-4903-9f51-d9131ff68bf9"] = (object) array(
+      'pid' => 'new-7d3aea5e-9724-4903-9f51-d9131ff68bf9',
+      'panel' => 'contentmain',
+      'type' => 'fieldable_panels_pane',
+      'subtype' => 'fpid:10',
+      'shown' => TRUE,
+      'access' => array(),
+      'configuration' => array(
+        'view_mode' => 'full',
+      ),
+      'cache' => array(),
+      'style' => array(
+        'settings' => NULL,
+      ),
+      'css' => array(),
+      'extras' => array(),
+      'position' => 1,
+      'locks' => array(),
+      'uuid' => '7d3aea5e-9724-4903-9f51-d9131ff68bf9',
+    );
+  $overrides["page_manager_pages.solr.default_handlers|page_solr_panel_context|conf|display|panels|contentmain|1"] = 'new-7d3aea5e-9724-4903-9f51-d9131ff68bf9';
+  $overrides["page_manager_pages.solr.default_handlers|page_solr_panel_context|conf|display|panels|contentmain|2"] = 'new-15c4fdb7-8600-4bf7-a414-2ecea16a27f4';
+  $overrides["page_manager_pages.solr.default_handlers|page_solr_panel_context|conf|display|panels|contentmain|3"] = 'new-5f9beaf3-4d74-4180-861f-74dba8b68bb3';
 
  return $overrides;
 }

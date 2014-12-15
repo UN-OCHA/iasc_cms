@@ -98,6 +98,27 @@ function iasc_search_default_page_manager_pages() {
     $display->content['new-67fb30a3-ace4-4a0a-a379-eafcb4ce6946'] = $pane;
     $display->panels['contentmain'][0] = 'new-67fb30a3-ace4-4a0a-a379-eafcb4ce6946';
     $pane = new stdClass();
+    $pane->pid = 'new-7d3aea5e-9724-4903-9f51-d9131ff68bf9';
+    $pane->panel = 'contentmain';
+    $pane->type = 'fieldable_panels_pane';
+    $pane->subtype = 'fpid:10';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'view_mode' => 'full',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '7d3aea5e-9724-4903-9f51-d9131ff68bf9';
+    $display->content['new-7d3aea5e-9724-4903-9f51-d9131ff68bf9'] = $pane;
+    $display->panels['contentmain'][1] = 'new-7d3aea5e-9724-4903-9f51-d9131ff68bf9';
+    $pane = new stdClass();
     $pane->pid = 'new-15c4fdb7-8600-4bf7-a414-2ecea16a27f4';
     $pane->panel = 'contentmain';
     $pane->type = 'apachesolr_info';
@@ -114,11 +135,11 @@ function iasc_search_default_page_manager_pages() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 2;
     $pane->locks = '';
     $pane->uuid = '15c4fdb7-8600-4bf7-a414-2ecea16a27f4';
     $display->content['new-15c4fdb7-8600-4bf7-a414-2ecea16a27f4'] = $pane;
-    $display->panels['contentmain'][1] = 'new-15c4fdb7-8600-4bf7-a414-2ecea16a27f4';
+    $display->panels['contentmain'][2] = 'new-15c4fdb7-8600-4bf7-a414-2ecea16a27f4';
     $pane = new stdClass();
     $pane->pid = 'new-5f9beaf3-4d74-4180-861f-74dba8b68bb3';
     $pane->panel = 'contentmain';
@@ -149,7 +170,7 @@ function iasc_search_default_page_manager_pages() {
       'context' => 'argument_string_1',
       'path_type' => 'same',
       'path' => '',
-      'rows' => '10',
+      'rows' => 10,
       'env_id' => '',
     );
     $pane->cache = array();
@@ -158,11 +179,11 @@ function iasc_search_default_page_manager_pages() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 2;
+    $pane->position = 3;
     $pane->locks = '';
     $pane->uuid = '5f9beaf3-4d74-4180-861f-74dba8b68bb3';
     $display->content['new-5f9beaf3-4d74-4180-861f-74dba8b68bb3'] = $pane;
-    $display->panels['contentmain'][2] = 'new-5f9beaf3-4d74-4180-861f-74dba8b68bb3';
+    $display->panels['contentmain'][3] = 'new-5f9beaf3-4d74-4180-861f-74dba8b68bb3';
     $pane = new stdClass();
     $pane->pid = 'new-a14994f1-77f6-497f-9f47-dca0d864eccf';
     $pane->panel = 'sidebar';
