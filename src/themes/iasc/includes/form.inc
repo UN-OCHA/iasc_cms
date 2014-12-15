@@ -8,12 +8,7 @@
  * Implements hook_form_FORM_ID_alter().
  */
 function iasc_form_search_form_alter(&$form, &$form_state, $form_id) {
-  $form['#attributes']['class'][] = 'col-xs-6 col-sm-3';
   $form['basic']['submit']['#attributes']['class'][] = 'hidden';
-}
-
-function iasc_form_apachesolr_panels_search_form_alter(&$form, &$form_state, $form_id) {
-  $form['apachesolr_panels_search_form']['#attributes']['placeholder'] = array('placeholder' => t('Search'));
 }
 
 /**

@@ -16,7 +16,7 @@
        <img src="<?php print $logo; ?>" alt="<?php print $site_name; ?>">
     </a>
 
-    <nav class="navbar-top pull-right">
+    <nav class="navbar-top">
       <?php print theme('links__system_secondary_menu', array(
         'links' => $utility_navigation,
         'attributes' => array(
@@ -24,13 +24,10 @@
         ),
       )); ?>
     </nav>
-
-
     <?php if($search_form): ?>
       <?php print $search_form; ?>
-    <?php endif; ?> 
-
-
+    <?php endif; ?>
+    
   </div>
   <nav class="navbar navbar-default" role="navigation">
     <!-- Brand and toggle get grouped for better mobile display -->

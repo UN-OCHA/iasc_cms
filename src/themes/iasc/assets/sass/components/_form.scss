@@ -4,11 +4,7 @@
  */
 
 form.navbar-form {
-  clear: left;
   margin: 0; padding: 0;
-  @media (min-width: $screen-sm-min) and (max-width: $screen-lg-min) {
-    margin-left: $grid-gutter-width / 2;
-  }
   .form-type-textfield {
     position: relative;
     width: 100%;
@@ -31,6 +27,13 @@ form.navbar-form {
       color: $brand-primary;
     }
   }
+}
+
+.search-query {
+  @include input-placeholder() {
+    color: red;
+  }
+  border: 1px solid red;
 }
 
 // Solr Search Form

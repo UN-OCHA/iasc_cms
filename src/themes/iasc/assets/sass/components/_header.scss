@@ -1,22 +1,41 @@
 header.header {
-    background: #7eb5af;
-    @include background(
-      linear-gradient(to top, #fff 0px, #fff 20px, #7eb5af 20px, #7eb5af 27px, #fff 27px, #fff 29px, #7eb5af 29px)
-    );
-    .top {
-      position: relative;
-      padding: 10px 0;
-      @media screen and (min-width: $screen-sm-min) {
-        padding: 22px 0 11px 0;
-      }
+  background: #7eb5af;
+  @include background(
+    linear-gradient(to top, #fff 0px, #fff 20px, #7eb5af 20px, #7eb5af 27px, #fff 27px, #fff 29px, #7eb5af 29px)
+  );
+  .top {
+    position: relative;
+    padding: 10px 0;
+    @media screen and (min-width: $screen-sm-min) {
+      padding: 22px 0 11px 0;
     }
+  }
+  .search-form {
+    border-top: 0;
+    border-bottom: 0;
+    @include box-shadow(rgba(#fff, .0) 0 0 0);
 
+    @media screen and (max-width: $screen-sm-min) {
+      @include make-xs-column(6);
+      @include make-xs-column-offset(6);
+      padding: 0 0 0 10px;
+      float: none !important;
+    }
+    @media screen and (min-width: $screen-sm-min) {
+      clear: left;
+    }
+  }
 }
 
 .brand {
   display: block;
   max-width: 238px;
+  @media screen and (max-width: $screen-md-min) {
+    margin-bottom: $padding-large-vertical / 2;
+  }
   @media screen and (min-width: $screen-lg-min) {
     max-width: 360px; 
   }
 }
+
+
