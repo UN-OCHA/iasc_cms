@@ -10028,20 +10028,20 @@ img.bio-circled {
   width-color: white;
   width-margin-top: 0;
 }
-/* line 13, ../sass/components/_secretariat.scss */
+/* line 11, ../sass/components/_secretariat.scss */
 .addressHighlight .address a {
   color: #fff;
 }
-/* line 17, ../sass/components/_secretariat.scss */
+/* line 14, ../sass/components/_secretariat.scss */
 .addressHighlight .address p {
   margin-bottom: 0;
   color: #eee;
 }
-/* line 23, ../sass/components/_secretariat.scss */
+/* line 19, ../sass/components/_secretariat.scss */
 .addressHighlight.geneva {
   background: url(../images/map-geneva.png) no-repeat top right;
 }
-/* line 24, ../sass/components/_secretariat.scss */
+/* line 20, ../sass/components/_secretariat.scss */
 .addressHighlight.nyc {
   background: url(../images/map-nyc.png) no-repeat top right;
 }
