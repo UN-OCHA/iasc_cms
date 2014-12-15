@@ -5,6 +5,7 @@ package = IASC
 dependencies[] = ctools
 dependencies[] = defaultconfig
 dependencies[] = entityreference
+dependencies[] = fe_block
 dependencies[] = features
 dependencies[] = field_collection
 dependencies[] = field_group
@@ -220,5 +221,4 @@ features_exclude[features_overrides][views_view.oa_event_list.display|default|di
 features_exclude[features_overrides][views_view.oa_event_list.display|default|display_options|relationships|flag_content_rel|required] = views_view.oa_event_list.display|default|display_options|relationships|flag_content_rel|required
 features_exclude[features_overrides][views_view.oa_event_list.display|default|display_options|relationships|flag_content_rel|user_scope] = views_view.oa_event_list.display|default|display_options|relationships|flag_content_rel|user_scope
 features_exclude[taxonomy][hosts] = hosts
-features_exclude[dependencies][fe_block] = fe_block
-mtime = 1418658415
+mtime = 1418668357
