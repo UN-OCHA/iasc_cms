@@ -354,7 +354,7 @@ function iasc_meeting_features_override_default_overrides() {
       ),
       'css' => array(),
       'extras' => array(),
-      'position' => 4,
+      'position' => 5,
       'locks' => array(),
       'uuid' => '2832cb36-53a3-484e-bbf0-05b7084ea8f4',
     );
@@ -385,7 +385,7 @@ function iasc_meeting_features_override_default_overrides() {
       ),
       'css' => array(),
       'extras' => array(),
-      'position' => 5,
+      'position' => 6,
       'locks' => array(),
       'uuid' => '29d974b8-bef0-4ff8-af8c-38b369433a5c',
     );
@@ -426,9 +426,30 @@ function iasc_meeting_features_override_default_overrides() {
       ),
       'css' => array(),
       'extras' => array(),
-      'position' => 3,
+      'position' => 4,
       'locks' => array(),
       'uuid' => '554e3ff8-5ae2-47d4-944e-53903613b9f5',
+    );
+  $overrides["panelizer_defaults.node:oa_event:default.display|content|new-58c4c2e7-f13c-4442-9c91-e0c47be60e77"] = (object) array(
+      'pid' => 'new-58c4c2e7-f13c-4442-9c91-e0c47be60e77',
+      'panel' => 'contentmain',
+      'type' => 'block',
+      'subtype' => 'block-6',
+      'shown' => TRUE,
+      'access' => array(),
+      'configuration' => array(
+        'override_title' => 0,
+        'override_title_text' => '',
+      ),
+      'cache' => array(),
+      'style' => array(
+        'settings' => NULL,
+      ),
+      'css' => array(),
+      'extras' => array(),
+      'position' => 2,
+      'locks' => array(),
+      'uuid' => '58c4c2e7-f13c-4442-9c91-e0c47be60e77',
     );
   $overrides["panelizer_defaults.node:oa_event:default.display|content|new-64975a0b-8b8d-4816-8d78-0a066a557a04"] = (object) array(
       'pid' => 'new-64975a0b-8b8d-4816-8d78-0a066a557a04',
@@ -537,7 +558,7 @@ function iasc_meeting_features_override_default_overrides() {
       ),
       'css' => array(),
       'extras' => array(),
-      'position' => 2,
+      'position' => 3,
       'locks' => array(),
       'uuid' => '9c1552e9-6b59-4811-ac8f-8278030a8f11',
     );
@@ -627,10 +648,11 @@ function iasc_meeting_features_override_default_overrides() {
   $overrides["panelizer_defaults.node:oa_event:default.display|content|new-e0f02a5b-dd4e-4ab9-8479-06a195d86fd0"]["DELETED"] = TRUE;
   $overrides["panelizer_defaults.node:oa_event:default.display|panels|contentmain|0"] = 'new-c84bd896-6873-41ab-89ea-5d0f2e0c2c7f';
   $overrides["panelizer_defaults.node:oa_event:default.display|panels|contentmain|1"] = 'new-9035b3e7-28dc-478f-a595-e89dca69718a';
-  $overrides["panelizer_defaults.node:oa_event:default.display|panels|contentmain|2"] = 'new-9c1552e9-6b59-4811-ac8f-8278030a8f11';
-  $overrides["panelizer_defaults.node:oa_event:default.display|panels|contentmain|3"] = 'new-554e3ff8-5ae2-47d4-944e-53903613b9f5';
-  $overrides["panelizer_defaults.node:oa_event:default.display|panels|contentmain|4"] = 'new-2832cb36-53a3-484e-bbf0-05b7084ea8f4';
-  $overrides["panelizer_defaults.node:oa_event:default.display|panels|contentmain|5"] = 'new-29d974b8-bef0-4ff8-af8c-38b369433a5c';
+  $overrides["panelizer_defaults.node:oa_event:default.display|panels|contentmain|2"] = 'new-58c4c2e7-f13c-4442-9c91-e0c47be60e77';
+  $overrides["panelizer_defaults.node:oa_event:default.display|panels|contentmain|3"] = 'new-9c1552e9-6b59-4811-ac8f-8278030a8f11';
+  $overrides["panelizer_defaults.node:oa_event:default.display|panels|contentmain|4"] = 'new-554e3ff8-5ae2-47d4-944e-53903613b9f5';
+  $overrides["panelizer_defaults.node:oa_event:default.display|panels|contentmain|5"] = 'new-2832cb36-53a3-484e-bbf0-05b7084ea8f4';
+  $overrides["panelizer_defaults.node:oa_event:default.display|panels|contentmain|6"] = 'new-29d974b8-bef0-4ff8-af8c-38b369433a5c';
   $overrides["panelizer_defaults.node:oa_event:default.display|panels|sidebar|0"] = 'new-721e6db6-a312-4742-8dd2-d7d879654919';
   $overrides["panelizer_defaults.node:oa_event:default.display|panels|sidebar|1"] = 'new-b556a608-6c09-4e8b-99bb-f7cee89c1756';
   $overrides["panelizer_defaults.node:oa_event:default.display|panels|sidebar|2"] = 'new-677802ea-6c46-4806-9759-35191c9cf1a8';

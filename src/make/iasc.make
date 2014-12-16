@@ -157,3 +157,8 @@ projects[securelogin][version] = 1.4
 ; Override location of respond.js library file
 libraries[respondjs][download][type] = get
 libraries[respondjs][download][url] = https://raw.githubusercontent.com/scottjehl/Respond/master/dest/respond.min.js
+
+projects[features_extra][type] = module
+projects[features_extra][version] = 1.0-beta1
+projects[features_extra][subdir] = contrib
+projects[features_extra][patch][1900574] = https://www.drupal.org/files/issues/1900574.defaultconfig.undefinedindex_13.patch
