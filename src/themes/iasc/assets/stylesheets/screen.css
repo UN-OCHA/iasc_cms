@@ -10024,9 +10024,12 @@ img.bio-circled {
   background-color: #00817b;
   padding: 20px;
   color: white;
-  width: 300px h3;
-  width-color: white;
-  width-margin-top: 0;
+  width: 300px;
+}
+/* line 7, ../sass/components/_secretariat.scss */
+.addressHighlight .address h3, .addressHighlight .address .node-type-oa-event .field-name-field-agenda-items .field-name-field-ai-title, .node-type-oa-event .field-name-field-agenda-items .addressHighlight .address .field-name-field-ai-title {
+  color: white;
+  margin-top: 0;
 }
 /* line 11, ../sass/components/_secretariat.scss */
 .addressHighlight .address a {
