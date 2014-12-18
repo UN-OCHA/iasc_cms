@@ -21,14 +21,28 @@
   li:not(:last-child) {
     position: relative;
     @media screen and (min-width: $screen-md-min) {
-      > a:after {
-        @include rotate(25deg);
-        content: "";
-        width: 1px; height: 60%;
-        position: absolute;
-        top: 20%; right: 0;
-        background: #fff;
-        opacity: .5;
+      a { position: relative; }
+      .no-csstransitions & {
+        > a:after {
+          content: "";
+          background: image-url('nav-seperator.png') no-repeat 50% 100%;
+          right: -8px;
+          top: 12px;
+          position: absolute;
+          width: 15px; 
+          height: 31px;
+        }
+      }
+      .csstransitions & {
+        > a:after {
+          @include rotate(25deg);
+          content: "";
+          width: 1px; height: 60%;
+          position: absolute;
+          top: 20%; right: 0;
+          background: #fff;
+          opacity: .5;
+        }
       }
     }
   }
