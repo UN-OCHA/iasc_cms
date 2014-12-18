@@ -18,21 +18,30 @@
     border: 0;
   }
 
+  li {
+    .no-csstransitions & {
+      a { position: relative; }
+      > a:after {
+        content: "";
+        background: image-url('nav-seperator.png') no-repeat 50% 100%;
+        right: -8px;
+        top: 12px;
+        position: absolute;
+        width: 15px; 
+        height: 31px;
+      }
+    }   
+  }
+
+  li.last {
+    a:after {
+      display: none;
+    }
+  }
+
   li:not(:last-child) {
     position: relative;
-    @media screen and (min-width: $screen-md-min) {
-      a { position: relative; }
-      .no-csstransitions & {
-        > a:after {
-          content: "";
-          background: image-url('nav-seperator.png') no-repeat 50% 100%;
-          right: -8px;
-          top: 12px;
-          position: absolute;
-          width: 15px; 
-          height: 31px;
-        }
-      }
+    @media screen and (min-width: $screen-md-min) {      
       .csstransitions & {
         > a:after {
           @include rotate(25deg);
