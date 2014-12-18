@@ -7,6 +7,43 @@
 include_once 'iasc_contact.features.inc';
 
 /**
+ * Implements hook_menu().
+ */
+function iasc_contact_menu() {
+  $items['admin/content/contacts'] = array(
+    'title' => 'Contacts',
+    'description' => 'List and edit contacts.',
+    'page callback' => 'iasc_contact_contacts_list',
+    'access callback' => 'iasc_contact_contacts_list_access',
+    'type' => MENU_LOCAL_TASK | MENU_NORMAL_ITEM,
+  );
+
+  return $items;
+}
+
+/**
+ * Access callback for: admin/content/contacts.
+ * @return bool
+ */
+function iasc_contact_contacts_list_access() {
+  global $user;
+  if ($user->uid > 0) {
+    if (in_array('administrator', $user->roles)) {
+      return TRUE;
+    }
+  }
+
+  return FALSE;
+}
+
+/**
+ * Page callback for admin/content/contacts.
+ */
+function iasc_contact_contacts_list() {
+  return views_embed_view('search_contacts', 'page');
+}
+
+/**
  * Implements hook_form_BASE_FORM_ID_alter().
  */
 function iasc_contact_form_node_form_alter(&$form, &$form_state, $form_id) {
