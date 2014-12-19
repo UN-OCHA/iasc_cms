@@ -1,0 +1,15 @@
+.page-site-search {
+  .well:before {
+    content: "Filter Search Results";
+    @extend .panel-title;
+    margin-left: -$grid-gutter-width / 2;
+    margin-right: -$grid-gutter-width / 2;
+    margin-top: -$grid-gutter-width / 2;
+    padding: $panel-heading-padding;
+    background-color: $panel-primary-heading-bg;
+    color: $panel-primary-text;
+    display: block;
+    text-transform: uppercase;
+    font-family: $font-family-sans-serif;
+  }
+}
