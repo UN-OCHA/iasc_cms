@@ -4641,7 +4641,7 @@ tbody.collapse.in {
 }
 
 /* line 19, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_dropdowns.scss */
-.dropdown, .expanded {
+.dropdown {
   position: relative;
 }
 
@@ -4773,8 +4773,7 @@ tbody.collapse.in {
 
 /* line 185, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_dropdowns.scss */
 .dropup .caret,
-.navbar-fixed-bottom .dropdown .caret,
-.navbar-fixed-bottom .expanded .caret {
+.navbar-fixed-bottom .dropdown .caret {
   border-top: 0;
   border-bottom: 4px solid;
   content: "";
@@ -4782,11 +4781,8 @@ tbody.collapse.in {
 /* line 191, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_dropdowns.scss */
 .dropup .dropdown-menu, .dropup .navbar ul.menu, .navbar .dropup ul.menu,
 .navbar-fixed-bottom .dropdown .dropdown-menu,
-.navbar-fixed-bottom .expanded .dropdown-menu,
 .navbar-fixed-bottom .dropdown .navbar ul.menu,
-.navbar .navbar-fixed-bottom .dropdown ul.menu,
-.navbar-fixed-bottom .expanded .navbar ul.menu,
-.navbar .navbar-fixed-bottom .expanded ul.menu {
+.navbar .navbar-fixed-bottom .dropdown ul.menu {
   top: auto;
   bottom: 100%;
   margin-bottom: 1px;
@@ -5425,7 +5421,7 @@ form.navbar-form .form-type-textfield .input-group input[type="text"]:not(:first
   margin-bottom: 5px;
 }
 /* line 171, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_navs.scss */
-.nav-justified > .dropdown .dropdown-menu, .nav-justified > .expanded .dropdown-menu, .nav-justified > .dropdown .navbar ul.menu, .navbar .nav-justified > .dropdown ul.menu, .nav-justified > .expanded .navbar ul.menu, .navbar .nav-justified > .expanded ul.menu {
+.nav-justified > .dropdown .dropdown-menu, .nav-justified > .dropdown .navbar ul.menu, .navbar .nav-justified > .dropdown ul.menu {
   top: auto;
   left: auto;
 }
@@ -6968,7 +6964,7 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:hover, a.list-g
   border-top-left-radius: -1;
 }
 /* line 27, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_panels.scss */
-.panel-heading > .dropdown .dropdown-toggle, .view-display-id-panel_pane_membership_logos h4 > .dropdown .dropdown-toggle, .panel-heading > .expanded .dropdown-toggle, .view-display-id-panel_pane_membership_logos h4 > .expanded .dropdown-toggle, .panel-heading > .dropdown a.menu, .view-display-id-panel_pane_membership_logos h4 > .dropdown a.menu, .panel-heading > .expanded a.menu, .view-display-id-panel_pane_membership_logos h4 > .expanded a.menu {
+.panel-heading > .dropdown .dropdown-toggle, .view-display-id-panel_pane_membership_logos h4 > .dropdown .dropdown-toggle, .panel-heading > .dropdown a.menu, .view-display-id-panel_pane_membership_logos h4 > .dropdown a.menu {
   color: inherit;
 }
 
@@ -9580,31 +9576,32 @@ img.bio-circled {
   -webkit-box-shadow: white 0 0 0;
   box-shadow: white 0 0 0;
   border: 0;
+  padding: 0;
 }
-/* line 23, ../sass/components/_navigation.scss */
+/* line 24, ../sass/components/_navigation.scss */
 .no-csstransitions .navbar li a {
   position: relative;
 }
-/* line 24, ../sass/components/_navigation.scss */
+/* line 25, ../sass/components/_navigation.scss */
 .no-csstransitions .navbar li > a:after {
   content: "";
-  background: url('../images/nav-seperator.png?1418921090') no-repeat 50% 100%;
+  background: url('../images/nav-seperator.png?1419008864') no-repeat 50% 100%;
   right: -8px;
   top: 12px;
   position: absolute;
   width: 15px;
   height: 31px;
 }
-/* line 37, ../sass/components/_navigation.scss */
+/* line 38, ../sass/components/_navigation.scss */
 .navbar li.last a:after {
   display: none;
 }
-/* line 42, ../sass/components/_navigation.scss */
+/* line 43, ../sass/components/_navigation.scss */
 .navbar li:not(:last-child) {
   position: relative;
 }
 @media screen and (min-width: 992px) {
-  /* line 46, ../sass/components/_navigation.scss */
+  /* line 47, ../sass/components/_navigation.scss */
   .csstransitions .navbar li:not(:last-child) > a:after {
     -webkit-transform: rotate(25deg);
     -ms-transform: rotate(25deg);
@@ -9620,67 +9617,95 @@ img.bio-circled {
     opacity: .5;
   }
 }
-/* line 59, ../sass/components/_navigation.scss */
-.navbar a {
-  font-family: "Montserrat", sans-serif;
-  font-size: 16px;
-  text-transform: uppercase;
-  letter-spacing: -1px;
+/* line 60, ../sass/components/_navigation.scss */
+.navbar .navbar-nav {
+  margin: 0;
 }
 @media screen and (max-width: 768px) {
-  /* line 65, ../sass/components/_navigation.scss */
-  .navbar .navbar-nav {
-    margin: 0;
+  /* line 63, ../sass/components/_navigation.scss */
+  .navbar .navbar-nav li.open > a {
+    background-color: #7eb5af !important;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 992px) {
-  /* line 69, ../sass/components/_navigation.scss */
-  .navbar .navbar-nav a {
-    font-size: 11px;
+  /* line 68, ../sass/components/_navigation.scss */
+  .navbar .navbar-nav > li > a {
     padding: 10px 13px;
   }
 }
-@media screen and (min-width: 992px) and (max-width: 1200px) {
-  /* line 69, ../sass/components/_navigation.scss */
-  .navbar .navbar-nav a {
+@media screen and (min-width: 992px) {
+  /* line 73, ../sass/components/_navigation.scss */
+  .navbar .navbar-nav > li > a {
+    padding-right: 13px;
+    padding-left: 13px;
+  }
+}
+/* line 79, ../sass/components/_navigation.scss */
+.navbar a {
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+@media screen and (min-width: 768px) {
+  /* line 79, ../sass/components/_navigation.scss */
+  .navbar a {
+    font-size: 10px;
+  }
+}
+@media screen and (min-width: 992px) {
+  /* line 79, ../sass/components/_navigation.scss */
+  .navbar a {
     font-size: 14px;
   }
 }
-/* line 74, ../sass/components/_navigation.scss */
-.navbar .navbar-collapse {
-  padding: 0;
+@media screen and (min-width: 1200px) {
+  /* line 79, ../sass/components/_navigation.scss */
+  .navbar a {
+    font-size: 16px;
+    letter-spacing: -1px;
+  }
+}
+/* line 91, ../sass/components/_navigation.scss */
+.navbar .dropdown-menu > li > a, .navbar ul.menu > li > a {
+  color: #fff;
 }
 @media screen and (max-width: 768px) {
-  /* line 77, ../sass/components/_navigation.scss */
+  /* line 91, ../sass/components/_navigation.scss */
   .navbar .dropdown-menu > li > a, .navbar ul.menu > li > a {
-    color: #fff;
+    white-space: normal;
+  }
+}
+@media screen and (min-width: 768px) {
+  /* line 91, ../sass/components/_navigation.scss */
+  .navbar .dropdown-menu > li > a, .navbar ul.menu > li > a {
+    color: #00817b;
   }
 }
 
-/* line 89, ../sass/components/_navigation.scss */
+/* line 107, ../sass/components/_navigation.scss */
 .navbar-top ul {
   background-color: #96c1bc;
   border: 1px solid #b6d5d2;
   margin-bottom: 0;
   margin-left: 0;
 }
-/* line 95, ../sass/components/_navigation.scss */
+/* line 113, ../sass/components/_navigation.scss */
 .navbar-top a {
   color: #00817b;
   font-size: 19px;
   padding: 5px;
   text-decoration: none;
 }
-/* line 100, ../sass/components/_navigation.scss */
+/* line 118, ../sass/components/_navigation.scss */
 .navbar-top a span {
   display: none;
 }
-/* line 101, ../sass/components/_navigation.scss */
+/* line 119, ../sass/components/_navigation.scss */
 .navbar-top a:hover {
   color: #00b4ac;
 }
 @media screen and (max-width: 768px) {
-  /* line 88, ../sass/components/_navigation.scss */
+  /* line 106, ../sass/components/_navigation.scss */
   .navbar-top {
     position: relative;
     float: left;
@@ -9690,28 +9715,38 @@ img.bio-circled {
     padding-right: 20px;
     padding: 0 10px 0 0;
   }
-  /* line 108, ../sass/components/_navigation.scss */
+  /* line 126, ../sass/components/_navigation.scss */
   .navbar-top li {
     width: 25%;
     padding: 0;
     text-align: center;
     float: left;
   }
-  /* line 114, ../sass/components/_navigation.scss */
+  /* line 132, ../sass/components/_navigation.scss */
   .navbar-top a {
     padding: 5px 0 4px;
   }
-  /* line 117, ../sass/components/_navigation.scss */
+  /* line 135, ../sass/components/_navigation.scss */
   .logged-in .navbar-top li {
     width: 20%;
   }
 }
 @media screen and (min-width: 768px) {
-  /* line 88, ../sass/components/_navigation.scss */
+  /* line 106, ../sass/components/_navigation.scss */
   .navbar-top {
     position: relative;
     float: right;
   }
+}
+
+/* line 147, ../sass/components/_navigation.scss */
+.menu-name-og-menu-single .nav-pills > li.active > a {
+  color: #00817b;
+  background: transparent;
+}
+/* line 151, ../sass/components/_navigation.scss */
+.menu-name-og-menu-single .nav-stacked {
+  padding-left: 10px;
 }
 
 /**
