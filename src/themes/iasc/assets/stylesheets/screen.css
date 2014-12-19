@@ -6941,22 +6941,14 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:hover, a.list-g
   color: inherit;
 }
 
-<<<<<<< HEAD
 /* line 33, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_panels.scss */
-=======
-/* line 33, ../../../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.1.0/assets/stylesheets/bootstrap/_panels.scss */
->>>>>>> 776a8924d1282190156becede9ae70b2fda27a16
 .panel-title, .page-site-search .well:before {
   margin-top: 0;
   margin-bottom: 0;
   font-size: 15px;
   color: inherit;
 }
-<<<<<<< HEAD
 /* line 39, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_panels.scss */
-=======
-/* line 39, ../../../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.1.0/assets/stylesheets/bootstrap/_panels.scss */
->>>>>>> 776a8924d1282190156becede9ae70b2fda27a16
 .panel-title > a, .page-site-search .well:before > a {
   color: inherit;
 }
@@ -9965,18 +9957,12 @@ img.bio-circled {
   background-color: #00817b;
   padding: 20px;
   color: white;
-<<<<<<< HEAD
-  width: 300px h3;
-  width-color: white;
-  width-margin-top: 0;
-=======
   width: 300px;
 }
 /* line 7, ../sass/components/_secretariat.scss */
 .addressHighlight .address h3, .addressHighlight .address .node-type-oa-event .field-name-field-agenda-items .field-name-field-ai-title, .node-type-oa-event .field-name-field-agenda-items .addressHighlight .address .field-name-field-ai-title {
   color: white;
   margin-top: 0;
->>>>>>> 776a8924d1282190156becede9ae70b2fda27a16
 }
 /* line 11, ../sass/components/_secretariat.scss */
 .addressHighlight .address a {
