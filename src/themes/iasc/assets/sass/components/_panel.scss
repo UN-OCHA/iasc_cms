@@ -31,12 +31,14 @@
   li { 
     line-height: 28px; 
   }
-  &:not(.none) a:before {
-    @extend .icons;
-    color: $brand-tertiary;
-    position: absolute;
-    left: 0; top: 4px;
-    font-size: 16px;
+  &.doc-icon, &.arrow {
+    a:before {
+      @extend %icons-font;
+      color: $brand-tertiary;
+      position: absolute;
+      left: 0; top: 4px;
+      font-size: 16px;
+    }
   }
   a { color: #000; }
 }
