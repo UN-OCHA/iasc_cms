@@ -37,7 +37,7 @@ function theme_iasc_secondary_style_render_pane(&$vars) {
     return;
   }
 
-  $class[] = 'panel panel-default';
+  $class[] = 'panel panel-default panel-secondary';
   $class[] = $settings['secondary_options'];
 
   if (!empty($settings['linked_list'])) {
@@ -79,8 +79,8 @@ function secondary_style_settings_form($style_settings) {
     '#default_value' => (isset($style_settings['linked_list'])) ? $style_settings['linked_list'] : FALSE,
     '#description' => t('Add icon to the list'),
     '#states' => array(
-      'visible' => array(
-        ':input[name="settings[secondary_options]"]' => array('value' => 'panel-success'),
+      'invisible' => array(
+        ':input[name="settings[secondary_options]"]' => array('value' => 'panel-primary'),
       ),
     ),
   );
