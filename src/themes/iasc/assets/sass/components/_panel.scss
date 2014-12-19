@@ -12,12 +12,24 @@
   .panel-heading { text-transform: uppercase; }
 }
 
-.panel-primary {
-  .panel-heading { text-align: center; }
+.panel-secondary {
+  .more-link {
+    a {
+      @extend .btn;
+      @extend .btn-default;
+      background-color: $red;
+      border: 0; 
+      color: $white;
+      &:hover {
+        background-color: $red;
+        color: $white;
+      }
+    }
+  }
 }
 
-.panel-success {
-  .btn { background-color: $brand-primary; }
+.panel-secondary.panel-success,
+.panel-secondary.panel-info {
   &.doc-icon, &.arrow {
     .menu li,
     .views-row,
@@ -26,28 +38,39 @@
       padding-left: 30px;
     }
   }
-  &.doc-icon a:before { @extend .icons-page; }
-  &.arrow a:before { @extend .icons-arrow; } 
+  &.doc-icon .view-content a:before { @extend .icons-page; }
+  &.arrow .view-content a:before { @extend .icons-arrow; } 
   li { 
-    line-height: 28px; 
+    line-height: 20px;
+    margin-bottom: 15px;
   }
-  &:not(.none) a:before {
-    @extend .icons;
-    color: $brand-tertiary;
-    position: absolute;
-    left: 0; top: 4px;
-    font-size: 16px;
+  &.doc-icon, &.arrow {
+    a:before {
+      @extend %icons-font;      
+      position: absolute;
+      left: 0; top: 3px;
+      font-size: 16px;
+      text-decoration: none;
+    }
   }
+}
+
+.panel-primary {
+  .panel-heading { text-align: center; }
+}
+
+.panel-success {
+  .btn { background-color: $brand-primary; }
   a { color: #000; }
+  a:before { color: $brand-tertiary; }
 }
 
 .panel-info {
   .views-row {
     margin-bottom: $padding-large-vertical;
   }
-  a {
-    color: $red;
-  }
+  a { color: $red; }
+  a:before { color: $red; }
 }
 
 .well {

@@ -27,7 +27,7 @@
         display: block;
         &:after {
           @extend .icons-arrow:before;
-          @extend .icons;
+          @extend %icons-font;
           margin-left: 5px;
           color: $brand-tertiary;
         }

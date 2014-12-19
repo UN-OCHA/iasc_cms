@@ -371,10 +371,11 @@ th {
   }
 
   /* line 83, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_print.scss */
-  .btn > .caret, .node-readmore a > .caret, #mc-embedded-subscribe > .caret,
+  .btn > .caret, .node-readmore a > .caret, #mc-embedded-subscribe > .caret, .panel-secondary .more-link a > .caret,
   .dropup > .btn > .caret,
   .node-readmore .dropup > a > .caret,
-  .dropup > #mc-embedded-subscribe > .caret {
+  .dropup > #mc-embedded-subscribe > .caret,
+  .panel-secondary .more-link .dropup > a > .caret {
     border-top-color: #000 !important;
   }
 
@@ -3890,14 +3891,16 @@ input[type="checkbox"] {
 .input-group-lg > .form-control-static.input-group-addon,
 .input-group-lg > .input-group-btn > .form-control-static.btn,
 .node-readmore .input-group-lg > .input-group-btn > a.form-control-static,
-.input-group-lg > .input-group-btn > .form-control-static#mc-embedded-subscribe, .form-control-static.input-sm, .form-horizontal .form-group-sm .form-control-static.form-control, .form-horizontal .form-group-sm .chosen-container.form-control .form-control-static.chosen-choices, .chosen-container.form-control .form-horizontal .form-group-sm .form-control-static.chosen-choices, .form-horizontal .form-group-sm form.navbar-form .form-type-textfield input.form-control-static[type="text"], form.navbar-form .form-type-textfield .form-horizontal .form-group-sm input.form-control-static[type="text"], .form-horizontal .form-group-sm .mc-field-group input.form-control-static[type="email"], .mc-field-group .form-horizontal .form-group-sm input.form-control-static[type="email"],
+.input-group-lg > .input-group-btn > .form-control-static#mc-embedded-subscribe,
+.panel-secondary .more-link .input-group-lg > .input-group-btn > a.form-control-static, .form-control-static.input-sm, .form-horizontal .form-group-sm .form-control-static.form-control, .form-horizontal .form-group-sm .chosen-container.form-control .form-control-static.chosen-choices, .chosen-container.form-control .form-horizontal .form-group-sm .form-control-static.chosen-choices, .form-horizontal .form-group-sm form.navbar-form .form-type-textfield input.form-control-static[type="text"], form.navbar-form .form-type-textfield .form-horizontal .form-group-sm input.form-control-static[type="text"], .form-horizontal .form-group-sm .mc-field-group input.form-control-static[type="email"], .mc-field-group .form-horizontal .form-group-sm input.form-control-static[type="email"],
 .form-horizontal .form-group-sm .mc-field-group input.form-control-static[type="text"],
 .mc-field-group .form-horizontal .form-group-sm input.form-control-static[type="text"], .input-group-sm > .form-control-static.form-control, .chosen-container.form-control .input-group-sm > .form-control-static.chosen-choices, form.navbar-form .form-type-textfield .input-group-sm > input.form-control-static[type="text"], .mc-field-group .input-group-sm > input.form-control-static[type="email"],
 .mc-field-group .input-group-sm > input.form-control-static[type="text"],
 .input-group-sm > .form-control-static.input-group-addon,
 .input-group-sm > .input-group-btn > .form-control-static.btn,
 .node-readmore .input-group-sm > .input-group-btn > a.form-control-static,
-.input-group-sm > .input-group-btn > .form-control-static#mc-embedded-subscribe {
+.input-group-sm > .input-group-btn > .form-control-static#mc-embedded-subscribe,
+.panel-secondary .more-link .input-group-sm > .input-group-btn > a.form-control-static {
   padding-left: 0;
   padding-right: 0;
 }
@@ -3910,7 +3913,8 @@ input[type="checkbox"] {
 .input-group-sm > .input-group-addon,
 .input-group-sm > .input-group-btn > .btn,
 .node-readmore .input-group-sm > .input-group-btn > a,
-.input-group-sm > .input-group-btn > #mc-embedded-subscribe {
+.input-group-sm > .input-group-btn > #mc-embedded-subscribe,
+.panel-secondary .more-link .input-group-sm > .input-group-btn > a {
   height: 30px;
   padding: 5px 10px;
   font-size: 12px;
@@ -3952,7 +3956,8 @@ select[multiple].input-sm,
 .input-group-lg > .input-group-addon,
 .input-group-lg > .input-group-btn > .btn,
 .node-readmore .input-group-lg > .input-group-btn > a,
-.input-group-lg > .input-group-btn > #mc-embedded-subscribe {
+.input-group-lg > .input-group-btn > #mc-embedded-subscribe,
+.panel-secondary .more-link .input-group-lg > .input-group-btn > a {
   height: 65px;
   padding: 20px 16px;
   font-size: 17px;
@@ -4018,7 +4023,8 @@ select[multiple].input-lg,
 .input-group-lg > .input-group-addon + .form-control-feedback,
 .input-group-lg > .input-group-btn > .btn + .form-control-feedback,
 .node-readmore .input-group-lg > .input-group-btn > a + .form-control-feedback,
-.input-group-lg > .input-group-btn > #mc-embedded-subscribe + .form-control-feedback {
+.input-group-lg > .input-group-btn > #mc-embedded-subscribe + .form-control-feedback,
+.panel-secondary .more-link .input-group-lg > .input-group-btn > a + .form-control-feedback {
   width: 65px;
   height: 65px;
   line-height: 65px;
@@ -4032,7 +4038,8 @@ select[multiple].input-lg,
 .input-group-sm > .input-group-addon + .form-control-feedback,
 .input-group-sm > .input-group-btn > .btn + .form-control-feedback,
 .node-readmore .input-group-sm > .input-group-btn > a + .form-control-feedback,
-.input-group-sm > .input-group-btn > #mc-embedded-subscribe + .form-control-feedback {
+.input-group-sm > .input-group-btn > #mc-embedded-subscribe + .form-control-feedback,
+.panel-secondary .more-link .input-group-sm > .input-group-btn > a + .form-control-feedback {
   width: 30px;
   height: 30px;
   line-height: 30px;
@@ -4300,7 +4307,7 @@ select[multiple].input-lg,
 }
 
 /* line 9, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_buttons.scss */
-.btn, .node-readmore a, #mc-embedded-subscribe {
+.btn, .node-readmore a, #mc-embedded-subscribe, .panel-secondary .more-link a {
   display: inline-block;
   margin-bottom: 0;
   font-weight: normal;
@@ -4320,25 +4327,25 @@ select[multiple].input-lg,
   user-select: none;
 }
 /* line 25, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_buttons.scss */
-.btn:focus, .node-readmore a:focus, #mc-embedded-subscribe:focus, .btn:active:focus, .node-readmore a:active:focus, #mc-embedded-subscribe:active:focus, .btn.active:focus, .node-readmore a.active:focus, .active#mc-embedded-subscribe:focus {
+.btn:focus, .node-readmore a:focus, #mc-embedded-subscribe:focus, .panel-secondary .more-link a:focus, .btn:active:focus, .node-readmore a:active:focus, #mc-embedded-subscribe:active:focus, .panel-secondary .more-link a:active:focus, .btn.active:focus, .node-readmore a.active:focus, .active#mc-embedded-subscribe:focus, .panel-secondary .more-link a.active:focus {
   outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
 /* line 31, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_buttons.scss */
-.btn:hover, .node-readmore a:hover, #mc-embedded-subscribe:hover, .btn:focus, .node-readmore a:focus, #mc-embedded-subscribe:focus {
+.btn:hover, .node-readmore a:hover, #mc-embedded-subscribe:hover, .panel-secondary .more-link a:hover, .btn:focus, .node-readmore a:focus, #mc-embedded-subscribe:focus, .panel-secondary .more-link a:focus {
   color: #333333;
   text-decoration: none;
 }
 /* line 37, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_buttons.scss */
-.btn:active, .node-readmore a:active, #mc-embedded-subscribe:active, .btn.active, .node-readmore a.active, .active#mc-embedded-subscribe {
+.btn:active, .node-readmore a:active, #mc-embedded-subscribe:active, .panel-secondary .more-link a:active, .btn.active, .node-readmore a.active, .active#mc-embedded-subscribe, .panel-secondary .more-link a.active {
   outline: 0;
   background-image: none;
   -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
 }
 /* line 45, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_buttons.scss */
-.btn.disabled, .node-readmore a.disabled, .disabled#mc-embedded-subscribe, .btn[disabled], .node-readmore a[disabled], [disabled]#mc-embedded-subscribe, fieldset[disabled] .btn, fieldset[disabled] .node-readmore a, .node-readmore fieldset[disabled] a, fieldset[disabled] #mc-embedded-subscribe {
+.btn.disabled, .node-readmore a.disabled, .disabled#mc-embedded-subscribe, .panel-secondary .more-link a.disabled, .btn[disabled], .node-readmore a[disabled], [disabled]#mc-embedded-subscribe, .panel-secondary .more-link a[disabled], fieldset[disabled] .btn, fieldset[disabled] .node-readmore a, .node-readmore fieldset[disabled] a, fieldset[disabled] #mc-embedded-subscribe, fieldset[disabled] .panel-secondary .more-link a, .panel-secondary .more-link fieldset[disabled] a {
   cursor: not-allowed;
   pointer-events: none;
   opacity: 0.65;
@@ -4348,28 +4355,28 @@ select[multiple].input-lg,
 }
 
 /* line 57, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_buttons.scss */
-.btn-default, #mc-embedded-subscribe {
+.btn-default, #mc-embedded-subscribe, .panel-secondary .more-link a {
   color: #333333;
   background-color: white;
   border-color: #cccccc;
 }
 /* line 15, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/mixins/_buttons.scss */
-.btn-default:hover, #mc-embedded-subscribe:hover, .btn-default:focus, #mc-embedded-subscribe:focus, .btn-default:active, #mc-embedded-subscribe:active, .btn-default.active, .active#mc-embedded-subscribe, .open > .btn-default.dropdown-toggle, .open > .dropdown-toggle#mc-embedded-subscribe, .open > a#mc-embedded-subscribe.menu, .open > a.btn-default.menu {
+.btn-default:hover, #mc-embedded-subscribe:hover, .panel-secondary .more-link a:hover, .btn-default:focus, #mc-embedded-subscribe:focus, .panel-secondary .more-link a:focus, .btn-default:active, #mc-embedded-subscribe:active, .panel-secondary .more-link a:active, .btn-default.active, .active#mc-embedded-subscribe, .panel-secondary .more-link a.active, .open > .btn-default.dropdown-toggle, .open > .dropdown-toggle#mc-embedded-subscribe, .open > a#mc-embedded-subscribe.menu, .open > a.btn-default.menu, .panel-secondary .more-link .open > a.menu, .panel-secondary .more-link .open > a.dropdown-toggle {
   color: #333333;
   background-color: #e6e6e6;
   border-color: #adadad;
 }
 /* line 22, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/mixins/_buttons.scss */
-.btn-default:active, #mc-embedded-subscribe:active, .btn-default.active, .active#mc-embedded-subscribe, .open > .btn-default.dropdown-toggle, .open > .dropdown-toggle#mc-embedded-subscribe, .open > a#mc-embedded-subscribe.menu, .open > a.btn-default.menu {
+.btn-default:active, #mc-embedded-subscribe:active, .panel-secondary .more-link a:active, .btn-default.active, .active#mc-embedded-subscribe, .panel-secondary .more-link a.active, .open > .btn-default.dropdown-toggle, .open > .dropdown-toggle#mc-embedded-subscribe, .open > a#mc-embedded-subscribe.menu, .open > a.btn-default.menu, .panel-secondary .more-link .open > a.menu, .panel-secondary .more-link .open > a.dropdown-toggle {
   background-image: none;
 }
 /* line 32, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/mixins/_buttons.scss */
-.btn-default.disabled, .disabled#mc-embedded-subscribe, .btn-default.disabled:hover, .disabled#mc-embedded-subscribe:hover, .btn-default.disabled:focus, .disabled#mc-embedded-subscribe:focus, .btn-default.disabled:active, .disabled#mc-embedded-subscribe:active, .btn-default.disabled.active, .disabled.active#mc-embedded-subscribe, .btn-default[disabled], [disabled]#mc-embedded-subscribe, .btn-default[disabled]:hover, [disabled]#mc-embedded-subscribe:hover, .btn-default[disabled]:focus, [disabled]#mc-embedded-subscribe:focus, .btn-default[disabled]:active, [disabled]#mc-embedded-subscribe:active, .btn-default[disabled].active, [disabled].active#mc-embedded-subscribe, fieldset[disabled] .btn-default, fieldset[disabled] #mc-embedded-subscribe, fieldset[disabled] .btn-default:hover, fieldset[disabled] #mc-embedded-subscribe:hover, fieldset[disabled] .btn-default:focus, fieldset[disabled] #mc-embedded-subscribe:focus, fieldset[disabled] .btn-default:active, fieldset[disabled] #mc-embedded-subscribe:active, fieldset[disabled] .btn-default.active, fieldset[disabled] .active#mc-embedded-subscribe {
+.btn-default.disabled, .disabled#mc-embedded-subscribe, .panel-secondary .more-link a.disabled, .btn-default.disabled:hover, .disabled#mc-embedded-subscribe:hover, .panel-secondary .more-link a.disabled:hover, .btn-default.disabled:focus, .disabled#mc-embedded-subscribe:focus, .panel-secondary .more-link a.disabled:focus, .btn-default.disabled:active, .disabled#mc-embedded-subscribe:active, .panel-secondary .more-link a.disabled:active, .btn-default.disabled.active, .disabled.active#mc-embedded-subscribe, .panel-secondary .more-link a.disabled.active, .btn-default[disabled], [disabled]#mc-embedded-subscribe, .panel-secondary .more-link a[disabled], .btn-default[disabled]:hover, [disabled]#mc-embedded-subscribe:hover, .panel-secondary .more-link a[disabled]:hover, .btn-default[disabled]:focus, [disabled]#mc-embedded-subscribe:focus, .panel-secondary .more-link a[disabled]:focus, .btn-default[disabled]:active, [disabled]#mc-embedded-subscribe:active, .panel-secondary .more-link a[disabled]:active, .btn-default[disabled].active, [disabled].active#mc-embedded-subscribe, .panel-secondary .more-link a[disabled].active, fieldset[disabled] .btn-default, fieldset[disabled] #mc-embedded-subscribe, fieldset[disabled] .panel-secondary .more-link a, .panel-secondary .more-link fieldset[disabled] a, fieldset[disabled] .btn-default:hover, fieldset[disabled] #mc-embedded-subscribe:hover, fieldset[disabled] .panel-secondary .more-link a:hover, .panel-secondary .more-link fieldset[disabled] a:hover, fieldset[disabled] .btn-default:focus, fieldset[disabled] #mc-embedded-subscribe:focus, fieldset[disabled] .panel-secondary .more-link a:focus, .panel-secondary .more-link fieldset[disabled] a:focus, fieldset[disabled] .btn-default:active, fieldset[disabled] #mc-embedded-subscribe:active, fieldset[disabled] .panel-secondary .more-link a:active, .panel-secondary .more-link fieldset[disabled] a:active, fieldset[disabled] .btn-default.active, fieldset[disabled] .active#mc-embedded-subscribe, fieldset[disabled] .panel-secondary .more-link a.active, .panel-secondary .more-link fieldset[disabled] a.active {
   background-color: white;
   border-color: #cccccc;
 }
 /* line 38, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/mixins/_buttons.scss */
-.btn-default .badge, #mc-embedded-subscribe .badge {
+.btn-default .badge, #mc-embedded-subscribe .badge, .panel-secondary .more-link a .badge {
   color: white;
   background-color: #333333;
 }
@@ -4539,7 +4546,7 @@ select[multiple].input-lg,
 }
 
 /* line 124, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_buttons.scss */
-.btn-lg, .btn-group-lg > .btn, .node-readmore .btn-group-lg > a, .btn-group-lg > #mc-embedded-subscribe {
+.btn-lg, .btn-group-lg > .btn, .node-readmore .btn-group-lg > a, .btn-group-lg > #mc-embedded-subscribe, .panel-secondary .more-link .btn-group-lg > a {
   padding: 20px 16px;
   font-size: 17px;
   line-height: 1.33;
@@ -4547,7 +4554,7 @@ select[multiple].input-lg,
 }
 
 /* line 128, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_buttons.scss */
-.btn-sm, .btn-group-sm > .btn, .node-readmore .btn-group-sm > a, .btn-group-sm > #mc-embedded-subscribe {
+.btn-sm, .btn-group-sm > .btn, .node-readmore .btn-group-sm > a, .btn-group-sm > #mc-embedded-subscribe, .panel-secondary .more-link .btn-group-sm > a {
   padding: 5px 10px;
   font-size: 12px;
   line-height: 1.5;
@@ -4555,7 +4562,7 @@ select[multiple].input-lg,
 }
 
 /* line 132, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_buttons.scss */
-.btn-xs, .btn-group-xs > .btn, .node-readmore .btn-group-xs > a, .btn-group-xs > #mc-embedded-subscribe {
+.btn-xs, .btn-group-xs > .btn, .node-readmore .btn-group-xs > a, .btn-group-xs > #mc-embedded-subscribe, .panel-secondary .more-link .btn-group-xs > a {
   padding: 1px 5px;
   font-size: 12px;
   line-height: 1.5;
@@ -4801,47 +4808,57 @@ tbody.collapse.in {
   vertical-align: middle;
 }
 /* line 11, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group > .btn, .node-readmore .btn-group > a, .btn-group > #mc-embedded-subscribe,
+.btn-group > .btn, .node-readmore .btn-group > a, .btn-group > #mc-embedded-subscribe, .panel-secondary .more-link .btn-group > a,
 .btn-group-vertical > .btn,
 .node-readmore .btn-group-vertical > a,
-.btn-group-vertical > #mc-embedded-subscribe {
+.btn-group-vertical > #mc-embedded-subscribe,
+.panel-secondary .more-link .btn-group-vertical > a {
   position: relative;
   float: left;
 }
 /* line 18, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group > .btn:hover, .node-readmore .btn-group > a:hover, .btn-group > #mc-embedded-subscribe:hover, .btn-group > .btn:focus, .node-readmore .btn-group > a:focus, .btn-group > #mc-embedded-subscribe:focus, .btn-group > .btn:active, .node-readmore .btn-group > a:active, .btn-group > #mc-embedded-subscribe:active, .btn-group > .btn.active, .node-readmore .btn-group > a.active, .btn-group > .active#mc-embedded-subscribe,
+.btn-group > .btn:hover, .node-readmore .btn-group > a:hover, .btn-group > #mc-embedded-subscribe:hover, .panel-secondary .more-link .btn-group > a:hover, .btn-group > .btn:focus, .node-readmore .btn-group > a:focus, .btn-group > #mc-embedded-subscribe:focus, .panel-secondary .more-link .btn-group > a:focus, .btn-group > .btn:active, .node-readmore .btn-group > a:active, .btn-group > #mc-embedded-subscribe:active, .panel-secondary .more-link .btn-group > a:active, .btn-group > .btn.active, .node-readmore .btn-group > a.active, .btn-group > .active#mc-embedded-subscribe, .panel-secondary .more-link .btn-group > a.active,
 .btn-group-vertical > .btn:hover,
 .node-readmore .btn-group-vertical > a:hover,
 .btn-group-vertical > #mc-embedded-subscribe:hover,
+.panel-secondary .more-link .btn-group-vertical > a:hover,
 .btn-group-vertical > .btn:focus,
 .node-readmore .btn-group-vertical > a:focus,
 .btn-group-vertical > #mc-embedded-subscribe:focus,
+.panel-secondary .more-link .btn-group-vertical > a:focus,
 .btn-group-vertical > .btn:active,
 .node-readmore .btn-group-vertical > a:active,
 .btn-group-vertical > #mc-embedded-subscribe:active,
+.panel-secondary .more-link .btn-group-vertical > a:active,
 .btn-group-vertical > .btn.active,
 .node-readmore .btn-group-vertical > a.active,
-.btn-group-vertical > .active#mc-embedded-subscribe {
+.btn-group-vertical > .active#mc-embedded-subscribe,
+.panel-secondary .more-link .btn-group-vertical > a.active {
   z-index: 2;
 }
 /* line 21, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group > .btn:focus, .node-readmore .btn-group > a:focus, .btn-group > #mc-embedded-subscribe:focus,
+.btn-group > .btn:focus, .node-readmore .btn-group > a:focus, .btn-group > #mc-embedded-subscribe:focus, .panel-secondary .more-link .btn-group > a:focus,
 .btn-group-vertical > .btn:focus,
 .node-readmore .btn-group-vertical > a:focus,
-.btn-group-vertical > #mc-embedded-subscribe:focus {
+.btn-group-vertical > #mc-embedded-subscribe:focus,
+.panel-secondary .more-link .btn-group-vertical > a:focus {
   outline: 0;
 }
 
 /* line 33, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group .btn + .btn, .btn-group .node-readmore a + .btn, .node-readmore .btn-group a + .btn, .btn-group #mc-embedded-subscribe + .btn, .btn-group .node-readmore .btn + a, .node-readmore .btn-group .btn + a, .btn-group .node-readmore a + a, .node-readmore .btn-group a + a, .btn-group .node-readmore #mc-embedded-subscribe + a, .node-readmore .btn-group #mc-embedded-subscribe + a, .btn-group .btn + #mc-embedded-subscribe, .btn-group .node-readmore a + #mc-embedded-subscribe, .node-readmore .btn-group a + #mc-embedded-subscribe, .btn-group #mc-embedded-subscribe + #mc-embedded-subscribe,
+.btn-group .btn + .btn, .btn-group .node-readmore a + .btn, .node-readmore .btn-group a + .btn, .btn-group #mc-embedded-subscribe + .btn, .btn-group .panel-secondary .more-link a + .btn, .panel-secondary .more-link .btn-group a + .btn, .btn-group .node-readmore .btn + a, .node-readmore .btn-group .btn + a, .btn-group .node-readmore a + a, .node-readmore .btn-group a + a, .btn-group .node-readmore #mc-embedded-subscribe + a, .node-readmore .btn-group #mc-embedded-subscribe + a, .btn-group .btn + #mc-embedded-subscribe, .btn-group .node-readmore a + #mc-embedded-subscribe, .node-readmore .btn-group a + #mc-embedded-subscribe, .btn-group #mc-embedded-subscribe + #mc-embedded-subscribe, .btn-group .panel-secondary .more-link a + #mc-embedded-subscribe, .panel-secondary .more-link .btn-group a + #mc-embedded-subscribe, .btn-group .panel-secondary .more-link .btn + a, .panel-secondary .more-link .btn-group .btn + a, .btn-group .panel-secondary .more-link #mc-embedded-subscribe + a, .panel-secondary .more-link .btn-group #mc-embedded-subscribe + a, .btn-group .panel-secondary .more-link a + a, .panel-secondary .more-link .btn-group a + a,
 .btn-group .btn + .btn-group,
 .btn-group .node-readmore a + .btn-group,
 .node-readmore .btn-group a + .btn-group,
 .btn-group #mc-embedded-subscribe + .btn-group,
+.btn-group .panel-secondary .more-link a + .btn-group,
+.panel-secondary .more-link .btn-group a + .btn-group,
 .btn-group .btn-group + .btn,
 .btn-group .node-readmore .btn-group + a,
 .node-readmore .btn-group .btn-group + a,
 .btn-group .btn-group + #mc-embedded-subscribe,
+.btn-group .panel-secondary .more-link .btn-group + a,
+.panel-secondary .more-link .btn-group .btn-group + a,
 .btn-group .btn-group + .btn-group {
   margin-left: -1px;
 }
@@ -4865,29 +4882,29 @@ tbody.collapse.in {
   float: left;
 }
 /* line 49, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-toolbar > .btn, .node-readmore .btn-toolbar > a, .btn-toolbar > #mc-embedded-subscribe,
+.btn-toolbar > .btn, .node-readmore .btn-toolbar > a, .btn-toolbar > #mc-embedded-subscribe, .panel-secondary .more-link .btn-toolbar > a,
 .btn-toolbar > .btn-group,
 .btn-toolbar > .input-group {
   margin-left: 5px;
 }
 
 /* line 54, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle), .node-readmore .btn-group > a:not(:first-child):not(:last-child):not(.dropdown-toggle), .btn-group > #mc-embedded-subscribe:not(:first-child):not(:last-child):not(.dropdown-toggle) {
+.btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle), .node-readmore .btn-group > a:not(:first-child):not(:last-child):not(.dropdown-toggle), .btn-group > #mc-embedded-subscribe:not(:first-child):not(:last-child):not(.dropdown-toggle), .panel-secondary .more-link .btn-group > a:not(:first-child):not(:last-child):not(.dropdown-toggle) {
   border-radius: 0;
 }
 
 /* line 59, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group > .btn:first-child, .node-readmore .btn-group > a:first-child, .btn-group > #mc-embedded-subscribe:first-child {
+.btn-group > .btn:first-child, .node-readmore .btn-group > a:first-child, .btn-group > #mc-embedded-subscribe:first-child, .panel-secondary .more-link .btn-group > a:first-child {
   margin-left: 0;
 }
 /* line 61, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle), .node-readmore .btn-group > a:first-child:not(:last-child):not(.dropdown-toggle), .btn-group > #mc-embedded-subscribe:first-child:not(:last-child):not(.dropdown-toggle) {
+.btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle), .node-readmore .btn-group > a:first-child:not(:last-child):not(.dropdown-toggle), .btn-group > #mc-embedded-subscribe:first-child:not(:last-child):not(.dropdown-toggle), .panel-secondary .more-link .btn-group > a:first-child:not(:last-child):not(.dropdown-toggle) {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
 }
 
 /* line 67, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group > .btn:last-child:not(:first-child), .node-readmore .btn-group > a:last-child:not(:first-child), .btn-group > #mc-embedded-subscribe:last-child:not(:first-child),
+.btn-group > .btn:last-child:not(:first-child), .node-readmore .btn-group > a:last-child:not(:first-child), .btn-group > #mc-embedded-subscribe:last-child:not(:first-child), .panel-secondary .more-link .btn-group > a:last-child:not(:first-child),
 .btn-group > .dropdown-toggle:not(:first-child),
 .btn-group > a.menu:not(:first-child) {
   border-bottom-left-radius: 0;
@@ -4900,12 +4917,12 @@ tbody.collapse.in {
 }
 
 /* line 75, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group > .btn-group:not(:first-child):not(:last-child) > .btn, .node-readmore .btn-group > .btn-group:not(:first-child):not(:last-child) > a, .btn-group > .btn-group:not(:first-child):not(:last-child) > #mc-embedded-subscribe {
+.btn-group > .btn-group:not(:first-child):not(:last-child) > .btn, .node-readmore .btn-group > .btn-group:not(:first-child):not(:last-child) > a, .btn-group > .btn-group:not(:first-child):not(:last-child) > #mc-embedded-subscribe, .panel-secondary .more-link .btn-group > .btn-group:not(:first-child):not(:last-child) > a {
   border-radius: 0;
 }
 
 /* line 80, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group > .btn-group:first-child > .btn:last-child, .node-readmore .btn-group > .btn-group:first-child > a:last-child, .btn-group > .btn-group:first-child > #mc-embedded-subscribe:last-child,
+.btn-group > .btn-group:first-child > .btn:last-child, .node-readmore .btn-group > .btn-group:first-child > a:last-child, .btn-group > .btn-group:first-child > #mc-embedded-subscribe:last-child, .panel-secondary .more-link .btn-group > .btn-group:first-child > a:last-child,
 .btn-group > .btn-group:first-child > .dropdown-toggle,
 .btn-group > .btn-group:first-child > a.menu {
   border-bottom-right-radius: 0;
@@ -4913,7 +4930,7 @@ tbody.collapse.in {
 }
 
 /* line 84, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group > .btn-group:last-child > .btn:first-child, .node-readmore .btn-group > .btn-group:last-child > a:first-child, .btn-group > .btn-group:last-child > #mc-embedded-subscribe:first-child {
+.btn-group > .btn-group:last-child > .btn:first-child, .node-readmore .btn-group > .btn-group:last-child > a:first-child, .btn-group > .btn-group:last-child > #mc-embedded-subscribe:first-child, .panel-secondary .more-link .btn-group > .btn-group:last-child > a:first-child {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
 }
@@ -4926,13 +4943,13 @@ tbody.collapse.in {
 }
 
 /* line 108, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group > .btn + .dropdown-toggle, .node-readmore .btn-group > a + .dropdown-toggle, .btn-group > #mc-embedded-subscribe + .dropdown-toggle, .btn-group > .btn + a.menu, .node-readmore .btn-group > a + a.menu, .btn-group > #mc-embedded-subscribe + a.menu {
+.btn-group > .btn + .dropdown-toggle, .node-readmore .btn-group > a + .dropdown-toggle, .btn-group > #mc-embedded-subscribe + .dropdown-toggle, .panel-secondary .more-link .btn-group > a + .dropdown-toggle, .btn-group > .btn + a.menu, .node-readmore .btn-group > a + a.menu, .btn-group > #mc-embedded-subscribe + a.menu, .panel-secondary .more-link .btn-group > a + a.menu {
   padding-left: 8px;
   padding-right: 8px;
 }
 
 /* line 112, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group > .btn-lg + .dropdown-toggle, .btn-group-lg.btn-group > .btn + .dropdown-toggle, .node-readmore .btn-group-lg.btn-group > a + .dropdown-toggle, .btn-group-lg.btn-group > #mc-embedded-subscribe + .dropdown-toggle, .btn-group > .btn-lg + a.menu, .btn-group-lg.btn-group > .btn + a.menu, .node-readmore .btn-group-lg.btn-group > a + a.menu, .btn-group-lg.btn-group > #mc-embedded-subscribe + a.menu {
+.btn-group > .btn-lg + .dropdown-toggle, .btn-group-lg.btn-group > .btn + .dropdown-toggle, .node-readmore .btn-group-lg.btn-group > a + .dropdown-toggle, .btn-group-lg.btn-group > #mc-embedded-subscribe + .dropdown-toggle, .panel-secondary .more-link .btn-group-lg.btn-group > a + .dropdown-toggle, .btn-group > .btn-lg + a.menu, .btn-group-lg.btn-group > .btn + a.menu, .node-readmore .btn-group-lg.btn-group > a + a.menu, .btn-group-lg.btn-group > #mc-embedded-subscribe + a.menu, .panel-secondary .more-link .btn-group-lg.btn-group > a + a.menu {
   padding-left: 12px;
   padding-right: 12px;
 }
@@ -4949,27 +4966,28 @@ tbody.collapse.in {
 }
 
 /* line 130, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn .caret, .node-readmore a .caret, #mc-embedded-subscribe .caret {
+.btn .caret, .node-readmore a .caret, #mc-embedded-subscribe .caret, .panel-secondary .more-link a .caret {
   margin-left: 0;
 }
 
 /* line 134, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-lg .caret, .btn-group-lg > .btn .caret, .node-readmore .btn-group-lg > a .caret, .btn-group-lg > #mc-embedded-subscribe .caret {
+.btn-lg .caret, .btn-group-lg > .btn .caret, .node-readmore .btn-group-lg > a .caret, .btn-group-lg > #mc-embedded-subscribe .caret, .panel-secondary .more-link .btn-group-lg > a .caret {
   border-width: 5px 5px 0;
   border-bottom-width: 0;
 }
 
 /* line 139, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_button-groups.scss */
-.dropup .btn-lg .caret, .dropup .btn-group-lg > .btn .caret, .dropup .node-readmore .btn-group-lg > a .caret, .node-readmore .dropup .btn-group-lg > a .caret, .dropup .btn-group-lg > #mc-embedded-subscribe .caret {
+.dropup .btn-lg .caret, .dropup .btn-group-lg > .btn .caret, .dropup .node-readmore .btn-group-lg > a .caret, .node-readmore .dropup .btn-group-lg > a .caret, .dropup .btn-group-lg > #mc-embedded-subscribe .caret, .dropup .panel-secondary .more-link .btn-group-lg > a .caret, .panel-secondary .more-link .dropup .btn-group-lg > a .caret {
   border-width: 0 5px 5px;
 }
 
 /* line 150, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group-vertical > .btn, .node-readmore .btn-group-vertical > a, .btn-group-vertical > #mc-embedded-subscribe,
+.btn-group-vertical > .btn, .node-readmore .btn-group-vertical > a, .btn-group-vertical > #mc-embedded-subscribe, .panel-secondary .more-link .btn-group-vertical > a,
 .btn-group-vertical > .btn-group,
 .btn-group-vertical > .btn-group > .btn,
 .node-readmore .btn-group-vertical > .btn-group > a,
-.btn-group-vertical > .btn-group > #mc-embedded-subscribe {
+.btn-group-vertical > .btn-group > #mc-embedded-subscribe,
+.panel-secondary .more-link .btn-group-vertical > .btn-group > a {
   display: block;
   float: none;
   width: 100%;
@@ -4985,46 +5003,48 @@ tbody.collapse.in {
   clear: both;
 }
 /* line 160, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group-vertical > .btn-group > .btn, .node-readmore .btn-group-vertical > .btn-group > a, .btn-group-vertical > .btn-group > #mc-embedded-subscribe {
+.btn-group-vertical > .btn-group > .btn, .node-readmore .btn-group-vertical > .btn-group > a, .btn-group-vertical > .btn-group > #mc-embedded-subscribe, .panel-secondary .more-link .btn-group-vertical > .btn-group > a {
   float: none;
 }
 /* line 168, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group-vertical > .btn + .btn, .node-readmore .btn-group-vertical > a + .btn, .btn-group-vertical > #mc-embedded-subscribe + .btn, .node-readmore .btn-group-vertical > .btn + a, .node-readmore .btn-group-vertical > a + a, .node-readmore .btn-group-vertical > #mc-embedded-subscribe + a, .btn-group-vertical > .btn + #mc-embedded-subscribe, .node-readmore .btn-group-vertical > a + #mc-embedded-subscribe, .btn-group-vertical > #mc-embedded-subscribe + #mc-embedded-subscribe,
+.btn-group-vertical > .btn + .btn, .node-readmore .btn-group-vertical > a + .btn, .btn-group-vertical > #mc-embedded-subscribe + .btn, .panel-secondary .more-link .btn-group-vertical > a + .btn, .node-readmore .btn-group-vertical > .btn + a, .node-readmore .btn-group-vertical > a + a, .node-readmore .btn-group-vertical > #mc-embedded-subscribe + a, .btn-group-vertical > .btn + #mc-embedded-subscribe, .node-readmore .btn-group-vertical > a + #mc-embedded-subscribe, .btn-group-vertical > #mc-embedded-subscribe + #mc-embedded-subscribe, .panel-secondary .more-link .btn-group-vertical > a + #mc-embedded-subscribe, .panel-secondary .more-link .btn-group-vertical > .btn + a, .panel-secondary .more-link .btn-group-vertical > #mc-embedded-subscribe + a, .panel-secondary .more-link .btn-group-vertical > a + a,
 .btn-group-vertical > .btn + .btn-group,
 .node-readmore .btn-group-vertical > a + .btn-group,
 .btn-group-vertical > #mc-embedded-subscribe + .btn-group,
+.panel-secondary .more-link .btn-group-vertical > a + .btn-group,
 .btn-group-vertical > .btn-group + .btn,
 .node-readmore .btn-group-vertical > .btn-group + a,
 .btn-group-vertical > .btn-group + #mc-embedded-subscribe,
+.panel-secondary .more-link .btn-group-vertical > .btn-group + a,
 .btn-group-vertical > .btn-group + .btn-group {
   margin-top: -1px;
   margin-left: 0;
 }
 
 /* line 175, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group-vertical > .btn:not(:first-child):not(:last-child), .node-readmore .btn-group-vertical > a:not(:first-child):not(:last-child), .btn-group-vertical > #mc-embedded-subscribe:not(:first-child):not(:last-child) {
+.btn-group-vertical > .btn:not(:first-child):not(:last-child), .node-readmore .btn-group-vertical > a:not(:first-child):not(:last-child), .btn-group-vertical > #mc-embedded-subscribe:not(:first-child):not(:last-child), .panel-secondary .more-link .btn-group-vertical > a:not(:first-child):not(:last-child) {
   border-radius: 0;
 }
 /* line 178, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group-vertical > .btn:first-child:not(:last-child), .node-readmore .btn-group-vertical > a:first-child:not(:last-child), .btn-group-vertical > #mc-embedded-subscribe:first-child:not(:last-child) {
+.btn-group-vertical > .btn:first-child:not(:last-child), .node-readmore .btn-group-vertical > a:first-child:not(:last-child), .btn-group-vertical > #mc-embedded-subscribe:first-child:not(:last-child), .panel-secondary .more-link .btn-group-vertical > a:first-child:not(:last-child) {
   border-top-right-radius: 4px;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
 /* line 182, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group-vertical > .btn:last-child:not(:first-child), .node-readmore .btn-group-vertical > a:last-child:not(:first-child), .btn-group-vertical > #mc-embedded-subscribe:last-child:not(:first-child) {
+.btn-group-vertical > .btn:last-child:not(:first-child), .node-readmore .btn-group-vertical > a:last-child:not(:first-child), .btn-group-vertical > #mc-embedded-subscribe:last-child:not(:first-child), .panel-secondary .more-link .btn-group-vertical > a:last-child:not(:first-child) {
   border-bottom-left-radius: 4px;
   border-top-right-radius: 0;
   border-top-left-radius: 0;
 }
 
 /* line 187, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .btn, .node-readmore .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > a, .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > #mc-embedded-subscribe {
+.btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .btn, .node-readmore .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > a, .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > #mc-embedded-subscribe, .panel-secondary .more-link .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > a {
   border-radius: 0;
 }
 
 /* line 192, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group-vertical > .btn-group:first-child:not(:last-child) > .btn:last-child, .node-readmore .btn-group-vertical > .btn-group:first-child:not(:last-child) > a:last-child, .btn-group-vertical > .btn-group:first-child:not(:last-child) > #mc-embedded-subscribe:last-child,
+.btn-group-vertical > .btn-group:first-child:not(:last-child) > .btn:last-child, .node-readmore .btn-group-vertical > .btn-group:first-child:not(:last-child) > a:last-child, .btn-group-vertical > .btn-group:first-child:not(:last-child) > #mc-embedded-subscribe:last-child, .panel-secondary .more-link .btn-group-vertical > .btn-group:first-child:not(:last-child) > a:last-child,
 .btn-group-vertical > .btn-group:first-child:not(:last-child) > .dropdown-toggle,
 .btn-group-vertical > .btn-group:first-child:not(:last-child) > a.menu {
   border-bottom-right-radius: 0;
@@ -5032,7 +5052,7 @@ tbody.collapse.in {
 }
 
 /* line 196, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group-vertical > .btn-group:last-child:not(:first-child) > .btn:first-child, .node-readmore .btn-group-vertical > .btn-group:last-child:not(:first-child) > a:first-child, .btn-group-vertical > .btn-group:last-child:not(:first-child) > #mc-embedded-subscribe:first-child {
+.btn-group-vertical > .btn-group:last-child:not(:first-child) > .btn:first-child, .node-readmore .btn-group-vertical > .btn-group:last-child:not(:first-child) > a:first-child, .btn-group-vertical > .btn-group:last-child:not(:first-child) > #mc-embedded-subscribe:first-child, .panel-secondary .more-link .btn-group-vertical > .btn-group:last-child:not(:first-child) > a:first-child {
   border-top-right-radius: 0;
   border-top-left-radius: 0;
 }
@@ -5045,14 +5065,14 @@ tbody.collapse.in {
   border-collapse: separate;
 }
 /* line 211, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group-justified > .btn, .node-readmore .btn-group-justified > a, .btn-group-justified > #mc-embedded-subscribe,
+.btn-group-justified > .btn, .node-readmore .btn-group-justified > a, .btn-group-justified > #mc-embedded-subscribe, .panel-secondary .more-link .btn-group-justified > a,
 .btn-group-justified > .btn-group {
   float: none;
   display: table-cell;
   width: 1%;
 }
 /* line 216, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_button-groups.scss */
-.btn-group-justified > .btn-group .btn, .btn-group-justified > .btn-group .node-readmore a, .node-readmore .btn-group-justified > .btn-group a, .btn-group-justified > .btn-group #mc-embedded-subscribe {
+.btn-group-justified > .btn-group .btn, .btn-group-justified > .btn-group .node-readmore a, .node-readmore .btn-group-justified > .btn-group a, .btn-group-justified > .btn-group #mc-embedded-subscribe, .btn-group-justified > .btn-group .panel-secondary .more-link a, .panel-secondary .more-link .btn-group-justified > .btn-group a {
   width: 100%;
 }
 /* line 220, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_button-groups.scss */
@@ -5061,10 +5081,11 @@ tbody.collapse.in {
 }
 
 /* line 236, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_button-groups.scss */
-[data-toggle="buttons"] > .btn > input[type="radio"], .node-readmore [data-toggle="buttons"] > a > input[type="radio"], [data-toggle="buttons"] > #mc-embedded-subscribe > input[type="radio"],
+[data-toggle="buttons"] > .btn > input[type="radio"], .node-readmore [data-toggle="buttons"] > a > input[type="radio"], [data-toggle="buttons"] > #mc-embedded-subscribe > input[type="radio"], .panel-secondary .more-link [data-toggle="buttons"] > a > input[type="radio"],
 [data-toggle="buttons"] > .btn > input[type="checkbox"],
 .node-readmore [data-toggle="buttons"] > a > input[type="checkbox"],
-[data-toggle="buttons"] > #mc-embedded-subscribe > input[type="checkbox"] {
+[data-toggle="buttons"] > #mc-embedded-subscribe > input[type="checkbox"],
+.panel-secondary .more-link [data-toggle="buttons"] > a > input[type="checkbox"] {
   position: absolute;
   z-index: -1;
   opacity: 0;
@@ -5151,7 +5172,8 @@ form.navbar-form .form-type-textfield .input-group input[type="text"]:not(:first
 .input-group-sm > .input-group-addon,
 .input-group-sm > .input-group-btn > .input-group-addon.btn,
 .node-readmore .input-group-sm > .input-group-btn > a.input-group-addon,
-.input-group-sm > .input-group-btn > .input-group-addon#mc-embedded-subscribe {
+.input-group-sm > .input-group-btn > .input-group-addon#mc-embedded-subscribe,
+.panel-secondary .more-link .input-group-sm > .input-group-btn > a.input-group-addon {
   padding: 5px 10px;
   font-size: 12px;
   border-radius: 3px;
@@ -5164,7 +5186,8 @@ form.navbar-form .form-type-textfield .input-group input[type="text"]:not(:first
 .input-group-lg > .input-group-addon,
 .input-group-lg > .input-group-btn > .input-group-addon.btn,
 .node-readmore .input-group-lg > .input-group-btn > a.input-group-addon,
-.input-group-lg > .input-group-btn > .input-group-addon#mc-embedded-subscribe {
+.input-group-lg > .input-group-btn > .input-group-addon#mc-embedded-subscribe,
+.panel-secondary .more-link .input-group-lg > .input-group-btn > a.input-group-addon {
   padding: 20px 16px;
   font-size: 17px;
   border-radius: 6px;
@@ -5183,17 +5206,21 @@ form.navbar-form .form-type-textfield .input-group input[type="text"]:not(:first
 .input-group-btn:first-child > .btn,
 .node-readmore .input-group-btn:first-child > a,
 .input-group-btn:first-child > #mc-embedded-subscribe,
+.panel-secondary .more-link .input-group-btn:first-child > a,
 .input-group-btn:first-child > .btn-group > .btn,
 .node-readmore .input-group-btn:first-child > .btn-group > a,
 .input-group-btn:first-child > .btn-group > #mc-embedded-subscribe,
+.panel-secondary .more-link .input-group-btn:first-child > .btn-group > a,
 .input-group-btn:first-child > .dropdown-toggle,
 .input-group-btn:first-child > a.menu,
 .input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle),
 .node-readmore .input-group-btn:last-child > a:not(:last-child):not(.dropdown-toggle),
 .input-group-btn:last-child > #mc-embedded-subscribe:not(:last-child):not(.dropdown-toggle),
+.panel-secondary .more-link .input-group-btn:last-child > a:not(:last-child):not(.dropdown-toggle),
 .input-group-btn:last-child > .btn-group:not(:last-child) > .btn,
 .node-readmore .input-group-btn:last-child > .btn-group:not(:last-child) > a,
-.input-group-btn:last-child > .btn-group:not(:last-child) > #mc-embedded-subscribe {
+.input-group-btn:last-child > .btn-group:not(:last-child) > #mc-embedded-subscribe,
+.panel-secondary .more-link .input-group-btn:last-child > .btn-group:not(:last-child) > a {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
 }
@@ -5211,17 +5238,21 @@ form.navbar-form .form-type-textfield .input-group input[type="text"]:not(:first
 .input-group-btn:last-child > .btn,
 .node-readmore .input-group-btn:last-child > a,
 .input-group-btn:last-child > #mc-embedded-subscribe,
+.panel-secondary .more-link .input-group-btn:last-child > a,
 .input-group-btn:last-child > .btn-group > .btn,
 .node-readmore .input-group-btn:last-child > .btn-group > a,
 .input-group-btn:last-child > .btn-group > #mc-embedded-subscribe,
+.panel-secondary .more-link .input-group-btn:last-child > .btn-group > a,
 .input-group-btn:last-child > .dropdown-toggle,
 .input-group-btn:last-child > a.menu,
 .input-group-btn:first-child > .btn:not(:first-child),
 .node-readmore .input-group-btn:first-child > a:not(:first-child),
 .input-group-btn:first-child > #mc-embedded-subscribe:not(:first-child),
+.panel-secondary .more-link .input-group-btn:first-child > a:not(:first-child),
 .input-group-btn:first-child > .btn-group:not(:first-child) > .btn,
 .node-readmore .input-group-btn:first-child > .btn-group:not(:first-child) > a,
-.input-group-btn:first-child > .btn-group:not(:first-child) > #mc-embedded-subscribe {
+.input-group-btn:first-child > .btn-group:not(:first-child) > #mc-embedded-subscribe,
+.panel-secondary .more-link .input-group-btn:first-child > .btn-group:not(:first-child) > a {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
 }
@@ -5238,24 +5269,24 @@ form.navbar-form .form-type-textfield .input-group input[type="text"]:not(:first
   white-space: nowrap;
 }
 /* line 140, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_input-groups.scss */
-.input-group-btn > .btn, .node-readmore .input-group-btn > a, .input-group-btn > #mc-embedded-subscribe {
+.input-group-btn > .btn, .node-readmore .input-group-btn > a, .input-group-btn > #mc-embedded-subscribe, .panel-secondary .more-link .input-group-btn > a {
   position: relative;
 }
 /* line 142, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_input-groups.scss */
-.input-group-btn > .btn + .btn, .node-readmore .input-group-btn > a + .btn, .input-group-btn > #mc-embedded-subscribe + .btn, .node-readmore .input-group-btn > .btn + a, .node-readmore .input-group-btn > a + a, .node-readmore .input-group-btn > #mc-embedded-subscribe + a, .input-group-btn > .btn + #mc-embedded-subscribe, .node-readmore .input-group-btn > a + #mc-embedded-subscribe, .input-group-btn > #mc-embedded-subscribe + #mc-embedded-subscribe {
+.input-group-btn > .btn + .btn, .node-readmore .input-group-btn > a + .btn, .input-group-btn > #mc-embedded-subscribe + .btn, .panel-secondary .more-link .input-group-btn > a + .btn, .node-readmore .input-group-btn > .btn + a, .node-readmore .input-group-btn > a + a, .node-readmore .input-group-btn > #mc-embedded-subscribe + a, .input-group-btn > .btn + #mc-embedded-subscribe, .node-readmore .input-group-btn > a + #mc-embedded-subscribe, .input-group-btn > #mc-embedded-subscribe + #mc-embedded-subscribe, .panel-secondary .more-link .input-group-btn > a + #mc-embedded-subscribe, .panel-secondary .more-link .input-group-btn > .btn + a, .panel-secondary .more-link .input-group-btn > #mc-embedded-subscribe + a, .panel-secondary .more-link .input-group-btn > a + a {
   margin-left: -1px;
 }
 /* line 148, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_input-groups.scss */
-.input-group-btn > .btn:hover, .node-readmore .input-group-btn > a:hover, .input-group-btn > #mc-embedded-subscribe:hover, .input-group-btn > .btn:focus, .node-readmore .input-group-btn > a:focus, .input-group-btn > #mc-embedded-subscribe:focus, .input-group-btn > .btn:active, .node-readmore .input-group-btn > a:active, .input-group-btn > #mc-embedded-subscribe:active {
+.input-group-btn > .btn:hover, .node-readmore .input-group-btn > a:hover, .input-group-btn > #mc-embedded-subscribe:hover, .panel-secondary .more-link .input-group-btn > a:hover, .input-group-btn > .btn:focus, .node-readmore .input-group-btn > a:focus, .input-group-btn > #mc-embedded-subscribe:focus, .panel-secondary .more-link .input-group-btn > a:focus, .input-group-btn > .btn:active, .node-readmore .input-group-btn > a:active, .input-group-btn > #mc-embedded-subscribe:active, .panel-secondary .more-link .input-group-btn > a:active {
   z-index: 2;
 }
 /* line 156, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_input-groups.scss */
-.input-group-btn:first-child > .btn, .node-readmore .input-group-btn:first-child > a, .input-group-btn:first-child > #mc-embedded-subscribe,
+.input-group-btn:first-child > .btn, .node-readmore .input-group-btn:first-child > a, .input-group-btn:first-child > #mc-embedded-subscribe, .panel-secondary .more-link .input-group-btn:first-child > a,
 .input-group-btn:first-child > .btn-group {
   margin-right: -1px;
 }
 /* line 162, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_input-groups.scss */
-.input-group-btn:last-child > .btn, .node-readmore .input-group-btn:last-child > a, .input-group-btn:last-child > #mc-embedded-subscribe,
+.input-group-btn:last-child > .btn, .node-readmore .input-group-btn:last-child > a, .input-group-btn:last-child > #mc-embedded-subscribe, .panel-secondary .more-link .input-group-btn:last-child > a,
 .input-group-btn:last-child > .btn-group {
   margin-left: -1px;
 }
@@ -5794,12 +5825,12 @@ form.navbar-form .form-type-textfield .input-group input[type="text"]:not(:first
   margin-bottom: 12px;
 }
 /* line 362, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_navbar.scss */
-.navbar-btn.btn-sm, .btn-group-sm > .navbar-btn.btn, .node-readmore .btn-group-sm > a.navbar-btn, .btn-group-sm > .navbar-btn#mc-embedded-subscribe {
+.navbar-btn.btn-sm, .btn-group-sm > .navbar-btn.btn, .node-readmore .btn-group-sm > a.navbar-btn, .btn-group-sm > .navbar-btn#mc-embedded-subscribe, .panel-secondary .more-link .btn-group-sm > a.navbar-btn {
   margin-top: 14px;
   margin-bottom: 14px;
 }
 /* line 365, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_navbar.scss */
-.navbar-btn.btn-xs, .btn-group-xs > .navbar-btn.btn, .node-readmore .btn-group-xs > a.navbar-btn, .btn-group-xs > .navbar-btn#mc-embedded-subscribe {
+.navbar-btn.btn-xs, .btn-group-xs > .navbar-btn.btn, .node-readmore .btn-group-xs > a.navbar-btn, .btn-group-xs > .navbar-btn#mc-embedded-subscribe, .panel-secondary .more-link .btn-group-xs > a.navbar-btn {
   margin-top: 18px;
   margin-bottom: 18px;
 }
@@ -6235,7 +6266,7 @@ form.navbar-form .form-type-textfield .input-group input[type="text"]:not(:first
   display: none;
 }
 /* line 25, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_labels.scss */
-.btn .label, .node-readmore a .label, #mc-embedded-subscribe .label {
+.btn .label, .node-readmore a .label, #mc-embedded-subscribe .label, .panel-secondary .more-link a .label {
   position: relative;
   top: -1px;
 }
@@ -6321,12 +6352,12 @@ a.label:hover, a.label:focus {
   display: none;
 }
 /* line 27, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_badges.scss */
-.btn .badge, .node-readmore a .badge, #mc-embedded-subscribe .badge {
+.btn .badge, .node-readmore a .badge, #mc-embedded-subscribe .badge, .panel-secondary .more-link a .badge {
   position: relative;
   top: -1px;
 }
 /* line 31, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_badges.scss */
-.btn-xs .badge, .btn-group-xs > .btn .badge, .node-readmore .btn-group-xs > a .badge, .btn-group-xs > #mc-embedded-subscribe .badge {
+.btn-xs .badge, .btn-group-xs > .btn .badge, .node-readmore .btn-group-xs > a .badge, .btn-group-xs > #mc-embedded-subscribe .badge, .panel-secondary .more-link .btn-group-xs > a .badge {
   top: 0;
   padding: 1px 5px;
 }
@@ -7508,12 +7539,12 @@ button.close {
   clear: both;
 }
 /* line 110, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_modals.scss */
-.modal-footer .btn + .btn, .modal-footer .node-readmore a + .btn, .node-readmore .modal-footer a + .btn, .modal-footer #mc-embedded-subscribe + .btn, .modal-footer .node-readmore .btn + a, .node-readmore .modal-footer .btn + a, .modal-footer .node-readmore a + a, .node-readmore .modal-footer a + a, .modal-footer .node-readmore #mc-embedded-subscribe + a, .node-readmore .modal-footer #mc-embedded-subscribe + a, .modal-footer .btn + #mc-embedded-subscribe, .modal-footer .node-readmore a + #mc-embedded-subscribe, .node-readmore .modal-footer a + #mc-embedded-subscribe, .modal-footer #mc-embedded-subscribe + #mc-embedded-subscribe {
+.modal-footer .btn + .btn, .modal-footer .node-readmore a + .btn, .node-readmore .modal-footer a + .btn, .modal-footer #mc-embedded-subscribe + .btn, .modal-footer .panel-secondary .more-link a + .btn, .panel-secondary .more-link .modal-footer a + .btn, .modal-footer .node-readmore .btn + a, .node-readmore .modal-footer .btn + a, .modal-footer .node-readmore a + a, .node-readmore .modal-footer a + a, .modal-footer .node-readmore #mc-embedded-subscribe + a, .node-readmore .modal-footer #mc-embedded-subscribe + a, .modal-footer .btn + #mc-embedded-subscribe, .modal-footer .node-readmore a + #mc-embedded-subscribe, .node-readmore .modal-footer a + #mc-embedded-subscribe, .modal-footer #mc-embedded-subscribe + #mc-embedded-subscribe, .modal-footer .panel-secondary .more-link a + #mc-embedded-subscribe, .panel-secondary .more-link .modal-footer a + #mc-embedded-subscribe, .modal-footer .panel-secondary .more-link .btn + a, .panel-secondary .more-link .modal-footer .btn + a, .modal-footer .panel-secondary .more-link #mc-embedded-subscribe + a, .panel-secondary .more-link .modal-footer #mc-embedded-subscribe + a, .modal-footer .panel-secondary .more-link a + a, .panel-secondary .more-link .modal-footer a + a {
   margin-left: 5px;
   margin-bottom: 0;
 }
 /* line 115, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_modals.scss */
-.modal-footer .btn-group .btn + .btn, .modal-footer .btn-group .node-readmore a + .btn, .node-readmore .modal-footer .btn-group a + .btn, .modal-footer .btn-group #mc-embedded-subscribe + .btn, .modal-footer .btn-group .node-readmore .btn + a, .node-readmore .modal-footer .btn-group .btn + a, .modal-footer .btn-group .node-readmore a + a, .node-readmore .modal-footer .btn-group a + a, .modal-footer .btn-group .node-readmore #mc-embedded-subscribe + a, .node-readmore .modal-footer .btn-group #mc-embedded-subscribe + a, .modal-footer .btn-group .btn + #mc-embedded-subscribe, .modal-footer .btn-group .node-readmore a + #mc-embedded-subscribe, .node-readmore .modal-footer .btn-group a + #mc-embedded-subscribe, .modal-footer .btn-group #mc-embedded-subscribe + #mc-embedded-subscribe {
+.modal-footer .btn-group .btn + .btn, .modal-footer .btn-group .node-readmore a + .btn, .node-readmore .modal-footer .btn-group a + .btn, .modal-footer .btn-group #mc-embedded-subscribe + .btn, .modal-footer .btn-group .panel-secondary .more-link a + .btn, .panel-secondary .more-link .modal-footer .btn-group a + .btn, .modal-footer .btn-group .node-readmore .btn + a, .node-readmore .modal-footer .btn-group .btn + a, .modal-footer .btn-group .node-readmore a + a, .node-readmore .modal-footer .btn-group a + a, .modal-footer .btn-group .node-readmore #mc-embedded-subscribe + a, .node-readmore .modal-footer .btn-group #mc-embedded-subscribe + a, .modal-footer .btn-group .btn + #mc-embedded-subscribe, .modal-footer .btn-group .node-readmore a + #mc-embedded-subscribe, .node-readmore .modal-footer .btn-group a + #mc-embedded-subscribe, .modal-footer .btn-group #mc-embedded-subscribe + #mc-embedded-subscribe, .modal-footer .btn-group .panel-secondary .more-link a + #mc-embedded-subscribe, .panel-secondary .more-link .modal-footer .btn-group a + #mc-embedded-subscribe, .modal-footer .btn-group .panel-secondary .more-link .btn + a, .panel-secondary .more-link .modal-footer .btn-group .btn + a, .modal-footer .btn-group .panel-secondary .more-link #mc-embedded-subscribe + a, .panel-secondary .more-link .modal-footer .btn-group #mc-embedded-subscribe + a, .modal-footer .btn-group .panel-secondary .more-link a + a, .panel-secondary .more-link .modal-footer .btn-group a + a {
   margin-left: -1px;
 }
 /* line 119, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_modals.scss */
@@ -8008,7 +8039,7 @@ button.close {
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
 }
 /* line 202, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.2.0.2/assets/stylesheets/bootstrap/_carousel.scss */
-.carousel-caption .btn, .carousel-caption .node-readmore a, .node-readmore .carousel-caption a, .carousel-caption #mc-embedded-subscribe {
+.carousel-caption .btn, .carousel-caption .node-readmore a, .node-readmore .carousel-caption a, .carousel-caption #mc-embedded-subscribe, .carousel-caption .panel-secondary .more-link a, .panel-secondary .more-link .carousel-caption a {
   text-shadow: none;
 }
 
@@ -8635,6 +8666,24 @@ html.js input.throbbing {
   border-radius: 4px;
 }
 
+/* line 10, ../sass/base/_helpers.scss */
+.view-display-id-panel_pane_featured_products .views-row .content a:after, .panel-secondary.panel-success.doc-icon a:before, .panel-secondary.panel-success.arrow a:before,
+.panel-secondary.panel-info.doc-icon a:before,
+.panel-secondary.panel-info.arrow a:before {
+  font-family: "icons";
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1;
+  font-weight: normal;
+  font-style: normal;
+  speak: none;
+  text-decoration: inherit;
+  text-transform: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 @font-face {
   font-family: "icons";
   src: url("../fonts/icons-6ec77842d29ddb2fcdc3384a6c9a005d.eot");
@@ -8651,7 +8700,7 @@ html.js input.throbbing {
 }
 
 /* line 22, ../sass/base/_icons.scss */
-.icons, .view-display-id-panel_pane_featured_products .views-row .content a:after, .panel-success:not(.none) a:before, [class*="icons-"] {
+.icons, [class*="icons-"] {
   font-family: "icons";
   display: inline-block;
   vertical-align: middle;
@@ -8667,7 +8716,8 @@ html.js input.throbbing {
 }
 
 /* line 41, ../sass/base/_icons.scss */
-.icons-arrow:before, .view-display-id-panel_pane_featured_products .views-row .content a:after, .panel-success.arrow a:before {
+.icons-arrow:before, .view-display-id-panel_pane_featured_products .views-row .content a:after, .panel-secondary.panel-success.arrow .view-content a:before,
+.panel-secondary.panel-info.arrow .view-content a:before {
   content: "\f101";
 }
 
@@ -8707,7 +8757,7 @@ html.js input.throbbing {
 }
 
 /* line 81, ../sass/base/_icons.scss */
-.icons-morearrowdown:before, .filter-btn .btn .caret:before, .filter-btn .node-readmore a .caret:before, .node-readmore .filter-btn a .caret:before, .filter-btn #mc-embedded-subscribe .caret:before {
+.icons-morearrowdown:before, .filter-btn .btn .caret:before, .filter-btn .node-readmore a .caret:before, .node-readmore .filter-btn a .caret:before, .filter-btn #mc-embedded-subscribe .caret:before, .filter-btn .panel-secondary .more-link a .caret:before, .panel-secondary .more-link .filter-btn a .caret:before {
   content: "\f109";
 }
 
@@ -8717,7 +8767,8 @@ html.js input.throbbing {
 }
 
 /* line 91, ../sass/base/_icons.scss */
-.icons-page:before, .panel-success.doc-icon a:before {
+.icons-page:before, .panel-secondary.panel-success.doc-icon .view-content a:before,
+.panel-secondary.panel-info.doc-icon .view-content a:before {
   content: "\f10b";
 }
 
@@ -8819,7 +8870,7 @@ body.ctools-modal-open {
   padding-bottom: 20px;
 }
 /* line 297, ../sass/base/_structure.scss */
-#modalContent .panels-section-column-categories .btn, #modalContent .panels-section-column-categories .node-readmore a, .node-readmore #modalContent .panels-section-column-categories a, #modalContent .panels-section-column-categories #mc-embedded-subscribe {
+#modalContent .panels-section-column-categories .btn, #modalContent .panels-section-column-categories .node-readmore a, .node-readmore #modalContent .panels-section-column-categories a, #modalContent .panels-section-column-categories #mc-embedded-subscribe, #modalContent .panels-section-column-categories .panel-secondary .more-link a, .panel-secondary .more-link #modalContent .panels-section-column-categories a {
   border: 1px solid #eceff0 !important;
   line-height: inherit;
   margin: 0;
@@ -8830,7 +8881,7 @@ body.ctools-modal-open {
   border: 0;
 }
 /* line 306, ../sass/base/_structure.scss */
-#modalContent .panels-categories-box a.btn, #modalContent .panels-categories-box .node-readmore a, .node-readmore #modalContent .panels-categories-box a, #modalContent .panels-categories-box a#mc-embedded-subscribe {
+#modalContent .panels-categories-box a.btn, #modalContent .panels-categories-box .node-readmore a, .node-readmore #modalContent .panels-categories-box a, #modalContent .panels-categories-box a#mc-embedded-subscribe, #modalContent .panels-categories-box .panel-secondary .more-link a, .panel-secondary .more-link #modalContent .panels-categories-box a {
   padding: 5px 10px;
 }
 /* line 309, ../sass/base/_structure.scss */
@@ -8840,7 +8891,7 @@ body.ctools-modal-open {
   box-shadow: none;
 }
 /* line 315, ../sass/base/_structure.scss */
-#modalContent .panels-root-content-box a.btn, #modalContent .panels-root-content-box .node-readmore a, .node-readmore #modalContent .panels-root-content-box a, #modalContent .panels-root-content-box a#mc-embedded-subscribe {
+#modalContent .panels-root-content-box a.btn, #modalContent .panels-root-content-box .node-readmore a, .node-readmore #modalContent .panels-root-content-box a, #modalContent .panels-root-content-box a#mc-embedded-subscribe, #modalContent .panels-root-content-box .panel-secondary .more-link a, .panel-secondary .more-link #modalContent .panels-root-content-box a {
   padding: 5px 10px;
 }
 /* line 319, ../sass/base/_structure.scss */
@@ -8864,7 +8915,7 @@ body.ctools-modal-open {
   position: relative;
 }
 /* line 333, ../sass/base/_structure.scss */
-#modal-content fieldset.widget-preview .panel-heading .btn, #modal-content fieldset.widget-preview .view-display-id-panel_pane_membership_logos h4 .btn, .view-display-id-panel_pane_membership_logos #modal-content fieldset.widget-preview h4 .btn, #modal-content fieldset.widget-preview .panel-heading .node-readmore a, .node-readmore #modal-content fieldset.widget-preview .panel-heading a, #modal-content fieldset.widget-preview .view-display-id-panel_pane_membership_logos h4 .node-readmore a, .node-readmore #modal-content fieldset.widget-preview .view-display-id-panel_pane_membership_logos h4 a, .view-display-id-panel_pane_membership_logos #modal-content fieldset.widget-preview h4 .node-readmore a, .node-readmore .view-display-id-panel_pane_membership_logos #modal-content fieldset.widget-preview h4 a, #modal-content fieldset.widget-preview .panel-heading #mc-embedded-subscribe, #modal-content fieldset.widget-preview .view-display-id-panel_pane_membership_logos h4 #mc-embedded-subscribe, .view-display-id-panel_pane_membership_logos #modal-content fieldset.widget-preview h4 #mc-embedded-subscribe {
+#modal-content fieldset.widget-preview .panel-heading .btn, #modal-content fieldset.widget-preview .view-display-id-panel_pane_membership_logos h4 .btn, .view-display-id-panel_pane_membership_logos #modal-content fieldset.widget-preview h4 .btn, #modal-content fieldset.widget-preview .panel-heading .node-readmore a, .node-readmore #modal-content fieldset.widget-preview .panel-heading a, #modal-content fieldset.widget-preview .view-display-id-panel_pane_membership_logos h4 .node-readmore a, .node-readmore #modal-content fieldset.widget-preview .view-display-id-panel_pane_membership_logos h4 a, .view-display-id-panel_pane_membership_logos #modal-content fieldset.widget-preview h4 .node-readmore a, .node-readmore .view-display-id-panel_pane_membership_logos #modal-content fieldset.widget-preview h4 a, #modal-content fieldset.widget-preview .panel-heading #mc-embedded-subscribe, #modal-content fieldset.widget-preview .view-display-id-panel_pane_membership_logos h4 #mc-embedded-subscribe, .view-display-id-panel_pane_membership_logos #modal-content fieldset.widget-preview h4 #mc-embedded-subscribe, #modal-content fieldset.widget-preview .panel-heading .panel-secondary .more-link a, .panel-secondary .more-link #modal-content fieldset.widget-preview .panel-heading a, #modal-content fieldset.widget-preview .view-display-id-panel_pane_membership_logos h4 .panel-secondary .more-link a, .panel-secondary .more-link #modal-content fieldset.widget-preview .view-display-id-panel_pane_membership_logos h4 a, .view-display-id-panel_pane_membership_logos #modal-content fieldset.widget-preview h4 .panel-secondary .more-link a, .panel-secondary .more-link .view-display-id-panel_pane_membership_logos #modal-content fieldset.widget-preview h4 a {
   position: absolute;
   right: 10px;
   top: 5px;
@@ -9063,7 +9114,7 @@ body.ctools-modal-open {
 }
 
 /* line 1, ../sass/components/_buttons.scss */
-.btn, .node-readmore a, #mc-embedded-subscribe {
+.btn, .node-readmore a, #mc-embedded-subscribe, .panel-secondary .more-link a {
   font-family: "Montserrat", sans-serif;
 }
 
@@ -9076,29 +9127,24 @@ body.ctools-modal-open {
 }
 
 /* line 14, ../sass/components/_buttons.scss */
-form .form-actions .btn, form .form-actions .node-readmore a, .node-readmore form .form-actions a, form .form-actions #mc-embedded-subscribe,
+form .form-actions .btn, form .form-actions .node-readmore a, .node-readmore form .form-actions a, form .form-actions #mc-embedded-subscribe, form .form-actions .panel-secondary .more-link a, .panel-secondary .more-link form .form-actions a,
 form .form-actions .node-readmore a,
 .node-readmore form .form-actions a {
   margin-right: 10px;
 }
 
-/* line 18, ../sass/components/_buttons.scss */
-.node-readmore a {
-  text-transform: uppercase;
-}
-
-/* line 24, ../sass/components/_buttons.scss */
+/* line 23, ../sass/components/_buttons.scss */
 .filter-btn {
   margin-bottom: 6px;
 }
-/* line 26, ../sass/components/_buttons.scss */
-.filter-btn .btn, .filter-btn .node-readmore a, .node-readmore .filter-btn a, .filter-btn #mc-embedded-subscribe {
+/* line 25, ../sass/components/_buttons.scss */
+.filter-btn .btn, .filter-btn .node-readmore a, .node-readmore .filter-btn a, .filter-btn #mc-embedded-subscribe, .filter-btn .panel-secondary .more-link a, .panel-secondary .more-link .filter-btn a {
   background: #6b0326;
   color: white;
   text-transform: uppercase;
 }
-/* line 30, ../sass/components/_buttons.scss */
-.filter-btn .btn .caret, .filter-btn .node-readmore a .caret, .node-readmore .filter-btn a .caret, .filter-btn #mc-embedded-subscribe .caret {
+/* line 29, ../sass/components/_buttons.scss */
+.filter-btn .btn .caret, .filter-btn .node-readmore a .caret, .node-readmore .filter-btn a .caret, .filter-btn #mc-embedded-subscribe .caret, .filter-btn .panel-secondary .more-link a .caret, .panel-secondary .more-link .filter-btn a .caret {
   border: 0;
   height: auto;
   width: auto;
@@ -9107,17 +9153,17 @@ form .form-actions .node-readmore a,
   vertical-align: top;
   font-weight: normal;
 }
-/* line 39, ../sass/components/_buttons.scss */
-.filter-btn .btn:hover, .filter-btn .node-readmore a:hover, .node-readmore .filter-btn a:hover, .filter-btn #mc-embedded-subscribe:hover {
+/* line 38, ../sass/components/_buttons.scss */
+.filter-btn .btn:hover, .filter-btn .node-readmore a:hover, .node-readmore .filter-btn a:hover, .filter-btn #mc-embedded-subscribe:hover, .filter-btn .panel-secondary .more-link a:hover, .panel-secondary .more-link .filter-btn a:hover {
   background: #390214;
 }
 
-/* line 45, ../sass/components/_buttons.scss */
+/* line 44, ../sass/components/_buttons.scss */
 .pager-load-more {
   text-align: left;
   clear: left;
 }
-/* line 48, ../sass/components/_buttons.scss */
+/* line 47, ../sass/components/_buttons.scss */
 .pager-load-more li > a {
   background: #00817b;
   border: 0;
@@ -9126,13 +9172,13 @@ form .form-actions .node-readmore a,
   font-family: "Montserrat", sans-serif;
   text-transform: uppercase;
 }
-/* line 55, ../sass/components/_buttons.scss */
+/* line 54, ../sass/components/_buttons.scss */
 .pager-load-more li > a:after {
   font-family: icons;
   margin-left: 10px;
   vertical-align: top;
 }
-/* line 61, ../sass/components/_buttons.scss */
+/* line 60, ../sass/components/_buttons.scss */
 .pager-load-more li > a:hover {
   background: #af1407;
 }
@@ -9200,10 +9246,14 @@ form .form-actions .node-readmore a,
   margin-bottom: 5px;
 }
 /* line 42, ../sass/components/_fields.scss */
-.pane-node-field-agenda-items .icons-page, .pane-node-field-agenda-items .panel-success.doc-icon a:before, .panel-success.doc-icon .pane-node-field-agenda-items a:before,
+.pane-node-field-agenda-items .icons-page, .pane-node-field-agenda-items .panel-secondary.panel-success.doc-icon .view-content a:before, .panel-secondary.panel-success.doc-icon .view-content .pane-node-field-agenda-items a:before,
+.pane-node-field-agenda-items .panel-secondary.panel-info.doc-icon .view-content a:before,
+.panel-secondary.panel-info.doc-icon .view-content .pane-node-field-agenda-items a:before,
 .pane-node-field-oa-media .icons-page,
-.pane-node-field-oa-media .panel-success.doc-icon a:before,
-.panel-success.doc-icon .pane-node-field-oa-media a:before {
+.pane-node-field-oa-media .panel-secondary.panel-success.doc-icon .view-content a:before,
+.panel-secondary.panel-success.doc-icon .view-content .pane-node-field-oa-media a:before,
+.pane-node-field-oa-media .panel-secondary.panel-info.doc-icon .view-content a:before,
+.panel-secondary.panel-info.doc-icon .view-content .pane-node-field-oa-media a:before {
   font-size: 15px;
   margin-right: 10px;
   vertical-align: baseline;
@@ -9528,13 +9578,31 @@ img.bio-circled {
   border: 0;
   padding: 0;
 }
-/* line 22, ../sass/components/_navigation.scss */
+/* line 24, ../sass/components/_navigation.scss */
+.no-csstransitions .navbar li a {
+  position: relative;
+}
+/* line 25, ../sass/components/_navigation.scss */
+.no-csstransitions .navbar li > a:after {
+  content: "";
+  background: url('../images/nav-seperator.png?1419008864') no-repeat 50% 100%;
+  right: -8px;
+  top: 12px;
+  position: absolute;
+  width: 15px;
+  height: 31px;
+}
+/* line 38, ../sass/components/_navigation.scss */
+.navbar li.last a:after {
+  display: none;
+}
+/* line 43, ../sass/components/_navigation.scss */
 .navbar li:not(:last-child) {
   position: relative;
 }
 @media screen and (min-width: 992px) {
-  /* line 25, ../sass/components/_navigation.scss */
-  .navbar li:not(:last-child) > a:after {
+  /* line 47, ../sass/components/_navigation.scss */
+  .csstransitions .navbar li:not(:last-child) > a:after {
     -webkit-transform: rotate(25deg);
     -ms-transform: rotate(25deg);
     -o-transform: rotate(25deg);
@@ -9549,95 +9617,95 @@ img.bio-circled {
     opacity: .5;
   }
 }
-/* line 37, ../sass/components/_navigation.scss */
+/* line 60, ../sass/components/_navigation.scss */
 .navbar .navbar-nav {
   margin: 0;
 }
 @media screen and (max-width: 768px) {
-  /* line 40, ../sass/components/_navigation.scss */
+  /* line 63, ../sass/components/_navigation.scss */
   .navbar .navbar-nav li.open > a {
     background-color: #7eb5af !important;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 992px) {
-  /* line 45, ../sass/components/_navigation.scss */
+  /* line 68, ../sass/components/_navigation.scss */
   .navbar .navbar-nav > li > a {
     padding: 10px 13px;
   }
 }
 @media screen and (min-width: 992px) {
-  /* line 50, ../sass/components/_navigation.scss */
+  /* line 73, ../sass/components/_navigation.scss */
   .navbar .navbar-nav > li > a {
     padding-right: 13px;
     padding-left: 13px;
   }
 }
-/* line 56, ../sass/components/_navigation.scss */
+/* line 79, ../sass/components/_navigation.scss */
 .navbar a {
   font-family: "Montserrat", sans-serif;
   text-transform: uppercase;
   font-size: 14px;
 }
 @media screen and (min-width: 768px) {
-  /* line 56, ../sass/components/_navigation.scss */
+  /* line 79, ../sass/components/_navigation.scss */
   .navbar a {
     font-size: 10px;
   }
 }
 @media screen and (min-width: 992px) {
-  /* line 56, ../sass/components/_navigation.scss */
+  /* line 79, ../sass/components/_navigation.scss */
   .navbar a {
     font-size: 14px;
   }
 }
 @media screen and (min-width: 1200px) {
-  /* line 56, ../sass/components/_navigation.scss */
+  /* line 79, ../sass/components/_navigation.scss */
   .navbar a {
     font-size: 16px;
     letter-spacing: -1px;
   }
 }
-/* line 68, ../sass/components/_navigation.scss */
+/* line 91, ../sass/components/_navigation.scss */
 .navbar .dropdown-menu > li > a, .navbar ul.menu > li > a {
   color: #fff;
 }
 @media screen and (max-width: 768px) {
-  /* line 68, ../sass/components/_navigation.scss */
+  /* line 91, ../sass/components/_navigation.scss */
   .navbar .dropdown-menu > li > a, .navbar ul.menu > li > a {
     white-space: normal;
   }
 }
 @media screen and (min-width: 768px) {
-  /* line 68, ../sass/components/_navigation.scss */
+  /* line 91, ../sass/components/_navigation.scss */
   .navbar .dropdown-menu > li > a, .navbar ul.menu > li > a {
     color: #00817b;
   }
 }
 
-/* line 84, ../sass/components/_navigation.scss */
+/* line 107, ../sass/components/_navigation.scss */
 .navbar-top ul {
   background-color: #96c1bc;
   border: 1px solid #b6d5d2;
   margin-bottom: 0;
   margin-left: 0;
 }
-/* line 90, ../sass/components/_navigation.scss */
+/* line 113, ../sass/components/_navigation.scss */
 .navbar-top a {
   color: #00817b;
   font-size: 19px;
   padding: 5px;
   text-decoration: none;
 }
-/* line 95, ../sass/components/_navigation.scss */
+/* line 118, ../sass/components/_navigation.scss */
 .navbar-top a span {
   display: none;
 }
-/* line 96, ../sass/components/_navigation.scss */
+/* line 119, ../sass/components/_navigation.scss */
 .navbar-top a:hover {
   color: #00b4ac;
 }
 @media screen and (max-width: 768px) {
-  /* line 83, ../sass/components/_navigation.scss */
+  /* line 106, ../sass/components/_navigation.scss */
   .navbar-top {
     position: relative;
     float: left;
@@ -9647,36 +9715,36 @@ img.bio-circled {
     padding-right: 20px;
     padding: 0 10px 0 0;
   }
-  /* line 103, ../sass/components/_navigation.scss */
+  /* line 126, ../sass/components/_navigation.scss */
   .navbar-top li {
     width: 25%;
     padding: 0;
     text-align: center;
     float: left;
   }
-  /* line 109, ../sass/components/_navigation.scss */
+  /* line 132, ../sass/components/_navigation.scss */
   .navbar-top a {
     padding: 5px 0 4px;
   }
-  /* line 112, ../sass/components/_navigation.scss */
+  /* line 135, ../sass/components/_navigation.scss */
   .logged-in .navbar-top li {
     width: 20%;
   }
 }
 @media screen and (min-width: 768px) {
-  /* line 83, ../sass/components/_navigation.scss */
+  /* line 106, ../sass/components/_navigation.scss */
   .navbar-top {
     position: relative;
     float: right;
   }
 }
 
-/* line 124, ../sass/components/_navigation.scss */
+/* line 147, ../sass/components/_navigation.scss */
 .menu-name-og-menu-single .nav-pills > li.active > a {
   color: #00817b;
   background: transparent;
 }
-/* line 128, ../sass/components/_navigation.scss */
+/* line 151, ../sass/components/_navigation.scss */
 .menu-name-og-menu-single .nav-stacked {
   padding-left: 10px;
 }
@@ -9910,62 +9978,93 @@ img.bio-circled {
   text-transform: uppercase;
 }
 
-/* line 16, ../sass/components/_panel.scss */
+/* line 17, ../sass/components/_panel.scss */
+.panel-secondary .more-link a {
+  background-color: #d9190a;
+  border: 0;
+  color: white;
+}
+/* line 23, ../sass/components/_panel.scss */
+.panel-secondary .more-link a:hover {
+  background-color: #d9190a;
+  color: white;
+}
+
+/* line 36, ../sass/components/_panel.scss */
+.panel-secondary.panel-success.doc-icon .menu li,
+.panel-secondary.panel-success.doc-icon .views-row,
+.panel-secondary.panel-success.doc-icon .field-item, .panel-secondary.panel-success.arrow .menu li,
+.panel-secondary.panel-success.arrow .views-row,
+.panel-secondary.panel-success.arrow .field-item,
+.panel-secondary.panel-info.doc-icon .menu li,
+.panel-secondary.panel-info.doc-icon .views-row,
+.panel-secondary.panel-info.doc-icon .field-item,
+.panel-secondary.panel-info.arrow .menu li,
+.panel-secondary.panel-info.arrow .views-row,
+.panel-secondary.panel-info.arrow .field-item {
+  position: relative;
+  padding-left: 30px;
+}
+/* line 43, ../sass/components/_panel.scss */
+.panel-secondary.panel-success li,
+.panel-secondary.panel-info li {
+  line-height: 20px;
+  margin-bottom: 15px;
+}
+/* line 48, ../sass/components/_panel.scss */
+.panel-secondary.panel-success.doc-icon a:before, .panel-secondary.panel-success.arrow a:before,
+.panel-secondary.panel-info.doc-icon a:before,
+.panel-secondary.panel-info.arrow a:before {
+  position: absolute;
+  left: 0;
+  top: 3px;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+/* line 59, ../sass/components/_panel.scss */
 .panel-primary .panel-heading, .panel-primary .view-display-id-panel_pane_membership_logos h4, .view-display-id-panel_pane_membership_logos .panel-primary h4 {
   text-align: center;
 }
 
-/* line 20, ../sass/components/_panel.scss */
-.panel-success .btn, .panel-success .node-readmore a, .node-readmore .panel-success a, .panel-success #mc-embedded-subscribe {
+/* line 63, ../sass/components/_panel.scss */
+.panel-success .btn, .panel-success .node-readmore a, .node-readmore .panel-success a, .panel-success #mc-embedded-subscribe, .panel-success .panel-secondary .more-link a, .panel-secondary .more-link .panel-success a {
   background-color: #00817b;
 }
-/* line 24, ../sass/components/_panel.scss */
-.panel-success.doc-icon .menu li,
-.panel-success.doc-icon .views-row,
-.panel-success.doc-icon .field-item, .panel-success.arrow .menu li,
-.panel-success.arrow .views-row,
-.panel-success.arrow .field-item {
-  position: relative;
-  padding-left: 30px;
-}
-/* line 31, ../sass/components/_panel.scss */
-.panel-success li {
-  line-height: 28px;
-}
-/* line 34, ../sass/components/_panel.scss */
-.panel-success:not(.none) a:before {
-  color: #6b0326;
-  position: absolute;
-  left: 0;
-  top: 4px;
-  font-size: 16px;
-}
-/* line 41, ../sass/components/_panel.scss */
+/* line 64, ../sass/components/_panel.scss */
 .panel-success a {
   color: #000;
 }
+/* line 65, ../sass/components/_panel.scss */
+.panel-success a:before {
+  color: #6b0326;
+}
 
-/* line 45, ../sass/components/_panel.scss */
+/* line 69, ../sass/components/_panel.scss */
 .panel-info .views-row {
   margin-bottom: 20px;
 }
-/* line 48, ../sass/components/_panel.scss */
+/* line 72, ../sass/components/_panel.scss */
 .panel-info a {
   color: #d9190a;
 }
+/* line 73, ../sass/components/_panel.scss */
+.panel-info a:before {
+  color: #d9190a;
+}
 
-/* line 53, ../sass/components/_panel.scss */
+/* line 76, ../sass/components/_panel.scss */
 .well {
   border: 0;
   border-radius: 0;
   overflow: visible !important;
 }
-/* line 58, ../sass/components/_panel.scss */
+/* line 81, ../sass/components/_panel.scss */
 .node-type-announcement .well .panel-separator {
   margin-bottom: 10px;
 }
 
-/* line 68, ../sass/components/_panel.scss */
+/* line 91, ../sass/components/_panel.scss */
 .node-type-announcement h1.title,
 .page-page-not-found h1.title,
 .node-type-oa-event h1.title,
@@ -9992,9 +10091,12 @@ img.bio-circled {
   background-color: #00817b;
   padding: 20px;
   color: white;
-  width: 300px h3;
-  width-color: white;
-  width-margin-top: 0;
+  width: 300px;
+}
+/* line 7, ../sass/components/_secretariat.scss */
+.addressHighlight .address h3, .addressHighlight .address .node-type-oa-event .field-name-field-agenda-items .field-name-field-ai-title, .node-type-oa-event .field-name-field-agenda-items .addressHighlight .address .field-name-field-ai-title {
+  color: white;
+  margin-top: 0;
 }
 /* line 11, ../sass/components/_secretariat.scss */
 .addressHighlight .address a {
@@ -10144,7 +10246,7 @@ img.bio-circled {
     width: 50%;
   }
   /* line 21, ../sass/components/_views-events.scss */
-  .view-oa-event-list .views-row:nth-child(odd) {
+  .view-oa-event-list .views-row.views-row-odd {
     padding-right: 20px;
     clear: left;
   }
