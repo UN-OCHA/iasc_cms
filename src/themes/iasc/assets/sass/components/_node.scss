@@ -52,13 +52,17 @@
 .node-contact,
 .view-search-contacts {
   h2 { display: none; }
-  h4 { margin: 0; text-align: center;}
+  h4 { margin: 0; }
   .views-row:not(:last-child),
   li:not(:last-child) {
     padding-bottom: 20px;
     margin-bottom: 20px;
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid #e1e1e1;
   }
+}
+
+.view-search-contacts {
+  font-family: $font-family-sans-serif;
 }
 
 .field-name-field-organisation {
