@@ -25,11 +25,7 @@
   </div>
   <div class='iasc-event-date-year-wrapper'>
     <small class='iasc-event-date-year'>
-      <?php if($variables['year_end'] != $variables['year']) {
-        print $variables['year'] . '-' . $variables['year_end'];
-      }else{
-        print $variables['year'];
-      } ?>
+      <?php print $variables['year']; ?>
     </small>
   </div>
 </div>
