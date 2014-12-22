@@ -20,6 +20,12 @@
       min-width: 140px;
       .radix-layouts-contentfooter & {
         min-width: 108px;
+        max-width: 120px;
+        min-width: 100px;
+        width: 100%;
+        img {
+          margin-bottom: 0;
+        }
       }
       text-align: center;
       padding: 0 8px;
