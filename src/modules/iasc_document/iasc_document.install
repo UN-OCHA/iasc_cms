@@ -79,6 +79,7 @@ function iasc_document_update_7001() {
 
       // Add more properties to file as it is needed to save.
       $file->display = 1;
+      $fid = $file->fid;
 
       // This is insane.
       $file = (array) $file;
@@ -89,7 +90,7 @@ function iasc_document_update_7001() {
       $wrapper->save(TRUE);
       entity_save('node', $entity);
       print_r(t('File @fid connected to node @nid.', array(
-        '@fid' => $file->fid,
+        '@fid' => $fid,
         '@nid' => $entity->nid,
       )));
       print_r("\r\n");
