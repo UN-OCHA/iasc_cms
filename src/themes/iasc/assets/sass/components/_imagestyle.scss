@@ -2,10 +2,6 @@
  * Image style styles
  */
 img.bio-circled { 
-  @include border-radius(50%);
   padding: 0; 
-  margin: 0 auto;
-  display: block;
-  border: $white 2px solid;
   margin-bottom: $padding-small-vertical;
 }

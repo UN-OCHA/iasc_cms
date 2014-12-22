@@ -47,8 +47,8 @@ function iasc_contact_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
-          'width' => 92,
-          'height' => 92,
+          'width' => 60,
+          'height' => 60,
         ),
         'weight' => 1,
       ),
