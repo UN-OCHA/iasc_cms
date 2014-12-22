@@ -9483,13 +9483,20 @@ header.header .search-form {
 /* line 21, ../sass/components/_iasc-organization.scss */
 .radix-layouts-contentfooter .view-display-id-panel_pane_membership_logos ul li {
   min-width: 108px;
+  max-width: 120px;
+  min-width: 100px;
+  width: 100%;
 }
-/* line 27, ../sass/components/_iasc-organization.scss */
+/* line 26, ../sass/components/_iasc-organization.scss */
+.radix-layouts-contentfooter .view-display-id-panel_pane_membership_logos ul li img {
+  margin-bottom: 0;
+}
+/* line 33, ../sass/components/_iasc-organization.scss */
 .view-display-id-panel_pane_membership_logos ul a {
   height: 100px;
   line-height: 100px;
 }
-/* line 31, ../sass/components/_iasc-organization.scss */
+/* line 37, ../sass/components/_iasc-organization.scss */
 .view-display-id-panel_pane_membership_logos ul img {
   vertical-align: middle;
   margin-bottom: 44px;
