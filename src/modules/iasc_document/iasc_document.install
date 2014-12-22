@@ -44,3 +44,58 @@ function iasc_document_uninstall() {
     taxonomy_vocabulary_delete($meeting_type->vid);
   }
 }
+
+/**
+ * Connect files to documents missing files.
+ */
+function iasc_document_update_7001() {
+  // Query for document nodes that don't have files attached.
+  // Need documents without a value in field_oa_media and a non-blank filename.
+  $sql = "select n.nid, n.title, isc.managed_fid, isc.legacy_fid, isc.filename
+          from node n
+          left join field_data_field_oa_media oam on n.nid = oam.entity_id
+          left join iasc_scrape isc on n.nid = isc.entity_id
+          where oam.entity_id is null
+          and n.type = 'oa_wiki_page'
+          and isc.filename <> ''
+          and isc.managed_fid <> 0
+          and n.nid <> 0";
+
+  // Execute query.
+  $non_connected_docs = db_query($sql)->fetchAll();
+
+  // Show number of results.
+  $count = count($non_connected_docs);
+  print_r(t('Number of documents to update: @count', array('@count' => $count)));
+  print_r("\r\n");
+
+  // Go through each result and save document.
+  foreach ($non_connected_docs as $non_connected_doc) {
+    $entity_id = $non_connected_doc->nid;
+    $file = file_load($non_connected_doc->managed_fid);
+    if ($entity_id && $file) {
+      $wrapper = entity_metadata_wrapper('node', $entity_id);
+      $entity = $wrapper->value();
+
+      // Add more properties to file as it is needed to save.
+      $file->display = 1;
+      $fid = $file->fid;
+
+      // This is insane.
+      $file = (array) $file;
+      $items = array($file);
+      $wrapper->field_oa_media->set($items);
+
+      // Save the entity.
+      $wrapper->save(TRUE);
+      entity_save('node', $entity);
+      print_r(t('File @fid connected to node @nid.', array(
+        '@fid' => $fid,
+        '@nid' => $entity->nid,
+      )));
+      print_r("\r\n");
+      print_r('-----------------');
+      print_r("\r\n");
+    }
+  }
+}
