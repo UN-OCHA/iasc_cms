@@ -325,3 +325,11 @@ function iasc_preprocess_views_view_field__oa_event_list(&$vars) {
     }
   }
 }
+
+/**
+ * Implements template_preprocess_search_result().
+ */
+function iasc_preprocess_search_result(&$vars) {
+  // Empty the author and date string.
+  $vars['info'] = '';
+}
