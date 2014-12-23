@@ -1,3 +1,4 @@
+.page-search-node,
 .page-site-search {
   .well:before {
     content: "Filter Search Results";
@@ -12,4 +13,20 @@
     text-transform: uppercase;
     font-family: $font-family-sans-serif;
   }
+}
+
+.facetapi-facetapi-links {
+  @media screen and (max-width: $screen-xs-min) {
+    li {
+      padding: 5px 0;
+    }
+    a {
+      font-size: 110%;
+    }
+  }
+}
+
+.facetapi-limit-link {
+  @extend .btn;
+  @extend .btn-default;
 }

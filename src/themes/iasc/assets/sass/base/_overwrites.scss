@@ -26,3 +26,11 @@ div#panels-ipe-control-container {
     margin-right: 0;
   }
 }
+
+@media screen and (max-width: $screen-xs-min) {
+  #contextual-tabs {
+    text-align: center;
+    float: none;
+    margin: 10px 0 0;
+  }
+}
