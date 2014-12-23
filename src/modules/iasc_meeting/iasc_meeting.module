@@ -56,6 +56,10 @@ function iasc_meeting_field_formatter_view($entity_type, $entity, $field, $insta
     $month = $dates['start']['month'];
     $year = $dates['start']['year'];
 
+    $day_end = $dates['end']['day'];
+    $month_end = $dates['end']['month'];
+    $year_end = $dates['end']['year'];
+
     // Add year and use a different theme output.
     $element[0] = array(
       '#markup' => theme('iasc_meeting_date',
@@ -63,6 +67,9 @@ function iasc_meeting_field_formatter_view($entity_type, $entity, $field, $insta
           'month' => $month,
           'day' => $day,
           'year' => $year,
+          'month_end' => $month_end,
+          'day_end' => $day_end,
+          'year_end' => $year_end,
         )
       ),
     );
