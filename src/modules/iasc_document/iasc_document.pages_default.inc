@@ -298,7 +298,7 @@ function iasc_document_default_page_manager_pages() {
       ),
       'more_link' => 0,
       'use_pager' => 1,
-      'pager_id' => '0',
+      'pager_id' => '1',
       'items_per_page' => '10',
       'override_title' => '',
       'override_title_text' => '',
@@ -306,6 +306,9 @@ function iasc_document_default_page_manager_pages() {
       'header_type' => 'none',
       'view_mode' => 'teaser',
       'widget_title' => '',
+      'context' => array(
+        0 => 'empty',
+      ),
     );
     $pane->cache = array();
     $pane->style = array(
@@ -428,6 +431,7 @@ function iasc_document_default_page_manager_pages() {
     $pane->access = array();
     $pane->configuration = array(
       'exposed' => array(
+        'og_group_ref_target_id_op' => 'in',
         'og_group_ref_target_id' => array(
           2608 => '2608',
         ),
@@ -440,7 +444,7 @@ function iasc_document_default_page_manager_pages() {
       ),
       'link_to_view' => 0,
       'use_pager' => 1,
-      'pager_id' => '0',
+      'pager_id' => '1',
       'items_per_page' => '10',
       'override_title' => '',
       'override_title_text' => '',
@@ -448,6 +452,10 @@ function iasc_document_default_page_manager_pages() {
       'header_type' => 'none',
       'view_mode' => 'teaser',
       'widget_title' => '',
+      'more_link' => 0,
+      'context' => array(
+        0 => 'empty',
+      ),
     );
     $pane->cache = array();
     $pane->style = array(
