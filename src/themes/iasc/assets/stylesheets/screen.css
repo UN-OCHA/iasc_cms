@@ -9067,6 +9067,54 @@ body.ctools-modal-open {
   color: black;
 }
 
+/* line 3, ../sass/components/_annoucements.scss */
+.view-display-id-page_special_announcements h2, .view-display-id-page_special_announcements .node-type-oa-event .pane-node-field-info-private .field-label, .node-type-oa-event .pane-node-field-info-private .view-display-id-page_special_announcements .field-label,
+.view-display-id-page_special_announcements .node-type-oa-event .pane-node-field-info-private h3.pane-title,
+.node-type-oa-event .pane-node-field-info-private .view-display-id-page_special_announcements h3.pane-title,
+.view-display-id-page_special_announcements .node-type-oa-event .pane-node-field-info-private .field-name-field-agenda-items .pane-title.field-name-field-ai-title,
+.node-type-oa-event .pane-node-field-info-private .field-name-field-agenda-items .view-display-id-page_special_announcements .pane-title.field-name-field-ai-title,
+.view-display-id-page_special_announcements .node-type-oa-event .field-name-field-agenda-items .pane-node-field-info-private .pane-title.field-name-field-ai-title,
+.node-type-oa-event .field-name-field-agenda-items .pane-node-field-info-private .view-display-id-page_special_announcements .pane-title.field-name-field-ai-title,
+.view-display-id-page_special_announcements .node-type-oa-event .pane-node-body .field-label,
+.node-type-oa-event .pane-node-body .view-display-id-page_special_announcements .field-label,
+.view-display-id-page_special_announcements .node-type-oa-event .pane-node-body h3.pane-title,
+.node-type-oa-event .pane-node-body .view-display-id-page_special_announcements h3.pane-title,
+.view-display-id-page_special_announcements .node-type-oa-event .pane-node-body .field-name-field-agenda-items .pane-title.field-name-field-ai-title,
+.node-type-oa-event .pane-node-body .field-name-field-agenda-items .view-display-id-page_special_announcements .pane-title.field-name-field-ai-title,
+.view-display-id-page_special_announcements .node-type-oa-event .field-name-field-agenda-items .pane-node-body .pane-title.field-name-field-ai-title,
+.node-type-oa-event .field-name-field-agenda-items .pane-node-body .view-display-id-page_special_announcements .pane-title.field-name-field-ai-title, .view-display-id-page_special_announcements .node-type-oa-event .field-name-field-agenda-items > .field-label, .node-type-oa-event .view-display-id-page_special_announcements .field-name-field-agenda-items > .field-label,
+.view-display-id-page_featured_home h2,
+.view-display-id-page_featured_home .node-type-oa-event .pane-node-field-info-private .field-label,
+.node-type-oa-event .pane-node-field-info-private .view-display-id-page_featured_home .field-label,
+.view-display-id-page_featured_home .node-type-oa-event .pane-node-field-info-private h3.pane-title,
+.node-type-oa-event .pane-node-field-info-private .view-display-id-page_featured_home h3.pane-title,
+.view-display-id-page_featured_home .node-type-oa-event .pane-node-field-info-private .field-name-field-agenda-items .pane-title.field-name-field-ai-title,
+.node-type-oa-event .pane-node-field-info-private .field-name-field-agenda-items .view-display-id-page_featured_home .pane-title.field-name-field-ai-title,
+.view-display-id-page_featured_home .node-type-oa-event .field-name-field-agenda-items .pane-node-field-info-private .pane-title.field-name-field-ai-title,
+.node-type-oa-event .field-name-field-agenda-items .pane-node-field-info-private .view-display-id-page_featured_home .pane-title.field-name-field-ai-title,
+.view-display-id-page_featured_home .node-type-oa-event .pane-node-body .field-label,
+.node-type-oa-event .pane-node-body .view-display-id-page_featured_home .field-label,
+.view-display-id-page_featured_home .node-type-oa-event .pane-node-body h3.pane-title,
+.node-type-oa-event .pane-node-body .view-display-id-page_featured_home h3.pane-title,
+.view-display-id-page_featured_home .node-type-oa-event .pane-node-body .field-name-field-agenda-items .pane-title.field-name-field-ai-title,
+.node-type-oa-event .pane-node-body .field-name-field-agenda-items .view-display-id-page_featured_home .pane-title.field-name-field-ai-title,
+.view-display-id-page_featured_home .node-type-oa-event .field-name-field-agenda-items .pane-node-body .pane-title.field-name-field-ai-title,
+.node-type-oa-event .field-name-field-agenda-items .pane-node-body .view-display-id-page_featured_home .pane-title.field-name-field-ai-title,
+.view-display-id-page_featured_home .node-type-oa-event .field-name-field-agenda-items > .field-label,
+.node-type-oa-event .view-display-id-page_featured_home .field-name-field-agenda-items > .field-label {
+  margin-bottom: 0;
+}
+/* line 4, ../sass/components/_annoucements.scss */
+.view-display-id-page_special_announcements .views-field-field-published-date,
+.view-display-id-page_featured_home .views-field-field-published-date {
+  margin-bottom: 10px;
+}
+/* line 5, ../sass/components/_annoucements.scss */
+.view-display-id-page_special_announcements li.views-row,
+.view-display-id-page_featured_home li.views-row {
+  margin-bottom: 40px;
+}
+
 /* line 2, ../sass/components/_block.scss */
 .view-display-id-panel_pane_featured_products .views-row {
   position: relative;
