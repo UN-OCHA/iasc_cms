@@ -16,6 +16,12 @@ h6, .h6 {
   }
 }
 
+// Mobile Headers
+@media screen and (max-width: $screen-xs-min) {
+  h1 { font-size: 26px;}
+  h2 { font-size: 22px; }
+}
+
 .pagination a {
   font-family: $font-family-sans-serif;
 }
