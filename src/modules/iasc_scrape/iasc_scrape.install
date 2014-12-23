@@ -280,3 +280,64 @@ function iasc_scrape_update_7007() {
     }
   }
 }
+
+/**
+ * Implements hook_update_N().
+ *
+ * Update node authoring date on Documents, Announcements, Meetings.
+ */
+function iasc_scrape_update_7008() {
+  /*
+   * In order to use the "More recently created" solr bias, we need to have
+   * proper authoring date match up to the "Published Date" for Documents/Products
+   * and Announcements and "Event Date" for Meetings.
+   */
+
+  // Get all of the Documents/Products where the authoring date != published date.
+  $result = db_query("
+    SELECT n.nid FROM {field_data_field_published_date} d
+    LEFT JOIN {node} n ON n.nid = d.entity_id
+    WHERE n.type IN ('oa_wiki_page', 'announcement')
+    AND n.created != UNIX_TIMESTAMP(d.field_published_date_value)
+    ORDER BY n.nid ASC
+  ")
+    ->fetchCol();
+
+  if (isset($result)) {
+    print 'Updating ' . count($result) . " document and announcement nodes\n";
+    $nodes = node_load_multiple($result);
+
+    foreach ($nodes as $node) {
+      $date = new DateTime($node->field_published_date[LANGUAGE_NONE][0]['value']);
+      $timestamp = $date->format('U');
+      if ($timestamp > 0) {
+        $node->created = $timestamp;
+        node_save($node);
+        print "Updated {$node->nid}\n";
+      }
+    }
+  }
+
+  // Get all of the Meetings where the authoring date != event date.
+  $result = db_query("
+    SELECT n.nid FROM {field_data_field_oa_date} d
+    LEFT JOIN {node} n ON n.nid = d.entity_id
+    WHERE n.type = 'oa_event'
+    AND n.created != d.field_oa_date_value
+    ORDER BY n.nid ASC
+  ")
+    ->fetchCol();
+
+  if (isset($result)) {
+    print 'Updating ' . count($result) . " meeting nodes\n";
+    $nodes = node_load_multiple($result);
+
+    foreach ($nodes as $node) {
+      if ($node->field_oa_date[LANGUAGE_NONE][0]['value'] > 0) {
+        $node->created = $node->field_oa_date[LANGUAGE_NONE][0]['value'];
+        node_save($node);
+        print "Updated {$node->nid}\n";
+      }
+    }
+  }
+}

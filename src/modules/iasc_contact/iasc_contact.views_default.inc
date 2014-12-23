@@ -452,7 +452,6 @@ function iasc_contact_views_default_views() {
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['element_type'] = 'h4';
-  $handler->display->display_options['fields']['title']['element_class'] = 'text-center';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
   /* Field: Field: Homepage URL */
@@ -464,6 +463,13 @@ function iasc_contact_views_default_views() {
   $handler->display->display_options['fields']['field_homepage']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_homepage']['click_sort_column'] = 'url';
   $handler->display->display_options['fields']['field_homepage']['type'] = 'link_url';
+  /* Field: Field: Position */
+  $handler->display->display_options['fields']['field_position']['id'] = 'field_position';
+  $handler->display->display_options['fields']['field_position']['table'] = 'field_data_field_position';
+  $handler->display->display_options['fields']['field_position']['field'] = 'field_position';
+  $handler->display->display_options['fields']['field_position']['label'] = '';
+  $handler->display->display_options['fields']['field_position']['element_type'] = 'strong';
+  $handler->display->display_options['fields']['field_position']['element_label_colon'] = FALSE;
   /* Field: Content: Organization */
   $handler->display->display_options['fields']['field_organisation']['id'] = 'field_organisation';
   $handler->display->display_options['fields']['field_organisation']['table'] = 'field_data_field_organisation';
@@ -472,22 +478,8 @@ function iasc_contact_views_default_views() {
   $handler->display->display_options['fields']['field_organisation']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['field_organisation']['alter']['path'] = '[field_homepage]';
   $handler->display->display_options['fields']['field_organisation']['alter']['target'] = '_blank';
-  $handler->display->display_options['fields']['field_organisation']['element_class'] = 'text-center';
   $handler->display->display_options['fields']['field_organisation']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_organisation']['type'] = 'taxonomy_term_reference_plain';
-  /* Field: Global: Custom text */
-  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['table'] = 'views';
-  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<br />';
-  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
-  /* Field: Field: Position */
-  $handler->display->display_options['fields']['field_position']['id'] = 'field_position';
-  $handler->display->display_options['fields']['field_position']['table'] = 'field_data_field_position';
-  $handler->display->display_options['fields']['field_position']['field'] = 'field_position';
-  $handler->display->display_options['fields']['field_position']['label'] = '';
-  $handler->display->display_options['fields']['field_position']['element_label_colon'] = FALSE;
   /* Field: Field collection item: Body */
   $handler->display->display_options['fields']['field_body_membership']['id'] = 'field_body_membership';
   $handler->display->display_options['fields']['field_body_membership']['table'] = 'field_data_field_body_membership';
@@ -499,13 +491,6 @@ function iasc_contact_views_default_views() {
   $handler->display->display_options['fields']['field_body_membership']['settings'] = array(
     'link' => 0,
   );
-  /* Field: Global: Custom text */
-  $handler->display->display_options['fields']['nothing_1']['id'] = 'nothing_1';
-  $handler->display->display_options['fields']['nothing_1']['table'] = 'views';
-  $handler->display->display_options['fields']['nothing_1']['field'] = 'nothing';
-  $handler->display->display_options['fields']['nothing_1']['label'] = '';
-  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = '<br>';
-  $handler->display->display_options['fields']['nothing_1']['element_label_colon'] = FALSE;
   /* Field: Content: Address - Locality (i.e. City) */
   $handler->display->display_options['fields']['field_address_locality']['id'] = 'field_address_locality';
   $handler->display->display_options['fields']['field_address_locality']['table'] = 'field_data_field_address';
@@ -767,7 +752,7 @@ function iasc_contact_views_default_views() {
   $handler->display->display_options['fields']['field_branch']['id'] = 'field_branch';
   $handler->display->display_options['fields']['field_branch']['table'] = 'field_data_field_branch';
   $handler->display->display_options['fields']['field_branch']['field'] = 'field_branch';
-  /* Field: Content: Description */
+  /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
