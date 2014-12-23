@@ -9260,18 +9260,11 @@ form .form-actions .node-readmore a,
   color: #00817b;
 }
 
-/* line 50, ../sass/components/_fields.scss */
-.views-field-field-photo {
-  position: relative;
-  float: left;
-  margin-right: 24px;
-}
-
-/* line 57, ../sass/components/_fields.scss */
+/* line 51, ../sass/components/_fields.scss */
 .field-type-field-collection .node-oa-wiki-page {
   margin-bottom: 20px;
 }
-/* line 59, ../sass/components/_fields.scss */
+/* line 53, ../sass/components/_fields.scss */
 .field-type-field-collection .node-oa-wiki-page h2, .field-type-field-collection .node-oa-wiki-page .node-type-oa-event .pane-node-field-info-private .field-label, .node-type-oa-event .pane-node-field-info-private .field-type-field-collection .node-oa-wiki-page .field-label,
 .field-type-field-collection .node-oa-wiki-page .node-type-oa-event .pane-node-field-info-private h3.pane-title,
 .node-type-oa-event .pane-node-field-info-private .field-type-field-collection .node-oa-wiki-page h3.pane-title,
@@ -9290,7 +9283,7 @@ form .form-actions .node-readmore a,
   display: none;
 }
 
-/* line 66, ../sass/components/_fields.scss */
+/* line 60, ../sass/components/_fields.scss */
 .field-name-field-links .field-item {
   margin-bottom: 9px;
 }
@@ -9932,28 +9925,40 @@ img.bio-circled {
   border-bottom: 1px solid #e1e1e1;
 }
 
-/* line 64, ../sass/components/_node.scss */
+/* line 65, ../sass/components/_node.scss */
+.view-display-id-panel_pane_contacts .views-row {
+  position: relative;
+  padding-left: 80px;
+}
+/* line 69, ../sass/components/_node.scss */
+.view-display-id-panel_pane_contacts .views-field-field-photo {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* line 76, ../sass/components/_node.scss */
 .view-search-contacts {
   font-family: "Montserrat", sans-serif;
 }
 
-/* line 68, ../sass/components/_node.scss */
+/* line 80, ../sass/components/_node.scss */
 .field-name-field-organisation {
   text-align: center;
   margin-bottom: 6px;
 }
 
 /* Annoucements */
-/* line 76, ../sass/components/_node.scss */
+/* line 88, ../sass/components/_node.scss */
 .node-type-announcement .pane-node-title h1,
 .node-type-announcement .title {
   margin: 0;
 }
-/* line 79, ../sass/components/_node.scss */
+/* line 91, ../sass/components/_node.scss */
 .node-type-announcement .field-name-field-published-date {
   margin-bottom: 10px;
 }
-/* line 82, ../sass/components/_node.scss */
+/* line 94, ../sass/components/_node.scss */
 .node-type-announcement .node-oa-wiki-page h2, .node-type-announcement .node-oa-wiki-page .node-type-oa-event .pane-node-field-info-private .field-label, .node-type-oa-event .pane-node-field-info-private .node-type-announcement .node-oa-wiki-page .field-label,
 .node-type-announcement .node-oa-wiki-page .node-type-oa-event .pane-node-field-info-private h3.pane-title,
 .node-type-oa-event .pane-node-field-info-private .node-type-announcement .node-oa-wiki-page h3.pane-title,
