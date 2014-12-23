@@ -61,6 +61,18 @@
   }
 }
 
+.view-display-id-panel_pane_contacts {
+  .views-row {
+    position: relative;
+    padding-left: 60px + 20px;
+  }
+  .views-field-field-photo {
+    position: absolute;
+    left: 0; top: 0;
+  }
+}
+
+
 .view-search-contacts {
   font-family: $font-family-sans-serif;
 }
