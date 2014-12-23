@@ -308,9 +308,11 @@ function iasc_scrape_update_7008() {
     $nodes = node_load_multiple($result);
 
     foreach ($nodes as $node) {
+      $created = new DateTime('@' . $node->created);
       $date = new DateTime($node->field_published_date[LANGUAGE_NONE][0]['value']);
       $timestamp = $date->format('U');
-      if ($timestamp > 0) {
+
+      if ($created->format('Y-m-d H:i:s') != $date->format('Y-m-d H:i:s') && $timestamp > 0) {
         $node->created = $timestamp;
         node_save($node);
         print "Updated {$node->nid}\n";
@@ -333,7 +335,11 @@ function iasc_scrape_update_7008() {
     $nodes = node_load_multiple($result);
 
     foreach ($nodes as $node) {
-      if ($node->field_oa_date[LANGUAGE_NONE][0]['value'] > 0) {
+      $created = new DateTime('@' . $node->created);
+      $date = new DateTime('@' . $node->field_oa_date[LANGUAGE_NONE][0]['value']);
+
+      if ($node->field_oa_date[LANGUAGE_NONE][0]['value'] > 0 &&
+        ($created->format('Y-m-d H:i:s') != $date->format('Y-m-d H:i:s'))) {
         $node->created = $node->field_oa_date[LANGUAGE_NONE][0]['value'];
         node_save($node);
         print "Updated {$node->nid}\n";
