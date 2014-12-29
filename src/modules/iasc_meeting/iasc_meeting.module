@@ -92,7 +92,44 @@ function iasc_meeting_theme($existing, $type, $theme, $path) {
         'year' => NULL,
       ),
     ),
+    'meeting_login_cta' => array(
+      'template' => 'meeting-login-cta',
+      'path' => drupal_get_path('module', 'iasc_meeting') . '/templates',
+      'variables' => array(
+        'dest' => '',
+      ),
+    ),
   );
 
   return $theme;
+}
+
+/**
+ * Implements hook_block_info().
+ */
+function iasc_meeting_block_info() {
+  $blocks['meeting_login_cta'] = array(
+    'info' => t('Meeting - Login CTA'),
+  );
+
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function iasc_meeting_block_view($delta = '') {
+  $block = array();
+
+  switch ($delta) {
+    case 'meeting_login_cta':
+      $block['subject'] = NULL;
+      $dest = drupal_get_path_alias();
+      $block['content'] = array(
+        '#theme' => 'meeting_login_cta',
+        '#dest' => drupal_get_path_alias(),
+      );
+      break;
+  }
+  return $block;
 }
