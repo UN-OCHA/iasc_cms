@@ -60,7 +60,7 @@ function iasc_preprocess_html(&$vars) {
   // Adding Touch icons
   drupal_add_html_head_link(array(
     'rel'  => 'apple-touch-icon-precomposed',
-    'href' => '/' . drupal_get_path('theme', 'iasc') . '/apple-touch-icon-precomposed.png',
+    'href' => base_path() . drupal_get_path('theme', 'iasc') . '/apple-touch-icon-precomposed.png',
   ));
 
   $data = array(
