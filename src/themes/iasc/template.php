@@ -131,10 +131,18 @@ function iasc_links__system_secondary_menu($vars) {
   foreach ($vars['links'] as &$link) {
     $link['title'] = "<span>" . $link['title'] . "</span>";
     $link['html'] = TRUE;
+
+    // Add destination to login link.
+    if ('user/login' == $link['href']) {
+      $alias = drupal_get_path_alias();
+      if ('user/login' != $alias) {
+        $dest = array('destination' => $alias);
+        $link['query'] = $dest;
+      }
+    }
   }
   return theme_links($vars);
 }
-
 
 /**
  * Implements hook_form_FORM_ID_alter().
