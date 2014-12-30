@@ -1,25 +1,25 @@
 <?xml version="1.0" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
-<svg xmlns="http://www.w3.org/2000/svg">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
 <metadata>
-Created by FontForge 20120731 at Fri Nov 28 12:41:17 2014
+Created by FontForge 20141216 at Tue Dec 30 13:24:52 2014
  By Denis Babineau
-Created by Denis Babineau with FontForge 2.0 (http://fontforge.sf.net)
+Copyright (c) 2014, Denis Babineau
 </metadata>
 <defs>
 <font id="icons" horiz-adv-x="512" >
   <font-face 
     font-family="icons"
-    font-weight="500"
+    font-weight="400"
     font-stretch="normal"
     units-per-em="512"
-    panose-1="2 0 6 3 0 0 0 0 0 0"
+    panose-1="2 0 5 3 0 0 0 0 0 0"
     ascent="448"
     descent="-64"
-    bbox="0 -169 512.071 448"
+    bbox="-0.4 -169 601.4 448.267"
     underline-thickness="25"
     underline-position="-52"
-    unicode-range="U+F101-F10D"
+    unicode-range="U+F101-F10E"
   />
 <missing-glyph horiz-adv-x="187" 
 d="M17 0v341h136v-341h-136zM34 17h102v307h-102v-307z" />
@@ -60,5 +60,7 @@ q0 53 -37.5 90.5t-90.5 37.5zM160 448q66 0 113 -47t47 -113q0 -44 -21.5 -80.5t-58.
     <glyph glyph-name="uniF10D" unicode="&#xf10d;" 
 d="M0 448zM496 12q15 -14 16 -32t-12 -32q-14 -13 -32 -12t-32 16l-103 121q-16 19 -16 37q-54 -46 -125 -46q-80 0 -136 56t-56 136t56 136t136 56t136 -56t56 -136q0 -71 -46 -125q18 0 37 -16zM192 128q53 0 90.5 37.5t37.5 90.5t-37.5 90.5t-90.5 37.5t-90.5 -37.5
 t-37.5 -90.5t37.5 -90.5t90.5 -37.5z" />
+    <glyph glyph-name="uniF10E" unicode="&#xf10e;" horiz-adv-x="601" 
+d="M2 -48q-6 14 3 28l276 457q6 13 20 11q11 -1 20 -16l275 -452q9 -13 3 -28q-6 -16 -22 -16h-553q-17 0 -22 16zM490 22l-189 309l-192 -309h149v42h85v-42h147zM343 193l-42 -129l-43 129v42h85v-42z" />
   </font>
 </defs></svg>
