@@ -76,7 +76,7 @@ function iasc_preprocess_html(&$vars) {
     '#tag' => 'meta',
     '#attributes' => array(
        'name' => 'msapplication-TileImage',
-       'content' => '/' . drupal_get_path('theme', 'iasc') . '/favicon-144.png',
+       'content' => base_path() . drupal_get_path('theme', 'iasc') . '/favicon-144.png',
     ),
   );
   drupal_add_html_head($data, 'msapplication-TileImage');
