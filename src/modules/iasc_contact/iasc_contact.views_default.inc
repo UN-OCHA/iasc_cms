@@ -24,10 +24,7 @@ function iasc_contact_views_default_views() {
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'Search Contacts';
   $handler->display->display_options['use_more_always'] = FALSE;
-  $handler->display->display_options['access']['type'] = 'role';
-  $handler->display->display_options['access']['role'] = array(
-    3 => '3',
-  );
+  $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'time';
   $handler->display->display_options['cache']['results_lifespan'] = '21600';
   $handler->display->display_options['cache']['results_lifespan_custom'] = '0';
@@ -771,6 +768,112 @@ function iasc_contact_views_default_views() {
   $handler->display->display_options['fields']['field_org_fax']['id'] = 'field_org_fax';
   $handler->display->display_options['fields']['field_org_fax']['table'] = 'field_data_field_org_fax';
   $handler->display->display_options['fields']['field_org_fax']['field'] = 'field_org_fax';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = '1';
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['pane_category']['name'] = 'IASC Contacts';
+  $handler->display->display_options['pane_category']['weight'] = '0';
+  $handler->display->display_options['allow']['use_pager'] = 0;
+  $handler->display->display_options['allow']['items_per_page'] = 0;
+  $handler->display->display_options['allow']['offset'] = 0;
+  $handler->display->display_options['allow']['link_to_view'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 0;
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 'title_override';
+  $handler->display->display_options['allow']['exposed_form'] = 0;
+  $handler->display->display_options['allow']['exposed_form_configure'] = 0;
+  $handler->display->display_options['allow']['fields_override'] = 0;
+
+  /* Display: Contact Detail Pane */
+  $handler = $view->new_display('panel_pane', 'Contact Detail Pane', 'panel_pane_contact');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Contact';
+  $handler->display->display_options['display_description'] = 'A contact pane that displays the current node\'s contact information.';
+  $handler->display->display_options['defaults']['access'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['defaults']['cache'] = FALSE;
+  $handler->display->display_options['cache']['type'] = 'time';
+  $handler->display->display_options['cache']['results_lifespan'] = '3600';
+  $handler->display->display_options['cache']['results_lifespan_custom'] = '0';
+  $handler->display->display_options['cache']['output_lifespan'] = '3600';
+  $handler->display->display_options['cache']['output_lifespan_custom'] = '0';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['empty'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_contact_target_id']['id'] = 'field_contact_target_id';
+  $handler->display->display_options['relationships']['field_contact_target_id']['table'] = 'field_data_field_contact';
+  $handler->display->display_options['relationships']['field_contact_target_id']['field'] = 'field_contact_target_id';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
+  $handler->display->display_options['fields']['title_field']['table'] = 'field_data_title_field';
+  $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
+  $handler->display->display_options['fields']['title_field']['relationship'] = 'field_contact_target_id';
+  $handler->display->display_options['fields']['title_field']['label'] = '';
+  $handler->display->display_options['fields']['title_field']['element_type'] = 'h4';
+  $handler->display->display_options['fields']['title_field']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title_field']['link_to_entity'] = 0;
+  /* Field: Content: Organization */
+  $handler->display->display_options['fields']['field_organisation']['id'] = 'field_organisation';
+  $handler->display->display_options['fields']['field_organisation']['table'] = 'field_data_field_organisation';
+  $handler->display->display_options['fields']['field_organisation']['field'] = 'field_organisation';
+  $handler->display->display_options['fields']['field_organisation']['label'] = '';
+  $handler->display->display_options['fields']['field_organisation']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_organisation']['alter']['path'] = '[field_homepage]';
+  $handler->display->display_options['fields']['field_organisation']['alter']['target'] = '_blank';
+  $handler->display->display_options['fields']['field_organisation']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_organisation']['type'] = 'taxonomy_term_reference_plain';
+  /* Field: Content: Address - Locality (i.e. City) */
+  $handler->display->display_options['fields']['field_address_locality']['id'] = 'field_address_locality';
+  $handler->display->display_options['fields']['field_address_locality']['table'] = 'field_data_field_address';
+  $handler->display->display_options['fields']['field_address_locality']['field'] = 'field_address_locality';
+  $handler->display->display_options['fields']['field_address_locality']['relationship'] = 'field_contact_target_id';
+  $handler->display->display_options['fields']['field_address_locality']['label'] = '';
+  $handler->display->display_options['fields']['field_address_locality']['element_label_colon'] = FALSE;
+  /* Field: Content: Email */
+  $handler->display->display_options['fields']['field_email']['id'] = 'field_email';
+  $handler->display->display_options['fields']['field_email']['table'] = 'field_data_field_email';
+  $handler->display->display_options['fields']['field_email']['field'] = 'field_email';
+  $handler->display->display_options['fields']['field_email']['relationship'] = 'field_contact_target_id';
+  $handler->display->display_options['fields']['field_email']['element_label_type'] = 'div';
+  $handler->display->display_options['fields']['field_email']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_email']['element_wrapper_class'] = 'field-label-inline';
+  $handler->display->display_options['fields']['field_email']['delta_limit'] = '1';
+  $handler->display->display_options['fields']['field_email']['delta_offset'] = '0';
+  /* Field: Content: Phone */
+  $handler->display->display_options['fields']['field_phone']['id'] = 'field_phone';
+  $handler->display->display_options['fields']['field_phone']['table'] = 'field_data_field_phone';
+  $handler->display->display_options['fields']['field_phone']['field'] = 'field_phone';
+  $handler->display->display_options['fields']['field_phone']['relationship'] = 'field_contact_target_id';
+  $handler->display->display_options['fields']['field_phone']['element_label_type'] = 'div';
+  $handler->display->display_options['fields']['field_phone']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_phone']['element_wrapper_class'] = 'field-label-inline';
+  $handler->display->display_options['fields']['field_phone']['delta_limit'] = '1';
+  $handler->display->display_options['fields']['field_phone']['delta_offset'] = '0';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
