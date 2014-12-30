@@ -78,7 +78,7 @@ function iasc_preprocess_page(&$variables) {
   }
 
   // Remove primary tabs for anon users
-  if(!$variables['logged_in']) {
+  if (!$variables['logged_in']) {
     unset($variables['primarytabs']);
   }
 
