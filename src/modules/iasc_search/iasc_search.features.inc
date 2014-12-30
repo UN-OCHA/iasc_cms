@@ -48,17 +48,3 @@ function iasc_search_facetapi_default_facet_settings_alter(&$data) {
     $data['apachesolr@solr:block:sm_oa_section_ref']->enabled = FALSE; /* WAS: TRUE */
   }
 }
-
-/**
- * Implements hook_field_default_field_instances_alter().
- */
-function iasc_search_field_default_field_instances_alter(&$data) {
-  if (isset($data['node-oa_discussion_post-og_group_ref'])) {
-    $data['node-oa_discussion_post-og_group_ref']['display']['bio_long'] = array(
-      'label' => 'above',
-      'settings' => array(),
-      'type' => 'hidden',
-      'weight' => 0,
-    ); /* WAS: '' */
-  }
-}

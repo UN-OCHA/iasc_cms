@@ -27,3 +27,50 @@ function iasc_search_all_form_submit($form, &$form_state) {
   $module = ($module === 'node') ? 'site' : $module;
   $form_state['redirect'] = array($module . '/search/' . $keys);
 }
+
+/**
+ * Implements hook_block_info().
+ */
+function iasc_search_block_info() {
+  $blocks['search_results_login_cta'] = array(
+    'info' => t('Search Results - Login CTA'),
+  );
+
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function iasc_search_block_view($delta = '') {
+$block = array();
+
+  switch ($delta) {
+    case 'search_results_login_cta':
+      $block['subject'] = NULL;
+      $dest = drupal_get_path_alias();
+      $block['content'] = array(
+        '#theme' => 'search_results_login_cta',
+        '#dest' => drupal_get_path_alias(),
+      );
+      break;
+  }
+  return $block;
+}
+
+/**
+ *  Implements hook_theme().
+ */
+function iasc_search_theme($existing, $type, $theme, $path) {
+  $theme = array(
+    'search_results_login_cta' => array(
+      'template' => 'search-results-login-cta',
+      'path' => drupal_get_path('module', 'iasc_search') . '/templates',
+      'variables' => array(
+        'dest' => '',
+      ),
+    ),
+  );
+
+  return $theme;
+}

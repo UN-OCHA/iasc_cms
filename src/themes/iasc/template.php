@@ -323,13 +323,27 @@ function iasc_preprocess_views_view_field(&$vars) {
  *
  * @param $vars
  *
- * @see iasc_preprocess_views_view_field().
+ * @see template_preprocess_views_view_field().
  */
 function iasc_preprocess_views_view_field__oa_event_list(&$vars) {
   if ('og_group_ref' == $vars['field']->field) {
     $space_id = oa_core_get_space_context();
     if ($vars['view']->exposed_data['og_group_ref_target_id'] == $space_id) {
       $vars['output'] = '';
+    }
+  }
+}
+
+/**
+ * Implements template_preprocess_views_view().
+ */
+function iasc_preprocess_views_view(&$vars) {
+  // Add the Login CTA block to document view pages.
+  if ('iasc_document' == $vars['name']) {
+    if('page_resources' == $vars['display_id'] || 'page_meeting_documents' == $vars['display_id']) {
+      if (user_is_anonymous()) {
+        $vars['cta'] = module_invoke('iasc_configuration', 'block_view', 'resource_login_cta');
+      }
     }
   }
 }
