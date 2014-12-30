@@ -81,7 +81,7 @@ function iasc_group_login_ctools_plugin_directory($owner, $plugin_type) {
  * Alter the Login form to include information about the access code.
  */
 function iasc_group_login_form_user_login_alter(&$form, $form_state) {
-  $items[] = l(t('Use access code'), 'user/ac', array('attributes' => array('title' => t('Log in using an access code.'))));
+  $items[] = l(t('Use access code'), 'user/ac', array('attributes' => array('title' => t('Log in using an access code.')), 'query' => drupal_get_destination()));
   $form['access_code_link'] = array('#markup' => theme('item_list', array('items' => $items)));
 }
 
@@ -91,7 +91,7 @@ function iasc_group_login_form_user_login_alter(&$form, $form_state) {
  * Alter the Forgot Password form to include information about the access code.
  */
 function iasc_group_login_form_user_pass_alter(&$form, $form_state) {
-  $items[] = l(t('Use access code'), 'user/ac', array('attributes' => array('title' => t('Log in using an access code.'))));
+  $items[] = l(t('Use access code'), 'user/ac', array('attributes' => array('title' => t('Log in using an access code.')), 'query' => drupal_get_destination()));
   $items[] = t('If you do not have an access code, you will have to contact the site administrator.');
   $form['access_code_link'] = array('#markup' => theme('item_list', array('items' => $items)));
 }

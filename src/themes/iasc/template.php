@@ -76,6 +76,12 @@ function iasc_preprocess_page(&$variables) {
     unset($variables['page']['page_bottom']['panels_ipe']);
     array_push($variables['page']['panelipe'], $panels_ipe);
   }
+
+  // Remove primary tabs for anon users
+  if (!$variables['logged_in']) {
+    unset($variables['primarytabs']);
+  }
+
 }
 
 /**
@@ -131,10 +137,18 @@ function iasc_links__system_secondary_menu($vars) {
   foreach ($vars['links'] as &$link) {
     $link['title'] = "<span>" . $link['title'] . "</span>";
     $link['html'] = TRUE;
+
+    // Add destination to login link.
+    if ('user/login' == $link['href']) {
+      $alias = drupal_get_path_alias();
+      if ('user/login' != $alias) {
+        $dest = array('destination' => $alias);
+        $link['query'] = $dest;
+      }
+    }
   }
   return theme_links($vars);
 }
-
 
 /**
  * Implements hook_form_FORM_ID_alter().
@@ -315,13 +329,27 @@ function iasc_preprocess_views_view_field(&$vars) {
  *
  * @param $vars
  *
- * @see iasc_preprocess_views_view_field().
+ * @see template_preprocess_views_view_field().
  */
 function iasc_preprocess_views_view_field__oa_event_list(&$vars) {
   if ('og_group_ref' == $vars['field']->field) {
     $space_id = oa_core_get_space_context();
     if ($vars['view']->exposed_data['og_group_ref_target_id'] == $space_id) {
       $vars['output'] = '';
+    }
+  }
+}
+
+/**
+ * Implements template_preprocess_views_view().
+ */
+function iasc_preprocess_views_view(&$vars) {
+  // Add the Login CTA block to document view pages.
+  if ('iasc_document' == $vars['name']) {
+    if('page_resources' == $vars['display_id'] || 'page_meeting_documents' == $vars['display_id']) {
+      if (user_is_anonymous()) {
+        $vars['cta'] = module_invoke('iasc_configuration', 'block_view', 'resource_login_cta');
+      }
     }
   }
 }

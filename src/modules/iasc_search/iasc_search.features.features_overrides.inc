@@ -30,13 +30,5 @@ function iasc_search_features_override_default_overrides() {
   $overrides["facetapi.apachesolr@solr:block:created.enabled"] = FALSE;
   $overrides["facetapi.apachesolr@solr:block:sm_oa_section_ref.enabled"] = FALSE;
 
-  // Exported overrides for: field_instance
-  $overrides["field_instance.node-oa_discussion_post-og_group_ref.display|bio_long"] = array(
-    'label' => 'above',
-    'settings' => array(),
-    'type' => 'hidden',
-    'weight' => 0,
-  );
-
  return $overrides;
 }

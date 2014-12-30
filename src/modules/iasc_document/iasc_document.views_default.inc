@@ -542,7 +542,7 @@ function iasc_document_views_default_views() {
     'oa_wiki_page' => 'oa_wiki_page',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Groups audience (og_group_ref) */
+  /* Filter criterion: Content: Authoring Bodies (og_group_ref) */
   $handler->display->display_options['filters']['og_group_ref_target_id']['id'] = 'og_group_ref_target_id';
   $handler->display->display_options['filters']['og_group_ref_target_id']['table'] = 'og_membership';
   $handler->display->display_options['filters']['og_group_ref_target_id']['field'] = 'og_group_ref_target_id';
@@ -613,6 +613,105 @@ function iasc_document_views_default_views() {
       'label' => 'Content: Has taxonomy term ID',
     ),
   );
+
+  /* Display: Meeting Documents Page */
+  $handler = $view->new_display('page', 'Meeting Documents Page', 'page_meeting_documents');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Meeting Documents';
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Published Date (field_published_date) */
+  $handler->display->display_options['sorts']['field_published_date_value']['id'] = 'field_published_date_value';
+  $handler->display->display_options['sorts']['field_published_date_value']['table'] = 'field_data_field_published_date';
+  $handler->display->display_options['sorts']['field_published_date_value']['field'] = 'field_published_date_value';
+  $handler->display->display_options['sorts']['field_published_date_value']['order'] = 'DESC';
+  /* Sort criterion: Content: Title */
+  $handler->display->display_options['sorts']['title']['id'] = 'title';
+  $handler->display->display_options['sorts']['title']['table'] = 'node';
+  $handler->display->display_options['sorts']['title']['field'] = 'title';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'oa_wiki_page' => 'oa_wiki_page',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Document Type (field_document_type) */
+  $handler->display->display_options['filters']['field_document_type_tid']['id'] = 'field_document_type_tid';
+  $handler->display->display_options['filters']['field_document_type_tid']['table'] = 'field_data_field_document_type';
+  $handler->display->display_options['filters']['field_document_type_tid']['field'] = 'field_document_type_tid';
+  $handler->display->display_options['filters']['field_document_type_tid']['operator'] = 'not';
+  $handler->display->display_options['filters']['field_document_type_tid']['value'] = array(
+    205 => '205',
+  );
+  $handler->display->display_options['filters']['field_document_type_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_document_type_tid']['expose']['operator_id'] = 'field_document_type_tid_op';
+  $handler->display->display_options['filters']['field_document_type_tid']['expose']['label'] = 'Document Type';
+  $handler->display->display_options['filters']['field_document_type_tid']['expose']['operator'] = 'field_document_type_tid_op';
+  $handler->display->display_options['filters']['field_document_type_tid']['expose']['identifier'] = 'field_document_type_tid';
+  $handler->display->display_options['filters']['field_document_type_tid']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_document_type_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    5 => 0,
+    6 => 0,
+  );
+  $handler->display->display_options['filters']['field_document_type_tid']['group_info']['label'] = 'Type';
+  $handler->display->display_options['filters']['field_document_type_tid']['group_info']['identifier'] = 'field_document_type_tid';
+  $handler->display->display_options['filters']['field_document_type_tid']['group_info']['optional'] = FALSE;
+  $handler->display->display_options['filters']['field_document_type_tid']['group_info']['widget'] = 'radios';
+  $handler->display->display_options['filters']['field_document_type_tid']['group_info']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_document_type_tid']['group_info']['default_group'] = '1';
+  $handler->display->display_options['filters']['field_document_type_tid']['group_info']['default_group_multiple'] = array(
+    1 => '1',
+    2 => '2',
+    3 => '3',
+  );
+  $handler->display->display_options['filters']['field_document_type_tid']['group_info']['group_items'] = array(
+    1 => array(
+      'title' => 'Documents',
+      'operator' => 'or',
+      'value' => array(
+        204 => '204',
+      ),
+    ),
+    2 => array(
+      'title' => 'Products',
+      'operator' => 'or',
+      'value' => array(
+        205 => '205',
+      ),
+    ),
+    3 => array(
+      'title' => 'Meetings',
+      'operator' => 'or',
+      'value' => array(
+        206 => '206',
+        207 => '207',
+      ),
+    ),
+  );
+  $handler->display->display_options['filters']['field_document_type_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_document_type_tid']['vocabulary'] = 'document_types';
+  $handler->display->display_options['filters']['field_document_type_tid']['hierarchy'] = 1;
+  $handler->display->display_options['path'] = 'resources/meeting-documents';
+  $handler->display->display_options['menu']['type'] = 'normal';
+  $handler->display->display_options['menu']['title'] = 'Meeting Documents';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['name'] = 'main-menu';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
   $export['iasc_document'] = $view;
 
   return $export;

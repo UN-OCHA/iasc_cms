@@ -30,7 +30,7 @@ stylesheets-conditional[IE 7][all][] = assets/stylesheets/ie7.css
 stylesheets-conditional[IE 8][all][] = assets/stylesheets/ie8.css
 
 ; Javascript
-; scripts[] = assets/javascripts/script.js
+scripts[] = assets/javascripts/script.js
 
 features[] = logo
 features[] = favicon
