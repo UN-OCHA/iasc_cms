@@ -132,6 +132,7 @@ features[features_overrides][] = panelizer_defaults.node:oa_event:default.displa
 features[features_overrides][] = panelizer_defaults.node:oa_event:default.display|content|new-9c1552e9-6b59-4811-ac8f-8278030a8f11
 features[features_overrides][] = panelizer_defaults.node:oa_event:default.display|content|new-b556a608-6c09-4e8b-99bb-f7cee89c1756
 features[features_overrides][] = panelizer_defaults.node:oa_event:default.display|content|new-ba879f23-61fc-4869-a081-d6663e9d1523
+features[features_overrides][] = panelizer_defaults.node:oa_event:default.display|content|new-bd3daacb-9380-4c7f-b478-67ec6c6244d2
 features[features_overrides][] = panelizer_defaults.node:oa_event:default.display|content|new-c84bd896-6873-41ab-89ea-5d0f2e0c2c7f
 features[features_overrides][] = panelizer_defaults.node:oa_event:default.display|content|new-cf81af22-ac8b-4147-8462-a5fce1b76471
 features[features_overrides][] = panelizer_defaults.node:oa_event:default.display|content|new-e0f02a5b-dd4e-4ab9-8479-06a195d86fd0
@@ -219,4 +220,4 @@ features_exclude[features_overrides][views_view.oa_event_list.display|default|di
 features_exclude[features_overrides][views_view.oa_event_list.display|default|display_options|relationships|flag_content_rel|required] = views_view.oa_event_list.display|default|display_options|relationships|flag_content_rel|required
 features_exclude[features_overrides][views_view.oa_event_list.display|default|display_options|relationships|flag_content_rel|user_scope] = views_view.oa_event_list.display|default|display_options|relationships|flag_content_rel|user_scope
 features_exclude[taxonomy][hosts] = hosts
-mtime = 1419371122
+mtime = 1419953018
