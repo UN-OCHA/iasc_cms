@@ -76,6 +76,12 @@ function iasc_preprocess_page(&$variables) {
     unset($variables['page']['page_bottom']['panels_ipe']);
     array_push($variables['page']['panelipe'], $panels_ipe);
   }
+
+  // Remove primary tabs for anon users
+  if (!$variables['logged_in']) {
+    unset($variables['primarytabs']);
+  }
+
 }
 
 /**
