@@ -42,6 +42,9 @@
         width: 33%;
         float: left;
       }
+      .help-block {
+        margin-bottom: 0;
+      }
     }
   }
 
@@ -51,6 +54,13 @@
     padding-top: 2rem;
     padding-right: 0 !important;
     @media screen and (min-width: $screen-md-min) { padding: 0 20px 0 0 !important; }
+    margin-top: 10px;
+
+    .view-oa-event-list & {
+      position: relative;
+      top: -25px;
+    }
+
     input, .form-item {
       float: right;
     }
