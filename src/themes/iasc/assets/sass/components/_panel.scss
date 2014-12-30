@@ -91,4 +91,11 @@
   h1.title { display: none; }
 }
 
+.ui-widget-overlay.ui-front {
+  z-index: 2000;
+}
 
+.ui-dialog.linkit-wrapper {
+  background: white;
+  z-index: 2000;
+}

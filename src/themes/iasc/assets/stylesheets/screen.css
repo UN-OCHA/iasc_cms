@@ -10375,6 +10375,17 @@ img.bio-circled {
   display: none;
 }
 
+/* line 94, ../sass/components/_panel.scss */
+.ui-widget-overlay.ui-front {
+  z-index: 2000;
+}
+
+/* line 98, ../sass/components/_panel.scss */
+.ui-dialog.linkit-wrapper {
+  background: white;
+  z-index: 2000;
+}
+
 /* line 3, ../sass/components/_search.scss */
 .page-search-node .well:before,
 .page-site-search .well:before {
