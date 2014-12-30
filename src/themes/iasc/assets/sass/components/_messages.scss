@@ -1,0 +1,7 @@
+.alert-warning:before {
+  @extend .icons-warning:before;
+  @extend %icons-font;
+  font-size: 20px;
+  float: left;
+  margin-right: 7px;
+}

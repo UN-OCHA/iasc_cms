@@ -8813,7 +8813,7 @@ html.js input.throbbing {
 }
 
 /* line 10, ../sass/base/_helpers.scss */
-.view-display-id-panel_pane_featured_products .views-row .content a:after, .panel-secondary.panel-success.doc-icon a:before, .panel-secondary.panel-success.arrow a:before,
+.view-display-id-panel_pane_featured_products .views-row .content a:after, .alert-warning:before, .panel-secondary.panel-success.doc-icon a:before, .panel-secondary.panel-success.arrow a:before,
 .panel-secondary.panel-info.doc-icon a:before,
 .panel-secondary.panel-info.arrow a:before {
   font-family: "icons";
@@ -8832,15 +8832,15 @@ html.js input.throbbing {
 
 @font-face {
   font-family: "icons";
-  src: url("../fonts/icons-6ec77842d29ddb2fcdc3384a6c9a005d.eot");
+  src: url("../fonts/icons-2623ed8bc2c266d82b220f92109da1a5.eot");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "icons";
-  src: url("../fonts/icons-6ec77842d29ddb2fcdc3384a6c9a005d.eot");
-  src: url("../fonts/icons-6ec77842d29ddb2fcdc3384a6c9a005d.eot?#iefix") format("embedded-opentype"), url("../fonts/icons-6ec77842d29ddb2fcdc3384a6c9a005d.woff") format("woff"), url("../fonts/icons-6ec77842d29ddb2fcdc3384a6c9a005d.ttf") format("truetype"), url("../fonts/icons-6ec77842d29ddb2fcdc3384a6c9a005d.svg?#icons") format("svg");
+  src: url("../fonts/icons-2623ed8bc2c266d82b220f92109da1a5.eot");
+  src: url("../fonts/icons-2623ed8bc2c266d82b220f92109da1a5.eot?#iefix") format("embedded-opentype"), url("../fonts/icons-2623ed8bc2c266d82b220f92109da1a5.woff") format("woff"), url("../fonts/icons-2623ed8bc2c266d82b220f92109da1a5.ttf") format("truetype"), url("../fonts/icons-2623ed8bc2c266d82b220f92109da1a5.svg?#icons") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -8861,71 +8861,148 @@ html.js input.throbbing {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* line 41, ../sass/base/_icons.scss */
+/* line 40, ../sass/base/_icons.scss */
+.icons-arrow, .panel-secondary.panel-success.arrow .view-content a:before,
+.panel-secondary.panel-info.arrow .view-content a:before {
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf101;');
+}
+
+/* line 44, ../sass/base/_icons.scss */
 .icons-arrow:before, .view-display-id-panel_pane_featured_products .views-row .content a:after, .panel-secondary.panel-success.arrow .view-content a:before,
 .panel-secondary.panel-info.arrow .view-content a:before {
   content: "\f101";
 }
 
-/* line 46, ../sass/base/_icons.scss */
+/* line 48, ../sass/base/_icons.scss */
+.icons-calendar {
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf102;');
+}
+
+/* line 52, ../sass/base/_icons.scss */
 .icons-calendar:before {
   content: "\f102";
 }
 
-/* line 51, ../sass/base/_icons.scss */
+/* line 56, ../sass/base/_icons.scss */
+.icons-contact {
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf103;');
+}
+
+/* line 60, ../sass/base/_icons.scss */
 .icons-contact:before {
   content: "\f103";
 }
 
-/* line 56, ../sass/base/_icons.scss */
+/* line 64, ../sass/base/_icons.scss */
+.icons-home {
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf104;');
+}
+
+/* line 68, ../sass/base/_icons.scss */
 .icons-home:before {
   content: "\f104";
 }
 
-/* line 61, ../sass/base/_icons.scss */
+/* line 72, ../sass/base/_icons.scss */
+.icons-layout {
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf105;');
+}
+
+/* line 76, ../sass/base/_icons.scss */
 .icons-layout:before {
   content: "\f105";
 }
 
-/* line 66, ../sass/base/_icons.scss */
+/* line 80, ../sass/base/_icons.scss */
+.icons-login {
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf106;');
+}
+
+/* line 84, ../sass/base/_icons.scss */
 .icons-login:before {
   content: "\f106";
 }
 
-/* line 71, ../sass/base/_icons.scss */
+/* line 88, ../sass/base/_icons.scss */
+.icons-logout {
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf107;');
+}
+
+/* line 92, ../sass/base/_icons.scss */
 .icons-logout:before {
   content: "\f107";
 }
 
-/* line 76, ../sass/base/_icons.scss */
+/* line 96, ../sass/base/_icons.scss */
+.icons-morearrow {
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf108;');
+}
+
+/* line 100, ../sass/base/_icons.scss */
 .icons-morearrow:before, .pager-load-more li > a:after {
   content: "\f108";
 }
 
-/* line 81, ../sass/base/_icons.scss */
+/* line 104, ../sass/base/_icons.scss */
+.icons-morearrowdown, .filter-btn .btn .caret, .filter-btn .node-readmore a .caret, .node-readmore .filter-btn a .caret, .filter-btn #mc-embedded-subscribe .caret, .filter-btn .panel-secondary .more-link a .caret, .panel-secondary .more-link .filter-btn a .caret, .filter-btn .facetapi-limit-link .caret {
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf109;');
+}
+
+/* line 108, ../sass/base/_icons.scss */
 .icons-morearrowdown:before, .filter-btn .btn .caret:before, .filter-btn .node-readmore a .caret:before, .node-readmore .filter-btn a .caret:before, .filter-btn #mc-embedded-subscribe .caret:before, .filter-btn .panel-secondary .more-link a .caret:before, .panel-secondary .more-link .filter-btn a .caret:before, .filter-btn .facetapi-limit-link .caret:before {
   content: "\f109";
 }
 
-/* line 86, ../sass/base/_icons.scss */
+/* line 112, ../sass/base/_icons.scss */
+.icons-myaccount {
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf10a;');
+}
+
+/* line 116, ../sass/base/_icons.scss */
 .icons-myaccount:before {
   content: "\f10a";
 }
 
-/* line 91, ../sass/base/_icons.scss */
+/* line 120, ../sass/base/_icons.scss */
+.icons-page, .panel-secondary.panel-success.doc-icon .view-content a:before,
+.panel-secondary.panel-info.doc-icon .view-content a:before {
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf10b;');
+}
+
+/* line 124, ../sass/base/_icons.scss */
 .icons-page:before, .panel-secondary.panel-success.doc-icon .view-content a:before,
 .panel-secondary.panel-info.doc-icon .view-content a:before {
   content: "\f10b";
 }
 
-/* line 96, ../sass/base/_icons.scss */
+/* line 128, ../sass/base/_icons.scss */
+.icons-resources {
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf10c;');
+}
+
+/* line 132, ../sass/base/_icons.scss */
 .icons-resources:before {
   content: "\f10c";
 }
 
-/* line 101, ../sass/base/_icons.scss */
+/* line 136, ../sass/base/_icons.scss */
+.icons-search {
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf10d;');
+}
+
+/* line 140, ../sass/base/_icons.scss */
 .icons-search:before, .page-page-not-found #apachesolr-panels-search-form .form-type-textfield:after, form.navbar-form .form-type-textfield:after {
   content: "\f10d";
+}
+
+/* line 144, ../sass/base/_icons.scss */
+.icons-warning {
+  *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf10e;');
+}
+
+/* line 148, ../sass/base/_icons.scss */
+.icons-warning:before, .alert-warning:before {
+  content: "\f10e";
 }
 
 /**
@@ -9751,6 +9828,13 @@ img.bio-circled {
 /* line 38, ../sass/components/_meetings.scss */
 .node-type-oa-event .pane-node-field-host {
   margin-bottom: 20px;
+}
+
+/* line 1, ../sass/components/_messages.scss */
+.alert-warning:before {
+  font-size: 20px;
+  float: left;
+  margin-right: 7px;
 }
 
 /* line 1, ../sass/components/_navigation.scss */
