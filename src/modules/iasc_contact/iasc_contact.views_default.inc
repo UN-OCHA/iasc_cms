@@ -749,7 +749,7 @@ function iasc_contact_views_default_views() {
   $handler->display->display_options['fields']['field_branch']['id'] = 'field_branch';
   $handler->display->display_options['fields']['field_branch']['table'] = 'field_data_field_branch';
   $handler->display->display_options['fields']['field_branch']['field'] = 'field_branch';
-  /* Field: Content: Body */
+  /* Field: Content: Description */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
@@ -837,10 +837,21 @@ function iasc_contact_views_default_views() {
   $handler->display->display_options['fields']['title_field']['element_type'] = 'h4';
   $handler->display->display_options['fields']['title_field']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title_field']['link_to_entity'] = 0;
+  /* Field: Field: Homepage URL */
+  $handler->display->display_options['fields']['field_homepage']['id'] = 'field_homepage';
+  $handler->display->display_options['fields']['field_homepage']['table'] = 'field_data_field_homepage';
+  $handler->display->display_options['fields']['field_homepage']['field'] = 'field_homepage';
+  $handler->display->display_options['fields']['field_homepage']['relationship'] = 'field_contact_target_id';
+  $handler->display->display_options['fields']['field_homepage']['label'] = '';
+  $handler->display->display_options['fields']['field_homepage']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_homepage']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_homepage']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_homepage']['type'] = 'link_url';
   /* Field: Content: Organization */
   $handler->display->display_options['fields']['field_organisation']['id'] = 'field_organisation';
   $handler->display->display_options['fields']['field_organisation']['table'] = 'field_data_field_organisation';
   $handler->display->display_options['fields']['field_organisation']['field'] = 'field_organisation';
+  $handler->display->display_options['fields']['field_organisation']['relationship'] = 'field_contact_target_id';
   $handler->display->display_options['fields']['field_organisation']['label'] = '';
   $handler->display->display_options['fields']['field_organisation']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['field_organisation']['alter']['path'] = '[field_homepage]';
