@@ -56,6 +56,31 @@ function iasc_preprocess_html(&$vars) {
 
   // Don't need the navbar for our theme.
   unset($vars['page']['page_top']['navbar']);
+
+  // Adding Touch icons
+  drupal_add_html_head_link(array(
+    'rel'  => 'apple-touch-icon-precomposed',
+    'href' => '/' . drupal_get_path('theme', 'iasc') . '/apple-touch-icon-precomposed.png',
+  ));
+
+  $data = array(
+    '#tag' => 'meta',
+    '#attributes' => array(
+       'name' => 'msapplication-TileColor',
+       'content' => '#000000',
+    ),
+  );
+  drupal_add_html_head($data, 'msapplication-TileColor');
+
+  $data = array(
+    '#tag' => 'meta',
+    '#attributes' => array(
+       'name' => 'msapplication-TileImage',
+       'content' => '/' . drupal_get_path('theme', 'iasc') . '/favicon-144.png',
+    ),
+  );
+  drupal_add_html_head($data, 'msapplication-TileImage');
+
 }
 
 /**
