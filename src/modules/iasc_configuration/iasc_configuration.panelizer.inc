@@ -52,7 +52,7 @@ function iasc_configuration_panelizer_defaults() {
     ),
   );
   $display->cache = array();
-  $display->title = '%node:title';
+  $display->title = 'Documents';
   $display->uuid = '4da17148-a7a9-4da8-a9bf-ef168121174a';
   $display->content = array();
   $display->panels = array();
@@ -94,34 +94,28 @@ function iasc_configuration_panelizer_defaults() {
     $display->content['new-1c4dd840-ad97-4b85-9c82-84aee3c81846'] = $pane;
     $display->panels['contentmain'][0] = 'new-1c4dd840-ad97-4b85-9c82-84aee3c81846';
     $pane = new stdClass();
-    $pane->pid = 'new-e7915e9b-dd20-424f-b4e9-4bc4d9a81cbc';
+    $pane->pid = 'new-716125fd-8938-4b64-b1ca-076d3b55c7b8';
     $pane->panel = 'sidebar';
-    $pane->type = 'oa_widgets_content_visibility';
-    $pane->subtype = 'oa_widgets_content_visibility';
+    $pane->type = 'iasc_configuration.section_menu';
+    $pane->subtype = 'iasc_configuration.section_menu';
     $pane->shown = TRUE;
     $pane->access = array();
-    $pane->configuration = array(
-      'return' => 'Finish',
-      'cancel' => 'Cancel',
-      'context' => 'panelizer',
-      'override_title' => 0,
-      'override_title_text' => '',
-      'form_build_id' => 'form-AHJUfpYPcZ4fsSHUHIFy0Adu0CXy4e79Kcslz2yLodI',
-      'form_token' => 'BzH8uxEwTjsQGuqkcXBIlcjCxMTFGGufXWz-7ckhC2M',
-      'form_id' => 'oa_widgets_content_visibility_edit_form',
-      'op' => 'Finish',
-    );
+    $pane->configuration = array();
     $pane->cache = array();
     $pane->style = array(
-      'settings' => NULL,
+      'settings' => array(
+        'secondary_options' => 'panel-primary',
+        'linked_list' => 'none',
+      ),
+      'style' => 'secondary',
     );
     $pane->css = array();
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = 'e7915e9b-dd20-424f-b4e9-4bc4d9a81cbc';
-    $display->content['new-e7915e9b-dd20-424f-b4e9-4bc4d9a81cbc'] = $pane;
-    $display->panels['sidebar'][0] = 'new-e7915e9b-dd20-424f-b4e9-4bc4d9a81cbc';
+    $pane->uuid = '716125fd-8938-4b64-b1ca-076d3b55c7b8';
+    $display->content['new-716125fd-8938-4b64-b1ca-076d3b55c7b8'] = $pane;
+    $display->panels['sidebar'][0] = 'new-716125fd-8938-4b64-b1ca-076d3b55c7b8';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $panelizer->display = $display;
@@ -341,36 +335,13 @@ function iasc_configuration_panelizer_defaults() {
     $display->content['new-ed641e95-c651-402c-8fd0-249c0a1beb65'] = $pane;
     $display->panels['contentmain'][4] = 'new-ed641e95-c651-402c-8fd0-249c0a1beb65';
     $pane = new stdClass();
-    $pane->pid = 'new-18865aa1-e2a6-4d3d-93c2-3f80adf44c54';
+    $pane->pid = 'new-44535534-31ad-4a2f-be9e-c791ab663a89';
     $pane->panel = 'sidebar';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'open_atrium_section_pages-section_pages_within_spaces';
+    $pane->type = 'iasc_configuration.section_menu';
+    $pane->subtype = 'iasc_configuration.section_menu';
     $pane->shown = TRUE;
     $pane->access = array();
-    $pane->configuration = array(
-      'more_link' => 0,
-      'use_pager' => 1,
-      'pager_id' => '0',
-      'items_per_page' => '20',
-      'fields_override' => array(
-        'title' => 1,
-      ),
-      'context' => array(
-        0 => 'panelizer',
-      ),
-      'override_title' => '',
-      'override_title_text' => '',
-      'view_mode' => 'teaser',
-      'widget_title' => 'Sections',
-      'exposed' => array(
-        'flagged' => '0',
-      ),
-      'offset' => NULL,
-      'link_to_view' => NULL,
-      'path' => NULL,
-      'view_settings' => 'fields',
-      'header_type' => 'none',
-    );
+    $pane->configuration = array();
     $pane->cache = array();
     $pane->style = array(
       'settings' => array(
@@ -383,9 +354,9 @@ function iasc_configuration_panelizer_defaults() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '18865aa1-e2a6-4d3d-93c2-3f80adf44c54';
-    $display->content['new-18865aa1-e2a6-4d3d-93c2-3f80adf44c54'] = $pane;
-    $display->panels['sidebar'][0] = 'new-18865aa1-e2a6-4d3d-93c2-3f80adf44c54';
+    $pane->uuid = '44535534-31ad-4a2f-be9e-c791ab663a89';
+    $display->content['new-44535534-31ad-4a2f-be9e-c791ab663a89'] = $pane;
+    $display->panels['sidebar'][0] = 'new-44535534-31ad-4a2f-be9e-c791ab663a89';
     $pane = new stdClass();
     $pane->pid = 'new-e68594bd-bdcf-4510-b73c-fe78ae7a7c30';
     $pane->panel = 'sidebar';
@@ -716,36 +687,13 @@ function iasc_configuration_panelizer_defaults() {
     $display->content['new-2c554cb3-739b-4362-8356-eed1a51fc172'] = $pane;
     $display->panels['contentmain'][3] = 'new-2c554cb3-739b-4362-8356-eed1a51fc172';
     $pane = new stdClass();
-    $pane->pid = 'new-18865aa1-e2a6-4d3d-93c2-3f80adf44c54';
+    $pane->pid = 'new-8592579d-4c14-42dd-883c-20ff7719bd79';
     $pane->panel = 'sidebar';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'open_atrium_section_pages-section_pages_within_spaces';
+    $pane->type = 'iasc_configuration.section_menu';
+    $pane->subtype = 'iasc_configuration.section_menu';
     $pane->shown = TRUE;
     $pane->access = array();
-    $pane->configuration = array(
-      'more_link' => 0,
-      'use_pager' => 1,
-      'pager_id' => '0',
-      'items_per_page' => '20',
-      'fields_override' => array(
-        'title' => 1,
-      ),
-      'context' => array(
-        0 => 'panelizer',
-      ),
-      'override_title' => '',
-      'override_title_text' => '',
-      'view_mode' => 'teaser',
-      'widget_title' => 'Sections',
-      'exposed' => array(
-        'flagged' => '0',
-      ),
-      'offset' => NULL,
-      'link_to_view' => NULL,
-      'path' => NULL,
-      'view_settings' => 'fields',
-      'header_type' => 'none',
-    );
+    $pane->configuration = array();
     $pane->cache = array();
     $pane->style = array(
       'settings' => array(
@@ -758,9 +706,9 @@ function iasc_configuration_panelizer_defaults() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '18865aa1-e2a6-4d3d-93c2-3f80adf44c54';
-    $display->content['new-18865aa1-e2a6-4d3d-93c2-3f80adf44c54'] = $pane;
-    $display->panels['sidebar'][0] = 'new-18865aa1-e2a6-4d3d-93c2-3f80adf44c54';
+    $pane->uuid = '8592579d-4c14-42dd-883c-20ff7719bd79';
+    $display->content['new-8592579d-4c14-42dd-883c-20ff7719bd79'] = $pane;
+    $display->panels['sidebar'][0] = 'new-8592579d-4c14-42dd-883c-20ff7719bd79';
     $pane = new stdClass();
     $pane->pid = 'new-f1a74d4d-ba83-4ac2-860d-7d09b4a49696';
     $pane->panel = 'sidebar';

@@ -10375,6 +10375,17 @@ img.bio-circled {
   display: none;
 }
 
+/* line 94, ../sass/components/_panel.scss */
+.ui-widget-overlay.ui-front {
+  z-index: 2000;
+}
+
+/* line 98, ../sass/components/_panel.scss */
+.ui-dialog.linkit-wrapper {
+  background: white;
+  z-index: 2000;
+}
+
 /* line 3, ../sass/components/_search.scss */
 .page-search-node .well:before,
 .page-site-search .well:before {
@@ -10486,39 +10497,50 @@ img.bio-circled {
     width: 33%;
     float: left;
   }
+  /* line 45, ../sass/components/_view.scss */
+  .view-filters .views-exposed-widget .help-block {
+    margin-bottom: 0;
+  }
 }
-/* line 49, ../sass/components/_view.scss */
+/* line 52, ../sass/components/_view.scss */
 .view-filters .views-reset-button,
 .view-filters .views-submit-button {
   width: 100%;
   padding-top: 2rem;
   padding-right: 0 !important;
+  margin-top: 10px;
 }
 @media screen and (min-width: 992px) {
-  /* line 49, ../sass/components/_view.scss */
+  /* line 52, ../sass/components/_view.scss */
   .view-filters .views-reset-button,
   .view-filters .views-submit-button {
     padding: 0 20px 0 0 !important;
   }
 }
-/* line 54, ../sass/components/_view.scss */
+/* line 59, ../sass/components/_view.scss */
+.view-oa-event-list .view-filters .views-reset-button, .view-oa-event-list
+.view-filters .views-submit-button {
+  position: relative;
+  top: -25px;
+}
+/* line 64, ../sass/components/_view.scss */
 .view-filters .views-reset-button input, .view-filters .views-reset-button .form-item,
 .view-filters .views-submit-button input,
 .view-filters .views-submit-button .form-item {
   float: right;
 }
-/* line 57, ../sass/components/_view.scss */
+/* line 67, ../sass/components/_view.scss */
 .view-filters .views-reset-button input[type="submit"],
 .view-filters .views-submit-button input[type="submit"] {
   margin: 0 0 0 2rem;
 }
-/* line 60, ../sass/components/_view.scss */
+/* line 70, ../sass/components/_view.scss */
 .view-filters .views-reset-button .form-type-checkbox,
 .view-filters .views-submit-button .form-type-checkbox {
   top: 8px;
 }
 
-/* line 67, ../sass/components/_view.scss */
+/* line 77, ../sass/components/_view.scss */
 .view-iasc-document .views-widget-filter-field_category_tid {
   clear: left;
 }
