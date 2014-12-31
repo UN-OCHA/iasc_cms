@@ -8626,9 +8626,10 @@ ul.panels-ipe-linkbar > li a {
 /* line 5, ../sass/base/_elements.scss */
 h1, .h1 {
   color: #066281;
+  margin-top: 0;
 }
 
-/* line 12, ../sass/base/_elements.scss */
+/* line 13, ../sass/base/_elements.scss */
 h2, .node-type-oa-event .pane-node-field-info-private .field-label,
 .node-type-oa-event .pane-node-field-info-private h3.pane-title,
 .node-type-oa-event .pane-node-field-info-private .field-name-field-agenda-items .pane-title.field-name-field-ai-title,
@@ -8644,7 +8645,7 @@ h5, .h5,
 h6, .h6 {
   color: #066281;
 }
-/* line 14, ../sass/base/_elements.scss */
+/* line 15, ../sass/base/_elements.scss */
 h2 a, .node-type-oa-event .pane-node-field-info-private .field-label a,
 .node-type-oa-event .pane-node-field-info-private h3.pane-title a,
 .node-type-oa-event .pane-node-field-info-private .field-name-field-agenda-items .pane-title.field-name-field-ai-title a,
@@ -8662,12 +8663,12 @@ h6 a, .h6 a {
 }
 
 @media screen and (max-width: 480px) {
-  /* line 21, ../sass/base/_elements.scss */
+  /* line 22, ../sass/base/_elements.scss */
   h1 {
     font-size: 26px;
   }
 
-  /* line 22, ../sass/base/_elements.scss */
+  /* line 23, ../sass/base/_elements.scss */
   h2, .node-type-oa-event .pane-node-field-info-private .field-label,
   .node-type-oa-event .pane-node-field-info-private h3.pane-title,
   .node-type-oa-event .pane-node-field-info-private .field-name-field-agenda-items .pane-title.field-name-field-ai-title,
@@ -8679,23 +8680,23 @@ h6 a, .h6 a {
     font-size: 22px;
   }
 }
-/* line 25, ../sass/base/_elements.scss */
+/* line 26, ../sass/base/_elements.scss */
 .pagination a {
   font-family: "Montserrat", sans-serif;
 }
 
-/* line 32, ../sass/base/_elements.scss */
+/* line 33, ../sass/base/_elements.scss */
 li {
   list-style: none;
 }
 
-/* line 36, ../sass/base/_elements.scss */
+/* line 37, ../sass/base/_elements.scss */
 .list-styled li,
 .wrapped-list li {
   padding-left: 15px;
   position: relative;
 }
-/* line 40, ../sass/base/_elements.scss */
+/* line 41, ../sass/base/_elements.scss */
 .list-styled li:before,
 .wrapped-list li:before {
   content: "\2022";
@@ -8707,70 +8708,70 @@ li {
   font-size: 22px;
 }
 
-/* line 48, ../sass/base/_elements.scss */
+/* line 49, ../sass/base/_elements.scss */
 .wrapped-list li {
   margin-bottom: 10px;
 }
 
-/* line 51, ../sass/base/_elements.scss */
+/* line 52, ../sass/base/_elements.scss */
 ol.ordered-styled li {
   list-style: decimal outside none;
   margin-bottom: 10px;
   margin-left: 15px;
 }
 
-/* line 60, ../sass/base/_elements.scss */
+/* line 61, ../sass/base/_elements.scss */
 figcaption,
 figure {
   font-size: 12px;
   font-style: italic;
 }
 
-/* line 65, ../sass/base/_elements.scss */
+/* line 66, ../sass/base/_elements.scss */
 q {
   font-style: italic;
 }
 
-/* line 70, ../sass/base/_elements.scss */
+/* line 71, ../sass/base/_elements.scss */
 .content img {
   padding: 10px;
 }
-/* line 71, ../sass/base/_elements.scss */
+/* line 72, ../sass/base/_elements.scss */
 .content p + img {
   padding-top: 0px;
 }
-/* line 72, ../sass/base/_elements.scss */
+/* line 73, ../sass/base/_elements.scss */
 .content img:not(.pull-right) {
   padding-left: 0;
 }
-/* line 73, ../sass/base/_elements.scss */
+/* line 74, ../sass/base/_elements.scss */
 .content img.pull-right, .content img.clear, .content img#mc-embedded-subscribe {
   padding-right: 0;
 }
 
-/* line 77, ../sass/base/_elements.scss */
+/* line 78, ../sass/base/_elements.scss */
 form .field-multiple-table thead th {
   padding: 10px !important;
 }
 
-/* line 81, ../sass/base/_elements.scss */
+/* line 82, ../sass/base/_elements.scss */
 html.js fieldset.collapsed {
   height: auto;
   border-left-width: 1px;
   border-right-width: 1px;
 }
 
-/* line 87, ../sass/base/_elements.scss */
+/* line 88, ../sass/base/_elements.scss */
 legend {
   margin-bottom: 0;
 }
 
-/* line 90, ../sass/base/_elements.scss */
+/* line 91, ../sass/base/_elements.scss */
 label {
   margin-bottom: 0;
 }
 
-/* line 94, ../sass/base/_elements.scss */
+/* line 95, ../sass/base/_elements.scss */
 .chosen-container.form-control, .chosen-container.form-control .chosen-container.chosen-choices, form.navbar-form .form-type-textfield input.chosen-container[type="text"], .mc-field-group input.chosen-container[type="email"],
 .mc-field-group input.chosen-container[type="text"] {
   padding: 0;
@@ -8779,25 +8780,25 @@ label {
   display: block !important;
   width: 100% !important;
 }
-/* line 102, ../sass/base/_elements.scss */
+/* line 103, ../sass/base/_elements.scss */
 .chosen-container.form-control .chosen-choices input, form.navbar-form .form-type-textfield input.chosen-container[type="text"] .chosen-choices input, .mc-field-group input.chosen-container[type="email"] .chosen-choices input,
 .mc-field-group input.chosen-container[type="text"] .chosen-choices input {
   padding: 0 !important;
 }
 
-/* line 106, ../sass/base/_elements.scss */
+/* line 107, ../sass/base/_elements.scss */
 .form-control:focus, .chosen-container.form-control .chosen-choices:focus, form.navbar-form .form-type-textfield input[type="text"]:focus, .mc-field-group input[type="email"]:focus,
 .mc-field-group input[type="text"]:focus {
   -webkit-box-shadow: 0 0 0 white !important;
   box-shadow: 0 0 0 white !important;
 }
 
-/* line 111, ../sass/base/_elements.scss */
+/* line 112, ../sass/base/_elements.scss */
 html.js input.form-autocomplete {
   background-image: url('../images/throbber.gif?1417543110');
   background-position: 100% 9px;
 }
-/* line 115, ../sass/base/_elements.scss */
+/* line 116, ../sass/base/_elements.scss */
 html.js input.throbbing {
   background-image: url('../images/throbber.gif?1417543110');
   background-position: 100% -121px;
@@ -9183,19 +9184,24 @@ body.ctools-modal-open {
  * Layout
  * Styles for main layout
  */
+/* line 7, ../sass/layout/_layout.scss */
+header.header {
+  margin-bottom: 20px;
+}
+
 @media screen and (max-width: 480px) {
-  /* line 7, ../sass/layout/_layout.scss */
+  /* line 11, ../sass/layout/_layout.scss */
   .container {
     padding-right: 10px;
     padding-left: 10px;
   }
-  /* line 11, ../sass/layout/_layout.scss */
+  /* line 15, ../sass/layout/_layout.scss */
   #main-wrapper > .container {
     padding-bottom: 20px;
   }
 }
 @media screen and (min-width: 480px) {
-  /* line 14, ../sass/layout/_layout.scss */
+  /* line 18, ../sass/layout/_layout.scss */
   #main-wrapper > .container {
     padding-bottom: 100px;
   }
@@ -9835,6 +9841,11 @@ img.bio-circled {
   font-size: 20px;
   float: left;
   margin-right: 7px;
+}
+
+/* line 9, ../sass/components/_messages.scss */
+.pane-iasc-meeting-meeting-login-cta {
+  margin-top: 20px;
 }
 
 /* line 1, ../sass/components/_navigation.scss */

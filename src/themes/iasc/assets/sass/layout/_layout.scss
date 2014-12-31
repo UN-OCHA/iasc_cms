@@ -4,6 +4,10 @@
  * Styles for main layout
  */
 
+header.header {
+  margin-bottom: 20px;
+}
+
 .container {
   @media screen and (max-width: $screen-xs-min) {
     padding-right: 10px;
