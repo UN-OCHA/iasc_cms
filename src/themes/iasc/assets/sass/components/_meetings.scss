@@ -24,7 +24,7 @@
     }
   }
   // Hack to fake fields to be in a panel
-  .panel-primary.none {
+  .panel-primary.none:first-child { 
     margin-bottom: 0;
     .panel-body { padding-top: 0; }
   }

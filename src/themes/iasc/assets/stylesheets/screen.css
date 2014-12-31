@@ -9810,11 +9810,11 @@ img.bio-circled {
   margin-top: 0;
 }
 /* line 27, ../sass/components/_meetings.scss */
-.node-type-oa-event .panel-primary.none {
+.node-type-oa-event .panel-primary.none:first-child {
   margin-bottom: 0;
 }
 /* line 29, ../sass/components/_meetings.scss */
-.node-type-oa-event .panel-primary.none .panel-body, .node-type-oa-event .panel-primary.none .view-display-id-panel_pane_membership_logos ul, .view-display-id-panel_pane_membership_logos .node-type-oa-event .panel-primary.none ul {
+.node-type-oa-event .panel-primary.none:first-child .panel-body, .node-type-oa-event .panel-primary.none:first-child .view-display-id-panel_pane_membership_logos ul, .view-display-id-panel_pane_membership_logos .node-type-oa-event .panel-primary.none:first-child ul {
   padding-top: 0;
 }
 /* line 34, ../sass/components/_meetings.scss */
