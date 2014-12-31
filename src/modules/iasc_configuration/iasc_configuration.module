@@ -940,3 +940,12 @@ function iasc_configuration_theme($existing, $type, $theme, $path) {
 
   return $theme;
 }
+
+/**
+ * Implements hook_ctools_plugin_directory().
+ */
+function iasc_configuration_ctools_plugin_directory($owner, $plugin_type) {
+  if ($owner == 'ctools' && $plugin_type == 'content_types') {
+    return 'plugins/content_types';
+  }
+}
