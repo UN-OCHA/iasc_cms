@@ -10556,44 +10556,54 @@ img.bio-circled {
   clear: left;
 }
 
-/* line 1, ../sass/components/_views-events.scss */
+/* line 2, ../sass/components/_views-events.scss */
+.view-display-id-panel_pane_space_meetings,
 .view-oa-event-list {
   margin-bottom: 40px;
 }
 /* line 15, ../../../../../../../../.rvm/gems/ruby-2.0.0-p598/gems/bootstrap-sass-3.3.1.0/assets/stylesheets/bootstrap/mixins/_clearfix.scss */
-.view-oa-event-list:before, .view-oa-event-list:after {
+.view-display-id-panel_pane_space_meetings:before, .view-display-id-panel_pane_space_meetings:after,
+.view-oa-event-list:before,
+.view-oa-event-list:after {
   content: " ";
   display: table;
 }
 /* line 19, ../../../../../../../../.rvm/gems/ruby-2.0.0-p598/gems/bootstrap-sass-3.3.1.0/assets/stylesheets/bootstrap/mixins/_clearfix.scss */
+.view-display-id-panel_pane_space_meetings:after,
 .view-oa-event-list:after {
   clear: both;
 }
-/* line 4, ../sass/components/_views-events.scss */
+/* line 5, ../sass/components/_views-events.scss */
+.view-display-id-panel_pane_space_meetings h4.title,
 .view-oa-event-list h4.title {
   margin: 0 0 5px;
 }
-/* line 8, ../sass/components/_views-events.scss */
+/* line 9, ../sass/components/_views-events.scss */
+.view-display-id-panel_pane_space_meetings .iasc-event-date-wrapper,
+.view-display-id-panel_pane_space_meetings .views-field-field-oa-date,
 .view-oa-event-list .iasc-event-date-wrapper,
 .view-oa-event-list .views-field-field-oa-date {
   position: absolute;
   left: 0;
   top: 0;
 }
-/* line 13, ../sass/components/_views-events.scss */
+/* line 14, ../sass/components/_views-events.scss */
+.view-display-id-panel_pane_space_meetings .views-row,
 .view-oa-event-list .views-row {
   padding-left: 100px;
   margin-bottom: 40px;
   position: relative;
 }
 @media screen and (min-width: 480px) {
-  /* line 13, ../sass/components/_views-events.scss */
+  /* line 14, ../sass/components/_views-events.scss */
+  .view-display-id-panel_pane_space_meetings .views-row,
   .view-oa-event-list .views-row {
     clear: none;
     float: left;
     width: 50%;
   }
-  /* line 21, ../sass/components/_views-events.scss */
+  /* line 22, ../sass/components/_views-events.scss */
+  .view-display-id-panel_pane_space_meetings .views-row.views-row-odd,
   .view-oa-event-list .views-row.views-row-odd {
     padding-right: 20px;
     clear: left;
