@@ -89,15 +89,15 @@ function iasc_document_views_default_views() {
     'multiple_to' => '',
     'show_repeat_rule' => 'show',
   );
+  /* Sort criterion: Content: Published Date (field_published_date) */
+  $handler->display->display_options['sorts']['field_published_date_value']['id'] = 'field_published_date_value';
+  $handler->display->display_options['sorts']['field_published_date_value']['table'] = 'field_data_field_published_date';
+  $handler->display->display_options['sorts']['field_published_date_value']['field'] = 'field_published_date_value';
+  $handler->display->display_options['sorts']['field_published_date_value']['order'] = 'DESC';
   /* Sort criterion: Content: Title */
   $handler->display->display_options['sorts']['title']['id'] = 'title';
   $handler->display->display_options['sorts']['title']['table'] = 'node';
   $handler->display->display_options['sorts']['title']['field'] = 'title';
-  /* Sort criterion: Content: Post date */
-  $handler->display->display_options['sorts']['created']['id'] = 'created';
-  $handler->display->display_options['sorts']['created']['table'] = 'node';
-  $handler->display->display_options['sorts']['created']['field'] = 'created';
-  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
   /* Contextual filter: Content: Has taxonomy term ID */
   $handler->display->display_options['arguments']['tid']['id'] = 'tid';
   $handler->display->display_options['arguments']['tid']['table'] = 'taxonomy_index';
@@ -313,6 +313,193 @@ function iasc_document_views_default_views() {
   $handler = $view->new_display('page', 'Resources', 'page_resources');
   $handler->display->display_options['display_description'] = 'An alphabetical list of all Document nodes.';
   $handler->display->display_options['defaults']['header'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'oa_wiki_page' => 'oa_wiki_page',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Start from Date range */
+  $handler->display->display_options['filters']['field_published_date_value']['id'] = 'field_published_date_value';
+  $handler->display->display_options['filters']['field_published_date_value']['table'] = 'field_data_field_published_date';
+  $handler->display->display_options['filters']['field_published_date_value']['field'] = 'field_published_date_value';
+  $handler->display->display_options['filters']['field_published_date_value']['ui_name'] = 'Start from Date range';
+  $handler->display->display_options['filters']['field_published_date_value']['operator'] = '>=';
+  $handler->display->display_options['filters']['field_published_date_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_published_date_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_published_date_value']['expose']['operator_id'] = 'field_published_date_value_op';
+  $handler->display->display_options['filters']['field_published_date_value']['expose']['label'] = 'Date Range';
+  $handler->display->display_options['filters']['field_published_date_value']['expose']['operator'] = 'field_published_date_value_op';
+  $handler->display->display_options['filters']['field_published_date_value']['expose']['identifier'] = 'field_published_date_value';
+  $handler->display->display_options['filters']['field_published_date_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+  );
+  $handler->display->display_options['filters']['field_published_date_value']['form_type'] = 'date_popup';
+  $handler->display->display_options['filters']['field_published_date_value']['default_to_date'] = 'today';
+  $handler->display->display_options['filters']['field_published_date_value']['year_range'] = '-10:+3';
+  /* Filter criterion: End Date Range */
+  $handler->display->display_options['filters']['field_published_date_value_1']['id'] = 'field_published_date_value_1';
+  $handler->display->display_options['filters']['field_published_date_value_1']['table'] = 'field_data_field_published_date';
+  $handler->display->display_options['filters']['field_published_date_value_1']['field'] = 'field_published_date_value';
+  $handler->display->display_options['filters']['field_published_date_value_1']['ui_name'] = 'End Date Range';
+  $handler->display->display_options['filters']['field_published_date_value_1']['operator'] = '<=';
+  $handler->display->display_options['filters']['field_published_date_value_1']['group'] = 1;
+  $handler->display->display_options['filters']['field_published_date_value_1']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_published_date_value_1']['expose']['operator_id'] = 'field_published_date_value_1_op';
+  $handler->display->display_options['filters']['field_published_date_value_1']['expose']['operator'] = 'field_published_date_value_1_op';
+  $handler->display->display_options['filters']['field_published_date_value_1']['expose']['identifier'] = 'field_published_date_value_1';
+  $handler->display->display_options['filters']['field_published_date_value_1']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+  );
+  $handler->display->display_options['filters']['field_published_date_value_1']['form_type'] = 'date_popup';
+  $handler->display->display_options['filters']['field_published_date_value_1']['year_range'] = '-10:+3';
+  /* Filter criterion: Content: Groups audience (og_group_ref) */
+  $handler->display->display_options['filters']['og_group_ref_target_id']['id'] = 'og_group_ref_target_id';
+  $handler->display->display_options['filters']['og_group_ref_target_id']['table'] = 'og_membership';
+  $handler->display->display_options['filters']['og_group_ref_target_id']['field'] = 'og_group_ref_target_id';
+  $handler->display->display_options['filters']['og_group_ref_target_id']['group'] = 1;
+  $handler->display->display_options['filters']['og_group_ref_target_id']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['og_group_ref_target_id']['expose']['operator_id'] = 'og_group_ref_target_id_op';
+  $handler->display->display_options['filters']['og_group_ref_target_id']['expose']['label'] = 'Authoring Bodies';
+  $handler->display->display_options['filters']['og_group_ref_target_id']['expose']['operator'] = 'og_group_ref_target_id_op';
+  $handler->display->display_options['filters']['og_group_ref_target_id']['expose']['identifier'] = 'og_group_ref_target_id';
+  $handler->display->display_options['filters']['og_group_ref_target_id']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    5 => 0,
+    6 => 0,
+  );
+  /* Filter criterion: Content: Product Category (field_category) */
+  $handler->display->display_options['filters']['field_category_tid']['id'] = 'field_category_tid';
+  $handler->display->display_options['filters']['field_category_tid']['table'] = 'field_data_field_category';
+  $handler->display->display_options['filters']['field_category_tid']['field'] = 'field_category_tid';
+  $handler->display->display_options['filters']['field_category_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_category_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_category_tid']['expose']['operator_id'] = 'field_category_tid_op';
+  $handler->display->display_options['filters']['field_category_tid']['expose']['label'] = 'Product Category';
+  $handler->display->display_options['filters']['field_category_tid']['expose']['operator'] = 'field_category_tid_op';
+  $handler->display->display_options['filters']['field_category_tid']['expose']['identifier'] = 'field_category_tid';
+  $handler->display->display_options['filters']['field_category_tid']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_category_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    5 => 0,
+    6 => 0,
+  );
+  $handler->display->display_options['filters']['field_category_tid']['group_info']['label'] = 'Product Category (field_category)';
+  $handler->display->display_options['filters']['field_category_tid']['group_info']['identifier'] = 'field_category_tid';
+  $handler->display->display_options['filters']['field_category_tid']['group_info']['remember'] = FALSE;
+  $handler->display->display_options['filters']['field_category_tid']['group_info']['group_items'] = array(
+    1 => array(),
+    2 => array(),
+    3 => array(),
+  );
+  $handler->display->display_options['filters']['field_category_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_category_tid']['vocabulary'] = 'product_categories';
+  $handler->display->display_options['filters']['field_category_tid']['hierarchy'] = 1;
+  /* Filter criterion: Content: Document Type (field_document_type) */
+  $handler->display->display_options['filters']['field_document_type_tid']['id'] = 'field_document_type_tid';
+  $handler->display->display_options['filters']['field_document_type_tid']['table'] = 'field_data_field_document_type';
+  $handler->display->display_options['filters']['field_document_type_tid']['field'] = 'field_document_type_tid';
+  $handler->display->display_options['filters']['field_document_type_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_document_type_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_document_type_tid']['expose']['operator_id'] = 'field_document_type_tid_op';
+  $handler->display->display_options['filters']['field_document_type_tid']['expose']['label'] = 'Document Type';
+  $handler->display->display_options['filters']['field_document_type_tid']['expose']['operator'] = 'field_document_type_tid_op';
+  $handler->display->display_options['filters']['field_document_type_tid']['expose']['identifier'] = 'field_document_type_tid';
+  $handler->display->display_options['filters']['field_document_type_tid']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_document_type_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    5 => 0,
+    6 => 0,
+  );
+  $handler->display->display_options['filters']['field_document_type_tid']['group_info']['label'] = 'Type';
+  $handler->display->display_options['filters']['field_document_type_tid']['group_info']['identifier'] = 'field_document_type_tid';
+  $handler->display->display_options['filters']['field_document_type_tid']['group_info']['optional'] = FALSE;
+  $handler->display->display_options['filters']['field_document_type_tid']['group_info']['widget'] = 'radios';
+  $handler->display->display_options['filters']['field_document_type_tid']['group_info']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_document_type_tid']['group_info']['default_group'] = '1';
+  $handler->display->display_options['filters']['field_document_type_tid']['group_info']['default_group_multiple'] = array(
+    1 => '1',
+    2 => '2',
+    3 => '3',
+  );
+  $handler->display->display_options['filters']['field_document_type_tid']['group_info']['group_items'] = array(
+    1 => array(
+      'title' => 'Documents',
+      'operator' => 'or',
+      'value' => array(
+        204 => '204',
+      ),
+    ),
+    2 => array(
+      'title' => 'Products',
+      'operator' => 'or',
+      'value' => array(
+        205 => '205',
+      ),
+    ),
+    3 => array(
+      'title' => 'Meetings',
+      'operator' => 'or',
+      'value' => array(
+        206 => '206',
+        207 => '207',
+      ),
+    ),
+  );
+  $handler->display->display_options['filters']['field_document_type_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_document_type_tid']['vocabulary'] = 'document_types';
+  $handler->display->display_options['filters']['field_document_type_tid']['hierarchy'] = 1;
+  /* Filter criterion: Content: Title */
+  $handler->display->display_options['filters']['title']['id'] = 'title';
+  $handler->display->display_options['filters']['title']['table'] = 'node';
+  $handler->display->display_options['filters']['title']['field'] = 'title';
+  $handler->display->display_options['filters']['title']['operator'] = 'contains';
+  $handler->display->display_options['filters']['title']['group'] = 1;
+  $handler->display->display_options['filters']['title']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['label'] = 'Filter';
+  $handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
+  $handler->display->display_options['filters']['title']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    5 => 0,
+    6 => 0,
+  );
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_items'] = '10';
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_min_chars'] = '0';
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_field'] = 'title';
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_raw_suggestion'] = 1;
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_raw_dropdown'] = 1;
+  $handler->display->display_options['filters']['title']['expose']['autocomplete_dependent'] = 0;
   $handler->display->display_options['path'] = 'resources';
 
   /* Display: Recently Updated Documents */
