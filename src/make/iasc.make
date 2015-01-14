@@ -66,7 +66,7 @@ projects[colorbox][subdir] = contrib
 projects[references_dialog][version] = 1.0-beta1
 projects[references_dialog][subdir] = contrib
 ; Fix theme links fatal error.
-projects[references_dialog][patch][2315905] = https://www.drupal.org/files/issues/references_dialog_fix_theme_links-2315905-5.patch.patch
+projects[references_dialog][patch][2315905] = https://www.drupal.org/files/issues/references_dialog_fix_theme_links-2315905-42.patch
 
 projects[styleguide][version] = 1.1
 projects[styleguide][subdir] = contrib
