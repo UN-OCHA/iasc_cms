@@ -12,6 +12,7 @@ nginx:
   image: unocha/nginx16
   volumes:
     - config/etc/nginx:/etc/nginx
+    - .:/opt/development/iasc_cms
   environment:
     DNSDOCK_NAME: nginx
     DNSDOCK_IMAGE: iasc
@@ -23,15 +24,31 @@ php:
     - config/etc/php.d:/etc/php.d
     - config/etc/php.ini:/etc/php.ini
     - config/etc/php-fpm.d:/etc/php-fpm.d
+    - .:/opt/development/iasc_cms
   environment:
     DNSDOCK_NAME: php
     DNSDOCK_IMAGE: iasc
   links:
+    - solr:db1
     - mysql:mysql
+    - memcache:memcache
 mysql:
   image: unocha/percona55
   volumes:
-    - data/mysql:/etc/mysql
+    - data/mysql:/var/lib/mysql
+    - config/etc/mysql:/etc/mysql
   environment:
     DNSDOCK_NAME: mysql
+    DNSDOCK_IMAGE: iasc
+solr:
+  image: unocha/solr4
+  volumes:
+    - data/solr:/opt/solr/data
+  environment:
+    DNSDOCK_NAME: solr
+    DNSDOCK_IMAGE: iasc
+memcache:
+  image: unocha/memcache
+  environment:
+    DNSDOCK_NAME: memcache
     DNSDOCK_IMAGE: iasc
