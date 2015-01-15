@@ -14,7 +14,6 @@ nginx:
     - /code/iasc_cms/config/etc/nginx/:/etc/nginx/
     - /code/iasc_cms/:/opt/development/iasc_cms/
   environment:
-  environment:
     DNSDOCK_NAME: nginx
     DNSDOCK_IMAGE: iasc
   links:
@@ -30,7 +29,9 @@ php:
     DNSDOCK_NAME: php
     DNSDOCK_IMAGE: iasc
   links:
+    - solr:db1
     - mysql:mysql
+    - memcache:memcache
 mysql:
   image: unocha/percona55
   volumes:
@@ -38,4 +39,16 @@ mysql:
     - /code/iasc_cms/config/etc/mysql/:/etc/mysql
   environment:
     DNSDOCK_NAME: mysql
+    DNSDOCK_IMAGE: iasc
+solr:
+  image: unocha/solr4
+  volumes:
+    - /data/iasc_dms/solr:/opt/solr/data
+  environment:
+    DNSDOCK_NAME: solr
+    DNSDOCK_IMAGE: iasc
+memcache:
+  image: unocha/memcache
+  environment:
+    DNSDOCK_NAME: memcache
     DNSDOCK_IMAGE: iasc
