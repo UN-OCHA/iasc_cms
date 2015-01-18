@@ -213,6 +213,17 @@
 $databases = array();
 @include dirname(__FILE__) . '/settings.db.inc';
 
+// Add default Docker DB config if none was set.
+if (empty($databases)) {
+  $databases['default']['default'] = array(
+    'driver' => 'mysql',
+    'database' => 'iasc',
+    'username' => 'admin',
+    'password' => 'mysql',
+    'host' => 'mysql',
+  );
+}
+
 /**
  * Access control for update.php script.
  *
