@@ -1,7 +1,7 @@
 module.exports = function(grunt) {
 
   // Load all plugins and tasks defined by the drupal-grunt-starter package.
-  require('drupal-grunt-starter/Gruntfile')(grunt);
+  require('grunt-drupal-tasks/Gruntfile')(grunt);
 
   // Override the phplint setup so that we can exclude the vendor file
   grunt.config('phplint', {
