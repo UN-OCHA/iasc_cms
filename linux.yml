@@ -52,3 +52,10 @@ memcache:
   environment:
     DNSDOCK_NAME: memcache
     DNSDOCK_IMAGE: iasc
+build:
+  image: phase2/devtools-build7
+  environment:
+    DNSDOCK_NAME: build
+    DNSDOCK_IMAGE: iasc
+  volumes_from:
+    - nginx
