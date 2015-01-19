@@ -631,7 +631,13 @@ $conf['cache_class_cache_form'] = 'DrupalDatabaseCache';
 
 // $conf['memcache_servers'] should be overridden per-env in the local settings file.
 $conf['memcache_key_prefix'] = 'iasc';
-$conf['memcache_servers'] = array('localhost:11211' => 'default');
+// If we know we are in a Docker local env (in php-fpm or Drush, respectively), set the memcache server.
+if ((isset($_SERVER['IASC_ENV']) && $_SERVER['IASC_ENV'] == 'docker_local') || isset($_SERVER['MEMCACHE_NAME'])) {
+  $conf['memcache_servers'] = array('memcache:11211' => 'default');
+}
+else {
+  $conf['memcache_servers'] = array('localhost:11211' => 'default');
+}
 
 if (file_exists(dirname(__FILE__) . '/settings.local.inc')) {
   @include dirname(__FILE__) . '/settings.local.inc';
