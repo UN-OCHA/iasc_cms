@@ -31,16 +31,17 @@ Darwin)
   # UNIX. ¯\_(ツ)_/¯
   #
   if ! docker exec -it iasccms_php_1 bash -c "$DRUSH status" | grep Successful >/dev/null; then
-    echo "NOPE";
-    exit 0
     if [ -f $DIR/../iasc.sql.gz ]; then
       # @TODO: Wrap this in a better check, or port the Phase2 scripts to do this.
-      docker exec -it iasccms_mysql_1 bash -c 'mysql -e"CREATE DATABASE iasc"' 2>&1
+      docker exec -it iasccms_mysql_1 bash -c 'mysql -e"CREATE DATABASE iasc"' 2>&1 >/dev/null
       echo '==> Importing a database from iasc.sql.gz'
       gzcat $DIR/../iasc.sql.gz|mysql -uadmin -pmysql -hmysql.iasc.vm -Diasc
     else
-      echo 'You should now import a database with MySQL. The command might look like this:'
-      echo 'gzcat ~/iasc-2015-01-14.sql.gz|pv|mysql -uadmin -p -hmysql.iasc.vm -Diasc';
+      docker exec -it iasccms_mysql_1 bash -c 'mysql -e"CREATE DATABASE iasc"' 2>&1 >/dev/null
+      echo 'You should now import a database with MySQL.'
+      echo 'If you put an SQL dump called `iasc.sql.gz` in the iasc_cms folder, it will be imported automatically.'
+      echo 'Otherwise, you may restore a database with a command that looks like this:'
+      echo 'gzcat ~/path/to/dbdbump.sql.gz|pv|mysql -uadmin -pmysql -hmysql.iasc.vm -Diasc';
       # @TODO: Check if the DB exists at all.
       echo 0
     fi
