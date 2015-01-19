@@ -9,7 +9,7 @@ cd $DIR/..
 
 case $(uname) in
 Darwin)
-  if [ ! -f $DIR/../build/html/index.php ]; then
+  if [ ! -f "${DIR}/../build/html/index.php" ]; then
     echo '==> Building the site in the build container.'
     docker exec -it build bash -c 'cd /code/iasc_cms; npm install; grunt' || {
       echo '===> The IASC site could not be built. Exiting.'
@@ -31,7 +31,9 @@ Darwin)
   # UNIX. ¯\_(ツ)_/¯
   #
   if ! docker exec -it iasccms_php_1 bash -c "$DRUSH status" | grep Successful >/dev/null; then
-    if [ -f $DIR/../iasc.sql.gz ]; then
+    if [ -f "${DIR}/../iasc.sql.gz" ]; then
+      # @TODO: Hack city - prevent races with the MySQL container coming up.
+      sleep 15
       # @TODO: Wrap this in a better check, or port the Phase2 scripts to do this.
       docker exec -it iasccms_mysql_1 bash -c 'mysql -e"CREATE DATABASE iasc"' 2>&1 >/dev/null
       echo '==> Importing a database from iasc.sql.gz'
