@@ -9999,6 +9999,13 @@ img.bio-circled {
   display: none;
 }
 /* line 117, ../sass/components/_navigation.scss */
+.navbar-top a.icons-login span, .navbar-top a.icons-logout span {
+  display: inline;
+  font-size: 16px;
+  vertical-align: middle;
+  padding-left: 6px;
+}
+/* line 123, ../sass/components/_navigation.scss */
 .navbar-top a:hover {
   color: #00b4ac;
 }
@@ -10013,18 +10020,22 @@ img.bio-circled {
     padding-right: 20px;
     padding: 0 10px 0 0;
   }
-  /* line 124, ../sass/components/_navigation.scss */
+  /* line 130, ../sass/components/_navigation.scss */
   .navbar-top li {
     width: 25%;
     padding: 0;
     text-align: center;
     float: left;
   }
-  /* line 130, ../sass/components/_navigation.scss */
+  /* line 136, ../sass/components/_navigation.scss */
   .navbar-top a {
     padding: 5px 0 4px;
   }
-  /* line 133, ../sass/components/_navigation.scss */
+  /* line 138, ../sass/components/_navigation.scss */
+  .navbar-top a.icons-login span, .navbar-top a.icons-logout span {
+    display: none;
+  }
+  /* line 142, ../sass/components/_navigation.scss */
   .logged-in .navbar-top li {
     width: 20%;
   }
@@ -10037,12 +10048,12 @@ img.bio-circled {
   }
 }
 
-/* line 145, ../sass/components/_navigation.scss */
+/* line 154, ../sass/components/_navigation.scss */
 .menu-name-og-menu-single .nav-pills > li.active > a {
   color: #00817b;
   background: transparent;
 }
-/* line 149, ../sass/components/_navigation.scss */
+/* line 158, ../sass/components/_navigation.scss */
 .menu-name-og-menu-single .nav-stacked {
   padding-left: 10px;
 }
