@@ -114,6 +114,12 @@ a.menu { @extend .dropdown-toggle; }
     padding: 5px;
     text-decoration: none;
     span { display: none; }
+    &.icons-login span, &.icons-logout span {
+      display: inline;
+      font-size: $font-size-h4;
+      vertical-align: middle;
+      padding-left: 6px;
+    }
     &:hover { color: lighten($brand-primary, 10%);
     }
   }
@@ -129,6 +135,9 @@ a.menu { @extend .dropdown-toggle; }
     }
     a {
       padding: 5px 0 4px;
+      &.icons-login span, &.icons-logout span {
+        display: none;
+      }
     }
     .logged-in & li {
       width: 20%; 
