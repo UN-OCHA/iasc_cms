@@ -107,24 +107,6 @@ function iasc_configuration_features_override_default_overrides() {
       'uuid' => '5dea552f-a833-4443-b02e-883b4f59bf62',
     );
   $overrides["panelizer_defaults.node:oa_section:calendar_section.display|content|new-81942150-4ee9-4396-8371-b94f72b18f6a"]["DELETED"] = TRUE;
-  $overrides["panelizer_defaults.node:oa_section:calendar_section.display|content|new-8faec503-a4f7-4c85-a2f8-422978bd44ac"] = (object) array(
-      'pid' => 'new-8faec503-a4f7-4c85-a2f8-422978bd44ac',
-      'panel' => 'sidebar',
-      'type' => 'iasc_meeting.all_meeting',
-      'subtype' => 'iasc_meeting.all_meeting',
-      'shown' => TRUE,
-      'access' => array(),
-      'configuration' => array(),
-      'cache' => array(),
-      'style' => array(
-        'settings' => NULL,
-      ),
-      'css' => array(),
-      'extras' => array(),
-      'position' => 1,
-      'locks' => array(),
-      'uuid' => '8faec503-a4f7-4c85-a2f8-422978bd44ac',
-    );
   $overrides["panelizer_defaults.node:oa_section:calendar_section.display|content|new-9ea94d4c-567b-404f-9aec-386ae14a1aea"] = (object) array(
       'pid' => 'new-9ea94d4c-567b-404f-9aec-386ae14a1aea',
       'panel' => 'contentmain',
@@ -189,7 +171,7 @@ function iasc_configuration_features_override_default_overrides() {
   $overrides["panelizer_defaults.node:oa_section:calendar_section.display|panels|contentmain|1"] = 'new-9ea94d4c-567b-404f-9aec-386ae14a1aea';
   $overrides["panelizer_defaults.node:oa_section:calendar_section.display|panels|contentmain|2"] = 'new-078ef339-4031-483a-8dfb-8837db7d7d95';
   $overrides["panelizer_defaults.node:oa_section:calendar_section.display|panels|sidebar|0"] = 'new-5dea552f-a833-4443-b02e-883b4f59bf62';
-  $overrides["panelizer_defaults.node:oa_section:calendar_section.display|panels|sidebar|1"] = 'new-8faec503-a4f7-4c85-a2f8-422978bd44ac';
+  $overrides["panelizer_defaults.node:oa_section:calendar_section.display|panels|sidebar|1"]["DELETED"] = TRUE;
   $overrides["panelizer_defaults.node:oa_section:calendar_section.display|panels|sidebar|2"]["DELETED"] = TRUE;
   $overrides["panelizer_defaults.node:oa_section:calendar_section.display|title"] = 'Meetings';
   $overrides["panelizer_defaults.node:oa_section:oa_section_news.display|content|new-16ff2951-2241-4d47-b6d0-1ad702a78848"] = (object) array(
