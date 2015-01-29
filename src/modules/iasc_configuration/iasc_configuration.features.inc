@@ -106,7 +106,7 @@ function iasc_configuration_panelizer_defaults_override_alter(&$data) {
           ),
           'css' => array(),
           'extras' => array(),
-          'position' => 2,
+          'position' => 3,
           'locks' => array(),
           'uuid' => '078ef339-4031-483a-8dfb-8837db7d7d95',
         ); /* WAS: '' */
@@ -164,7 +164,7 @@ function iasc_configuration_panelizer_defaults_override_alter(&$data) {
           ),
           'css' => array(),
           'extras' => array(),
-          'position' => 1,
+          'position' => 2,
           'locks' => array(),
           'uuid' => '9ea94d4c-567b-404f-9aec-386ae14a1aea',
         ); /* WAS: '' */
@@ -205,13 +205,48 @@ function iasc_configuration_panelizer_defaults_override_alter(&$data) {
           ),
           'css' => array(),
           'extras' => array(),
-          'position' => 0,
+          'position' => 1,
           'locks' => array(),
           'uuid' => 'a8210476-3ab0-4ab6-974e-f511ec91f54b',
         ); /* WAS: '' */
-    $data['node:oa_section:calendar_section']->display->panels['contentmain'][0] = 'new-a8210476-3ab0-4ab6-974e-f511ec91f54b'; /* WAS: 'new-39b87a40-e27c-45b0-8bdf-6a9c3f117695' */
-    $data['node:oa_section:calendar_section']->display->panels['contentmain'][1] = 'new-9ea94d4c-567b-404f-9aec-386ae14a1aea'; /* WAS: '' */
-    $data['node:oa_section:calendar_section']->display->panels['contentmain'][2] = 'new-078ef339-4031-483a-8dfb-8837db7d7d95'; /* WAS: '' */
+    $data['node:oa_section:calendar_section']->display->content['new-c6abcc4f-8796-4c05-983b-8eabfd975206'] = (object) array(
+          'pid' => 'new-c6abcc4f-8796-4c05-983b-8eabfd975206',
+          'panel' => 'contentmain',
+          'type' => 'block',
+          'subtype' => 'iasc_meeting-meeting_login_cta',
+          'shown' => TRUE,
+          'access' => array(
+            'plugins' => array(
+              0 => array(
+                'name' => 'role',
+                'settings' => array(
+                  'rids' => array(
+                    0 => 1,
+                  ),
+                ),
+                'context' => 'logged-in-user',
+                'not' => FALSE,
+              ),
+            ),
+          ),
+          'configuration' => array(
+            'override_title' => 0,
+            'override_title_text' => '',
+          ),
+          'cache' => array(),
+          'style' => array(
+            'settings' => NULL,
+          ),
+          'css' => array(),
+          'extras' => array(),
+          'position' => 0,
+          'locks' => array(),
+          'uuid' => 'c6abcc4f-8796-4c05-983b-8eabfd975206',
+        ); /* WAS: '' */
+    $data['node:oa_section:calendar_section']->display->panels['contentmain'][0] = 'new-c6abcc4f-8796-4c05-983b-8eabfd975206'; /* WAS: 'new-39b87a40-e27c-45b0-8bdf-6a9c3f117695' */
+    $data['node:oa_section:calendar_section']->display->panels['contentmain'][1] = 'new-a8210476-3ab0-4ab6-974e-f511ec91f54b'; /* WAS: '' */
+    $data['node:oa_section:calendar_section']->display->panels['contentmain'][2] = 'new-9ea94d4c-567b-404f-9aec-386ae14a1aea'; /* WAS: '' */
+    $data['node:oa_section:calendar_section']->display->panels['contentmain'][3] = 'new-078ef339-4031-483a-8dfb-8837db7d7d95'; /* WAS: '' */
     $data['node:oa_section:calendar_section']->display->panels['sidebar'][0] = 'new-5dea552f-a833-4443-b02e-883b4f59bf62'; /* WAS: 'new-81942150-4ee9-4396-8371-b94f72b18f6a' */
     $data['node:oa_section:calendar_section']->display->panels['sidebar'][1] = 'new-8faec503-a4f7-4c85-a2f8-422978bd44ac'; /* WAS: 'new-5241f5c7-9e10-4e79-a1ce-84f68ad200f3' */
     $data['node:oa_section:calendar_section']->display->title = 'Meetings'; /* WAS: '%node:title' */
