@@ -370,7 +370,7 @@ function iasc_document_views_default_views() {
   );
   $handler->display->display_options['filters']['field_published_date_value_1']['form_type'] = 'date_popup';
   $handler->display->display_options['filters']['field_published_date_value_1']['year_range'] = '-10:+3';
-  /* Filter criterion: Content: Groups audience (og_group_ref) */
+  /* Filter criterion: Content: Authoring Bodies (og_group_ref) */
   $handler->display->display_options['filters']['og_group_ref_target_id']['id'] = 'og_group_ref_target_id';
   $handler->display->display_options['filters']['og_group_ref_target_id']['table'] = 'og_membership';
   $handler->display->display_options['filters']['og_group_ref_target_id']['field'] = 'og_group_ref_target_id';
@@ -502,11 +502,11 @@ function iasc_document_views_default_views() {
   $handler->display->display_options['filters']['title']['expose']['autocomplete_dependent'] = 0;
   $handler->display->display_options['path'] = 'resources';
 
-  /* Display: Recently Updated Documents */
-  $handler = $view->new_display('panel_pane', 'Recently Updated Documents', 'panel_pane_recent_docs');
+  /* Display: Recent Documents */
+  $handler = $view->new_display('panel_pane', 'Recent Documents', 'panel_pane_recent_docs');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Recently Updated Documents';
-  $handler->display->display_options['display_description'] = 'A list of recently updated documents without a filter or dropdown list';
+  $handler->display->display_options['display_description'] = 'A list of recently updated or published documents without a filter or dropdown list';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'list';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
@@ -531,6 +531,15 @@ function iasc_document_views_default_views() {
   $handler->display->display_options['sorts']['changed']['table'] = 'node';
   $handler->display->display_options['sorts']['changed']['field'] = 'changed';
   $handler->display->display_options['sorts']['changed']['order'] = 'DESC';
+  $handler->display->display_options['sorts']['changed']['exposed'] = TRUE;
+  $handler->display->display_options['sorts']['changed']['expose']['label'] = 'Updated date';
+  /* Sort criterion: Content: Published Date (field_published_date) */
+  $handler->display->display_options['sorts']['field_published_date_value']['id'] = 'field_published_date_value';
+  $handler->display->display_options['sorts']['field_published_date_value']['table'] = 'field_data_field_published_date';
+  $handler->display->display_options['sorts']['field_published_date_value']['field'] = 'field_published_date_value';
+  $handler->display->display_options['sorts']['field_published_date_value']['order'] = 'DESC';
+  $handler->display->display_options['sorts']['field_published_date_value']['exposed'] = TRUE;
+  $handler->display->display_options['sorts']['field_published_date_value']['expose']['label'] = 'Published Date';
   /* Sort criterion: Content: Title */
   $handler->display->display_options['sorts']['title']['id'] = 'title';
   $handler->display->display_options['sorts']['title']['table'] = 'node';
@@ -591,6 +600,16 @@ function iasc_document_views_default_views() {
   $handler = $view->new_display('panel_pane', 'Featured Products', 'panel_pane_featured_products');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Featured Products';
+  $handler->display->display_options['defaults']['use_more'] = FALSE;
+  $handler->display->display_options['use_more'] = TRUE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_always'] = TRUE;
+  $handler->display->display_options['defaults']['use_more_text'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'More';
+  $handler->display->display_options['defaults']['link_display'] = FALSE;
+  $handler->display->display_options['link_display'] = 'custom_url';
+  $handler->display->display_options['link_url'] = 'resources/iasc-products';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'list';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
@@ -686,7 +705,7 @@ function iasc_document_views_default_views() {
   $handler->display->display_options['allow']['items_per_page'] = 'items_per_page';
   $handler->display->display_options['allow']['offset'] = 0;
   $handler->display->display_options['allow']['link_to_view'] = 0;
-  $handler->display->display_options['allow']['more_link'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 'more_link';
   $handler->display->display_options['allow']['path_override'] = 0;
   $handler->display->display_options['allow']['title_override'] = 'title_override';
   $handler->display->display_options['allow']['exposed_form'] = 0;

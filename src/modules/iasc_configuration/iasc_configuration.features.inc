@@ -132,24 +132,6 @@ function iasc_configuration_panelizer_defaults_override_alter(&$data) {
           'locks' => array(),
           'uuid' => '5dea552f-a833-4443-b02e-883b4f59bf62',
         ); /* WAS: '' */
-    $data['node:oa_section:calendar_section']->display->content['new-8faec503-a4f7-4c85-a2f8-422978bd44ac'] = (object) array(
-          'pid' => 'new-8faec503-a4f7-4c85-a2f8-422978bd44ac',
-          'panel' => 'sidebar',
-          'type' => 'iasc_meeting.all_meeting',
-          'subtype' => 'iasc_meeting.all_meeting',
-          'shown' => TRUE,
-          'access' => array(),
-          'configuration' => array(),
-          'cache' => array(),
-          'style' => array(
-            'settings' => NULL,
-          ),
-          'css' => array(),
-          'extras' => array(),
-          'position' => 1,
-          'locks' => array(),
-          'uuid' => '8faec503-a4f7-4c85-a2f8-422978bd44ac',
-        ); /* WAS: '' */
     $data['node:oa_section:calendar_section']->display->content['new-9ea94d4c-567b-404f-9aec-386ae14a1aea'] = (object) array(
           'pid' => 'new-9ea94d4c-567b-404f-9aec-386ae14a1aea',
           'panel' => 'contentmain',
@@ -248,12 +230,12 @@ function iasc_configuration_panelizer_defaults_override_alter(&$data) {
     $data['node:oa_section:calendar_section']->display->panels['contentmain'][2] = 'new-9ea94d4c-567b-404f-9aec-386ae14a1aea'; /* WAS: '' */
     $data['node:oa_section:calendar_section']->display->panels['contentmain'][3] = 'new-078ef339-4031-483a-8dfb-8837db7d7d95'; /* WAS: '' */
     $data['node:oa_section:calendar_section']->display->panels['sidebar'][0] = 'new-5dea552f-a833-4443-b02e-883b4f59bf62'; /* WAS: 'new-81942150-4ee9-4396-8371-b94f72b18f6a' */
-    $data['node:oa_section:calendar_section']->display->panels['sidebar'][1] = 'new-8faec503-a4f7-4c85-a2f8-422978bd44ac'; /* WAS: 'new-5241f5c7-9e10-4e79-a1ce-84f68ad200f3' */
     $data['node:oa_section:calendar_section']->display->title = 'Meetings'; /* WAS: '%node:title' */
     unset($data['node:oa_section:calendar_section']->display->content['new-39b87a40-e27c-45b0-8bdf-6a9c3f117695']);
     unset($data['node:oa_section:calendar_section']->display->content['new-5241f5c7-9e10-4e79-a1ce-84f68ad200f3']);
     unset($data['node:oa_section:calendar_section']->display->content['new-81942150-4ee9-4396-8371-b94f72b18f6a']);
     unset($data['node:oa_section:calendar_section']->display->content['new-f7576cce-3df6-4498-89b5-77da59c5f99c']);
+    unset($data['node:oa_section:calendar_section']->display->panels['sidebar'][1]);
     unset($data['node:oa_section:calendar_section']->display->panels['sidebar'][2]);
   }
   if (isset($data['node:oa_section:oa_section_news'])) {
@@ -362,9 +344,9 @@ function iasc_configuration_panelizer_defaults_override_alter(&$data) {
               'keys' => '',
             ),
             'show_exposed_form' => 0,
-            'use_pager' => 0,
+            'use_pager' => 1,
             'pager_id' => 0,
-            'items_per_page' => 10,
+            'items_per_page' => 6,
             'view_settings' => 'fields',
             'header_type' => 'none',
             'view_mode' => 'teaser',
@@ -477,12 +459,14 @@ function iasc_configuration_panelizer_defaults_override_alter(&$data) {
             'items_per_page' => 5,
             'override_title' => '',
             'override_title_text' => '',
-            'widget_title' => 'Recent Documents',
+            'widget_title' => 'Recently Published Documents',
             'exposed' => array(
               'og_group_ref_target_id' => '',
               'og_group_ref_target_id_mine' => 0,
               'og_subspaces_view_all' => 1,
               'og_subspaces_view_parent' => 0,
+              'sort_order' => 'DESC',
+              'sort_by' => 'field_published_date_value',
             ),
           ),
           'cache' => array(),
