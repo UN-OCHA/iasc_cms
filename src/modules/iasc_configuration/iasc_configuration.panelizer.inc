@@ -373,12 +373,14 @@ function iasc_configuration_panelizer_defaults() {
       'view_settings' => 'fields',
       'header_type' => 'none',
       'view_mode' => 'teaser',
-      'widget_title' => 'Recent Documents',
+      'widget_title' => 'Recently Published Documents',
       'exposed' => array(
         'og_group_ref_target_id' => '',
         'og_group_ref_target_id_mine' => 0,
         'og_subspaces_view_all' => 1,
         'og_subspaces_view_parent' => 0,
+        'sort_order' => 'DESC',
+        'sort_by' => 'field_published_date_value',
       ),
     );
     $pane->cache = array();
@@ -725,12 +727,14 @@ function iasc_configuration_panelizer_defaults() {
       'view_settings' => 'fields',
       'header_type' => 'none',
       'view_mode' => 'teaser',
-      'widget_title' => 'Recent Documents',
+      'widget_title' => 'Recently Published Documents',
       'exposed' => array(
         'og_group_ref_target_id' => '',
         'og_group_ref_target_id_mine' => 0,
         'og_subspaces_view_all' => 1,
         'og_subspaces_view_parent' => 0,
+        'sort_order' => 'DESC',
+        'sort_by' => 'field_published_date_value',
       ),
     );
     $pane->cache = array();
