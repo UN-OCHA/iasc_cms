@@ -6,15 +6,13 @@ core = 7.x
 ; ******************** RELEASE *******************
 
 projects[oa_core][subdir] = contrib
-projects[oa_core][download][type] = git
-projects[oa_core][download][branch] = 7.x-2.x
-projects[oa_core][download][revision] = 295e7c3
+projects[oa_core][version] = 2.31
 
 ; ************************************************
 ; ************* Open Atrium Builtin Apps *********
 
 projects[oa_discussion][subdir] = apps
-projects[oa_discussion][version] = 2.23
+projects[oa_discussion][version] = 2.24
 
 projects[oa_events][subdir] = apps
 projects[oa_events][version] = 2.25
@@ -94,14 +92,14 @@ projects[oa_sandbox][subdir] = apps
 projects[oa_search][version] = 2.0
 projects[oa_search][subdir] = apps
 
-projects[oa_sitemap][version] = 2.0
+projects[oa_sitemap][version] = 2.1
 projects[oa_sitemap][subdir] = apps
 
 projects[oa_styles][version] = 2.0-rc2
 projects[oa_styles][subdir] = apps
 
 projects[oa_subspaces][subdir] = apps
-projects[oa_subspaces][version] = 2.22
+projects[oa_subspaces][version] = 2.24
 
 projects[oa_toolbar][version] = 2.0-rc2
 projects[oa_toolbar][subdir] = apps
