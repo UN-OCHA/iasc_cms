@@ -65,7 +65,9 @@
   <?php endif; ?>
 
   <?php if (!empty($meetings_link)): ?>
-    <?php print $meetings_link; ?>
+    <div class="meetings-link">
+      <?php print $meetings_link; ?>
+    </div>
   <?php endif; ?>
 
   <?php if ($attachment_after): ?>
