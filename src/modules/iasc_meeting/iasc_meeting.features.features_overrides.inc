@@ -807,6 +807,7 @@ function iasc_meeting_features_override_default_overrides() {
   $overrides["views_view.oa_event_list.display|default|display_options|exposed_form|type"] = 'oa_form';
   $overrides["views_view.oa_event_list.display|default|display_options|fields|field_oa_address"]["DELETED"] = TRUE;
   $overrides["views_view.oa_event_list.display|default|display_options|filters|field_oa_date_value|year_range"] = '-10:+3';
+  $overrides["views_view.oa_event_list.display|default|display_options|pager|options|items_per_page"] = 6;
   $overrides["views_view.oa_event_list.display|oa_calendar_month|display_options|allow|exposed_form_configure"]["DELETED"] = TRUE;
   $overrides["views_view.oa_event_list.display|oa_calendar_month|display_options|exposed_form_overrides"]["DELETED"] = TRUE;
   $overrides["views_view.oa_event_list.display|oa_events_ical|display_options|defaults|empty"] = FALSE;

@@ -377,6 +377,29 @@ function iasc_preprocess_views_view(&$vars) {
       }
     }
   }
+
+  if ('oa_event_list' == $vars['name']) {
+    if('panel_pane_upcoming_meetings_filterable' == $vars['display_id']) {
+      // Only show the View all Meetings link if the total rows is greater than the items per page.
+      if ($vars['view']->total_rows > $vars['view']->items_per_page ) {
+        $space_nid = $vars['view']->exposed_raw_input['og_group_ref_target_id'];
+        $path = drupal_get_path_alias("node/$space_nid");
+        $vars['meetings_link'] = l(
+          t('View all Meetings'),
+          "$path/meetings",
+          array(
+            'attributes' => array(
+              'class' => array(
+                'oa-buttons',
+                'btn',
+                'btn-inverse',
+              ),
+            )
+          )
+        );
+      }
+    }
+  }
 }
 
 /**
