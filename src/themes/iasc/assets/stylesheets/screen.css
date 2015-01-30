@@ -10571,20 +10571,22 @@ img.bio-circled {
 .view-iasc-document .views-widget-filter-field_category_tid {
   clear: left;
 }
+/* line 82, ../sass/components/_view.scss */
+.view-iasc-document .view-display-id-panel_pane_featured_products .more-link {
+  padding-top: 10px;
+}
 
 /* line 2, ../sass/components/_views-events.scss */
 .view-display-id-panel_pane_space_meetings,
 .view-oa-event-list {
   margin-bottom: 40px;
 }
-/* line 15, ../../../../../../../../.rvm/gems/ruby-2.0.0-p598/gems/bootstrap-sass-3.3.1.0/assets/stylesheets/bootstrap/mixins/_clearfix.scss */
 .view-display-id-panel_pane_space_meetings:before, .view-display-id-panel_pane_space_meetings:after,
 .view-oa-event-list:before,
 .view-oa-event-list:after {
   content: " ";
   display: table;
 }
-/* line 19, ../../../../../../../../.rvm/gems/ruby-2.0.0-p598/gems/bootstrap-sass-3.3.1.0/assets/stylesheets/bootstrap/mixins/_clearfix.scss */
 .view-display-id-panel_pane_space_meetings:after,
 .view-oa-event-list:after {
   clear: both;
