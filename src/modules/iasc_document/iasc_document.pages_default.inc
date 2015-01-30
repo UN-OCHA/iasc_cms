@@ -298,7 +298,7 @@ function iasc_document_default_page_manager_pages() {
       ),
       'more_link' => 0,
       'use_pager' => 1,
-      'pager_id' => '1',
+      'pager_id' => '2',
       'items_per_page' => '10',
       'override_title' => '',
       'override_title_text' => '',
