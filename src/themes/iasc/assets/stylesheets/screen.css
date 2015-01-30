@@ -10620,3 +10620,8 @@ img.bio-circled {
     clear: left;
   }
 }
+/* line 26, ../sass/components/_views-events.scss */
+.view-display-id-panel_pane_space_meetings .meetings-link,
+.view-oa-event-list .meetings-link {
+  clear: left;
+}
