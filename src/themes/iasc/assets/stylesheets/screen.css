@@ -10572,7 +10572,7 @@ img.bio-circled {
   clear: left;
 }
 /* line 82, ../sass/components/_view.scss */
-.view-iasc-document .view-display-id-panel_pane_featured_products .more-link {
+.view-iasc-document.view-display-id-panel_pane_featured_products .more-link {
   padding-top: 10px;
 }
 
