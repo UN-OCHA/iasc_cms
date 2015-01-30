@@ -150,9 +150,9 @@ projects[views][patch][1735096] = http://drupal.org/files/1735096-views-mltiple-
 ; fixes "Notice: Undefined index: data in views_plugin_cache->restore_headers()"
 projects[views][patch][2272439] = https://www.drupal.org/files/issues/views-views-undefined_index_data-2272439-18.patch
 
-projects[securelogin][type] = module
-projects[securelogin][subdir] = contrib
-projects[securelogin][version] = 1.4
+projects[securepages][type] = module
+projects[securepages][subdir] = contrib
+projects[securepages][version] = 1.0-beta2
 
 ; Override location of respond.js library file
 libraries[respondjs][download][type] = get

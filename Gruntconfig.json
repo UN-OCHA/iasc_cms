@@ -3,19 +3,12 @@
     "make": "src/make/iasc.make",
     "drupal": "src"
   },
-  "phpcs": {
-    "path": "bin/phpcs",
-    "standard": "vendor/drupal/coder/coder_sniffer/Drupal"
-  },
   "buildPaths": {
     "build": "build",
     "html": "build/html",
-    "profile": "src/profiles",
-    "custom_theme": "src/themes",
-    "modules": "build/html/sites/all/modules",
-    "themes": "build/html/sites/all/themes",
-    "libraries": "build/html/sites/all/libraries",
-    "reports": "build/reports"
+    "package": "build/packages",
+    "reports": "build/reports",
+    "temp": "build/temp"
   },
   "siteUrls": {
     "default": "http://iasc.local"
@@ -25,11 +18,18 @@
     "projFiles": ["README*", "bin/**"]
   },
   "phpcs": {
-    "path": "bin/phpcs",
-    "standard": "vendor/drupal/coder/coder_sniffer/Drupal"
+    "path": "bin/phpcs"
   },
   "phpmd": {
     "path": "bin/phpmd"
   },
-  "compassConfig": {}
+  "drush": {
+    "cmd": "bin/drush",
+    "make": {
+      "args": ["--concurrency=16"]
+    }
+  },
+  "behat": {
+    "flags": "--tags ~@wip"
+  }
 }
