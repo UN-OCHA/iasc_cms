@@ -7,6 +7,53 @@
 include_once 'iasc_document.features.inc';
 
 /**
+ * Implements hook_theme().
+ */
+function iasc_document_theme($existing, $type, $theme, $path) {
+  $theme = array(
+    'document_login_cta' => array(
+      'template' => 'document-login-cta',
+      'path' => drupal_get_path('module', 'iasc_document') . '/templates',
+      'variables' => array(
+        'dest' => '',
+      ),
+    ),
+  );
+
+  return $theme;
+}
+
+/**
+ * Implements hook_block_info().
+ */
+function iasc_document_block_info() {
+  $blocks['document_login_cta'] = array(
+    'info' => t('Document - Login CTA'),
+  );
+
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function iasc_document_block_view($delta = '') {
+  $block = array();
+
+  switch ($delta) {
+    case 'document_login_cta':
+      $block['subject'] = NULL;
+      $dest = drupal_get_path_alias();
+      $block['content'] = array(
+        '#theme' => 'document_login_cta',
+        '#dest' => drupal_get_path_alias(),
+      );
+      break;
+  }
+  return $block;
+}
+
+/**
  * Implements hook_form_BASE_FORM_ID_alter().
  */
 function iasc_document_form_node_form_alter(&$form, &$form_state, $form_id) {

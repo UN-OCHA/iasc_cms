@@ -57,6 +57,41 @@ function iasc_configuration_panelizer_defaults() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
+    $pane->pid = 'new-f4af1c20-58a4-4a65-a600-c2e8bbb8712a';
+    $pane->panel = 'contentmain';
+    $pane->type = 'block';
+    $pane->subtype = 'iasc_document-document_login_cta';
+    $pane->shown = TRUE;
+    $pane->access = array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'role',
+          'settings' => array(
+            'rids' => array(
+              0 => 1,
+            ),
+          ),
+          'context' => 'logged-in-user',
+          'not' => FALSE,
+        ),
+      ),
+    );
+    $pane->configuration = array(
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'f4af1c20-58a4-4a65-a600-c2e8bbb8712a';
+    $display->content['new-f4af1c20-58a4-4a65-a600-c2e8bbb8712a'] = $pane;
+    $display->panels['contentmain'][0] = 'new-f4af1c20-58a4-4a65-a600-c2e8bbb8712a';
+    $pane = new stdClass();
     $pane->pid = 'new-1c4dd840-ad97-4b85-9c82-84aee3c81846';
     $pane->panel = 'contentmain';
     $pane->type = 'views_panes';
@@ -88,11 +123,11 @@ function iasc_configuration_panelizer_defaults() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 0;
+    $pane->position = 1;
     $pane->locks = array();
     $pane->uuid = '1c4dd840-ad97-4b85-9c82-84aee3c81846';
     $display->content['new-1c4dd840-ad97-4b85-9c82-84aee3c81846'] = $pane;
-    $display->panels['contentmain'][0] = 'new-1c4dd840-ad97-4b85-9c82-84aee3c81846';
+    $display->panels['contentmain'][1] = 'new-1c4dd840-ad97-4b85-9c82-84aee3c81846';
     $pane = new stdClass();
     $pane->pid = 'new-716125fd-8938-4b64-b1ca-076d3b55c7b8';
     $pane->panel = 'sidebar';
