@@ -119,6 +119,7 @@ a.menu { @extend .dropdown-toggle; }
       font-size: $font-size-h4;
       vertical-align: middle;
       padding-left: 6px;
+      font-family: $font-family-sans-serif;
     }
     &:hover { color: lighten($brand-primary, 10%);
     }
