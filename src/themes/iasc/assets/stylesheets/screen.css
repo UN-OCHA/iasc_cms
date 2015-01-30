@@ -10303,19 +10303,23 @@ img.bio-circled {
   text-transform: uppercase;
 }
 
-/* line 17, ../sass/components/_panel.scss */
+/* line 16, ../sass/components/_panel.scss */
+.panel-secondary .more-link {
+  clear: both;
+}
+/* line 18, ../sass/components/_panel.scss */
 .panel-secondary .more-link a {
   background-color: #d9190a;
   border: 0;
   color: white;
 }
-/* line 23, ../sass/components/_panel.scss */
+/* line 24, ../sass/components/_panel.scss */
 .panel-secondary .more-link a:hover {
   background-color: #d9190a;
   color: white;
 }
 
-/* line 36, ../sass/components/_panel.scss */
+/* line 37, ../sass/components/_panel.scss */
 .panel-secondary.panel-success.doc-icon .menu li,
 .panel-secondary.panel-success.doc-icon .views-row,
 .panel-secondary.panel-success.doc-icon .field-item, .panel-secondary.panel-success.arrow .menu li,
@@ -10330,13 +10334,13 @@ img.bio-circled {
   position: relative;
   padding-left: 30px;
 }
-/* line 43, ../sass/components/_panel.scss */
+/* line 44, ../sass/components/_panel.scss */
 .panel-secondary.panel-success li,
 .panel-secondary.panel-info li {
   line-height: 20px;
   margin-bottom: 15px;
 }
-/* line 48, ../sass/components/_panel.scss */
+/* line 49, ../sass/components/_panel.scss */
 .panel-secondary.panel-success.doc-icon a:before, .panel-secondary.panel-success.arrow a:before,
 .panel-secondary.panel-info.doc-icon a:before,
 .panel-secondary.panel-info.arrow a:before {
@@ -10347,49 +10351,49 @@ img.bio-circled {
   text-decoration: none;
 }
 
-/* line 59, ../sass/components/_panel.scss */
+/* line 60, ../sass/components/_panel.scss */
 .panel-primary .panel-heading, .panel-primary .view-display-id-panel_pane_membership_logos h4, .view-display-id-panel_pane_membership_logos .panel-primary h4 {
   text-align: center;
 }
 
-/* line 63, ../sass/components/_panel.scss */
+/* line 64, ../sass/components/_panel.scss */
 .panel-success .btn, .panel-success .node-readmore a, .node-readmore .panel-success a, .panel-success #mc-embedded-subscribe, .panel-success .panel-secondary .more-link a, .panel-secondary .more-link .panel-success a, .panel-success .facetapi-limit-link {
   background-color: #00817b;
 }
-/* line 64, ../sass/components/_panel.scss */
+/* line 65, ../sass/components/_panel.scss */
 .panel-success a {
   color: #000;
 }
-/* line 65, ../sass/components/_panel.scss */
+/* line 66, ../sass/components/_panel.scss */
 .panel-success a:before {
   color: #6b0326;
 }
 
-/* line 69, ../sass/components/_panel.scss */
+/* line 70, ../sass/components/_panel.scss */
 .panel-info .views-row {
   margin-bottom: 20px;
 }
-/* line 72, ../sass/components/_panel.scss */
+/* line 73, ../sass/components/_panel.scss */
 .panel-info a {
   color: #d9190a;
 }
-/* line 73, ../sass/components/_panel.scss */
+/* line 74, ../sass/components/_panel.scss */
 .panel-info a:before {
   color: #d9190a;
 }
 
-/* line 76, ../sass/components/_panel.scss */
+/* line 77, ../sass/components/_panel.scss */
 .well {
   border: 0;
   border-radius: 0;
   overflow: visible !important;
 }
-/* line 81, ../sass/components/_panel.scss */
+/* line 82, ../sass/components/_panel.scss */
 .node-type-announcement .well .panel-separator {
   margin-bottom: 10px;
 }
 
-/* line 91, ../sass/components/_panel.scss */
+/* line 92, ../sass/components/_panel.scss */
 .node-type-announcement h1.title,
 .page-page-not-found h1.title,
 .node-type-oa-event h1.title,
@@ -10397,12 +10401,12 @@ img.bio-circled {
   display: none;
 }
 
-/* line 94, ../sass/components/_panel.scss */
+/* line 95, ../sass/components/_panel.scss */
 .ui-widget-overlay.ui-front {
   z-index: 2000;
 }
 
-/* line 98, ../sass/components/_panel.scss */
+/* line 99, ../sass/components/_panel.scss */
 .ui-dialog.linkit-wrapper {
   background: white;
   z-index: 2000;
