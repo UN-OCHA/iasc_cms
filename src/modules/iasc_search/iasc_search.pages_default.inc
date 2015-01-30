@@ -16,7 +16,10 @@ function iasc_search_default_page_manager_pages() {
   $page->admin_title = 'Apache Solr';
   $page->admin_description = '';
   $page->path = 'site/search/!query';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array();
   $page->arguments = array(
     'query' => array(
@@ -357,7 +360,7 @@ function iasc_search_default_page_manager_pages() {
     $pane->panel = 'sidebar';
     $pane->type = 'block';
     $pane->subtype = 'facetapi-GiIy4zr9Gu0ZSa0bumw1Y9qIIpIDf1wu';
-    $pane->shown = FALSE;
+    $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
       'context' => 'argument_string_1',
@@ -380,7 +383,7 @@ function iasc_search_default_page_manager_pages() {
     $pane->panel = 'sidebar';
     $pane->type = 'block';
     $pane->subtype = 'facetapi-CpjIe0iO04QY4VGdG5PfZfBQqRWCmc4G';
-    $pane->shown = FALSE;
+    $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
       'context' => 'argument_string_1',
@@ -403,7 +406,7 @@ function iasc_search_default_page_manager_pages() {
     $pane->panel = 'sidebar';
     $pane->type = 'block';
     $pane->subtype = 'facetapi-rdivo01SKN5F1E4FueqZJl3JRX19bxQ4';
-    $pane->shown = FALSE;
+    $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
       'context' => 'argument_string_1',
@@ -426,7 +429,7 @@ function iasc_search_default_page_manager_pages() {
     $pane->panel = 'sidebar';
     $pane->type = 'block';
     $pane->subtype = 'facetapi-4Zh0ggJMBgeeYbrLPJCe8EML3A6PLE0J';
-    $pane->shown = FALSE;
+    $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
       'context' => 'argument_string_1',
@@ -449,7 +452,7 @@ function iasc_search_default_page_manager_pages() {
     $pane->panel = 'sidebar';
     $pane->type = 'block';
     $pane->subtype = 'facetapi-4tlFBXQsusEWPvDYbaIuku11CSsa9PaJ';
-    $pane->shown = FALSE;
+    $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
       'context' => 'argument_string_1',
@@ -472,7 +475,7 @@ function iasc_search_default_page_manager_pages() {
     $pane->panel = 'sidebar';
     $pane->type = 'block';
     $pane->subtype = 'facetapi-Twu0IoflQ0tCVFvfi2LFrGPGO28QTKg2';
-    $pane->shown = FALSE;
+    $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
       'context' => 'argument_string_1',
@@ -495,7 +498,7 @@ function iasc_search_default_page_manager_pages() {
     $pane->panel = 'sidebar';
     $pane->type = 'block';
     $pane->subtype = 'facetapi-CoAiUJ4oF1m1W4ZI3N00oQL1yBDDz2zJ';
-    $pane->shown = FALSE;
+    $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
       'context' => 'argument_string_1',
