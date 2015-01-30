@@ -462,3 +462,35 @@ function iasc_document_strongarm_alter(&$data) {
     $data['node_submitted_oa_wiki_page']->value = 0; /* WAS: 1 */
   }
 }
+
+/**
+ * Implements hook_image_default_styles().
+ */
+function iasc_document_image_default_styles() {
+  $styles = array();
+
+  // Exported image style: featured_product_thumbnail.
+  $styles['featured_product_thumbnail'] = array(
+    'name' => 'featured_product_thumbnail',
+    'label' => 'Featured Product Thumbnail',
+    'effects' => array(
+      1 => array(
+        'label' => 'Scale and crop',
+        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
+        'effect callback' => 'image_scale_and_crop_effect',
+        'dimensions callback' => 'image_resize_dimensions',
+        'form callback' => 'image_resize_form',
+        'summary theme' => 'image_resize_summary',
+        'module' => 'image',
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 122,
+          'height' => 185,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  return $styles;
+}

@@ -640,7 +640,7 @@ function iasc_document_views_default_views() {
   $handler->display->display_options['fields']['field_product_thumbnail']['element_wrapper_class'] = 'product-thumbnail';
   $handler->display->display_options['fields']['field_product_thumbnail']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_product_thumbnail']['settings'] = array(
-    'image_style' => '',
+    'image_style' => 'featured_product_thumbnail',
     'image_link' => 'content',
   );
   /* Field: Content: Title */
