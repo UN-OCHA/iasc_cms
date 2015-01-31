@@ -1,7 +1,4 @@
 .view-display-id-panel_pane_membership_logos {
-  // remove padding and color from parent
-  // margin: -20px -30px; 
-  // background: #fff;
   h4 {
     @extend .panel-heading;
     background-color: $brand-primary;
@@ -14,6 +11,7 @@
     @extend .panel-body;
     background-color: $panel-bg;
     margin-bottom: 20px;
+    padding: 10px 20px;
     li {
       position: relative;
       float: left; 
