@@ -409,3 +409,28 @@ function iasc_preprocess_search_result(&$vars) {
   // Empty the author and date string.
   $vars['info'] = '';
 }
+
+/**
+ * Implements theme_apachesolr_panels_info().
+ *
+ * Override themed search result information.
+ */
+function iasc_apachesolr_panels_info($variables) {
+  $response = $variables['response'];
+  $search = $variables['search'];
+  if ($total = $response->response->numFound) {
+    $start = $response->response->start + 1;
+    $end = $response->response->start + count($response->response->docs);
+
+    if (!empty($search['keys'])) {
+      $info = t('Results %start - %end of %total for %keys', array('%start' => $start, '%end' => $end, '%total' => $total, '%keys' => $search['keys']));
+      $info .= t('.<br />To narrow your search, click on the facets located below the heading "Filter Search Results". To broaden your search, reset selected facets by clicking (-) next to each selected facet.');
+    }
+    else {
+      $info = t('Results %start - %end of %total', array('%start' => $start, '%end' => $end, '%total' => $total));
+      $info .= t('.<br />To narrow your search, click on the facets located below the heading "Filter Search Results". To broaden your search, reset selected facets by clicking (-) next to each selected facet.');
+    }
+
+    return $info;
+  }
+}
