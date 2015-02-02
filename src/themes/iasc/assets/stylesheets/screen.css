@@ -9747,6 +9747,7 @@ header.header .search-form {
 .view-display-id-panel_pane_membership_logos ul {
   background-color: #f1f4ff;
   margin-bottom: 20px;
+  padding: 10px 20px;
 }
 /* line 15, ../../../../../../../../.rvm/gems/ruby-2.0.0-p598/gems/bootstrap-sass-3.3.1.0/assets/stylesheets/bootstrap/mixins/_clearfix.scss */
 .view-display-id-panel_pane_membership_logos ul:before, .view-display-id-panel_pane_membership_logos ul:after {
