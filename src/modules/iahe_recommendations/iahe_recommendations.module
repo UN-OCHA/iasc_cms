@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the IAHE Recommendations feature.
+ */
+
+include_once 'iahe_recommendations.features.inc';
