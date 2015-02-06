@@ -125,47 +125,6 @@ function iasc_configuration_features_override_default_overrides() {
       'locks' => array(),
       'uuid' => '9ea94d4c-567b-404f-9aec-386ae14a1aea',
     );
-  $overrides["panelizer_defaults.node:oa_section:calendar_section.display|content|new-a8210476-3ab0-4ab6-974e-f511ec91f54b"] = (object) array(
-      'pid' => 'new-a8210476-3ab0-4ab6-974e-f511ec91f54b',
-      'panel' => 'contentmain',
-      'type' => 'views_panes',
-      'subtype' => 'oa_event_list-panel_pane_upcoming_meetings_filterable',
-      'shown' => TRUE,
-      'access' => array(),
-      'configuration' => array(
-        'exposed' => array(
-          'field_oa_date_value' => array(
-            'value' => '2014-12-01',
-          ),
-          'field_oa_date_value_1' => array(
-            'value' => '2015-07-01',
-          ),
-          'field_city_value' => '',
-          'og_group_ref_target_id' => '',
-          'og_group_ref_target_id_mine' => 0,
-          'og_subspaces_view_all' => 1,
-          'og_subspaces_view_parent' => 0,
-          'oa_section_ref_target_id' => 'All',
-          'keys' => '',
-        ),
-        'use_pager' => 1,
-        'pager_id' => 0,
-        'items_per_page' => 10,
-        'view_settings' => 'fields',
-        'header_type' => 'none',
-        'view_mode' => 'teaser',
-        'show_exposed_form' => 0,
-      ),
-      'cache' => array(),
-      'style' => array(
-        'settings' => NULL,
-      ),
-      'css' => array(),
-      'extras' => array(),
-      'position' => 1,
-      'locks' => array(),
-      'uuid' => 'a8210476-3ab0-4ab6-974e-f511ec91f54b',
-    );
   $overrides["panelizer_defaults.node:oa_section:calendar_section.display|content|new-c6abcc4f-8796-4c05-983b-8eabfd975206"] = (object) array(
       'pid' => 'new-c6abcc4f-8796-4c05-983b-8eabfd975206',
       'panel' => 'contentmain',
@@ -201,8 +160,49 @@ function iasc_configuration_features_override_default_overrides() {
       'uuid' => 'c6abcc4f-8796-4c05-983b-8eabfd975206',
     );
   $overrides["panelizer_defaults.node:oa_section:calendar_section.display|content|new-f7576cce-3df6-4498-89b5-77da59c5f99c"]["DELETED"] = TRUE;
+  $overrides["panelizer_defaults.node:oa_section:calendar_section.display|content|new-fad8e5e6-4911-4a2e-ba23-b5cc386d98cd"] = (object) array(
+      'pid' => 'new-fad8e5e6-4911-4a2e-ba23-b5cc386d98cd',
+      'panel' => 'contentmain',
+      'type' => 'views_panes',
+      'subtype' => 'oa_event_list-panel_pane_upcoming_meetings_filterable',
+      'shown' => TRUE,
+      'access' => array(),
+      'configuration' => array(
+        'exposed' => array(
+          'field_oa_date_value' => array(
+            'value' => '2015-02-01',
+          ),
+          'field_oa_date_value_1' => array(
+            'value' => NULL,
+          ),
+          'field_city_value' => '',
+          'og_group_ref_target_id' => '',
+          'og_group_ref_target_id_mine' => 0,
+          'og_subspaces_view_all' => 1,
+          'og_subspaces_view_parent' => 0,
+          'oa_section_ref_target_id' => '',
+          'keys' => '',
+        ),
+        'show_exposed_form' => 0,
+        'use_pager' => 0,
+        'pager_id' => 0,
+        'items_per_page' => 0,
+        'view_settings' => 'fields',
+        'header_type' => 'none',
+        'view_mode' => 'teaser',
+      ),
+      'cache' => array(),
+      'style' => array(
+        'settings' => NULL,
+      ),
+      'css' => array(),
+      'extras' => array(),
+      'position' => 1,
+      'locks' => array(),
+      'uuid' => 'fad8e5e6-4911-4a2e-ba23-b5cc386d98cd',
+    );
   $overrides["panelizer_defaults.node:oa_section:calendar_section.display|panels|contentmain|0"] = 'new-c6abcc4f-8796-4c05-983b-8eabfd975206';
-  $overrides["panelizer_defaults.node:oa_section:calendar_section.display|panels|contentmain|1"] = 'new-a8210476-3ab0-4ab6-974e-f511ec91f54b';
+  $overrides["panelizer_defaults.node:oa_section:calendar_section.display|panels|contentmain|1"] = 'new-fad8e5e6-4911-4a2e-ba23-b5cc386d98cd';
   $overrides["panelizer_defaults.node:oa_section:calendar_section.display|panels|contentmain|2"] = 'new-9ea94d4c-567b-404f-9aec-386ae14a1aea';
   $overrides["panelizer_defaults.node:oa_section:calendar_section.display|panels|contentmain|3"] = 'new-078ef339-4031-483a-8dfb-8837db7d7d95';
   $overrides["panelizer_defaults.node:oa_section:calendar_section.display|panels|sidebar|0"] = 'new-5dea552f-a833-4443-b02e-883b4f59bf62';

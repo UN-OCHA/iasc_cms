@@ -53,6 +53,7 @@ features[features_overrides][] = panelizer_defaults.node:oa_section:calendar_sec
 features[features_overrides][] = panelizer_defaults.node:oa_section:calendar_section.display|content|new-a8210476-3ab0-4ab6-974e-f511ec91f54b
 features[features_overrides][] = panelizer_defaults.node:oa_section:calendar_section.display|content|new-c6abcc4f-8796-4c05-983b-8eabfd975206
 features[features_overrides][] = panelizer_defaults.node:oa_section:calendar_section.display|content|new-f7576cce-3df6-4498-89b5-77da59c5f99c
+features[features_overrides][] = panelizer_defaults.node:oa_section:calendar_section.display|content|new-fad8e5e6-4911-4a2e-ba23-b5cc386d98cd
 features[features_overrides][] = panelizer_defaults.node:oa_section:calendar_section.display|panels|contentmain|0
 features[features_overrides][] = panelizer_defaults.node:oa_section:calendar_section.display|panels|contentmain|1
 features[features_overrides][] = panelizer_defaults.node:oa_section:calendar_section.display|panels|contentmain|2
@@ -166,5 +167,5 @@ features_exclude[features_overrides][page_manager_pages.panels_customerror_404.d
 features_exclude[features_overrides][page_manager_pages.panels_customerror_404.default_handlers|page_panels_customerror_404_panel_context|conf|display|panels|contentmain] = page_manager_pages.pan
 features_exclude[features_overrides][page_manager_pages.panels_customerror_404.default_handlers|page_panels_customerror_404_panel_context|conf|display|layout] = page_manager_pages.panels_customer
 features_exclude[features_overrides][page_manager_pages.panels_customerror_404.default_handlers|page_panels_customerror_404_panel_context|conf|display|panel_settings|style_settings|contentmain] = features_exclude[features_overrides][page_manager_pages.panels_customerror_404.default_handlers|page_panels_customerror_404_panel_context|conf|display|panels|middle] = page_manager_pages.panels_c
-mtime = 1422555788
+mtime = 1422950851
 project path = sites/all/modules/custom
