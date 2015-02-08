@@ -9,7 +9,7 @@
 ?>
 
 <div class="input-append">
-  <div style="display:inline-block">
+  <div class="wrapper">
       <?php print drupal_render($element['apachesolr_panels_search_form']); ?>
   </div>
   <div class="btn-group">

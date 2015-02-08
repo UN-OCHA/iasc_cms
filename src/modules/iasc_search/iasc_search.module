@@ -24,6 +24,9 @@ function iasc_search_form_alter(&$form, &$form_state, $form_id) {
     // Make our apachesolr search form look like the OA toolbar version.
     $form['#theme'] = 'iasc_search_form_toolbar';
     $form['apachesolr_panels_search_form']['#attributes']['class'][] = 'search-text';
+    $form['#attached']['css'] = array(
+        drupal_get_path('module', 'iasc_search') . '/css/search_toolbar.css',
+    );
   }
 }
 
