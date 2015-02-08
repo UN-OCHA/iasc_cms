@@ -11,10 +11,19 @@ include_once 'iasc_search.features.inc';
  */
 function iasc_search_form_alter(&$form, &$form_state, $form_id) {
   if (('search_form' == $form_id) || ('search_theme_form' == $form_id)) {
+    $form['#action'] = '/site/search/';
     $form['#submit'] = array('iasc_search_all_form_submit');
     if (!empty($form['basic']['keys'])) {
       $form['basic']['keys']['#size'] = '';
     }
+  }
+
+  // Override the OA search toolbar. We want to use our panelized version for site search as the action and we don't want the
+  // dropdown options.
+  if ('apachesolr_panels_search_form' == $form_id && (FALSE === strpos($form['#action'], '/site/search/'))) {
+    // Make our apachesolr search form look like the OA toolbar version.
+    $form['#theme'] = 'iasc_search_form_toolbar';
+    $form['apachesolr_panels_search_form']['#attributes']['class'][] = 'search-text';
   }
 }
 
@@ -23,9 +32,7 @@ function iasc_search_form_alter(&$form, &$form_state, $form_id) {
  */
 function iasc_search_all_form_submit($form, &$form_state) {
   $keys = trim($form_state['values']['keys']);
-  $module = !empty($form_state['values']['module']) ? $form_state['values']['module'] : 'site';
-  $module = ($module === 'node') ? 'site' : $module;
-  $form_state['redirect'] = array($module . '/search/' . $keys);
+  $form_state['redirect'] = 'site/search/' . $keys;
 }
 
 /**
@@ -69,6 +76,11 @@ function iasc_search_theme($existing, $type, $theme, $path) {
       'variables' => array(
         'dest' => '',
       ),
+    ),
+    'iasc_search_form_toolbar' => array(
+      'template' => 'iasc-search-form-toolbar',
+      'render element' => 'element',
+      'path' => drupal_get_path('module', 'iasc_search') . '/templates',
     ),
   );
 
