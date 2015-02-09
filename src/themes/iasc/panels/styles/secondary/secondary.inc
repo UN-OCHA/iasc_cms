@@ -37,6 +37,9 @@ function theme_iasc_secondary_style_render_pane(&$vars) {
     return;
   }
 
+  if (!empty($content->css_class)) {
+    $class[] = $content->css_class;
+  }
   $class[] = 'panel panel-default panel-secondary';
   $class[] = $settings['secondary_options'];
 

@@ -10814,6 +10814,11 @@ img.bio-circled {
   z-index: 2000;
 }
 
+/* line 105, ../sass/components/_panel.scss */
+.section-menu .space-title a {
+  color: black;
+}
+
 /* line 3, ../sass/components/_search.scss */
 .page-search-node .well:before,
 .page-site-search .well:before {
