@@ -121,7 +121,8 @@ a.menu { @extend .dropdown-toggle; }
       padding-left: 6px;
       font-family: $font-family-sans-serif;
     }
-    &:hover { color: lighten($brand-primary, 10%);
+    &:hover,
+    &:active { color: lighten($brand-primary, 10%);
     }
   }
 
