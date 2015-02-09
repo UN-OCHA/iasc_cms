@@ -52,7 +52,7 @@ function iasc_configuration_panelizer_defaults() {
     ),
   );
   $display->cache = array();
-  $display->title = 'Documents';
+  $display->title = 'Documents of %node:og_group_ref';
   $display->uuid = '4da17148-a7a9-4da8-a9bf-ef168121174a';
   $display->content = array();
   $display->panels = array();
@@ -144,7 +144,10 @@ function iasc_configuration_panelizer_defaults() {
       ),
       'style' => 'secondary',
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'section-menu',
+    );
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();

@@ -100,7 +100,10 @@ function iasc_configuration_features_override_default_overrides() {
         ),
         'style' => 'secondary',
       ),
-      'css' => array(),
+      'css' => array(
+        'css_id' => '',
+        'css_class' => 'section-menu',
+      ),
       'extras' => array(),
       'position' => 0,
       'locks' => array(),
@@ -208,7 +211,7 @@ function iasc_configuration_features_override_default_overrides() {
   $overrides["panelizer_defaults.node:oa_section:calendar_section.display|panels|sidebar|0"] = 'new-5dea552f-a833-4443-b02e-883b4f59bf62';
   $overrides["panelizer_defaults.node:oa_section:calendar_section.display|panels|sidebar|1"]["DELETED"] = TRUE;
   $overrides["panelizer_defaults.node:oa_section:calendar_section.display|panels|sidebar|2"]["DELETED"] = TRUE;
-  $overrides["panelizer_defaults.node:oa_section:calendar_section.display|title"] = 'Meetings';
+  $overrides["panelizer_defaults.node:oa_section:calendar_section.display|title"] = 'Meetings of %node:og_group_ref';
   $overrides["panelizer_defaults.node:oa_section:oa_section_news.display|content|new-16ff2951-2241-4d47-b6d0-1ad702a78848"] = (object) array(
       'pid' => 'new-16ff2951-2241-4d47-b6d0-1ad702a78848',
       'panel' => 'contentmain',
@@ -273,7 +276,10 @@ function iasc_configuration_features_override_default_overrides() {
         ),
         'style' => 'secondary',
       ),
-      'css' => array(),
+      'css' => array(
+        'css_id' => '',
+        'css_class' => 'section-menu',
+      ),
       'extras' => array(),
       'position' => 0,
       'locks' => array(),
@@ -287,7 +293,7 @@ function iasc_configuration_features_override_default_overrides() {
   $overrides["panelizer_defaults.node:oa_section:oa_section_news.display|panels|contentmain|2"]["DELETED"] = TRUE;
   $overrides["panelizer_defaults.node:oa_section:oa_section_news.display|panels|sidebar|0"] = 'new-9af9cc15-2fcb-4960-8d6e-276c1e3ba12f';
   $overrides["panelizer_defaults.node:oa_section:oa_section_news.display|panels|sidebar|1"]["DELETED"] = TRUE;
-  $overrides["panelizer_defaults.node:oa_section:oa_section_news.display|title"] = 'News';
+  $overrides["panelizer_defaults.node:oa_section:oa_section_news.display|title"] = 'News of %node:og_group_ref';
   $overrides["panelizer_defaults.node:oa_space:default.display|content|new-02b7adcf-d6d0-41cc-9e74-71ce68194477"] = (object) array(
       'pid' => 'new-02b7adcf-d6d0-41cc-9e74-71ce68194477',
       'panel' => 'contentmain',
