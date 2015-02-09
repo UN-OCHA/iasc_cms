@@ -21,7 +21,8 @@
       background-color: $red;
       border: 0; 
       color: $white;
-      &:hover {
+      &:hover,
+      &:active {
         background-color: $red;
         color: $white;
       }

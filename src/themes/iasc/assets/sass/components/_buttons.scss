@@ -35,7 +35,8 @@ form .form-actions .node-readmore a,
       vertical-align: top;
       font-weight: normal;
     }
-    &:hover {
+    &:hover,
+    &:active {
       background: darken($brand-tertiary, 10%);
     }
   }
@@ -57,7 +58,8 @@ form .form-actions .node-readmore a,
       margin-left: 10px;
       vertical-align: top;
     }
-    &:hover {
+    &:hover,
+    &:active {
       background: #af1407;
     }
   }

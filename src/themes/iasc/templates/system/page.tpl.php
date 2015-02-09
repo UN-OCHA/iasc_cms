@@ -10,7 +10,7 @@
  * @see html.tpl.php\
  */
 ?>
-<header class="header"><div class="container">
+<header class="header" ontouchstart=""><div class="container">
   <div class="top clearfix">
     <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo" class="navbar-left brand">
        <img src="<?php print $logo; ?>" alt="<?php print $site_name; ?>">
@@ -55,7 +55,7 @@
 
 </div></header>
 
-<div id="main-wrapper">
+<div id="main-wrapper" ontouchstart="">
   <div id="main" class="main container">
     <?php if ($breadcrumb && (arg(0) == 'admin')): ?>
       <div id="breadcrumb" class="visible-desktop">
