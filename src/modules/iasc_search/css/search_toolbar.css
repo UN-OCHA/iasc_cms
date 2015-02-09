@@ -1,0 +1,11 @@
+/**
+ * Adds necessary css for toolbar.
+ */
+
+#apachesolr-panels-search-form .input-append .wrapper {
+  display: inline-block;
+}
+
+#apachesolr-panels-search-form .input-append .form-item-apachesolr-panels-search-form {
+  margin: 0;
+}

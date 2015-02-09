@@ -613,6 +613,27 @@ function iasc_configuration_default_panels_mini_alter(&$data) {
     $data['default_section_sidebar']->display->content['new-e88f722e-09b5-451c-b694-f6b79c2d8554']->style['style'] = 'secondary'; /* WAS: '' */
   }
   if (isset($data['oa_toolbar_panel'])) {
+    $data['oa_toolbar_panel']->display->content['new-1c7d87cd-035a-4552-b154-20fe54ebb76a'] = (object) array(
+          'pid' => 'new-1c7d87cd-035a-4552-b154-20fe54ebb76a',
+          'panel' => 'footer',
+          'type' => 'oa_toolbar_search',
+          'subtype' => 'oa_toolbar_search',
+          'shown' => FALSE,
+          'access' => array(),
+          'configuration' => array(
+            'override_title' => 0,
+            'override_title_text' => '',
+          ),
+          'cache' => array(),
+          'style' => array(
+            'settings' => NULL,
+          ),
+          'css' => array(),
+          'extras' => array(),
+          'position' => 3,
+          'locks' => array(),
+          'uuid' => '1c7d87cd-035a-4552-b154-20fe54ebb76a',
+        ); /* WAS: '' */
     $data['oa_toolbar_panel']->display->content['new-2b828bf5-01a6-4805-a95d-6c64c67317ef']->access['plugins'] = array(
       0 => array(
         'name' => 'theme',
@@ -641,24 +662,6 @@ function iasc_configuration_default_panels_mini_alter(&$data) {
       ),
     ); /* WAS: '' */
     $data['oa_toolbar_panel']->display->content['new-70813a7e-2551-49da-bd7c-4acaff4cae42']->position = 5; /* WAS: 6 */
-    $data['oa_toolbar_panel']->display->content['new-738df920-1380-4622-ba4c-21f486060818']->access['plugins'] = array(
-      0 => array(
-        'name' => 'theme',
-        'settings' => array(
-          'theme' => 'iasc',
-        ),
-        'not' => TRUE,
-      ),
-    ); /* WAS: '' */
-    $data['oa_toolbar_panel']->display->content['new-818fa3a5-376e-4e7f-8f98-77ed1a6c3252']->access['plugins'] = array(
-      0 => array(
-        'name' => 'theme',
-        'settings' => array(
-          'theme' => 'iasc',
-        ),
-        'not' => TRUE,
-      ),
-    ); /* WAS: '' */
     $data['oa_toolbar_panel']->display->content['new-bf0e9047-1f82-4bcf-bf9b-f97fe6748f41']->access['plugins'] = array(
       0 => array(
         'name' => 'theme',
@@ -668,7 +671,50 @@ function iasc_configuration_default_panels_mini_alter(&$data) {
         'not' => TRUE,
       ),
     ); /* WAS: '' */
+    $data['oa_toolbar_panel']->display->content['new-e8e35514-f8e5-4d1a-9767-fdd77c4339ef'] = (object) array(
+          'pid' => 'new-e8e35514-f8e5-4d1a-9767-fdd77c4339ef',
+          'panel' => 'footer',
+          'type' => 'apachesolr_form',
+          'subtype' => 'apachesolr_form',
+          'shown' => TRUE,
+          'access' => array(
+            'plugins' => array(
+              0 => array(
+                'name' => 'theme',
+                'settings' => array(
+                  'theme' => 'iasc',
+                ),
+                'not' => TRUE,
+              ),
+            ),
+          ),
+          'configuration' => array(
+            'path_type' => 'custom',
+            'path' => 'site/search',
+            'override_prompt' => 0,
+            'prompt' => '',
+            'show_keys' => 1,
+            'override_title' => 0,
+            'override_title_text' => '',
+          ),
+          'cache' => array(),
+          'style' => array(
+            'settings' => NULL,
+          ),
+          'css' => array(
+            'css_id' => '',
+            'css_class' => 'search-mobile-menu pull-right pane-oa-toolbar-search',
+          ),
+          'extras' => array(),
+          'position' => 4,
+          'locks' => array(),
+          'uuid' => 'e8e35514-f8e5-4d1a-9767-fdd77c4339ef',
+        ); /* WAS: '' */
+    $data['oa_toolbar_panel']->display->panels['footer'][3] = 'new-1c7d87cd-035a-4552-b154-20fe54ebb76a'; /* WAS: 'new-818fa3a5-376e-4e7f-8f98-77ed1a6c3252' */
+    $data['oa_toolbar_panel']->display->panels['footer'][4] = 'new-e8e35514-f8e5-4d1a-9767-fdd77c4339ef'; /* WAS: 'new-738df920-1380-4622-ba4c-21f486060818' */
     $data['oa_toolbar_panel']->display->panels['footer'][5] = 'new-70813a7e-2551-49da-bd7c-4acaff4cae42'; /* WAS: 'new-8392382b-5711-4749-96e6-48ae5a7dda23' */
+    unset($data['oa_toolbar_panel']->display->content['new-738df920-1380-4622-ba4c-21f486060818']);
+    unset($data['oa_toolbar_panel']->display->content['new-818fa3a5-376e-4e7f-8f98-77ed1a6c3252']);
     unset($data['oa_toolbar_panel']->display->content['new-8392382b-5711-4749-96e6-48ae5a7dda23']);
     unset($data['oa_toolbar_panel']->display->panels['footer'][6]);
   }
