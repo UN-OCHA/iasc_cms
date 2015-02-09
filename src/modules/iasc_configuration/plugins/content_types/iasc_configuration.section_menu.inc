@@ -21,6 +21,8 @@ function iasc_configuration_space_section_menu_render($subtype, $conf, $args, $c
     return;
   }
 
+  $space = node_load($space_nid);
+
   $block = new stdClass();
   $path = drupal_get_path_alias("node/$space_nid");
 
@@ -34,7 +36,8 @@ function iasc_configuration_space_section_menu_render($subtype, $conf, $args, $c
   }
 
   $block->title = t('Sections');
-  $block->content = theme('links', array('links' => $links));
+  $block->content = '<p class="space-title">' . l($space->title, "node/$space_nid") . '</p>';
+  $block->content .= theme('links', array('links' => $links));
 
   return $block;
 }
