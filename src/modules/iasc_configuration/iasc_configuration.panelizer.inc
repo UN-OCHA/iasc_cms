@@ -388,7 +388,10 @@ function iasc_configuration_panelizer_defaults() {
       ),
       'style' => 'secondary',
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'section-menu',
+    );
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
@@ -742,7 +745,10 @@ function iasc_configuration_panelizer_defaults() {
       ),
       'style' => 'secondary',
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'section-menu',
+    );
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();

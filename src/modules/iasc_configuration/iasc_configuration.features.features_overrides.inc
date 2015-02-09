@@ -477,7 +477,10 @@ function iasc_configuration_features_override_default_overrides() {
         ),
         'style' => 'secondary',
       ),
-      'css' => array(),
+      'css' => array(
+        'css_id' => '',
+        'css_class' => 'section-menu',
+      ),
       'extras' => array(),
       'position' => 0,
       'locks' => array(),

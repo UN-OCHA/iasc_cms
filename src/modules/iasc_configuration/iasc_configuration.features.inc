@@ -505,7 +505,10 @@ function iasc_configuration_panelizer_defaults_override_alter(&$data) {
             ),
             'style' => 'secondary',
           ),
-          'css' => array(),
+          'css' => array(
+            'css_id' => '',
+            'css_class' => 'section-menu',
+          ),
           'extras' => array(),
           'position' => 0,
           'locks' => array(),
