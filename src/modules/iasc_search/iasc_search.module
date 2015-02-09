@@ -7,6 +7,17 @@
 include_once 'iasc_search.features.inc';
 
 /**
+ * Implements hook_menu_alter().
+ */
+function iasc_search_menu_alter(&$items) {
+  // Disable access to core search pages
+  unset($items['search']);
+  unset($items['search/site']);
+  unset($items['search/node']);
+  unset($items['search/site/%menu_tail']);
+}
+
+/**
  * Implements hook_form_alter().
  */
 function iasc_search_form_alter(&$form, &$form_state, $form_id) {
