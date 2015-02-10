@@ -52,5 +52,5 @@ features[field_instance][] = node-oa_worktracker_task-field_summary_of_the_recom
 features[field_instance][] = node-oa_worktracker_task-field_timeframe
 features[field_instance][] = node-oa_worktracker_task-field_type2
 features[views_view][] = new_task_view
-mtime = 1422947450
+mtime = 1422949488
 project path = sites/all/modules/custom
