@@ -5,6 +5,9 @@
 
 form.navbar-form {
   margin: 0; padding: 0;
+  .form-inline {
+    position: relative;
+  }
   .form-type-textfield {
     position: relative;
     width: 100%;
@@ -18,14 +21,23 @@ form.navbar-form {
       border: none;
       background-color: #cde2e0;
     }
-    &:after {
-      @extend .icons-search:before;
-      font-family: icons;
-      z-index: 2;
+  }
+  .submit-container {
+    position: absolute;
+    right: 0; top: 0;
+    color: $brand-primary;
+    .icons-search {
       position: absolute;
-      right: 8px; top: 7px;
-      color: $brand-primary;
+      right: 10px; top: 0;
+      font-size: 14px;
+      height: 32px;
+      line-height: 32px;
     }
+  }
+  .form-submit {
+    opacity: 0;
+    border: none;
+    width: 40px;
   }
 }
 
