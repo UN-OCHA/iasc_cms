@@ -10,7 +10,6 @@
 function iasc_form_search_form_alter(&$form, &$form_state, $form_id) {
   $form['basic']['submit']['#prefix'] = '<div class="submit-container"><span class="icons-search"></span>';
   $form['basic']['submit']['#suffix'] = '</div>';
-  dsm($form);
 }
 
 /**
