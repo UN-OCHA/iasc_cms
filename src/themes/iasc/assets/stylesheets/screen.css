@@ -10636,39 +10636,39 @@ img.bio-circled {
 }
 
 /* line 65, ../sass/components/_node.scss */
-.view-display-id-panel_pane_contacts .views-row {
-  position: relative;
-  padding-left: 80px;
-}
-/* line 69, ../sass/components/_node.scss */
 .view-display-id-panel_pane_contacts .views-field-field-photo {
-  position: absolute;
-  left: 0;
-  top: 0;
+  position: relative;
+  float: left;
+  margin-right: 20px;
+}
+/* line 70, ../sass/components/_node.scss */
+.view-display-id-panel_pane_contacts .text {
+  position: relative;
+  overflow: hidden;
 }
 
-/* line 76, ../sass/components/_node.scss */
+/* line 77, ../sass/components/_node.scss */
 .view-search-contacts {
   font-family: "Montserrat", sans-serif;
 }
 
-/* line 80, ../sass/components/_node.scss */
+/* line 81, ../sass/components/_node.scss */
 .field-name-field-organisation {
   text-align: center;
   margin-bottom: 6px;
 }
 
 /* Annoucements */
-/* line 88, ../sass/components/_node.scss */
+/* line 89, ../sass/components/_node.scss */
 .node-type-announcement .pane-node-title h1,
 .node-type-announcement .title {
   margin: 0;
 }
-/* line 91, ../sass/components/_node.scss */
+/* line 92, ../sass/components/_node.scss */
 .node-type-announcement .field-name-field-published-date {
   margin-bottom: 10px;
 }
-/* line 94, ../sass/components/_node.scss */
+/* line 95, ../sass/components/_node.scss */
 .node-type-announcement .node-oa-wiki-page h2, .node-type-announcement .node-oa-wiki-page .node-type-oa-event .pane-node-field-info-private .field-label, .node-type-oa-event .pane-node-field-info-private .node-type-announcement .node-oa-wiki-page .field-label,
 .node-type-announcement .node-oa-wiki-page .node-type-oa-event .pane-node-field-info-private h3.pane-title,
 .node-type-oa-event .pane-node-field-info-private .node-type-announcement .node-oa-wiki-page h3.pane-title,
