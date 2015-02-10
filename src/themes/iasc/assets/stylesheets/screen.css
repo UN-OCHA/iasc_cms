@@ -9392,7 +9392,7 @@ html.js input.throbbing {
 }
 
 /* line 140, ../sass/base/_icons.scss */
-.icons-search:before, .page-page-not-found #apachesolr-panels-search-form .form-type-textfield:after, form.navbar-form .form-type-textfield:after {
+.icons-search:before, .page-page-not-found #apachesolr-panels-search-form .form-type-textfield:after {
   content: "\f10d";
 }
 
@@ -9983,12 +9983,16 @@ form.navbar-form {
   padding: 0;
 }
 /* line 8, ../sass/components/_form.scss */
+form.navbar-form .form-inline, form.navbar-form .mc-field-group {
+  position: relative;
+}
+/* line 11, ../sass/components/_form.scss */
 form.navbar-form .form-type-textfield {
   position: relative;
   width: 100%;
   display: block;
 }
-/* line 12, ../sass/components/_form.scss */
+/* line 15, ../sass/components/_form.scss */
 form.navbar-form .form-type-textfield input[type="text"] {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
@@ -9999,17 +10003,30 @@ form.navbar-form .form-type-textfield input[type="text"] {
   border: none;
   background-color: #cde2e0;
 }
-/* line 21, ../sass/components/_form.scss */
-form.navbar-form .form-type-textfield:after {
-  font-family: icons;
-  z-index: 2;
+/* line 25, ../sass/components/_form.scss */
+form.navbar-form .submit-container {
   position: absolute;
-  right: 8px;
-  top: 7px;
+  right: 0;
+  top: 0;
   color: #00817b;
 }
+/* line 29, ../sass/components/_form.scss */
+form.navbar-form .submit-container .icons-search {
+  position: absolute;
+  right: 10px;
+  top: 0;
+  font-size: 14px;
+  height: 32px;
+  line-height: 32px;
+}
+/* line 37, ../sass/components/_form.scss */
+form.navbar-form .form-submit {
+  opacity: 0;
+  border: none;
+  width: 40px;
+}
 
-/* line 32, ../sass/components/_form.scss */
+/* line 44, ../sass/components/_form.scss */
 .search-query {
   border: 1px solid red;
 }
@@ -10026,26 +10043,26 @@ form.navbar-form .form-type-textfield:after {
   color: red;
 }
 
-/* line 40, ../sass/components/_form.scss */
+/* line 52, ../sass/components/_form.scss */
 #apachesolr-panels-search-form {
   position: relative;
 }
-/* line 42, ../sass/components/_form.scss */
+/* line 54, ../sass/components/_form.scss */
 #apachesolr-panels-search-form .form-type-textfield {
   padding-right: 100px;
 }
-/* line 45, ../sass/components/_form.scss */
+/* line 57, ../sass/components/_form.scss */
 #apachesolr-panels-search-form .form-actions {
   position: absolute;
   right: 0;
   top: 0;
 }
 
-/* line 55, ../sass/components/_form.scss */
+/* line 67, ../sass/components/_form.scss */
 .mc-field-group {
   padding-right: 20px;
 }
-/* line 60, ../sass/components/_form.scss */
+/* line 72, ../sass/components/_form.scss */
 .mc-field-group label {
   position: relative;
   float: left;
@@ -10054,7 +10071,7 @@ form.navbar-form .form-type-textfield:after {
   padding-left: 20px;
   padding-right: 20px;
 }
-/* line 65, ../sass/components/_form.scss */
+/* line 77, ../sass/components/_form.scss */
 .mc-field-group input[type="email"],
 .mc-field-group input[type="text"] {
   position: relative;
@@ -10065,7 +10082,7 @@ form.navbar-form .form-type-textfield:after {
   padding-right: 0;
 }
 
-/* line 77, ../sass/components/_form.scss */
+/* line 89, ../sass/components/_form.scss */
 #mc-embedded-subscribe {
   margin-bottom: 6px;
   clear: right;
