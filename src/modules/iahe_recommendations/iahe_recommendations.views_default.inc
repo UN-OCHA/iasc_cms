@@ -15,14 +15,13 @@ function iahe_recommendations_views_default_views() {
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'node';
-  $view->human_name = 'New Task View';
+  $view->human_name = 'IAHE Recommendations Database';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Recommendations Database';
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
@@ -34,20 +33,34 @@ function iahe_recommendations_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['columns'] = array(
     'title' => 'title',
-    'field_country3' => 'field_country3',
     'field_recomendation' => 'field_recomendation',
-    'field_summary_of_the_recommendat' => 'field_summary_of_the_recommendat',
-    'field_addressee' => 'field_addressee',
     'field_date' => 'field_date',
-    'field_oa_worktracker_task_type' => 'field_oa_worktracker_task_type',
+    'field_country3' => 'field_country3',
     'field_type2' => 'field_type2',
-    'field_description_implementation' => 'field_description_implementation',
+    'field_addressee' => 'field_addressee',
+    'field_st2' => 'field_st2',
+    'field_summary_of_the_recommendat' => 'field_summary_of_the_recommendat',
     'field_priority' => 'field_priority',
     'field_timeframe' => 'field_timeframe',
+    'field_description_implementation' => 'field_description_implementation',
   );
   $handler->display->display_options['style_options']['default'] = '-1';
   $handler->display->display_options['style_options']['info'] = array(
     'title' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_recomendation' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_date' => array(
       'sortable' => 1,
       'default_sort_order' => 'asc',
       'align' => '',
@@ -61,16 +74,7 @@ function iahe_recommendations_views_default_views() {
       'separator' => '',
       'empty_column' => 0,
     ),
-    'field_recomendation' => array(
-      'sortable' => 1,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_summary_of_the_recommendat' => array(
-      'sortable' => 1,
-      'default_sort_order' => 'asc',
+    'field_type2' => array(
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
@@ -82,27 +86,13 @@ function iahe_recommendations_views_default_views() {
       'separator' => '',
       'empty_column' => 0,
     ),
-    'field_date' => array(
-      'sortable' => 1,
-      'default_sort_order' => 'asc',
+    'field_st2' => array(
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
     ),
-    'field_oa_worktracker_task_type' => array(
-      'sortable' => 1,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_type2' => array(
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_description_implementation' => array(
-      'sortable' => 1,
+    'field_summary_of_the_recommendat' => array(
+      'sortable' => 0,
       'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
@@ -120,6 +110,13 @@ function iahe_recommendations_views_default_views() {
       'separator' => '',
       'empty_column' => 0,
     ),
+    'field_description_implementation' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
   );
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -128,10 +125,6 @@ function iahe_recommendations_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Content: Recommendation */
-  $handler->display->display_options['fields']['field_recomendation']['id'] = 'field_recomendation';
-  $handler->display->display_options['fields']['field_recomendation']['table'] = 'field_data_field_recomendation';
-  $handler->display->display_options['fields']['field_recomendation']['field'] = 'field_recomendation';
   /* Field: Content: Date */
   $handler->display->display_options['fields']['field_date']['id'] = 'field_date';
   $handler->display->display_options['fields']['field_date']['table'] = 'field_data_field_date';
@@ -144,6 +137,10 @@ function iahe_recommendations_views_default_views() {
     'multiple_to' => '',
     'show_repeat_rule' => 'show',
   );
+  /* Field: Content: Recommendation */
+  $handler->display->display_options['fields']['field_recomendation']['id'] = 'field_recomendation';
+  $handler->display->display_options['fields']['field_recomendation']['table'] = 'field_data_field_recomendation';
+  $handler->display->display_options['fields']['field_recomendation']['field'] = 'field_recomendation';
   /* Field: Content: Country */
   $handler->display->display_options['fields']['field_country3']['id'] = 'field_country3';
   $handler->display->display_options['fields']['field_country3']['table'] = 'field_data_field_country3';
@@ -153,6 +150,15 @@ function iahe_recommendations_views_default_views() {
   $handler->display->display_options['fields']['field_type2']['table'] = 'field_data_field_type2';
   $handler->display->display_options['fields']['field_type2']['field'] = 'field_type2';
   $handler->display->display_options['fields']['field_type2']['delta_offset'] = '0';
+  /* Field: Content: Priority */
+  $handler->display->display_options['fields']['field_priority']['id'] = 'field_priority';
+  $handler->display->display_options['fields']['field_priority']['table'] = 'field_data_field_priority';
+  $handler->display->display_options['fields']['field_priority']['field'] = 'field_priority';
+  $handler->display->display_options['fields']['field_priority']['delta_offset'] = '0';
+  /* Field: Content: Timeframe */
+  $handler->display->display_options['fields']['field_timeframe']['id'] = 'field_timeframe';
+  $handler->display->display_options['fields']['field_timeframe']['table'] = 'field_data_field_timeframe';
+  $handler->display->display_options['fields']['field_timeframe']['field'] = 'field_timeframe';
   /* Field: Content: Addressee */
   $handler->display->display_options['fields']['field_addressee']['id'] = 'field_addressee';
   $handler->display->display_options['fields']['field_addressee']['table'] = 'field_data_field_addressee';
@@ -166,15 +172,6 @@ function iahe_recommendations_views_default_views() {
   $handler->display->display_options['fields']['field_summary_of_the_recommendat']['id'] = 'field_summary_of_the_recommendat';
   $handler->display->display_options['fields']['field_summary_of_the_recommendat']['table'] = 'field_data_field_summary_of_the_recommendat';
   $handler->display->display_options['fields']['field_summary_of_the_recommendat']['field'] = 'field_summary_of_the_recommendat';
-  /* Field: Content: Priority */
-  $handler->display->display_options['fields']['field_priority']['id'] = 'field_priority';
-  $handler->display->display_options['fields']['field_priority']['table'] = 'field_data_field_priority';
-  $handler->display->display_options['fields']['field_priority']['field'] = 'field_priority';
-  $handler->display->display_options['fields']['field_priority']['delta_offset'] = '0';
-  /* Field: Content: Timeframe */
-  $handler->display->display_options['fields']['field_timeframe']['id'] = 'field_timeframe';
-  $handler->display->display_options['fields']['field_timeframe']['table'] = 'field_data_field_timeframe';
-  $handler->display->display_options['fields']['field_timeframe']['field'] = 'field_timeframe';
   /* Field: Content: Description Implementation */
   $handler->display->display_options['fields']['field_description_implementation']['id'] = 'field_description_implementation';
   $handler->display->display_options['fields']['field_description_implementation']['table'] = 'field_data_field_description_implementation';
