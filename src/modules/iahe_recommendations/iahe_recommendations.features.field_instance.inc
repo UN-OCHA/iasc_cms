@@ -38,10 +38,10 @@ function iahe_recommendations_field_default_field_instances() {
       ),
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
+        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 23,
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 29,
       ),
       'featured' => array(
         'label' => 'above',
@@ -64,83 +64,10 @@ function iahe_recommendations_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_addressee',
-    'label' => 'Addressee',
-    'required' => 0,
-    'settings' => array(
-      'linkit' => array(
-        'button_text' => 'Search',
-        'enable' => 0,
-        'profile' => '',
-      ),
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 22,
-    ),
-  );
-
-  // Exported field_instance: 'node-oa_worktracker_task-field_country3'
-  $field_instances['node-oa_worktracker_task-field_country3'] = array(
-    'bundle' => 'oa_worktracker_task',
-    'comment_alter' => 0,
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'bio_full' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'bio_long' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'bio_short' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'default' => array(
-        'label' => 'above',
-        'module' => 'list',
-        'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 15,
-      ),
-      'featured' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'link_to_document' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_country3',
-    'label' => 'Country',
+    'label' => 'Responsibility for Implementation',
+    'options_limit' => FALSE,
+    'options_limit_empty_behaviour' => 0,
+    'options_limit_fields' => array(),
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -152,7 +79,7 @@ function iahe_recommendations_field_default_field_instances() {
         'apply_chosen' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 14,
+      'weight' => 25,
     ),
   );
 
@@ -239,7 +166,7 @@ function iahe_recommendations_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 13,
+      'weight' => 21,
     ),
   );
 
@@ -297,7 +224,7 @@ function iahe_recommendations_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_description_implementation',
-    'label' => 'Description Implementation',
+    'label' => 'Activities Undertaken to Implement ',
     'required' => 0,
     'settings' => array(
       'linkit' => array(
@@ -315,12 +242,12 @@ function iahe_recommendations_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 21,
+      'weight' => 24,
     ),
   );
 
-  // Exported field_instance: 'node-oa_worktracker_task-field_priority'
-  $field_instances['node-oa_worktracker_task-field_priority'] = array(
+  // Exported field_instance: 'node-oa_worktracker_task-field_evaluation_title'
+  $field_instances['node-oa_worktracker_task-field_evaluation_title'] = array(
     'bundle' => 'oa_worktracker_task',
     'comment_alter' => 0,
     'default_value' => NULL,
@@ -347,10 +274,10 @@ function iahe_recommendations_field_default_field_instances() {
       ),
       'default' => array(
         'label' => 'above',
-        'module' => 'list',
+        'module' => 'text',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 20,
+        'type' => 'text_default',
+        'weight' => 27,
       ),
       'featured' => array(
         'label' => 'above',
@@ -372,20 +299,26 @@ function iahe_recommendations_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_priority',
-    'label' => 'Priority',
+    'field_name' => 'field_evaluation_title',
+    'label' => 'Evaluation Title',
     'required' => 0,
     'settings' => array(
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'options',
+      'module' => 'text',
       'settings' => array(
-        'apply_chosen' => 0,
+        'size' => 60,
       ),
-      'type' => 'options_select',
-      'weight' => 19,
+      'type' => 'text_textfield',
+      'weight' => 20,
     ),
   );
 
@@ -461,82 +394,12 @@ function iahe_recommendations_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 12,
+      'weight' => 22,
     ),
   );
 
-  // Exported field_instance: 'node-oa_worktracker_task-field_st2'
-  $field_instances['node-oa_worktracker_task-field_st2'] = array(
-    'bundle' => 'oa_worktracker_task',
-    'comment_alter' => 0,
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'bio_full' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'bio_long' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'bio_short' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'default' => array(
-        'label' => 'above',
-        'module' => 'list',
-        'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 18,
-      ),
-      'featured' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'link_to_document' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_st2',
-    'label' => 'Status',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'apply_chosen' => 0,
-      ),
-      'type' => 'options_select',
-      'weight' => 17,
-    ),
-  );
-
-  // Exported field_instance: 'node-oa_worktracker_task-field_summary_of_the_recommendat'
-  $field_instances['node-oa_worktracker_task-field_summary_of_the_recommendat'] = array(
+  // Exported field_instance: 'node-oa_worktracker_task-field_summary_of_recommendat'
+  $field_instances['node-oa_worktracker_task-field_summary_of_recommendat'] = array(
     'bundle' => 'oa_worktracker_task',
     'comment_alter' => 0,
     'default_value' => NULL,
@@ -566,7 +429,7 @@ function iahe_recommendations_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 21,
+        'weight' => 25,
       ),
       'featured' => array(
         'label' => 'above',
@@ -588,8 +451,8 @@ function iahe_recommendations_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_summary_of_the_recommendat',
-    'label' => 'Summary of the recommendation',
+    'field_name' => 'field_summary_of_recommendat',
+    'label' => 'Summary of the Recommendation',
     'required' => 0,
     'settings' => array(
       'linkit' => array(
@@ -604,10 +467,10 @@ function iahe_recommendations_field_default_field_instances() {
       'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'size' => 60,
+        'rows' => 5,
       ),
-      'type' => 'text_textfield',
-      'weight' => 20,
+      'type' => 'text_textarea',
+      'weight' => 23,
     ),
   );
 
@@ -642,7 +505,7 @@ function iahe_recommendations_field_default_field_instances() {
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 19,
+        'weight' => 28,
       ),
       'featured' => array(
         'label' => 'above',
@@ -677,12 +540,12 @@ function iahe_recommendations_field_default_field_instances() {
         'apply_chosen' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 18,
+      'weight' => 26,
     ),
   );
 
-  // Exported field_instance: 'node-oa_worktracker_task-field_type2'
-  $field_instances['node-oa_worktracker_task-field_type2'] = array(
+  // Exported field_instance: 'node-oa_worktracker_task-field_worktracker_country'
+  $field_instances['node-oa_worktracker_task-field_worktracker_country'] = array(
     'bundle' => 'oa_worktracker_task',
     'comment_alter' => 0,
     'default_value' => NULL,
@@ -709,10 +572,10 @@ function iahe_recommendations_field_default_field_instances() {
       ),
       'default' => array(
         'label' => 'above',
-        'module' => 'list',
+        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 16,
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 24,
       ),
       'featured' => array(
         'label' => 'above',
@@ -734,35 +597,37 @@ function iahe_recommendations_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_type2',
-    'label' => 'Type',
+    'field_name' => 'field_worktracker_country',
+    'label' => 'Country',
+    'options_limit' => FALSE,
+    'options_limit_empty_behaviour' => 0,
+    'options_limit_fields' => array(),
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 1,
-      'module' => 'options',
+      'active' => 0,
+      'module' => 'taxonomy',
       'settings' => array(
-        'apply_chosen' => 0,
+        'autocomplete_path' => 'taxonomy/autocomplete',
+        'size' => 60,
       ),
-      'type' => 'options_select',
-      'weight' => 15,
+      'type' => 'taxonomy_autocomplete',
+      'weight' => 27,
     ),
   );
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Addressee');
+  t('Activities Undertaken to Implement ');
   t('Country');
   t('Date');
-  t('Description Implementation');
-  t('Priority');
+  t('Evaluation Title');
   t('Recommendation');
-  t('Status');
-  t('Summary of the recommendation');
+  t('Responsibility for Implementation');
+  t('Summary of the Recommendation');
   t('Timeframe');
-  t('Type');
 
   return $field_instances;
 }
