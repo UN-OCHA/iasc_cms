@@ -10999,19 +10999,27 @@ img.bio-circled {
   padding-top: 10px;
 }
 
+/* line 88, ../sass/components/_view.scss */
+.view .view-content .table-responsive thead th a img {
+  padding: 0;
+}
+
+/* line 15, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.3.3/assets/stylesheets/bootstrap/mixins/_clearfix.scss */
+/* line 15, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.3.3/assets/stylesheets/bootstrap/mixins/_clearfix.scss */
+/* line 15, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.3.3/assets/stylesheets/bootstrap/mixins/_clearfix.scss */
+/* line 15, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.3.3/assets/stylesheets/bootstrap/mixins/_clearfix.scss */
 /* line 2, ../sass/components/_views-events.scss */
 .view-display-id-panel_pane_space_meetings,
 .view-oa-event-list {
   margin-bottom: 40px;
 }
-/* line 15, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.3.3/assets/stylesheets/bootstrap/mixins/_clearfix.scss */
+/* line 19, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.3.3/assets/stylesheets/bootstrap/mixins/_clearfix.scss */
 .view-display-id-panel_pane_space_meetings:before, .view-display-id-panel_pane_space_meetings:after,
 .view-oa-event-list:before,
 .view-oa-event-list:after {
   content: " ";
   display: table;
 }
-/* line 19, ../../../../../../../../../.rvm/gems/ruby-2.0.0-p451/gems/bootstrap-sass-3.3.3/assets/stylesheets/bootstrap/mixins/_clearfix.scss */
 .view-display-id-panel_pane_space_meetings:after,
 .view-oa-event-list:after {
   clear: both;

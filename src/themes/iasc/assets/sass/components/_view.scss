@@ -84,3 +84,8 @@
     }
   }
 }
+
+/* Display the sort arrows in responsive tables. */
+.view .view-content .table-responsive thead th a img {
+  padding: 0;
+}
