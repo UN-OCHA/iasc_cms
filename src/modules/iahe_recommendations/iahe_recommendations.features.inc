@@ -27,6 +27,15 @@ function iahe_recommendations_views_api($module = NULL, $api = NULL) {
 }
 
 /**
+ * Implements hook_field_group_info_alter().
+ */
+function iahe_recommendations_field_group_info_alter(&$data) {
+  if (isset($data['group_oa_access|node|oa_worktracker_task|form'])) {
+    $data['group_oa_access|node|oa_worktracker_task|form']->data['weight'] = 9; /* WAS: 6 */
+  }
+}
+
+/**
  * Implements hook_panelizer_defaults_override_alter().
  */
 function iahe_recommendations_panelizer_defaults_override_alter(&$data) {

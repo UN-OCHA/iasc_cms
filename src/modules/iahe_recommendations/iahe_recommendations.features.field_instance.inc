@@ -79,7 +79,7 @@ function iahe_recommendations_field_default_field_instances() {
         'apply_chosen' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 25,
+      'weight' => 13,
     ),
   );
 
@@ -166,7 +166,7 @@ function iahe_recommendations_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 21,
+      'weight' => 15,
     ),
   );
 
@@ -242,7 +242,7 @@ function iahe_recommendations_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 24,
+      'weight' => 12,
     ),
   );
 
@@ -318,7 +318,7 @@ function iahe_recommendations_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 20,
+      'weight' => 9,
     ),
   );
 
@@ -394,7 +394,7 @@ function iahe_recommendations_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 22,
+      'weight' => 10,
     ),
   );
 
@@ -470,7 +470,7 @@ function iahe_recommendations_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 23,
+      'weight' => 11,
     ),
   );
 
@@ -540,7 +540,7 @@ function iahe_recommendations_field_default_field_instances() {
         'apply_chosen' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 26,
+      'weight' => 16,
     ),
   );
 
@@ -614,7 +614,7 @@ function iahe_recommendations_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 27,
+      'weight' => 14,
     ),
   );
 

@@ -21,16 +21,16 @@ function iahe_recommendations_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'IAHE Database',
-    'weight' => '5',
+    'weight' => '4',
     'children' => array(
       0 => 'field_date',
       1 => 'field_description_implementation',
       2 => 'field_recomendation',
-      3 => 'field_worktracker_country',
-      4 => 'field_summary_of_recommendat',
-      5 => 'field_evaluation_title',
+      3 => 'field_addressee',
+      4 => 'field_evaluation_title',
+      5 => 'field_summary_of_recommendat',
       6 => 'field_timeframe',
-      7 => 'field_addressee',
+      7 => 'field_worktracker_country',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(

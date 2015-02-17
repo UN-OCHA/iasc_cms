@@ -374,7 +374,6 @@ function iahe_recommendations_views_default_views() {
   $handler->display->display_options['filters']['field_addressee_tid']['id'] = 'field_addressee_tid';
   $handler->display->display_options['filters']['field_addressee_tid']['table'] = 'field_data_field_addressee';
   $handler->display->display_options['filters']['field_addressee_tid']['field'] = 'field_addressee_tid';
-  $handler->display->display_options['filters']['field_addressee_tid']['value'] = '';
   $handler->display->display_options['filters']['field_addressee_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_addressee_tid']['expose']['operator_id'] = 'field_addressee_tid_op';
   $handler->display->display_options['filters']['field_addressee_tid']['expose']['label'] = 'Responsibility for Implementation';
@@ -388,7 +387,9 @@ function iahe_recommendations_views_default_views() {
     4 => 0,
     5 => 0,
     6 => 0,
+    11 => 0,
   );
+  $handler->display->display_options['filters']['field_addressee_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_addressee_tid']['vocabulary'] = 'addressee';
 
   /* Display: Content pane */

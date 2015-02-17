@@ -11,6 +11,9 @@ function iahe_recommendations_features_override_default_overrides() {
   // This code is only used for UI in features. Exported alters hooks do the magic.
   $overrides = array();
 
+  // Exported overrides for: field_group
+  $overrides["field_group.group_oa_access|node|oa_worktracker_task|form.data|weight"] = 9;
+
   // Exported overrides for: panelizer_defaults
   $overrides["panelizer_defaults.node:oa_section:oa_section_worktracker.display|content|new-083432ea-5fb3-4e40-8c9d-09ed848deab7"]["DELETED"] = TRUE;
   $overrides["panelizer_defaults.node:oa_section:oa_section_worktracker.display|content|new-bb4d24a8-400f-4710-8ed8-4617dcb6a89d"]["DELETED"] = TRUE;
