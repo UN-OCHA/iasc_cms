@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * @file
+ * Install file for IAHE Recommendations.
+ */
+
+/**
+* Implements hook_update_N().
+*
+* Remove fields that have been refactored.
+*/
+function iahe_recommendations_update_7000() {
+  field_delete_field('field_country3');
+  field_delete_field('field_type2');
+  field_delete_field('field_st2');
+  field_delete_field('field_priority');
+  field_delete_field('field_summary_of_the_recommendat');
+  field_delete_field('field_addressee');
+  field_delete_field('field_timeframe');
+  field_purge_batch(10);
+}
