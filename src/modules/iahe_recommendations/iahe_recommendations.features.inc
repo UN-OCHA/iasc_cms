@@ -8,6 +8,9 @@
  * Implements hook_ctools_plugin_api().
  */
 function iahe_recommendations_ctools_plugin_api($module = NULL, $api = NULL) {
+  if ($module == "field_group" && $api == "field_group") {
+    return array("version" => "1");
+  }
   if ($module == "panelizer" && $api == "panelizer") {
     return array("version" => "1");
   }
@@ -21,6 +24,15 @@ function iahe_recommendations_ctools_plugin_api($module = NULL, $api = NULL) {
  */
 function iahe_recommendations_views_api($module = NULL, $api = NULL) {
   return array("api" => "3.0");
+}
+
+/**
+ * Implements hook_field_group_info_alter().
+ */
+function iahe_recommendations_field_group_info_alter(&$data) {
+  if (isset($data['group_oa_access|node|oa_worktracker_task|form'])) {
+    $data['group_oa_access|node|oa_worktracker_task|form']->data['weight'] = 9; /* WAS: 6 */
+  }
 }
 
 /**

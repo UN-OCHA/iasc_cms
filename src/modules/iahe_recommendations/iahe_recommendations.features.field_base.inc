@@ -18,53 +18,30 @@ function iahe_recommendations_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_addressee',
     'foreign keys' => array(
-      'format' => array(
+      'tid' => array(
         'columns' => array(
-          'format' => 'format',
+          'tid' => 'tid',
         ),
-        'table' => 'filter_format',
+        'table' => 'taxonomy_term_data',
       ),
     ),
     'indexes' => array(
-      'format' => array(
-        0 => 'format',
+      'tid' => array(
+        0 => 'tid',
       ),
     ),
     'locked' => 0,
-    'module' => 'text',
-    'settings' => array(
-      'max_length' => 255,
-    ),
-    'translatable' => 0,
-    'type' => 'text',
-  );
-
-  // Exported field_base: 'field_country3'
-  $field_bases['field_country3'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_country3',
-    'foreign keys' => array(),
-    'indexes' => array(
-      'value' => array(
-        0 => 'value',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'list',
+    'module' => 'taxonomy',
     'settings' => array(
       'allowed_values' => array(
-        1 => 'Philippines',
-        2 => 'South Sudan',
-        3 => 'Central African Republic',
-        4 => 'Syria',
+        0 => array(
+          'vocabulary' => 'addressee',
+          'parent' => 0,
+        ),
       ),
-      'allowed_values_function' => '',
     ),
     'translatable' => 0,
-    'type' => 'list_float',
+    'type' => 'taxonomy_term_reference',
   );
 
   // Exported field_base: 'field_date'
@@ -127,30 +104,33 @@ function iahe_recommendations_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_priority'
-  $field_bases['field_priority'] = array(
+  // Exported field_base: 'field_evaluation_title'
+  $field_bases['field_evaluation_title'] = array(
     'active' => 1,
-    'cardinality' => 2,
+    'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_priority',
-    'foreign keys' => array(),
+    'field_name' => 'field_evaluation_title',
+    'foreign keys' => array(
+      'format' => array(
+        'columns' => array(
+          'format' => 'format',
+        ),
+        'table' => 'filter_format',
+      ),
+    ),
     'indexes' => array(
-      'value' => array(
-        0 => 'value',
+      'format' => array(
+        0 => 'format',
       ),
     ),
     'locked' => 0,
-    'module' => 'list',
+    'module' => 'text',
     'settings' => array(
-      'allowed_values' => array(
-        1 => 'Critical',
-        2 => 'Learning Opportunity',
-      ),
-      'allowed_values_function' => '',
+      'max_length' => 255,
     ),
     'translatable' => 0,
-    'type' => 'list_float',
+    'type' => 'text',
   );
 
   // Exported field_base: 'field_recomendation'
@@ -182,40 +162,13 @@ function iahe_recommendations_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_st2'
-  $field_bases['field_st2'] = array(
-    'active' => 1,
-    'cardinality' => 3,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_st2',
-    'foreign keys' => array(),
-    'indexes' => array(
-      'value' => array(
-        0 => 'value',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'list',
-    'settings' => array(
-      'allowed_values' => array(
-        1 => 'Not Initiated',
-        2 => 'Ongoing',
-        3 => 'Implemented',
-      ),
-      'allowed_values_function' => '',
-    ),
-    'translatable' => 0,
-    'type' => 'list_text',
-  );
-
-  // Exported field_base: 'field_summary_of_the_recommendat'
-  $field_bases['field_summary_of_the_recommendat'] = array(
+  // Exported field_base: 'field_summary_of_recommendat'
+  $field_bases['field_summary_of_recommendat'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_summary_of_the_recommendat',
+    'field_name' => 'field_summary_of_recommendat',
     'foreign keys' => array(
       'format' => array(
         'columns' => array(
@@ -231,11 +184,9 @@ function iahe_recommendations_field_default_field_bases() {
     ),
     'locked' => 0,
     'module' => 'text',
-    'settings' => array(
-      'max_length' => 255,
-    ),
+    'settings' => array(),
     'translatable' => 0,
-    'type' => 'text',
+    'type' => 'text_long',
   );
 
   // Exported field_base: 'field_timeframe'
@@ -263,33 +214,41 @@ function iahe_recommendations_field_default_field_bases() {
       'allowed_values_function' => '',
     ),
     'translatable' => 0,
-    'type' => 'list_float',
+    'type' => 'list_integer',
   );
 
-  // Exported field_base: 'field_type2'
-  $field_bases['field_type2'] = array(
+  // Exported field_base: 'field_worktracker_country'
+  $field_bases['field_worktracker_country'] = array(
     'active' => 1,
-    'cardinality' => -1,
+    'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_type2',
-    'foreign keys' => array(),
+    'field_name' => 'field_worktracker_country',
+    'foreign keys' => array(
+      'tid' => array(
+        'columns' => array(
+          'tid' => 'tid',
+        ),
+        'table' => 'taxonomy_term_data',
+      ),
+    ),
     'indexes' => array(
-      'value' => array(
-        0 => 'value',
+      'tid' => array(
+        0 => 'tid',
       ),
     ),
     'locked' => 0,
-    'module' => 'list',
+    'module' => 'taxonomy',
     'settings' => array(
       'allowed_values' => array(
-        1 => 'Natural Disaster',
-        2 => 'Conflict',
+        0 => array(
+          'vocabulary' => 'country',
+          'parent' => 0,
+        ),
       ),
-      'allowed_values_function' => '',
     ),
     'translatable' => 0,
-    'type' => 'list_float',
+    'type' => 'taxonomy_term_reference',
   );
 
   return $field_bases;

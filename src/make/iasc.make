@@ -161,4 +161,7 @@ libraries[respondjs][download][url] = https://raw.githubusercontent.com/scottjeh
 projects[features_extra][type] = module
 projects[features_extra][version] = 1.0-beta1
 projects[features_extra][subdir] = contrib
-;projects[features_extra][patch][1900574] = https://www.drupal.org/files/issues/1900574.defaultconfig.undefinedindex_13.patch
+
+projects[taxonomy_csv][type] = module
+projects[taxonomy_csv][version] = 5.10
+projects[taxonomy_csv][subdir] = contrib
