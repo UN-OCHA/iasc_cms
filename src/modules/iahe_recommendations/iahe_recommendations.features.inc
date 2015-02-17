@@ -24,6 +24,48 @@ function iahe_recommendations_views_api($module = NULL, $api = NULL) {
 }
 
 /**
+ * Implements hook_field_group_info_alter().
+ */
+function iahe_recommendations_field_group_info_alter(&$data) {
+  if (isset($data['group_oa_access|node|oa_worktracker_task|form'])) {
+    $data['group_oa_access|node|oa_worktracker_task|form']->data['weight'] = 9; /* WAS: 6 */
+  }
+}
+
+/**
+ * Implements hook_field_default_field_instances_alter().
+ */
+function iahe_recommendations_field_default_field_instances_alter(&$data) {
+  if (isset($data['node-oa_worktracker_task-field_oa_worktracker_priority'])) {
+    $data['node-oa_worktracker_task-field_oa_worktracker_priority']['display']['bio_full'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_worktracker_task-field_oa_worktracker_priority']['display']['bio_long'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_worktracker_task-field_oa_worktracker_priority']['display']['bio_short'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_worktracker_task-field_oa_worktracker_priority']['display']['link_to_document'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_worktracker_task-field_oa_worktracker_priority']['required'] = 0; /* WAS: 1 */
+  }
+}
+
+/**
  * Implements hook_panelizer_defaults_override_alter().
  */
 function iahe_recommendations_panelizer_defaults_override_alter(&$data) {
