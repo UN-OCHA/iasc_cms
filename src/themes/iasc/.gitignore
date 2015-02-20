@@ -1,3 +1,2 @@
 # Ignore sass-cache files.
 *.sass-cache*
-Gemfile.lock
