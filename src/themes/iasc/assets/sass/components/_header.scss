@@ -1,7 +1,7 @@
 header.header {
-  background: #7eb5af;
+  background: #ADCFCB;
   @include background(
-    linear-gradient(to top, #fff 0px, #fff 20px, #7eb5af 20px, #7eb5af 27px, #fff 27px, #fff 29px, #7eb5af 29px)
+    linear-gradient(to top, #fff 0px, #fff 20px, #ADCFCB 20px, #ADCFCB 27px, #fff 27px, #fff 29px, #ADCFCB 29px)
   );
   .top {
     position: relative;

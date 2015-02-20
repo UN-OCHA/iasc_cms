@@ -9,7 +9,6 @@
   ul {
     @include clearfix;
     @extend .panel-body;
-    background-color: $panel-bg;
     margin-bottom: 20px;
     padding: 10px 20px;
     li {
