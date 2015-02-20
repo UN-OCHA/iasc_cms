@@ -18,7 +18,21 @@
     "projFiles": ["README*", "bin/**"]
   },
   "phpcs": {
-    "path": "bin/phpcs"
+    "path": "bin/phpcs",
+    "dir": [
+      "src/**/*.php",
+      "src/**/*.module",
+      "src/**/*.inc",
+      "src/**/*.install",
+      "src/**/*.profile",
+      "!src/modules/iasc_scrape/**/*.php",
+      "!src/sites/**",
+      "!src/**/*.box.inc",
+      "!src/**/*.features.*inc",
+      "!src/**/*.pages_default.inc",
+      "!src/**/*.panelizer.inc",
+      "!src/**/*.strongarm.inc"
+    ]
   },
   "phpmd": {
     "path": "bin/phpmd"
@@ -26,7 +40,7 @@
   "drush": {
     "cmd": "bin/drush",
     "make": {
-      "args": ["--concurrency=16"]
+      "args": ["--concurrency=1", "--contrib-destination=profiles/openatrium"]
     }
   },
   "behat": {
