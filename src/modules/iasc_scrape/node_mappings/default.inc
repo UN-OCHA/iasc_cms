@@ -471,7 +471,7 @@ class IASCDefault {
 
       // Store All Day meeting date times as the date @ midnight.
       if ('All' == $start_hour && 'Day' == $this->values['data'][$date['start']['min']]) {
-        $unix_start = strtotime($fixed_date[0] . ' ' . '00:00');
+        $unix_start = strtotime($fixed_date[0] . ' 00:00');
         $unix_end = $unix_start;
       }
       else {

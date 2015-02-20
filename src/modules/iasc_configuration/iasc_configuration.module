@@ -223,7 +223,7 @@ function iasc_configuration_create_node($item, $parent_bodies, $subsidiary_ids, 
   else {
     $context['results']['processed'][] = $item['bodyID'];
 
-    // If body, bodydetail, and bodyshort equal NULL, then this is a parent space.
+    // If body, bodydetail, + bodyshort equal NULL, then this is a parent space.
     $is_parent = 'NULL' == $item['body'] &&
       'NULL' == $item['bodydetail'] &&
       'NULL' == $item['bodyshort'];
@@ -239,7 +239,8 @@ function iasc_configuration_create_node($item, $parent_bodies, $subsidiary_ids, 
         $legacy_parent = iasc_configuration_get_node_by_name('oa_space', trim($item['body']));
       }
 
-      // If we don't have a space that matches $item['body'], then use $item['mainbodyID'].
+      /* If we don't have a space that matches $item['body'],
+      then use $item['mainbodyID']. */
       if (empty($legacy_parent)) {
         $legacy_parent = iasc_configuration_get_parent_by_legacy_id($item['mainbodyID']);
       }
@@ -372,7 +373,7 @@ function iasc_configuration_create_node($item, $parent_bodies, $subsidiary_ids, 
     );
   }
 
-  // Ignore $item['link'] - we will manually update since most won't be included.
+  // Ignore $item['link']: we will manually update since most won't be included.
 
   if (!empty($legacy_parent)) {
     $node->oa_parent_space[LANGUAGE_NONE][0]['target_id'] = $legacy_parent;
@@ -863,7 +864,7 @@ function iasc_configuration_query_alter(QueryAlterableInterface $query) {
 }
 
 /**
- *  Implements hook_form_FORM_ID_alter().
+ * Implements hook_form_FORM_ID_alter().
  *
  * We want to hide unnecessary checkboxes from the user when the og group ref
  * exposed filter is used.
@@ -925,7 +926,7 @@ function iasc_configuration_block_view($delta = '') {
 }
 
 /**
- *  Implements hook_theme().
+ * Implements hook_theme().
  */
 function iasc_configuration_theme($existing, $type, $theme, $path) {
   $theme = array(

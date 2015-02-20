@@ -43,7 +43,7 @@ function iahe_recommendations_views_default_views() {
     'field_oa_worktracker_task_type' => 'field_oa_worktracker_task_type',
     'field_oa_worktracker_priority' => 'field_oa_worktracker_priority',
     'field_timeframe' => 'field_timeframe',
-    'field_addressee_1' => 'field_addressee_1',
+    'field_addressee' => 'field_addressee',
     'field_oa_worktracker_task_status' => 'field_oa_worktracker_task_status',
     'field_summary_of_recommendat' => 'field_summary_of_recommendat',
     'field_description_implementation' => 'field_description_implementation',
@@ -106,7 +106,7 @@ function iahe_recommendations_views_default_views() {
       'separator' => '',
       'empty_column' => 0,
     ),
-    'field_addressee_1' => array(
+    'field_addressee' => array(
       'sortable' => 1,
       'default_sort_order' => 'asc',
       'align' => '',
@@ -182,10 +182,9 @@ function iahe_recommendations_views_default_views() {
   $handler->display->display_options['fields']['field_timeframe']['table'] = 'field_data_field_timeframe';
   $handler->display->display_options['fields']['field_timeframe']['field'] = 'field_timeframe';
   /* Field: Content: Responsibility for Implementation */
-  $handler->display->display_options['fields']['field_addressee_1']['id'] = 'field_addressee_1';
-  $handler->display->display_options['fields']['field_addressee_1']['table'] = 'field_data_field_addressee';
-  $handler->display->display_options['fields']['field_addressee_1']['field'] = 'field_addressee';
-  $handler->display->display_options['fields']['field_addressee_1']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_addressee']['id'] = 'field_addressee';
+  $handler->display->display_options['fields']['field_addressee']['table'] = 'field_data_field_addressee';
+  $handler->display->display_options['fields']['field_addressee']['field'] = 'field_addressee';
   /* Field: Content: Status */
   $handler->display->display_options['fields']['field_oa_worktracker_task_status']['id'] = 'field_oa_worktracker_task_status';
   $handler->display->display_options['fields']['field_oa_worktracker_task_status']['table'] = 'field_data_field_oa_worktracker_task_status';
@@ -303,6 +302,7 @@ function iahe_recommendations_views_default_views() {
   $handler->display->display_options['filters']['field_oa_worktracker_priority_value']['id'] = 'field_oa_worktracker_priority_value';
   $handler->display->display_options['filters']['field_oa_worktracker_priority_value']['table'] = 'field_data_field_oa_worktracker_priority';
   $handler->display->display_options['filters']['field_oa_worktracker_priority_value']['field'] = 'field_oa_worktracker_priority_value';
+  $handler->display->display_options['filters']['field_oa_worktracker_priority_value']['group'] = 1;
   $handler->display->display_options['filters']['field_oa_worktracker_priority_value']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_oa_worktracker_priority_value']['expose']['operator_id'] = 'field_oa_worktracker_priority_value_op';
   $handler->display->display_options['filters']['field_oa_worktracker_priority_value']['expose']['label'] = 'Priority';
@@ -321,6 +321,7 @@ function iahe_recommendations_views_default_views() {
   $handler->display->display_options['filters']['field_oa_worktracker_task_status_value']['id'] = 'field_oa_worktracker_task_status_value';
   $handler->display->display_options['filters']['field_oa_worktracker_task_status_value']['table'] = 'field_data_field_oa_worktracker_task_status';
   $handler->display->display_options['filters']['field_oa_worktracker_task_status_value']['field'] = 'field_oa_worktracker_task_status_value';
+  $handler->display->display_options['filters']['field_oa_worktracker_task_status_value']['group'] = 1;
   $handler->display->display_options['filters']['field_oa_worktracker_task_status_value']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_oa_worktracker_task_status_value']['expose']['operator_id'] = 'field_oa_worktracker_task_status_value_op';
   $handler->display->display_options['filters']['field_oa_worktracker_task_status_value']['expose']['label'] = 'Status';
@@ -339,6 +340,7 @@ function iahe_recommendations_views_default_views() {
   $handler->display->display_options['filters']['field_oa_worktracker_task_type_value']['id'] = 'field_oa_worktracker_task_type_value';
   $handler->display->display_options['filters']['field_oa_worktracker_task_type_value']['table'] = 'field_data_field_oa_worktracker_task_type';
   $handler->display->display_options['filters']['field_oa_worktracker_task_type_value']['field'] = 'field_oa_worktracker_task_type_value';
+  $handler->display->display_options['filters']['field_oa_worktracker_task_type_value']['group'] = 1;
   $handler->display->display_options['filters']['field_oa_worktracker_task_type_value']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_oa_worktracker_task_type_value']['expose']['operator_id'] = 'field_oa_worktracker_task_type_value_op';
   $handler->display->display_options['filters']['field_oa_worktracker_task_type_value']['expose']['label'] = 'Type of Emergency';
@@ -353,10 +355,37 @@ function iahe_recommendations_views_default_views() {
     5 => 0,
     6 => 0,
   );
+  /* Filter criterion: Content: Responsibility for Implementation (field_addressee) */
+  $handler->display->display_options['filters']['field_addressee_value']['id'] = 'field_addressee_value';
+  $handler->display->display_options['filters']['field_addressee_value']['table'] = 'field_data_field_addressee';
+  $handler->display->display_options['filters']['field_addressee_value']['field'] = 'field_addressee_value';
+  $handler->display->display_options['filters']['field_addressee_value']['operator'] = 'word';
+  $handler->display->display_options['filters']['field_addressee_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_addressee_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_addressee_value']['expose']['operator_id'] = 'field_addressee_value_op';
+  $handler->display->display_options['filters']['field_addressee_value']['expose']['label'] = 'Responsibility for Implementation';
+  $handler->display->display_options['filters']['field_addressee_value']['expose']['operator'] = 'field_addressee_value_op';
+  $handler->display->display_options['filters']['field_addressee_value']['expose']['identifier'] = 'field_addressee_value';
+  $handler->display->display_options['filters']['field_addressee_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    5 => 0,
+    6 => 0,
+    11 => 0,
+  );
+  $handler->display->display_options['filters']['field_addressee_value']['expose']['autocomplete_items'] = '10';
+  $handler->display->display_options['filters']['field_addressee_value']['expose']['autocomplete_min_chars'] = '0';
+  $handler->display->display_options['filters']['field_addressee_value']['expose']['autocomplete_field'] = 'field_addressee';
+  $handler->display->display_options['filters']['field_addressee_value']['expose']['autocomplete_raw_suggestion'] = 1;
+  $handler->display->display_options['filters']['field_addressee_value']['expose']['autocomplete_raw_dropdown'] = 1;
+  $handler->display->display_options['filters']['field_addressee_value']['expose']['autocomplete_dependent'] = 0;
   /* Filter criterion: Content: Groups audience (og_group_ref) */
   $handler->display->display_options['filters']['og_group_ref_target_id']['id'] = 'og_group_ref_target_id';
   $handler->display->display_options['filters']['og_group_ref_target_id']['table'] = 'og_membership';
   $handler->display->display_options['filters']['og_group_ref_target_id']['field'] = 'og_group_ref_target_id';
+  $handler->display->display_options['filters']['og_group_ref_target_id']['group'] = 1;
   $handler->display->display_options['filters']['og_group_ref_target_id']['exposed'] = TRUE;
   $handler->display->display_options['filters']['og_group_ref_target_id']['expose']['operator_id'] = 'og_group_ref_target_id_op';
   $handler->display->display_options['filters']['og_group_ref_target_id']['expose']['label'] = 'Authoring Bodies (og_group_ref)';
@@ -370,27 +399,6 @@ function iahe_recommendations_views_default_views() {
     5 => 0,
     6 => 0,
   );
-  /* Filter criterion: Content: Responsibility for Implementation (field_addressee) */
-  $handler->display->display_options['filters']['field_addressee_tid']['id'] = 'field_addressee_tid';
-  $handler->display->display_options['filters']['field_addressee_tid']['table'] = 'field_data_field_addressee';
-  $handler->display->display_options['filters']['field_addressee_tid']['field'] = 'field_addressee_tid';
-  $handler->display->display_options['filters']['field_addressee_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_addressee_tid']['expose']['operator_id'] = 'field_addressee_tid_op';
-  $handler->display->display_options['filters']['field_addressee_tid']['expose']['label'] = 'Responsibility for Implementation';
-  $handler->display->display_options['filters']['field_addressee_tid']['expose']['operator'] = 'field_addressee_tid_op';
-  $handler->display->display_options['filters']['field_addressee_tid']['expose']['identifier'] = 'field_addressee_tid';
-  $handler->display->display_options['filters']['field_addressee_tid']['expose']['multiple'] = TRUE;
-  $handler->display->display_options['filters']['field_addressee_tid']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    3 => 0,
-    4 => 0,
-    5 => 0,
-    6 => 0,
-    11 => 0,
-  );
-  $handler->display->display_options['filters']['field_addressee_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_addressee_tid']['vocabulary'] = 'addressee';
 
   /* Display: Content pane */
   $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_1');
@@ -417,6 +425,7 @@ function iahe_recommendations_views_default_views() {
       'field_oa_worktracker_task_type_value' => 'exposed',
       'og_group_ref_target_id' => '',
       'field_addressee_tid' => 'exposed',
+      'field_addressee_value' => 'exposed',
     ),
   );
   $handler->display->display_options['inherit_panels_path'] = '1';

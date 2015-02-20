@@ -59,7 +59,6 @@ function iasc_contact_update_7002() {
     )
     ->fetchAll();
 
-
   if ($result) {
     foreach ($result as $contact) {
       $node = node_load($contact->nid);

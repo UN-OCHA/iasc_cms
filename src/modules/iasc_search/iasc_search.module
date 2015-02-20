@@ -10,7 +10,7 @@ include_once 'iasc_search.features.inc';
  * Implements hook_menu_alter().
  */
 function iasc_search_menu_alter(&$items) {
-  // Disable access to core search pages
+  // Disable access to core search pages.
   unset($items['search']);
   unset($items['search/site']);
   unset($items['search/node']);
@@ -29,14 +29,16 @@ function iasc_search_form_alter(&$form, &$form_state, $form_id) {
     }
   }
 
-  // Override the OA search toolbar. We want to use our panelized version for site search as the action and we don't want the
-  // dropdown options.
+  /*
+  Override the OA search toolbar. We want to use our panelized version for site
+  search as the action and we don't want the dropdown options.
+  */
   if ('apachesolr_panels_search_form' == $form_id && (FALSE === strpos($form['#action'], '/site/search/'))) {
     // Make our apachesolr search form look like the OA toolbar version.
     $form['#theme'] = 'iasc_search_form_toolbar';
     $form['apachesolr_panels_search_form']['#attributes']['class'][] = 'search-text';
     $form['#attached']['css'] = array(
-        drupal_get_path('module', 'iasc_search') . '/css/search_toolbar.css',
+      drupal_get_path('module', 'iasc_search') . '/css/search_toolbar.css',
     );
   }
 }
@@ -64,7 +66,7 @@ function iasc_search_block_info() {
  * Implements hook_block_view().
  */
 function iasc_search_block_view($delta = '') {
-$block = array();
+  $block = array();
 
   switch ($delta) {
     case 'search_results_login_cta':
@@ -80,7 +82,7 @@ $block = array();
 }
 
 /**
- *  Implements hook_theme().
+ * Implements hook_theme().
  */
 function iasc_search_theme($existing, $type, $theme, $path) {
   $theme = array(

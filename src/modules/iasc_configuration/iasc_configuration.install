@@ -162,14 +162,16 @@ function _iasc_configuration_default_nodequeues() {
  * Lower module weight so that our form alter comes after oa_subspaces.module's.
  */
 function iasc_configuration_update_7003() {
-  // Get the weight of the oa_subspaces module
+  // Get the weight of the oa_subspaces module.
   $weight = db_select('system', 's')
     ->fields('s', array('weight'))
     ->condition('name', 'oa_subspaces', '=')
     ->execute()
     ->fetchField();
 
-  // Set our module to a weight 1 heavier, so ours moves lower in execution order
+  /*
+  Set our module to a weight 1 heavier, so ours moves lower in execution order.
+  */
   db_update('system')
     ->fields(array('weight' => $weight + 1))
     ->condition('name', 'iasc_configuration', '=')
@@ -197,9 +199,12 @@ function iasc_configuration_update_7004() {
     $nodes = node_load_multiple($nids);
 
     foreach ($nodes as $node) {
-      // We want to be sure that we're getting sections that aren't associated with a group.
+      /*
+       * We want to be sure that we're getting sections that aren't associated
+       * with a group.
+       */
       if (empty($node->field_oa_group_ref)) {
-        $node->title = t("{$node->title} (Public)");
+        $node->title = t($node->title . ' (Public)');
         node_save($node);
       }
     }

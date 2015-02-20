@@ -6,10 +6,10 @@
  */
 
 /**
-* Implements hook_update_N().
-*
-* Remove oa section term reference field.
-*/
+ * Implements hook_update_N().
+ *
+ * Remove oa section term reference field.
+ */
 function iasc_announcement_update_7000() {
   if ($instance = field_info_instance('node', 'field_oa_section', 'announcement')) {
     field_delete_instance($instance);

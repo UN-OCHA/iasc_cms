@@ -18,14 +18,17 @@ function iasc_meeting_install() {
   $event->locked = 1;
   node_type_save($event);
 
-  // Get the weight of the oa_subspaces module
+  // Get the weight of the oa_subspaces module.
   $weight = db_select('system', 's')
     ->fields('s', array('weight'))
     ->condition('name', 'oa_subspaces', '=')
     ->execute()
     ->fetchField();
 
-  // Set our module to a weight 1 heavier, so ours moves lower in execution order
+  /*
+   * Set our module to a weight 1 heavier, so ours moves lower in execution
+   * order.
+   */
   db_update('system')
     ->fields(array('weight' => $weight + 1))
     ->condition('name', 'iasc_meeting', '=')
@@ -60,14 +63,16 @@ function iasc_meeting_update_7000() {
  * Lower module weight so that our form alter comes after oa_subspaces.module's.
  */
 function iasc_meeting_update_7001() {
-  // Get the weight of the oa_subspaces module
+  // Get the weight of the oa_subspaces module.
   $weight = db_select('system', 's')
     ->fields('s', array('weight'))
     ->condition('name', 'oa_subspaces', '=')
     ->execute()
     ->fetchField();
 
-  // Set our module to a weight 1 heavier, so ours moves lower in execution order
+  /*
+  Set our module to a weight 1 heavier, so ours moves lower in execution order.
+  */
   db_update('system')
     ->fields(array('weight' => $weight + 1))
     ->condition('name', 'iasc_meeting', '=')

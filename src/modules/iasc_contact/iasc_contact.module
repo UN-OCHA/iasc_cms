@@ -24,6 +24,7 @@ function iasc_contact_menu() {
 /**
  * Access callback for: admin/content/contacts.
  * @return bool
+ *   Return TRUE if the user has access, otherwise FALSE.
  */
 function iasc_contact_contacts_list_access() {
   global $user;
@@ -90,7 +91,7 @@ function iasc_contact_form_submit($form, &$form_state) {
 
   // Ensure the generated title isn't too long.
   $title = substr($title, 0, 255);
-  
+
   $form_state['values']['title_field'][LANGUAGE_NONE][0]['value'] = $title;
 }
 
@@ -306,7 +307,7 @@ function iasc_contact_delete_all() {
 /**
  * Deletes all existing body memberships in contact nodes.
  *
- * This clears out all of the membership fields in the field collection entities.
+ * Clear out all of the membership fields in the field collection entities.
  */
 function iasc_contact_clear_memberships() {
   $query = new EntityFieldQuery();
@@ -539,8 +540,10 @@ function iasc_contact_create_node($item, &$context) {
     $address['country'] = $country_mappings[$item['country']];
   }
   else {
-    // Set the default country to Switzerland for empty addresses.
-    // Country determines the default set of address fields displayed in the form.
+    /*
+    Set the default country to Switzerland for empty addresses.
+    Country determines the default set of address fields displayed in the form.
+    */
     $address['country'] = 'CH';
   }
 
@@ -639,7 +642,7 @@ function iasc_contact_link_bodies($item, &$context) {
 }
 
 /**
- * Returns the space nid associated with the legacy name or FALSE if none exists.
+ * Returns space nid associated with the legacy name or FALSE if none exists.
  *
  * @param string $name
  *   The legacy name
@@ -766,8 +769,10 @@ function iasc_contact_link_address($item, &$context) {
     $address['country'] = $country_mappings[$item['orgcountry']];
   }
   else {
-    // Set the default country to Switzerland for empty addresses.
-    // Country determines the default set of address fields displayed in the form.
+    /*
+    Set the default country to Switzerland for empty addresses.
+    Country determines the default set of address fields displayed in the form.
+    */
     $address['country'] = 'CH';
   }
 
@@ -1055,9 +1060,12 @@ function iasc_contact_preprocess_views_view_table(&$vars) {
     $rows = $vars['rows'];
     $len = count($rows);
     for ($i = 0; $i < $len; $i++) {
-      // field_last_name is a combination of the Title, First Name and Last Name fields.
-      // This combination is made in the table settings for the view display.
-      // We want to have the final name ouput link to the node.
+      /*
+       * field_last_name is a combination of the Title, First Name and Last
+       * Name fields.
+       * This combination is made in the table settings for the view display.
+       * We want to have the final name output link to the node.
+       */
       $rows[$i]['field_last_name'] = l($rows[$i]['field_last_name'], "node/{$vars['result'][$i]->nid}");
     }
 

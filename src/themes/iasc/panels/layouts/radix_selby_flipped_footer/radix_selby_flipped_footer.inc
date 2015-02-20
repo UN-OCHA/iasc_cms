@@ -1,5 +1,10 @@
 <?php
-// Plugin definition
+
+/**
+ * @file
+ * Plugin definition for Radix Selby Flipped Footer.
+ */
+
 $plugin = array(
   'title' => t('Radix Selby Flipped Footer'),
   'icon' => 'radix-selby-flipped-footer.png',

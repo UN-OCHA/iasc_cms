@@ -57,7 +57,7 @@ function iasc_preprocess_html(&$vars) {
   // Don't need the navbar for our theme.
   unset($vars['page']['page_top']['navbar']);
 
-  // Adding Touch icons
+  // Adding Touch icons.
   drupal_add_html_head_link(array(
     'rel'  => 'apple-touch-icon-precomposed',
     'href' => base_path() . drupal_get_path('theme', 'iasc') . '/apple-touch-icon-precomposed.png',
@@ -66,8 +66,8 @@ function iasc_preprocess_html(&$vars) {
   $data = array(
     '#tag' => 'meta',
     '#attributes' => array(
-       'name' => 'msapplication-TileColor',
-       'content' => '#000000',
+      'name' => 'msapplication-TileColor',
+      'content' => '#000000',
     ),
   );
   drupal_add_html_head($data, 'msapplication-TileColor');
@@ -75,8 +75,8 @@ function iasc_preprocess_html(&$vars) {
   $data = array(
     '#tag' => 'meta',
     '#attributes' => array(
-       'name' => 'msapplication-TileImage',
-       'content' => base_path() . drupal_get_path('theme', 'iasc') . '/favicon-144.png',
+      'name' => 'msapplication-TileImage',
+      'content' => base_path() . drupal_get_path('theme', 'iasc') . '/favicon-144.png',
     ),
   );
   drupal_add_html_head($data, 'msapplication-TileImage');
@@ -102,7 +102,7 @@ function iasc_preprocess_page(&$variables) {
     array_push($variables['page']['panelipe'], $panels_ipe);
   }
 
-  // Remove primary tabs for anon users
+  // Remove primary tabs for anon users.
   if (!$variables['logged_in']) {
     unset($variables['primarytabs']);
   }
@@ -113,8 +113,9 @@ function iasc_preprocess_page(&$variables) {
  * Implements hook_page_alter().
  */
 function iasc_page_alter(&$page) {
-  // Only print class="row" on pages that uses panels to align the ones that don't
-  if (panels_get_current_page_display()) { 
+  /* Only print class="row" on pages that use panels to align the ones
+  that don't. */
+  if (panels_get_current_page_display()) {
     $page['content']['#prefix'] = '<div class="row">';
     $page['content']['#suffix'] = '</div>';
   }
@@ -185,7 +186,7 @@ function iasc_form_panels_edit_style_type_form_alter(&$form, &$form_state, $form
 }
 
 /**
- * Implements theme_file_icon();
+ * Implements theme_file_icon().
  */
 function iasc_file_icon($variables) {
   $file = $variables['file'];
@@ -352,9 +353,7 @@ function iasc_preprocess_views_view_field(&$vars) {
 /**
  * Custom preprocess for oa_event_list view.
  *
- * @param $vars
- *
- * @see template_preprocess_views_view_field().
+ * @see template_preprocess_views_view_field()
  */
 function iasc_preprocess_views_view_field__oa_event_list(&$vars) {
   if ('og_group_ref' == $vars['field']->field) {
@@ -371,7 +370,7 @@ function iasc_preprocess_views_view_field__oa_event_list(&$vars) {
 function iasc_preprocess_views_view(&$vars) {
   // Add the Login CTA block to document view pages.
   if ('iasc_document' == $vars['name']) {
-    if('page_resources' == $vars['display_id'] || 'page_meeting_documents' == $vars['display_id']) {
+    if ('page_resources' == $vars['display_id'] || 'page_meeting_documents' == $vars['display_id']) {
       if (user_is_anonymous()) {
         $vars['cta'] = module_invoke('iasc_configuration', 'block_view', 'resource_login_cta');
       }
@@ -379,9 +378,10 @@ function iasc_preprocess_views_view(&$vars) {
   }
 
   if ('oa_event_list' == $vars['name']) {
-    if('panel_pane_upcoming_meetings_filterable' == $vars['display_id']) {
-      // Only show the View all Meetings link if the total rows is greater than the items per page.
-      if ($vars['view']->total_rows > $vars['view']->items_per_page ) {
+    if ('panel_pane_upcoming_meetings_filterable' == $vars['display_id']) {
+      /* Only show the View all Meetings link if the total rows is greater than
+      the items per page. */
+      if ($vars['view']->total_rows > $vars['view']->items_per_page) {
         $space_nid = $vars['view']->exposed_raw_input['og_group_ref_target_id'];
         $path = drupal_get_path_alias("node/$space_nid");
         $vars['meetings_link'] = l(
@@ -394,7 +394,7 @@ function iasc_preprocess_views_view(&$vars) {
                 'btn',
                 'btn-inverse',
               ),
-            )
+            ),
           )
         );
       }
@@ -423,12 +423,23 @@ function iasc_apachesolr_panels_info($variables) {
     $end = $response->response->start + count($response->response->docs);
 
     if (!empty($search['keys'])) {
-      $info = t('Results %start - %end of %total for %keys', array('%start' => $start, '%end' => $end, '%total' => $total, '%keys' => $search['keys']));
-      $info .= t('.<br />To narrow your search, click on the facets located below the heading "Filter Search Results". To broaden your search, reset selected facets by clicking (-) next to each selected facet.');
+      $info = t('Results %start - %end of %total for %keys', array(
+          '%start' => $start,
+          '%end' => $end,
+          '%total' => $total,
+          '%keys' => $search['keys'],
+          ));
+      $info .= t('.<br />To narrow your search, click on the facets located below the heading "Filter Search Results".
+        To broaden your search, reset selected facets by clicking (-) next to each selected facet.');
     }
     else {
-      $info = t('Results %start - %end of %total', array('%start' => $start, '%end' => $end, '%total' => $total));
-      $info .= t('.<br />To narrow your search, click on the facets located below the heading "Filter Search Results". To broaden your search, reset selected facets by clicking (-) next to each selected facet.');
+      $info = t('Results %start - %end of %total', array(
+        '%start' => $start,
+        '%end' => $end,
+        '%total' => $total,
+        ));
+      $info .= t('.<br />To narrow your search, click on the facets located below the heading "Filter Search Results".
+        To broaden your search, reset selected facets by clicking (-) next to each selected facet.');
     }
 
     return $info;

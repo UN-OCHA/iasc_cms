@@ -49,3 +49,26 @@ function iasc_update_7000() {
 function iasc_update_7001() {
   module_enable(array('taxonomy_csv'));
 }
+
+/**
+ * Implements hook_update_N().
+ *
+ * Don't allow any content type to use the related content field.
+ */
+function iasc_update_7004() {
+  $oa_related_allowed_types = array (
+    'announcement' => 0,
+    'oa_group' => 0,
+    'oa_space' => 0,
+    'oa_discussion_post' => 0,
+    'oa_event' => 0,
+    'oa_ical_importer' => 0,
+    'oa_section' => 0,
+    'oa_team' => 0,
+    'oa_wiki_page' => 0,
+    'oa_worktracker_task' => 0,
+  );
+
+  variable_set('oa_related_allowed_types', $oa_related_allowed_types);
+  features_template_revert();
+}

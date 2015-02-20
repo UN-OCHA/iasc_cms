@@ -38,9 +38,9 @@ function iahe_recommendations_field_default_field_instances() {
       ),
       'default' => array(
         'label' => 'above',
-        'module' => 'taxonomy',
+        'module' => 'text',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
+        'type' => 'text_default',
         'weight' => 29,
       ),
       'featured' => array(
@@ -65,21 +65,24 @@ function iahe_recommendations_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_addressee',
     'label' => 'Responsibility for Implementation',
-    'options_limit' => FALSE,
-    'options_limit_empty_behaviour' => 0,
-    'options_limit_fields' => array(),
     'required' => 0,
     'settings' => array(
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'options',
+      'module' => 'text',
       'settings' => array(
-        'apply_chosen' => 0,
+        'rows' => 2,
       ),
-      'type' => 'options_select',
-      'weight' => 13,
+      'type' => 'text_textarea',
+      'weight' => 14,
     ),
   );
 
@@ -166,7 +169,7 @@ function iahe_recommendations_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 15,
+      'weight' => 10,
     ),
   );
 
@@ -242,7 +245,7 @@ function iahe_recommendations_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 12,
+      'weight' => 16,
     ),
   );
 
@@ -394,7 +397,7 @@ function iahe_recommendations_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 10,
+      'weight' => 11,
     ),
   );
 
@@ -470,7 +473,7 @@ function iahe_recommendations_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 11,
+      'weight' => 15,
     ),
   );
 
@@ -540,7 +543,7 @@ function iahe_recommendations_field_default_field_instances() {
         'apply_chosen' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 16,
+      'weight' => 13,
     ),
   );
 
@@ -614,7 +617,7 @@ function iahe_recommendations_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 14,
+      'weight' => 12,
     ),
   );
 

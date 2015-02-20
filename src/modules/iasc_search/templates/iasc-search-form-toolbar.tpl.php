@@ -4,7 +4,8 @@
  * Themes oa_apachesolr_search_form() for use in the toolbar for IASC.
  *
  * - $element: The form elements.
- * - $oa_toolbar_btn_class: A class to add to the buttons.Block template for Search Results Login Call to Action.
+ * - $oa_toolbar_btn_class: A class to add to the buttons.
+ *  Block template for Search Results Login Call to Action.
  */
 ?>
 
@@ -20,4 +21,3 @@
   </div>
   <?php print drupal_render_children($element); ?>
 </div>
-
