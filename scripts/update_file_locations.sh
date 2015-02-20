@@ -10,7 +10,10 @@ echo 'Move to the build directory';
 cd /opt/development/iasc_cms/build/html
 
 echo 'Update location of entity module';
-sudo drush sqlq 'UPDATE system SET filename = "profiles/openatrium/modules/contrib/entity/entity.module" where name = "entity" limit 1;'
+sudo drush sqlq "UPDATE system SET filename = REPLACE(filename, 'sites/all/modules/contrib/entity/', 'profiles/openatrium/modules/contrib/entity/') WHERE name LIKE 'entity%';"
+sudo drush sqlq "UPDATE registry SET filename = REPLACE(filename, 'sites/all/modules/contrib/entity/', 'profiles/openatrium/modules/contrib/entity/') WHERE name LIKE 'entity%';"
+sudo drush sqlq "UPDATE registry_file SET filename = REPLACE(filename, 'sites/all/modules/contrib/entity/', 'profiles/openatrium/modules/contrib/entity/') where filename like '%/contrib/entity/%';"
+sudo drush sqlq "TRUNCATE cache;";
 
 echo 'Run registry rebuild';
 drush rr
