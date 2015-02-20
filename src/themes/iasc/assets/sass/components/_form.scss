@@ -19,13 +19,12 @@ form.navbar-form {
       width: 100%;
       height: 30px;
       border: none;
-      background-color: #cde2e0;
     }
   }
   .submit-container {
     position: absolute;
     right: 0; top: 0;
-    color: $brand-primary;
+    color: $brand-secondary;
     .icons-search {
       position: absolute;
       right: 10px; top: 0;

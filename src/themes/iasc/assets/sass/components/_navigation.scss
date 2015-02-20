@@ -103,13 +103,11 @@ a.menu { @extend .dropdown-toggle; }
 // Utility Navigation
 .navbar-top {
   ul {
-    background-color: #96c1bc;
-    border: 1px solid #b6d5d2;
     margin-bottom: 0; 
     margin-left: 0;
   }
   a {  
-    color: $brand-primary;
+    color: $brand-secondary;
     font-size: 19px;
     padding: 5px;
     text-decoration: none;
