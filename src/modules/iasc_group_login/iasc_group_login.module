@@ -7,7 +7,7 @@
 include_once 'iasc_group_login.features.inc';
 
 /**
- *  Implements hook_menu().
+ * Implements hook_menu().
  */
 function iasc_group_login_menu() {
   $items['group/user/register'] = array(
@@ -22,7 +22,7 @@ function iasc_group_login_menu() {
 }
 
 /**
- *  Implements hook_menu_alter().
+ * Implements hook_menu_alter().
  */
 function iasc_group_login_menu_alter(&$items) {
   // Use our access check to determine if a user can edit his/her user profile.
@@ -33,7 +33,7 @@ function iasc_group_login_menu_alter(&$items) {
 }
 
 /**
- *  Implements hook_permission().
+ * Implements hook_permission().
  */
 function iasc_group_login_permission() {
   return array(
@@ -58,7 +58,9 @@ function iasc_user_edit_access($account) {
 }
 
 /**
- * Access callback to determines if the current user has access to the user registration page.
+ * Access callback for access to user registration page.
+ *
+ * Determines if the current user has access to the user registration page.
  */
 function iasc_user_register_access() {
   global $user;
@@ -154,7 +156,10 @@ function iasc_user_register_form($form, &$form_state) {
  * @see iasc_user_register_form()
  */
 function iasc_user_register_submit($form, &$form_state) {
-  // Get password. We are not requiring email verification so the password should be set.
+  /*
+   * Get password. We are not requiring email verification so the password
+   * should be set.
+   */
   $pass = $form_state['values']['pass'];
 
   // Remove unneeded values.
@@ -166,27 +171,47 @@ function iasc_user_register_submit($form, &$form_state) {
   // This is the new individual account to be created.
   $individual_account = $form['#user'];
 
-  entity_form_submit_build_entity('user', $individual_account, $form, $form_state);
+  entity_form_submit_build_entity(
+    'user',
+    $individual_account,
+    $form,
+    $form_state
+  );
 
   /*
-   * Populate $individual_account_vals with the properties of $individual_account,
-   * which have been edited on this form by taking over all values, which appear
-   * in the form values too.
+   * Populate $individual_account_vals with the properties of
+   * $individual_account, which have been edited on this form by taking over all
+   * values, which appear in the form values too.
    */
-  $individual_account_vals = array_intersect_key((array) $individual_account, $form_state['values']);
+  $individual_account_vals = array_intersect_key(
+    (array) $individual_account,
+    $form_state['values']
+  );
 
-  // Get the og groups that the currently logged in group user account is associated with.
+  /*
+   * Get the og groups that the currently logged in group user account is
+   * associated with.
+   */
   global $user;
   $group_account_groups = og_get_entity_groups('user', $user);
 
-  // Assign Drupal roles to the individual account based on group login account's groups.
+  /*
+   * Assign Drupal roles to the individual account based on group login
+   * account's groups.
+   */
   iasc_assign_roles($individual_account_vals, $group_account_groups['node']);
 
-  // Unblock the account. Verification by the site admin/user email is unnecessary.
+  /*
+   * Unblock the account. Verification by the site admin/user email is
+   * unnecessary.
+   */
   $individual_account_vals['status'] = TRUE;
 
   // Create the individual account.
-  $individual_account = user_save($individual_account, $individual_account_vals);
+  $individual_account = user_save(
+    $individual_account,
+    $individual_account_vals
+  );
 
   // Terminate if an error occurred during user_save().
   if (!$individual_account) {
@@ -198,10 +223,15 @@ function iasc_user_register_submit($form, &$form_state) {
   $form_state['user'] = $individual_account;
   $form_state['values']['uid'] = $individual_account->uid;
 
-  watchdog('user', 'New user: %name (%email).', array('%name' => $form_state['values']['name'], '%email' => $form_state['values']['mail']), WATCHDOG_NOTICE, l(t('edit'), 'user/' . $individual_account->uid . '/edit'));
+  watchdog('user', 'New user: %name (%email).', array(
+    '%name' => $form_state['values']['name'],
+    '%email' => $form_state['values']['mail']),
+    WATCHDOG_NOTICE,
+    l(t('edit'), 'user/' . $individual_account->uid . '/edit')
+  );
 
   // Add the groups to the newly created account.
-  foreach($group_account_groups['node'] as $gid) {
+  foreach ($group_account_groups['node'] as $gid) {
     og_group('node', $gid, array('entity' => $individual_account));
   }
 
@@ -217,6 +247,7 @@ function iasc_user_register_submit($form, &$form_state) {
 
 /**
  * Helper function to determine appropriate user role based on given groups.
+ *
  * @param array $individual_account_vals
  *   The user array
  * @param array $group_account_groups
@@ -245,10 +276,10 @@ function iasc_assign_roles(&$individual_account_vals, $group_account_groups) {
 }
 
 /**
- * Return a list of all Groups
+ * Return a list of all Groups.
  *
- * @return
- *    An array of Groups, keyed by the group nid.
+ * @return array
+ *   An array of Groups, keyed by the group nid.
  */
 function iasc_group_login_get_all_groups() {
   $query = db_select('node', 'n');

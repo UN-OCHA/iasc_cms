@@ -289,11 +289,14 @@ function iasc_scrape_update_7007() {
 function iasc_scrape_update_7008() {
   /*
    * In order to use the "More recently created" solr bias, we need to have
-   * proper authoring date match up to the "Published Date" for Documents/Products
-   * and Announcements and "Event Date" for Meetings.
+   * proper authoring date match up to the "Published Date" for
+   * Documents/Products and Announcements and "Event Date" for Meetings.
    */
 
-  // Get all of the Documents/Products where the authoring date != published date.
+  /*
+   * Get all of the Documents/Products where the
+   * authoring date != published date.
+   */
   $result = db_query("
     SELECT n.nid FROM {field_data_field_published_date} d
     LEFT JOIN {node} n ON n.nid = d.entity_id

@@ -22,7 +22,7 @@ function iasc_meeting_view_all_meeting_render($subtype, $conf, $args, $context) 
   }
 
   $block = new stdClass();
-  
+
   $classes = array(
     'oa-buttons',
     'btn',
