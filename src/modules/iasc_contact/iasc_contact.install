@@ -81,3 +81,17 @@ function iasc_contact_update_7002() {
     }
   }
 }
+
+/**
+ * Implements hook_update_N().
+ *
+ * Remove Organization address fields.
+ *
+ * These are unnecessary.
+ */
+function iasc_contact_update_7003() {
+  field_delete_field('field_org_address');
+  field_delete_field('field_org_phone');
+  field_delete_field('field_org_fax');
+  field_purge_batch(10);
+}

@@ -721,10 +721,10 @@ function iasc_contact_link_org($item, &$context) {
 }
 
 /**
- * Takes an array and updates a contact node with organisation address.
+ * Takes an array and updates a contact node with contact address.
  *
  * @param array $item
- *   An array describing the contact/organisation relationship and address.
+ *   An array describing the contact address.
  * @param array &$context
  *   A batch API context.
  */
@@ -752,21 +752,26 @@ function iasc_contact_link_address($item, &$context) {
   $node_wrapper = entity_metadata_wrapper('node', $nid);
   $entity = $node_wrapper->value();
 
-  $address = $node_wrapper->field_org_address->value();
+  $address = $node_wrapper->field_address->value();
 
-  // We are using the name_line field of addressfield for orgbuilding.
-  $address['name_line'] = (!empty($item['orgbuilding']) && $item['orgbuilding'] != 'NULL') ? $item['orgbuilding'] : '';
+  // We are using the name_line field of addressfield for building.
+  $address['name_line'] = (!empty($item['building']) && $item['building'] != 'NULL') ? $item['building'] : '';
 
-  $address['thoroughfare'] = (!empty($item['orgstreet']) && $item['orgstreet'] != 'NULL') ? $item['orgstreet'] : '';
-  $address['administrative_area'] = (!empty($item['orgstateprovince']) && $item['orgstateprovince'] != 'NULL') ? $item['orgstateprovince'] : '';
-  $address['locality'] = (!empty($item['orgcity']) && $item['orgcity'] != 'NULL') ? $item['orgcity'] : '';
-  $address['postal_code'] = (!empty($item['orgpostcode']) && $item['orgpostcode'] != 'NULL') ? $item['orgpostcode'] : '';
-  $address['premise'] = (!empty($item['orgpostcode2']) && $item['orgpostcode2'] != 'NULL') ? $item['orgpostcode2'] : '';
+  // We are using the organisation_name field of addressfield for officeroom.
+  $address['organisation_name'] = (!empty($item['officeroom']) && $item['officeroom'] != 'NULL') ? $item['officeroom'] : '';
+
+  $address['thoroughfare'] = (!empty($item['street']) && $item['street'] != 'NULL') ? $item['street'] : '';
+  $address['administrative_area'] = (!empty($item['stateprovince']) && $item['stateprovince'] != 'NULL') ? $item['stateprovince'] : '';
+  $address['locality'] = (!empty($item['city']) && $item['city'] != 'NULL') ? $item['city'] : '';
+  $address['postal_code'] = (!empty($item['postalcode']) && $item['postalcode'] != 'NULL') ? $item['postalcode'] : '';
+  $address['premise'] = (!empty($item['postalcode2']) && $item['postalcode2'] != 'NULL') ? $item['postalcode2'] : '';
 
   // Standardize the country.
-  if (!empty($item['orgcountry']) && $item['orgcountry'] != 'NULL') {
+  if (!empty($item['country']) && $item['country'] != 'NULL') {
     $country_mappings = legacy_country_mappings();
-    $address['country'] = $country_mappings[$item['orgcountry']];
+    if (!empty($country_mappings[$item['country']])) {
+      $address['country'] = $country_mappings[$item['country']];
+    }
   }
   else {
     /*
@@ -776,18 +781,14 @@ function iasc_contact_link_address($item, &$context) {
     $address['country'] = 'CH';
   }
 
-  $node_wrapper->field_org_address->set($address);
-
-  $node_wrapper->field_org_phone = (!empty($item['orgphone']) && $item['orgphone'] != 'NULL') ? $item['orgphone'] : '';
-  $node_wrapper->field_org_fax = (!empty($item['orgfax']) && $item['orgfax'] != 'NULL') ? $item['orgfax'] : '';
+  $node_wrapper->field_address->set($address);
 
   // Save the entity.
   $node_wrapper->save(TRUE);
   entity_save('node', $entity);
 
-  $message = t("Update Contact: @contact with org address for: @org", array(
+  $message = t("Update Contact: @contact with address", array(
     '@contact' => $node_wrapper->title->value(),
-    '@org' => $item['orgName'],
   ));
   watchdog('iasc_contact', $message, WATCHDOG_DEBUG);
 
