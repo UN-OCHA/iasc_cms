@@ -595,7 +595,7 @@ function iasc_contact_views_default_views() {
   $handler->display->display_options['filters']['title']['expose']['autocomplete_raw_suggestion'] = 1;
   $handler->display->display_options['filters']['title']['expose']['autocomplete_raw_dropdown'] = 1;
   $handler->display->display_options['filters']['title']['expose']['autocomplete_dependent'] = 0;
-  /* Filter criterion: Field collection item: Body (field_body_membership) */
+  /* Filter criterion: Field collection item: Body (field_body_membership:target_id) */
   $handler->display->display_options['filters']['field_body_membership_target_id']['id'] = 'field_body_membership_target_id';
   $handler->display->display_options['filters']['field_body_membership_target_id']['table'] = 'field_data_field_body_membership';
   $handler->display->display_options['filters']['field_body_membership_target_id']['field'] = 'field_body_membership_target_id';
@@ -782,18 +782,6 @@ function iasc_contact_views_default_views() {
   $handler->display->display_options['fields']['body']['label'] = '';
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['body']['hide_empty'] = TRUE;
-  /* Field: Content: Organization Address */
-  $handler->display->display_options['fields']['field_org_address']['id'] = 'field_org_address';
-  $handler->display->display_options['fields']['field_org_address']['table'] = 'field_data_field_org_address';
-  $handler->display->display_options['fields']['field_org_address']['field'] = 'field_org_address';
-  /* Field: Content: Organization phone */
-  $handler->display->display_options['fields']['field_org_phone']['id'] = 'field_org_phone';
-  $handler->display->display_options['fields']['field_org_phone']['table'] = 'field_data_field_org_phone';
-  $handler->display->display_options['fields']['field_org_phone']['field'] = 'field_org_phone';
-  /* Field: Content: Organization fax */
-  $handler->display->display_options['fields']['field_org_fax']['id'] = 'field_org_fax';
-  $handler->display->display_options['fields']['field_org_fax']['table'] = 'field_data_field_org_fax';
-  $handler->display->display_options['fields']['field_org_fax']['field'] = 'field_org_fax';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';

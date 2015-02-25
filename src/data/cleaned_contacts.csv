@@ -1,0 +1,1612 @@
+contactID;first;last;orgID;building;officeroom;street;stateprovince;city;postalcode;postalcode2;country
+1;Yukiko;Yoshida;20;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+2;Marilena;Viviani;15;;;P.O. Box 1551;;Aman;;;
+3;Jacob;Korreborg;8;Palais des Nations;S-047;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+4;Ivane;Bochorishvili;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+5;Mirlinda;Pasoma;2;Palais des Nations;S-26;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+6;Carmen;van Heese;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+7;Kate;Burns;8;;;1 United Nations Plaza;NY;New York;10017;;United States
+8;Tanja;Sleeuwenhoek;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+11;David;Harcharik;1;;;Via delle Terme di Caracalla;;Rome;00100;;Italy
+12;Jan;Egeland;8;United Nations;S-3672A;1 United Nations Plaza;NY;New York;10017;;United States
+13;Ann M.;Veneman;15;;;3 United Nations Plaza;NY;New York;10017;;United States
+14;Kemal;Dervis;12;;16th Floor;1 United Nations Plaza;NY;New York;10017;;United States
+15;AntÃ³nio;Guterres;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+16;Thoraya;Obaid;13;;;220 East 42nd Street;;New York;10017;;United States
+17;James T.;Morris;16;Parco dei Medici;;Via C.G. Viola 68;;Rome;00148;;Italy
+18;Jong-Wook;Lee;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+21;Elizabeth;Ferris;4;;;Route de Ferney 150, P.O. Box 2100;;Geneva;1211;2;Switzerland
+22;Markku;Niskala;5;;;P.O. Box 372;;Geneva;1211;19;Switzerland
+23;Brunson;McKinley;7;;;17, route des Morillons;;Geneva;1211;19;Switzerland
+24;Pablo;Mateu;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+25;Louise;Arbour;10;Palais Wilson;;52, rue de Paquis;;Geneva;1211;10;Switzerland
+26;Walter;KÃ¤lin;22;;;Hochschulstrasse 4;;Bern;3012;;Switzerland
+29;Merete;Johansson;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+30;Toby;Lanzer;12;;;;;Bangui;;;Central African Republic
+31;Cherif;Ghaly;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+32;Carlo;Scaramella;16;Parco dei Medici;;Via C.G. Viola 68;;Rome;00148;;Italy
+33;Everett;Ressler;15;Palais des Nations;;5-7, avenue de la Paix;;Geneva;1211;10;Switzerland
+34;Alan;Vernon;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+35;Mark;van Ommeren;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+36;Mike;Wessells;87;;Washington;;;Richmond;;;United States
+37;Mark;Bowden;8;;;1 United Nations Plaza;NY;New York;10017;;United States
+40;Magda;Ninaber van Eyben;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+42;Letizia;Rossano;66;;;;;Geneva;;;Switzerland
+44;Bridgette;Beckford;8;;;1 United Nations Plaza;NY;New York;10017;;United States
+49;Angelo;Gnaedinger;3;;;19, avenue de la Paix;;Geneva;1202;;Switzerland
+50;Ian;Johnson;18;;;1818 H Street, N.W. MC4-123;D.C.;Washington;200433;;United States
+52;Nicolas;GÃ©rard;24;Palais des Nations;;;;Geneva;1211;10;Switzerland
+53;Yvette;Stevens;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+60;Maximilien;Zimmermann;25;;;7-9, chemin de Balexert;;Geneva;1219;;Switzerland
+61;Eva;von Oelreich;11;;;17, chemin des Crêts, C.P. 372;;Geneva;1211;10;Switzerland
+62;Natasha;Tolstoi;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+63;Olivier;van Damme;28;International Environmental House;;11-13, chemin des Anémones;;Geneva;1219;Chatelaine;Switzerland
+64;Richard;China;1;;;Via delle Terme di Caracalla;;Rome;00100;;Italy
+65;Lise S.;Boudreault;3;;;19, avenue de la Paix;;Geneva;1202;;Switzerland
+66;Ed;Schenkenberg;4;;;26-28, avenue Giuseppe Motta;;Geneva;1202;;Switzerland
+67;Manisha;Thomas;2;Palais des Nations;S-22;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+68;Robert;Mister;5;;;P.O. Box 372;;Geneva;1211;19;Switzerland
+69;James K.;Bishop;6;;Washington;1400 16th Street NW, Suite 210;DC;Washington;20036;;United States
+70;Robert;Paiva;7;;;17, route des Morillons;;Geneva;1211;19;Switzerland
+71;Shahrzad;Tadjbakhsh;10;Palais Wilson;;52, rue de Paquis;;Geneva;1211;10;Switzerland
+74;Paul;Oertly;10;Palais Wilson;;52, rue de Paquis;;Geneva;1211;10;Switzerland
+75;Kayoko;Gotoh;12;;;11-13, chemin des Anémones;;Geneva;1219;Chatelaine;Switzerland
+76;Henia;Dakkak;13;;;220 East 42nd Street;NY;New York;10017;;United States
+77;Nina;Sreenivasan;13;International Environment House;;11-13, chemin des Anémones;;Geneva;1219;Chatelaine;Switzerland
+78;Kemlin;Furley;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+79;Eric;Laroche;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+80;Paul;Bonard;50;;;;;Kinshasa;;;Democratic Republic of Congo (DRC)
+81;Patrick;Reichenmiller;18;;;3, chemin Louis Dunant;;Geneva;1211;21;Switzerland
+82;Kazuhide;Kuroda;18;;;;;New York;;;United States
+83;Marianne;Ward;16;Parco dei Medici;;Via C.G. Viola 68;;Rome;00148;;Italy
+84;Natasha;Nadazdin;16;Parco dei Medici;;Via C.G. Viola 68;;Rome;00148;;Italy
+85;Khadija;Rejto;17;;;;;New York;;;United States
+87;Amanda;Bok;3;;;19, avenue de la Paix;;Geneva;1202;;Switzerland
+88;Linda;Poteat;6;;Washington;1400 16th Street NW, Suite 210;DC;Washington;20036;;United States
+140;Noel;Tsekouras;8;;;;;Kinshasa;;;
+141;Gerhard;Putman-Cramer;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+143;Anne M.;Bauer;1;;;Via delle Terme di Caracalla;;Rome;00100;;Italy
+147;SUnited Statesn;Johnson;5;;;P.O. Box 372;;Geneva;1211;19;Switzerland
+151;Luca;Dall`Oglio;7;;;122 East 42nd Street;NY;New York;10168-1610;;United States
+152;Pasquale;Lupoli;7;;;17, route des Morillons;;Geneva;1211;19;Switzerland
+153;Ricardo;Mena;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+154;Fabrizio;Hochschild;10;Palais Wilson;;52, rue de Paquis;;Geneva;1211;10;Switzerland
+159;Kathleen;Cravero;12;;;1 United Nations Plaza;NY;New York;10017;;United States
+160;James;Rawley;12;;;11-13, chemin des Anémones;;Geneva;1219;Chatelaine;Switzerland
+161;Philippe;Lazzarini;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+162;Pamela;Delargy;13;;;220 East 42nd Street;NY;New York;10017;;United States
+163;Wilma;Doedens;13;International Environment House;;11-13, chemin des Anémones;;Geneva;1219;Chatelaine;Switzerland
+169;Besida;Tonwe;8;;;;;;;;Cote d'Ivoire
+170;Afshan;Khan;15;;;3 United Nations Plaza;NY;New York;10017;;United States
+172;Ian;Bannon;18;;;1818 H Street, N.W. MC4-123;D.C.;Washington;200433;;United States
+173;Allan;Jury;16;Parco dei Medici;;Via C.G. Viola 68;;Rome;00148;;Italy
+174;Deborah;Reid;16;Parco dei Medici;;Via C.G. Viola 68;;Rome;00148;;Italy
+177;Ala;Alwan;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+178;Mukesh;Kapila;5;;;P.O. Box 372;;Geneva;1211;19;Switzerland
+179;Alessandro;Loretti;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+180;Florentina;Debling;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+181;Romano;Lasker;8;;S-3760B;1 United Nations Plaza;NY;New York;10017;;United States
+184;Marissa;Gonzalez;7;;;17, route des Morillons;;Geneva;1211;19;Switzerland
+185;Jeffrey;Brez;15;;;;;;;;Cote d'Ivoire
+186;Elizabeth;Bellardo;6;;Washington;1717 Massachusetts Avenue NW, Suite 701;DC;Washington;20036;;United States
+187;Maribeth;Llaguno;15;;;3 United Nations Plaza;NY;New York;10017;;United States
+188;Stefanie;Paradiso;15;;;3 United Nations Plaza;NY;New York;10017;;United States
+190;David;Nabarro;86;;;1 United Nations Plaza;NY;New York;10017;;United States
+191;Jordana;Nunes Miranda;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+192;Ariane;Waldvogel;16;Palais des Nations;;avenue de la Paix;;Geneva;1211;10;Switzerland
+193;Heidi;Findlay;16;Palais des Nations;;avenue de la Paix;;Geneva;1211;10;Switzerland
+194;Pino;Annunziata;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+195;Johanna;Larusdottir;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+196;Claudia;Steulet;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+197;Linda;Clemensson;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+198;Martine;Schwarz;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+199;Ivana;Boko;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+200;Khalid;Shibib;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+201;Oliver;Lacey-Hall;8;;;1 United Nations Plaza;NY;New York;10017;;United States
+202;Rudolph;Muller;8;;;1 United Nations Plaza;NY;New York;10017;;United States
+203;Quoc;Nguyen;15;Palais des Nations;;5-7, avenue de la Paix;;Geneva;1211;10;Switzerland
+205;Clarissa;Azkoul;7;;;17, route des Morillons;;Geneva;1211;19;Switzerland
+206;Hansjoerg;Strohmeyer;8;;;1 United Nations Plaza;NY;New York;10017;;United States
+207;Marianne;Moran;8;;;1 United Nations Plaza;NY;New York;10017;;United States
+208;Robyn;Shepherd;6;;Washington;1717 Massachusetts Avenue NW, Suite 701;DC;Washington;20036;;United States
+209;Claudia;Richter-Pluhar;5;;;P.O. Box 372;;Geneva;1211;19;Switzerland
+211;Anne-Marie;Buschman-Petit;7;;;17, route des Morillons;;Geneva;1211;19;Switzerland
+214;Rina;Manzo;16;Parco dei Medici;;Via C.G. Viola 68;;Rome;00148;;Italy
+215;Rebecca;Richards;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+218;David;Fisher;5;;;P.O. Box 372;;Geneva;1211;19;Switzerland
+219;Bjorn;Pettersson;10;Palais Wilson;;52, rue de Paquis;;Geneva;1211;10;Switzerland
+220;Jamie;McGoldrick;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+221;Rashid;Khalikov;8;;S-134;1 United Nations Plaza;NY;New York;10017;;United States
+223;Flemming;Nielsen;5;;;P.O. Box 372;;Geneva;1211;19;Switzerland
+224;Mirza Hussain;Khan;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+225;Ingrid;Nordstrom-Ho;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+226;Abdoulaye Mar;Dieye;12;;;Angle rue Gourgas et Ave Marchand (Plateau);B.P.;Abidjan;1747;1;Cote d'Ivoire
+227;JoÃ«l;Boutroue;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+228;Kashka;Huyton;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+229;Emmanuel;Tronc;33;P.O. Box 116;;78, rue de LaUnited Statesnne;;Geneva;1211;21;Switzerland
+230;Agni;Baljinnyam;5;;;P.O. Box 372;;Geneva;1211;19;Switzerland
+232;Ayaz;Ali;43;;;;;Birmingham;;;United Kingdom
+233;YaÃ«l;Blic;15;Palais des Nations;;5-7, avenue de la Paix;;Geneva;1211;10;Switzerland
+234;Luc;Chauvin;15;Palais des Nations;;5-7, avenue de la Paix;;Geneva;1211;10;Switzerland
+236;Clement;Cazaubon;5;;;P.O. Box 372;;Geneva;1211;19;Switzerland
+237;Karen;Oliveira;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+238;Mijke;Hertoghs;35;International Environment House;;11-13, chemin des Anémones;;Geneva;1219;Chatelaine;Switzerland
+241;Thomas;Getman;36;;;6, chemin de la Tourelle;;Geneva;1209;;Switzerland
+242;Maude;Montani;16;Palais des Nations;;avenue de la Paix;;Geneva;1211;10;Switzerland
+243;Anna;Kordora;16;Palais des Nations;;avenue de la Paix;;Geneva;1211;10;Switzerland
+244;Marcel;Mikala;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+247;Paul;Hebert;8;;;P.O. Box 60252;;Addis Ababa;;;Ethiopia
+248;Johanna;Langenkamp;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+249;Severine;Agnelli;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+252;Alf;Blikberg;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+253;David;Carden;8;;;1 United Nations Plaza;NY;New York;10017;;United States
+255;Myke;Leahy;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+257;Elin;Asgeirsdottir;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+258;Peggy;Sailler;7;;;17, route des Morillons;;Geneva;1211;19;Switzerland
+259;Zuhal;Ayoub;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+262;Raouf;Mazou;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+264;Nadir;Nawas;39;Palais des Nations, Le Bocage;;avenue de la Paix;;Geneva;1211;10;Switzerland
+265;Mutoy;Mubiala;10;Palais Wilson;;52, rue de Paquis;;Geneva;1211;10;Switzerland
+266;Mirko;Forni;40;International Environment House 2;;7-9, chemin de Balexert;;Geneva;1219;Chatelaine;Switzerland
+267;Eliza;Watson;41;;;122 East 42nd Street;NY;New York;10168-1289;;United States
+268;Vanessa;Tobin;15;;;3 United Nations Plaza;NY;New York;10017;;United States
+269;Anvar;Munavvarov;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+270;Mohammad Nisar;Khan;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+271;Aninia;Nadig;29;;;7-9, chemin de Balexert;;Geneva;1219;Chatelaine;Switzerland
+272;Luzitu;Simao;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+273;Adelmo;Risi Valdettaro;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+274;Doris;Knoechel;36;;;6, chemin de la Tourelle;;Geneva;1209;;Switzerland
+275;Abdalla;Abbas;40;International Environment House 2;;7-9, chemin de Balexert;;Geneva;1219;Chatelaine;Switzerland
+277;Janet;Puhalovic;8;;;1 United Nations Plaza;NY;New York;10017;;United States
+278;Ousmane;Watt;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+279;Geoffrey;Wordley;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+280;Mersika;Grabus;43;;;18, avenue Bouchet;;Geneva;1209;;Switzerland
+281;Karl;Steinacker;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+284;Nadia;Hadi;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+286;Denis;Aitken;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+288;Gisela;Sgarbi;12;;;11-13, chemin des Anémones;;Geneva;1219;Chatelaine;Switzerland
+290;Carole;Ray;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+293;Caroline;Peguet;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+294;DUnited Statesn;Zupka;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+295;Sergio;Piazzi;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+296;Joanne;Clark;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+297;Jan Jaap;van Halem;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+298;Afia;Blasco;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+300;Michel;Kassa;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+301;Emilienne;Anikpo N'Tame;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+302;Ewa;Eriksson;5;;;P.O. Box 372;;Geneva;1211;19;Switzerland
+303;Daniel;Augstburger;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+304;Tom;Delrue;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+305;Frank;Remus;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+306;Angela;Raven-Roberts;15;;;;;Geneva;;;Switzerland
+307;Michel;Gaude;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+308;Opia;Kumah;8;;;1 United Nations Plaza;NY;New York;10017;;United States
+309;Arild;Birkenes;29;;;7-9, chemin de Balexert;;Geneva;1219;Chatelaine;Switzerland
+310;Marc;Vincent;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+312;Mark;Cutts;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+313;Fabrizio;Gentiloni;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+314;Alison;Joyner;48;;;;;Geneva;1211;19;Switzerland
+316;Patrick;Drury;17;;;;;Geneva;;;Switzerland
+317;Sikander;Khan;15;Palais des Nations;;5-7, avenue de la Paix;;Geneva;1211;10;Switzerland
+318;Esther;Vigneau;15;;;;;Geneva;;;Switzerland
+319;Helena;Molin-Valdes;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+322;Kersten;Jauer;20;;;Strasse der Genossenschaft 4;;Borna;04552;;Germany
+326;Duncan;MacLaren;27;;;Palazzo San Calisto;;Vatican City;00120;;Italy
+327;Yannick;Guegan;23;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+328;Jean-Luc;Bories;15;;;3 United Nations Plaza;NY;New York;10017;;United States
+329;Ed;Tsui;8;;;1 United Nations Plaza;NY;New York;10017;;United States
+331;Gianni;Magazzeni;10;Palais Wilson;;52, rue de Paquis;;Geneva;1211;10;Switzerland
+333;Anne-Willem;Bijleveld;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+334;Daniel;Toole;15;;;3 United Nations Plaza;NY;New York;10017;;United States
+335;Sylvie;Breme;7;;;17, route des Morillons;;Geneva;1211;19;Switzerland
+336;Joy;Muller;5;;;P.O. Box 372;;Geneva;1211;19;Switzerland
+337;Bernard;Pecoul;30;;;1 Place Saint Gervais;;Geneva;1201;;Switzerland
+343;Louis;Michel;37;;;Berlaymont 10/165;;Brussels;1049;;Belgium
+344;Nili;Safavi;10;Palais Wilson;;52, rue de Paquis;;Geneva;1211;10;Switzerland
+346;Rob;McConnell;51;;;;;Rome;;;Italy
+347;Patricia;Lewis;24;Palais des Nations;;;;Geneva;1211;10;Switzerland
+348;Salvatore;Lombardo;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+350;Arjun;Katoch;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+351;Udo;Janz;14;;;;NY;New York;10017;;United States
+352;Frederica;d'Andreagiovanni;8;;;;;Geneva;;;Switzerland
+353;Yasmin;Burton;39;;;;;Geneva;;;Switzerland
+354;Matthias;Burchard;39;Palais des Nations, Le Bocage;;avenue de la Paix;;Geneva;1211;10;Switzerland
+355;Lea;Matheson;7;;;17, route des Morillons;;Geneva;1211;19;Switzerland
+356;Francesco;Pisano;28;International Environmental House;;11-13, chemin des Anémones;;Geneva;1219;Chatelaine;Switzerland
+357;Donato;Kiniger-Passigli;53;;;4, route des Morillons;;Geneva;1211;10;Switzerland
+359;Barbara;McCallin;29;;;7-9, chemin de Balexert;;Geneva;1219;Chatelaine;Switzerland
+360;Claudia;McGoldrick;29;;;7-9, chemin de Balexert;;Geneva;1219;Chatelaine;Switzerland
+361;Jens-Hagen;Eschenbaecher;29;;;7-9, chemin de Balexert;;Geneva;1219;Chatelaine;Switzerland
+362;Elisabeth;Rasmusson;73;P.O. Box 6758;;St. Olavs Plass;;Oslo;N-0130;;Norway
+363;Marta;Mejia;40;International Environment House 2;;7-9, chemin de Balexert;;Geneva;1219;Chatelaine;Switzerland
+364;Paul;Paredes;1;;;avenue de la Paix;;Geneva;1211;10;Switzerland
+365;Laketch;Dirasse;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+366;Kirsten;Gelsdorf;8;;;1 United Nations Plaza;NY;New York;10017;;United States
+368;Jesper;Lund;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+369;Guido;Galli;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+370;Christophe;Girod;10;Palais Wilson;3-077;52, rue de Paquis;;Geneva;1211;10;Switzerland
+371;Jean-Jacques;Graisse;16;Parco dei Medici;;Via C.G. Viola 68;;Rome;00148;;Italy
+372;Steffen;Stenberg;37;;;;;Brussels;1049;;Belgium
+373;H.;Trautmann;37;;;;;Brussels;1049;;Belgium
+374;HervÃ©;Delphin;37;;;;;Brussels;1049;;Belgium
+375;Thierry;Bechet;37;;;66, rue du Grand-Pre;;Geneva;1211;7;Switzerland
+376;Ysabel;Fougery;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+379;Haruhiko;Kuroda;54;;;6 ADB Avenue;Mandaluyong City;Manila;1550;Metro;Philippines
+381;Richard;Feachem;55;;;8, chemin de Blandonnet;;Geneva;1214;Vernier;Switzerland
+382;Nicole;Gloor;55;;;8, chemin de Blandonnet;;Geneva;1214;Vernier;Switzerland
+383;Juan;Somavia;53;;;4, route des Morillons;;Geneva;1211;10;Switzerland
+384;Lesley;Jones;53;;;4, route des Morillons;;Geneva;1211;10;Switzerland
+386;Peter;Piot;23;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+387;Luz;Asuncion;23;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+388;Klaus;Toepfer;35;P.O. Box 30552, 00100;;United Nations Avenue;;Nairobi;;;Kenya
+389;Amedeo;Buonajuti;35;P.O. Box 30552, 00100;;United Nations Avenue;;Nairobi;;;Kenya
+390;KoÃ¯chiro;Matsuura;57;;;Place de Fontenoy 7;;Paris;75352;07 SP;France
+391;Genc;Seiti;57;;;Place de Fontenoy 7;;Paris;75352;07 SP;France
+392;Anna Kajumulo;Tibaijuka;40;;;P.O. Box 30030;;Nairobi;;;Kenya
+393;Noeleen;Heyzer;58;;;304 East 45th Street;NY;New York;10017;;United Kingdom
+394;Joanne;Sandler;58;;;304 East 45th Street;NY;New York;10017;;United Kingdom
+395;Michel;Jarraud;59;;;7bis, avenue de la Paix;;Geneva;1211;2;Switzerland
+396;Subash;Chacowry;59;;;7bis, avenue de la Paix;;Geneva;1211;2;Switzerland
+397;David;Bryer;60;Suite 20;;266 Banbury Road;;Oxford;OX2 7DL;;United Kingdom
+399;Jeremy;Hobbs;60;Suite 20;;266 Banbury Road;;Oxford;OX2 7DL;;United Kingdom
+400;George;Rupp;41;;;122 East 42nd Street;NY;New York;10168-1289;;United States
+401;Tom;Arnold;62;;;52-55 Lower Camden Street;;Dublin;;2;Ireland
+402;Bob;Bellhouse;63;c/o World Economic Forum;;91-93, route de la Capite 91-93;;Geneva;1223;;Switzerland
+409;Alix;Loriston;16;Plot 17-19;;Clement Hill Road, P.O. Box 7471;;Kampala;;;Uganda
+410;Olivier;Degreef;15;Palais des Nations;;5-7, avenue de la Paix;;Geneva;1211;10;Switzerland
+411;Hossein;Kalali;12;;;11-13, chemin des Anémones;;Geneva;1219;Chatelaine;Switzerland
+412;Gert;Ludeking;40;International Environment House 2;;7, chemin de Balexert;;Geneva;1219;Chatelaine;Switzerland
+413;Azwa;Petra;10;Palais Wilson;;52, rue de Paquis;;Geneva;1211;10;Switzerland
+414;Laurent;Raguin;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+415;Raj;Rana;3;;;19, avenue de la Paix;;Geneva;1202;;Switzerland
+416;Aimee;Wielechowski;8;;;1 United Nations Plaza;NY;New York;10017;;United States
+418;Christophe;Schmachtel;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+419;Fred;Spielberg;15;Palais des Nations;;5-7, avenue de la Paix;;Geneva;1211;10;Switzerland
+420;Amir;Abdulla;16;Parco dei Medici;;Via C.G. Viola 68;;Rome;00148;;Italy
+421;Maria Olga;Gonzalez;12;;;11-13, chemin des Anémones;;Geneva;1219;Chatelaine;Switzerland
+422;Alain;Retiere;28;International Environment House;;11-13, chemin des Anémones;;Geneva;1219;Chatelaine;Switzerland
+424;Craig;Duncan;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+425;Christopher;Lamb;5;;;P.O. Box 372;;Geneva;1211;19;Switzerland
+426;Jakob;Kellenberger;3;;;19, avenue de la Paix;;Geneva;1202;;Switzerland
+427;Daly;Belgasmi;16;Palais des Nations;;avenue de la Paix;;Geneva;1211;10;Switzerland
+428;Yves;Petermann;3;;;19, avenue de la Paix;;Geneva;1202;;Switzerland
+429;Ameerah;Haq;26;Compound B;;Shah Mahmood Ghazi Watt;;Kabul;;Shar-e-naw;Afghanistan
+430;Pierre-Francois;Pirlot;12;P.O. Box 910;;Rue Major Kanhangulo 197;;Luanda;;;Angola
+431;Ibrahima D.;Fall;12;P.O. Box 1490;;3, rue de Marche;;Bujumbura;;;Burundi
+432;Thomas;Peter;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+434;Anne-Christine;Eriksson;8;;;1 United Nations Plaza;NY;New York;10017;;United States
+436;Franz-Josef;Homann-Herimberg;8;Palais des Nations;A-644;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+437;Kulmiye;Mohamed;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+438;Nichole;McGarry;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+439;Katrin;Lichtenberg;64;International Environment House;;11-13, chemin des Anémones;;Geneva;1219;Chatelaine;Switzerland
+440;Aida;Nejad;10;Palais Wilson;;52, rue de Paquis;;Geneva;1211;10;Switzerland
+442;Yuan;Sivan;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+443;Deborah;Verzuu;65;International Environment House 2;;7-9, chemin de Balexert;;Geneva;1211;10;Switzerland
+444;SUnited Statesnne;Frueh;8;;;1 United Nations Plaza;NY;New York;10017;;United States
+445;Brian;Grogan;8;;;1 United Nations Plaza;NY;New York;10017;;United States
+446;Aafje;Rietveld;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+447;Rowan;Gillies;33;P.O. Box 116;;78, rue de LaUnited Statesnne;;Geneva;1211;21;Switzerland
+448;Laure;Bonnevie;33;P.O. Box 116;;78, rue de LaUnited Statesnne;;Geneva;1211;21;Switzerland
+449;Sofie;Garde Thomle;8;;;;;Dakar;;;Senegal
+451;Helena;Fraser;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+453;John;Samy;54;;;6 ADB Avenue;Mandaluyong City;Manila;1550;Metro;Philippines
+454;Denis;Caillaux;38;;;7-9, chemin de Balexert;;Geneva;1219;Chatelaine;Switzerland
+455;Bernhard;Julier;3;;;19, avenue de la Paix;;Geneva;1202;;Switzerland
+456;Jagannath;Chapagain;5;;;P.O. Box 372;;Geneva;1211;19;Switzerland
+457;Martin;Faller;5;;;P.O. Box 372;;Geneva;1211;19;Switzerland
+458;Rashid;Amjad;53;;;4, route des Morillons;;Geneva;1211;10;Switzerland
+459;Salvano;Briceno;66;Palais des Nations;;avenue de la Paix;;Geneva;1211;10;Switzerland
+460;Praveen;Pardeshi;66;Palais des Nations;;avenue de la Paix;;Geneva;1211;10;Switzerland
+461;Amadou Boubacar;Cisse;67;P.O. Box 5925;;;;Jeddah;21432;;Saudi Arabia
+462;Aamir;Ghani;67;P.O. Box 5925;;;;Jeddah;21432;;Saudi Arabia
+463;Waseem;Yaqub;43;Upsland Business Park Unit 40;;Blackhorse Lane;;London;E17 5QJ;;United Kingdom
+464;Bernard;Juan;68;;;62, rue Marcadet;;Paris;75018;;France
+465;Mehr;Khan Williams;10;Palais Wilson;;52, rue de Paquis;;Geneva;1211;10;Switzerland
+467;John;Ohiorhenuan;12;;;1 United Nations Plaza;NY;New York;10017;;United States
+468;Balasubramanian;Murali;12;;;1 United Nations Plaza;NY;New York;10017;;United States
+469;Andrew;Maskrey;12;;;11-13, chemin des Anémones;;Geneva;1219;Chatelaine;Switzerland
+470;David;Veness;69;;;304 East 45th Street;NY;New York;10017;;United States
+472;Shafqat;Kakakhel;35;P.O. Box 30552, 00100;;United Nations Avenue;;Nairobi;;;Kenya
+473;Pasi;Rinne;35;International Environment House;;11-13, chemin des Anémones;;Geneva;1219;Chatelaine;Switzerland
+474;Wendy;Chamberlain;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+475;Charles P.;Bernimolin;8;;;1 United Nations Plaza;NY;New York;10017;;United States
+476;Katja;Laurila;2;Palais des Nations;S-21;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+477;John;Carstensen;35;International Environment House;;11-13, chemin des Anémones;;Geneva;1219;Chatelaine;Switzerland
+478;Ahmed;Sayyad;57;;;Place de Fontenoy 7;;Paris;75352;07 SP;France
+479;James;Kulikowski;57;;;Place de Fontenoy 7;;Paris;75352;07 SP;France
+480;Ingeborg;Breines;57;Villa Les Feuillantines;;Avenue de la Paix 13;;Geneva;1211;;Switzerland
+481;Kunio;Waki;13;;;220 East 42nd Street;NY;New York;10017;;United States
+482;Jean-NoÃ«l;Wetterwald;13;;;220 East 42nd Street;NY;New York;10017;;United States
+483;Erik;Palstra;13;International Environment House;;11-13, chemin des Anémones;;Geneva;1219;Chatelaine;Switzerland
+484;Tina;Divecha;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+485;Ekber;Menemencioglu;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+486;Arnauld;Akodjenou;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+487;Megumi;Endo;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+488;Yasmin;Keith-Krelik;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+489;Ozgul;Ozcan;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+490;Rima;Salah;15;;;3 United Nations Plaza;NY;New York;10017;;United States
+491;Claire;Morton;15;Palais des Nations;;5-7, avenue de la Paix;;Geneva;1211;10;Switzerland
+492;Michele A.;Blatti;3;;;19, avenue de la Paix;;Geneva;1202;;Switzerland
+493;Yoichiro;Tsuchida;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+494;Jean-Christophe;Bouvier;64;International Environment House;;11-13, chemin des Anémones;;Geneva;1219;Chatelaine;Switzerland
+495;Vincent;Cochetel;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+496;Johanna;Medina-Poudou;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+498;Nevio;Zagaria;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+500;Salima;Djebbari;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+501;Anna;Koroleva;16;Palais des Nations;;avenue de la Paix;;Geneva;1211;10;Switzerland
+502;Anne;Davies;29;;;7-9, chemin de Balexert;;Geneva;1219;Chatelaine;Switzerland
+504;Kerstin;Holst;57;Palais des Nations;;avenue de la Paix;;Geneva;1211;;Switzerland
+505;Naile;Busemann;3;;;19, avenue de la Paix;;Geneva;1202;;Switzerland
+506;Delphine;Pastorel;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+507;lavanya;Rama Iyer;35;;;;;Geneva;;;Switzerland
+508;Jose A.;Guinea;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+509;Beate;Bidenbach;70;;;28c, chemin du Petit-Saconnex;;Geneva;1209;;Switzerland
+511;Amna;Al Ahmar;5;;;P.O. Box 372;;Geneva;1211;19;Switzerland
+512;Neithart;Hoefer-Wissing;70;;;28c, chemin du Petit-Saconnex;;Geneva;1209;;Switzerland
+514;Aida;Mengistu;8;United Nations;;1 United Nations Plaza;NY;New York;10017;;United States
+515;Katarina;Toll Velasquez;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+516;Tore;Svenning;5;;;P.O. Box 372;;Geneva;1211;19;Switzerland
+517;Francoise;Gruloos-Ackermans;15;Palais des Nations;;5-7, avenue de la Paix;;Geneva;1211;10;Switzerland
+518;Dale;Buscher;71;;;;;Geneva;;;Switzerland
+519;Marie;d'Auchamp;72;P.O. Box 96;;37-39, rue de Vermont;;Geneva;1211;20;Switzerland
+520;John;Bingham;72;P.O. Box 96;;37-39, rue de Vermont;;Geneva;1211;20;Switzerland
+521;Annalies;Borrel;15;;;3 United Nations Plaza;NY;New York;10017;;United States
+522;Daniel;Endres;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+526;Simon;Pluess;16;Palais des Nations;;avenue de la Paix;;Geneva;1211;10;Switzerland
+527;Margo;Thombs;6;;Washington;1717 Massachusetts Avenue NW, Suite 701;DC;Washington;20036;;United States
+528;Jennifer;Worrell;12;;;11-13, chemin des Anémones;;Geneva;1219;Chatelaine;Switzerland
+529;Rita;Bhatia;16;Parco dei Medici;;Via C.G. Viola 68;;Rome;00148;;Italy
+530;Robert;Fraser;5;;;P.O. Box 372;;Geneva;1211;19;Switzerland
+531;Chris;Hyslop;8;;;1 United Nations Plaza;NY;New York;10017;;United States
+532;Mark;Henderson;15;;;3 United Nations Plaza;NY;New York;10017;;United States
+533;Aidan;Cronin;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+534;Uli;Jaspers;5;;;P.O. Box 372;;Geneva;1211;19;Switzerland
+535;Dinesh;Shrestha;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+536;Peter;de Clercq;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+537;Sigrid;Kaag;15;;;;;Aman;;;
+538;Philip Gerry;Dyer;15;;;3 United Nations Plaza;NY;New York;10017;;United States
+539;Martin;Bloem;16;Parco dei Medici;;Via C.G. Viola 68;;Rome;00148;;Italy
+540;Aurelien;Buffler;8;;;1 United Nations Plaza;NY;New York;10017;;United States
+541;Alan;Court;15;;;3 United Nations Plaza;NY;New York;10017;;United States
+542;Andrew;Macleod;8;;;1 United Nations Plaza;NY;New York;10017;;United States
+543;Bruce;Eshaya-Chauvin;5;;;P.O. Box 372;;Geneva;1211;19;Switzerland
+544;Adelheid;Marschang;5;;;P.O. Box 372;;Geneva;1211;19;Switzerland
+545;Sajith;Gunaratne;7;;;17, route des Morillons;;Geneva;1211;19;Switzerland
+546;Nadine;Cornier;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+547;Nadine;Ezard;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+548;Peter;Salama;15;;;3 United Nations Plaza;NY;New York;10017;;United States
+549;Kayode;Oyegbite;15;;;3 United Nations Plaza;NY;New York;10017;;United States
+552;Ian;Heigh;5;;;P.O. Box 372;;Geneva;1211;19;Switzerland
+553;Amr;Taha;7;;;17, route des Morillons;;Geneva;1211;19;Switzerland
+554;Adriana;Carvalho-Friedheim;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+555;Isabelle;de Muyser-Boucher;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+557;David;Smith;13;;;220 East 42nd Street;NY;New York;10017;;United States
+558;Jiddo;van Drunen;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+559;Abdi;Egeh;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+561;Jean-Cedric;Meeus;15;Palais des Nations;;5-7, avenue de la Paix;;Geneva;1211;10;Switzerland
+563;Peter;French;16;Parco dei Medici;;Via C.G. Viola 68;;Rome;00148;;Italy
+564;Dominique;Burgeon;1;;;Via delle Terme di Caracalla;;Rome;00100;;Italy
+565;Cynthia;Burton;5;;;P.O. Box 372;;Geneva;1211;19;Switzerland
+566;Norah;Niland;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+567;Hannah;Entwisle;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+568;Anne-Marie;Cluckers;12;;;11-13, chemin des Anémones;;Geneva;1219;Chatelaine;Switzerland
+570;Nicholas;Crawford;16;Parco dei Medici;;Via C.G. Viola 68;;Rome;00148;;Italy
+571;Paul;Hulshoff;15;;;3 United Nations Plaza;NY;New York;10017;;United States
+572;Felipe;Camargo;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+573;Claire;Messina;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+575;Gunther;Oddhild;73;P.O. Box 6758;;St. Olavs Plass;;Oslo;N-0130;;Norway
+577;Helene;Lackenbauer;5;;;P.O. Box 372;;Geneva;1211;19;Switzerland
+578;Sarah;Muscroft;8;;;1 United Nations Plaza;NY;New York;10017;;United States
+579;Thierry;Delbreuve;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+580;Geraldine;O'Callaghan;12;;;11-13, chemin des Anémones;;Geneva;1219;Chatelaine;Switzerland
+582;Cate;Steains;103;;;;;El Fasher;;;Sudan
+583;Steven;Wolfson;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+584;Moses;Okello;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+585;Karen;Landgren;15;;;3 United Nations Plaza;NY;New York;10017;;United States
+586;Manuel;Fountaine;15;;;3 United Nations Plaza;NY;New York;10017;;United States
+587;Rebecca;Symington;15;;;3 United Nations Plaza;NY;New York;10017;;United States
+588;Brian;Thompson;1;;;Via delle Terme di Caracalla;;Rome;00100;;Italy
+589;Anna;Taylor;74;;;1 St. John's Lane;;London;EC1M 4AR;;United Kingdom
+590;Fathia;Addalla;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+591;Sherine;Guirguis;15;;;3 United Nations Plaza;NY;New York;10017;;United States
+592;Zita;Weise-Prinzo;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+593;Robert;Bayne;16;Parco dei Medici;;Via C.G. Viola 68;;Rome;00148;;Italy
+594;Steve;Fazio;15;;;3 United Nations Plaza;NY;New York;10017;;United States
+595;Christoph;Saxer;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+596;Neil;Murphy-Dewar;15;;;3 United Nations Plaza;NY;New York;10017;;United States
+597;Gianluca;Bruni;16;Parco dei Medici;;Via C.G. Viola 68;;Rome;00148;;Italy
+598;Marc;Decollogny;3;;;19, avenue de la Paix;;Geneva;1202;;Switzerland
+599;Pierre;Haessig;5;;;P.O. Box 372;;Geneva;1211;19;Switzerland
+600;Margareta;WahlstrÃ¶m;8;United Nations;S-3600A;1 United Nations Plaza;NY;New York;10017;10;United States
+601;Ylva;Blondel;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+602;Amer;Daoudi;16;Parco dei Medici;;Via C.G. Viola 68;;Rome;00148;;Italy
+609;Meinrad;Studer;76;c/o Permanent Mission of Switzerland to the United NationsÂ ;;9, rue de Varembé;;Geneva;1211;20;Switzerland
+611;B'lala;Amoakoh;20;;S-3600W;;;;;;
+612;Myrtia;Murgia;8;;;1 United Nations Plaza;NY;New York;10017;;United States
+613;Alicia;Pons;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+615;PÃ¤r;Liljert;7;;;17, route des Morillons;;Geneva;1211;19;Switzerland
+616;Larry;Hollingworth;8;;;;;Islamabad;;10;Pakistan
+617;Paul;Stromberg;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+618;Judith;Cheng Hopkins;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+619;Brian;Lander;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+621;Jesse;Bernstein;29;;;7-9, chemin de Balexert;;Geneva;1219;Chatelaine;Switzerland
+622;Josse;Gilijns;5;;;P.O. Box 372;;Geneva;1211;19;Switzerland
+623;Elizabeth;Byrs;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+624;Daniel;LÃ³pez-AcuÃ±a;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+627;Levina;Lupoli;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+628;Jordan;Dey;16;Parco dei Medici;;Via C.G. Viola 68;;Rome;00148;;Italy
+629;Louise;Potts;16;Parco dei Medici;;Via C.G. Viola 68;;Rome;00148;;Italy
+630;Sheila;Sisulu;16;Parco dei Medici;;Via C.G. Viola 68;;Rome;00148;;Italy
+632;Barbara;Stocking;78;Oxfam House;;John Smith Drive;;Oxford;OX4 2JY;Cowley;United Kingdom
+633;Lieske;Pott Hofstede;4;;;26-28, avenue Giuseppe Motta;;Geneva;1202;;Switzerland
+634;Ndioro;Ndiayi;7;;;17, route des Morillons;;Geneva;1211;19;Switzerland
+635;Dirk;De Winter;7;;;17, route des Morillons;;Geneva;1211;19;Switzerland
+636;Jill;Helke;7;;;17, route des Morillons;;Geneva;1211;19;Switzerland
+637;Irmely;Pillonel;7;;;17, route des Morillons;;Geneva;1211;19;Switzerland
+638;Marco;Boasso;7;;;17, route des Morillons;;Geneva;1211;19;Switzerland
+639;Lulu;Shabell;7;;;17, route des Morillons;;Geneva;1211;19;Switzerland
+640;Jamie;Wickens;16;Palais des Nations;;avenue de la Paix;;Geneva;1211;10;Switzerland
+641;Elodie;Schindler;79;;;cp 135 Champel;;Geneva;1211;12;Switzerland
+643;Patricia;Kennedy;16;Palais des Nations;;avenue de la Paix;;Geneva;1211;10;Switzerland
+644;Alfred;Nabeta;8;;;1 United Nations Plaza;NY;New York;10017;;United States
+645;Francesca;Battistin;53;;;4, route des Morillons;;Geneva;1211;10;Switzerland
+646;Albert;Liao;12;;;11-13, chemin des Anémones;;Geneva;1219;Chatelaine;Switzerland
+647;Raymond;Desarzens;3;;;19, avenue de la Paix;;Geneva;1202;;Switzerland
+648;Sally;Griffiths;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+649;Greg;Stone;7;;;17, route des Morillons;;Geneva;1211;19;Switzerland
+651;Marc;Sveen;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+652;Vanno;Noupech;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+653;Sonia;Sukdeo;15;;;3 United Nations Plaza;NY;New York;10017;;United States
+655;Ines;Brill;8;1re etage, Immeuble Cebevirha;;avenue Mobulu;MoUnited Statesi;N'Djamena;;;Chad
+656;Rosa;Malango;8;;;1 United Nations Plaza;NY;New York;10017;;United States
+657;GeneviÃ¨ve;Braun;1;;;Via delle Terme di Caracalla;;Rome;00100;;Italy
+658;Elisabeth;da Costa;10;Palais Wilson;;52, rue de Paquis;;Geneva;1211;10;Switzerland
+660;Iain;McDonald;16;Parco dei Medici;;Via C.G. Viola 68;;Rome;00148;;Italy
+661;Philippe;Kaeser;81;;;9, rue de Varembé;;Geneva;1211;20;Switzerland
+662;Paul;Sherlock;15;;;3 United Nations Plaza;NY;New York;10017;;United States
+663;Sally;Fegan-Wyles;82;;;1 United Nations Plaza;;New York;10017;;United States
+664;Jean-Luc;Siblot;82;;;1 United Nations Plaza;;New York;10017;;United States
+665;Manuel;Bessler;8;;;;;Jerusalem;;;Israel
+667;Merida;Morales-O'Donnell;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+669;Lauren;Conway;3;;;19, avenue de la Paix;;Geneva;1202;;Switzerland
+670;Esteban;Leon;40;International Environment House 2;;7, chemin de Balexert;;Geneva;1219;Chatelaine;Switzerland
+671;Megan;Becknell;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+672;Giammichele;De Maio;16;Parco dei Medici;;Via C.G. Viola 68;;Rome;00148;;Italy
+673;Andre;Doren;5;;;P.O. Box 372;;Geneva;1211;19;Switzerland
+674;Hisham;Khogali;5;;;P.O. Box 372;;Geneva;1211;19;Switzerland
+676;Khadija;Nour;5;;;P.O. Box 372;;Geneva;1211;19;Switzerland
+677;Nathalie;Bonvin;5;;;P.O. Box 372;;Geneva;1211;19;Switzerland
+678;Martine;Vollet;3;;;19, avenue de la Paix;;Geneva;1202;;Switzerland
+679;Pierre;Kraehenbuehl;3;;;19, avenue de la Paix;;Geneva;1202;;Switzerland
+680;Christine;Wigger;3;;;19, avenue de la Paix;;Geneva;1202;;Switzerland
+681;Kelly;David;8;;;1 United Nations Plaza;NY;New York;10017;;United States
+682;Michelle;Gayer;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+683;Vincent;Casares;38;;;7-9, chemin de Balexert;;Geneva;1219;Chatelaine;Switzerland
+684;Stephen;O'Malley;8;;;1 United Nations Plaza;NY;New York;10017;;United States
+685;Kristina;Koch;8;;;1 United Nations Plaza;NY;New York;10017;;United States
+686;Kingsley;Amaning;12;;;11-13, chemin des Anémones;;Geneva;1219;Chatelaine;Switzerland
+687;Denise;Jackson;15;Palais des Nations;;5-7, avenue de la Paix;;Geneva;1211;10;Switzerland
+688;Megan;Gilgan;15;Palais des Nations;;5-7, avenue de la Paix;;Geneva;1211;10;Switzerland
+689;Pamela Sabina;Mbabazi;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+690;Suzanne;O'Rourke;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+691;Heba;Morayef;3;;;19, avenue de la Paix;;Geneva;1202;;Switzerland
+692;Darla;Silva;116;Palais des Nations;S-134;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+693;Ellen;Funch;20;;;;;London;;;United Kingdom
+695;Angela;Higney;1;;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+696;Aniket;Ghai;35;International Environment House;;11-13, chemin des Anémones;;Geneva;1219;Chatelaine;Switzerland
+697;Claude;Hilfiker;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+698;AyodÃ©lÃ©;Fowler;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+700;Betsy;Lippman;12;;;11-13, chemin des Anémones;;Geneva;1219;Chatelaine;Switzerland
+701;Charlotta;Benedek;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+702;Jamal;Krafess;43;;;18, avenue Bouchet;;Geneva;1209;;Switzerland
+703;Massan;Dossou;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+704;David;Jensen;35;International Environment House;;11-13, chemin des Anémones;;Geneva;1219;Chatelaine;Switzerland
+705;Masayo;Kondo Rossier;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+706;Laurent;Attar-Bayrou;83;;;178, rue Garibaldi;;Lyon;69003;;Switzerland
+707;Hans;Ten Feld;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+708;Erik;Haegglund;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+709;Eva;Vognild;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+715;Gustavo;Laurie;49;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+716;some;one;47;;;9 rue Cornavin;;Geneva;1201;;Switzerland
+717;some;one;84;;;114, rue de LaUnited Statesnne;;Geneva;1202;;Switzerland
+718;Jane;Janz;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+720;Sylvie;Lacroux;40;International Environment House 2;;7, chemin de Balexert;;Geneva;1219;Chatelaine;Switzerland
+721;Luis;Luna;5;;;P.O. Box 372;;Geneva;1211;19;Switzerland
+723;Matthias;Behnke;10;Palais Wilson;;52, rue de Paquis;;Geneva;1211;10;Switzerland
+724;Noria;Mezlef;25;;;7-9, chemin de Balexert;;Geneva;1219;;Switzerland
+725;Nicholas;Stockton;25;;;7-9, chemin de Balexert;;Geneva;1219;;Switzerland
+726;Zia;Choudhury;25;;;7-9, chemin de Balexert;;Geneva;1219;;Switzerland
+727;Pablo;Espiniella;10;Palais Wilson;;52, rue de Paquis;;Geneva;1211;10;Switzerland
+729;Roberta;Cecchetti;98;;;1, rue Varembe;;Geneva;1202;;Switzerland
+730;Sylvie;Robert;5;;;P.O. Box 372;;Geneva;1211;19;Switzerland
+731;Vladimir;Sakharov;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+732;some;one;46;;;22, rue du Cendrier;;Geneva;1201;;Switzerland
+733;Samir;Ben Yahmed;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+735;Treena;Wu;25;;;7-9, chemin de Balexert;;Geneva;1219;;Switzerland
+736;Jan;Vandemoortele;12;;;;;Islamabad;;;Pakistan
+737;Carolina;de Borbon Parma;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+738;Emilie;Chazelle;39;Palais des Nations, Le Bocage;;avenue de la Paix;;Geneva;1211;10;Switzerland
+739;Joana;Miquel-Gelabert;10;Palais Wilson;;52, rue de Paquis;;Geneva;1211;10;Switzerland
+740;Darka;Topoli;10;Palais Wilson;;52, rue de Paquis;;Geneva;1211;10;Switzerland
+741;Adrian;Ciancio;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+742;Erik;Blommestein;20;;;;;Port of Spain;;;Trinidad and Tobago
+743;Anke;Strauss;7;;;122 East 42nd Street;NY;New York;10168-1610;;United States
+744;Pierre;Bertrand;14;;;;NY;New York;10017;;United States
+745;Brian;Gorlick;14;;;;NY;New York;10017;;United States
+746;Cecilia;Canessa;10;Palais Wilson;;52, rue de Paquis;;Geneva;1211;10;Switzerland
+747;Carole;Ray;10;Palais Wilson;;52, rue de Paquis;;Geneva;1211;10;Switzerland
+748;Ann;Joyce;1;;;Via delle Terme di Caracalla;;Rome;00100;;Italy
+749;Eriko;Hibi;13;;;220 East 42nd Street;NY;New York;10017;;United States
+750;Lydia;Leon;13;;;220 East 42nd Street;NY;New York;10017;;United States
+751;Patricia;Ramirez;12;;;11-13, chemin des Anémones;;Geneva;1219;Chatelaine;Switzerland
+752;Geralda;Menard;13;;;220 East 42nd Street;NY;New York;10017;;United States
+753;Gladys;Chervaz;36;;;6, chemin de la Tourelle;;Geneva;1209;;Switzerland
+754;Rosemary;McCreery;15;;;3 United Nations Plaza;NY;New York;10017;;United States
+755;Ahunna;Eziakonwa;8;;;1 United Nations Plaza;NY;New York;10017;;United States
+756;Mark;Dalton;8;;;1 United Nations Plaza;NY;New York;10017;;United States
+757;Mona;Rishmawi;10;Palais Wilson;;52, rue de Paquis;;Geneva;1211;10;Switzerland
+758;Maarit;Kohonen;10;;;;;Kampala;;;Uganda
+759;Christina;Bennett;8;;;1 United Nations Plaza;NY;New York;10017;;United States
+760;Blanche;McMullin-Cerchia;1;;;Via delle Terme di Caracalla;;Rome;00100;;Italy
+761;Annaliza;Del Rosario;12;;;1 United Nations Plaza;NY;New York;10017;;United States
+762;MichÃ¨le;Vieille;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+763;Oznur;Onen;5;;;P.O. Box 372;;Geneva;1211;19;Switzerland
+764;Johanna;Claass;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+765;Emily;Montgomery;36;;;6, chemin de la Tourelle;;Geneva;1209;;Switzerland
+766;Maliza;Van Eeden;35;International Environment House;;11-13, chemin des Anémones;;Geneva;1219;Chatelaine;Switzerland
+768;Amy;Christofferson;3;;;19, avenue de la Paix;;Geneva;1202;;Switzerland
+769;Diane;Goodman;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+770;Audrey;Ford;8;;;United Nations Plaza;NY;New York;10027;;United States
+771;Katrine;Hellum Oren;10;Palais Wilson;;52, rue de Paquis;;Geneva;1211;10;Switzerland
+772;Corine;Brenner;12;;;1 United Nations Plaza;NY;New York;10017;;United States
+773;Carston;Volz;38;;;7-9, chemin de Balexert;;Geneva;1219;Chatelaine;Switzerland
+774;Martin;Griffiths;84;;;114, rue de LaUnited Statesnne;;Geneva;1202;;Switzerland
+775;Radhika;Coomaraswamy;26;Secretariat;S-3161-A;;NY;New York;10017;;United States
+776;Peter;Scott-Bowden;86;;;1 United Nations Plaza;NY;New York;10017;;United States
+777;Mohamed;Zejjari;16;Parco dei Medici;;Via C.G. Viola 68;;Rome;00148;;Italy
+788;Ejeviome Eloho;Otobo;92;United Nations;;1 United Nations Plaza;NY;New York;10017;;United States
+789;Shashi;Tharoor;26;United Nations;;1 United Nations Plaza;NY;New York;10017;;United States
+791;Christophe;Schmachtel;8;;;;;Geneva;;;Switzerland
+792;Madeleine;Moulin;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+793;Iain;Hall;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+794;Gaya;Gamhewage;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+795;Iain;Logan;5;;;P.O. Box 372;;Geneva;1211;19;Switzerland
+796;Avis;Chehab;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+798;Martha;Milani;99;;;1 St. John's Lane;;London;EC1M 4AR;;United Kingdom
+799;Masaki;Miyoshi;36;;;6, chemin de la Tourelle;;Geneva;1209;;Switzerland
+801;Francois;Wuarin;3;;;19, avenue de la Paix;;Geneva;1202;;Switzerland
+802;Cue;Wendy;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+803;Laura;Calvio;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+804;Jennifer;Byron;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+805;Nabina;Rajbhandari;23;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+806;Zero;Akyol;23;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+807;Madeleine;Moulin;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+808;Madeleine;Moulin;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+809;Emmanuel;Deonna;16;Palais des Nations;;avenue de la Paix;;Geneva;1211;10;Switzerland
+810;Kabi;Bernander;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+811;Solange;Senaize;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+812;Vivarie;Roger;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+813;Carsten;Voelz;38;;;7-9, chemin de Balexert;;Geneva;1219;Chatelaine;Switzerland
+814;Anne-Marie;Kerrigan-Deriche;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+815;William (Bill);Dowell;154;;;49, Avenue du Jura;;Ferney-Voltaire;1210;;France
+821;Hugh;O'Donnell;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+822;Anne;Kluser;4;;;26-28, avenue Giuseppe Motta;;Geneva;1202;;Switzerland
+823;Marina;Throne-Holst;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+824;Langan;Courtney;6;;;1717 Massachusetts Avenue NW, Suite 701;DC;Washington;20036;;United States
+825;Andrei;Slavuckij;33;;;78, Rue de LaUnited Statesnne;;Geneva;1211;21;Switzerland
+826;Mohamed;Abshir;12;;;11-13, chemin des Anémones;;Geneva;1219;Chatelaine;Switzerland
+827;Craig;Sanders;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+828;Chisha;Kawandami;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+829;Chisha;Kawandami;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+830;Golam;Abbas;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+831;Katarina;Zinn;20;;;;;Stockholm;;;Sweden
+832;Marie;Spaak;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+833;Sakura;Atsumi;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+834;Anne;Kennedy;86;4th Floor;;405 Lexington Avenue;NY;New York;10174;;United States
+835;;Secretariat;25;;;7-9, chemin de Balexert;;Geneva;1219;;Switzerland
+836;Hedwig;Maex;69;;;304 East 45th Street;NY;New York;10017;;United States
+838;Karen;Gulick;22;Palais Wilson;;52, rue de Paquis;;Geneva;1211;10;Switzerland
+840;Ramiro;Lopes da Silva;16;Parco dei Medici;;Via C.G. Viola 68;;Rome;00148;;Italy
+842;Anna;Jefferys;99;;;;;London;;;United Kingdom
+843;Robert;Painter;69;;;304 East 45th Street;NY;New York;10017;;United States
+848;Ted;Chaiban;15;;;3 United Nations Plaza;NY;New York;10017;;United States
+849;Leslie;Timko;8;;;1 United Nations Plaza;NY;New York;10017;;United States
+850;Chris;Porter;101;;;20 Victoria Street;;London;SW1H 0NB;;United Kingdom
+851;Anne;Kerisel;33;;;78, Rue de LaUnited Statesnne;;Geneva;1211;21;Switzerland
+852;Eva;Canger;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+853;Francis;Parakatil;72;P.O. Box 96;;37, rue de Vermont;;Geneva;1211;20;Switzerland
+854;Julia;Taft;6;;;1717 Massachusetts Avenue NW, Suite 701;DC;Washington;20036;;United States
+857;Jahal;de Meritens;12;;;11-13, chemin des Anémones;;Geneva;1219;Chatelaine;Switzerland
+858;SUnited Statesnne;Kristensen;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+859;Maryline;Revaud;16;Palais des Nations;;avenue de la Paix;;Geneva;1211;10;Switzerland
+860;Magalie;Salazar;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+861;George;Murray;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+862;In-Taek;Lim;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+863;Dennis;McNamara;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+864;Protection;Cluster Working Group;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+865;Olla;Hassan;8;;;1 United Nations Plaza;NY;New York;10017;;United States
+866;John;Horekens;66;Palais des Nations;;avenue de la Paix;;Geneva;1211;10;Switzerland
+867;Moetsi;Duchatellier;10;Palais Wilson;;52, rue de Paquis;;Geneva;1211;10;Switzerland
+868;Jozef;Merkx;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+869;Remco;Van Wijngaarden;12;;;11-13, chemin des Anémones;;Geneva;1219;Chatelaine;Switzerland
+870;Victoria;Metcalfe;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+872;Christine;Knudsen;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+873;Horst;Letz;5;;;P.O. Box 372;;Geneva;1211;19;Switzerland
+874;Anne;Gordon;5;;;P.O. Box 372;;Geneva;1211;19;Switzerland
+875;Comfort-Rosle;Gatungo;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+877;Maryam;Golnaraghi;59;;;7bis, avenue de la Paix;;Geneva;1211;2;Switzerland
+878;Sarah;Currier;32;;;11, route de Pregny;;Chambesy;1292;;Switzerland
+879;Maura;Lynch;12;;;1 United Nations Plaza;NY;New York;10017;;United States
+880;Robert;Enholm;8;;;1 United Nations Plaza;NY;New York;10017;;United States
+881;Claire;Lise Chaignat;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+883;Claire Lise;Chaignat;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+886;Tord;Roe;73;P.O. Box 6758;;St. Olavs Plass;;Oslo;N-0130;;Norway
+887;Jorge;Castilla;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+888;Anders;NordstrÃ¶m;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+889;Kirsi;Madi;15;;;3 United Nations Plaza;NY;New York;10017;;United States
+890;Bill;Kean;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+891;Jacqueline;Nivet;16;Parco dei Medici;;Via C.G. Viola 68;;Rome;00148;;Italy
+894;Eilise-Marie;Thornberry;28;International Environmental House;;7-9, chemin des Anémones;;Geneva;1219;Chatelaine;Switzerland
+895;Donor Relations;Division;7;;;17, route des Morillons;;Geneva;1211;19;Switzerland
+896;Martijn;Viersma;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+897;Peace;Nganga;35;International Environment House;;11-13, chemin des Anémones;;Geneva;1219;Chatelaine;Switzerland
+898;Angelika;Planitz;12;;;11-13, chemin des Anémones;;Geneva;1219;Chatelaine;Switzerland
+899;Mark;Prasopa-Plaizier;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+901;Christophe;Bierwirth;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+903;Masayo;Ogawa;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+904;Laura;Sciannimonaco;1;;;Via delle Terme di Caracalla;;Rome;00100;;Italy
+905;Robert;Smith;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+906;Bill;Gray;105;PO Box 32832;;;;London;N1 9ZN;;United Kingdom
+907;Sylvia;Stefanoni;105;PO Box 32832;;;;London;N1 9ZN;;United Kingdom
+908;Paolo;Mattei;16;Palais des Nations;;avenue de la Paix;;Geneva;1211;10;Switzerland
+909;Randolph;Kent;106;;;;Stand;London;WC2R 2LS;;United Kingdom
+910;Richard;Blewitt;105;PO Box 32832;;;;London;N1 9ZN;;United Kingdom
+911;John;Dyer;5;;;P.O. Box 372;;Geneva;1211;19;Switzerland
+912;Julitta;Onabanjo;13;;;220 East 42nd Street;NY;New York;10017;;United States
+913;Toby;Porter;99;;;;;London;;;United Kingdom
+915;Aurora;Sarmiento;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+916;Pierrette;Vu Thi;15;Palais des Nations;;5-7, avenue de la Paix;;Geneva;1211;10;Switzerland
+917;Milada;Pejovic;15;;;3 United Nations Plaza;NY;New York;10017;;United States
+918;Michael;Marx;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+919;Khassim;Diagne;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+920;Shoko;Shimozawa;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+921;Majory;Dam;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+922;Ellen;Egan;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+923;Jon;Carver;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+924;Gloria;Gutman;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+925;Chantal;Berthomi;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+926;Natasha;Kindergan;8;;;1 United Nations Plaza;NY;New York;10017;;United States
+928;Christine;Bloch;107;;;c/o ICMC, 37-39 rue de Vermont;;Geneva;1211;;Switzerland
+929;Michel;Masson;3;;;19, avenue de la Paix;;Geneva;1202;;Switzerland
+933;Gaela;Roudy Fraser;12;;;11-13, chemin des Anémones;;Geneva;1219;Chatelaine;Switzerland
+934;Danyal;Hamidon;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+935;Isabel;Garcia-Gill;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+936;Patricia;Reber Hashemee;7;;;17, route des Morillons;;Geneva;1211;19;Switzerland
+937;Jean;McCLuskey;15;Palais des Nations;;5-7, avenue de la Paix;;Geneva;1211;10;Switzerland
+938;Carlos;Monteiro-Pereira;8;;;1 United Nations Plaza;NY;New York;10017;;United States
+939;Ben;Harvey;41;;;122 East 42nd Street;NY;New York;10168-1289;;United States
+940;Conor;Costello;78;Oxfam House;;John Smith Drive;;;OX4 2JY;Cowley;United Kingdom
+941;SUnited Statesnnah;Friedman;38;;;;;;;;Sudan
+942;Laure;Roges;39;Palais des Nations, Le Bocage;;avenue de la Paix;;Geneva;1211;10;Switzerland
+943;Andreas;Beensen;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+944;Paola;Emerson;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+945;Frederik;Wallenberg;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+946;Georg;von Kalckreuth;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+947;Astrid;Melchner;10;Palais Wilson;;52, rue de Paquis;;Geneva;1211;10;Switzerland
+948;Mauricio;Paiz-Merino;10;Palais Wilson;;52, rue de Paquis;;Geneva;1211;10;Switzerland
+949;Felipe;Valencia;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+950;Sophie;Diet;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+952;Jonathan;Waddell;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+953;Kasidis;Rochanakorn;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+954;Dominique;Porteaud;109;12th Floor;;207 Old Street;;London;EC1V 9NR;;United Kingdom
+955;Peter;Splinter;46;;;22, rue du Cendrier;;Geneva;1201;;Switzerland
+956;Patrick;Jacqueson;1;;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+957;Theo;Murphy;46;;;22, rue du Cendrier;;Geneva;1201;;Switzerland
+958;Marguerite;Garling;47;;;9 rue Cornavin;;Geneva;1201;;Switzerland
+959;Erin;Kenney;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+960;Arnhild;Spence;73;;;;;Geneva;;;Switzerland
+961;Kpandja;Sama;46;;;22, rue du Cendrier;;Geneva;1201;;Switzerland
+962;Mpako;Foaleng;151;suite 700;;200 s. Street;DC ;Washington;20009;;United States
+963;Oliver;Robertson;110;;;13 Avenue du Mervelet;;Geneva;1209;;Switzerland
+964;Aissatov-Boussoura;Garga;46;;;22, rue du Cendrier;;Geneva;1201;;Switzerland
+965;Simon;Bagshaw;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+966;Helene;Caux;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+967;Giuseppe;Calandruccio;10;Palais Wilson;;52, rue de Paquis;;Geneva;1211;10;Switzerland
+968;Nick;Van Praag;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+969;Mark;Hizna;47;;;9 rue Cornavin;;Geneva;1201;;Switzerland
+970;David;Kaatrud;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+972;James;Bot;38;P. O. Box 2487;H-3;6th Ringways Estate;Cantonments;Accra;1219;;Ghana
+974;Safari;Djumapili;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+975;Ton;van Zuthpen;36;;;6, chemin de la Tourelle;;Geneva;1209;;Switzerland
+976;Loubna;Benhayoune;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+978;Madeleine;Lundberg;5;;;P.O. Box 372;;Geneva;1211;19;Switzerland
+979;Mohamed;Abchir;12;;;11-13, chemin des Anémones;;Geneva;1219;Chatelaine;Switzerland
+980;Assiati;Chikuhwa;8;;;1 United Nations Plaza;NY;New York;10017;;United States
+982;Pierre;Perrin;3;;;19, avenue de la Paix;;Geneva;1202;;Switzerland
+984;Francesca;Marotta;10;Palais Wilson;;52, rue de Paquis;;Geneva;1211;10;Switzerland
+985;Caroline;Harvey;10;Palais Wilson;;52, rue de Paquis;;Geneva;1211;10;Switzerland
+986;Hyo-Jeang;Kim;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+987;Mario;Malanca;7;;;17, route des Morillons;;Geneva;1211;19;Switzerland
+988;B.;Gaude;15;Palais des Nations;;5-7, avenue de la Paix;;Geneva;1211;10;Switzerland
+989;Anja;klug;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+990;Serge;Koller;16;Palais des Nations;;avenue de la Paix;;Geneva;1211;10;Switzerland
+991;HervÃ©;Ludovic de Lys;8;;;;;Dakar;;;Senegal
+992;Laura;Palatini;7;;;;;Sudan;;;
+993;Gerard;Rebello;16;Palais des Nations;;avenue de la Paix;;Geneva;1211;10;Switzerland
+994;Tim;Smith;16;Palais des Nations;;avenue de la Paix;;Geneva;1211;10;Switzerland
+995;Elke;Wisch;15;;;3 United Nations Plaza;NY;New York;10017;;United States
+996;Ken;Casey;36;;;6, chemin de la Tourelle;;Geneva;1209;;Switzerland
+997;Sam;Worthington;6;;;1717 Massachusetts Avenue NW, Suite 701;DC;Washington;20036;;United States
+998;Loretta;Hieber-Girardet;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+999;Laetitia;Rougeron;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1000;Louise;Soerensen;7;;;17, route des Morillons;;Geneva;1211;19;Switzerland
+1001;Serge;Keller;16;Palais des Nations;;avenue de la Paix;;Geneva;1211;10;Switzerland
+1004;Marianne;Schilperoord;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+1005;Paul;Speigel;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+1006;Bob;Zook;36;;;6, chemin de la Tourelle;;Geneva;1209;;Switzerland
+1007;Veronique;Fages;12;;;11-13, chemin des Anémones;;Geneva;1219;Chatelaine;Switzerland
+1008;Micheline;Diepart;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+1009;Sune;Gudnitz;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1011;Roberto;Benes;15;;;;;Banda Aceh;;;Indonesia
+1012;Jane;Wanjiru Muigai;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+1013;Irene;Galleti;1;;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1014;Anahit;Shahverdyan;12;;;11-13, chemin des Anémones;;Geneva;1219;Chatelaine;Switzerland
+1015;Annaig;Idee;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1016;Brendan;McDonald;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1017;Severine;Muller;3;;;19, avenue de la Paix;;Geneva;1202;;Switzerland
+1018;Ingar;Falck Olsen;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+1019;Miguel;Bermeo Estrella;12;;;11-13, chemin des Anémones;;Geneva;1219;Chatelaine;Switzerland
+1022;Heidi;Peugeot;15;Palais des Nations;;5-7, avenue de la Paix;;Geneva;1211;10;Switzerland
+1024;Amy;Horton;16;Parco dei Medici;;Via C.G. Viola 68;;Rome;00148;;Italy
+1025;Smita;Kenkare;8;;;;;Dakar;;;Senegal
+1027;Deborah;Saidy;16;;;;;New York;;;United States
+1028;Gerard;Gomez;8;;;;;Panama;;;Senegal
+1029;Ad;Melkert;12;;;1 United Nations Plaza;NY;New York;10017;;United States
+1030;Josef;Reiterer;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1031;Isabelle;Clavier;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1032;Joanna;Weshler;111;1 Dag Hammarskjold Plaza;;885 2nd Ave & 48th St, 31st Fl;NY;New York;10017;;United States
+1033;Pernille;Brodahl;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1034;Denise;Allen;36;;;6, chemin de la Tourelle;;Geneva;1209;;Switzerland
+1035;Graham;Saunders;5;;;P.O. Box 372;;Geneva;1211;19;Switzerland
+1036;Antonia;Estrada;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1039;Cecilia;Morales;35;International Environment House;;11-13, chemin des Anémones;;Geneva;1219;Chatelaine;Switzerland
+1040;Anne-Sophie;Durand;8;Palais des Nations;121-2;8-14, avenue de la Paix;;Geneva;1211;;Switzerland
+1041;;;0;Palais des Nations;121-2;;;;;;
+1042;David;Snider;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+1043;Gudrun;Van Pottelbergh;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1044;Masaaki;Nakagawa;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1046;Solveig;Hole;39;Palais des Nations, Le Bocage;;avenue de la Paix;;Geneva;1211;10;Switzerland
+1047;Bernt;Aasen;15;;;3 United Nations Plaza;NY;New York;10017;;United States
+1048;Craig;Mokhiber;10;;;;;New York;;;United States
+1049;Martin;Ejidike;10;;;;;New York;;;United States
+1050;Andrey;Pirogov;17;2 United Nations Plaza;;;NY;New York;10017;;United Kingdom
+1051;Julie;Breen;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1052;Neda;Rahimabadi;5;;;P.O. Box 372;;Geneva;1211;19;Switzerland
+1054;Severine;Giroud;16;Palais des Nations;;avenue de la Paix;;Geneva;1211;10;Switzerland
+1057;Alfred;Gilman;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1058;Margaret;Chan;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+1060;John;Holmes;8;;;1 United Nations Plaza;NY;New York;10017;;United States
+1062;Losane D.;Retta;38;;;7-9, chemin de Balexert;;Geneva;1219;Chatelaine;Switzerland
+1063;Laila;Badawy;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+1064;Scott;Campbell;10;Palais Wilson;;52, rue de Paquis;;Geneva;1211;10;Switzerland
+1065;Rosevel;Pierre Louis;10;Palais Wilson;;52, rue de Paquis;;Geneva;1211;10;Switzerland
+1066;Lynette;Larson;8;;;;;Dakar;;;Senegal
+1067;Lynette;Larsen;8;;;;;Geneva;;;Switzerland
+1068;Marcus;Dolder;3;;;19, avenue de la Paix;;Geneva;1202;;Switzerland
+1069;Jennifer;Philpot-Nissen;36;;;6, chemin de la Tourelle;;Geneva;1209;;Switzerland
+1072;Ferdinand;Paredes;7;;;17, route des Morillons;;Geneva;1211;19;Switzerland
+1073;Ahmed;Warsame;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+1074;Nahla;Rifai;8;;;;;Geneva;;;Switzerland
+1075;Jane;Muigai;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+1076;Kevin;Cheng;8;;;;;Geneva;;;Switzerland
+1077;Thomas;Gurtner;5;;;P.O. Box 372;;Geneva;1211;19;Switzerland
+1078;Mariko;Sato;40;International Environment House 2;;7, chemin de Balexert;;Geneva;1219;Chatelaine;Switzerland
+1079;M.;Pillinger;7;;;17, route des Morillons;;Geneva;1211;19;Switzerland
+1080;Josh;Lyons;28;International Environmental House;;7-9, chemin des Anémones;;Geneva;1219;Chatelaine;Switzerland
+1081;Pontus;Ohrstedt;12;;;11-13, chemin des Anémones;;Geneva;1219;Chatelaine;Switzerland
+1082;Sonia;Bakar;10;Palais Wilson;;52, rue de Paquis;;Geneva;1211;10;Switzerland
+1084;Gloria;Nwabnogu;10;Palais Wilson;;52, rue de Paquis;;Geneva;1211;10;Switzerland
+1085;Claudia;Garcia Moreno;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+1086;Tim;Smith;16;;;via Cesare Giulio Viola 68/70;;Rome;00148;;Italy
+1087;Zuzana;Licakova;13;;;;;Bratislava;;;
+1088;Atle;Solberg;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+1089;Bruce;Cogill;15;;;3 United Nations Plaza;NY;New York;10017;;United States
+1091;Norwin;Schafferer;20;;S-125;;;;;;
+1092;Lisa;Carl;3;;;19, avenue de la Paix;;Geneva;1202;;Switzerland
+1093;Allison;Van Pelt;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+1094;Diana;Arango;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+1095;Joanina;Karugaba;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+1096;Stephen;Gonah;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+1098;Gabriele;Froning;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1099;Stephen;Tull;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1100;Jean-Claude;do Rego;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+1101;Elizabeth;Walker;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1102;Hannah;Winfield;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1103;Marcel;Vaessen;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1104;Katarina;Chebenova;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1105;Erik;Kastlander;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1107;Chen;Reis;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+1108;Roberto;Ricci;10;Palais Wilson;;52, rue de Paquis;;Geneva;1211;10;Switzerland
+1109;Louise;Johannsen;8;;;;;Geneva;;;Switzerland
+1110;Caroline;Kern;20;United Nations;;1 United Nations Plaza;NY;New York;10017;;United States
+1115;Francois;Marrillet;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+1116;Denise;Duran;3;;;19, avenue de la Paix;;Geneva;1202;;Switzerland
+1117;Cedric;Schweizer;3;;;19, avenue de la Paix;;Geneva;1202;;Switzerland
+1119;Brian;Ruane;10;Palais Wilson;;52, rue de Paquis;;Geneva;1211;10;Switzerland
+1120;Neal;Gilmore;10;Palais Wilson;;52, rue de Paquis;;Geneva;1211;10;Switzerland
+1121;Cathrine;Tshefu;10;Palais Wilson;;52, rue de Paquis;;Geneva;1211;10;Switzerland
+1122;Marcelo;Daher;10;Palais Wilson;;52, rue de Paquis;;Geneva;1211;10;Switzerland
+1123;Elisabeth;Fellar;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+1124;Shireen;Mukadam;46;;;22, rue du Cendrier;;Geneva;1201;;Switzerland
+1125;Joel;Opulencia;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1126;Maria Luisa;Aguilar;10;Palais Wilson;;52, rue de Paquis;;Geneva;1211;10;Switzerland
+1127;Olivia;Bessat;16;Palais des Nations;;avenue de la Paix;;Geneva;1211;10;Switzerland
+1128;Venus;Maroun;5;;;P.O. Box 372;;Geneva;1211;19;Switzerland
+1129;Katrin;Schick;114;;;43 Avenue Louise;;Brussels;1050;;Belgium
+1130;Michel;Sidibe;23;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+1131;Jules;Pieters;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+1132;Jukka;Sailas;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+1133;Kersten;Gutschmidt;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+1134;Rachel;Scott-Leflaive;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1135;Cathy;Sabety;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1136;Eric;Chevallier;68;;;Rue Marcadet 62;;Paris;75018;;France
+1137;James;Bevan;115;;;Av. Blanc 47;;Geneva;1202;;Switzerland
+1138;Misty;Buswell;74;;;1, rue de Varembe;;Geneva;1202;;Switzerland
+1139;Valeria;Fruzzetti;46;;;22, rue du Cendrier;;Geneva;1201;;Switzerland
+1140;Lila;Del Colle;3;;;19, avenue de la Paix;;Geneva;1202;;Switzerland
+1141;Ole;Stubben;103;;;;;El Fasher;;;Sudan
+1142;Joseph;Bartel;35;International Environment House;;11-13, chemin des Anémones;;Geneva;1219;Chatelaine;Switzerland
+1143;Mohamed;Dayri;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+1144;Mehdi;Ben Mrad;43;;;18, avenue Bouchet;;Geneva;1209;;Switzerland
+1145;Asa;Claesson;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1146;Letesion;Woldeyohannes;5;;;P.O. Box 372;;Geneva;1211;19;Switzerland
+1147;Judith;Leclercq;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1148;Malcolm;Johnstone;5;;;P.O. Box 372;;Geneva;1211;19;Switzerland
+1150;Agnes;Asekenye-Oonyu;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1151;Mahimbo;Mdoe;15;Palais des Nations;;5-7, avenue de la Paix;;Geneva;1211;10;Switzerland
+1152;Mahimbo;Mdoe;15;Palais des Nations;;5-7, avenue de la Paix;;Geneva;1211;10;Switzerland
+1153;JosÃ©;Riera;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+1155;Edward;Libeau;15;Palais des Nations;;5-7, avenue de la Paix;;Geneva;1211;10;Switzerland
+1157;Dina;Hamdy;10;Palais Wilson;;52, rue de Paquis;;Geneva;1211;10;Switzerland
+1158;Tsatsu;Dawson;10;Palais Wilson;;52, rue de Paquis;;Geneva;1211;10;Switzerland
+1159;Lotte;Wendt;57;;;Place de Fontenoy 7;;Paris;75352;07 SP;France
+1160;Caroline;Grandjean;117;;;;;Geneva;;;Switzerland
+1161;Ana-Maria;Donamaria;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1162;Cynthia;Osorio Flores;6;;;1717 Massachusetts Avenue NW, Suite 701;DC;Washington;20036;;United States
+1163;Mona;Elinbabi;69;;;304 East 45th Street;NY;New York;10017;;United States
+1165;Kyung-wha;Kang;10;Palais Wilson;;52, rue de Paquis;;Geneva;1211;10;Switzerland
+1166;Giovanna;Zucchelli;10;Palais Wilson;;52, rue de Paquis;;Geneva;1211;10;Switzerland
+1167;Helen Julia;Palmer;78;Oxfam House;;John Smith Drive;;Oxford;OX4 2JY;Cowley;United Kingdom
+1168;Robbie;Thomson;4;;;26-28, avenue Giuseppe Motta;;Geneva;1202;;Switzerland
+1170;Niels;Scott;5;;;P.O. Box 372;;Geneva;1211;19;Switzerland
+1172;Sophie;Sutrich;39;Palais des Nations, Le Bocage;;avenue de la Paix;;Geneva;1211;10;Switzerland
+1174;Ivane;Bochorishvili;8;;;;;Dakar;;;Senegal
+1175;Josette;Sheeran;16;Parco dei Medici;;Via C.G. Viola 68;;Rome;00148;;Italy
+1177;Cathy;Huser;3;4;20 01;rue de la Paix;;Geneve;1202;;Switzerland
+1181;Karl-Loren;Dehne;23;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+1182;Aoibheann;O'Keeffe;8;;;;;Dakar;;;Senegal
+1183;Manoucher;Lolachi;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+1184;Yasmine;Hadjoudj;10;Palais Wilson;;52, rue de Paquis;;Geneva;1211;10;Switzerland
+1185;Rema;Jamous-Imseis;57;;;Place de Fontenoy 7;;Paris;75352;07 SP;France
+1186;Martin;Schuepp;3;;;19, avenue de la Paix;;Geneva;1202;;Switzerland
+1187;David;Shearer;8;;;;;Jerusalem;;;Israel
+1188;Catherine;Walker;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+1190;Joanne;Burke;66;Palais des Nations;;avenue de la Paix;;Geneva;1211;10;Switzerland
+1191;Dominique;Bush;10;;;;;New York;;;United States
+1193;Daniele;Donati;1;;;Via delle Terme di Caracalla;;Rome;00100;;Italy
+1194;Amy;Medin;7;;;112 East 42nd Street;NY;New York;10168-1610;;United States
+1196;Johann;Aufderklamm;3;;;19, avenue de la Paix;;Geneva;1202;;Switzerland
+1197;Treena;Huang;16;;;;;New York;;;United States
+1199;Mirna;Yacoub;15;;;3 United Nations Plaza;NY;New York;10017;;United States
+1200;Ron;Pouwels;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+1201;Maude;Veyret-Picot;15;;;;;Banda Aceh;;;Indonesia
+1202;Monique;Scamuffa;99;;;1 St. John's Lane;;London;EC1M 4AR;;United Kingdom
+1203;Lotte;Wendt;57;;;Place de Fontenoy 7;;Paris;75352;07 SP;France
+1204;Vanessa;Alexander;72;P.O. Box 96;;37, rue de Vermont;;Geneva;1211;20;Switzerland
+1205;Dina;Wahba;10;Palais Wilson;;52, rue de Paquis;;Geneva;1211;10;Switzerland
+1206;Oarmen;Aramburu;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+1208;Andrew;Morton;35;International Environment House;;11-13, chemin des Anémones;;Geneva;1219;Chatelaine;Switzerland
+1209;Matija;Kovac;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1210;Virginie;Bohl;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1211;Florence;Secula;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1212;Christine;Fares;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+1213;Jenty;Kirsch-Wood;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1214;Sara;Simon;8;;;;;Dakar;;;Senegal
+1215;Hawa;Sylla-Kane;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+1216;Vanessa;Huguenin;8;;;;;Dakar;;;Senegal
+1218;Laetitia;Rougeron;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1219;Nada;Al Ward;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+1220;Guido;Ambroso;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+1221;Guadalupe;de SoUnited States;8;;;;;Brussels;;;
+1222;Yasmina;Hammoumi;8;;;;;Geneva;;;Switzerland
+1223;Diana;Walter Ballet;8;;;;;Geneva;;;Switzerland
+1224;StÃ©phanie;Reynes;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1225;Kirstie;Farmer;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1229;Kevin;Savage;121;;;111 Westminster Bridge Road;;London;SE1 7JD;;United Kingdom
+1233;Soraya;Eftekhari;20;United Nations;S-3600;1 United Nations Plaza;NY;New York;10017;;United States
+1234;Maria Teresa;Smith;2;United Nations;M-0601 6D;380 Madison Avenue;NY;New York;10019;;United States
+1235;Rosemary;Lewis;16;Palais des Nations;;avenue de la Paix;;Geneva;1211;10;Switzerland
+1236;Anna;Jaster;39;Palais des Nations, Le Bocage;;avenue de la Paix;;Geneva;1211;10;Switzerland
+1237;Marie;Plamadiala;10;Palais Wilson;;52, rue de Paquis;;Geneva;1211;10;Switzerland
+1238;Charles;Royce;8;;;;;Geneva;;;Switzerland
+1239;Marie-Sophie;Reck;8;;;;;Chad;;;
+1240;Sharon;Rusu;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1241;Suhair;Talab;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+1242;Thomas;Getman;36;;;6, chemin de la Tourelle;;Geneva;1209;;Switzerland
+1243;Ada;Cardenas;13;International Environment House;;11-13, chemin des Anémones;;Geneva;1219;Chatelaine;Switzerland
+1244;Tanja;Vieke-Sussman;38;;;7-9, chemin de Balexert;;Geneva;1219;Chatelaine;Switzerland
+1245;Annika;Sjoberg;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+1246;Lizzie;Rushing;10;Palais Wilson;;52, rue de Paquis;;Geneva;1211;10;Switzerland
+1247;Elise;Woirhaye;10;Palais Wilson;;52, rue de Paquis;;Geneva;1211;10;Switzerland
+1248;Kazumi;Ogawa;10;Palais Wilson;;52, rue de Paquis;;Geneva;1211;10;Switzerland
+1249;Tony;Laurance;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+1250;Linda;Stops;5;;;P.O. Box 372;;Geneva;1211;19;Switzerland
+1251;Bernard;Doyle;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+1252;Roy;Brooke;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1253;Kirsten;Mildren;8;;;;;Geneva;;;Switzerland
+1255;Antonio;Donini;122;;;;;Geneva;;;Switzerland
+1257;Javier;Arina-Iraeta;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+1259;Gotzon;Onandia;107;;;c/o ICMC, 37-39 rue de Vermont;;Geneva;1211;;Switzerland
+1260;Guillermo;Marquez;68;;;Rue Marcadet 62;;Paris;75018;;France
+1262;Patrick;Egloff;22;Palais Wilson;;52, rue de Paquis;;Geneva;1211;10;Switzerland
+1265;Edem;Wosornu;8;;;1 United Nations Plaza;NY;New York;10017;;United States
+1266;Ruki;Fernando;126;;;;;Colombo;;;
+1268;Ruki;Fernando;126;;;;;Colombo;;;
+1269;Ramesh;Rajasingham;8;;;;;Geneva;;;Switzerland
+1270;Mogens;Schmidt;57;;;Place de Fontenoy 7;;Paris;75352;07 SP;France
+1271;Mirja;Peters;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1272;Ruth;Mukwana;8;;;;;Geneva;;;Switzerland
+1273;Nimalka;Fernando;131;;;;;Colombo;;;Sri Lanka
+1274;Sunila;Abeysekera;132;;;;;Colombo;;;Sri Lanka
+1275;Julia;Joerin;3;;;19, avenue de la Paix;;Geneva;1202;;Switzerland
+1276;Martijn;Viersma;8;;;;;Geneva;;;Switzerland
+1281;Andreas;Wustenberg;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1282;Antonella;Notari;3;;;19, avenue de la Paix;;Geneva;1202;;Switzerland
+1283;Catherine;Trevelline;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1285;Carlos;Veloso;16;;;;;Rome;1211;10;Italy
+1286;Rene;Saameli;3;;;19, avenue de la Paix;;Geneva;1202;;Switzerland
+1287;Andrew;Alspach;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1288;Louise;Gentzel;15;Palais des Nations;;5-7, avenue de la Paix;;Geneva;1211;10;Switzerland
+1289;Luc;St-Pierre;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+1290;Katarina;Toll;8;;;;;Geneva;;;Switzerland
+1292;Sandi;Shannon;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1293;Sandi;Shannon;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1294;Tullio;Santini;12;;;11-13, chemin des Anémones;;Geneva;1219;Chatelaine;Switzerland
+1295;Ayuko;Takahashi;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+1296;Alwin;de Greeff;10;Palais Wilson;;52, rue de Paquis;;Geneva;1211;10;Switzerland
+1297;Maria;Gilani;39;Palais des Nations, Le Bocage;;avenue de la Paix;;Geneva;1211;10;Switzerland
+1298;Inga;Lohse;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+1299;Kavita;Shukla;73;;;;;Geneva;;;Switzerland
+1301;Stefanie;Lux;3;;;19, avenue de la Paix;;Geneva;1202;;Switzerland
+1303;Annamaria;Laurini;8;;;1 United Nations Plaza;NY;New York;10017;;United States
+1304;Pedro Felipe;Camargo;8;;;1 United Nations Plaza;NY;New York;10017;;United States
+1305;Megan;Gilgan;15;Palais des Nations;;5-7, avenue de la Paix;;Geneva;1211;10;Switzerland
+1306;Alexandra;Williams;8;;;;;Dakar;;;Senegal
+1307;Shani;Harris;8;;;1 United Nations Plaza;NY;New York;10017;;United States
+1308;Yasin;Samatar;8;;;1 United Nations Plaza;NY;New York;10017;;United States
+1309;Charlotte;Brugman;15;Palais des Nations;;5-7, avenue de la Paix;;Geneva;1211;10;Switzerland
+1310;Marzia;Montemurro;73;P.O. Box 6758;;St. Olavs Plass;;Oslo;N-0130;;Norway
+1313;Bill;Paton;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1314;Iain;Bald;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1315;Michael;mosselmans;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1316;Liviu;Vedrasco;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1317;Panagiotis;Stefanou;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1319;Elena;Mancusi Materi;39;Palais des Nations, Le Bocage;;avenue de la Paix;;Geneva;1211;10;Switzerland
+1320;Paul;Handley;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1321;Colin;Richards;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1322;Colin;Richards;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1323;Anusha;Goossens;99;;;1 St. John's Lane;;London;EC1M 4AR;;United Kingdom
+1324;Gregory;Brown;41;;;122 East 42nd Street;NY;New York;10168-1289;;United States
+1325;Holly;Solberg;38;;;7-9, chemin de Balexert;;Geneva;1219;Chatelaine;Switzerland
+1326;Philippe;Guiton;36;;;6, chemin de la Tourelle;;Geneva;1209;;Switzerland
+1327;Jean-Marie;Ganelli;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+1328;Justyna;Susla;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1329;Sue;Pavan;5;;;P.O. Box 372;;Geneva;1211;19;Switzerland
+1331;Katnien;Cottens;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+1332;Francesca;Vigagni;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+1334;Ivana;Milovanovic;17;One Dag Hammarskjold Plaza;;885 2nd  Avenue, 26th floor;NY;New York;10017;;United States
+1335;Peter;Joshi;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+1336;Dina;Sinigallia;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+1337;Dermot;Carty;15;Palais des Nations;;5-7, avenue de la Paix;;Geneva;1211;10;Switzerland
+1339;Manga;Mialaret;8;;;;;Dakar;;;Senegal
+1340;Adam;Combs;73;P.O. Box 6758;;St. Olavs Plass;;Oslo;N-0130;;Norway
+1341;Christine;South;5;;;P.O. Box 372;;Geneva;1211;19;Switzerland
+1342;Nomkhosi;Mhlanga;5;;;P.O. Box 372;;Geneva;1211;19;Switzerland
+1343;Pascal;Daudin;38;;;7-9, chemin de Balexert;;Geneva;1219;Chatelaine;Switzerland
+1344;Matthew;Cousins;8;;;;;Dakar;;;Senegal
+1345;Alexandre;Liebeskind;3;;;19, avenue de la Paix;;Geneva;1202;;Switzerland
+1346;Idrissa;Kane;10;Palais Wilson;;52, rue de Paquis;;Geneva;1211;10;Switzerland
+1347;Nuur;Sheekh;73;P.O. Box 6758;;St. Olavs Plass;;Oslo;N-0130;;Norway
+1348;SUnited Statesnne;Melde;7;;;17, route des Morillons;;Geneva;1211;19;Switzerland
+1349;Judith;Kammerer;7;;;17, route des Morillons;;Geneva;1211;19;Switzerland
+1350;John;Brouwer;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+1351;Samuel;Chakwera;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+1352;John;Roche;5;;;P.O. Box 372;;Geneva;1211;19;Switzerland
+1353;Anne-Marie;Linde;8;;;;;Geneva;;;Switzerland
+1354;Neill;Wright;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+1355;Tim;Pitt;8;;;;;;;;Uganda
+1356;Daniel;Messerli;3;;;19, avenue de la Paix;;Geneva;1202;;Switzerland
+1357;Janis;Cummings;15;Palais des Nations;;5-7, avenue de la Paix;;Geneva;1211;10;Switzerland
+1358;Vanja;Kullander;7;;;17, route des Morillons;;Geneva;1211;19;Switzerland
+1359;Katinka;Ridderbos;29;;;7-9, chemin de Balexert;;Geneva;1219;Chatelaine;Switzerland
+1362;;;64;;;11-13, chemin des Anémones;;Geneva;1219;Chatelaine;Switzerland
+1363;Luca;Dell'Oro;28;International Environmental House;;7-9, chemin des Anémones;;Geneva;1219;Chatelaine;Switzerland
+1364;Torill;Saeteroy;10;Palais Wilson;;52, rue de Paquis;;Geneva;1211;10;Switzerland
+1365;Peter;Neussl;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1366;Elvira;Maaghop;23;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+1367;Andrew;Galea Debono;107;;;c/o ICMC, 37-39 rue de Vermont;;Geneva;1211;;Switzerland
+1368;Rachel;Rico;10;Palais Wilson;;52, rue de Paquis;;Geneva;1211;10;Switzerland
+1369;Patrick;Fruchet;12;;;11-13, chemin des Anémones;;Geneva;1219;Chatelaine;Switzerland
+1370;Simon;Ashmore;3;;;19, avenue de la Paix;;Geneva;1202;;Switzerland
+1371;Anna;Mkhoyan;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1373;Sabine;Rakotamalala;134;;;;;Geneva;;;Switzerland
+1374;Amanda;Melville;15;;;3 United Nations Plaza;NY;New York;10017;;United States
+1375;Thobias;Bergmann;23;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+1376;Jim;Butler;1;;;Via delle Terme di Caracalla;;Rome;00100;;Italy
+1377;Andrei;Kazakov;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+1378;Vincent;Cassard;3;;;19, avenue de la Paix;;Geneva;1202;;Switzerland
+1379;Salla;Himberg;8;;;;;Dakar;;;Senegal
+1380;Laila;Baker;13;International Environment House;;11-13, chemin des Anémones;;Geneva;1219;Chatelaine;Switzerland
+1381;Michael;Wiener;10;Palais Wilson;;52, rue de Paquis;;Geneva;1211;10;Switzerland
+1382;Linnea;Arvidsson;10;Palais Wilson;;52, rue de Paquis;;Geneva;1211;10;Switzerland
+1383;Karim;Khalil;29;;;7-9, chemin de Balexert;;Geneva;1219;Chatelaine;Switzerland
+1384;Caroline;Hunt-Matthes;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1385;Ana;Sanchez;8;;;;;Dakar;;;Senegal
+1386;Christine;Chamoun;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+1387;Christophe;Beau;29;;;7-9, chemin de Balexert;;Geneva;1219;Chatelaine;Switzerland
+1388;Jae Ryal;Kim;5;;;P.O. Box 372;;Geneva;1211;19;Switzerland
+1389;Muftah;Etwilb;5;;;P.O. Box 372;;Geneva;1211;19;Switzerland
+1390;;;41;;;122 East 42nd Street;NY;New York;10168-1289;;United States
+1391;Michael;Meier;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1392;Kathy;Webley;99;;;1 St. John's Lane;;London;EC1M 4AR;;United Kingdom
+1393;Mathew;Varghese;5;;;P.O. Box 372;;Geneva;1211;19;Switzerland
+1395;Eleonora;del Balzo;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1396;Mamadou;Ndiaye;135;;;;;Dakar RP;B.P. 1887;;Senegal
+1397;Takeo;Murakami;8;;;;;Dakar;;;Senegal
+1398;Suha;Ulgen;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1399;James;Douris;59;;;7bis, avenue de la Paix;;Geneva;1211;2;Switzerland
+1401;Celia;Deitz;38;;;7-9, chemin de Balexert;;Geneva;1219;Chatelaine;Switzerland
+1402;Reem;Alsalem;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+1403;Ludmilla;Cheremoukhina;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+1404;Jean;Verheyden;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1405;Peggy;Nelson;16;;;;;New York;;;United States
+1406;Peter;Walker;20;;;126 Curtis Street;MA;Medford ;02155;;United States
+1408;Amjad;Abbashar;8;;;1 United Nations Plaza;NY;New York;10017;;United States
+1409;Louis-George;Arsenault;15;;;3 United Nations Plaza;NY;New York;10017;;United States
+1410;Paula;Uski;66;;;;;New York;;;United States
+1411;Mireille;Gerard;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+1412;Vincent;OMUGA;8;Palais Des Nations;D-617;1211;;Geneva;;;Switzerland
+1413;Caroline;Teyssier;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1414;Awa;Dabo;12;;;11-13, chemin des Anémones;;Geneva;1219;Chatelaine;Switzerland
+1415;Sebastien;Gouraud;12;;;11-13, chemin des Anémones;;Geneva;1219;Chatelaine;Switzerland
+1417;Madeleine;Rees;10;Palais Wilson;;52, rue de Paquis;;Geneva;1211;10;Switzerland
+1418;Elle;Beard;36;;;6, chemin de la Tourelle;;Geneva;1209;;Switzerland
+1419;Christophe;Gaillard;3;;;19, avenue de la Paix;;Geneva;1202;;Switzerland
+1420;Mohammed;Dualeh;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+1422;Richard;Garfield;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+1423;Nathalie;De Nul;29;;;7-9, chemin de Balexert;;Geneva;1219;Chatelaine;Switzerland
+1424;Tagny;Diake;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1425;Chiara;Capozio;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1427;Stina;Warnstam;10;Palais Wilson;;52, rue de Paquis;;Geneva;1211;10;Switzerland
+1428;Alexis;Hoskins;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1429;Anamaria;Fonnegra;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1430;Hilde;Johnson;15;;;3 United Nations Plaza;NY;New York;10017;;United States
+1431;Jennifer;Gatto;15;;;3 United Nations Plaza;NY;New York;10017;;United States
+1432;Beth;Vann;17;2 United Nations Plaza;;;NY;New York;10017;;United Kingdom
+1433;Treta;Thapa;16;Palais des Nations;;avenue de la Paix;;Geneva;1211;10;Switzerland
+1434;Georges;Tadonki;8;;;;;Dakar;;;Senegal
+1436;;;15;;;;;Banda Aceh;;;Indonesia
+1437;Ian;Churchill;137;;;;;Washington;;;
+1438;;;65;International Environment House 2;;7-9, chemin de Balexert;;Geneva;1211;10;Switzerland
+1439;Juliette;Ancelle;65;International Environment House 2;;7-9, chemin de Balexert;;Geneva;1211;10;Switzerland
+1440;Evelyn;Chung;16;Parco dei Medici;;Via C.G. Viola 68;;Rome;00148;;Italy
+1441;James;Heenan;10;Palais Wilson;;52, rue de Paquis;;Geneva;1211;10;Switzerland
+1442;Dean;Hirsch;36;;;6, chemin de la Tourelle;;Geneva;1209;;Switzerland
+1446;Taryn;Lesser;10;Palais Wilson;;52, rue de Paquis;;Geneva;1211;10;Switzerland
+1447;Marc;Joly;99;;;1 St. John's Lane;;London;EC1M 4AR;;United Kingdom
+1448;Fatima;El-Moustaoui;43;;;18, avenue Bouchet;;Geneva;1209;;Switzerland
+1449;M. Baszanger;Chloe;10;Palais Wilson;;52, rue de Paquis;;Geneva;1211;10;Switzerland
+1450;Rudiger;Schoch;4;;;26-28, avenue Giuseppe Motta;;Geneva;1202;;Switzerland
+1451;Bethan;Montague-Brown;4;;;26-28, avenue Giuseppe Motta;;Geneva;1202;;Switzerland
+1453;Ana Maria;Rebaza;8;;;;;Lima;;;Peru
+1454;Shari;Temple;143;;;;;Washington;;;
+1456;Scott;Schirmer;7;;;17, route des Morillons;;Geneva;1211;19;Switzerland
+1457;Anne-CÃ¨cile;Vialle;35;International Environment House;;11-13, chemin des Anémones;;Geneva;1219;Chatelaine;Switzerland
+1458;Jean-Marie;Garelli;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+1463;Ola;Almgren;12;;;11-13, chemin des Anémones;;Geneva;1219;Chatelaine;Switzerland
+1464;Peter;Rees;5;;;P.O. Box 372;;Geneva;1211;19;Switzerland
+1468;Veronika;Wolf;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1469;Symeon;Antoulas;3;;;19, avenue de la Paix;;Geneva;1202;;Switzerland
+1470;Yves-Marie;Cilote;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1471;Jock;Bakar;38;;;7-9, chemin de Balexert;;Geneva;1219;Chatelaine;Switzerland
+1472;Stella;Nkrumah-Ababio;36;;;6, chemin de la Tourelle;;Geneva;1209;;Switzerland
+1473;Silvana;Mutti;3;;;19, avenue de la Paix;;Geneva;1202;;Switzerland
+1474;SUnited Statesn;Nicolai;99;;;;;Geneva;;;Switzerland
+1475;Justin;Ackley;8;;;;;Geneva;;;Switzerland
+1476;Rita;Missal;12;;;11-13, chemin des Anémones;;Geneva;1219;Chatelaine;Switzerland
+1477;Ruji;Rejiouo;12;;;11-13, chemin des Anémones;;Geneva;1219;Chatelaine;Switzerland
+1478;Line;Pederson;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+1479;Laura;Lo-Castro;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+1480;Mukul;Bhola;53;;Room 11-31;4, route des Morillons;;Geneva;1211;10;Switzerland
+1481;Joyce;Nozome Kadzakumanja;8;;Room S-3670;1 United Nations Plaza;NY;New York;10017;;United States
+1482;Rene;Nijenhuis;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1484;Matthew;Conway;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1485;Gwyn;Lewis;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1486;James;Alemi;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+1487;Stefan;Ziegler;39;Palais des Nations, Le Bocage;;avenue de la Paix;;Geneva;1211;10;Switzerland
+1488;Meera;Sethi;7;;;17, route des Morillons;;Geneva;1211;19;Switzerland
+1489;Leszek;Barczak;8;;;1 United Nations Plaza;NY;New York;10017;;United States
+1490;Stephanie;Reynes;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1491;Fonseta;Bhavani;148;;;;;Colombo;;;
+1492;Baptiste;Marnier;38;;;7-9, chemin de Balexert;;Geneva;1219;Chatelaine;Switzerland
+1493;Alessia;Barbezat;16;Palais des Nations;;avenue de la Paix;;Geneva;1211;10;Switzerland
+1494;Nicki;Bennett;60;Suite 20;;266 Banbury Road;;Oxford;OX2 7DL;;United Kingdom
+1495;Jeyabalan;Croos;149;;;;;Colombo;;;
+1497;Aloys;Kamuragiye;15;;;;;Djibouti;;;
+1499;Josephine;Liebl;39;Palais des Nations, Le Bocage;;avenue de la Paix;;Geneva;1211;10;Switzerland
+1501;Alyson;Lofthouse;28;International Environmental House;;7-9, chemin des Anémones;;Geneva;1219;Chatelaine;Switzerland
+1502;Ann;Guthmiller;7;;;17, route des Morillons;;Geneva;1211;19;Switzerland
+1503;Julianne;Di Nenna;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1504;Dominic;MacSorley;150;Suite 903;;104 East 40th Street;;New York;;NY 10016;United States
+1505;Dan;Lewis;40;;;;;Nairobi;;;
+1506;Ingrid;Mcdonald;73;;;;;Geneva;;;Switzerland
+1507;Simon;Russell;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+1508;Mpako;Foaleng;151;suite 700;;200 s. Street;;Washington;DC 20009;;United States
+1509;Aurelie;Lamaziere;74;;;1, rue de Varembe;;Geneva;1202;;Switzerland
+1510;Fatima;El Moustaoui;43;;;18, avenue Bouchet;;Geneva;1209;;Switzerland
+1512;Laura;Perez;29;;;7-9, chemin de Balexert;;Geneva;1219;Chatelaine;Switzerland
+1514;Emma;Keating;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1516;Heenan;James;10;Palais Wilson;;52, rue de Paquis;;Geneva;1211;10;Switzerland
+1517;Rudi;Coninx;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+1520;Sarah;Heluin;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1521;Sujithav;Sarangi;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1522;Yves;Chartier;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+1523;Bohdan;Nahajlo;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+1524;Yngrot;Svante;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+1525;Maria;Perez;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+1526;Corine;Wagner;43;;;18, avenue Bouchet;;Geneva;1209;;Switzerland
+1527;Valentine;Ndibalema;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+1528;Kate;Halff;73;;;;;Geneva;;;Switzerland
+1529;Bekele;Geleta;116;;;P.O. Box 372;;Geneva;1211;19;Switzerland
+1530;Cristina;Chen;5;;;P.O. Box 372;;Geneva;1211;19;Switzerland
+1531;Asako;Hattori;10;Palais Wilson;;52, rue de Paquis;;Geneva;1211;10;Switzerland
+1532;Pierrine;Aylara;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+1533;Jonathan;Abrahams;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+1535;Daniel;Seller;38;;;7-9, chemin de Balexert;;Geneva;1219;Chatelaine;Switzerland
+1536;Corinna;Nater;12;;;11-13, chemin des Anémones;;Geneva;1219;Chatelaine;Switzerland
+1537;Matteo;Tunioli;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+1538;Elizabeth;Jackson;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+1539;Lynda;Redwood-Campbell;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+1540;Christine;Azemar;1;;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1541;Chloe;Charpentier;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1542;Emilie;Villard;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1543;Matthew;Neeley;53;;;4, route des Morillons;;Geneva;1211;10;Switzerland
+1544;Beatrice;Progida;15;Palais des Nations;;5-7, avenue de la Paix;;Geneva;1211;10;Switzerland
+1545;Petra;Kullander;15;Palais des Nations;;5-7, avenue de la Paix;;Geneva;1211;10;Switzerland
+1546;Keiji;Fukuda;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+1547;Manzoor;Ahmad;1;;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1549;Federica;Busiello;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1550;Navanethem;Pillay;10;Palais Wilson;;52, rue de Paquis;;Geneva;1211;10;Switzerland
+1551;Paul;Larsen;16;Parco dei Medici;;Via C.G. Viola 68;;Rome;00148;;Italy
+1552;Laurent;Thomas;1;;;Via delle Terme di Caracalla;;Rome;00100;;Italy
+1553;Paolo;Avner;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+1554;Ulrik;Halsteen;10;Palais Wilson;;52, rue de Paquis;;Geneva;1211;10;Switzerland
+1555;Anna;Zinecker;5;;;P.O. Box 372;;Geneva;1211;19;Switzerland
+1556;Sandra;Aviles;1;;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1557;Coline;Houssais;39;Palais des Nations, Le Bocage;;avenue de la Paix;;Geneva;1211;10;Switzerland
+1558;Alma;Narusoua;7;;;17, route des Morillons;;Geneva;1211;19;Switzerland
+1559;Wiebke;Harms;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1560;Jennifer;Miquel;13;International Environment House;;11-13, chemin des Anémones;;Geneva;1219;Chatelaine;Switzerland
+1561;Deborah;Vittori;15;Palais des Nations;;5-7, avenue de la Paix;;Geneva;1211;10;Switzerland
+1562;Oliver;Matri;12;;;11-13, chemin des Anémones;;Geneva;1219;Chatelaine;Switzerland
+1563;Katy;Thompson;12;;;11-13, chemin des Anémones;;Geneva;1219;Chatelaine;Switzerland
+1564;Gillian;Holmes;58;;;304 East 45th Street;NY;New York;10017;;United Kingdom
+1565;Maja Katharina;Hild;20;Palais des Nations;047;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1566;Jane;Rasmussen;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+1567;Antoanela;Pavlova;10;Palais Wilson;;52, rue de Paquis;;Geneva;1211;10;Switzerland
+1568;Maha;Muna;13;International Environment House;;11-13, chemin des Anémones;;Geneva;1219;Chatelaine;Switzerland
+1569;Charles;Vincent;16;Palais des Nations;;avenue de la Paix;;Geneva;1211;10;Switzerland
+1570;Erin;Kenny;13;International Environment House;;11-13, chemin des Anémones;;Geneva;1219;Chatelaine;Switzerland
+1571;Nina;Birkeland;73;;;;;Geneva;;;Switzerland
+1572;Jonathon;Gurry;5;;;P.O. Box 372;;Geneva;1211;19;Switzerland
+1573;Mariela;Daniel;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+1574;Luke;McCallin;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1575;Fawzia;Ashmawi;43;;;18, avenue Bouchet;;Geneva;1209;;Switzerland
+1576;Leoni;Anwar;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+1577;William Lacy;Swing;7;;;17, route des Morillons;;Geneva;1211;19;Switzerland
+1578;Juliette;Haenni;15;Palais des Nations;;87, Boulevard du 30 Juin;;Commune de la Gombe, Kinshasa;;;Democratic Republic of Congo
+1579;Steffi;Zimmermann;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+1580;Kari;Egge;15;;;3 United Nations Plaza;NY;New York;10017;;United States
+1583;Denise;Allen;36;;;6, chemin de la Tourelle;;Geneva;1209;;Switzerland
+1584;Claudine;Haenni Dale;155;;;;;Geneva;;;Switzerland
+1586;Elena;Rotondo;1;;;Via delle Terme di Caracalla;;Rome;00100;;Italy
+1587;Nicholas;Alipui;15;;;3 United Nations Plaza;NY;New York;10017;;United States
+1588;Panos;Stefanou;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1589;Madeleine;Colbert;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1590;Erica;Harper;153;;;;;Geneva;;;Switzerland
+1591;;;153;;;;;Geneva;;;Switzerland
+1592;Denise;Paul;156;;;;;Geneva;;;Switzerland
+1593;Roger;Wright;15;Palais des Nations;;5-7, avenue de la Paix;;Geneva;1211;10;Switzerland
+1594;Pilar;Auguilar;15;Palais des Nations;;5-7, avenue de la Paix;;Geneva;1211;10;Switzerland
+1595;Cristina;Pellandini;3;;;19, avenue de la Paix;;Geneva;1202;;Switzerland
+1597;James;Brown;157;;;;;Kabul;;;
+1598;Marit;Glad;38;;;7-9, chemin de Balexert;;Kabul;1219;Chatelaine;Switzerland
+1600;Patricia;Kormoss;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+1601;Randa;Hassan;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1602;Siw Doerte;Hempfing;38;;;;;Geneva;;;Switzerland
+1603;Juerg;Montani;3;;;19, avenue de la Paix;;Geneva;1202;;Switzerland
+1604;Jock;Baker;38;;;;;Geneva;;;Switzerland
+1605;Richard;Rumsey;36;;;6, chemin de la Tourelle;;Geneva;1209;;Switzerland
+1607;Mirjam;Sorli;158;;;;;Geneva;;;Switzerland
+1608;Andrew;Cox;8;;S-3627E;1 United Nations Plaza;NY;New York;10017;;United States
+1609;Philippe;Boncour;7;;;17, route des Morillons;;Geneva;1211;19;Switzerland
+1610;Belinda;Holdsworth;156;;;;;Geneva;;;Switzerland
+1611;Pamela;Jennings;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1612;Vera;Kremb;5;;;P.O. Box 372;;Geneva;1211;19;Switzerland
+1613;Gregory;Pellechi;16;Palais des Nations;;avenue de la Paix;;Geneva;1211;10;Switzerland
+1614;Anna;Basten;7;;;17, route des Morillons;;Geneva;1211;19;Switzerland
+1616;Petra;Winiger;10;Palais Wilson;;52, rue de Paquis;;Geneva;1211;10;Switzerland
+1617;Jan;Hessbruegge;10;Palais Wilson;;52, rue de Paquis;;Geneva;1211;10;Switzerland
+1618;Janey;Lawry-White;12;;;11-13, chemin des Anémones;;Geneva;1219;Chatelaine;Switzerland
+1619;Kimberly;Lietz;8;;;1 United Nations Plaza;NY;New York;10017;;United States
+1620;Adriana;Carralho;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1621;Anatoli;Poujai;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+1622;Vicky;Tennant;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+1623;Reario;Ronaldo;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1624;Alan;Butterfield;8;;;;;Geneva;;;Switzerland
+1625;Eva;Demant;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+1626;Mohamed;Grughzala;3;;;19, avenue de la Paix;;Geneva;1202;;Switzerland
+1627;Pablo;Medina;5;;;P.O. Box 372;;Geneva;1211;19;Switzerland
+1629;Marianne;GÃ©min;4;;;26-28, avenue Giuseppe Motta;;Geneva;1202;;Switzerland
+1631;Jette;Michelsen;5;;;P.O. Box 372;;Geneva;1211;19;Switzerland
+1633;Angelique;Appeyroux;3;;;19, avenue de la Paix;;Geneva;1202;;Switzerland
+1634;David;Carden;8;;;1 United Nations Plaza;NY;New York;10017;;United States
+1635;Pierre;Salignon;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+1636;Janet;Meyers;38;;;;;Geneva;;;Switzerland
+1637;Dudley;McArdle;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+1638;Philippa;Parker;3;;;19, avenue de la Paix;;Geneva;1202;;Switzerland
+1639;Nicholas;Willson;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+1640;Manon;Schick;46;;;22, rue du Cendrier;;Geneva;1201;;Switzerland
+1641;Niels;Scott;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1642;Katherine;Ray;93;;;Culmannstrasse 43;;Zurich;8006;;Switzerland
+1643;Draciana;Korljan;10;Palais Wilson;;52, rue de Paquis;;Geneva;1211;10;Switzerland
+1644;Federica;Donati;10;Palais Wilson;;52, rue de Paquis;;Geneva;1211;10;Switzerland
+1645;Dijana;Duric;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1646;Leo;Kenny;23;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+1649;Dominique;Legros;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+1650;Antje Kristin;Watermann;26;;;;;Geneva;;;Switzerland
+1651;Natalia;Dumont;15;Palais des Nations;;5-7, avenue de la Paix;;Geneva;1211;10;Switzerland
+1652;Cecilia;Utas;116;;;;;Geneva;;;Switzerland
+1653;Christina;Saunders;10;Palais Wilson;;52, rue de Paquis;;Geneva;1211;10;Switzerland
+1654;Asun;Sala-Ngarm;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+1655;Nigel;Timmins;116;;;100, Church Road;;Teddington;TW11 8QE;;United Kingdom
+1656;Steve;O'Malley;8;;;1 United Nations Plaza;NY;New York;10017;;United States
+1657;Akiko;Yoshida;8;;;;;New York;;;United States
+1658;Michael;Gallagher;107;;;c/o ICMC, 37-39 rue de Vermont;;Geneva;1211;;Switzerland
+1659;Giuseppe;Annunziata;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+1660;Michel;Meyer;3;;;19, avenue de la Paix;;Geneva;1202;;Switzerland
+1661;Nalinee;Nippita;15;Palais des Nations;;5-7, avenue de la Paix;;Geneva;1211;10;Switzerland
+1662;Andrew;Thow;8;Palais des Nations;47;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1663;Angela;Li Rosi;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+1664;Rahel;Cascioli;36;;;6, chemin de la Tourelle;;Geneva;1209;;Switzerland
+1666;Toshiya;Abe;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+1667;Patrice;Quesada;7;;;17, route des Morillons;;Geneva;1211;19;Switzerland
+1668;Dina;Abou Samra;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1669;Linda;Pennells;158;Menara Thamrin 10th Fl.;Jl. M.H. Thamrin, No. 3;;;Jakarta;10250;;Indonesia
+1670;Filiep;Decorte;40;;;;;Nairobi;;;
+1671;Esther;Kuisch;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1672;Annica;Sunner;12;;;11-13, chemin des Anémones;;Geneva;1219;Chatelaine;Switzerland
+1673;Guy Richard;Assako;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1674;YoUnited States;Haddadin;10;Palais Wilson;;52, rue de Paquis;;Geneva;1211;10;Switzerland
+1675;Andreas;Schuetz;8;Palais des Nations;47;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1676;Viviane;Mouait;10;Palais Wilson;;52, rue de Paquis;;Geneva;1211;10;Switzerland
+1677;Cristy;McLennan;3;;;19, avenue de la Paix;;Geneva;1202;;Switzerland
+1678;Miriam;Ghalmi;10;Palais Wilson;;52, rue de Paquis;;Geneva;1211;10;Switzerland
+1679;Josephine;Aubry;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+1681;Caroline;Sharon;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+1682;Michel;Le Pechoux;15;Palais des Nations;;5-7, avenue de la Paix;;Geneva;1211;10;Switzerland
+1683;Shruti;Mehrotra;154;;;91-93 route de la Capite;;Geneva;1223;;Switzerland
+1684;Gurcharan;Virdee;158;;;;;Geneva;;;Switzerland
+1685;Florent;Mehaule;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1687;Puji;Pujiono;12;;;11-13, chemin des Anémones;;Geneva;1219;Chatelaine;Switzerland
+1689;Saskia;Tapio;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1690;Monica;Noro;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+1691;Xavier;de Rodriguez;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+1692;Samuel;Petragallo;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+1693;Max;Bonnel;8;;;;;Panama City;;;Panama
+1694;Pascale;Micheau;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1695;Philip;Chinnici;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1696;Heloise;Dumont;3;;;19, avenue de la Paix;;Geneva;1202;;Switzerland
+1697;Samira;Mouaci;10;Palais Wilson;;52, rue de Paquis;;Geneva;1211;10;Switzerland
+1698;Yuri;Saito;38;;;;;Geneva;;;Switzerland
+1699;Shelley;Cheatham;8;;;;;Geneva;;;Switzerland
+1700;Guillaume;Simonian;15;Palais des Nations;;5-7, avenue de la Paix;;Geneva;1211;10;Switzerland
+1701;Mohamed;El-Kouhene;16;Parco dei Medici;;Via C.G. Viola 68;;Rome;00148;;Italy
+1702;Joan;Allison;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+1706;Marc;Descombes;15;Palais des Nations;;5-7, avenue de la Paix;;Geneva;1211;10;Switzerland
+1707;Wella;Kouyou;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+1708;Berenice;Tostado;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+1709;Anne;Golaz;15;Palais des Nations;;5-7, avenue de la Paix;;Geneva;1211;10;Switzerland
+1710;Rocio;Sanz;7;;;17, route des Morillons;;Geneva;1211;19;Switzerland
+1711;Lars;Bernd;66;International Environment House II;;7-9 Chemin de Balexert;;Geneva;1219;Chatelaine;Switzerland
+1712;Anton;Santanen;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1713;Sophie;Torelli;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1714;Marina;Maiero;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+1715;Josephine;Shields Recass;5;;;P.O. Box 372;;Geneva;1211;19;Switzerland
+1716;Jaehee;Jang;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+1717;Glenn;Dolcemascolo;154;;;;;Geneva;;;Switzerland
+1718;Julien;Aguzzoli;35;International Environment House;;11-13, chemin des Anémones;;Geneva;1219;Chatelaine;Switzerland
+1720;Robert;White;124;Ecumenical Centre, P.O. Box 2100;;150 route de Ferney;;Geneva;1211;2;Switzerland
+1721;Paul;O'Brien;4;;;26-28, avenue Giuseppe Motta;;Geneva;1202;;Switzerland
+1723;Ali Farah;Muktar;8;;;;;;;;Zimbabwe
+1724;Sabrina;Sojourner;6;;;1400 16th Street NW, Suite 210;DC;Washington;20036;;United States
+1725;Jordan;Ryan;12;;;1 United Nations Plaza;NY;New York;10017;;United States
+1728;Julie;Montgomery;6;;;1400 16th Street NW, Suite 210;DC;Washington;20036;;United States
+1729;Erica;Chung;13;;;220 East 42nd Street;NY;New York;10017;;United States
+1730;Yasmine;Sherif;12;;;11-13, chemin des Anémones;;Geneva;1219;Chatelaine;Switzerland
+1731;Tammam;Aloudat;5;;;P.O. Box 372;;Geneva;1211;19;Switzerland
+1732;Marie Helen;Vannson;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+1733;John;Watson;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+1734;Marlene;Michel;3;;;19, avenue de la Paix;;Geneva;1202;;Switzerland
+1735;Yiyan;Wang;38;;;;;Geneva;;;Switzerland
+1736;Murugasapillny;Shiva;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+1737;Stefan;Germann;36;;;6, chemin de la Tourelle;;Geneva;1209;;Switzerland
+1738;Michel;Lepechoux;15;;;;;Aman;;;
+1739;Ana B.;SÃ¡nchez Villamor;8;;;;;Geneva;;;Switzerland
+1740;Georgina;Fekete;12;;;1 United Nations Plaza;NY;New York;10017;;United States
+1744;Anders;Kompass;10;Palais Wilson;;52, rue de Paquis;;Geneva;1211;10;Switzerland
+1745;Samuel;Choritz;12;;;1 United Nations Plaza;NY;New York;10017;;United States
+1747;Helen;Clark;12;;;1 United Nations Plaza;NY;New York;10017;;United States
+1749;Yasemin;Aysan;5;;;P.O. Box 372;;Geneva;1211;19;Switzerland
+1752;Jessica;Neuwirth;10;;;;;New York;;;United States
+1753;Melanie;Lachica;2;United Nations;M-0601 6C;380 Madison Avenue;NY;New York;10019;;United States
+1754;Amanda;di Lorenzo;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1755;Ansa;Masaud;40;International Environment House 2;;7, chemin de Balexert;;Geneva;1219;Chatelaine;Switzerland
+1756;George;Deikun;40;International Environment House 2;;7, chemin de Balexert;;Geneva;1219;Chatelaine;Switzerland
+1757;Jane;Cocking;78;Oxfam House;;John Smith Drive;;Oxford;OX4 2JY;Cowley;United Kingdom
+1760;Liane;Gross;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+1761;SUnited Statesnna;Volk;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+1763;Nicola;Pontara;18;;;;;London;;;United Kingdom
+1764;Michael;Jensen;8;;;1 United Nations Plaza;NY;New York;10017;;United States
+1765;Alessandro;Bolzoni;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+1766;Christine;Knudsen;15;Palais des Nations;;5-7, avenue de la Paix;;Geneva;1211;10;Switzerland
+1767;Baptiste;Millet;3;;;19, avenue de la Paix;;Geneva;1202;;Switzerland
+1768;Jemilah;Mahmood;13;;;220 East 42nd Street;NY;New York;10017;;United States
+1769;Marian;Casey;154;Ecumenical Centre;;150 route de Ferney, P.O. Box 2100;;Geneva;1211;;Switzerland
+1770;Momodou;Lamin Fye;5;;;P.O. Box 372;;Geneva;1211;19;Switzerland
+1771;Sally;Austin;38;;;7-9, chemin de Balexert;;Geneva;1219;Chatelaine;Switzerland
+1773;Anna;Pont;40;International Environment House 2;;7, chemin de Balexert;;Geneva;1219;Chatelaine;Switzerland
+1774;Colette;Murphy;93;;;rue de Varembé 1;;Geneva;1202;;Suisse
+1775;Michael;Zschiegner;124;Ecumenical Centre;;150 route de Ferney, P.O. Box 2100;;Geneva;1211;2;Switzerland
+1776;Elodie;Cantier-Aristide;10;Palais Wilson;;52, rue de Paquis;;Geneva;1211;10;Switzerland
+1778;Amanda;Pitt;8;;;1 United Nations Plaza;NY;New York;10017;;United States
+1779;Rein;Paulsen;36;;;6, chemin de la Tourelle;;Geneva;1209;;Switzerland
+1780;Karin;Ulin;15;Palais des Nations;;5-7, avenue de la Paix;;Geneva;1211;10;Switzerland
+1781;Anouk;Affolter;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+1783;Sonia;Lepin;5;;;Chemin des Crêts, 17 Case postale 372;;Geneva;1211;19;Switzerland
+1785;Ernesta;Swanepoel;28;International Environmental House;;7-9, chemin des Anémones;;Geneva;1219;Chatelaine;Switzerland
+1786;Sara;Moussavi;16;Parco dei Medici;;Via C.G. Viola 68;;Rome;00148;;Italy
+1787;Anne-Cecile;Leyvraz;38;;;7-9, chemin de Balexert;;Kabul;1219;Chatelaine;Switzerland
+1789;Ane;Tvedt;15;Palais des Nations;;5-7, avenue de la Paix;;Geneva;1211;10;Switzerland
+1791;Christine;Tretter;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+1793;Lisa;Nussmueller;20;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1794;Jeff;Tschirley;1;;;Via delle Terme di Caracalla;;Rome;00100;;Italy
+1796;Sivanka;Dhanapala;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+1798;Haruka;Ueda;10;Palais Wilson;;52, rue de Paquis;;Geneva;1211;10;Switzerland
+1799;Fabrice;Clavien;1;;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1802;Brian;Lander;16;Palais des Nations;;avenue de la Paix;;Geneva;1211;10;Switzerland
+1803;Ouahiba;Sakani;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+1804;Catherine;Benilacqua;46;;;22, rue du Cendrier;;Geneva;1201;;Switzerland
+1806;Medina;Haeri;3;;;19, avenue de la Paix;;Geneva;1202;;Switzerland
+1807;John;Damerell;48;;;P.O. Box 372;;Geneva;1211;19;Switzerland
+1809;Cana;Sonbudak;53;;;4, route des Morillons;;Geneva;1211;10;Switzerland
+1810;Miriam;Lange;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1811;Nathalie;Tovena;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1813;Robert;Dolan;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1814;Surendra;Paday;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+1816;Maki;Shinohara;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+1817;Bart;Leerschool;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+1818;Alice;Farmer;73;;;;;Geneva;;;Switzerland
+1819;Fiorenza;Khuton;73;;;;;Geneva;;;Switzerland
+1820;Katharina;Hild;12;;;11-13, chemin des Anémones;;Geneva;1219;Chatelaine;Switzerland
+1821;Madeleine;Decker;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+1822;Alice;Croisier;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+1823;Nina;Schrepfer;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+1824;Ansa;Masaud;40;International Environment House 2;;7, chemin de Balexert;;Geneva;1219;Chatelaine;Switzerland
+1825;Dan;Kelly;36;;;;;Milton Keynes;;;United Kingdom
+1827;Daisy;Dell;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+1831;Mr. Ashraf;El Nour;7;;;;;Nairobi;;;
+1832;Jerotich;Seii Houlding;7;;;;;Nairobi;;;
+1835;Guillermo;Bettocchi;14;;;;;Nairobi;;;
+1836;Hannan;Suleiman;15;;;;;;;;Somalia
+1837;Megan;Gilgan;15;;;;;;;;Kenya
+1838;Aya;Shneerson;16;;;;;;;;Kenya
+1839;Romina;Woldemariam;16;;;;;;;;Kenya
+1840;Natasha;Nadazdin;16;;;;;;;;Kenya
+1841;Joyce;Luma;16;Parco dei Medici;;Via C.G. Viola 68;;Rome;00148;;Italy
+1842;Assiata;Chikuhwa;12;;;1 United Nations Plaza;NY;New York;10017;;United States
+1843;Stan;Nkwain;12;;;1 United Nations Plaza;NY;New York;10017;;United States
+1845;Jean-Yves;Barcelo;40;International Environment House 2;;7, chemin de Balexert;;Geneva;1219;Chatelaine;Switzerland
+1847;Bjoern;Hofmann;15;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1849;Tria;Raimundo;15;Palais des Nations;;5-7, avenue de la Paix;;Geneva;1211;10;Switzerland
+1850;Changchui;He;1;;;Via delle Terme di Caracalla;;Rome;00100;;Italy
+1851;Simona;Cruciani;26;Alcoa;620;48th;;v;;;United States
+1852;Derk;Segaar;8;;;1 United Nations Plaza;NY;New York;10017;;United States
+1853;Bart;Fonteyne;3;;;19, avenue de la Paix;;Geneva;1202;;Switzerland
+1854;Allegra;Baiocchi;8;;;1 United Nations Plaza;NY;New York;10017;;United States
+1857;Eva;ElfenkÃ¤mper;3;;;19, avenue de la Paix;;Geneva;1202;;Switzerland
+1859;Isabel;Gomes;36;;;6, chemin de la Tourelle;;Geneva;1209;;Switzerland
+1864;Alice;Golay;16;Palais des Nations;;avenue de la Paix;;Geneva;1211;10;Switzerland
+1865;Mankz;Hofmeister;15;Palais des Nations;;5-7, avenue de la Paix;;Geneva;1211;10;Switzerland
+1867;K;Samara;25;;;7-9, chemin de Balexert;;Geneva;1219;;Switzerland
+1868;Christelle;Loupforest;2;United Nations;M-06021;380 Madison Avenue;NY;New York;10017;;United States
+1869;Antony;Spalton;15;Palais des Nations;;5-7, avenue de la Paix;;Geneva;1211;10;Switzerland
+1870;Alexandra;Kramer;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+1871;Heather;Papowitz;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+1872;Loutfi;Beldjelti;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+1874;Rudolph;Muller;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1875;Fiona;Perry;36;;;6, chemin de la Tourelle;;Geneva;1209;;Switzerland
+1876;Doris;Kleffner;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+1877;Catherine;Bragg;8;;;1 United Nations Plaza;NY;New York;10017;;United States
+1878;Yasin;Samatar;8;;;1 United Nations Plaza;NY;New York;10017;;United States
+1879;Gaby;Douek;8;;;1 United Nations Plaza;NY;New York;10017;;United States
+1880;Paola;Barioloi;3;;;19, avenue de la Paix;;Geneva;1202;;Switzerland
+1882;Gwyn;Lewis;1;;;Via delle Terme di Caracalla;;Rome;00100;;Italy
+1883;Rashid;Khalikov;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1884;Anthony;Lake;15;;;3 United Nations Plaza;NY;New York;10017;;United States
+1885;Stefanie;Krause;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+1886;Maria;Amatiste Cardelli;1;;;Via delle Terme di Caracalla;;Rome;00100;;Italy
+1887;Andrew;Harper;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+1888;Chi;Pham;16;Palais des Nations;;avenue de la Paix;;Geneva;1211;10;Switzerland
+1889;caroline;Keenan;15;Palais des Nations;;5-7, avenue de la Paix;;Geneva;1211;10;Switzerland
+1890;Ruediger;Schoech;4;;;26-28, avenue Giuseppe Motta;;Geneva;1202;;Switzerland
+1891;Arezou;Azad;49;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1892;Paolo;Caruso;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+1893;Leonard;Zutu;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+1894;Ruven;Menikdiwela;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+1895;Linda;Doull;109;12th Floor;;207 Old Street;;London;EC1V 9NR;;United Kingdom
+1896;Gabriel;Tuan;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1897;Hilda;Rajab;40;;;;;Nairobi;P.O Box 30030;00100 GPO;Kenya
+1898;Rosa;Da Costa;169;Palais Wilson;;52, rue de Paquis;;Geneva;1211;10;Switzerland
+1899;Maggie;Nicholson;10;;;;;New York;;;United States
+1900;Mona;Thuillard;5;;;P.O. Box 372;;Geneva;1211;19;Switzerland
+1901;Yves;Daccord;3;;;19, avenue de la Paix;;Geneva;1202;;Switzerland
+1902;Darla;Silva;15;;;3 United Nations Plaza;NY;New York;10017;;United States
+1903;Jean-FranÃ§ois;Durieux;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+1904;Jutta;Hinkkanen;8;;;1 United Nations Plaza;NY;New York;10017;;United States
+1905;Michele Klein;Solomon;7;;;122 East 42nd Street;NY;New York;10168-1610;;United States
+1906;Shahidul;Haque;7;;;17, route des Morillons;;Geneva;1211;19;Switzerland
+1907;Fanny;Petitbon;38;;;7-9, chemin de Balexert;;;1219;Chatelaine;Switzerland
+1908;Ivan;SimonoviÄ‡;10;;Office: DC1-0524;;;New York;;;United States
+1909;Abigail;Noko;10;;;;;New York;;;United States
+1910;Mohammed;Abdiker;7;;;17, route des Morillons;;Geneva;1211;19;Switzerland
+1911;Matthias;Schmale;5;;;P.O. Box 372;;Geneva;1211;19;Switzerland
+1912;Simon;Eccleshall;5;;;P.O. Box 372;;Geneva;1211;19;Switzerland
+1913;Valerie;Amos;8;;;1 United Nations Plaza;NY;New York;10017;;United States
+1914;Joan;Clos;40;;;;;Nairobi;P.O Box 30030;00100 GPO;Kenya
+1915;Inga;Klevby;40;;;;;Nairobi;P.O Box 30030;00100 GPO;Kenya
+1916;Nina;De Rochefort;5;;;P.O. Box 372;;Geneva;1211;19;Switzerland
+1919;Robert;Glasser;38;;;7-9, chemin de Balexert;;;1219;Chatelaine;Switzerland
+1920;Maura;Lynch;8;;;1 United Nations Plaza;NY;New York;10017;;United States
+1921;Martijn;Dalhuijsen;124;;;;;;;;United States
+1923;Ahmed;Zouiten;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+1924;Madeleine;Helmer;5;;;P.O. Box 372;;Geneva;1211;19;Switzerland
+1926;Jo;Wells;105;PO Box 32832;;;;London;N1 9ZN;;United Kingdom
+1927;Amelia B.;Kyazze;99;;;1 St. John's Lane;;London;EC1M 4AR;;United Kingdom
+1928;Joel;Charny;6;;;1400 16th Street NW, Suite 210;DC;Washington;20036;;United States
+1929;Philippe;Lazzarini;8;;;1 United Nations Plaza;NY;New York;10017;;United States
+1930;Fabrizzio;Carboni;3;;;19, avenue de la Paix;;Geneva;1202;;Switzerland
+1938;Chaloka;Beyani;169;;;;;Geneva;;;Switzerland
+1939;Christine;Bendel;12;;;1 United Nations Plaza;NY;New York;10017;;United States
+1940;Laurie;Sullivan;41;;;122 East 42nd Street;NY;New York;10168-1289;;United States
+1942;Galit;Wolfensohn;15;;;3 United Nations Plaza;NY;New York;10017;;United States
+1943;Mike;Dell'Amico;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+1944;Darlene;Tymo;16;;;;;Geneva;;;Switzerland
+1945;Unni;Karunakara;33;;;78, Rue de LaUnited Statesnne;;Geneva;1211;21;Switzerland
+1946;Laura;Ferrallo;1;;;Via delle Terme di Caracalla;;Rome;00100;;Italy
+1947;Alessandra;Brovelli;38;;;7-9, chemin de Balexert;;;1219;Chatelaine;Switzerland
+1948;Maria;Calivis;15;;;3 United Nations Plaza;NY;New York;10017;;United States
+1949;Matthew;Hochbrueckner;8;;;1 United Nations Plaza;NY;New York;10017;;United States
+1950;Elizabeth;Ross;170;;;;;New York;;;United States
+1951;Sally;Austin;38;;;7-9, chemin de Balexert;;;1219;Chatelaine;Switzerland
+1952;Babatunde;Osotimehin;13;;;220 East 42nd Street;NY;New York;10017;;United States
+1957;Fatima;Khan;17;One Dag Hammarskjold Plaza;;885 2nd  Avenue, 26th floor;NY;New York;10017;;United States
+1960;Rosemary;Addo-Yirenkyi;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1961;Bruno;Pommier;3;;;19, avenue de la Paix;;Geneva;1202;;Switzerland
+1962;Patricia;McIlreavy;6;;;1400 16th Street NW, Suite 210;DC;Washington;20036;;United States
+1963;Neil;Buhne;12;;;11-13, chemin des Anémones;;Geneva;1219;Chatelaine;Switzerland
+1964;Bruce;Aylward;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+1966;Fleur;Vernat;15;;;3 United Nations Plaza;NY;New York;10017;;United States
+1967;Daniel;Werner Kull;18;;;3, chemin Louis Dunant;;Geneva;1211;21;Switzerland
+1968;Tracy;O'Heir;6;;;1400 16th Street NW, Suite 210;DC;Washington;20036;;United States
+1969;Farhad;Movahed;8;;;1 United Nations Plaza;NY;New York;10017;;United States
+1970;Gemma;Connell;8;;;1 United Nations Plaza;NY;New York;10017;;United States
+1971;Shane;Doherty;8;;;1 United Nations Plaza;NY;New York;10017;;United States
+1972;Maria Luisa;NG;8;;;1 United Nations Plaza;NY;New York;10017;;United States
+1973;Marie-France;Bourgeois;15;Palais des Nations;;5-7, avenue de la Paix;;Geneva;1211;10;Switzerland
+1974;Axel;Bisschop;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+1976;Nicholas;Reader;8;;;1 United Nations Plaza;NY;New York;10017;;United States
+1977;David;Hartstone;8;;;1 United Nations Plaza;NY;New York;10017;;United States
+1979;Mari;Simonen;13;;;220 East 42nd Street;NY;New York;10017;;United States
+1980;Julien;Schopp;4;;;26-28, avenue Giuseppe Motta;;Geneva;1202;;Switzerland
+1981;Manoj;Juneja;1;;;Via delle Terme di Caracalla;;Rome;00100;;Italy
+1982;Lauren;LANDIS;16;Palais des Nations;;avenue de la Paix;;Geneva;1211;10;Switzerland
+1983;Szilard;Fricska;40;International Environment House 2;;7, chemin de Balexert;;Geneva;1219;Chatelaine;Switzerland
+1984;Malin;Herwig;12;;;1 United Nations Plaza;NY;New York;10017;;United States
+1987;Ana Maria;Hermoso-Borges;124;Madison;M-0602 4B;380 Madison Avenue;;New York;;;United States
+1988;Mark;Prasopa-Plaizier;116;;Palais des Nations Room 22;;;Geneva;;;Switzerland
+1990;Aoibheann;O'Keeffe;116;Palais des Nations;Room S22;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1991;Daniel;Torres;116;Palais des Nations;S-20;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+1995;Rick;Brennan;17;;;20, avenue Appia;;Geneva;1211;27;Switzerland
+1996;Sofia;Pasha;8;;;1 United Nations Plaza;NY;New York;10017;;United States
+1997;Anthony;Craig;16;Parco dei Medici;;Via C.G. Viola 68;;Rome;00148;;Italy
+1998;Christine;Ouellette;13;;;220 East 42nd Street;NY;New York;10017;;United States
+1999;Arafat;Jamal;116;Palais des Nations;S-20;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+2000;Daniel;Pfister;116;United Nations;;380 Madison Avenue, 6th Floor;NY;New York;10017;;United States
+2001;David;Derthick;7;;;17, route des Morillons;;Geneva;1211;19;Switzerland
+2002;Jaqueline;Carleson;12;;;1 United Nations Plaza;NY;New York;10017;;United States
+2003;Luc;Ferran;41;;;122 East 42nd Street;NY;New York;10168-1289;;United States
+2004;Marie;Elseroad;168;;;;;Geneva;;;Switzerland
+2005;Ertharin;Cousin;16;Parco dei Medici;;Via C.G. Viola 68;;Rome;00148;;Italy
+2006;Samira;Najih;5;;;P.O. Box 372;;Geneva;1211;19;Switzerland
+2008;Mabingue;Ngom;13;;;220 East 42nd Street;NY;New York;10017;;United States
+2009;Richard;Trenchard;1;;;Via delle Terme di Caracalla;;Rome;00100;;Italy
+2010;Simon;Missiri;5;;;P.O. Box 372;;Geneva;1211;19;Switzerland
+2011;Kate;Gilmore;13;;;220 East 42nd Street;NY;New York;10017;;United States
+2012;Delia;Barcelona;13;;;220 East 42nd Street;NY;New York;10017;;United States
+2013;Saturnin;Epie;13;;;220 East 42nd Street;NY;New York;10017;;United States
+2014;Claudia;Purpura;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+2015;Gerald;Bourke;16;;;;;New York;;;United States
+2016;Gordana;Jerger;16;;;;;New York;;;United States
+2019;David;Murphy;10;Palais Wilson;;52, rue de Paquis;;Geneva;1211;10;Switzerland
+2020;Angela;Hinrichs;1;;;Via delle Terme di Caracalla;;Rome;00100;;Italy
+2021;Andrew;Wyllie;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+2023;Micheline;Saunder;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+2024;Tanya;Wood;4;;;26-28, avenue Giuseppe Motta;;Geneva;1202;;Switzerland
+2025;Patrick;Rooney;10;Palais Wilson;;52, rue de Paquis;;Geneva;1211;10;Switzerland
+2026;Julian;Herrera;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+2027;Marwan;Jilani;5;;;420 Lexington Ave. Suite 2811;;New York;NY 10170;;United States
+2028;Nicole;Lawrence;8;;;1 United Nations Plaza;NY;New York;10017;;United States
+2029;Laurence;Chave;3;;;19, avenue de la Paix;;Geneva;1202;;Switzerland
+2031;Aaron;Cunningham;6;;;1400 16th Street NW, Suite 210;DC;Washington;20036;;United States
+2032;Annette;Rolfe;15;Palais des Nations;;5-7, avenue de la Paix;;Geneva;1211;10;Switzerland
+2033;Louise;Gentzel;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+2035;Sara;Esquivel;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+2036;Brian;Tisdall;3;;;19, avenue de la Paix;;Geneva;1202;;Switzerland
+2039;Melanie;Teff;151;;;;;London;;;United Kingdom
+2041;Erik;Friberg;10;Palais Wilson;;52, rue de Paquis;;Geneva;1211;10;Switzerland
+2042;Nan;Buzard;4;;;26-28, avenue Giuseppe Motta;;Geneva;1202;;Switzerland
+2043;Agatino;Lucifora;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+2044;Melissa;Pitotti;4;;;26-28, avenue Giuseppe Motta;;Geneva;1202;;Switzerland
+2045;Eoin;Barry;3;;;19, avenue de la Paix;;Geneva;1202;;Switzerland
+2046;Rudolph;Muller;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+2047;Walter;Cotte;5;;;P.O. Box 372;;Geneva;1211;19;Switzerland
+2049;Katharina;Samara;4;;;26-28, avenue Giuseppe Motta;;Geneva;1202;;Switzerland
+2052;Daniel;Gustafson;1;;;Via delle Terme di Caracalla;;Rome;00100;;Italy
+2054;JosÃ©;Graziano da Silva;1;;;Via delle Terme di Caracalla;;Rome;00100;;Italy
+2055;Beris;Gwynne;36;;;6, chemin de la Tourelle;;Geneva;1209;;Switzerland
+2057;Dimitri;Tatarinov;8;Palais des Nations;;8-14, avenue de la Paix;;Geneva;1211;10;Switzerland
+2061;Johannes;Zech;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+2062;Maria;Rodrigues Fernandes;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+2064;Alice;Gadler;3;;;19, avenue de la Paix;;Geneva;1202;;Switzerland
+2065;Kyung-wha;Kang;8;;;1 United Nations Plaza;NY;New York;10017;;United States
+2066;Harriet;Spanos;16;Parco dei Medici;;Via C.G. Viola 68;;Rome;00148;;Italy
+2067;Kate;Halff;11;;;17, chemin des Crêts;;Geneva;1211;C.P. 372;Switzerland
+2069;Greg;Puley;8;;;1 United Nations Plaza;NY;New York;10017;;United States
+2070;Birgit;Velte;120;United Nations;;380 Madison Avenue, 6th Floor;NY;New York;10019;;United States
+2071;Marta;Franco;169;;;;;Geneva;;;Switzerland
+2077;Angela;Irving;15;;;3 United Nations Plaza;NY;New York;10017;;United States
+2079;Ugochi;Daniels;13;;;220 East 42nd Street;NY;New York;10017;;United States
+2080;Isabelle-Geraldine;Adjai;13;;;220 East 42nd Street;NY;New York;10017;;United States
+2081;Marie-Georgette;Goncalves;13;;;220 East 42nd Street;NY;New York;10017;;United States
+2084;Selina;Jackson;18;;;;;Geneva;;;Switzerland
+2085;Dominique;Bichara;18;;;;;New York;;;United States
+2086;Nicholas;Jones;18;;;;;New York;;;United States
+2087;Alina;Truhina;18;;;;;Geneva;;;Switzerland
+2088;StÃ¨ve;Damond-Fagot;8;;;;;Geneva;;;Switzerland
+2092;Jenny;McAvoy;6;;;1400 16th Street NW, Suite 210;DC;Washington;20036;;United States
+2095;Arif;Khan;8;;;1 United Nations Plaza;NY;New York;10017;;United States
+2097;Joel;Parsan;2;;D-116;;;Geneva;;;Switzerland
+2098;Preeta;Law;14;;;94, rue de Montbrillant;;Geneva;1202;;Switzerland
+2100;Elhadj;As Sy;5;;;P.O. Box 372;;Geneva;1211;19;Switzerland
+2101;Zeid Raâ€™ad;Al Hussein;10;Palais Wilson;;52, rue de Paquis;;Geneva;1211;10;Switzerland
