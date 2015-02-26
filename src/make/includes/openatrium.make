@@ -105,6 +105,9 @@ projects[oa_subspaces][version] = 2.27
 
 projects[oa_toolbar][version] = 2.0-rc5
 projects[oa_toolbar][subdir] = apps
+; Fixes problem of OA Toolbar unbinding mouseenter/mouseleave listeners for Radix dropdown behavior.
+; Note: Toolbar settings in /admin/openatrium/setting have to have "Allow mouse-hover actions in toolbar" checked.
+projects[oa_toolbar][patch][2439971] = https://www.drupal.org/files/issues/openatrium-move-oa-toolbar-js-settings-2439971-1.patch
 
 projects[oa_tour][version] = 2.0-rc3
 projects[oa_tour][subdir] = apps
