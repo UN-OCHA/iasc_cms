@@ -114,7 +114,7 @@
 }
 
 // Special Heading for Newsletter Block
-.front .col-md-12 .panel:nth-child(2) {
+.front .col-md-12 .panel:nth-child(2), .front .col-md-12 .panels-ipe-sort-container .panels-ipe-portlet-wrapper:nth-child(2) {
   .panel-heading {
     text-align: left;
     height: 50px;
