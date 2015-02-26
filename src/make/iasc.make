@@ -7,17 +7,14 @@ api = 2
 includes[core] = includes/drupal-org-core.make
 
 ; =====================================
-; PANOPOLY
-; =====================================
-; We are using Drush 6 so Panopoly needs to be on top
-; in this make file.
-
-includes[panopoly] = includes/panopoly.make
-
-; =====================================
 ; Open Atrium 2.x
 ; =====================================
 includes[openatrium] = includes/openatrium.make
+
+; =====================================
+; PANOPOLY
+; =====================================
+includes[panopoly] = includes/panopoly.make
 
 ; =====================================
 ; PERFORMANCE MODULES
