@@ -361,6 +361,16 @@ body.ctools-modal-open {
   }
 }
 
+#contextual-tabs ul.dropdown-menu ul li a {
+  display: block;
+  padding: 3px 20px;
+  clear: both;
+  font-weight: normal;
+  line-height: 20px;
+  white-space: nowrap;
+}
+
+
 // // Custom modal form overrides.
 // #modal-content {
 //   .form-item-view-settings {

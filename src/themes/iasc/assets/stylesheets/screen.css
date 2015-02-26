@@ -9184,6 +9184,16 @@ body.ctools-modal-open {
   text-align: right;
 }
 
+/* line 364, ../sass/base/_structure.scss */
+#contextual-tabs ul.dropdown-menu ul li a, #contextual-tabs .navbar ul.menu ul li a, .navbar #contextual-tabs ul.menu ul li a {
+  display: block;
+  padding: 3px 20px;
+  clear: both;
+  font-weight: normal;
+  line-height: 20px;
+  white-space: nowrap;
+}
+
 /**
  * @file
  * Layout
