@@ -31,8 +31,4 @@ module.exports = function(grunt) {
             grunt.registerTask(name, ['shell:' + name]);
         }
     }
-
-
-    grunt.task.renameTask('default', 'default-original');
-    grunt.registerTask('default', ['default-original', 'shell:move_iasc_contrib']);
 };
