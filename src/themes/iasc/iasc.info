@@ -28,6 +28,7 @@ stylesheets[print][]   = assets/stylesheets/print.css
 ; CSS - Conditional
 stylesheets-conditional[IE 7][all][] = assets/stylesheets/ie7.css
 stylesheets-conditional[IE 8][all][] = assets/stylesheets/ie8.css
+stylesheets-conditional[IE 9][all][] = assets/stylesheets/ie9.css
 
 ; Javascript
 scripts[] = assets/javascripts/script.js
