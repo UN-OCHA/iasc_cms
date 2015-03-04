@@ -1,5 +1,5 @@
 @media (min-width: 640px) {
   .front .col-md-12 .panel:nth-child(2) .panel-heading .panel-title:after, .front .col-md-12 .panel:nth-child(2) .view-display-id-panel_pane_membership_logos h4 .panel-title:after, .view-display-id-panel_pane_membership_logos .front .col-md-12 .panel:nth-child(2) h4 .panel-title:after, .front .col-md-12 .panels-ipe-sort-container .panels-ipe-portlet-wrapper:nth-child(2) .panel-heading .panel-title:after, .front .col-md-12 .panels-ipe-sort-container .panels-ipe-portlet-wrapper:nth-child(2) .view-display-id-panel_pane_membership_logos h4 .panel-title:after, .view-display-id-panel_pane_membership_logos .front .col-md-12 .panels-ipe-sort-container .panels-ipe-portlet-wrapper:nth-child(2) h4 .panel-title:after {
-    font-size: 5px;
+    font-size: 68px;
   }
 }
