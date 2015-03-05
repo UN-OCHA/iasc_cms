@@ -187,5 +187,4 @@ features[page_manager_pages][] = product_catalog
 features[taxonomy][] = document_types
 features[taxonomy][] = product_categories
 features[views_view][] = iasc_document
-mtime = 1422636530
 project path = sites/all/modules/custom

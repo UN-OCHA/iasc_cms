@@ -91,8 +91,8 @@ function iasc_document_default_page_manager_handlers() {
     $pane->access = array();
     $pane->configuration = array(
       'exposed' => array(
-        'og_group_ref_target_id_op' => 'in',
-        'og_group_ref_target_id' => array(),
+        'og_group_ref_target_id_op' => 'or',
+        'og_group_ref_target_id' => '2608',
         'og_group_ref_target_id_mine' => 0,
         'og_subspaces_view_all' => 0,
         'og_subspaces_view_parent' => 0,
@@ -113,6 +113,7 @@ function iasc_document_default_page_manager_handlers() {
       'header_type' => 'none',
       'view_mode' => 'teaser',
       'widget_title' => '',
+      'override_title_heading' => 'h2',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -285,10 +286,8 @@ function iasc_document_default_page_manager_pages() {
     $pane->access = array();
     $pane->configuration = array(
       'exposed' => array(
-        'og_group_ref_target_id_op' => 'not in',
-        'og_group_ref_target_id' => array(
-          2608 => '2608',
-        ),
+        'og_group_ref_target_id_op' => 'not empty',
+        'og_group_ref_target_id' => '2608',
         'og_group_ref_target_id_mine' => 0,
         'og_subspaces_view_all' => 0,
         'og_subspaces_view_parent' => 0,
@@ -309,6 +308,7 @@ function iasc_document_default_page_manager_pages() {
       'context' => array(
         0 => 'empty',
       ),
+      'override_title_heading' => 'h2',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -431,10 +431,8 @@ function iasc_document_default_page_manager_pages() {
     $pane->access = array();
     $pane->configuration = array(
       'exposed' => array(
-        'og_group_ref_target_id_op' => 'in',
-        'og_group_ref_target_id' => array(
-          2608 => '2608',
-        ),
+        'og_group_ref_target_id_op' => 'or',
+        'og_group_ref_target_id' => '2608',
         'og_group_ref_target_id_mine' => 0,
         'og_subspaces_view_all' => 0,
         'og_subspaces_view_parent' => 0,
@@ -456,6 +454,7 @@ function iasc_document_default_page_manager_pages() {
       'context' => array(
         0 => 'empty',
       ),
+      'override_title_heading' => 'h2',
     );
     $pane->cache = array();
     $pane->style = array(
