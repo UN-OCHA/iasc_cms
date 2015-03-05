@@ -14,6 +14,7 @@
       @extend h2;
     }
   }
+
   .field-name-field-agenda-items {
     & > .field-label {
       @extend h2;
@@ -22,7 +23,18 @@
       @extend h3;
       margin-top: 0;
     }
+
+    .field-item .entity-field-collection-item {
+      .field:nth-child(1) {
+        display: list-item;
+        margin-left: 2em;
+      }
+      .field .field-name-field-oa-media {
+        margin-left: 4em;
+      }
+    }
   }
+
   // Hack to fake fields to be in a panel
   .panel-primary.none:first-child { 
     margin-bottom: 0;

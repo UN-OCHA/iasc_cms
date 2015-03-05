@@ -9842,19 +9842,28 @@ img.bio-circled {
 .node-type-oa-event p.oa-event-date {
   margin-bottom: 0;
 }
-/* line 21, ../sass/components/_meetings.scss */
+/* line 22, ../sass/components/_meetings.scss */
 .node-type-oa-event .field-name-field-agenda-items .field-name-field-ai-title {
   margin-top: 0;
 }
-/* line 27, ../sass/components/_meetings.scss */
+/* line 28, ../sass/components/_meetings.scss */
+.node-type-oa-event .field-name-field-agenda-items .field-item .entity-field-collection-item .field:nth-child(1) {
+  display: list-item;
+  margin-left: 2em;
+}
+/* line 32, ../sass/components/_meetings.scss */
+.node-type-oa-event .field-name-field-agenda-items .field-item .entity-field-collection-item .field .field-name-field-oa-media {
+  margin-left: 4em;
+}
+/* line 39, ../sass/components/_meetings.scss */
 .node-type-oa-event .panel-primary.none:first-child {
   margin-bottom: 0;
 }
-/* line 29, ../sass/components/_meetings.scss */
+/* line 41, ../sass/components/_meetings.scss */
 .node-type-oa-event .panel-primary.none:first-child .panel-body, .node-type-oa-event .panel-primary.none:first-child .view-display-id-panel_pane_membership_logos ul, .view-display-id-panel_pane_membership_logos .node-type-oa-event .panel-primary.none:first-child ul {
   padding-top: 0;
 }
-/* line 34, ../sass/components/_meetings.scss */
+/* line 46, ../sass/components/_meetings.scss */
 .node-type-oa-event .pane-node-field-city,
 .node-type-oa-event .pane-node-field-venue,
 .node-type-oa-event .pane-node-field-room,
@@ -9862,7 +9871,7 @@ img.bio-circled {
   background-color: #f1f4ff;
   padding: 0 30px 20px;
 }
-/* line 38, ../sass/components/_meetings.scss */
+/* line 50, ../sass/components/_meetings.scss */
 .node-type-oa-event .pane-node-field-host {
   margin-bottom: 20px;
 }
