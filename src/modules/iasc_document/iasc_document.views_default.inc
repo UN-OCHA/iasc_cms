@@ -159,7 +159,7 @@ function iasc_document_views_default_views() {
   );
   $handler->display->display_options['filters']['field_published_date_value_1']['form_type'] = 'date_popup';
   $handler->display->display_options['filters']['field_published_date_value_1']['year_range'] = '-10:+3';
-  /* Filter criterion: Content: Authoring Bodies (og_group_ref) */
+  /* Filter criterion: Content: Authoring Bodies (og_group_ref:target_id) */
   $handler->display->display_options['filters']['og_group_ref_target_id']['id'] = 'og_group_ref_target_id';
   $handler->display->display_options['filters']['og_group_ref_target_id']['table'] = 'og_membership';
   $handler->display->display_options['filters']['og_group_ref_target_id']['field'] = 'og_group_ref_target_id';
@@ -370,7 +370,7 @@ function iasc_document_views_default_views() {
   );
   $handler->display->display_options['filters']['field_published_date_value_1']['form_type'] = 'date_popup';
   $handler->display->display_options['filters']['field_published_date_value_1']['year_range'] = '-10:+3';
-  /* Filter criterion: Content: Authoring Bodies (og_group_ref) */
+  /* Filter criterion: Content: Authoring Bodies (og_group_ref:target_id) */
   $handler->display->display_options['filters']['og_group_ref_target_id']['id'] = 'og_group_ref_target_id';
   $handler->display->display_options['filters']['og_group_ref_target_id']['table'] = 'og_membership';
   $handler->display->display_options['filters']['og_group_ref_target_id']['field'] = 'og_group_ref_target_id';
@@ -561,7 +561,7 @@ function iasc_document_views_default_views() {
     'oa_wiki_page' => 'oa_wiki_page',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Authoring Bodies (og_group_ref) */
+  /* Filter criterion: Content: Authoring Bodies (og_group_ref:target_id) */
   $handler->display->display_options['filters']['og_group_ref_target_id']['id'] = 'og_group_ref_target_id';
   $handler->display->display_options['filters']['og_group_ref_target_id']['table'] = 'og_membership';
   $handler->display->display_options['filters']['og_group_ref_target_id']['field'] = 'og_group_ref_target_id';
@@ -749,7 +749,7 @@ function iasc_document_views_default_views() {
     'oa_wiki_page' => 'oa_wiki_page',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Authoring Bodies (og_group_ref) */
+  /* Filter criterion: Content: Authoring Bodies (og_group_ref:target_id) */
   $handler->display->display_options['filters']['og_group_ref_target_id']['id'] = 'og_group_ref_target_id';
   $handler->display->display_options['filters']['og_group_ref_target_id']['table'] = 'og_membership';
   $handler->display->display_options['filters']['og_group_ref_target_id']['field'] = 'og_group_ref_target_id';
