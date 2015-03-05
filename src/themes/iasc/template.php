@@ -15,12 +15,23 @@ require_once dirname(__FILE__) . '/includes/node.inc';
  */
 function iasc_css_alter(&$css) {
   $oa_radix_path = drupal_get_path('theme', 'oa_radix');
-
   // Radix now includes compiled stylesheets for demo purposes.
   // We remove these from our subtheme since they are already included
   // in compass_radix.
   unset($css[$oa_radix_path . '/assets/stylesheets/oa_radix-style.css']);
   unset($css[$oa_radix_path . '/assets/stylesheets/oa_radix-print.css']);
+
+  // Add a custom jQuery UI theme.
+  $css[$oa_radix_path . '/assets/vendor/jqueryui/jquery-ui-1.10.0.custom.css']['data'] = $oa_radix_path . '/assets/vendor/jqueryui/jquery-ui-1.10.0.custom.css';
+}
+
+/**
+ * Implements hook_js_alter().
+ */
+function iasc_js_alter(&$js) {
+  $oa_radix_path = drupal_get_path('theme', 'oa_radix');
+  // Add this script so that the jquery ui dialogs have the correct close button classes/etc.
+  $js[$oa_radix_path . '/assets/javascripts/script.js']['data'] = $oa_radix_path . '/assets/javascripts/script.js';
 }
 
 /**
