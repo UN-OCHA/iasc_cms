@@ -31,7 +31,7 @@ function iasc_css_alter(&$css) {
 function iasc_js_alter(&$js) {
   $oa_radix_path = drupal_get_path('theme', 'oa_radix');
   // Add this script so that the jquery ui dialogs have the correct close button classes/etc.
-  $js[$oa_radix_path . 'assets/javascripts/script.js']['data'] = $oa_radix_path . 'assets/javascripts/script.js';
+  $js[$oa_radix_path . '/assets/javascripts/script.js']['data'] = $oa_radix_path . '/assets/javascripts/script.js';
 }
 
 /**
