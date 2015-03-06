@@ -50,6 +50,11 @@ function iasc_contact_contacts_list() {
 function iasc_contact_form_node_form_alter(&$form, &$form_state, $form_id) {
   $content_type = $form['#node']->type;
   if ('contact' == $content_type) {
+    global $user;
+    if (array_search('administrator', $user->roles) === FALSE) {
+      $form['field_legacy_publish']['#access'] = FALSE;
+    }
+
     // Make the node title the full name of the contact.
     $form['title_field']['#access'] = FALSE;
     $form['#submit'][] = 'iasc_contact_form_submit';

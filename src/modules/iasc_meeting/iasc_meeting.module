@@ -133,3 +133,16 @@ function iasc_meeting_block_view($delta = '') {
   }
   return $block;
 }
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter().
+ */
+function iasc_meeting_form_node_form_alter(&$form, &$form_state, $form_id) {
+  $content_type = $form['#node']->type;
+  if ('oa_event' == $content_type) {
+    global $user;
+    if (array_search('administrator', $user->roles) === FALSE) {
+      $form['field_legacy_publish']['#access'] = FALSE;
+    }
+  }
+}
