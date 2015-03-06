@@ -154,6 +154,39 @@ function iasc_configuration_panelizer_defaults() {
     $pane->uuid = '716125fd-8938-4b64-b1ca-076d3b55c7b8';
     $display->content['new-716125fd-8938-4b64-b1ca-076d3b55c7b8'] = $pane;
     $display->panels['sidebar'][0] = 'new-716125fd-8938-4b64-b1ca-076d3b55c7b8';
+    $pane = new stdClass();
+    $pane->pid = 'new-2d76750b-fb8c-4e20-9d79-8d8552f0ff2a';
+    $pane->panel = 'sidebar';
+    $pane->type = 'iasc_document.add_document';
+    $pane->subtype = 'iasc_document.add_document';
+    $pane->shown = TRUE;
+    $pane->access = array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'role',
+          'settings' => array(
+            'rids' => array(
+              0 => 3,
+              1 => 4,
+            ),
+          ),
+          'context' => 'logged-in-user',
+          'not' => FALSE,
+        ),
+      ),
+    );
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '2d76750b-fb8c-4e20-9d79-8d8552f0ff2a';
+    $display->content['new-2d76750b-fb8c-4e20-9d79-8d8552f0ff2a'] = $pane;
+    $display->panels['sidebar'][1] = 'new-2d76750b-fb8c-4e20-9d79-8d8552f0ff2a';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $panelizer->display = $display;
