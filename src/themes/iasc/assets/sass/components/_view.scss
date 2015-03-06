@@ -25,6 +25,11 @@
     width: 100%;
     padding-right: 0;
     margin-bottom: 0 !important;
+
+    .select2-container {
+      width: 100% !important;
+    }
+    
     @media screen and (min-width: $screen-sm-min) and (max-width: $screen-md-min) {
       width: 50%;
       &:nth-child(odd) {

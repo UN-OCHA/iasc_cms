@@ -10610,17 +10610,21 @@ img.bio-circled {
   padding-right: 0;
   margin-bottom: 0 !important;
 }
+/* line 29, ../sass/components/_view.scss */
+.view-filters .views-exposed-widget .select2-container {
+  width: 100% !important;
+}
 @media screen and (min-width: 768px) and (max-width: 992px) {
   /* line 24, ../sass/components/_view.scss */
   .view-filters .views-exposed-widget {
     width: 50%;
   }
-  /* line 30, ../sass/components/_view.scss */
+  /* line 35, ../sass/components/_view.scss */
   .view-filters .views-exposed-widget:nth-child(odd) {
     padding: 10px 10px 0 0;
     clear: left;
   }
-  /* line 34, ../sass/components/_view.scss */
+  /* line 39, ../sass/components/_view.scss */
   .view-filters .views-exposed-widget:nth-child(even) {
     padding: 10px 0 0 10px;
   }
