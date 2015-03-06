@@ -68,6 +68,12 @@ function iasc_document_block_view($delta = '') {
 function iasc_document_form_node_form_alter(&$form, &$form_state, $form_id) {
   $content_type = $form['#node']->type;
   if ('oa_wiki_page' == $content_type) {
+
+    global $user;
+    if (array_search('administrator', $user->roles) === FALSE) {
+      $form['field_legacy_publish']['#access'] = FALSE;
+    }
+
     $product_term = taxonomy_get_term_by_name('Product', 'document_types');
     if ($product_term) {
       $product_term = current($product_term);
