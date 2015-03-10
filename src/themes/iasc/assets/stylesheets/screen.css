@@ -9969,14 +9969,14 @@ img.bio-circled {
 @media screen and (min-width: 768px) and (max-width: 992px) {
   /* line 69, ../sass/components/_navigation.scss */
   .navbar .navbar-nav > li > a {
-    padding: 10px 13px;
+    padding: 10px;
   }
 }
 @media screen and (min-width: 992px) {
   /* line 74, ../sass/components/_navigation.scss */
   .navbar .navbar-nav > li > a {
-    padding-right: 13px;
-    padding-left: 13px;
+    padding-right: 10px;
+    padding-left: 10px;
   }
 }
 /* line 80, ../sass/components/_navigation.scss */

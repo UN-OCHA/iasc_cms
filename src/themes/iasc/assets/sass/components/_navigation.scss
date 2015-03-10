@@ -67,13 +67,13 @@
     }
     @media screen and (min-width: $screen-sm-min) and (max-width: $screen-md-min) {
       > li > a {
-        padding: 10px 13px;
+        padding: 10px;
       }
     }
     @media screen and (min-width: $screen-md-min) {
       > li > a {
-        padding-right: 13px;
-        padding-left: 13px;
+        padding-right: 10px;
+        padding-left: 10px;
       }
     }
   }
