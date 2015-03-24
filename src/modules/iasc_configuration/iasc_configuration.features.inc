@@ -211,17 +211,17 @@ function iasc_configuration_panelizer_defaults_override_alter(&$data) {
           'configuration' => array(
             'exposed' => array(
               'field_oa_date_value' => array(
-                'value' => '2015-02-01',
+                'value' => '2015-03-01',
               ),
               'field_oa_date_value_1' => array(
                 'value' => NULL,
               ),
               'field_city_value' => '',
-              'og_group_ref_target_id' => '',
+              'og_group_ref_target_id' => 'CURRENT',
               'og_group_ref_target_id_mine' => 0,
               'og_subspaces_view_all' => 1,
               'og_subspaces_view_parent' => 0,
-              'oa_section_ref_target_id' => '',
+              'oa_section_ref_target_id' => 'All',
               'keys' => '',
             ),
             'show_exposed_form' => 0,
