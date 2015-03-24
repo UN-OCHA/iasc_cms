@@ -347,6 +347,33 @@ function iasc_pager($variables) {
 }
 
 /**
+ * Implements hook_preprocess_views_view_fields().
+ *
+ * Generic preprocess that is needed to call more specific templates.
+ */
+function iasc_preprocess_views_view_fields(&$vars) {
+  if (isset($vars['view']->name)) {
+    $function = __FUNCTION__ . '__' . $vars['view']->name;
+
+    if (function_exists($function)) {
+      $function($vars);
+    }
+  }
+}
+
+/**
+ * Custom preprocess for search_contacts view.
+ *
+ * @see template_preprocess_views_view_field()
+ */
+function iasc_preprocess_views_view_fields__search_contacts(&$vars) {
+  if ('panel_pane_contacts' == $vars['view']->current_display) {
+    $vars['has_photo'] = !empty($vars['field_photo']);
+  }
+}
+
+
+/**
  * Implements hook_preprocess_views_view_field().
  *
  * Generic preprocess that is needed to call more specific templates.
