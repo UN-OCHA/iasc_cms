@@ -67,9 +67,14 @@
     float: left;
     margin-right: 20px;
   }
+
   .text {
     position: relative;
     overflow: hidden;
+  }
+
+  .views-field-field-position {
+    overflow: auto;
   }
 }
 
