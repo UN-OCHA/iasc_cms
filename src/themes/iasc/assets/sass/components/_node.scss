@@ -67,9 +67,14 @@
     float: left;
     margin-right: 20px;
   }
+
   .text {
     position: relative;
     overflow: hidden;
+  }
+
+  .contact-info {
+    overflow: auto;
   }
 }
 
