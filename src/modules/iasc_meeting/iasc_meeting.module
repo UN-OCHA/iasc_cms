@@ -16,6 +16,17 @@ function iasc_meeting_ctools_plugin_directory($owner, $plugin_type) {
 }
 
 /**
+ * Implementation of hook_module_implements_alter()
+ */
+function iasc_meeting_module_implements_alter(&$implementations, $hook) {
+  if ($hook == 'form_alter') {
+    $group = $implementations['iasc_meeting'];
+    unset($implementations['iasc_meeting']);
+    $implementations['iasc_meeting'] = $group;
+  }
+}
+
+/**
  * Implements hook_field_formatter_info_alter().
  */
 function iasc_meeting_field_formatter_info_alter(&$info) {
@@ -144,5 +155,24 @@ function iasc_meeting_form_node_form_alter(&$form, &$form_state, $form_id) {
     if (array_search('administrator', $user->roles) === FALSE) {
       $form['field_legacy_publish']['#access'] = FALSE;
     }
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function iasc_meeting_form_alter(&$form, &$form_state, $form_id) {
+  if ('views_exposed_form' == $form_id
+    && 'oa_event_list' == $form_state['view']->name
+    && 'page_calendar' == $form_state['view']->current_display) {
+
+    // Ensure that target id is not set to Active Space.
+    $form['og_group_ref_target_id']['#default_value'] = 'All';
+
+    // Hide the undesired checkboxes for: "My Spaces", "Show subspace content",
+    // "Show parent content".
+    $form['og_group_ref_target_id_mine']['#access'] = FALSE;
+    $form['og_subspaces_view_all']['#access'] = FALSE;
+    $form['og_subspaces_view_parent']['#access'] = FALSE;
   }
 }
