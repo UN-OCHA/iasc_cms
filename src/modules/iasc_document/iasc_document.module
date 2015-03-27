@@ -16,6 +16,17 @@ function iasc_document_ctools_plugin_directory($owner, $plugin_type) {
 }
 
 /**
+ * Implementation of hook_module_implements_alter()
+ */
+function iasc_document_module_implements_alter(&$implementations, $hook) {
+  if ($hook == 'form_alter') {
+    $group = $implementations['iasc_document'];
+    unset($implementations['iasc_document']);
+    $implementations['iasc_document'] = $group;
+  }
+}
+
+/**
  * Implements hook_theme().
  */
 function iasc_document_theme($existing, $type, $theme, $path) {
@@ -188,4 +199,23 @@ function iasc_document_panels_pane_content_alter(&$content, $pane, $args, $conte
     unset($content->title);
   }
 
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function iasc_document_form_alter(&$form, &$form_state, $form_id) {
+  if ('views_exposed_form' == $form_id
+    && 'iasc_document' == $form_state['view']->name
+    && 'page_resources' == $form_state['view']->current_display) {
+
+    // Ensure that target id is not set to Active Space.
+    $form['og_group_ref_target_id']['#default_value'] = 'All';
+
+    // Hide the undesired checkboxes for: "My Spaces", "Show subspace content",
+    // "Show parent content".
+    $form['og_group_ref_target_id_mine']['#access'] = FALSE;
+    $form['og_subspaces_view_all']['#access'] = FALSE;
+    $form['og_subspaces_view_parent']['#access'] = FALSE;
+  }
 }
