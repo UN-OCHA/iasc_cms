@@ -758,6 +758,29 @@ function iasc_configuration_add_section($parent_nid, $name, $details) {
 }
 
 /**
+ * Implements hook_permission().
+ */
+function iasc_configuration_permission() {
+  return array(
+    'access IPE revert button' => array(
+      'title' => t('Access IPE revert button'),
+      'description' => t('Access the IPE revert button on overridden panel page templates.'),
+    ),
+  );
+}
+
+/**
+ * Implementation of hook_module_implements_alter()
+ */
+function iasc_configuration_module_implements_alter(&$implementations, $hook) {
+  if ($hook == 'form_alter') {
+    $group = $implementations['iasc_configuration'];
+    unset($implementations['iasc_configuration']);
+    $implementations['iasc_configuration'] = $group;
+  }
+}
+
+/**
  * Implements hook_flag().
  *
  * Remove from featured, show on home, special nodequeues.
@@ -864,33 +887,13 @@ function iasc_configuration_query_alter(QueryAlterableInterface $query) {
 }
 
 /**
- * Implements hook_form_FORM_ID_alter().
- *
- * We want to hide unnecessary checkboxes from the user when the og group ref
- * exposed filter is used.
+ * Implements hook_form_alter().
  */
-function iasc_configuration_form_views_exposed_form_alter(&$form, &$form_state, $form_id) {
-  if (!empty($form['og_group_ref_target_id']['#options'])) {
-    $view = $form_state['view'];
-
-    // We currently just limit these changes to these displays.
-    $change = FALSE;
-    $change = ('iasc_document' == $view->name) || ('oa_event_list' == $view->name);
-    if ($change) {
-      // Hide My Spaces checkbox.
-      if (!empty($form['og_group_ref_target_id_mine'])) {
-        $form['og_group_ref_target_id_mine']['#access'] = FALSE;
-      }
-
-      // Hide Show parent content checkbox.
-      if (!empty($form['og_subspaces_view_parent'])) {
-        $form['og_subspaces_view_parent']['#access'] = FALSE;
-      }
-
-      // Replace 'subspace' text with authoring bodies text for the checkbox.
-      if (!empty($form['og_subspaces_view_all'])) {
-        $form['og_subspaces_view_all']['#title'] = t('Show children authoring bodies');
-      }
+function iasc_configuration_form_panels_ipe_edit_control_form_alter(&$form, &$form_state, $form_id) {
+  // Restrict the Revert IPE button to those who have the permission.
+  if (isset($form['buttons']['revert_default'])) {
+    if (!user_access('access IPE revert button')) {
+      $form['buttons']['revert_default']['#access'] = FALSE;
     }
   }
 }
