@@ -10473,7 +10473,7 @@ img.bio-circled {
     height: 70px;
   }
 }
-/* line 119, ../sass/components/_panel.scss */
+/* line 120, ../sass/components/_panel.scss */
 .front .col-md-12 .panel:nth-child(2) .panel-heading .panel-title, .front .col-md-12 .panel:nth-child(2) .view-display-id-panel_pane_membership_logos h4 .panel-title, .view-display-id-panel_pane_membership_logos .front .col-md-12 .panel:nth-child(2) h4 .panel-title, .front .col-md-12 .panel:nth-child(2) .panel-heading .page-search-node .well:before, .page-search-node .front .col-md-12 .panel:nth-child(2) .panel-heading .well:before, .front .col-md-12 .panel:nth-child(2) .view-display-id-panel_pane_membership_logos h4 .page-search-node .well:before, .page-search-node .front .col-md-12 .panel:nth-child(2) .view-display-id-panel_pane_membership_logos h4 .well:before, .view-display-id-panel_pane_membership_logos .front .col-md-12 .panel:nth-child(2) h4 .page-search-node .well:before, .page-search-node .view-display-id-panel_pane_membership_logos .front .col-md-12 .panel:nth-child(2) h4 .well:before,
 .front .col-md-12 .panel:nth-child(2) .panel-heading .page-site-search .well:before,
 .page-site-search .front .col-md-12 .panel:nth-child(2) .panel-heading .well:before,
@@ -10492,15 +10492,35 @@ img.bio-circled {
   background: url('../images/iasc-logo-sm.png?1424968716') #1282c1 no-repeat left center;
   text-indent: -9999px;
   line-height: 45px;
+  font-size: 67px;
 }
-/* line 125, ../sass/components/_panel.scss */
+@media screen and (max-width: 640px) {
+  /* line 120, ../sass/components/_panel.scss */
+  .front .col-md-12 .panel:nth-child(2) .panel-heading .panel-title, .front .col-md-12 .panel:nth-child(2) .view-display-id-panel_pane_membership_logos h4 .panel-title, .view-display-id-panel_pane_membership_logos .front .col-md-12 .panel:nth-child(2) h4 .panel-title, .front .col-md-12 .panel:nth-child(2) .panel-heading .page-search-node .well:before, .page-search-node .front .col-md-12 .panel:nth-child(2) .panel-heading .well:before, .front .col-md-12 .panel:nth-child(2) .view-display-id-panel_pane_membership_logos h4 .page-search-node .well:before, .page-search-node .front .col-md-12 .panel:nth-child(2) .view-display-id-panel_pane_membership_logos h4 .well:before, .view-display-id-panel_pane_membership_logos .front .col-md-12 .panel:nth-child(2) h4 .page-search-node .well:before, .page-search-node .view-display-id-panel_pane_membership_logos .front .col-md-12 .panel:nth-child(2) h4 .well:before,
+  .front .col-md-12 .panel:nth-child(2) .panel-heading .page-site-search .well:before,
+  .page-site-search .front .col-md-12 .panel:nth-child(2) .panel-heading .well:before,
+  .front .col-md-12 .panel:nth-child(2) .view-display-id-panel_pane_membership_logos h4 .page-site-search .well:before,
+  .page-site-search .front .col-md-12 .panel:nth-child(2) .view-display-id-panel_pane_membership_logos h4 .well:before,
+  .view-display-id-panel_pane_membership_logos .front .col-md-12 .panel:nth-child(2) h4 .page-site-search .well:before,
+  .page-site-search .view-display-id-panel_pane_membership_logos .front .col-md-12 .panel:nth-child(2) h4 .well:before, .front .col-md-12 .panels-ipe-sort-container .panels-ipe-portlet-wrapper:nth-child(2) .panel-heading .panel-title, .front .col-md-12 .panels-ipe-sort-container .panels-ipe-portlet-wrapper:nth-child(2) .view-display-id-panel_pane_membership_logos h4 .panel-title, .view-display-id-panel_pane_membership_logos .front .col-md-12 .panels-ipe-sort-container .panels-ipe-portlet-wrapper:nth-child(2) h4 .panel-title, .front .col-md-12 .panels-ipe-sort-container .panels-ipe-portlet-wrapper:nth-child(2) .panel-heading .page-search-node .well:before, .page-search-node .front .col-md-12 .panels-ipe-sort-container .panels-ipe-portlet-wrapper:nth-child(2) .panel-heading .well:before, .front .col-md-12 .panels-ipe-sort-container .panels-ipe-portlet-wrapper:nth-child(2) .view-display-id-panel_pane_membership_logos h4 .page-search-node .well:before, .page-search-node .front .col-md-12 .panels-ipe-sort-container .panels-ipe-portlet-wrapper:nth-child(2) .view-display-id-panel_pane_membership_logos h4 .well:before, .view-display-id-panel_pane_membership_logos .front .col-md-12 .panels-ipe-sort-container .panels-ipe-portlet-wrapper:nth-child(2) h4 .page-search-node .well:before, .page-search-node .view-display-id-panel_pane_membership_logos .front .col-md-12 .panels-ipe-sort-container .panels-ipe-portlet-wrapper:nth-child(2) h4 .well:before,
+  .front .col-md-12 .panels-ipe-sort-container .panels-ipe-portlet-wrapper:nth-child(2) .panel-heading .page-site-search .well:before,
+  .page-site-search .front .col-md-12 .panels-ipe-sort-container .panels-ipe-portlet-wrapper:nth-child(2) .panel-heading .well:before,
+  .front .col-md-12 .panels-ipe-sort-container .panels-ipe-portlet-wrapper:nth-child(2) .view-display-id-panel_pane_membership_logos h4 .page-site-search .well:before,
+  .page-site-search .front .col-md-12 .panels-ipe-sort-container .panels-ipe-portlet-wrapper:nth-child(2) .view-display-id-panel_pane_membership_logos h4 .well:before,
+  .view-display-id-panel_pane_membership_logos .front .col-md-12 .panels-ipe-sort-container .panels-ipe-portlet-wrapper:nth-child(2) h4 .page-site-search .well:before,
+  .page-site-search .view-display-id-panel_pane_membership_logos .front .col-md-12 .panels-ipe-sort-container .panels-ipe-portlet-wrapper:nth-child(2) h4 .well:before {
+    margin-top: -7px;
+    line-height: .85;
+    font-size: 45px;
+  }
+}
+/* line 134, ../sass/components/_panel.scss */
 .front .col-md-12 .panel:nth-child(2) .panel-heading .panel-title:after, .front .col-md-12 .panel:nth-child(2) .view-display-id-panel_pane_membership_logos h4 .panel-title:after, .view-display-id-panel_pane_membership_logos .front .col-md-12 .panel:nth-child(2) h4 .panel-title:after, .front .col-md-12 .panels-ipe-sort-container .panels-ipe-portlet-wrapper:nth-child(2) .panel-heading .panel-title:after, .front .col-md-12 .panels-ipe-sort-container .panels-ipe-portlet-wrapper:nth-child(2) .view-display-id-panel_pane_membership_logos h4 .panel-title:after, .view-display-id-panel_pane_membership_logos .front .col-md-12 .panels-ipe-sort-container .panels-ipe-portlet-wrapper:nth-child(2) h4 .panel-title:after {
   content: "News";
   font-family: serif;
   font-style: italic;
   text-transform: none;
   letter-spacing: -.02em;
-  font-size: 2.5em;
   color: white;
   position: absolute;
   right: 0;
@@ -10508,19 +10528,13 @@ img.bio-circled {
   line-height: .56;
   text-indent: 0;
 }
-@media (min-width: 640px) {
-  /* line 125, ../sass/components/_panel.scss */
-  .front .col-md-12 .panel:nth-child(2) .panel-heading .panel-title:after, .front .col-md-12 .panel:nth-child(2) .view-display-id-panel_pane_membership_logos h4 .panel-title:after, .view-display-id-panel_pane_membership_logos .front .col-md-12 .panel:nth-child(2) h4 .panel-title:after, .front .col-md-12 .panels-ipe-sort-container .panels-ipe-portlet-wrapper:nth-child(2) .panel-heading .panel-title:after, .front .col-md-12 .panels-ipe-sort-container .panels-ipe-portlet-wrapper:nth-child(2) .view-display-id-panel_pane_membership_logos h4 .panel-title:after, .view-display-id-panel_pane_membership_logos .front .col-md-12 .panels-ipe-sort-container .panels-ipe-portlet-wrapper:nth-child(2) h4 .panel-title:after {
-    font-size: 4.5em;
-  }
-}
 
-/* line 146, ../sass/components/_panel.scss */
+/* line 151, ../sass/components/_panel.scss */
 .pane-oa-event-list-panel-pane-upcoming-meetings-filterable h3.pane-title, .pane-oa-event-list-panel-pane-upcoming-meetings-filterable .node-type-oa-event .field-name-field-agenda-items .pane-title.field-name-field-ai-title, .node-type-oa-event .field-name-field-agenda-items .pane-oa-event-list-panel-pane-upcoming-meetings-filterable .pane-title.field-name-field-ai-title {
   color: #444444;
 }
 
-/* line 150, ../sass/components/_panel.scss */
+/* line 155, ../sass/components/_panel.scss */
 .twitter-timeline {
   margin-right: -30px !important;
   margin-left: -30px !important;
@@ -10639,17 +10653,17 @@ img.bio-circled {
     width: 25%;
     padding-right: 20px;
   }
-  /* line 41, ../sass/components/_view.scss */
+  /* line 46, ../sass/components/_view.scss */
   .view-iasc-document .view-filters .views-exposed-widget:not(.views-submit-button) {
     width: 33%;
     float: left;
   }
-  /* line 45, ../sass/components/_view.scss */
+  /* line 50, ../sass/components/_view.scss */
   .view-filters .views-exposed-widget .help-block {
     margin-bottom: 0;
   }
 }
-/* line 52, ../sass/components/_view.scss */
+/* line 57, ../sass/components/_view.scss */
 .view-filters .views-reset-button,
 .view-filters .views-submit-button {
   width: 100%;

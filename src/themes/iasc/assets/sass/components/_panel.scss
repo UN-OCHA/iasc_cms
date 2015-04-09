@@ -112,32 +112,37 @@
     border-bottom: 3px solid #dd304b;
     position: relative;
     background-color: #1282c1;
-      @media (min-width: 640px) {
-        height: 70px;
-      }
+
+    @media (min-width: 640px) {
+      height: 70px;
+    }
   
     .panel-title {
-    padding: 0;
-    margin: 0;
-    background: image-url('iasc-logo-sm.png') #1282c1 no-repeat left center;
-    text-indent: -9999px;
-    line-height: 45px;
+      padding: 0;
+      margin: 0;
+      background: image-url('iasc-logo-sm.png') #1282c1 no-repeat left center;
+      text-indent: -9999px;
+      line-height: 45px;
+      font-size: 67px;
+
+      @media screen and (max-width: 640px) {
+        margin-top: -7px;
+        line-height: .85;
+        font-size: 45px;
+      }
+
       &:after {
-	    content: "News";
-	    font-family: serif;
-	    font-style: italic;
-	    text-transform: none;
-	    letter-spacing: -.02em;
-	    font-size: 2.5em;
-	    color: white;
-	    position: absolute;
-	    right: 0;
-	    bottom: 0;
-	    line-height: .56;
-	    text-indent: 0; 
-	    @media (min-width: 640px) {
-	      font-size: 4.5em;
-	    }
+        content: "News";
+        font-family: serif;
+        font-style: italic;
+        text-transform: none;
+        letter-spacing: -.02em;
+        color: white;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        line-height: .56;
+        text-indent: 0;
       }
     }
   }
