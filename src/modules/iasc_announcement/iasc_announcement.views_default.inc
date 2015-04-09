@@ -87,7 +87,16 @@ function iasc_announcement_views_default_views() {
 
   /* Display: Featured on Home Pane */
   $handler = $view->new_display('panel_pane', 'Featured on Home Pane', 'panel_pane_featured_home');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Updates';
   $handler->display->display_options['display_description'] = 'Panel Pane of items in the nodequeue: Featured on Home';
+  $handler->display->display_options['defaults']['use_more'] = FALSE;
+  $handler->display->display_options['use_more'] = TRUE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_always'] = TRUE;
+  $handler->display->display_options['defaults']['use_more_text'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'Updates';
   $handler->display->display_options['defaults']['link_display'] = FALSE;
   $handler->display->display_options['link_display'] = 'page_featured_home';
   $handler->display->display_options['pane_category']['name'] = 'IASC News';
@@ -139,8 +148,10 @@ function iasc_announcement_views_default_views() {
   $handler->display->display_options['allow']['fields_override'] = 0;
   $handler->display->display_options['inherit_panels_path'] = '0';
 
-  /* Display: Our News Page */
-  $handler = $view->new_display('page', 'Our News Page', 'page_featured_home');
+  /* Display: Updates Page */
+  $handler = $view->new_display('page', 'Updates Page', 'page_featured_home');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Updates';
   $handler->display->display_options['display_description'] = 'A page of the Feature on Home nodequeue';
   $handler->display->display_options['defaults']['use_more'] = FALSE;
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
@@ -179,7 +190,7 @@ function iasc_announcement_views_default_views() {
     'multiple_to' => '',
     'show_repeat_rule' => 'show',
   );
-  /* Field: Content: Body */
+  /* Field: Content: Description */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
@@ -218,8 +229,9 @@ function iasc_announcement_views_default_views() {
   $handler->display->display_options['filters']['og_group_ref_target_id']['id'] = 'og_group_ref_target_id';
   $handler->display->display_options['filters']['og_group_ref_target_id']['table'] = 'og_membership';
   $handler->display->display_options['filters']['og_group_ref_target_id']['field'] = 'og_group_ref_target_id';
-  $handler->display->display_options['filters']['og_group_ref_target_id']['value'] = 'CURRENT';
-  $handler->display->display_options['path'] = 'our-news';
+  $handler->display->display_options['filters']['og_group_ref_target_id']['operator'] = 'not';
+  $handler->display->display_options['filters']['og_group_ref_target_id']['value'] = '2608';
+  $handler->display->display_options['path'] = 'updates';
 
   /* Display: Other News Page */
   $handler = $view->new_display('page', 'Other News Page', 'page_special_announcements');
@@ -263,7 +275,7 @@ function iasc_announcement_views_default_views() {
     'multiple_to' => '',
     'show_repeat_rule' => 'show',
   );
-  /* Field: Content: Body */
+  /* Field: Content: Description */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
@@ -302,9 +314,7 @@ function iasc_announcement_views_default_views() {
   $handler->display->display_options['filters']['og_group_ref_target_id']['id'] = 'og_group_ref_target_id';
   $handler->display->display_options['filters']['og_group_ref_target_id']['table'] = 'og_membership';
   $handler->display->display_options['filters']['og_group_ref_target_id']['field'] = 'og_group_ref_target_id';
-  $handler->display->display_options['filters']['og_group_ref_target_id']['value'] = array(
-    2608 => '2608',
-  );
+  $handler->display->display_options['filters']['og_group_ref_target_id']['value'] = '2608';
   $handler->display->display_options['path'] = 'other-news';
   $export['iasc_announcement'] = $view;
 
