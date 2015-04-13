@@ -858,9 +858,9 @@ function iasc_meeting_views_default_views_alter(&$data) {
     unset($data['oa_event_detail']->display['default']->display_options['fields']['term_node_tid']);
   }
   if (isset($data['oa_event_list'])) {
-    $data['oa_event_list']->display['default']->display_options['cache']['output_lifespan'] = 3600; /* WAS: '' */
+    $data['oa_event_list']->display['default']->display_options['cache']['output_lifespan'] = 300; /* WAS: '' */
     $data['oa_event_list']->display['default']->display_options['cache']['output_lifespan_custom'] = 0; /* WAS: '' */
-    $data['oa_event_list']->display['default']->display_options['cache']['results_lifespan'] = 3600; /* WAS: '' */
+    $data['oa_event_list']->display['default']->display_options['cache']['results_lifespan'] = 300; /* WAS: '' */
     $data['oa_event_list']->display['default']->display_options['cache']['results_lifespan_custom'] = 0; /* WAS: '' */
     $data['oa_event_list']->display['default']->display_options['cache']['type'] = 'time'; /* WAS: 'none' */
     $data['oa_event_list']->display['default']->display_options['empty'] = array(
