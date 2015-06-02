@@ -28,6 +28,7 @@ function iasc_wysiwyg_defaultconfig_user_default_permissions() {
       'administrator' => 'administrator',
       'authenticated user' => 'authenticated user',
       'editor' => 'editor',
+      'recommendations editor' => 'recommendations editor',
     ),
     'module' => 'filter',
   );
