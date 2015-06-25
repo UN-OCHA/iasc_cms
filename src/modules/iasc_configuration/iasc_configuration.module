@@ -889,6 +889,19 @@ function iasc_configuration_query_alter(QueryAlterableInterface $query) {
 /**
  * Implements hook_form_alter().
  */
+function iasc_configuration_form_alter(&$form, &$form_state, $form_id) {
+  // Set the filename to the File Title by default.
+  if ('file_entity_add_upload' == $form_id) {
+    if ($form['filename']['#default_value'] && !$form['field_file_title'][LANGUAGE_NONE][0]['value']['#default_value']) {
+      $form['field_file_title'][LANGUAGE_NONE][0]['value']['#default_value'] = $form['filename']['#default_value'];
+      $form['filename']['#default_value'] = '';
+    }
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
 function iasc_configuration_form_panels_ipe_edit_control_form_alter(&$form, &$form_state, $form_id) {
   // Restrict the Revert IPE button to those who have the permission.
   if (isset($form['buttons']['revert_default'])) {
