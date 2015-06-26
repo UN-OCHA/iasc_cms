@@ -42,9 +42,6 @@ projects[XHProf][download][type] = git
 ; =====================================
 ; Other contrib
 ; =====================================
-projects[migrate][version] = 2.6-rc1
-projects[migrate][subdir] = iasc_contrib
-
 projects[xautoload][version] = 5.0
 projects[xautoload][subdir] = iasc_contrib
 
