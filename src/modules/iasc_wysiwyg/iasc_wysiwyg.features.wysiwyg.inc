@@ -10,54 +10,6 @@
 function iasc_wysiwyg_wysiwyg_default_profiles() {
   $profiles = array();
 
-  // Exported profile: full_html
-  $profiles['full_html'] = array(
-    'format' => 'full_html',
-    'editor' => 'tinymce',
-    'settings' => array(
-      'default' => 1,
-      'user_choose' => 0,
-      'show_toggle' => 1,
-      'theme' => 'advanced',
-      'language' => 'en',
-      'buttons' => array(
-        'default' => array(
-          'bold' => 1,
-          'italic' => 1,
-          'bullist' => 1,
-          'numlist' => 1,
-          'formatselect' => 1,
-          'styleselect' => 1,
-          'sup' => 1,
-          'sub' => 1,
-          'blockquote' => 1,
-          'charmap' => 1,
-        ),
-        'media' => array(
-          'media' => 1,
-        ),
-        'linkit' => array(
-          'linkit' => 1,
-        ),
-      ),
-      'toolbar_loc' => 'top',
-      'toolbar_align' => 'left',
-      'path_loc' => 'bottom',
-      'resizing' => 1,
-      'verify_html' => 0,
-      'preformatted' => 0,
-      'convert_fonts_to_spans' => 0,
-      'remove_linebreaks' => 0,
-      'apply_source_formatting' => 0,
-      'paste_auto_cleanup_on_paste' => 0,
-      'block_formats' => 'p,address,pre,h2,h3,h4,h5,h6,div',
-      'css_setting' => 'self',
-      'css_path' => '%bsites/all/themes/custom/iasc/assets/stylesheets/screen.css',
-      'css_classes' => 'Unordered list=list-styled
-Ordered list=ordered-styled',
-    ),
-  );
-
   // Exported profile: iasc_wysiwyg
   $profiles['iasc_wysiwyg'] = array(
     'format' => 'iasc_wysiwyg',
