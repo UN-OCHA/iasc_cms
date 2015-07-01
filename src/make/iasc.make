@@ -42,7 +42,7 @@ projects[XHProf][download][type] = git
 ; =====================================
 ; Other contrib
 ; =====================================
-projects[xautoload][version] = 5.0
+projects[xautoload][version] = 5.1
 projects[xautoload][subdir] = iasc_contrib
 
 projects[styleguide][version] = 1.1
@@ -53,7 +53,7 @@ projects[field_collection][version] = 1.0-beta8
 projects[field_collection][subdir] = iasc_contrib
 
 ; Supports more standardized addresses.
-projects[addressfield][version] = 1.0-beta5
+projects[addressfield][version] = 1.1
 projects[addressfield][subdir] = iasc_contrib
 
 projects[entity_view_mode][version] = 1.0-rc1
@@ -90,10 +90,8 @@ projects[title][version] = 1.0-alpha7
 projects[title][subdir] = iasc_contrib
 
 projects[nodequeue][type] = module
-projects[nodequeue][version] = 2.0-beta1
+projects[nodequeue][version] = 2.0
 projects[nodequeue][subdir] = iasc_contrib
-projects[nodequeue][patch][1402634] = https://www.drupal.org/files/node-mark-deprecated-1402634-7.patch
-projects[nodequeue][patch][2231793] = https://www.drupal.org/files/issues/nodequeue-query_add_tag-2231793-9.patch
 
 projects[access_code][type] = module
 projects[access_code][version] = 1.1
