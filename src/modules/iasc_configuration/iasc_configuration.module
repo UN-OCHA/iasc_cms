@@ -966,3 +966,12 @@ function iasc_configuration_ctools_plugin_directory($owner, $plugin_type) {
     return 'plugins/content_types';
   }
 }
+
+/**
+ * Implements hook_media_browser_plugin_info_alter().
+ */
+function iasc_configuration_media_browser_plugin_info_alter(&$info) {
+   // We prevent multifile upload because of the request in IASC-388 (Moving
+   // file name to the file title field on upload.
+   $info['upload']['class'] = 'MediaBrowserUpload';
+}
