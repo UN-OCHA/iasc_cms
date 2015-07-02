@@ -277,42 +277,10 @@ function iasc_document_panelizer_defaults_override_alter(&$data) {
           'locks' => array(),
           'uuid' => '436ee688-6d0a-4114-addd-12f3bd8d8131',
         ); /* WAS: '' */
-    $data['node:oa_wiki_page:default']->display->content['new-5f34669d-e9c6-49c8-b8db-d2cf18bd9513'] = (object) array(
-          'pid' => 'new-5f34669d-e9c6-49c8-b8db-d2cf18bd9513',
-          'panel' => 'sidebar',
-          'type' => 'entity_field',
-          'subtype' => 'node:field_product_thumbnail',
-          'shown' => FALSE,
-          'access' => array(),
-          'configuration' => array(
-            'label' => 'hidden',
-            'formatter' => 'image',
-            'delta_limit' => 0,
-            'delta_offset' => 0,
-            'delta_reversed' => FALSE,
-            'formatter_settings' => array(
-              'image_style' => '',
-              'image_link' => '',
-            ),
-            'context' => 'panelizer',
-            'override_title' => 0,
-            'override_title_text' => '',
-          ),
-          'cache' => array(),
-          'style' => array(
-            'settings' => NULL,
-          ),
-          'css' => array(),
-          'extras' => array(),
-          'position' => 4,
-          'locks' => array(),
-          'uuid' => '5f34669d-e9c6-49c8-b8db-d2cf18bd9513',
-        ); /* WAS: '' */
     $data['node:oa_wiki_page:default']->display->content['new-61664bae-1939-49e7-a25e-f958bf7a99f6']->configuration['context'] = 'panelizer'; /* WAS: array() */
     $data['node:oa_wiki_page:default']->display->content['new-61664bae-1939-49e7-a25e-f958bf7a99f6']->configuration['label'] = 'above'; /* WAS: 'title' */
     $data['node:oa_wiki_page:default']->display->content['new-61664bae-1939-49e7-a25e-f958bf7a99f6']->panel = 'contentmain'; /* WAS: 'sidebar' */
     $data['node:oa_wiki_page:default']->display->content['new-61664bae-1939-49e7-a25e-f958bf7a99f6']->position = 3; /* WAS: 2 */
-    $data['node:oa_wiki_page:default']->display->content['new-726f799f-b273-4c70-bb8e-8fa078660e60']->shown = FALSE; /* WAS: TRUE */
     $data['node:oa_wiki_page:default']->display->content['new-7680596e-9c34-431d-9d73-701c4d44c350'] = (object) array(
           'pid' => 'new-7680596e-9c34-431d-9d73-701c4d44c350',
           'panel' => 'sidebar',
@@ -424,15 +392,18 @@ function iasc_document_panelizer_defaults_override_alter(&$data) {
     $data['node:oa_wiki_page:default']->display->panels['contentmain'][2] = 'new-7746f122-1e4b-445f-8cf4-d15ef627d71f'; /* WAS: 'new-32c308fc-ae57-43df-a4fa-8667a747ea6f' */
     $data['node:oa_wiki_page:default']->display->panels['contentmain'][3] = 'new-61664bae-1939-49e7-a25e-f958bf7a99f6'; /* WAS: 'new-fd50a4cf-8298-4584-8504-b21e0e215e78' */
     $data['node:oa_wiki_page:default']->display->panels['sidebar'][0] = 'new-7680596e-9c34-431d-9d73-701c4d44c350'; /* WAS: 'new-7ddbd76b-3d46-436a-b91b-5078220845a8' */
-    $data['node:oa_wiki_page:default']->display->panels['sidebar'][1] = 'new-eac5d508-0b43-4e80-ac21-cb302bdcb050'; /* WAS: 'new-ef3d38d4-45e0-4b40-8e1a-e5b1d41d0cb7' */
+    $data['node:oa_wiki_page:default']->display->panels['sidebar'][1] = 'new-eac5d508-0b43-4e80-ac21-cb302bdcb050'; /* WAS: 'new-05a2ca63-14bd-45a1-bab5-147952670034' */
     $data['node:oa_wiki_page:default']->display->panels['sidebar'][2] = 'new-7ddbd76b-3d46-436a-b91b-5078220845a8'; /* WAS: 'new-61664bae-1939-49e7-a25e-f958bf7a99f6' */
     $data['node:oa_wiki_page:default']->display->panels['sidebar'][4] = 'new-5f34669d-e9c6-49c8-b8db-d2cf18bd9513'; /* WAS: '' */
+    unset($data['node:oa_wiki_page:default']->display->content['new-05a2ca63-14bd-45a1-bab5-147952670034']);
     unset($data['node:oa_wiki_page:default']->display->content['new-32c308fc-ae57-43df-a4fa-8667a747ea6f']);
+    unset($data['node:oa_wiki_page:default']->display->content['new-726f799f-b273-4c70-bb8e-8fa078660e60']);
     unset($data['node:oa_wiki_page:default']->display->content['new-a811ab4b-b391-4bac-aee2-f0b6bdb5a65d']);
     unset($data['node:oa_wiki_page:default']->display->content['new-e46086d2-3bda-405b-b9b1-6d44d79ea78e']);
     unset($data['node:oa_wiki_page:default']->display->content['new-ef3d38d4-45e0-4b40-8e1a-e5b1d41d0cb7']);
     unset($data['node:oa_wiki_page:default']->display->content['new-fd50a4cf-8298-4584-8504-b21e0e215e78']);
     unset($data['node:oa_wiki_page:default']->display->panels['contentmain'][4]);
+    unset($data['node:oa_wiki_page:default']->display->panels['sidebar'][3]);
   }
 }
 
