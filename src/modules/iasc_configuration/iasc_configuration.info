@@ -72,6 +72,7 @@ features[features_overrides][] = panelizer_defaults.node:oa_section:oa_section_n
 features[features_overrides][] = panelizer_defaults.node:oa_section:oa_section_news.display|content|new-83087d0e-6633-4275-baea-7bb63a3fb92f
 features[features_overrides][] = panelizer_defaults.node:oa_section:oa_section_news.display|content|new-9af9cc15-2fcb-4960-8d6e-276c1e3ba12f
 features[features_overrides][] = panelizer_defaults.node:oa_section:oa_section_news.display|content|new-a1345e0e-4ffb-4445-b615-b8922b7dba10
+features[features_overrides][] = panelizer_defaults.node:oa_section:oa_section_news.display|content|new-bdebbf8b-cf16-44e5-aa9c-4f168d4d8310
 features[features_overrides][] = panelizer_defaults.node:oa_section:oa_section_news.display|content|new-d2e48391-04fd-4e47-a3ee-9442c060a4e8
 features[features_overrides][] = panelizer_defaults.node:oa_section:oa_section_news.display|content|new-e7915e9b-dd20-424f-b4e9-4bc4d9a81cbc
 features[features_overrides][] = panelizer_defaults.node:oa_section:oa_section_news.display|panels|contentmain|0

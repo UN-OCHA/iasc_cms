@@ -359,9 +359,28 @@ function iasc_configuration_panelizer_defaults_override_alter(&$data) {
           'locks' => array(),
           'uuid' => '9af9cc15-2fcb-4960-8d6e-276c1e3ba12f',
         ); /* WAS: '' */
+    $data['node:oa_section:oa_section_news']->display->content['new-bdebbf8b-cf16-44e5-aa9c-4f168d4d8310'] = (object) array(
+          'pid' => 'new-bdebbf8b-cf16-44e5-aa9c-4f168d4d8310',
+          'panel' => 'sidebar',
+          'type' => 'iasc_announcement.add_news',
+          'subtype' => 'iasc_announcement.add_news',
+          'shown' => TRUE,
+          'access' => array(),
+          'configuration' => array(),
+          'cache' => array(),
+          'style' => array(
+            'settings' => NULL,
+          ),
+          'css' => array(),
+          'extras' => array(),
+          'position' => 1,
+          'locks' => array(),
+          'uuid' => 'bdebbf8b-cf16-44e5-aa9c-4f168d4d8310',
+        ); /* WAS: '' */
     $data['node:oa_section:oa_section_news']->display->panels['contentmain'][0] = 'new-60764651-f3d4-4f32-a25e-56c63162c11f'; /* WAS: 'new-2010ab8d-8b3a-4f76-8bcd-a9b92ba1417b' */
     $data['node:oa_section:oa_section_news']->display->panels['contentmain'][1] = 'new-16ff2951-2241-4d47-b6d0-1ad702a78848'; /* WAS: 'new-a1345e0e-4ffb-4445-b615-b8922b7dba10' */
     $data['node:oa_section:oa_section_news']->display->panels['sidebar'][0] = 'new-9af9cc15-2fcb-4960-8d6e-276c1e3ba12f'; /* WAS: 'new-e7915e9b-dd20-424f-b4e9-4bc4d9a81cbc' */
+    $data['node:oa_section:oa_section_news']->display->panels['sidebar'][1] = 'new-bdebbf8b-cf16-44e5-aa9c-4f168d4d8310'; /* WAS: 'new-83087d0e-6633-4275-baea-7bb63a3fb92f' */
     $data['node:oa_section:oa_section_news']->display->title = 'News of %node:og_group_ref'; /* WAS: '' */
     unset($data['node:oa_section:oa_section_news']->display->content['new-2010ab8d-8b3a-4f76-8bcd-a9b92ba1417b']);
     unset($data['node:oa_section:oa_section_news']->display->content['new-83087d0e-6633-4275-baea-7bb63a3fb92f']);
@@ -370,7 +389,6 @@ function iasc_configuration_panelizer_defaults_override_alter(&$data) {
     unset($data['node:oa_section:oa_section_news']->display->content['new-e7915e9b-dd20-424f-b4e9-4bc4d9a81cbc']);
     unset($data['node:oa_section:oa_section_news']->display->panels['contentmain'][2]);
     unset($data['node:oa_section:oa_section_news']->display->panels['contentmain'][3]);
-    unset($data['node:oa_section:oa_section_news']->display->panels['sidebar'][1]);
   }
   if (isset($data['node:oa_space:default'])) {
     $data['node:oa_space:default']->display->content['new-02b7adcf-d6d0-41cc-9e74-71ce68194477'] = (object) array(
