@@ -244,9 +244,10 @@ function iasc_configuration_features_override_default_overrides() {
       'locks' => array(),
       'uuid' => 'fad8e5e6-4911-4a2e-ba23-b5cc386d98cd',
     );
-  $overrides["panelizer_defaults.node:oa_section:calendar_section.display|panels|contentmain|0"] = 'new-c6abcc4f-8796-4c05-983b-8eabfd975206';
-  $overrides["panelizer_defaults.node:oa_section:calendar_section.display|panels|contentmain|1"] = 'new-fad8e5e6-4911-4a2e-ba23-b5cc386d98cd';
-  $overrides["panelizer_defaults.node:oa_section:calendar_section.display|panels|contentmain|2"] = 'new-078ef339-4031-483a-8dfb-8837db7d7d95';
+  $overrides["panelizer_defaults.node:oa_section:calendar_section.display|panels|contentmain|0"] = 'new-780690aa-b3ce-4036-99e7-e81fc4509a23';
+  $overrides["panelizer_defaults.node:oa_section:calendar_section.display|panels|contentmain|1"] = 'new-078ef339-4031-483a-8dfb-8837db7d7d95';
+  $overrides["panelizer_defaults.node:oa_section:calendar_section.display|panels|contentmain|2"] = 'new-c6abcc4f-8796-4c05-983b-8eabfd975206';
+  $overrides["panelizer_defaults.node:oa_section:calendar_section.display|panels|contentmain|3"] = 'new-fad8e5e6-4911-4a2e-ba23-b5cc386d98cd';
   $overrides["panelizer_defaults.node:oa_section:calendar_section.display|panels|sidebar|0"] = 'new-5dea552f-a833-4443-b02e-883b4f59bf62';
   $overrides["panelizer_defaults.node:oa_section:calendar_section.display|panels|sidebar|1"] = 'new-9ea94d4c-567b-404f-9aec-386ae14a1aea';
   $overrides["panelizer_defaults.node:oa_section:calendar_section.display|panels|sidebar|2"]["DELETED"] = TRUE;
@@ -630,12 +631,12 @@ function iasc_configuration_features_override_default_overrides() {
       'uuid' => 'ef209430-cd92-42f8-ab1a-66dd810461e2',
     );
   $overrides["panelizer_defaults.node:oa_space:default.display|layout"] = 'burr_flipped';
-  $overrides["panelizer_defaults.node:oa_space:default.display|panels|contentmain|1"] = 'new-02b7adcf-d6d0-41cc-9e74-71ce68194477';
-  $overrides["panelizer_defaults.node:oa_space:default.display|panels|contentmain|2"] = 'new-ef209430-cd92-42f8-ab1a-66dd810461e2';
-  $overrides["panelizer_defaults.node:oa_space:default.display|panels|sidebar|0"] = 'new-a803a7e9-5a34-491d-878b-ac2f3fc7688e';
+  $overrides["panelizer_defaults.node:oa_space:default.display|panels|contentmain|2"] = 'new-02b7adcf-d6d0-41cc-9e74-71ce68194477';
+  $overrides["panelizer_defaults.node:oa_space:default.display|panels|contentmain|3"] = 'new-ef209430-cd92-42f8-ab1a-66dd810461e2';
+  $overrides["panelizer_defaults.node:oa_space:default.display|panels|sidebar|0"] = 'new-231a7676-b37f-4d85-bd32-996525f4e9d2';
   $overrides["panelizer_defaults.node:oa_space:default.display|panels|sidebar|1"] = 'new-35ab60ac-d6d7-41b2-a57e-21ca28e5e974';
   $overrides["panelizer_defaults.node:oa_space:default.display|panels|sidebar|2"] = 'new-652e1d79-7e20-4a4b-8b66-4fc46244013e';
-  $overrides["panelizer_defaults.node:oa_space:default.display|panels|sidebar|3"] = 'new-231a7676-b37f-4d85-bd32-996525f4e9d2';
+  $overrides["panelizer_defaults.node:oa_space:default.display|panels|sidebar|3"] = 'new-a803a7e9-5a34-491d-878b-ac2f3fc7688e';
   $overrides["panelizer_defaults.node:oa_space:default.display|panels|sidebar|4"] = 'new-b1dbb2ba-786d-47d1-a861-30c45ad473d4';
 
   // Exported overrides for: panels_mini
@@ -741,9 +742,9 @@ function iasc_configuration_features_override_default_overrides() {
       'locks' => array(),
       'uuid' => 'e8e35514-f8e5-4d1a-9767-fdd77c4339ef',
     );
-  $overrides["panels_mini.oa_toolbar_panel.display|panels|footer|3"] = 'new-1c7d87cd-035a-4552-b154-20fe54ebb76a';
-  $overrides["panels_mini.oa_toolbar_panel.display|panels|footer|4"] = 'new-e8e35514-f8e5-4d1a-9767-fdd77c4339ef';
-  $overrides["panels_mini.oa_toolbar_panel.display|panels|footer|5"] = 'new-70813a7e-2551-49da-bd7c-4acaff4cae42';
+  $overrides["panels_mini.oa_toolbar_panel.display|panels|footer|3"] = 'new-70813a7e-2551-49da-bd7c-4acaff4cae42';
+  $overrides["panels_mini.oa_toolbar_panel.display|panels|footer|4"] = 'new-1c7d87cd-035a-4552-b154-20fe54ebb76a';
+  $overrides["panels_mini.oa_toolbar_panel.display|panels|footer|5"] = 'new-e8e35514-f8e5-4d1a-9767-fdd77c4339ef';
   $overrides["panels_mini.oa_toolbar_panel.display|panels|footer|6"]["DELETED"] = TRUE;
 
   // Exported overrides for: variable
