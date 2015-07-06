@@ -172,7 +172,10 @@ function iasc_document_default_page_manager_pages() {
   $page->admin_title = 'Product Catalog';
   $page->admin_description = '';
   $page->path = 'resources/%input';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array(
     'type' => 'none',
     'title' => 'Resources2',

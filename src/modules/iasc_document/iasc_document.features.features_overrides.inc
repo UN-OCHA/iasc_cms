@@ -60,7 +60,6 @@ function iasc_document_features_override_default_overrides() {
     'type' => 'hidden',
     'weight' => 0,
   );
-  $overrides["field_instance.node-oa_wiki_page-field_oa_media.display|default|weight"] = 4;
   $overrides["field_instance.node-oa_wiki_page-field_oa_media.display|link_to_document"] = array(
     'label' => 'hidden',
     'module' => 'file_entity',
@@ -110,7 +109,6 @@ function iasc_document_features_override_default_overrides() {
     'weight' => 8,
   );
   $overrides["field_instance.node-oa_wiki_page-oa_section_ref.display|teaser|weight"] = 10;
-  $overrides["field_instance.node-oa_wiki_page-oa_section_ref.label"] = 'Section';
   $overrides["field_instance.node-oa_wiki_page-oa_section_ref.options_limit_fields|oa_section_ref"]["DELETED"] = TRUE;
   $overrides["field_instance.node-oa_wiki_page-og_group_ref.comment_alter"] = 0;
   $overrides["field_instance.node-oa_wiki_page-og_group_ref.display|bio_full"] = array(
@@ -170,7 +168,6 @@ function iasc_document_features_override_default_overrides() {
     'type' => 'hidden',
     'weight' => 0,
   );
-  $overrides["field_instance.node-oa_wiki_page-og_vocabulary.display|default|weight"] = 5;
   $overrides["field_instance.node-oa_wiki_page-og_vocabulary.display|link_to_document"] = array(
     'label' => 'above',
     'settings' => array(),
@@ -184,8 +181,6 @@ function iasc_document_features_override_default_overrides() {
   $overrides["field_instance.node-oa_wiki_page-og_vocabulary.widget|weight"] = 9;
 
   // Exported overrides for: node
-  $overrides["node.oa_wiki_page.description"] = 'A Document or Product page.';
-  $overrides["node.oa_wiki_page.name"] = 'Document/Product';
 
   // Exported overrides for: page_manager_handlers
   $overrides["page_manager_handlers.node_edit_panel_context_6.conf|display|content|new-2362dc2f-60f2-42e4-b13f-82918fd4b1a8|position"] = 2;
@@ -318,7 +313,6 @@ function iasc_document_features_override_default_overrides() {
       'locks' => array(),
       'uuid' => 'eac5d508-0b43-4e80-ac21-cb302bdcb050',
     );
-  $overrides["panelizer_defaults.node:oa_wiki_page:default.display|content|new-ef3d38d4-45e0-4b40-8e1a-e5b1d41d0cb7"]["DELETED"] = TRUE;
   $overrides["panelizer_defaults.node:oa_wiki_page:default.display|content|new-ef8dc734-ed19-4641-be3f-38031e611432"] = (object) array(
       'pid' => 'new-ef8dc734-ed19-4641-be3f-38031e611432',
       'panel' => 'contentmain',
@@ -356,14 +350,12 @@ function iasc_document_features_override_default_overrides() {
       'uuid' => 'ef8dc734-ed19-4641-be3f-38031e611432',
     );
   $overrides["panelizer_defaults.node:oa_wiki_page:default.display|content|new-fd50a4cf-8298-4584-8504-b21e0e215e78"]["DELETED"] = TRUE;
-  $overrides["panelizer_defaults.node:oa_wiki_page:default.display|panels|contentmain|0"] = 'new-436ee688-6d0a-4114-addd-12f3bd8d8131';
-  $overrides["panelizer_defaults.node:oa_wiki_page:default.display|panels|contentmain|1"] = 'new-ef8dc734-ed19-4641-be3f-38031e611432';
-  $overrides["panelizer_defaults.node:oa_wiki_page:default.display|panels|contentmain|2"] = 'new-7746f122-1e4b-445f-8cf4-d15ef627d71f';
-  $overrides["panelizer_defaults.node:oa_wiki_page:default.display|panels|contentmain|3"] = 'new-61664bae-1939-49e7-a25e-f958bf7a99f6';
+  $overrides["panelizer_defaults.node:oa_wiki_page:default.display|panels|contentmain|1"] = 'new-61664bae-1939-49e7-a25e-f958bf7a99f6';
+  $overrides["panelizer_defaults.node:oa_wiki_page:default.display|panels|contentmain|2"] = 'new-436ee688-6d0a-4114-addd-12f3bd8d8131';
+  $overrides["panelizer_defaults.node:oa_wiki_page:default.display|panels|contentmain|3"] = 'new-ef8dc734-ed19-4641-be3f-38031e611432';
   $overrides["panelizer_defaults.node:oa_wiki_page:default.display|panels|contentmain|4"]["DELETED"] = TRUE;
-  $overrides["panelizer_defaults.node:oa_wiki_page:default.display|panels|sidebar|0"] = 'new-7680596e-9c34-431d-9d73-701c4d44c350';
-  $overrides["panelizer_defaults.node:oa_wiki_page:default.display|panels|sidebar|1"] = 'new-eac5d508-0b43-4e80-ac21-cb302bdcb050';
-  $overrides["panelizer_defaults.node:oa_wiki_page:default.display|panels|sidebar|2"] = 'new-7ddbd76b-3d46-436a-b91b-5078220845a8';
+  $overrides["panelizer_defaults.node:oa_wiki_page:default.display|panels|sidebar|1"] = 'new-7680596e-9c34-431d-9d73-701c4d44c350';
+  $overrides["panelizer_defaults.node:oa_wiki_page:default.display|panels|sidebar|2"] = 'new-eac5d508-0b43-4e80-ac21-cb302bdcb050';
   $overrides["panelizer_defaults.node:oa_wiki_page:default.display|panels|sidebar|3"]["DELETED"] = TRUE;
 
   // Exported overrides for: variable
@@ -379,12 +371,7 @@ function iasc_document_features_override_default_overrides() {
   $overrides["variable.field_bundle_settings_node__oa_wiki_page.value|view_modes|bio_short"] = array(
     'custom_settings' => TRUE,
   );
-  $overrides["variable.field_bundle_settings_node__oa_wiki_page.value|view_modes|ical"] = array(
-    'custom_settings' => FALSE,
-  );
   $overrides["variable.node_submitted_oa_wiki_page.value"] = 0;
 
  return $overrides;
 }
-  $overrides["variable.field_bundle_settings_node__oa_wiki_page.value|extra_fields|form|path|weight"] = 1;
-  $overrides["variable.field_bundle_settings_node__oa_wiki_page.value|extra_fields|form|path|weight"] = 1;
