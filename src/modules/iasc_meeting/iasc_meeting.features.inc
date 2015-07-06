@@ -166,7 +166,6 @@ function iasc_meeting_field_default_field_instances_alter(&$data) {
       'weight' => 0,
     ); /* WAS: '' */
     $data['node-oa_event-oa_section_ref']['display']['teaser']['weight'] = 16; /* WAS: 0 */
-    $data['node-oa_event-oa_section_ref']['label'] = 'Section'; /* WAS: 'Open Atrium Section' */
     unset($data['node-oa_event-oa_section_ref']['options_limit_fields']['oa_section_ref']);
   }
   if (isset($data['node-oa_event-og_group_ref'])) {
@@ -200,7 +199,7 @@ function iasc_meeting_field_default_field_instances_alter(&$data) {
     $data['node-oa_event-og_group_ref']['display']['teaser']['type'] = 'entityreference_label'; /* WAS: 'hidden' */
     $data['node-oa_event-og_group_ref']['display']['teaser']['weight'] = 5; /* WAS: 0 */
     $data['node-oa_event-og_group_ref']['label'] = 'Authoring Bodies'; /* WAS: 'Groups audience' */
-    $data['node-oa_event-og_group_ref']['settings']['behaviors']['og_widget']['access_override'] = 0; /* WAS: '' */
+    $data['node-oa_event-og_group_ref']['settings']['behaviors']['og_widget']['access_override'] = 0; /* WAS: 1 */
   }
   if (isset($data['node-oa_event-og_vocabulary'])) {
     $data['node-oa_event-og_vocabulary']['display']['bio_full'] = array(
@@ -266,8 +265,13 @@ function iasc_meeting_default_page_manager_handlers_alter(&$data) {
           'locks' => array(),
           'uuid' => '457a0b07-9259-4092-a16e-f542822ee2af',
         ); /* WAS: '' */
-    $data['node_edit_panel_context_7']->conf['display']->panels['sidebar'][1] = 'new-457a0b07-9259-4092-a16e-f542822ee2af'; /* WAS: 'new-08f897a0-7ee5-4c24-856e-e5d6e0aa8bb3' */
-    $data['node_edit_panel_context_7']->conf['display']->panels['sidebar'][2] = 'new-08f897a0-7ee5-4c24-856e-e5d6e0aa8bb3'; /* WAS: 'new-30f4398c-9f13-4195-b392-3f34ab0ddcee' */
+    $data['node_edit_panel_context_7']->conf['display']->panels['sidebar'][2] = 'new-c1b47a87-02a0-4882-a02f-5dd40ec016bb'; /* WAS: 'new-30f4398c-9f13-4195-b392-3f34ab0ddcee' */
+    $data['node_edit_panel_context_7']->conf['display']->panels['sidebar'][3] = 'new-84b3bfce-f79b-4397-8b67-d97d1b61347c'; /* WAS: 'new-c1b47a87-02a0-4882-a02f-5dd40ec016bb' */
+    $data['node_edit_panel_context_7']->conf['display']->panels['sidebar'][4] = 'new-020f676b-0f7d-4a37-93e2-44aa23df3980'; /* WAS: 'new-84b3bfce-f79b-4397-8b67-d97d1b61347c' */
+    $data['node_edit_panel_context_7']->conf['display']->panels['sidebar'][5] = 'new-0b869cc5-d419-48ed-bcd1-4e6ec0d15a34'; /* WAS: 'new-020f676b-0f7d-4a37-93e2-44aa23df3980' */
+    $data['node_edit_panel_context_7']->conf['display']->panels['sidebar'][6] = 'new-3e236361-115c-44f3-9bac-35db63392f0a'; /* WAS: 'new-0b869cc5-d419-48ed-bcd1-4e6ec0d15a34' */
+    $data['node_edit_panel_context_7']->conf['display']->panels['sidebar'][7] = 'new-68f32ccd-0cec-45db-9ecd-112683c079ae'; /* WAS: 'new-3e236361-115c-44f3-9bac-35db63392f0a' */
+    $data['node_edit_panel_context_7']->conf['display']->panels['sidebar'][8] = 'new-457a0b07-9259-4092-a16e-f542822ee2af'; /* WAS: 'new-68f32ccd-0cec-45db-9ecd-112683c079ae' */
     unset($data['node_edit_panel_context_7']->conf['display']->content['new-30f4398c-9f13-4195-b392-3f34ab0ddcee']);
   }
 }
@@ -709,21 +713,20 @@ function iasc_meeting_panelizer_defaults_override_alter(&$data) {
           'locks' => array(),
           'uuid' => 'c84bd896-6873-41ab-89ea-5d0f2e0c2c7f',
         ); /* WAS: '' */
-    $data['node:oa_event:default']->display->panels['contentmain'][0] = 'new-c84bd896-6873-41ab-89ea-5d0f2e0c2c7f'; /* WAS: 'new-9035b3e7-28dc-478f-a595-e89dca69718a' */
-    $data['node:oa_event:default']->display->panels['contentmain'][1] = 'new-9035b3e7-28dc-478f-a595-e89dca69718a'; /* WAS: '' */
-    $data['node:oa_event:default']->display->panels['contentmain'][2] = 'new-3ac35fec-c644-44aa-a89a-ea15a4c4704a'; /* WAS: '' */
-    $data['node:oa_event:default']->display->panels['contentmain'][3] = 'new-9c1552e9-6b59-4811-ac8f-8278030a8f11'; /* WAS: '' */
-    $data['node:oa_event:default']->display->panels['contentmain'][4] = 'new-554e3ff8-5ae2-47d4-944e-53903613b9f5'; /* WAS: '' */
-    $data['node:oa_event:default']->display->panels['contentmain'][5] = 'new-2832cb36-53a3-484e-bbf0-05b7084ea8f4'; /* WAS: '' */
-    $data['node:oa_event:default']->display->panels['contentmain'][6] = 'new-29d974b8-bef0-4ff8-af8c-38b369433a5c'; /* WAS: '' */
-    $data['node:oa_event:default']->display->panels['sidebar'][0] = 'new-721e6db6-a312-4742-8dd2-d7d879654919'; /* WAS: 'new-231244a5-ffbc-4013-a01e-cc85b4feeff0' */
-    $data['node:oa_event:default']->display->panels['sidebar'][1] = 'new-b556a608-6c09-4e8b-99bb-f7cee89c1756'; /* WAS: 'new-e0f02a5b-dd4e-4ab9-8479-06a195d86fd0' */
-    $data['node:oa_event:default']->display->panels['sidebar'][2] = 'new-677802ea-6c46-4806-9759-35191c9cf1a8'; /* WAS: 'new-cf81af22-ac8b-4147-8462-a5fce1b76471' */
-    $data['node:oa_event:default']->display->panels['sidebar'][3] = 'new-024f971a-f875-4063-bf25-63926a5c9092'; /* WAS: '' */
-    $data['node:oa_event:default']->display->panels['sidebar'][4] = 'new-ba879f23-61fc-4869-a081-d6663e9d1523'; /* WAS: '' */
-    $data['node:oa_event:default']->display->panels['sidebar'][5] = 'new-bd3daacb-9380-4c7f-b478-67ec6c6244d2'; /* WAS: '' */
-    $data['node:oa_event:default']->display->panels['sidebar'][6] = 'new-19fe4e19-0d90-4acf-9c80-e1ffdf773880'; /* WAS: '' */
-    $data['node:oa_event:default']->display->panels['sidebar'][7] = 'new-213e8d65-ffde-47b2-bad5-b54b3f97dcfd'; /* WAS: '' */
+    $data['node:oa_event:default']->display->panels['contentmain'][2] = 'new-2832cb36-53a3-484e-bbf0-05b7084ea8f4'; /* WAS: '' */
+    $data['node:oa_event:default']->display->panels['contentmain'][3] = 'new-29d974b8-bef0-4ff8-af8c-38b369433a5c'; /* WAS: '' */
+    $data['node:oa_event:default']->display->panels['contentmain'][4] = 'new-3ac35fec-c644-44aa-a89a-ea15a4c4704a'; /* WAS: '' */
+    $data['node:oa_event:default']->display->panels['contentmain'][5] = 'new-554e3ff8-5ae2-47d4-944e-53903613b9f5'; /* WAS: '' */
+    $data['node:oa_event:default']->display->panels['contentmain'][6] = 'new-9c1552e9-6b59-4811-ac8f-8278030a8f11'; /* WAS: '' */
+    $data['node:oa_event:default']->display->panels['contentmain'][7] = 'new-c84bd896-6873-41ab-89ea-5d0f2e0c2c7f'; /* WAS: '' */
+    $data['node:oa_event:default']->display->panels['sidebar'][0] = 'new-024f971a-f875-4063-bf25-63926a5c9092'; /* WAS: 'new-231244a5-ffbc-4013-a01e-cc85b4feeff0' */
+    $data['node:oa_event:default']->display->panels['sidebar'][1] = 'new-19fe4e19-0d90-4acf-9c80-e1ffdf773880'; /* WAS: 'new-e0f02a5b-dd4e-4ab9-8479-06a195d86fd0' */
+    $data['node:oa_event:default']->display->panels['sidebar'][2] = 'new-213e8d65-ffde-47b2-bad5-b54b3f97dcfd'; /* WAS: 'new-cf81af22-ac8b-4147-8462-a5fce1b76471' */
+    $data['node:oa_event:default']->display->panels['sidebar'][3] = 'new-677802ea-6c46-4806-9759-35191c9cf1a8'; /* WAS: '' */
+    $data['node:oa_event:default']->display->panels['sidebar'][4] = 'new-721e6db6-a312-4742-8dd2-d7d879654919'; /* WAS: '' */
+    $data['node:oa_event:default']->display->panels['sidebar'][5] = 'new-b556a608-6c09-4e8b-99bb-f7cee89c1756'; /* WAS: '' */
+    $data['node:oa_event:default']->display->panels['sidebar'][6] = 'new-ba879f23-61fc-4869-a081-d6663e9d1523'; /* WAS: '' */
+    $data['node:oa_event:default']->display->panels['sidebar'][7] = 'new-bd3daacb-9380-4c7f-b478-67ec6c6244d2'; /* WAS: '' */
     unset($data['node:oa_event:default']->display->content['new-231244a5-ffbc-4013-a01e-cc85b4feeff0']);
     unset($data['node:oa_event:default']->display->content['new-cf81af22-ac8b-4147-8462-a5fce1b76471']);
     unset($data['node:oa_event:default']->display->content['new-e0f02a5b-dd4e-4ab9-8479-06a195d86fd0']);
@@ -753,115 +756,31 @@ function iasc_meeting_views_default_views_alter(&$data) {
       'element_label_type' => 0,
       'element_default_classes' => FALSE,
     ); /* WAS: '' */
-    $data['oa_event_detail']->display['event_details']->display_options['defaults']['fields'] = FALSE; /* WAS: '' */
-    $data['oa_event_detail']->display['event_details']->display_options['fields'] = array(
-      'field_oa_date_1' => array(
-        'id' => 'field_oa_date_1',
-        'table' => 'field_data_field_oa_date',
-        'field' => 'field_oa_date',
-        'label' => '',
-        'element_label_colon' => FALSE,
-        'type' => 'oa_events_date_formatter',
-        'settings' => array(
-          'format_type' => 'long',
-          'fromto' => 'both',
-          'multiple_number' => '',
-          'multiple_from' => '',
-          'multiple_to' => '',
-          'show_repeat_rule' => 'show',
-        ),
-        'delta_offset' => 0,
-      ),
-      'field_oa_date' => array(
-        'id' => 'field_oa_date',
-        'table' => 'field_data_field_oa_date',
-        'field' => 'field_oa_date',
-        'label' => 'Date',
-        'element_type' => 'span',
-        'element_label_colon' => FALSE,
-        'settings' => array(
-          'format_type' => 'panopoly_time',
-          'fromto' => 'both',
-          'multiple_number' => '',
-          'multiple_from' => '',
-          'multiple_to' => '',
-          'show_repeat_rule' => 'show',
-        ),
-        'delta_offset' => 0,
-      ),
-      'field_oa_date_2' => array(
-        'id' => 'field_oa_date_2',
-        'table' => 'field_data_field_oa_date',
-        'field' => 'field_oa_date',
-        'label' => '',
-        'element_label_colon' => FALSE,
-        'type' => 'oa_events_addthis',
-        'settings' => array(
-          'format_type' => 'long',
-          'fromto' => 'both',
-          'multiple_number' => '',
-          'multiple_from' => '',
-          'multiple_to' => '',
-          'show_repeat_rule' => 'show',
-        ),
-        'delta_offset' => 0,
-      ),
-      'body' => array(
-        'id' => 'body',
-        'table' => 'field_data_body',
-        'field' => 'body',
-        'element_label_colon' => FALSE,
-        'settings' => array(
-          'trim_length' => 600,
-        ),
-      ),
-      'field_oa_media' => array(
-        'id' => 'field_oa_media',
-        'table' => 'field_data_field_oa_media',
-        'field' => 'field_oa_media',
-        'label' => '',
-        'element_label_colon' => FALSE,
-        'hide_empty' => TRUE,
-        'click_sort_column' => 'fid',
-        'type' => 'oa_media_formatter',
-        'settings' => array(
-          'image_style' => 'thumbnail',
-        ),
-        'delta_offset' => 0,
-      ),
-      'ops' => array(
-        'id' => 'ops',
-        'table' => 'flag_content',
-        'field' => 'ops',
-        'relationship' => 'flag_content_rel',
-        'label' => '',
-        'element_label_colon' => FALSE,
-      ),
-      'field_oa_media_1' => array(
-        'id' => 'field_oa_media_1',
-        'table' => 'field_data_field_oa_media',
-        'field' => 'field_oa_media',
-        'click_sort_column' => 'fid',
-        'type' => 'file_table',
-        'delta_offset' => 0,
-      ),
-      'field_time_zone' => array(
-        'id' => 'field_time_zone',
-        'table' => 'field_data_field_time_zone',
-        'field' => 'field_time_zone',
-        'element_type' => 0,
-        'element_label_type' => 0,
-        'element_default_classes' => FALSE,
-      ),
+    $data['oa_event_detail']->display['event_details']->display_options['fields']['field_oa_date']['element_type'] = 'span'; /* WAS: '' */
+    $data['oa_event_detail']->display['event_details']->display_options['fields']['field_oa_date']['settings']['format_type'] = 'panopoly_time'; /* WAS: 'long' */
+    $data['oa_event_detail']->display['event_details']->display_options['fields']['field_time_zone'] = array(
+      'id' => 'field_time_zone',
+      'table' => 'field_data_field_time_zone',
+      'field' => 'field_time_zone',
+      'element_type' => 0,
+      'element_label_type' => 0,
+      'element_default_classes' => FALSE,
     ); /* WAS: '' */
     unset($data['oa_event_detail']->display['default']->display_options['fields']['field_oa_address']);
     unset($data['oa_event_detail']->display['default']->display_options['fields']['term_node_tid']);
+    unset($data['oa_event_detail']->display['event_details']->display_options['fields']['field_oa_address']);
+    unset($data['oa_event_detail']->display['event_details']->display_options['fields']['field_oa_date_1']['delta_offset']);
+    unset($data['oa_event_detail']->display['event_details']->display_options['fields']['field_oa_date_2']['delta_offset']);
+    unset($data['oa_event_detail']->display['event_details']->display_options['fields']['field_oa_date']['delta_offset']);
+    unset($data['oa_event_detail']->display['event_details']->display_options['fields']['field_oa_date']['type']);
+    unset($data['oa_event_detail']->display['event_details']->display_options['fields']['field_oa_media_1']['delta_offset']);
+    unset($data['oa_event_detail']->display['event_details']->display_options['fields']['field_oa_media']['delta_offset']);
+    unset($data['oa_event_detail']->display['event_details']->display_options['fields']['field_oa_related']);
+    unset($data['oa_event_detail']->display['event_details']->display_options['fields']['term_node_tid']);
   }
   if (isset($data['oa_event_list'])) {
     $data['oa_event_list']->display['default']->display_options['cache']['output_lifespan'] = 300; /* WAS: '' */
-    $data['oa_event_list']->display['default']->display_options['cache']['output_lifespan_custom'] = 0; /* WAS: '' */
     $data['oa_event_list']->display['default']->display_options['cache']['results_lifespan'] = 300; /* WAS: '' */
-    $data['oa_event_list']->display['default']->display_options['cache']['results_lifespan_custom'] = 0; /* WAS: '' */
     $data['oa_event_list']->display['default']->display_options['cache']['type'] = 'time'; /* WAS: 'none' */
     $data['oa_event_list']->display['default']->display_options['empty'] = array(
       'area' => array(
