@@ -15,6 +15,22 @@ function iahe_recommendations_features_override_default_overrides() {
   $overrides["field_group.group_oa_access|node|oa_worktracker_task|form.data|weight"] = 9;
 
   // Exported overrides for: field_instance
+  $overrides["field_instance.message-oa_worktracker_task_update-field_oa_comment_ref.widget|settings|references_dialog_add"] = 0;
+  $overrides["field_instance.message-oa_worktracker_task_update-field_oa_comment_ref.widget|settings|references_dialog_edit"] = 0;
+  $overrides["field_instance.message-oa_worktracker_task_update-field_oa_comment_ref.widget|settings|references_dialog_search"] = 0;
+  $overrides["field_instance.message-oa_worktracker_task_update-field_oa_comment_ref.widget|settings|references_dialog_search_view"] = '';
+  $overrides["field_instance.message-oa_worktracker_task_update-field_oa_message_section.widget|settings|references_dialog_add"] = 0;
+  $overrides["field_instance.message-oa_worktracker_task_update-field_oa_message_section.widget|settings|references_dialog_edit"] = 0;
+  $overrides["field_instance.message-oa_worktracker_task_update-field_oa_message_section.widget|settings|references_dialog_search"] = 0;
+  $overrides["field_instance.message-oa_worktracker_task_update-field_oa_message_section.widget|settings|references_dialog_search_view"] = '';
+  $overrides["field_instance.message-oa_worktracker_task_update-field_oa_message_space.widget|settings|references_dialog_add"] = 0;
+  $overrides["field_instance.message-oa_worktracker_task_update-field_oa_message_space.widget|settings|references_dialog_edit"] = 0;
+  $overrides["field_instance.message-oa_worktracker_task_update-field_oa_message_space.widget|settings|references_dialog_search"] = 0;
+  $overrides["field_instance.message-oa_worktracker_task_update-field_oa_message_space.widget|settings|references_dialog_search_view"] = '';
+  $overrides["field_instance.message-oa_worktracker_task_update-field_oa_node_ref.widget|settings|references_dialog_add"] = 0;
+  $overrides["field_instance.message-oa_worktracker_task_update-field_oa_node_ref.widget|settings|references_dialog_edit"] = 0;
+  $overrides["field_instance.message-oa_worktracker_task_update-field_oa_node_ref.widget|settings|references_dialog_search"] = 0;
+  $overrides["field_instance.message-oa_worktracker_task_update-field_oa_node_ref.widget|settings|references_dialog_search_view"] = '';
   $overrides["field_instance.node-oa_worktracker_task-body.display|bio_full"] = array(
     'label' => 'above',
     'settings' => array(),

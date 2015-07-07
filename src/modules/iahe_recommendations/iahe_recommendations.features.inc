@@ -39,6 +39,30 @@ function iahe_recommendations_field_group_info_alter(&$data) {
  * Implements hook_field_default_field_instances_alter().
  */
 function iahe_recommendations_field_default_field_instances_alter(&$data) {
+  if (isset($data['message-oa_worktracker_task_update-field_oa_comment_ref'])) {
+    $data['message-oa_worktracker_task_update-field_oa_comment_ref']['widget']['settings']['references_dialog_add'] = 0; /* WAS: '' */
+    $data['message-oa_worktracker_task_update-field_oa_comment_ref']['widget']['settings']['references_dialog_edit'] = 0; /* WAS: '' */
+    $data['message-oa_worktracker_task_update-field_oa_comment_ref']['widget']['settings']['references_dialog_search'] = 0; /* WAS: '' */
+    $data['message-oa_worktracker_task_update-field_oa_comment_ref']['widget']['settings']['references_dialog_search_view'] = ''; /* WAS: '' */
+  }
+  if (isset($data['message-oa_worktracker_task_update-field_oa_message_section'])) {
+    $data['message-oa_worktracker_task_update-field_oa_message_section']['widget']['settings']['references_dialog_add'] = 0; /* WAS: '' */
+    $data['message-oa_worktracker_task_update-field_oa_message_section']['widget']['settings']['references_dialog_edit'] = 0; /* WAS: '' */
+    $data['message-oa_worktracker_task_update-field_oa_message_section']['widget']['settings']['references_dialog_search'] = 0; /* WAS: '' */
+    $data['message-oa_worktracker_task_update-field_oa_message_section']['widget']['settings']['references_dialog_search_view'] = ''; /* WAS: '' */
+  }
+  if (isset($data['message-oa_worktracker_task_update-field_oa_message_space'])) {
+    $data['message-oa_worktracker_task_update-field_oa_message_space']['widget']['settings']['references_dialog_add'] = 0; /* WAS: '' */
+    $data['message-oa_worktracker_task_update-field_oa_message_space']['widget']['settings']['references_dialog_edit'] = 0; /* WAS: '' */
+    $data['message-oa_worktracker_task_update-field_oa_message_space']['widget']['settings']['references_dialog_search'] = 0; /* WAS: '' */
+    $data['message-oa_worktracker_task_update-field_oa_message_space']['widget']['settings']['references_dialog_search_view'] = ''; /* WAS: '' */
+  }
+  if (isset($data['message-oa_worktracker_task_update-field_oa_node_ref'])) {
+    $data['message-oa_worktracker_task_update-field_oa_node_ref']['widget']['settings']['references_dialog_add'] = 0; /* WAS: '' */
+    $data['message-oa_worktracker_task_update-field_oa_node_ref']['widget']['settings']['references_dialog_edit'] = 0; /* WAS: '' */
+    $data['message-oa_worktracker_task_update-field_oa_node_ref']['widget']['settings']['references_dialog_search'] = 0; /* WAS: '' */
+    $data['message-oa_worktracker_task_update-field_oa_node_ref']['widget']['settings']['references_dialog_search_view'] = ''; /* WAS: '' */
+  }
   if (isset($data['node-oa_worktracker_task-body'])) {
     $data['node-oa_worktracker_task-body']['display']['bio_full'] = array(
       'label' => 'above',
