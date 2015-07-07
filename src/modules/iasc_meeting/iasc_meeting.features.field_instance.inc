@@ -10,7 +10,8 @@
 function iasc_meeting_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'field_collection_item-field_agenda_items-field_ai_description'
+  // Exported field_instance:
+  // 'field_collection_item-field_agenda_items-field_ai_description'
   $field_instances['field_collection_item-field_agenda_items-field_ai_description'] = array(
     'bundle' => 'field_agenda_items',
     'default_value' => NULL,
@@ -48,7 +49,8 @@ function iasc_meeting_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'field_collection_item-field_agenda_items-field_ai_title'
+  // Exported field_instance:
+  // 'field_collection_item-field_agenda_items-field_ai_title'
   $field_instances['field_collection_item-field_agenda_items-field_ai_title'] = array(
     'bundle' => 'field_agenda_items',
     'default_value' => NULL,
@@ -86,7 +88,8 @@ function iasc_meeting_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'field_collection_item-field_agenda_items-field_contact'
+  // Exported field_instance:
+  // 'field_collection_item-field_agenda_items-field_contact'
   $field_instances['field_collection_item-field_agenda_items-field_contact'] = array(
     'bundle' => 'field_agenda_items',
     'default_value' => NULL,
@@ -130,7 +133,8 @@ function iasc_meeting_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'field_collection_item-field_agenda_items-field_presenter_external'
+  // Exported field_instance:
+  // 'field_collection_item-field_agenda_items-field_presenter_external'
   $field_instances['field_collection_item-field_agenda_items-field_presenter_external'] = array(
     'bundle' => 'field_agenda_items',
     'default_value' => NULL,
@@ -168,7 +172,8 @@ function iasc_meeting_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'field_collection_item-field_agenda_items-field_referenced_docs'
+  // Exported field_instance:
+  // 'field_collection_item-field_agenda_items-field_referenced_docs'
   $field_instances['field_collection_item-field_agenda_items-field_referenced_docs'] = array(
     'bundle' => 'field_agenda_items',
     'default_value' => NULL,

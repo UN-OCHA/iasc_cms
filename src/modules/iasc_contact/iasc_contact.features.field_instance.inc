@@ -10,7 +10,8 @@
 function iasc_contact_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'field_collection_item-field_membership-field_body_membership'
+  // Exported field_instance:
+  // 'field_collection_item-field_membership-field_body_membership'
   $field_instances['field_collection_item-field_membership-field_body_membership'] = array(
     'bundle' => 'field_membership',
     'default_value' => NULL,
@@ -66,7 +67,8 @@ function iasc_contact_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'field_collection_item-field_membership-field_contact_category'
+  // Exported field_instance:
+  // 'field_collection_item-field_membership-field_contact_category'
   $field_instances['field_collection_item-field_membership-field_contact_category'] = array(
     'bundle' => 'field_membership',
     'default_value' => NULL,
@@ -104,7 +106,8 @@ function iasc_contact_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'field_collection_item-field_membership-field_position'
+  // Exported field_instance:
+  // 'field_collection_item-field_membership-field_position'
   $field_instances['field_collection_item-field_membership-field_position'] = array(
     'bundle' => 'field_membership',
     'default_value' => NULL,
@@ -362,6 +365,7 @@ function iasc_contact_field_default_field_instances() {
           'US' => 'US',
           'ZW' => 'ZW',
         ),
+        'default_country' => 'site_default',
         'format_handlers' => array(
           'address' => 'address',
           'organisation' => 'organisation',

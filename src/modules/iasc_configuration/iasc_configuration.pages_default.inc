@@ -18,6 +18,8 @@ function iasc_configuration_default_page_manager_pages() {
   $page->path = 'section/%node/%type/all';
   $page->access = array(
     'logic' => 'and',
+    'type' => 'none',
+    'settings' => NULL,
   );
   $page->menu = array();
   $page->arguments = array(
@@ -89,61 +91,61 @@ function iasc_configuration_default_page_manager_pages() {
   $display->uuid = '0eefe0a7-d41a-4d4b-9c29-411f5361d0f0';
   $display->content = array();
   $display->panels = array();
-    $pane = new stdClass();
-    $pane->pid = 'new-b634733d-ad94-42a7-b2f0-dfae1da27096';
-    $pane->panel = 'contentmain';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'iasc_sections-panel_pane_space_docs';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'use_pager' => 1,
-      'pager_id' => '0',
-      'items_per_page' => '10',
-      'context' => array(
-        0 => 'argument_entity_id:node_1',
-      ),
-      'override_title' => '',
-      'override_title_text' => '',
-      'view_settings' => 'fields',
-      'header_type' => 'none',
-      'view_mode' => 'teaser',
-      'widget_title' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = 'b634733d-ad94-42a7-b2f0-dfae1da27096';
-    $display->content['new-b634733d-ad94-42a7-b2f0-dfae1da27096'] = $pane;
-    $display->panels['contentmain'][0] = 'new-b634733d-ad94-42a7-b2f0-dfae1da27096';
-    $pane = new stdClass();
-    $pane->pid = 'new-d414fc2e-5f44-427c-9ea8-de2398da430b';
-    $pane->panel = 'sidebar';
-    $pane->type = 'iasc_configuration.section_menu';
-    $pane->subtype = 'iasc_configuration.section_menu';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array();
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => array(
-        'secondary_options' => 'panel-primary',
-        'linked_list' => 'none',
-      ),
-      'style' => 'secondary',
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = 'd414fc2e-5f44-427c-9ea8-de2398da430b';
-    $display->content['new-d414fc2e-5f44-427c-9ea8-de2398da430b'] = $pane;
-    $display->panels['sidebar'][0] = 'new-d414fc2e-5f44-427c-9ea8-de2398da430b';
+  $pane = new stdClass();
+  $pane->pid = 'new-b634733d-ad94-42a7-b2f0-dfae1da27096';
+  $pane->panel = 'contentmain';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'iasc_sections-panel_pane_space_docs';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'use_pager' => 1,
+    'pager_id' => '0',
+    'items_per_page' => '10',
+    'context' => array(
+      0 => 'argument_entity_id:node_1',
+    ),
+    'override_title' => '',
+    'override_title_text' => '',
+    'view_settings' => 'fields',
+    'header_type' => 'none',
+    'view_mode' => 'teaser',
+    'widget_title' => '',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = 'b634733d-ad94-42a7-b2f0-dfae1da27096';
+  $display->content['new-b634733d-ad94-42a7-b2f0-dfae1da27096'] = $pane;
+  $display->panels['contentmain'][0] = 'new-b634733d-ad94-42a7-b2f0-dfae1da27096';
+  $pane = new stdClass();
+  $pane->pid = 'new-d414fc2e-5f44-427c-9ea8-de2398da430b';
+  $pane->panel = 'sidebar';
+  $pane->type = 'iasc_configuration.section_menu';
+  $pane->subtype = 'iasc_configuration.section_menu';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array();
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => array(
+      'secondary_options' => 'panel-primary',
+      'linked_list' => 'none',
+    ),
+    'style' => 'secondary',
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = 'd414fc2e-5f44-427c-9ea8-de2398da430b';
+  $display->content['new-d414fc2e-5f44-427c-9ea8-de2398da430b'] = $pane;
+  $display->panels['sidebar'][0] = 'new-d414fc2e-5f44-427c-9ea8-de2398da430b';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -197,69 +199,69 @@ function iasc_configuration_default_page_manager_pages() {
   $display->uuid = '0eefe0a7-d41a-4d4b-9c29-411f5361d0f0';
   $display->content = array();
   $display->panels = array();
-    $pane = new stdClass();
-    $pane->pid = 'new-bee696c5-135b-4471-ab84-0007690a6bb8';
-    $pane->panel = 'contentmain';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'iasc_sections-panel_pane_space_meetings';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'use_pager' => 1,
-      'pager_id' => '0',
-      'items_per_page' => '10',
-      'fields_override' => array(
-        'field_oa_date' => 1,
-        'title' => 1,
-        'og_group_ref' => 1,
-        'field_city' => 1,
-        'field_time_zone' => 0,
-        'field_oa_date_1' => 1,
-      ),
-      'context' => array(
-        0 => 'argument_entity_id:node_1',
-      ),
-      'override_title' => '',
-      'override_title_text' => '',
-      'view_settings' => 'fields',
-      'header_type' => 'none',
-      'view_mode' => 'teaser',
-      'widget_title' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = 'bee696c5-135b-4471-ab84-0007690a6bb8';
-    $display->content['new-bee696c5-135b-4471-ab84-0007690a6bb8'] = $pane;
-    $display->panels['contentmain'][0] = 'new-bee696c5-135b-4471-ab84-0007690a6bb8';
-    $pane = new stdClass();
-    $pane->pid = 'new-d414fc2e-5f44-427c-9ea8-de2398da430b';
-    $pane->panel = 'sidebar';
-    $pane->type = 'iasc_configuration.section_menu';
-    $pane->subtype = 'iasc_configuration.section_menu';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array();
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => array(
-        'secondary_options' => 'panel-primary',
-        'linked_list' => 'none',
-      ),
-      'style' => 'secondary',
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = 'd414fc2e-5f44-427c-9ea8-de2398da430b';
-    $display->content['new-d414fc2e-5f44-427c-9ea8-de2398da430b'] = $pane;
-    $display->panels['sidebar'][0] = 'new-d414fc2e-5f44-427c-9ea8-de2398da430b';
+  $pane = new stdClass();
+  $pane->pid = 'new-bee696c5-135b-4471-ab84-0007690a6bb8';
+  $pane->panel = 'contentmain';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'iasc_sections-panel_pane_space_meetings';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'use_pager' => 1,
+    'pager_id' => '0',
+    'items_per_page' => '10',
+    'fields_override' => array(
+      'field_oa_date' => 1,
+      'title' => 1,
+      'og_group_ref' => 1,
+      'field_city' => 1,
+      'field_time_zone' => 0,
+      'field_oa_date_1' => 1,
+    ),
+    'context' => array(
+      0 => 'argument_entity_id:node_1',
+    ),
+    'override_title' => '',
+    'override_title_text' => '',
+    'view_settings' => 'fields',
+    'header_type' => 'none',
+    'view_mode' => 'teaser',
+    'widget_title' => '',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = 'bee696c5-135b-4471-ab84-0007690a6bb8';
+  $display->content['new-bee696c5-135b-4471-ab84-0007690a6bb8'] = $pane;
+  $display->panels['contentmain'][0] = 'new-bee696c5-135b-4471-ab84-0007690a6bb8';
+  $pane = new stdClass();
+  $pane->pid = 'new-d414fc2e-5f44-427c-9ea8-de2398da430b';
+  $pane->panel = 'sidebar';
+  $pane->type = 'iasc_configuration.section_menu';
+  $pane->subtype = 'iasc_configuration.section_menu';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array();
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => array(
+      'secondary_options' => 'panel-primary',
+      'linked_list' => 'none',
+    ),
+    'style' => 'secondary',
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = 'd414fc2e-5f44-427c-9ea8-de2398da430b';
+  $display->content['new-d414fc2e-5f44-427c-9ea8-de2398da430b'] = $pane;
+  $display->panels['sidebar'][0] = 'new-d414fc2e-5f44-427c-9ea8-de2398da430b';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -313,65 +315,65 @@ function iasc_configuration_default_page_manager_pages() {
   $display->uuid = '0eefe0a7-d41a-4d4b-9c29-411f5361d0f0';
   $display->content = array();
   $display->panels = array();
-    $pane = new stdClass();
-    $pane->pid = 'new-5a15afa1-6ec7-4e24-9c0c-b93b9ab93512';
-    $pane->panel = 'contentmain';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'iasc_sections-panel_pane_space_news';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'use_pager' => 1,
-      'pager_id' => '0',
-      'items_per_page' => '10',
-      'fields_override' => array(
-        'title' => 1,
-        'field_published_date' => 1,
-      ),
-      'context' => array(
-        0 => 'argument_entity_id:node_1',
-      ),
-      'override_title' => '',
-      'override_title_text' => '',
-      'view_settings' => 'fields',
-      'header_type' => 'none',
-      'view_mode' => 'teaser',
-      'widget_title' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '5a15afa1-6ec7-4e24-9c0c-b93b9ab93512';
-    $display->content['new-5a15afa1-6ec7-4e24-9c0c-b93b9ab93512'] = $pane;
-    $display->panels['contentmain'][0] = 'new-5a15afa1-6ec7-4e24-9c0c-b93b9ab93512';
-    $pane = new stdClass();
-    $pane->pid = 'new-d414fc2e-5f44-427c-9ea8-de2398da430b';
-    $pane->panel = 'sidebar';
-    $pane->type = 'iasc_configuration.section_menu';
-    $pane->subtype = 'iasc_configuration.section_menu';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array();
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => array(
-        'secondary_options' => 'panel-primary',
-        'linked_list' => 'none',
-      ),
-      'style' => 'secondary',
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = 'd414fc2e-5f44-427c-9ea8-de2398da430b';
-    $display->content['new-d414fc2e-5f44-427c-9ea8-de2398da430b'] = $pane;
-    $display->panels['sidebar'][0] = 'new-d414fc2e-5f44-427c-9ea8-de2398da430b';
+  $pane = new stdClass();
+  $pane->pid = 'new-5a15afa1-6ec7-4e24-9c0c-b93b9ab93512';
+  $pane->panel = 'contentmain';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'iasc_sections-panel_pane_space_news';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'use_pager' => 1,
+    'pager_id' => '0',
+    'items_per_page' => '10',
+    'fields_override' => array(
+      'title' => 1,
+      'field_published_date' => 1,
+    ),
+    'context' => array(
+      0 => 'argument_entity_id:node_1',
+    ),
+    'override_title' => '',
+    'override_title_text' => '',
+    'view_settings' => 'fields',
+    'header_type' => 'none',
+    'view_mode' => 'teaser',
+    'widget_title' => '',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '5a15afa1-6ec7-4e24-9c0c-b93b9ab93512';
+  $display->content['new-5a15afa1-6ec7-4e24-9c0c-b93b9ab93512'] = $pane;
+  $display->panels['contentmain'][0] = 'new-5a15afa1-6ec7-4e24-9c0c-b93b9ab93512';
+  $pane = new stdClass();
+  $pane->pid = 'new-d414fc2e-5f44-427c-9ea8-de2398da430b';
+  $pane->panel = 'sidebar';
+  $pane->type = 'iasc_configuration.section_menu';
+  $pane->subtype = 'iasc_configuration.section_menu';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array();
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => array(
+      'secondary_options' => 'panel-primary',
+      'linked_list' => 'none',
+    ),
+    'style' => 'secondary',
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = 'd414fc2e-5f44-427c-9ea8-de2398da430b';
+  $display->content['new-d414fc2e-5f44-427c-9ea8-de2398da430b'] = $pane;
+  $display->panels['sidebar'][0] = 'new-d414fc2e-5f44-427c-9ea8-de2398da430b';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

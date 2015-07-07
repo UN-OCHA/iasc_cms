@@ -59,99 +59,99 @@ function iasc_document_default_page_manager_handlers() {
   $display->uuid = '4a17e021-fb27-4abc-8eb2-3cc5089cd8a0';
   $display->content = array();
   $display->panels = array();
-    $pane = new stdClass();
-    $pane->pid = 'new-7cf06c2d-5f77-47ae-b75f-81ad219e2d9b';
-    $pane->panel = 'contentmain';
-    $pane->type = 'term_description';
-    $pane->subtype = 'term_description';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'context' => 'argument_term_1',
-      'override_title' => 0,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '7cf06c2d-5f77-47ae-b75f-81ad219e2d9b';
-    $display->content['new-7cf06c2d-5f77-47ae-b75f-81ad219e2d9b'] = $pane;
-    $display->panels['contentmain'][0] = 'new-7cf06c2d-5f77-47ae-b75f-81ad219e2d9b';
-    $pane = new stdClass();
-    $pane->pid = 'new-b2cb5d27-2c10-4043-b64f-12092b744039';
-    $pane->panel = 'contentmain';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'iasc_document-panel_pane_documents';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'exposed' => array(
-        'og_group_ref_target_id_op' => 'or',
-        'og_group_ref_target_id' => '2608',
-        'og_group_ref_target_id_mine' => 0,
-        'og_subspaces_view_all' => 0,
-        'og_subspaces_view_parent' => 0,
-        'field_document_type_tid' => array(
-          205 => '205',
-        ),
+  $pane = new stdClass();
+  $pane->pid = 'new-7cf06c2d-5f77-47ae-b75f-81ad219e2d9b';
+  $pane->panel = 'contentmain';
+  $pane->type = 'term_description';
+  $pane->subtype = 'term_description';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'context' => 'argument_term_1',
+    'override_title' => 0,
+    'override_title_text' => '',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '7cf06c2d-5f77-47ae-b75f-81ad219e2d9b';
+  $display->content['new-7cf06c2d-5f77-47ae-b75f-81ad219e2d9b'] = $pane;
+  $display->panels['contentmain'][0] = 'new-7cf06c2d-5f77-47ae-b75f-81ad219e2d9b';
+  $pane = new stdClass();
+  $pane->pid = 'new-b2cb5d27-2c10-4043-b64f-12092b744039';
+  $pane->panel = 'contentmain';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'iasc_document-panel_pane_documents';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'exposed' => array(
+      'og_group_ref_target_id_op' => 'or',
+      'og_group_ref_target_id' => 'All',
+      'og_group_ref_target_id_mine' => 0,
+      'og_subspaces_view_all' => 0,
+      'og_subspaces_view_parent' => 0,
+      'field_document_type_tid' => array(
+        205 => '205',
       ),
-      'more_link' => 0,
-      'use_pager' => 1,
-      'pager_id' => '0',
-      'items_per_page' => '10',
-      'context' => array(
-        0 => 'argument_term_1',
-      ),
-      'override_title' => '',
-      'override_title_text' => '',
-      'view_settings' => 'fields',
-      'header_type' => 'none',
-      'view_mode' => 'teaser',
-      'widget_title' => '',
-      'override_title_heading' => 'h2',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $pane->uuid = 'b2cb5d27-2c10-4043-b64f-12092b744039';
-    $display->content['new-b2cb5d27-2c10-4043-b64f-12092b744039'] = $pane;
-    $display->panels['contentmain'][1] = 'new-b2cb5d27-2c10-4043-b64f-12092b744039';
-    $pane = new stdClass();
-    $pane->pid = 'new-c9d24668-995f-4e70-865f-502988cce28a';
-    $pane->panel = 'sidebar';
-    $pane->type = 'block';
-    $pane->subtype = 'menu-menu-product-catalogue';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 0,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => array(
-        'secondary_options' => 'panel-primary',
-        'linked_list' => 'none',
-      ),
-      'style' => 'secondary',
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = 'c9d24668-995f-4e70-865f-502988cce28a';
-    $display->content['new-c9d24668-995f-4e70-865f-502988cce28a'] = $pane;
-    $display->panels['sidebar'][0] = 'new-c9d24668-995f-4e70-865f-502988cce28a';
+    ),
+    'more_link' => 0,
+    'use_pager' => 1,
+    'pager_id' => '0',
+    'items_per_page' => '10',
+    'context' => array(
+      0 => 'argument_term_1',
+    ),
+    'override_title' => '',
+    'override_title_text' => '',
+    'view_settings' => 'fields',
+    'header_type' => 'none',
+    'view_mode' => 'teaser',
+    'widget_title' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = 'b2cb5d27-2c10-4043-b64f-12092b744039';
+  $display->content['new-b2cb5d27-2c10-4043-b64f-12092b744039'] = $pane;
+  $display->panels['contentmain'][1] = 'new-b2cb5d27-2c10-4043-b64f-12092b744039';
+  $pane = new stdClass();
+  $pane->pid = 'new-c9d24668-995f-4e70-865f-502988cce28a';
+  $pane->panel = 'sidebar';
+  $pane->type = 'block';
+  $pane->subtype = 'menu-menu-product-catalogue';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 0,
+    'override_title_text' => '',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => array(
+      'secondary_options' => 'panel-primary',
+      'linked_list' => 'none',
+    ),
+    'style' => 'secondary',
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = 'c9d24668-995f-4e70-865f-502988cce28a';
+  $display->content['new-c9d24668-995f-4e70-865f-502988cce28a'] = $pane;
+  $display->panels['sidebar'][0] = 'new-c9d24668-995f-4e70-865f-502988cce28a';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-c9d24668-995f-4e70-865f-502988cce28a';
   $handler->conf['display'] = $display;
@@ -172,7 +172,10 @@ function iasc_document_default_page_manager_pages() {
   $page->admin_title = 'Product Catalog';
   $page->admin_description = '';
   $page->path = 'resources/%input';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array(
     'type' => 'none',
     'title' => 'Resources2',
@@ -255,98 +258,98 @@ function iasc_document_default_page_manager_pages() {
   $display->uuid = 'e7f1952d-055b-4bcc-be42-33a133d33308';
   $display->content = array();
   $display->panels = array();
-    $pane = new stdClass();
-    $pane->pid = 'new-d09ceeaf-83ca-48cd-bfb5-3a57b11e44df';
-    $pane->panel = 'contentmain';
-    $pane->type = 'block';
-    $pane->subtype = 'block-16';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 1,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = 'd09ceeaf-83ca-48cd-bfb5-3a57b11e44df';
-    $display->content['new-d09ceeaf-83ca-48cd-bfb5-3a57b11e44df'] = $pane;
-    $display->panels['contentmain'][0] = 'new-d09ceeaf-83ca-48cd-bfb5-3a57b11e44df';
-    $pane = new stdClass();
-    $pane->pid = 'new-8df54764-9af0-416b-8be0-61436a9df013';
-    $pane->panel = 'contentmain';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'iasc_document-panel_pane_documents';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'exposed' => array(
-        'og_group_ref_target_id_op' => 'not empty',
-        'og_group_ref_target_id' => '2608',
-        'og_group_ref_target_id_mine' => 0,
-        'og_subspaces_view_all' => 0,
-        'og_subspaces_view_parent' => 0,
-        'field_document_type_tid' => array(
-          205 => '205',
-        ),
+  $pane = new stdClass();
+  $pane->pid = 'new-d09ceeaf-83ca-48cd-bfb5-3a57b11e44df';
+  $pane->panel = 'contentmain';
+  $pane->type = 'block';
+  $pane->subtype = 'block-16';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => '',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = 'd09ceeaf-83ca-48cd-bfb5-3a57b11e44df';
+  $display->content['new-d09ceeaf-83ca-48cd-bfb5-3a57b11e44df'] = $pane;
+  $display->panels['contentmain'][0] = 'new-d09ceeaf-83ca-48cd-bfb5-3a57b11e44df';
+  $pane = new stdClass();
+  $pane->pid = 'new-8df54764-9af0-416b-8be0-61436a9df013';
+  $pane->panel = 'contentmain';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'iasc_document-panel_pane_documents';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'exposed' => array(
+      'og_group_ref_target_id_op' => 'not empty',
+      'og_group_ref_target_id' => '2608',
+      'og_group_ref_target_id_mine' => 0,
+      'og_subspaces_view_all' => 0,
+      'og_subspaces_view_parent' => 0,
+      'field_document_type_tid' => array(
+        205 => '205',
       ),
-      'more_link' => 0,
-      'use_pager' => 1,
-      'pager_id' => '1',
-      'items_per_page' => '10',
-      'override_title' => '',
-      'override_title_text' => '',
-      'view_settings' => 'fields',
-      'header_type' => 'none',
-      'view_mode' => 'teaser',
-      'widget_title' => '',
-      'context' => array(
-        0 => 'empty',
-      ),
-      'override_title_heading' => 'h2',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $pane->uuid = '8df54764-9af0-416b-8be0-61436a9df013';
-    $display->content['new-8df54764-9af0-416b-8be0-61436a9df013'] = $pane;
-    $display->panels['contentmain'][1] = 'new-8df54764-9af0-416b-8be0-61436a9df013';
-    $pane = new stdClass();
-    $pane->pid = 'new-37e6c907-6684-4e72-84b7-1a02e74cb74f';
-    $pane->panel = 'sidebar';
-    $pane->type = 'block';
-    $pane->subtype = 'menu-menu-product-catalogue';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 0,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => array(
-        'secondary_options' => 'panel-primary',
-        'linked_list' => 'none',
-      ),
-      'style' => 'secondary',
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '37e6c907-6684-4e72-84b7-1a02e74cb74f';
-    $display->content['new-37e6c907-6684-4e72-84b7-1a02e74cb74f'] = $pane;
-    $display->panels['sidebar'][0] = 'new-37e6c907-6684-4e72-84b7-1a02e74cb74f';
+    ),
+    'more_link' => 0,
+    'use_pager' => 1,
+    'pager_id' => '1',
+    'items_per_page' => '10',
+    'override_title' => '',
+    'override_title_text' => '',
+    'view_settings' => 'fields',
+    'header_type' => 'none',
+    'view_mode' => 'teaser',
+    'widget_title' => '',
+    'context' => array(
+      0 => 'empty',
+    ),
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = '8df54764-9af0-416b-8be0-61436a9df013';
+  $display->content['new-8df54764-9af0-416b-8be0-61436a9df013'] = $pane;
+  $display->panels['contentmain'][1] = 'new-8df54764-9af0-416b-8be0-61436a9df013';
+  $pane = new stdClass();
+  $pane->pid = 'new-37e6c907-6684-4e72-84b7-1a02e74cb74f';
+  $pane->panel = 'sidebar';
+  $pane->type = 'block';
+  $pane->subtype = 'menu-menu-product-catalogue';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 0,
+    'override_title_text' => '',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => array(
+      'secondary_options' => 'panel-primary',
+      'linked_list' => 'none',
+    ),
+    'style' => 'secondary',
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '37e6c907-6684-4e72-84b7-1a02e74cb74f';
+  $display->content['new-37e6c907-6684-4e72-84b7-1a02e74cb74f'] = $pane;
+  $display->panels['sidebar'][0] = 'new-37e6c907-6684-4e72-84b7-1a02e74cb74f';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-37e6c907-6684-4e72-84b7-1a02e74cb74f';
   $handler->conf['display'] = $display;
@@ -400,99 +403,99 @@ function iasc_document_default_page_manager_pages() {
   $display->uuid = 'e7f1952d-055b-4bcc-be42-33a133d33308';
   $display->content = array();
   $display->panels = array();
-    $pane = new stdClass();
-    $pane->pid = 'new-7137b198-c74b-4d17-94c7-915081b11390';
-    $pane->panel = 'contentmain';
-    $pane->type = 'block';
-    $pane->subtype = 'block-17';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 1,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '7137b198-c74b-4d17-94c7-915081b11390';
-    $display->content['new-7137b198-c74b-4d17-94c7-915081b11390'] = $pane;
-    $display->panels['contentmain'][0] = 'new-7137b198-c74b-4d17-94c7-915081b11390';
-    $pane = new stdClass();
-    $pane->pid = 'new-b96d8dc0-0fae-4cec-9ecc-4fab09fd44a5';
-    $pane->panel = 'contentmain';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'iasc_document-panel_pane_documents';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'exposed' => array(
-        'og_group_ref_target_id_op' => 'or',
-        'og_group_ref_target_id' => '2608',
-        'og_group_ref_target_id_mine' => 0,
-        'og_subspaces_view_all' => 0,
-        'og_subspaces_view_parent' => 0,
-        'field_document_type_tid' => array(
-          205 => '205',
-        ),
+  $pane = new stdClass();
+  $pane->pid = 'new-7137b198-c74b-4d17-94c7-915081b11390';
+  $pane->panel = 'contentmain';
+  $pane->type = 'block';
+  $pane->subtype = 'block-17';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 1,
+    'override_title_text' => '',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '7137b198-c74b-4d17-94c7-915081b11390';
+  $display->content['new-7137b198-c74b-4d17-94c7-915081b11390'] = $pane;
+  $display->panels['contentmain'][0] = 'new-7137b198-c74b-4d17-94c7-915081b11390';
+  $pane = new stdClass();
+  $pane->pid = 'new-b96d8dc0-0fae-4cec-9ecc-4fab09fd44a5';
+  $pane->panel = 'contentmain';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'iasc_document-panel_pane_documents';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'exposed' => array(
+      'og_group_ref_target_id_op' => 'or',
+      'og_group_ref_target_id' => '2608',
+      'og_group_ref_target_id_mine' => 0,
+      'og_subspaces_view_all' => 0,
+      'og_subspaces_view_parent' => 0,
+      'field_document_type_tid' => array(
+        205 => '205',
       ),
-      'link_to_view' => 0,
-      'use_pager' => 1,
-      'pager_id' => '1',
-      'items_per_page' => '10',
-      'override_title' => '',
-      'override_title_text' => '',
-      'view_settings' => 'fields',
-      'header_type' => 'none',
-      'view_mode' => 'teaser',
-      'widget_title' => '',
-      'more_link' => 0,
-      'context' => array(
-        0 => 'empty',
-      ),
-      'override_title_heading' => 'h2',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $pane->uuid = 'b96d8dc0-0fae-4cec-9ecc-4fab09fd44a5';
-    $display->content['new-b96d8dc0-0fae-4cec-9ecc-4fab09fd44a5'] = $pane;
-    $display->panels['contentmain'][1] = 'new-b96d8dc0-0fae-4cec-9ecc-4fab09fd44a5';
-    $pane = new stdClass();
-    $pane->pid = 'new-37e6c907-6684-4e72-84b7-1a02e74cb74f';
-    $pane->panel = 'sidebar';
-    $pane->type = 'block';
-    $pane->subtype = 'menu-menu-product-catalogue';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 0,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => array(
-        'secondary_options' => 'panel-primary',
-        'linked_list' => 'none',
-      ),
-      'style' => 'secondary',
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '37e6c907-6684-4e72-84b7-1a02e74cb74f';
-    $display->content['new-37e6c907-6684-4e72-84b7-1a02e74cb74f'] = $pane;
-    $display->panels['sidebar'][0] = 'new-37e6c907-6684-4e72-84b7-1a02e74cb74f';
+    ),
+    'link_to_view' => 0,
+    'use_pager' => 1,
+    'pager_id' => '1',
+    'items_per_page' => '10',
+    'override_title' => '',
+    'override_title_text' => '',
+    'view_settings' => 'fields',
+    'header_type' => 'none',
+    'view_mode' => 'teaser',
+    'widget_title' => '',
+    'more_link' => 0,
+    'context' => array(
+      0 => 'empty',
+    ),
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = 'b96d8dc0-0fae-4cec-9ecc-4fab09fd44a5';
+  $display->content['new-b96d8dc0-0fae-4cec-9ecc-4fab09fd44a5'] = $pane;
+  $display->panels['contentmain'][1] = 'new-b96d8dc0-0fae-4cec-9ecc-4fab09fd44a5';
+  $pane = new stdClass();
+  $pane->pid = 'new-37e6c907-6684-4e72-84b7-1a02e74cb74f';
+  $pane->panel = 'sidebar';
+  $pane->type = 'block';
+  $pane->subtype = 'menu-menu-product-catalogue';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 0,
+    'override_title_text' => '',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => array(
+      'secondary_options' => 'panel-primary',
+      'linked_list' => 'none',
+    ),
+    'style' => 'secondary',
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '37e6c907-6684-4e72-84b7-1a02e74cb74f';
+  $display->content['new-37e6c907-6684-4e72-84b7-1a02e74cb74f'] = $pane;
+  $display->panels['sidebar'][0] = 'new-37e6c907-6684-4e72-84b7-1a02e74cb74f';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

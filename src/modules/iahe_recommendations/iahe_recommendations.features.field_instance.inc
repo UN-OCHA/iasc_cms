@@ -120,6 +120,7 @@ function iahe_recommendations_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
           'show_repeat_rule' => 'show',
         ),
         'type' => 'date_default',
@@ -173,7 +174,8 @@ function iahe_recommendations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-oa_worktracker_task-field_description_implementation'
+  // Exported field_instance:
+  // 'node-oa_worktracker_task-field_description_implementation'
   $field_instances['node-oa_worktracker_task-field_description_implementation'] = array(
     'bundle' => 'oa_worktracker_task',
     'comment_alter' => 0,
@@ -401,7 +403,8 @@ function iahe_recommendations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-oa_worktracker_task-field_summary_of_recommendat'
+  // Exported field_instance:
+  // 'node-oa_worktracker_task-field_summary_of_recommendat'
   $field_instances['node-oa_worktracker_task-field_summary_of_recommendat'] = array(
     'bundle' => 'oa_worktracker_task',
     'comment_alter' => 0,
@@ -547,7 +550,8 @@ function iahe_recommendations_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-oa_worktracker_task-field_worktracker_country'
+  // Exported field_instance:
+  // 'node-oa_worktracker_task-field_worktracker_country'
   $field_instances['node-oa_worktracker_task-field_worktracker_country'] = array(
     'bundle' => 'oa_worktracker_task',
     'comment_alter' => 0,
