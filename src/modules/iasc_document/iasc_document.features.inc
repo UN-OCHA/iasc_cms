@@ -98,6 +98,58 @@ function iasc_document_field_default_field_instances_alter(&$data) {
     $data['node-oa_wiki_page-field_oa_media']['widget']['weight'] = 8; /* WAS: 5 */
     unset($data['node-oa_wiki_page-field_oa_media']['widget']['settings']['progress_indicator']);
   }
+  if (isset($data['node-oa_wiki_page-field_oa_wiki_page_no_redirect'])) {
+    $data['node-oa_wiki_page-field_oa_wiki_page_no_redirect']['display']['bio_full'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_wiki_page-field_oa_wiki_page_no_redirect']['display']['bio_long'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_wiki_page-field_oa_wiki_page_no_redirect']['display']['bio_short'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_wiki_page-field_oa_wiki_page_no_redirect']['display']['link_to_document'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+  }
+  if (isset($data['node-oa_wiki_page-oa_other_spaces_ref'])) {
+    $data['node-oa_wiki_page-oa_other_spaces_ref']['display']['bio_full'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_wiki_page-oa_other_spaces_ref']['display']['bio_long'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_wiki_page-oa_other_spaces_ref']['display']['bio_short'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_wiki_page-oa_other_spaces_ref']['display']['link_to_document'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+  }
   if (isset($data['node-oa_wiki_page-oa_section_ref'])) {
     $data['node-oa_wiki_page-oa_section_ref']['comment_alter'] = 0; /* WAS: '' */
     $data['node-oa_wiki_page-oa_section_ref']['display']['bio_full'] = array(

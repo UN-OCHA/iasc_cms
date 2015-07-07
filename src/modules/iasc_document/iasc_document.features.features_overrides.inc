@@ -82,6 +82,54 @@ function iasc_document_features_override_default_overrides() {
   $overrides["field_instance.node-oa_wiki_page-field_oa_media.widget|settings|manualcrop_thumblist"] = 0;
   $overrides["field_instance.node-oa_wiki_page-field_oa_media.widget|settings|progress_indicator"]["DELETED"] = TRUE;
   $overrides["field_instance.node-oa_wiki_page-field_oa_media.widget|weight"] = 8;
+  $overrides["field_instance.node-oa_wiki_page-field_oa_wiki_page_no_redirect.display|bio_full"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
+  $overrides["field_instance.node-oa_wiki_page-field_oa_wiki_page_no_redirect.display|bio_long"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
+  $overrides["field_instance.node-oa_wiki_page-field_oa_wiki_page_no_redirect.display|bio_short"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
+  $overrides["field_instance.node-oa_wiki_page-field_oa_wiki_page_no_redirect.display|link_to_document"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
+  $overrides["field_instance.node-oa_wiki_page-oa_other_spaces_ref.display|bio_full"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
+  $overrides["field_instance.node-oa_wiki_page-oa_other_spaces_ref.display|bio_long"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
+  $overrides["field_instance.node-oa_wiki_page-oa_other_spaces_ref.display|bio_short"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
+  $overrides["field_instance.node-oa_wiki_page-oa_other_spaces_ref.display|link_to_document"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
   $overrides["field_instance.node-oa_wiki_page-oa_section_ref.comment_alter"] = 0;
   $overrides["field_instance.node-oa_wiki_page-oa_section_ref.display|bio_full"] = array(
     'label' => 'above',
@@ -179,8 +227,6 @@ function iasc_document_features_override_default_overrides() {
   $overrides["field_instance.node-oa_wiki_page-og_vocabulary.display|teaser|type"] = 'hidden';
   $overrides["field_instance.node-oa_wiki_page-og_vocabulary.display|teaser|weight"] = 8;
   $overrides["field_instance.node-oa_wiki_page-og_vocabulary.widget|weight"] = 9;
-
-  // Exported overrides for: node
 
   // Exported overrides for: page_manager_handlers
   $overrides["page_manager_handlers.node_edit_panel_context_6.conf|display|content|new-2362dc2f-60f2-42e4-b13f-82918fd4b1a8|position"] = 2;
