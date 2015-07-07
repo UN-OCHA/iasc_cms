@@ -57,6 +57,136 @@ function iasc_configuration_field_default_field_instances_alter(&$data) {
       'weight' => 0,
     ); /* WAS: '' */
   }
+  if (isset($data['node-oa_discussion_post-body'])) {
+    $data['node-oa_discussion_post-body']['display']['bio_full'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_discussion_post-body']['display']['bio_long'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_discussion_post-body']['display']['bio_short'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_discussion_post-body']['display']['link_to_document'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+  }
+  if (isset($data['node-oa_discussion_post-field_oa_media'])) {
+    $data['node-oa_discussion_post-field_oa_media']['display']['bio_full'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_discussion_post-field_oa_media']['display']['bio_long'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_discussion_post-field_oa_media']['display']['bio_short'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_discussion_post-field_oa_media']['display']['link_to_document'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+  }
+  if (isset($data['node-oa_discussion_post-oa_section_ref'])) {
+    $data['node-oa_discussion_post-oa_section_ref']['display']['bio_full'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_discussion_post-oa_section_ref']['display']['bio_long'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_discussion_post-oa_section_ref']['display']['bio_short'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_discussion_post-oa_section_ref']['display']['link_to_document'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+  }
+  if (isset($data['node-oa_discussion_post-og_group_ref'])) {
+    $data['node-oa_discussion_post-og_group_ref']['display']['bio_full'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_discussion_post-og_group_ref']['display']['bio_long'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_discussion_post-og_group_ref']['display']['bio_short'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_discussion_post-og_group_ref']['display']['link_to_document'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+  }
+  if (isset($data['node-oa_discussion_post-og_vocabulary'])) {
+    $data['node-oa_discussion_post-og_vocabulary']['display']['bio_full'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_discussion_post-og_vocabulary']['display']['bio_long'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_discussion_post-og_vocabulary']['display']['bio_short'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_discussion_post-og_vocabulary']['display']['link_to_document'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+  }
   if (isset($data['node-oa_group-body'])) {
     $data['node-oa_group-body']['display']['bio_full'] = array(
       'label' => 'above',
@@ -637,6 +767,18 @@ function iasc_configuration_field_default_field_instances_alter(&$data) {
       'weight' => 0,
     ); /* WAS: '' */
     $data['node-oa_space-field_oa_node_types']['display']['bio_long'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_space-field_oa_node_types']['display']['bio_short'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_space-field_oa_node_types']['display']['link_to_document'] = array(
       'label' => 'above',
       'settings' => array(),
       'type' => 'hidden',
@@ -1775,6 +1917,15 @@ function iasc_configuration_default_panels_mini_alter(&$data) {
 function iasc_configuration_strongarm_alter(&$data) {
   if (isset($data['bootstrap_library_settings'])) {
     $data['bootstrap_library_settings']->value['theme']['themes']['iasc'] = 'iasc'; /* WAS: '' */
+  }
+}
+
+/**
+ * Implements hook_views_default_views_alter().
+ */
+function iasc_configuration_views_default_views_alter(&$data) {
+  if (isset($data['oa_comment_media'])) {
+    unset($data['oa_comment_media']->display['default']->display_options['relationships']['field_oa_related_node']['label']);
   }
 }
 

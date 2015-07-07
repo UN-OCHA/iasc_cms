@@ -30,6 +30,126 @@ function iasc_configuration_features_override_default_overrides() {
     'type' => 'hidden',
     'weight' => 0,
   );
+  $overrides["field_instance.node-oa_discussion_post-body.display|bio_full"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
+  $overrides["field_instance.node-oa_discussion_post-body.display|bio_long"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
+  $overrides["field_instance.node-oa_discussion_post-body.display|bio_short"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
+  $overrides["field_instance.node-oa_discussion_post-body.display|link_to_document"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
+  $overrides["field_instance.node-oa_discussion_post-field_oa_media.display|bio_full"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
+  $overrides["field_instance.node-oa_discussion_post-field_oa_media.display|bio_long"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
+  $overrides["field_instance.node-oa_discussion_post-field_oa_media.display|bio_short"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
+  $overrides["field_instance.node-oa_discussion_post-field_oa_media.display|link_to_document"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
+  $overrides["field_instance.node-oa_discussion_post-oa_section_ref.display|bio_full"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
+  $overrides["field_instance.node-oa_discussion_post-oa_section_ref.display|bio_long"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
+  $overrides["field_instance.node-oa_discussion_post-oa_section_ref.display|bio_short"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
+  $overrides["field_instance.node-oa_discussion_post-oa_section_ref.display|link_to_document"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
+  $overrides["field_instance.node-oa_discussion_post-og_group_ref.display|bio_full"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
+  $overrides["field_instance.node-oa_discussion_post-og_group_ref.display|bio_long"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
+  $overrides["field_instance.node-oa_discussion_post-og_group_ref.display|bio_short"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
+  $overrides["field_instance.node-oa_discussion_post-og_group_ref.display|link_to_document"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
+  $overrides["field_instance.node-oa_discussion_post-og_vocabulary.display|bio_full"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
+  $overrides["field_instance.node-oa_discussion_post-og_vocabulary.display|bio_long"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
+  $overrides["field_instance.node-oa_discussion_post-og_vocabulary.display|bio_short"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
+  $overrides["field_instance.node-oa_discussion_post-og_vocabulary.display|link_to_document"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
   $overrides["field_instance.node-oa_group-body.display|bio_full"] = array(
     'label' => 'above',
     'settings' => array(),
@@ -565,6 +685,18 @@ function iasc_configuration_features_override_default_overrides() {
     'weight' => 0,
   );
   $overrides["field_instance.node-oa_space-field_oa_node_types.display|bio_long"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
+  $overrides["field_instance.node-oa_space-field_oa_node_types.display|bio_short"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
+  $overrides["field_instance.node-oa_space-field_oa_node_types.display|link_to_document"] = array(
     'label' => 'above',
     'settings' => array(),
     'type' => 'hidden',
@@ -1643,6 +1775,9 @@ function iasc_configuration_features_override_default_overrides() {
 
   // Exported overrides for: variable
   $overrides["variable.bootstrap_library_settings.value|theme|themes|iasc"] = 'iasc';
+
+  // Exported overrides for: views_view
+  $overrides["views_view.oa_comment_media.display|default|display_options|relationships|field_oa_related_node|label"]["DELETED"] = TRUE;
 
  return $overrides;
 }
