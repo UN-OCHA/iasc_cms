@@ -39,6 +39,84 @@ function iahe_recommendations_field_group_info_alter(&$data) {
  * Implements hook_field_default_field_instances_alter().
  */
 function iahe_recommendations_field_default_field_instances_alter(&$data) {
+  if (isset($data['node-oa_worktracker_task-body'])) {
+    $data['node-oa_worktracker_task-body']['display']['bio_full'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_worktracker_task-body']['display']['bio_long'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_worktracker_task-body']['display']['bio_short'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_worktracker_task-body']['display']['link_to_document'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+  }
+  if (isset($data['node-oa_worktracker_task-field_oa_media'])) {
+    $data['node-oa_worktracker_task-field_oa_media']['display']['bio_full'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_worktracker_task-field_oa_media']['display']['bio_long'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_worktracker_task-field_oa_media']['display']['bio_short'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_worktracker_task-field_oa_media']['display']['link_to_document'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+  }
+  if (isset($data['node-oa_worktracker_task-field_oa_worktracker_assigned_to'])) {
+    $data['node-oa_worktracker_task-field_oa_worktracker_assigned_to']['display']['bio_full'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_worktracker_task-field_oa_worktracker_assigned_to']['display']['bio_long'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_worktracker_task-field_oa_worktracker_assigned_to']['display']['bio_short'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_worktracker_task-field_oa_worktracker_assigned_to']['display']['link_to_document'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+  }
   if (isset($data['node-oa_worktracker_task-field_oa_worktracker_priority'])) {
     $data['node-oa_worktracker_task-field_oa_worktracker_priority']['display']['bio_full'] = array(
       'label' => 'above',
@@ -65,6 +143,58 @@ function iahe_recommendations_field_default_field_instances_alter(&$data) {
       'weight' => 0,
     ); /* WAS: '' */
     $data['node-oa_worktracker_task-field_oa_worktracker_priority']['required'] = 0; /* WAS: 1 */
+  }
+  if (isset($data['node-oa_worktracker_task-field_oa_worktracker_task_status'])) {
+    $data['node-oa_worktracker_task-field_oa_worktracker_task_status']['display']['bio_full'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_worktracker_task-field_oa_worktracker_task_status']['display']['bio_long'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_worktracker_task-field_oa_worktracker_task_status']['display']['bio_short'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_worktracker_task-field_oa_worktracker_task_status']['display']['link_to_document'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+  }
+  if (isset($data['node-oa_worktracker_task-field_oa_worktracker_task_type'])) {
+    $data['node-oa_worktracker_task-field_oa_worktracker_task_type']['display']['bio_full'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_worktracker_task-field_oa_worktracker_task_type']['display']['bio_long'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_worktracker_task-field_oa_worktracker_task_type']['display']['bio_short'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_worktracker_task-field_oa_worktracker_task_type']['display']['link_to_document'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
   }
 }
 

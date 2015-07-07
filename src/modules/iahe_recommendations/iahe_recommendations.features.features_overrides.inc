@@ -15,6 +15,78 @@ function iahe_recommendations_features_override_default_overrides() {
   $overrides["field_group.group_oa_access|node|oa_worktracker_task|form.data|weight"] = 9;
 
   // Exported overrides for: field_instance
+  $overrides["field_instance.node-oa_worktracker_task-body.display|bio_full"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
+  $overrides["field_instance.node-oa_worktracker_task-body.display|bio_long"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
+  $overrides["field_instance.node-oa_worktracker_task-body.display|bio_short"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
+  $overrides["field_instance.node-oa_worktracker_task-body.display|link_to_document"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
+  $overrides["field_instance.node-oa_worktracker_task-field_oa_media.display|bio_full"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
+  $overrides["field_instance.node-oa_worktracker_task-field_oa_media.display|bio_long"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
+  $overrides["field_instance.node-oa_worktracker_task-field_oa_media.display|bio_short"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
+  $overrides["field_instance.node-oa_worktracker_task-field_oa_media.display|link_to_document"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
+  $overrides["field_instance.node-oa_worktracker_task-field_oa_worktracker_assigned_to.display|bio_full"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
+  $overrides["field_instance.node-oa_worktracker_task-field_oa_worktracker_assigned_to.display|bio_long"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
+  $overrides["field_instance.node-oa_worktracker_task-field_oa_worktracker_assigned_to.display|bio_short"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
+  $overrides["field_instance.node-oa_worktracker_task-field_oa_worktracker_assigned_to.display|link_to_document"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
   $overrides["field_instance.node-oa_worktracker_task-field_oa_worktracker_priority.display|bio_full"] = array(
     'label' => 'above',
     'settings' => array(),
@@ -40,6 +112,54 @@ function iahe_recommendations_features_override_default_overrides() {
     'weight' => 0,
   );
   $overrides["field_instance.node-oa_worktracker_task-field_oa_worktracker_priority.required"] = 0;
+  $overrides["field_instance.node-oa_worktracker_task-field_oa_worktracker_task_status.display|bio_full"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
+  $overrides["field_instance.node-oa_worktracker_task-field_oa_worktracker_task_status.display|bio_long"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
+  $overrides["field_instance.node-oa_worktracker_task-field_oa_worktracker_task_status.display|bio_short"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
+  $overrides["field_instance.node-oa_worktracker_task-field_oa_worktracker_task_status.display|link_to_document"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
+  $overrides["field_instance.node-oa_worktracker_task-field_oa_worktracker_task_type.display|bio_full"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
+  $overrides["field_instance.node-oa_worktracker_task-field_oa_worktracker_task_type.display|bio_long"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
+  $overrides["field_instance.node-oa_worktracker_task-field_oa_worktracker_task_type.display|bio_short"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
+  $overrides["field_instance.node-oa_worktracker_task-field_oa_worktracker_task_type.display|link_to_document"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
 
   // Exported overrides for: panelizer_defaults
   $overrides["panelizer_defaults.node:oa_section:oa_section_worktracker.display|content|new-083432ea-5fb3-4e40-8c9d-09ed848deab7"]["DELETED"] = TRUE;
