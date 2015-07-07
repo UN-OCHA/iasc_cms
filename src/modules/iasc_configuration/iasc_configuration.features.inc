@@ -33,6 +33,902 @@ function iasc_configuration_views_api($module = NULL, $api = NULL) {
  * Implements hook_field_default_field_instances_alter().
  */
 function iasc_configuration_field_default_field_instances_alter(&$data) {
+  if (isset($data['file-document-field_file_title'])) {
+    $data['file-document-field_file_title']['display']['large_image'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+  }
+  if (isset($data['file-image-field_file_image_alt_text'])) {
+    $data['file-image-field_file_image_alt_text']['display']['large_image'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+  }
+  if (isset($data['file-image-field_file_image_title_text'])) {
+    $data['file-image-field_file_image_title_text']['display']['large_image'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+  }
+  if (isset($data['node-oa_group-body'])) {
+    $data['node-oa_group-body']['display']['bio_full'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_group-body']['display']['bio_long'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_group-body']['display']['bio_short'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_group-body']['display']['link_to_document'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+  }
+  if (isset($data['node-oa_group-field_featured_image'])) {
+    $data['node-oa_group-field_featured_image']['display']['bio_full'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_group-field_featured_image']['display']['bio_long'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_group-field_featured_image']['display']['bio_short'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_group-field_featured_image']['display']['link_to_document'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+  }
+  if (isset($data['node-oa_group-group_access'])) {
+    $data['node-oa_group-group_access']['display']['bio_full'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_group-group_access']['display']['bio_long'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_group-group_access']['display']['bio_short'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_group-group_access']['display']['link_to_document'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+  }
+  if (isset($data['node-oa_group-group_group'])) {
+    $data['node-oa_group-group_group']['display']['bio_full'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_group-group_group']['display']['bio_long'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_group-group_group']['display']['bio_short'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_group-group_group']['display']['link_to_document'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+  }
+  if (isset($data['node-oa_group-oa_parent_space'])) {
+    $data['node-oa_group-oa_parent_space']['display']['bio_full'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_group-oa_parent_space']['display']['bio_long'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_group-oa_parent_space']['display']['bio_short'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_group-oa_parent_space']['display']['link_to_document'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+  }
+  if (isset($data['node-oa_group-og_roles_permissions'])) {
+    $data['node-oa_group-og_roles_permissions']['display']['bio_full'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_group-og_roles_permissions']['display']['bio_long'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_group-og_roles_permissions']['display']['bio_short'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_group-og_roles_permissions']['display']['link_to_document'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+  }
+  if (isset($data['node-oa_group-og_user_inheritance'])) {
+    $data['node-oa_group-og_user_inheritance']['display']['bio_full'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_group-og_user_inheritance']['display']['bio_long'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_group-og_user_inheritance']['display']['bio_short'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_group-og_user_inheritance']['display']['link_to_document'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+  }
+  if (isset($data['node-oa_group-og_user_permission_inheritance'])) {
+    $data['node-oa_group-og_user_permission_inheritance']['display']['bio_full'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_group-og_user_permission_inheritance']['display']['bio_long'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_group-og_user_permission_inheritance']['display']['bio_short'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_group-og_user_permission_inheritance']['display']['link_to_document'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+  }
+  if (isset($data['node-oa_section-body'])) {
+    $data['node-oa_section-body']['display']['bio_full'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_section-body']['display']['bio_long'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_section-body']['display']['bio_short'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_section-body']['display']['link_to_document'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+  }
+  if (isset($data['node-oa_section-field_oa_group_ref'])) {
+    $data['node-oa_section-field_oa_group_ref']['display']['bio_full'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_section-field_oa_group_ref']['display']['bio_long'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_section-field_oa_group_ref']['display']['bio_short'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_section-field_oa_group_ref']['display']['link_to_document'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+  }
+  if (isset($data['node-oa_section-field_oa_node_types'])) {
+    $data['node-oa_section-field_oa_node_types']['display']['bio_full'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_section-field_oa_node_types']['display']['bio_long'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_section-field_oa_node_types']['display']['bio_short'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_section-field_oa_node_types']['display']['link_to_document'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+  }
+  if (isset($data['node-oa_section-field_oa_section'])) {
+    $data['node-oa_section-field_oa_section']['display']['bio_full'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_section-field_oa_section']['display']['bio_long'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_section-field_oa_section']['display']['bio_short'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_section-field_oa_section']['display']['link_to_document'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+  }
+  if (isset($data['node-oa_section-field_oa_section_override'])) {
+    $data['node-oa_section-field_oa_section_override']['display']['bio_full'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_section-field_oa_section_override']['display']['bio_long'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_section-field_oa_section_override']['display']['bio_short'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_section-field_oa_section_override']['display']['link_to_document'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+  }
+  if (isset($data['node-oa_section-field_oa_section_weight'])) {
+    $data['node-oa_section-field_oa_section_weight']['display']['bio_full'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_section-field_oa_section_weight']['display']['bio_long'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_section-field_oa_section_weight']['display']['bio_short'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_section-field_oa_section_weight']['display']['link_to_document'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+  }
+  if (isset($data['node-oa_section-field_oa_team_ref'])) {
+    $data['node-oa_section-field_oa_team_ref']['display']['bio_full'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_section-field_oa_team_ref']['display']['bio_long'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_section-field_oa_team_ref']['display']['bio_short'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_section-field_oa_team_ref']['display']['link_to_document'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+  }
+  if (isset($data['node-oa_section-field_oa_user_ref'])) {
+    $data['node-oa_section-field_oa_user_ref']['display']['bio_full'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_section-field_oa_user_ref']['display']['bio_long'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_section-field_oa_user_ref']['display']['bio_short'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_section-field_oa_user_ref']['display']['link_to_document'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+  }
+  if (isset($data['node-oa_section-og_group_ref'])) {
+    $data['node-oa_section-og_group_ref']['display']['bio_full'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_section-og_group_ref']['display']['bio_long'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_section-og_group_ref']['display']['bio_short'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_section-og_group_ref']['display']['link_to_document'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+  }
+  if (isset($data['node-oa_space-body'])) {
+    $data['node-oa_space-body']['display']['bio_full'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_space-body']['display']['bio_long'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_space-body']['display']['bio_short'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_space-body']['display']['link_to_document'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+  }
+  if (isset($data['node-oa_space-field_featured_image'])) {
+    $data['node-oa_space-field_featured_image']['display']['bio_full'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_space-field_featured_image']['display']['bio_long'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_space-field_featured_image']['display']['bio_short'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_space-field_featured_image']['display']['link_to_document'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+  }
+  if (isset($data['node-oa_space-field_oa_banner'])) {
+    $data['node-oa_space-field_oa_banner']['display']['bio_full'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_space-field_oa_banner']['display']['bio_long'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_space-field_oa_banner']['display']['bio_short'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_space-field_oa_banner']['display']['link_to_document'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+  }
+  if (isset($data['node-oa_space-field_oa_banner_position'])) {
+    $data['node-oa_space-field_oa_banner_position']['display']['bio_full'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_space-field_oa_banner_position']['display']['bio_long'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_space-field_oa_banner_position']['display']['bio_short'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_space-field_oa_banner_position']['display']['link_to_document'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+  }
+  if (isset($data['node-oa_space-field_oa_banner_text'])) {
+    $data['node-oa_space-field_oa_banner_text']['display']['bio_full'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_space-field_oa_banner_text']['display']['bio_long'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_space-field_oa_banner_text']['display']['bio_short'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_space-field_oa_banner_text']['display']['link_to_document'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+  }
+  if (isset($data['node-oa_space-field_oa_node_types'])) {
+    $data['node-oa_space-field_oa_node_types']['display']['bio_full'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_space-field_oa_node_types']['display']['bio_long'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+  }
+  if (isset($data['node-oa_space-field_oa_section_override'])) {
+    $data['node-oa_space-field_oa_section_override']['display']['bio_full'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_space-field_oa_section_override']['display']['bio_long'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_space-field_oa_section_override']['display']['bio_short'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_space-field_oa_section_override']['display']['link_to_document'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+  }
+  if (isset($data['node-oa_space-field_oa_space_type'])) {
+    $data['node-oa_space-field_oa_space_type']['display']['bio_full'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_space-field_oa_space_type']['display']['bio_long'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_space-field_oa_space_type']['display']['bio_short'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_space-field_oa_space_type']['display']['link_to_document'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+  }
+  if (isset($data['node-oa_space-group_access'])) {
+    $data['node-oa_space-group_access']['display']['bio_full'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_space-group_access']['display']['bio_long'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_space-group_access']['display']['bio_short'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_space-group_access']['display']['link_to_document'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+  }
+  if (isset($data['node-oa_space-group_group'])) {
+    $data['node-oa_space-group_group']['display']['bio_full'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_space-group_group']['display']['bio_long'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_space-group_group']['display']['bio_short'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_space-group_group']['display']['link_to_document'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+  }
+  if (isset($data['node-oa_space-oa_parent_space'])) {
+    $data['node-oa_space-oa_parent_space']['display']['bio_full'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_space-oa_parent_space']['display']['bio_long'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_space-oa_parent_space']['display']['bio_short'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_space-oa_parent_space']['display']['link_to_document'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+  }
+  if (isset($data['node-oa_space-og_roles_permissions'])) {
+    $data['node-oa_space-og_roles_permissions']['display']['bio_full'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_space-og_roles_permissions']['display']['bio_long'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_space-og_roles_permissions']['display']['bio_short'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_space-og_roles_permissions']['display']['link_to_document'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+  }
+  if (isset($data['node-oa_space-og_user_inheritance'])) {
+    $data['node-oa_space-og_user_inheritance']['display']['bio_full'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_space-og_user_inheritance']['display']['bio_long'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_space-og_user_inheritance']['display']['bio_short'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_space-og_user_inheritance']['display']['link_to_document'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+  }
+  if (isset($data['node-oa_space-og_user_permission_inheritance'])) {
+    $data['node-oa_space-og_user_permission_inheritance']['display']['bio_full'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_space-og_user_permission_inheritance']['display']['bio_long'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_space-og_user_permission_inheritance']['display']['bio_short'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_space-og_user_permission_inheritance']['display']['link_to_document'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+  }
+  if (isset($data['node-oa_team-body'])) {
+    $data['node-oa_team-body']['display']['bio_full'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_team-body']['display']['bio_long'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_team-body']['display']['bio_short'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_team-body']['display']['link_to_document'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+  }
+  if (isset($data['node-oa_team-field_oa_team_users'])) {
+    $data['node-oa_team-field_oa_team_users']['display']['bio_full'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_team-field_oa_team_users']['display']['bio_long'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_team-field_oa_team_users']['display']['bio_short'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_team-field_oa_team_users']['display']['link_to_document'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+  }
+  if (isset($data['node-oa_team-og_group_ref'])) {
+    $data['node-oa_team-og_group_ref']['display']['bio_full'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_team-og_group_ref']['display']['bio_long'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_team-og_group_ref']['display']['bio_short'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_team-og_group_ref']['display']['link_to_document'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+  }
   if (isset($data['node-panopoly_page-body'])) {
     $data['node-panopoly_page-body']['display']['bio_full'] = array(
       'label' => 'above',
@@ -53,6 +949,84 @@ function iasc_configuration_field_default_field_instances_alter(&$data) {
       'weight' => 0,
     ); /* WAS: '' */
     $data['node-panopoly_page-body']['display']['link_to_document'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+  }
+  if (isset($data['node-panopoly_page-field_featured_categories'])) {
+    $data['node-panopoly_page-field_featured_categories']['display']['bio_full'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-panopoly_page-field_featured_categories']['display']['bio_long'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-panopoly_page-field_featured_categories']['display']['bio_short'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-panopoly_page-field_featured_categories']['display']['link_to_document'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+  }
+  if (isset($data['node-panopoly_page-field_featured_image'])) {
+    $data['node-panopoly_page-field_featured_image']['display']['bio_full'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-panopoly_page-field_featured_image']['display']['bio_long'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-panopoly_page-field_featured_image']['display']['bio_short'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-panopoly_page-field_featured_image']['display']['link_to_document'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+  }
+  if (isset($data['node-panopoly_page-field_featured_status'])) {
+    $data['node-panopoly_page-field_featured_status']['display']['bio_full'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-panopoly_page-field_featured_status']['display']['bio_long'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-panopoly_page-field_featured_status']['display']['bio_short'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-panopoly_page-field_featured_status']['display']['link_to_document'] = array(
       'label' => 'above',
       'settings' => array(),
       'type' => 'hidden',
