@@ -73,6 +73,12 @@ function iasc_meeting_features_override_default_overrides() {
     'weight' => 0,
   );
   $overrides["field_instance.node-oa_event-field_oa_date.display|default|module"] = 'iasc_meeting';
+  $overrides["field_instance.node-oa_event-field_oa_date.display|link_to_document"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
   $overrides["field_instance.node-oa_event-field_oa_date.display|teaser|label"] = 'hidden';
   $overrides["field_instance.node-oa_event-field_oa_date.display|teaser|module"] = 'date';
   $overrides["field_instance.node-oa_event-field_oa_date.display|teaser|settings|format_type"] = 'long';
@@ -80,6 +86,7 @@ function iasc_meeting_features_override_default_overrides() {
   $overrides["field_instance.node-oa_event-field_oa_date.display|teaser|settings|multiple_from"] = '';
   $overrides["field_instance.node-oa_event-field_oa_date.display|teaser|settings|multiple_number"] = '';
   $overrides["field_instance.node-oa_event-field_oa_date.display|teaser|settings|multiple_to"] = '';
+  $overrides["field_instance.node-oa_event-field_oa_date.display|teaser|settings|show_remaining_days"] = FALSE;
   $overrides["field_instance.node-oa_event-field_oa_date.display|teaser|settings|show_repeat_rule"] = 'show';
   $overrides["field_instance.node-oa_event-field_oa_date.display|teaser|type"] = 'date_default';
   $overrides["field_instance.node-oa_event-field_oa_geo_location.node-oa_event-field_oa_geo_location"]["DELETED"] = TRUE;
@@ -97,6 +104,12 @@ function iasc_meeting_features_override_default_overrides() {
     'weight' => 0,
   );
   $overrides["field_instance.node-oa_event-oa_other_spaces_ref.display|bio_short"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
+  $overrides["field_instance.node-oa_event-oa_other_spaces_ref.display|link_to_document"] = array(
     'label' => 'above',
     'settings' => array(),
     'type' => 'hidden',
@@ -179,12 +192,14 @@ function iasc_meeting_features_override_default_overrides() {
     'type' => 'hidden',
     'weight' => 0,
   );
+  $overrides["field_instance.node-oa_event-og_vocabulary.display|link_to_document"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
   $overrides["field_instance.node-oa_event-og_vocabulary.display|teaser|weight"] = 6;
   $overrides["field_instance.node-oa_event-og_vocabulary.widget|weight"] = 14;
-
-  // Exported overrides for: node
-  $overrides["node.oa_event.description"] = 'Create a Meeting to hold information about the next meeting event and to reference Agenda and the Meeting Notes Documents.';
-  $overrides["node.oa_event.name"] = 'Meeting';
 
   // Exported overrides for: page_manager_handlers
   $overrides["page_manager_handlers.node_edit_panel_context_7.conf|display|content|new-08f897a0-7ee5-4c24-856e-e5d6e0aa8bb3|position"] = 2;

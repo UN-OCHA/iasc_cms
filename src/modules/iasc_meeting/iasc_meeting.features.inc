@@ -102,6 +102,12 @@ function iasc_meeting_field_default_field_instances_alter(&$data) {
       'weight' => 0,
     ); /* WAS: '' */
     $data['node-oa_event-field_oa_date']['display']['default']['module'] = 'iasc_meeting'; /* WAS: 'oa_events' */
+    $data['node-oa_event-field_oa_date']['display']['link_to_document'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
     $data['node-oa_event-field_oa_date']['display']['teaser']['label'] = 'hidden'; /* WAS: 'above' */
     $data['node-oa_event-field_oa_date']['display']['teaser']['module'] = 'date'; /* WAS: '' */
     $data['node-oa_event-field_oa_date']['display']['teaser']['settings']['format_type'] = 'long'; /* WAS: '' */
@@ -109,6 +115,7 @@ function iasc_meeting_field_default_field_instances_alter(&$data) {
     $data['node-oa_event-field_oa_date']['display']['teaser']['settings']['multiple_from'] = ''; /* WAS: '' */
     $data['node-oa_event-field_oa_date']['display']['teaser']['settings']['multiple_number'] = ''; /* WAS: '' */
     $data['node-oa_event-field_oa_date']['display']['teaser']['settings']['multiple_to'] = ''; /* WAS: '' */
+    $data['node-oa_event-field_oa_date']['display']['teaser']['settings']['show_remaining_days'] = FALSE; /* WAS: '' */
     $data['node-oa_event-field_oa_date']['display']['teaser']['settings']['show_repeat_rule'] = 'show'; /* WAS: '' */
     $data['node-oa_event-field_oa_date']['display']['teaser']['type'] = 'date_default'; /* WAS: 'hidden' */
   }
@@ -132,6 +139,12 @@ function iasc_meeting_field_default_field_instances_alter(&$data) {
       'weight' => 0,
     ); /* WAS: '' */
     $data['node-oa_event-oa_other_spaces_ref']['display']['bio_short'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_event-oa_other_spaces_ref']['display']['link_to_document'] = array(
       'label' => 'above',
       'settings' => array(),
       'type' => 'hidden',
@@ -215,6 +228,12 @@ function iasc_meeting_field_default_field_instances_alter(&$data) {
       'weight' => 0,
     ); /* WAS: '' */
     $data['node-oa_event-og_vocabulary']['display']['bio_short'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-oa_event-og_vocabulary']['display']['link_to_document'] = array(
       'label' => 'above',
       'settings' => array(),
       'type' => 'hidden',
