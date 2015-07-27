@@ -9776,8 +9776,8 @@ header.header .search-form {
 }
 /* line 9, ../sass/components/_iasc-organization.scss */
 .view-display-id-panel_pane_membership_logos ul {
-  margin-bottom: 20px;
-  padding: 10px 20px;
+  margin-bottom: 0;
+  padding: 0 20px;
 }
 /* line 15, ../../../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/bootstrap-sass-3.3.1.0/assets/stylesheets/bootstrap/mixins/_clearfix.scss */
 .view-display-id-panel_pane_membership_logos ul:before, .view-display-id-panel_pane_membership_logos ul:after {
