@@ -207,7 +207,7 @@ function iasc_document_panels_pane_content_alter(&$content, $pane, $args, $conte
 function iasc_document_form_alter(&$form, &$form_state, $form_id) {
   if ('views_exposed_form' == $form_id
     && 'iasc_document' == $form_state['view']->name
-    && 'page_resources' == $form_state['view']->current_display) {
+    && 'panel_pane_resources' == $form_state['view']->current_display) {
 
     // Ensure that target id is not set to Active Space.
     $form['og_group_ref_target_id']['#default_value'] = 'All';
