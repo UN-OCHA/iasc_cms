@@ -245,16 +245,6 @@ function iasc_meeting_field_default_field_instances_alter(&$data) {
 }
 
 /**
-* Implements hook_node_info_alter().
-*/
-function iasc_meeting_node_info_alter(&$data) {
-  if (isset($data['oa_event'])) {
-    $data['oa_event']['description'] = 'Create a Meeting to hold information about the next meeting event and to reference Agenda and the Meeting Notes Documents.'; /* WAS: 'An Open Atrium Event' */
-    $data['oa_event']['name'] = 'Meeting'; /* WAS: 'Event' */
-  }
-}
-
-/**
  * Implements hook_default_page_manager_handlers_alter().
  */
 function iasc_meeting_default_page_manager_handlers_alter(&$data) {
@@ -284,13 +274,8 @@ function iasc_meeting_default_page_manager_handlers_alter(&$data) {
           'locks' => array(),
           'uuid' => '457a0b07-9259-4092-a16e-f542822ee2af',
         ); /* WAS: '' */
-    $data['node_edit_panel_context_7']->conf['display']->panels['sidebar'][2] = 'new-c1b47a87-02a0-4882-a02f-5dd40ec016bb'; /* WAS: 'new-30f4398c-9f13-4195-b392-3f34ab0ddcee' */
-    $data['node_edit_panel_context_7']->conf['display']->panels['sidebar'][3] = 'new-84b3bfce-f79b-4397-8b67-d97d1b61347c'; /* WAS: 'new-c1b47a87-02a0-4882-a02f-5dd40ec016bb' */
-    $data['node_edit_panel_context_7']->conf['display']->panels['sidebar'][4] = 'new-020f676b-0f7d-4a37-93e2-44aa23df3980'; /* WAS: 'new-84b3bfce-f79b-4397-8b67-d97d1b61347c' */
-    $data['node_edit_panel_context_7']->conf['display']->panels['sidebar'][5] = 'new-0b869cc5-d419-48ed-bcd1-4e6ec0d15a34'; /* WAS: 'new-020f676b-0f7d-4a37-93e2-44aa23df3980' */
-    $data['node_edit_panel_context_7']->conf['display']->panels['sidebar'][6] = 'new-3e236361-115c-44f3-9bac-35db63392f0a'; /* WAS: 'new-0b869cc5-d419-48ed-bcd1-4e6ec0d15a34' */
-    $data['node_edit_panel_context_7']->conf['display']->panels['sidebar'][7] = 'new-68f32ccd-0cec-45db-9ecd-112683c079ae'; /* WAS: 'new-3e236361-115c-44f3-9bac-35db63392f0a' */
-    $data['node_edit_panel_context_7']->conf['display']->panels['sidebar'][8] = 'new-457a0b07-9259-4092-a16e-f542822ee2af'; /* WAS: 'new-68f32ccd-0cec-45db-9ecd-112683c079ae' */
+    $data['node_edit_panel_context_7']->conf['display']->panels['sidebar'][1] = 'new-457a0b07-9259-4092-a16e-f542822ee2af'; /* WAS: 'new-08f897a0-7ee5-4c24-856e-e5d6e0aa8bb3' */
+    $data['node_edit_panel_context_7']->conf['display']->panels['sidebar'][2] = 'new-08f897a0-7ee5-4c24-856e-e5d6e0aa8bb3'; /* WAS: 'new-30f4398c-9f13-4195-b392-3f34ab0ddcee' */
     unset($data['node_edit_panel_context_7']->conf['display']->content['new-30f4398c-9f13-4195-b392-3f34ab0ddcee']);
   }
 }
@@ -341,7 +326,7 @@ function iasc_meeting_panelizer_defaults_override_alter(&$data) {
           'locks' => array(),
           'uuid' => '024f971a-f875-4063-bf25-63926a5c9092',
         ); /* WAS: '' */
-    $data['node:oa_event:default']->display->content['new-163116e6-77f1-4774-aa82-1e437162dcca']->position = 7; /* WAS: 1 */
+    $data['node:oa_event:default']->display->content['new-163116e6-77f1-4774-aa82-1e437162dcca']->position = 7; /* WAS: 4 */
     $data['node:oa_event:default']->display->content['new-19fe4e19-0d90-4acf-9c80-e1ffdf773880'] = (object) array(
           'pid' => 'new-19fe4e19-0d90-4acf-9c80-e1ffdf773880',
           'panel' => 'sidebar',
@@ -734,10 +719,10 @@ function iasc_meeting_panelizer_defaults_override_alter(&$data) {
           'uuid' => 'c84bd896-6873-41ab-89ea-5d0f2e0c2c7f',
         ); /* WAS: '' */
     $data['node:oa_event:default']->display->panels['contentmain'][0] = 'new-c84bd896-6873-41ab-89ea-5d0f2e0c2c7f'; /* WAS: 'new-9035b3e7-28dc-478f-a595-e89dca69718a' */
-    $data['node:oa_event:default']->display->panels['contentmain'][1] = 'new-9035b3e7-28dc-478f-a595-e89dca69718a'; /* WAS: 'new-163116e6-77f1-4774-aa82-1e437162dcca' */
-    $data['node:oa_event:default']->display->panels['contentmain'][2] = 'new-3ac35fec-c644-44aa-a89a-ea15a4c4704a'; /* WAS: '' */
-    $data['node:oa_event:default']->display->panels['contentmain'][3] = 'new-9c1552e9-6b59-4811-ac8f-8278030a8f11'; /* WAS: '' */
-    $data['node:oa_event:default']->display->panels['contentmain'][4] = 'new-554e3ff8-5ae2-47d4-944e-53903613b9f5'; /* WAS: '' */
+    $data['node:oa_event:default']->display->panels['contentmain'][1] = 'new-9035b3e7-28dc-478f-a595-e89dca69718a'; /* WAS: 'new-3aa30de6-1950-4644-ad0c-aab8ed0b16a1' */
+    $data['node:oa_event:default']->display->panels['contentmain'][2] = 'new-3ac35fec-c644-44aa-a89a-ea15a4c4704a'; /* WAS: 'new-63669577-1767-458b-a0e4-9e11beb23736' */
+    $data['node:oa_event:default']->display->panels['contentmain'][3] = 'new-9c1552e9-6b59-4811-ac8f-8278030a8f11'; /* WAS: 'new-a6c0fd8c-28ed-47a4-b617-0575366de7b9' */
+    $data['node:oa_event:default']->display->panels['contentmain'][4] = 'new-554e3ff8-5ae2-47d4-944e-53903613b9f5'; /* WAS: 'new-163116e6-77f1-4774-aa82-1e437162dcca' */
     $data['node:oa_event:default']->display->panels['contentmain'][5] = 'new-2832cb36-53a3-484e-bbf0-05b7084ea8f4'; /* WAS: '' */
     $data['node:oa_event:default']->display->panels['contentmain'][6] = 'new-29d974b8-bef0-4ff8-af8c-38b369433a5c'; /* WAS: '' */
     $data['node:oa_event:default']->display->panels['contentmain'][7] = 'new-163116e6-77f1-4774-aa82-1e437162dcca'; /* WAS: '' */
@@ -750,6 +735,9 @@ function iasc_meeting_panelizer_defaults_override_alter(&$data) {
     $data['node:oa_event:default']->display->panels['sidebar'][6] = 'new-19fe4e19-0d90-4acf-9c80-e1ffdf773880'; /* WAS: '' */
     $data['node:oa_event:default']->display->panels['sidebar'][7] = 'new-213e8d65-ffde-47b2-bad5-b54b3f97dcfd'; /* WAS: '' */
     unset($data['node:oa_event:default']->display->content['new-231244a5-ffbc-4013-a01e-cc85b4feeff0']);
+    unset($data['node:oa_event:default']->display->content['new-3aa30de6-1950-4644-ad0c-aab8ed0b16a1']);
+    unset($data['node:oa_event:default']->display->content['new-63669577-1767-458b-a0e4-9e11beb23736']);
+    unset($data['node:oa_event:default']->display->content['new-a6c0fd8c-28ed-47a4-b617-0575366de7b9']);
     unset($data['node:oa_event:default']->display->content['new-cf81af22-ac8b-4147-8462-a5fce1b76471']);
     unset($data['node:oa_event:default']->display->content['new-e0f02a5b-dd4e-4ab9-8479-06a195d86fd0']);
   }
@@ -795,10 +783,7 @@ function iasc_meeting_views_default_views_alter(&$data) {
     unset($data['oa_event_detail']->display['event_details']->display_options['fields']['field_oa_date_2']['delta_offset']);
     unset($data['oa_event_detail']->display['event_details']->display_options['fields']['field_oa_date']['delta_offset']);
     unset($data['oa_event_detail']->display['event_details']->display_options['fields']['field_oa_date']['type']);
-    unset($data['oa_event_detail']->display['event_details']->display_options['fields']['field_oa_media_1']['delta_offset']);
-    unset($data['oa_event_detail']->display['event_details']->display_options['fields']['field_oa_media']['delta_offset']);
     unset($data['oa_event_detail']->display['event_details']->display_options['fields']['field_oa_related']);
-    unset($data['oa_event_detail']->display['event_details']->display_options['fields']['term_node_tid']);
   }
   if (isset($data['oa_event_list'])) {
     $data['oa_event_list']->display['default']->display_options['cache']['output_lifespan'] = 300; /* WAS: '' */
