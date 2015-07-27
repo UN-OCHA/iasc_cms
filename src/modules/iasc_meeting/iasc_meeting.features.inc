@@ -734,6 +734,7 @@ function iasc_meeting_panelizer_defaults_override_alter(&$data) {
     $data['node:oa_event:default']->display->panels['sidebar'][5] = 'new-bd3daacb-9380-4c7f-b478-67ec6c6244d2'; /* WAS: '' */
     $data['node:oa_event:default']->display->panels['sidebar'][6] = 'new-19fe4e19-0d90-4acf-9c80-e1ffdf773880'; /* WAS: '' */
     $data['node:oa_event:default']->display->panels['sidebar'][7] = 'new-213e8d65-ffde-47b2-bad5-b54b3f97dcfd'; /* WAS: '' */
+    $data['node:oa_event:default']->pipeline = 'ipe_node_access'; /* WAS: 'standard' */
     unset($data['node:oa_event:default']->display->content['new-231244a5-ffbc-4013-a01e-cc85b4feeff0']);
     unset($data['node:oa_event:default']->display->content['new-3aa30de6-1950-4644-ad0c-aab8ed0b16a1']);
     unset($data['node:oa_event:default']->display->content['new-63669577-1767-458b-a0e4-9e11beb23736']);
