@@ -687,6 +687,7 @@ function iasc_meeting_features_override_default_overrides() {
   $overrides["panelizer_defaults.node:oa_event:default.display|panels|sidebar|5"] = 'new-bd3daacb-9380-4c7f-b478-67ec6c6244d2';
   $overrides["panelizer_defaults.node:oa_event:default.display|panels|sidebar|6"] = 'new-19fe4e19-0d90-4acf-9c80-e1ffdf773880';
   $overrides["panelizer_defaults.node:oa_event:default.display|panels|sidebar|7"] = 'new-213e8d65-ffde-47b2-bad5-b54b3f97dcfd';
+  $overrides["panelizer_defaults.node:oa_event:default.pipeline"] = 'ipe_node_access';
 
   // Exported overrides for: variable
   $overrides["variable.node_submitted_oa_event.value"] = 0;

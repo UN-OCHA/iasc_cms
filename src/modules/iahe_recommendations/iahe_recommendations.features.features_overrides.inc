@@ -216,6 +216,7 @@ function iahe_recommendations_features_override_default_overrides() {
   $overrides["panelizer_defaults.node:oa_section:oa_section_worktracker.display|panels|contentmain|3"]["DELETED"] = TRUE;
   $overrides["panelizer_defaults.node:oa_section:oa_section_worktracker.display|panels|contentmain|4"]["DELETED"] = TRUE;
   $overrides["panelizer_defaults.node:oa_section:oa_section_worktracker.display|panels|sidebar"]["DELETED"] = TRUE;
+  $overrides["panelizer_defaults.node:oa_worktracker_task:default.pipeline"] = 'ipe_node_access';
 
  return $overrides;
 }

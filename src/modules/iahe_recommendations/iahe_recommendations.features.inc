@@ -266,4 +266,7 @@ function iahe_recommendations_panelizer_defaults_override_alter(&$data) {
     unset($data['node:oa_section:oa_section_worktracker']->display->panels['contentmain'][4]);
     unset($data['node:oa_section:oa_section_worktracker']->display->panels['sidebar']);
   }
+  if (isset($data['node:oa_worktracker_task:default'])) {
+    $data['node:oa_worktracker_task:default']->pipeline = 'ipe_node_access'; /* WAS: 'ipe' */
+  }
 }

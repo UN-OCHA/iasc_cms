@@ -142,6 +142,7 @@ features[features_overrides][] = panelizer_defaults.node:oa_event:default.displa
 features[features_overrides][] = panelizer_defaults.node:oa_event:default.display|panels|sidebar|5
 features[features_overrides][] = panelizer_defaults.node:oa_event:default.display|panels|sidebar|6
 features[features_overrides][] = panelizer_defaults.node:oa_event:default.display|panels|sidebar|7
+features[features_overrides][] = panelizer_defaults.node:oa_event:default.pipeline
 features[features_overrides][] = variable.node_submitted_oa_event.value
 features[features_overrides][] = views_view.oa_event_detail.display|default|display_options|fields|field_oa_address
 features[features_overrides][] = views_view.oa_event_detail.display|default|display_options|fields|field_oa_date|element_type

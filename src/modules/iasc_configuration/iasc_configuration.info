@@ -270,6 +270,7 @@ features[features_overrides][] = panelizer_defaults.node:oa_space:default.displa
 features[features_overrides][] = panelizer_defaults.node:oa_space:default.display|panels|sidebar|2
 features[features_overrides][] = panelizer_defaults.node:oa_space:default.display|panels|sidebar|3
 features[features_overrides][] = panelizer_defaults.node:oa_space:default.display|panels|sidebar|4
+features[features_overrides][] = panelizer_defaults.node:panopoly_page:default.pipeline
 features[features_overrides][] = panels_mini.default_section_sidebar.display|content|new-e88f722e-09b5-451c-b694-f6b79c2d8554|style|settings|secondary_options
 features[features_overrides][] = panels_mini.default_section_sidebar.display|content|new-e88f722e-09b5-451c-b694-f6b79c2d8554|style|style
 features[features_overrides][] = panels_mini.oa_toolbar_panel.display|content|new-1c7d87cd-035a-4552-b154-20fe54ebb76a
