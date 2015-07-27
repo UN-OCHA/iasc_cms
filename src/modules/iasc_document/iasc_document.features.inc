@@ -317,7 +317,6 @@ function iasc_document_panelizer_defaults_override_alter(&$data) {
           'locks' => array(),
           'uuid' => '436ee688-6d0a-4114-addd-12f3bd8d8131',
         ); /* WAS: '' */
-    $data['node:oa_wiki_page:default']->display->content['new-61664bae-1939-49e7-a25e-f958bf7a99f6']->configuration['context'] = 'panelizer'; /* WAS: array() */
     $data['node:oa_wiki_page:default']->display->content['new-61664bae-1939-49e7-a25e-f958bf7a99f6']->configuration['label'] = 'above'; /* WAS: 'title' */
     $data['node:oa_wiki_page:default']->display->content['new-61664bae-1939-49e7-a25e-f958bf7a99f6']->panel = 'contentmain'; /* WAS: 'sidebar' */
     $data['node:oa_wiki_page:default']->display->content['new-61664bae-1939-49e7-a25e-f958bf7a99f6']->position = 3; /* WAS: 2 */
@@ -427,8 +426,8 @@ function iasc_document_panelizer_defaults_override_alter(&$data) {
           'locks' => array(),
           'uuid' => 'ef8dc734-ed19-4641-be3f-38031e611432',
         ); /* WAS: '' */
-    $data['node:oa_wiki_page:default']->display->panels['contentmain'][1] = 'new-61664bae-1939-49e7-a25e-f958bf7a99f6'; /* WAS: 'new-a811ab4b-b391-4bac-aee2-f0b6bdb5a65d' */
-    $data['node:oa_wiki_page:default']->display->panels['contentmain'][2] = 'new-436ee688-6d0a-4114-addd-12f3bd8d8131'; /* WAS: 'new-32c308fc-ae57-43df-a4fa-8667a747ea6f' */
+    $data['node:oa_wiki_page:default']->display->panels['contentmain'][1] = 'new-61664bae-1939-49e7-a25e-f958bf7a99f6'; /* WAS: 'new-32c308fc-ae57-43df-a4fa-8667a747ea6f' */
+    $data['node:oa_wiki_page:default']->display->panels['contentmain'][2] = 'new-436ee688-6d0a-4114-addd-12f3bd8d8131'; /* WAS: 'new-a811ab4b-b391-4bac-aee2-f0b6bdb5a65d' */
     $data['node:oa_wiki_page:default']->display->panels['contentmain'][3] = 'new-ef8dc734-ed19-4641-be3f-38031e611432'; /* WAS: 'new-fd50a4cf-8298-4584-8504-b21e0e215e78' */
     $data['node:oa_wiki_page:default']->display->panels['sidebar'][1] = 'new-7680596e-9c34-431d-9d73-701c4d44c350'; /* WAS: 'new-05a2ca63-14bd-45a1-bab5-147952670034' */
     $data['node:oa_wiki_page:default']->display->panels['sidebar'][2] = 'new-eac5d508-0b43-4e80-ac21-cb302bdcb050'; /* WAS: 'new-61664bae-1939-49e7-a25e-f958bf7a99f6' */

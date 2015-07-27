@@ -502,6 +502,111 @@ function iasc_document_default_page_manager_pages() {
   $page->default_handlers[$handler->name] = $handler;
   $pages['product_catalog'] = $page;
 
+  $page = new stdClass();
+  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->api_version = 1;
+  $page->name = 'resource_pages';
+  $page->task = 'page';
+  $page->admin_title = 'Resource Pages';
+  $page->admin_description = '';
+  $page->path = 'resources';
+  $page->access = array();
+  $page->menu = array();
+  $page->arguments = array();
+  $page->conf = array(
+    'admin_paths' => FALSE,
+  );
+  $page->default_handlers = array();
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page_resource_pages__panel_context_c2f92df9-4199-407b-9a36-c11ad65e3f3e';
+  $handler->task = 'page';
+  $handler->subtask = 'resource_pages';
+  $handler->handler = 'panel_context';
+  $handler->weight = 0;
+  $handler->conf = array(
+    'title' => 'Panel',
+    'no_blocks' => 0,
+    'pipeline' => 'ipe',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+  );
+  $display = new panels_display();
+  $display->layout = 'radix_burr_flipped';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'sidebar' => NULL,
+      'contentmain' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = '';
+  $display->uuid = '543e79e6-1299-4e12-b28c-41ef40d6c5bb';
+  $display->content = array();
+  $display->panels = array();
+  $pane = new stdClass();
+  $pane->pid = 'new-785a83cf-266f-498c-9293-61610f4954c7';
+  $pane->panel = 'contentmain';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'iasc_document-panel_pane_resources';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'view_settings' => 'fields',
+    'header_type' => 'none',
+    'view_mode' => 'teaser',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '785a83cf-266f-498c-9293-61610f4954c7';
+  $display->content['new-785a83cf-266f-498c-9293-61610f4954c7'] = $pane;
+  $display->panels['contentmain'][0] = 'new-785a83cf-266f-498c-9293-61610f4954c7';
+  $pane = new stdClass();
+  $pane->pid = 'new-87156a3b-89d0-48a1-8cf1-a46e9d86e68d';
+  $pane->panel = 'sidebar';
+  $pane->type = 'block';
+  $pane->subtype = 'menu-menu-product-catalogue';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => array(
+      'secondary_options' => 'panel-primary',
+      'linked_list' => 'none',
+    ),
+    'style' => 'secondary',
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '87156a3b-89d0-48a1-8cf1-a46e9d86e68d';
+  $display->content['new-87156a3b-89d0-48a1-8cf1-a46e9d86e68d'] = $pane;
+  $display->panels['sidebar'][0] = 'new-87156a3b-89d0-48a1-8cf1-a46e9d86e68d';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = '0';
+  $handler->conf['display'] = $display;
+  $page->default_handlers[$handler->name] = $handler;
+  $pages['resource_pages'] = $page;
+
   return $pages;
 
 }
