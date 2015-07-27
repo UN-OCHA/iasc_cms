@@ -1793,6 +1793,9 @@ function iasc_configuration_panelizer_defaults_override_alter(&$data) {
     unset($data['node:oa_space:default']->display->content['new-801d2668-fa45-4031-83ba-e7d47830a8a6']);
     unset($data['node:oa_space:default']->display->content['new-9995e8b8-d8cb-4339-a7ad-1f0ea569d2de']);
   }
+  if (isset($data['node:panopoly_page:default'])) {
+    $data['node:panopoly_page:default']->pipeline = 'ipe_node_access'; /* WAS: 'ipe' */
+  }
 }
 
 /**

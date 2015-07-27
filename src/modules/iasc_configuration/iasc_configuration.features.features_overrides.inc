@@ -1664,6 +1664,7 @@ function iasc_configuration_features_override_default_overrides() {
   $overrides["panelizer_defaults.node:oa_space:default.display|panels|sidebar|2"] = 'new-652e1d79-7e20-4a4b-8b66-4fc46244013e';
   $overrides["panelizer_defaults.node:oa_space:default.display|panels|sidebar|3"] = 'new-a803a7e9-5a34-491d-878b-ac2f3fc7688e';
   $overrides["panelizer_defaults.node:oa_space:default.display|panels|sidebar|4"] = 'new-b1dbb2ba-786d-47d1-a861-30c45ad473d4';
+  $overrides["panelizer_defaults.node:panopoly_page:default.pipeline"] = 'ipe_node_access';
 
   // Exported overrides for: panels_mini
   $overrides["panels_mini.default_section_sidebar.display|content|new-e88f722e-09b5-451c-b694-f6b79c2d8554|style|settings|secondary_options"] = 'panel-primary';
