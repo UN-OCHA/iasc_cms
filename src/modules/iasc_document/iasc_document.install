@@ -99,3 +99,25 @@ function iasc_document_update_7001() {
     }
   }
 }
+
+/**
+ * Set all document nodes to show node instead of file on node view.
+ */
+function iasc_document_update_7002() {
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'oa_wiki_page')
+    ->propertyOrderBy('nid', 'ASC');
+
+  $result = $query->execute();
+
+  if (isset($result['node'])) {
+    $nids = array_keys($result['node']);
+    $nodes = node_load_multiple($nids);
+
+    foreach ($nodes as $node) {
+      $node->field_oa_wiki_page_no_redirect[LANGUAGE_NONE][0]['value'] = TRUE;
+      node_save($node);
+    }
+  }
+}

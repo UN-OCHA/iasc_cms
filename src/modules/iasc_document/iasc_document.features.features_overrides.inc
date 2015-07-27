@@ -82,6 +82,7 @@ function iasc_document_features_override_default_overrides() {
   $overrides["field_instance.node-oa_wiki_page-field_oa_media.widget|settings|manualcrop_thumblist"] = 0;
   $overrides["field_instance.node-oa_wiki_page-field_oa_media.widget|settings|progress_indicator"]["DELETED"] = TRUE;
   $overrides["field_instance.node-oa_wiki_page-field_oa_media.widget|weight"] = 8;
+  $overrides["field_instance.node-oa_wiki_page-field_oa_wiki_page_no_redirect.default_value|0|value"] = 1;
   $overrides["field_instance.node-oa_wiki_page-field_oa_wiki_page_no_redirect.display|bio_full"] = array(
     'label' => 'above',
     'settings' => array(),
