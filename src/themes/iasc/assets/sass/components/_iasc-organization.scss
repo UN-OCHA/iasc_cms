@@ -9,8 +9,8 @@
   ul {
     @include clearfix;
     @extend .panel-body;
-    margin-bottom: 20px;
-    padding: 10px 20px;
+    margin-bottom: 0;
+    padding: 0 20px;
     li {
       position: relative;
       float: left; 
