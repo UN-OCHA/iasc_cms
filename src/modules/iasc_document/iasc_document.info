@@ -172,6 +172,7 @@ features[field_instance][] = node-oa_wiki_page-field_published_date
 features[image][] = featured_product_thumbnail
 features[page_manager_handlers][] = term_view_panel_context
 features[page_manager_pages][] = product_catalog
+features[page_manager_pages][] = resource_page
 features[page_manager_pages][] = resource_pages
 features[taxonomy][] = document_types
 features[taxonomy][] = product_categories

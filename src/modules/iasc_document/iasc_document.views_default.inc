@@ -65,7 +65,7 @@ function iasc_document_views_default_views() {
   $handler->display->display_options['fields']['field_document_type']['element_type'] = 'span';
   $handler->display->display_options['fields']['field_document_type']['element_label_type'] = 'span';
   $handler->display->display_options['fields']['field_document_type']['type'] = 'taxonomy_term_reference_plain';
-  /* Field: Content: Authoring Bodies */
+  /* Field: Content: Groups audience */
   $handler->display->display_options['fields']['og_group_ref']['id'] = 'og_group_ref';
   $handler->display->display_options['fields']['og_group_ref']['table'] = 'og_membership';
   $handler->display->display_options['fields']['og_group_ref']['field'] = 'og_group_ref';
@@ -159,7 +159,7 @@ function iasc_document_views_default_views() {
   );
   $handler->display->display_options['filters']['field_published_date_value_1']['form_type'] = 'date_popup';
   $handler->display->display_options['filters']['field_published_date_value_1']['year_range'] = '-10:+3';
-  /* Filter criterion: Content: Authoring Bodies (og_group_ref:target_id) */
+  /* Filter criterion: Content: Groups audience (og_group_ref:target_id) */
   $handler->display->display_options['filters']['og_group_ref_target_id']['id'] = 'og_group_ref_target_id';
   $handler->display->display_options['filters']['og_group_ref_target_id']['table'] = 'og_membership';
   $handler->display->display_options['filters']['og_group_ref_target_id']['field'] = 'og_group_ref_target_id';
@@ -225,6 +225,8 @@ function iasc_document_views_default_views() {
     4 => 0,
     5 => 0,
     6 => 0,
+    11 => 0,
+    16 => 0,
   );
   $handler->display->display_options['filters']['field_document_type_tid']['group_info']['label'] = 'Type';
   $handler->display->display_options['filters']['field_document_type_tid']['group_info']['identifier'] = 'field_document_type_tid';
@@ -368,7 +370,7 @@ function iasc_document_views_default_views() {
     'oa_wiki_page' => 'oa_wiki_page',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Authoring Bodies (og_group_ref:target_id) */
+  /* Filter criterion: Content: Groups audience (og_group_ref:target_id) */
   $handler->display->display_options['filters']['og_group_ref_target_id']['id'] = 'og_group_ref_target_id';
   $handler->display->display_options['filters']['og_group_ref_target_id']['table'] = 'og_membership';
   $handler->display->display_options['filters']['og_group_ref_target_id']['field'] = 'og_group_ref_target_id';
@@ -556,7 +558,7 @@ function iasc_document_views_default_views() {
     'oa_wiki_page' => 'oa_wiki_page',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Authoring Bodies (og_group_ref:target_id) */
+  /* Filter criterion: Content: Groups audience (og_group_ref:target_id) */
   $handler->display->display_options['filters']['og_group_ref_target_id']['id'] = 'og_group_ref_target_id';
   $handler->display->display_options['filters']['og_group_ref_target_id']['table'] = 'og_membership';
   $handler->display->display_options['filters']['og_group_ref_target_id']['field'] = 'og_group_ref_target_id';
@@ -628,20 +630,16 @@ function iasc_document_views_default_views() {
     ),
   );
 
-  /* Display: Meeting Documents Page */
-  $handler = $view->new_display('page', 'Meeting Documents Page', 'page_meeting_documents');
+  /* Display: Resources Content pane */
+  $handler = $view->new_display('panel_pane', 'Resources Content pane', 'panel_pane_resources');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Meeting Documents';
-  $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Published Date (field_published_date) */
-  $handler->display->display_options['sorts']['field_published_date_value']['id'] = 'field_published_date_value';
-  $handler->display->display_options['sorts']['field_published_date_value']['table'] = 'field_data_field_published_date';
-  $handler->display->display_options['sorts']['field_published_date_value']['field'] = 'field_published_date_value';
-  $handler->display->display_options['sorts']['field_published_date_value']['order'] = 'DESC';
-  /* Sort criterion: Content: Title */
-  $handler->display->display_options['sorts']['title']['id'] = 'title';
-  $handler->display->display_options['sorts']['title']['table'] = 'node';
-  $handler->display->display_options['sorts']['title']['field'] = 'title';
+  $handler->display->display_options['pane_category']['name'] = 'IASC Documents';
+  $handler->display->display_options['pane_category']['weight'] = '0';
+
+  /* Display: Meeting documents pane */
+  $handler = $view->new_display('panel_pane', 'Meeting documents pane', 'panel_pane_meeting_documents');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['display_description'] = 'Used for: resources/meeting-documents';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -659,6 +657,64 @@ function iasc_document_views_default_views() {
     'oa_wiki_page' => 'oa_wiki_page',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Start from Date range */
+  $handler->display->display_options['filters']['field_published_date_value']['id'] = 'field_published_date_value';
+  $handler->display->display_options['filters']['field_published_date_value']['table'] = 'field_data_field_published_date';
+  $handler->display->display_options['filters']['field_published_date_value']['field'] = 'field_published_date_value';
+  $handler->display->display_options['filters']['field_published_date_value']['ui_name'] = 'Start from Date range';
+  $handler->display->display_options['filters']['field_published_date_value']['operator'] = '>=';
+  $handler->display->display_options['filters']['field_published_date_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_published_date_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_published_date_value']['expose']['operator_id'] = 'field_published_date_value_op';
+  $handler->display->display_options['filters']['field_published_date_value']['expose']['label'] = 'Date Range';
+  $handler->display->display_options['filters']['field_published_date_value']['expose']['operator'] = 'field_published_date_value_op';
+  $handler->display->display_options['filters']['field_published_date_value']['expose']['identifier'] = 'field_published_date_value';
+  $handler->display->display_options['filters']['field_published_date_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+  );
+  $handler->display->display_options['filters']['field_published_date_value']['form_type'] = 'date_popup';
+  $handler->display->display_options['filters']['field_published_date_value']['default_to_date'] = 'today';
+  $handler->display->display_options['filters']['field_published_date_value']['year_range'] = '-10:+3';
+  /* Filter criterion: End Date Range */
+  $handler->display->display_options['filters']['field_published_date_value_1']['id'] = 'field_published_date_value_1';
+  $handler->display->display_options['filters']['field_published_date_value_1']['table'] = 'field_data_field_published_date';
+  $handler->display->display_options['filters']['field_published_date_value_1']['field'] = 'field_published_date_value';
+  $handler->display->display_options['filters']['field_published_date_value_1']['ui_name'] = 'End Date Range';
+  $handler->display->display_options['filters']['field_published_date_value_1']['operator'] = '<=';
+  $handler->display->display_options['filters']['field_published_date_value_1']['group'] = 1;
+  $handler->display->display_options['filters']['field_published_date_value_1']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_published_date_value_1']['expose']['operator_id'] = 'field_published_date_value_1_op';
+  $handler->display->display_options['filters']['field_published_date_value_1']['expose']['operator'] = 'field_published_date_value_1_op';
+  $handler->display->display_options['filters']['field_published_date_value_1']['expose']['identifier'] = 'field_published_date_value_1';
+  $handler->display->display_options['filters']['field_published_date_value_1']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+  );
+  $handler->display->display_options['filters']['field_published_date_value_1']['form_type'] = 'date_popup';
+  $handler->display->display_options['filters']['field_published_date_value_1']['year_range'] = '-10:+3';
+  /* Filter criterion: Content: Groups audience (og_group_ref:target_id) */
+  $handler->display->display_options['filters']['og_group_ref_target_id']['id'] = 'og_group_ref_target_id';
+  $handler->display->display_options['filters']['og_group_ref_target_id']['table'] = 'og_membership';
+  $handler->display->display_options['filters']['og_group_ref_target_id']['field'] = 'og_group_ref_target_id';
+  $handler->display->display_options['filters']['og_group_ref_target_id']['group'] = 1;
+  $handler->display->display_options['filters']['og_group_ref_target_id']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['og_group_ref_target_id']['expose']['operator_id'] = 'og_group_ref_target_id_op';
+  $handler->display->display_options['filters']['og_group_ref_target_id']['expose']['label'] = 'Authoring Bodies';
+  $handler->display->display_options['filters']['og_group_ref_target_id']['expose']['operator'] = 'og_group_ref_target_id_op';
+  $handler->display->display_options['filters']['og_group_ref_target_id']['expose']['identifier'] = 'og_group_ref_target_id';
+  $handler->display->display_options['filters']['og_group_ref_target_id']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    5 => 0,
+    6 => 0,
+  );
   /* Filter criterion: Content: Document Type (field_document_type) */
   $handler->display->display_options['filters']['field_document_type_tid']['id'] = 'field_document_type_tid';
   $handler->display->display_options['filters']['field_document_type_tid']['table'] = 'field_data_field_document_type';
@@ -719,17 +775,22 @@ function iasc_document_views_default_views() {
   $handler->display->display_options['filters']['field_document_type_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_document_type_tid']['vocabulary'] = 'document_types';
   $handler->display->display_options['filters']['field_document_type_tid']['hierarchy'] = 1;
-  $handler->display->display_options['path'] = 'resources/meeting-documents';
-  $handler->display->display_options['menu']['type'] = 'normal';
-  $handler->display->display_options['menu']['title'] = 'Meeting Documents';
-  $handler->display->display_options['menu']['weight'] = '0';
-  $handler->display->display_options['menu']['name'] = 'main-menu';
-  $handler->display->display_options['menu']['context'] = 0;
-  $handler->display->display_options['menu']['context_only_inline'] = 0;
-
-  /* Display: Resources Content pane */
-  $handler = $view->new_display('panel_pane', 'Resources Content pane', 'panel_pane_resources');
-  $handler->display->display_options['defaults']['title'] = FALSE;
+  /* Filter criterion: Search: Search Terms */
+  $handler->display->display_options['filters']['keys']['id'] = 'keys';
+  $handler->display->display_options['filters']['keys']['table'] = 'search_index';
+  $handler->display->display_options['filters']['keys']['field'] = 'keys';
+  $handler->display->display_options['filters']['keys']['group'] = 1;
+  $handler->display->display_options['filters']['keys']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['keys']['expose']['operator_id'] = 'keys_op';
+  $handler->display->display_options['filters']['keys']['expose']['label'] = 'Filter';
+  $handler->display->display_options['filters']['keys']['expose']['operator'] = 'keys_op';
+  $handler->display->display_options['filters']['keys']['expose']['identifier'] = 'keys';
+  $handler->display->display_options['filters']['keys']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+  );
   $handler->display->display_options['pane_category']['name'] = 'IASC Documents';
   $handler->display->display_options['pane_category']['weight'] = '0';
   $export['iasc_document'] = $view;
