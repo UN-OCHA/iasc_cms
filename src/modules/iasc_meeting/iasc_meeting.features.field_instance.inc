@@ -184,10 +184,9 @@ function iasc_meeting_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'entityreference',
         'settings' => array(
-          'links' => 0,
-          'view_mode' => 'link_to_document',
+          'link' => 1,
         ),
-        'type' => 'entityreference_entity_view',
+        'type' => 'entityreference_label',
         'weight' => 5,
       ),
     ),
