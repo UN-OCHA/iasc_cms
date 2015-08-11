@@ -510,7 +510,10 @@ function iasc_document_default_page_manager_pages() {
   $page->admin_title = 'Meeting Documents Page';
   $page->admin_description = '';
   $page->path = 'resources/meeting-documents';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array();
   $page->arguments = array();
   $page->conf = array(
@@ -588,7 +591,10 @@ function iasc_document_default_page_manager_pages() {
   $page->admin_title = 'Resource Page';
   $page->admin_description = '';
   $page->path = 'resources';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array();
   $page->arguments = array();
   $page->conf = array(
