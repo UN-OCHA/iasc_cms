@@ -62,7 +62,14 @@ function iasc_contact_form_node_form_alter(&$form, &$form_state, $form_id) {
     // Change the labels for Building and Room. These are part of addressfield.
     $form['field_address'][LANGUAGE_NONE][0]['name_block']['name_line']['#title'] = t('Building');
     $form['field_address'][LANGUAGE_NONE][0]['organisation_block']['organisation_name']['#title'] = t('Room');
-    $form['field_org_address'][LANGUAGE_NONE][0]['name_block']['name_line']['#title'] = t('Building');
+
+    // Make all fields of the addressfield optional.
+    $form['field_address'][LANGUAGE_NONE][0]['name_block']['name_line']['#required'] = FALSE;
+    $form['field_address'][LANGUAGE_NONE][0]['street_block']['thoroughfare']['#required'] = FALSE;
+    $form['field_address'][LANGUAGE_NONE][0]['locality_block']['locality']['#required'] = FALSE;
+    $form['field_address'][LANGUAGE_NONE][0]['locality_block']['administrative_area']['#required'] = FALSE;
+    $form['field_address'][LANGUAGE_NONE][0]['locality_block']['postal_code']['#required'] = FALSE;
+
 
     $node = $form['#node'];
     if (isset($node->field_address[LANGUAGE_NONE][0]['name_line'])) {
