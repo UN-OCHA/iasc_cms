@@ -19,18 +19,19 @@
     & > .field-label {
       @extend h2;
     }
+
     .field-name-field-ai-title {
       @extend h3;
+      display: list-item;
+      margin-left: 2em;
       margin-top: 0;
     }
 
     .field-item .entity-field-collection-item {
-      .field:nth-child(1) {
+      .ref-document {
         display: list-item;
-        margin-left: 2em;
-      }
-      .field .field-name-field-oa-media {
         margin-left: 4em;
+        margin-bottom: 20px;
       }
     }
   }

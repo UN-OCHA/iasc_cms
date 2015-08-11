@@ -9842,28 +9842,27 @@ img.bio-circled {
 .node-type-oa-event p.oa-event-date {
   margin-bottom: 0;
 }
-/* line 22, ../sass/components/_meetings.scss */
+/* line 23, ../sass/components/_meetings.scss */
 .node-type-oa-event .field-name-field-agenda-items .field-name-field-ai-title {
-  margin-top: 0;
-}
-/* line 28, ../sass/components/_meetings.scss */
-.node-type-oa-event .field-name-field-agenda-items .field-item .entity-field-collection-item .field:nth-child(1) {
   display: list-item;
   margin-left: 2em;
+  margin-top: 0;
 }
-/* line 32, ../sass/components/_meetings.scss */
-.node-type-oa-event .field-name-field-agenda-items .field-item .entity-field-collection-item .field .field-name-field-oa-media {
+/* line 31, ../sass/components/_meetings.scss */
+.node-type-oa-event .field-name-field-agenda-items .field-item .entity-field-collection-item .ref-document {
+  display: list-item;
   margin-left: 4em;
+  margin-bottom: 20px;
 }
-/* line 39, ../sass/components/_meetings.scss */
+/* line 40, ../sass/components/_meetings.scss */
 .node-type-oa-event .panel-primary.none:first-child {
   margin-bottom: 0;
 }
-/* line 41, ../sass/components/_meetings.scss */
+/* line 42, ../sass/components/_meetings.scss */
 .node-type-oa-event .panel-primary.none:first-child .panel-body, .node-type-oa-event .panel-primary.none:first-child .view-display-id-panel_pane_membership_logos ul, .view-display-id-panel_pane_membership_logos .node-type-oa-event .panel-primary.none:first-child ul {
   padding-top: 0;
 }
-/* line 46, ../sass/components/_meetings.scss */
+/* line 47, ../sass/components/_meetings.scss */
 .node-type-oa-event .pane-node-field-city,
 .node-type-oa-event .pane-node-field-venue,
 .node-type-oa-event .pane-node-field-room,
