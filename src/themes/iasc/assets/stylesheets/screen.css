@@ -8868,14 +8868,12 @@ html.js input.throbbing {
 }
 
 /* line 40, ../sass/base/_icons.scss */
-.icons-arrow, .panel-secondary.panel-success.arrow .view-content a:before,
-.panel-secondary.panel-info.arrow .view-content a:before {
+.icons-arrow {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf101;');
 }
 
 /* line 44, ../sass/base/_icons.scss */
-.icons-arrow:before, .view-display-id-panel_pane_featured_products .views-row .content a:after, .panel-secondary.panel-success.arrow .view-content a:before,
-.panel-secondary.panel-info.arrow .view-content a:before {
+.icons-arrow:before, .view-display-id-panel_pane_featured_products .views-row .content a:after {
   content: "\f101";
 }
 
@@ -8970,14 +8968,16 @@ html.js input.throbbing {
 }
 
 /* line 120, ../sass/base/_icons.scss */
-.icons-page, .panel-secondary.panel-success.doc-icon .view-content a:before,
-.panel-secondary.panel-info.doc-icon .view-content a:before {
+.icons-page, .panel-secondary.panel-success.doc-icon .view-content a:before, .panel-secondary.panel-success.doc-icon .field-items a:before,
+.panel-secondary.panel-info.doc-icon .view-content a:before,
+.panel-secondary.panel-info.doc-icon .field-items a:before {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf10b;');
 }
 
 /* line 124, ../sass/base/_icons.scss */
-.icons-page:before, .panel-secondary.panel-success.doc-icon .view-content a:before,
-.panel-secondary.panel-info.doc-icon .view-content a:before {
+.icons-page:before, .panel-secondary.panel-success.doc-icon .view-content a:before, .panel-secondary.panel-success.doc-icon .field-items a:before,
+.panel-secondary.panel-info.doc-icon .view-content a:before,
+.panel-secondary.panel-info.doc-icon .field-items a:before {
   content: "\f10b";
 }
 
@@ -9546,14 +9546,20 @@ form .form-actions .node-readmore a,
   margin-bottom: 5px;
 }
 /* line 42, ../sass/components/_fields.scss */
-.pane-node-field-agenda-items .icons-page, .pane-node-field-agenda-items .panel-secondary.panel-success.doc-icon .view-content a:before, .panel-secondary.panel-success.doc-icon .view-content .pane-node-field-agenda-items a:before,
+.pane-node-field-agenda-items .icons-page, .pane-node-field-agenda-items .panel-secondary.panel-success.doc-icon .view-content a:before, .panel-secondary.panel-success.doc-icon .view-content .pane-node-field-agenda-items a:before, .pane-node-field-agenda-items .panel-secondary.panel-success.doc-icon .field-items a:before, .panel-secondary.panel-success.doc-icon .field-items .pane-node-field-agenda-items a:before,
 .pane-node-field-agenda-items .panel-secondary.panel-info.doc-icon .view-content a:before,
 .panel-secondary.panel-info.doc-icon .view-content .pane-node-field-agenda-items a:before,
+.pane-node-field-agenda-items .panel-secondary.panel-info.doc-icon .field-items a:before,
+.panel-secondary.panel-info.doc-icon .field-items .pane-node-field-agenda-items a:before,
 .pane-node-field-oa-media .icons-page,
 .pane-node-field-oa-media .panel-secondary.panel-success.doc-icon .view-content a:before,
 .panel-secondary.panel-success.doc-icon .view-content .pane-node-field-oa-media a:before,
+.pane-node-field-oa-media .panel-secondary.panel-success.doc-icon .field-items a:before,
+.panel-secondary.panel-success.doc-icon .field-items .pane-node-field-oa-media a:before,
 .pane-node-field-oa-media .panel-secondary.panel-info.doc-icon .view-content a:before,
-.panel-secondary.panel-info.doc-icon .view-content .pane-node-field-oa-media a:before {
+.panel-secondary.panel-info.doc-icon .view-content .pane-node-field-oa-media a:before,
+.pane-node-field-oa-media .panel-secondary.panel-info.doc-icon .field-items a:before,
+.panel-secondary.panel-info.doc-icon .field-items .pane-node-field-oa-media a:before {
   font-size: 15px;
   margin-right: 10px;
   vertical-align: baseline;
