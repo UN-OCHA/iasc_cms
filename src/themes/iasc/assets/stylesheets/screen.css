@@ -8868,12 +8868,16 @@ html.js input.throbbing {
 }
 
 /* line 40, ../sass/base/_icons.scss */
-.icons-arrow {
+.icons-arrow, .panel-secondary.panel-success.arrow .view-content a:before, .panel-secondary.panel-success.arrow .field-items a:before,
+.panel-secondary.panel-info.arrow .view-content a:before,
+.panel-secondary.panel-info.arrow .field-items a:before {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf101;');
 }
 
 /* line 44, ../sass/base/_icons.scss */
-.icons-arrow:before, .view-display-id-panel_pane_featured_products .views-row .content a:after {
+.icons-arrow:before, .view-display-id-panel_pane_featured_products .views-row .content a:after, .panel-secondary.panel-success.arrow .view-content a:before, .panel-secondary.panel-success.arrow .field-items a:before,
+.panel-secondary.panel-info.arrow .view-content a:before,
+.panel-secondary.panel-info.arrow .field-items a:before {
   content: "\f101";
 }
 
