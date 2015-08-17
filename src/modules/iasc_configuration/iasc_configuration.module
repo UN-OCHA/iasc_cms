@@ -905,6 +905,10 @@ function iasc_configuration_form_alter(&$form, &$form_state, $form_id) {
  * Implements hook_form_alter().
  */
 function iasc_configuration_form_panels_ipe_edit_control_form_alter(&$form, &$form_state, $form_id) {
+  // Hide revision + log fields on customize this page form b/c they are unnecessary.
+  $form['options']['revision']['#access'] = FALSE;
+  $form['options']['log']['#access'] = FALSE;
+
   // Restrict the Revert IPE button to those who have the permission.
   if (isset($form['buttons']['revert_default'])) {
     if (!user_access('access IPE revert button')) {

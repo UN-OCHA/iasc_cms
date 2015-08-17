@@ -41,8 +41,8 @@
       padding-left: 30px;
     }
   }
-  &.doc-icon .view-content a:before { @extend .icons-page; }
-  &.arrow .view-content a:before { @extend .icons-arrow; } 
+  &.doc-icon .view-content a:before, &.doc-icon .field-items a:before { @extend .icons-page; }
+  &.arrow .view-content a:before, &.arrow .field-items a:before  { @extend .icons-arrow; }
   li { 
     line-height: 20px;
     margin-bottom: 15px;
