@@ -1254,9 +1254,36 @@ function iasc_configuration_panelizer_defaults_override_alter(&$data) {
           ),
           'css' => array(),
           'extras' => array(),
-          'position' => 2,
+          'position' => 1,
           'locks' => array(),
           'uuid' => '078ef339-4031-483a-8dfb-8837db7d7d95',
+        ); /* WAS: '' */
+    $data['node:oa_section:calendar_section']->display->content['new-124bc67a-2e01-41c2-a20d-364ffaed9f16'] = (object) array(
+          'pid' => 'new-124bc67a-2e01-41c2-a20d-364ffaed9f16',
+          'panel' => 'contentmain',
+          'type' => 'node_title',
+          'subtype' => 'node_title',
+          'shown' => TRUE,
+          'access' => array(),
+          'configuration' => array(
+            'link' => 0,
+            'markup' => 'none',
+            'id' => '',
+            'class' => '',
+            'context' => 'panelizer',
+            'override_title' => 1,
+            'override_title_text' => 'Meetings of %node:og_group_ref',
+            'override_title_heading' => 'h1',
+          ),
+          'cache' => array(),
+          'style' => array(
+            'settings' => NULL,
+          ),
+          'css' => array(),
+          'extras' => array(),
+          'position' => 0,
+          'locks' => array(),
+          'uuid' => '124bc67a-2e01-41c2-a20d-364ffaed9f16',
         ); /* WAS: '' */
     $data['node:oa_section:calendar_section']->display->content['new-5dea552f-a833-4443-b02e-883b4f59bf62'] = (object) array(
           'pid' => 'new-5dea552f-a833-4443-b02e-883b4f59bf62',
@@ -1283,6 +1310,7 @@ function iasc_configuration_panelizer_defaults_override_alter(&$data) {
           'locks' => array(),
           'uuid' => '5dea552f-a833-4443-b02e-883b4f59bf62',
         ); /* WAS: '' */
+    $data['node:oa_section:calendar_section']->display->content['new-780690aa-b3ce-4036-99e7-e81fc4509a23']->position = 4; /* WAS: 1 */
     $data['node:oa_section:calendar_section']->display->content['new-9ea94d4c-567b-404f-9aec-386ae14a1aea'] = (object) array(
           'pid' => 'new-9ea94d4c-567b-404f-9aec-386ae14a1aea',
           'panel' => 'sidebar',
@@ -1345,7 +1373,7 @@ function iasc_configuration_panelizer_defaults_override_alter(&$data) {
           ),
           'css' => array(),
           'extras' => array(),
-          'position' => 0,
+          'position' => 2,
           'locks' => array(),
           'uuid' => 'c6abcc4f-8796-4c05-983b-8eabfd975206',
         ); /* WAS: '' */
@@ -1386,14 +1414,15 @@ function iasc_configuration_panelizer_defaults_override_alter(&$data) {
           ),
           'css' => array(),
           'extras' => array(),
-          'position' => 1,
+          'position' => 3,
           'locks' => array(),
           'uuid' => 'fad8e5e6-4911-4a2e-ba23-b5cc386d98cd',
         ); /* WAS: '' */
-    $data['node:oa_section:calendar_section']->display->panels['contentmain'][0] = 'new-780690aa-b3ce-4036-99e7-e81fc4509a23'; /* WAS: 'new-39b87a40-e27c-45b0-8bdf-6a9c3f117695' */
+    $data['node:oa_section:calendar_section']->display->panels['contentmain'][0] = 'new-124bc67a-2e01-41c2-a20d-364ffaed9f16'; /* WAS: 'new-39b87a40-e27c-45b0-8bdf-6a9c3f117695' */
     $data['node:oa_section:calendar_section']->display->panels['contentmain'][1] = 'new-078ef339-4031-483a-8dfb-8837db7d7d95'; /* WAS: 'new-780690aa-b3ce-4036-99e7-e81fc4509a23' */
     $data['node:oa_section:calendar_section']->display->panels['contentmain'][2] = 'new-c6abcc4f-8796-4c05-983b-8eabfd975206'; /* WAS: '' */
     $data['node:oa_section:calendar_section']->display->panels['contentmain'][3] = 'new-fad8e5e6-4911-4a2e-ba23-b5cc386d98cd'; /* WAS: '' */
+    $data['node:oa_section:calendar_section']->display->panels['contentmain'][4] = 'new-780690aa-b3ce-4036-99e7-e81fc4509a23'; /* WAS: '' */
     $data['node:oa_section:calendar_section']->display->panels['sidebar'][0] = 'new-5dea552f-a833-4443-b02e-883b4f59bf62'; /* WAS: 'new-81942150-4ee9-4396-8371-b94f72b18f6a' */
     $data['node:oa_section:calendar_section']->display->panels['sidebar'][1] = 'new-9ea94d4c-567b-404f-9aec-386ae14a1aea'; /* WAS: 'new-5241f5c7-9e10-4e79-a1ce-84f68ad200f3' */
     $data['node:oa_section:calendar_section']->display->title = 'Meetings of %node:og_group_ref'; /* WAS: '' */
@@ -1450,7 +1479,34 @@ function iasc_configuration_panelizer_defaults_override_alter(&$data) {
           'locks' => array(),
           'uuid' => '16ff2951-2241-4d47-b6d0-1ad702a78848',
         ); /* WAS: '' */
-    $data['node:oa_section:oa_section_news']->display->content['new-60764651-f3d4-4f32-a25e-56c63162c11f']->position = 0; /* WAS: 3 */
+    $data['node:oa_section:oa_section_news']->display->content['new-30adbf31-ef30-4ca0-a164-35b03eea3b49'] = (object) array(
+          'pid' => 'new-30adbf31-ef30-4ca0-a164-35b03eea3b49',
+          'panel' => 'contentmain',
+          'type' => 'node_title',
+          'subtype' => 'node_title',
+          'shown' => TRUE,
+          'access' => array(),
+          'configuration' => array(
+            'link' => 0,
+            'markup' => 'none',
+            'id' => '',
+            'class' => '',
+            'context' => 'panelizer',
+            'override_title' => 1,
+            'override_title_text' => 'Meetings of %node:og_group_ref',
+            'override_title_heading' => 'h1',
+          ),
+          'cache' => array(),
+          'style' => array(
+            'settings' => NULL,
+          ),
+          'css' => array(),
+          'extras' => array(),
+          'position' => 0,
+          'locks' => array(),
+          'uuid' => '30adbf31-ef30-4ca0-a164-35b03eea3b49',
+        ); /* WAS: '' */
+    $data['node:oa_section:oa_section_news']->display->content['new-60764651-f3d4-4f32-a25e-56c63162c11f']->position = 2; /* WAS: 3 */
     $data['node:oa_section:oa_section_news']->display->content['new-9af9cc15-2fcb-4960-8d6e-276c1e3ba12f'] = (object) array(
           'pid' => 'new-9af9cc15-2fcb-4960-8d6e-276c1e3ba12f',
           'panel' => 'sidebar',
@@ -1494,8 +1550,9 @@ function iasc_configuration_panelizer_defaults_override_alter(&$data) {
           'locks' => array(),
           'uuid' => 'bdebbf8b-cf16-44e5-aa9c-4f168d4d8310',
         ); /* WAS: '' */
-    $data['node:oa_section:oa_section_news']->display->panels['contentmain'][0] = 'new-60764651-f3d4-4f32-a25e-56c63162c11f'; /* WAS: 'new-2010ab8d-8b3a-4f76-8bcd-a9b92ba1417b' */
+    $data['node:oa_section:oa_section_news']->display->panels['contentmain'][0] = 'new-30adbf31-ef30-4ca0-a164-35b03eea3b49'; /* WAS: 'new-2010ab8d-8b3a-4f76-8bcd-a9b92ba1417b' */
     $data['node:oa_section:oa_section_news']->display->panels['contentmain'][1] = 'new-16ff2951-2241-4d47-b6d0-1ad702a78848'; /* WAS: 'new-a1345e0e-4ffb-4445-b615-b8922b7dba10' */
+    $data['node:oa_section:oa_section_news']->display->panels['contentmain'][2] = 'new-60764651-f3d4-4f32-a25e-56c63162c11f'; /* WAS: 'new-d2e48391-04fd-4e47-a3ee-9442c060a4e8' */
     $data['node:oa_section:oa_section_news']->display->panels['sidebar'][0] = 'new-9af9cc15-2fcb-4960-8d6e-276c1e3ba12f'; /* WAS: 'new-e7915e9b-dd20-424f-b4e9-4bc4d9a81cbc' */
     $data['node:oa_section:oa_section_news']->display->panels['sidebar'][1] = 'new-bdebbf8b-cf16-44e5-aa9c-4f168d4d8310'; /* WAS: 'new-83087d0e-6633-4275-baea-7bb63a3fb92f' */
     $data['node:oa_section:oa_section_news']->display->title = 'News of %node:og_group_ref'; /* WAS: '' */
@@ -1504,7 +1561,6 @@ function iasc_configuration_panelizer_defaults_override_alter(&$data) {
     unset($data['node:oa_section:oa_section_news']->display->content['new-a1345e0e-4ffb-4445-b615-b8922b7dba10']);
     unset($data['node:oa_section:oa_section_news']->display->content['new-d2e48391-04fd-4e47-a3ee-9442c060a4e8']);
     unset($data['node:oa_section:oa_section_news']->display->content['new-e7915e9b-dd20-424f-b4e9-4bc4d9a81cbc']);
-    unset($data['node:oa_section:oa_section_news']->display->panels['contentmain'][2]);
     unset($data['node:oa_section:oa_section_news']->display->panels['contentmain'][3]);
   }
   if (isset($data['node:oa_space:default'])) {
