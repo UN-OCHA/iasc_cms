@@ -1776,6 +1776,7 @@ function iasc_configuration_features_override_default_overrides() {
 
   // Exported overrides for: variable
   $overrides["variable.bootstrap_library_settings.value|theme|themes|iasc"] = 'iasc';
+  $overrides["variable.dhtml_menu_settings.value|filter|list|menu-iasc-body-categories"] = 'menu-iasc-body-categories';
 
   // Exported overrides for: views_view
   $overrides["views_view.oa_comment_media.display|default|display_options|relationships|field_oa_related_node|label"]["DELETED"] = TRUE;

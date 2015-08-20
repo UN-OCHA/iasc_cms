@@ -1921,6 +1921,9 @@ function iasc_configuration_strongarm_alter(&$data) {
   if (isset($data['bootstrap_library_settings'])) {
     $data['bootstrap_library_settings']->value['theme']['themes']['iasc'] = 'iasc'; /* WAS: '' */
   }
+  if (isset($data['dhtml_menu_settings'])) {
+    $data['dhtml_menu_settings']->value['filter']['list']['menu-iasc-body-categories'] = 'menu-iasc-body-categories'; /* WAS: '' */
+  }
 }
 
 /**
