@@ -1545,7 +1545,7 @@ function iasc_configuration_panelizer_defaults_override_alter(&$data) {
           ),
           'css' => array(),
           'extras' => array(),
-          'position' => 1,
+          'position' => 2,
           'locks' => array(),
           'uuid' => '02b7adcf-d6d0-41cc-9e74-71ce68194477',
         ); /* WAS: '' */
@@ -1776,17 +1776,17 @@ function iasc_configuration_panelizer_defaults_override_alter(&$data) {
           ),
           'css' => array(),
           'extras' => array(),
-          'position' => 2,
+          'position' => 3,
           'locks' => array(),
           'uuid' => 'ef209430-cd92-42f8-ab1a-66dd810461e2',
         ); /* WAS: '' */
     $data['node:oa_space:default']->display->layout = 'burr_flipped'; /* WAS: 'radix_bryant_flipped' */
     $data['node:oa_space:default']->display->panels['contentmain'][2] = 'new-02b7adcf-d6d0-41cc-9e74-71ce68194477'; /* WAS: 'new-9995e8b8-d8cb-4339-a7ad-1f0ea569d2de' */
     $data['node:oa_space:default']->display->panels['contentmain'][3] = 'new-ef209430-cd92-42f8-ab1a-66dd810461e2'; /* WAS: '' */
-    $data['node:oa_space:default']->display->panels['sidebar'][0] = 'new-231a7676-b37f-4d85-bd32-996525f4e9d2'; /* WAS: 'new-801d2668-fa45-4031-83ba-e7d47830a8a6' */
+    $data['node:oa_space:default']->display->panels['sidebar'][0] = 'new-a803a7e9-5a34-491d-878b-ac2f3fc7688e'; /* WAS: 'new-801d2668-fa45-4031-83ba-e7d47830a8a6' */
     $data['node:oa_space:default']->display->panels['sidebar'][1] = 'new-35ab60ac-d6d7-41b2-a57e-21ca28e5e974'; /* WAS: 'new-2b5ef25a-4dce-4b89-99b7-f940adbd5e95' */
     $data['node:oa_space:default']->display->panels['sidebar'][2] = 'new-652e1d79-7e20-4a4b-8b66-4fc46244013e'; /* WAS: 'new-18865aa1-e2a6-4d3d-93c2-3f80adf44c54' */
-    $data['node:oa_space:default']->display->panels['sidebar'][3] = 'new-a803a7e9-5a34-491d-878b-ac2f3fc7688e'; /* WAS: '' */
+    $data['node:oa_space:default']->display->panels['sidebar'][3] = 'new-231a7676-b37f-4d85-bd32-996525f4e9d2'; /* WAS: '' */
     $data['node:oa_space:default']->display->panels['sidebar'][4] = 'new-b1dbb2ba-786d-47d1-a861-30c45ad473d4'; /* WAS: '' */
     unset($data['node:oa_space:default']->display->content['new-18865aa1-e2a6-4d3d-93c2-3f80adf44c54']);
     unset($data['node:oa_space:default']->display->content['new-2b5ef25a-4dce-4b89-99b7-f940adbd5e95']);
