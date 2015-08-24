@@ -29,7 +29,9 @@ module.exports = function(grunt) {
         options: {
           sassDir: 'assets/sass',
           cssDir: 'assets/stylesheets',
-          outputStyle: 'expanded'
+          outputStyle: 'expanded',
+          noLineComments: true
+
         }
       }
     },

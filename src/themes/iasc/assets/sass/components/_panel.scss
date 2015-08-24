@@ -41,8 +41,8 @@
       padding-left: 30px;
     }
   }
-  &.doc-icon .view-content a:before { @extend .icons-page; }
-  &.arrow .view-content a:before { @extend .icons-arrow; } 
+  &.doc-icon .view-content a:before, &.doc-icon .field-items a:before { @extend .icons-page; }
+  &.arrow .view-content a:before, &.arrow .field-items a:before  { @extend .icons-arrow; }
   li { 
     line-height: 20px;
     margin-bottom: 15px;
@@ -91,8 +91,14 @@
 .node-type-announcement, 
 .page-page-not-found,
 .node-type-oa-event,
-.node-type-oa-wiki-page {
+.node-type-oa-wiki-page,
+.node-type-oa-section {
   h1.title { display: none; }
+}
+
+// Hide section extra title
+.node-type-oa-section .pane-node-title .pane-content {
+ display: none; 
 }
 
 .section-menu .space-title a {

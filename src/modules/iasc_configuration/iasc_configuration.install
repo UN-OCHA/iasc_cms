@@ -210,3 +210,16 @@ function iasc_configuration_update_7004() {
     }
   }
 }
+
+/**
+ * Implements hook_update_N().
+ *
+ * Limit Featured Products nodequeue to hold only 1 item.
+ */
+function iasc_configuration_update_7005() {
+  $queue = nodequeue_load_queue_by_name('featured_products');
+  if ($queue) {
+    $queue->size = 1;
+    nodequeue_save($queue);
+  }
+}
