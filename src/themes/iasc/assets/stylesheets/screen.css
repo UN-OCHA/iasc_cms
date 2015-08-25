@@ -9133,7 +9133,12 @@ img.bio-circled {
 .node-type-announcement h1.title,
 .page-page-not-found h1.title,
 .node-type-oa-event h1.title,
-.node-type-oa-wiki-page h1.title {
+.node-type-oa-wiki-page h1.title,
+.node-type-oa-section h1.title {
+  display: none;
+}
+
+.node-type-oa-section .pane-node-title .pane-content, .node-type-oa-space .pane-node-title .pane-content {
   display: none;
 }
 

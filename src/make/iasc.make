@@ -120,14 +120,3 @@ projects[features_extra][subdir] = iasc_contrib
 projects[taxonomy_csv][type] = module
 projects[taxonomy_csv][version] = 5.10
 projects[taxonomy_csv][subdir] = iasc_contrib
-
-; Override panelizer
-projects[panelizer][version] = 3.x-dev
-projects[panelizer][subdir] = contrib
-projects[panelizer][download][type] = git
-projects[panelizer][download][branch] = 7.x-3.x
-projects[panelizer][download][revision] = 6b76359
-projects[panelizer][patch][2514068] = https://www.drupal.org/files/issues/2514068-panelizer-cache_key-2.patch
-projects[panelizer][patch][1549608] = https://www.drupal.org/files/issues/1549608-panelizer-cache-24.patch
-; Added patch to deal with error on deleting panelized entities that involve field collections. Don't need to save records for default values.
-projects[panelizer][patch][2404999] = https://www.drupal.org/files/issues/panelizer-no-records-default-values-2404999-17.patch
