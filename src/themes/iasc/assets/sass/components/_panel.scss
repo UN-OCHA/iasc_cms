@@ -97,8 +97,10 @@
 }
 
 // Hide section extra title
-.node-type-oa-section .pane-node-title .pane-content {
- display: none; 
+.node-type-oa-section, .node-type-oa-space {
+  .pane-node-title .pane-content {
+    display: none;
+  }
 }
 
 .section-menu .space-title a {
