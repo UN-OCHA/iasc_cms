@@ -31,7 +31,6 @@ module.exports = function(grunt) {
           cssDir: 'assets/stylesheets',
           outputStyle: 'expanded',
           noLineComments: true
-
         }
       }
     },
