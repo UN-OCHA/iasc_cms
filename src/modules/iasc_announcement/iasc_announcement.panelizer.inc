@@ -39,7 +39,7 @@ function iasc_announcement_panelizer_defaults() {
       'contentmain' => NULL,
     ),
     'sidebar' => array(
-      'style' => 'oa_styles_well',
+      'style' => '0',
     ),
   );
   $display->cache = array();
@@ -200,22 +200,20 @@ function iasc_announcement_panelizer_defaults() {
   $display->content['new-cf8206e9-12a6-44a4-96ee-6a468e5cee49'] = $pane;
   $display->panels['sidebar'][0] = 'new-cf8206e9-12a6-44a4-96ee-6a468e5cee49';
   $pane = new stdClass();
-  $pane->pid = 'new-f7048360-1f1c-420d-8c49-0c08815c1164';
+  $pane->pid = 'new-c549d6dc-cfa1-4e50-ab6e-3de807f74f94';
   $pane->panel = 'sidebar';
-  $pane->type = 'entity_field';
-  $pane->subtype = 'node:oa_section_ref';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'search_contacts-panel_pane_contact';
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'label' => 'above',
-    'formatter' => 'entityreference_label',
-    'delta_limit' => 0,
-    'delta_offset' => '0',
-    'delta_reversed' => FALSE,
-    'formatter_settings' => array(
-      'link' => FALSE,
-    ),
-    'context' => 'panelizer',
+    'override_title' => '',
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+    'view_settings' => 'fields',
+    'header_type' => 'none',
+    'view_mode' => 'teaser',
+    'widget_title' => 'Contact',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -225,38 +223,9 @@ function iasc_announcement_panelizer_defaults() {
   $pane->extras = array();
   $pane->position = 1;
   $pane->locks = array();
-  $pane->uuid = 'f7048360-1f1c-420d-8c49-0c08815c1164';
-  $display->content['new-f7048360-1f1c-420d-8c49-0c08815c1164'] = $pane;
-  $display->panels['sidebar'][1] = 'new-f7048360-1f1c-420d-8c49-0c08815c1164';
-  $pane = new stdClass();
-  $pane->pid = 'new-7f2dc55a-1247-41e4-a3bd-a280ab4e0499';
-  $pane->panel = 'sidebar';
-  $pane->type = 'entity_field';
-  $pane->subtype = 'node:field_contact';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'label' => 'above',
-    'formatter' => 'entityreference_label',
-    'delta_limit' => 0,
-    'delta_offset' => '0',
-    'delta_reversed' => FALSE,
-    'formatter_settings' => array(
-      'link' => FALSE,
-    ),
-    'context' => 'panelizer',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 2;
-  $pane->locks = array();
-  $pane->uuid = '7f2dc55a-1247-41e4-a3bd-a280ab4e0499';
-  $display->content['new-7f2dc55a-1247-41e4-a3bd-a280ab4e0499'] = $pane;
-  $display->panels['sidebar'][2] = 'new-7f2dc55a-1247-41e4-a3bd-a280ab4e0499';
+  $pane->uuid = 'c549d6dc-cfa1-4e50-ab6e-3de807f74f94';
+  $display->content['new-c549d6dc-cfa1-4e50-ab6e-3de807f74f94'] = $pane;
+  $display->panels['sidebar'][1] = 'new-c549d6dc-cfa1-4e50-ab6e-3de807f74f94';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $panelizer->display = $display;
