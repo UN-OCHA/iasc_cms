@@ -49,7 +49,7 @@ a:active {
 }
 .wrapped-list li { margin-bottom: $line-height-computed / 2; }
 
-iframe ul, body#tinymce ul {
+.field-type-text-with-summary ul, body#tinymce ul {
   padding-left: 2em;
 }
 

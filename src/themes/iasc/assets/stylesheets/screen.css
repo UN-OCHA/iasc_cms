@@ -7657,7 +7657,7 @@ a:active {
   margin-bottom: 10px;
 }
 
-iframe ul, body#tinymce ul {
+.field-type-text-with-summary ul, body#tinymce ul {
   padding-left: 2em;
 }
 
