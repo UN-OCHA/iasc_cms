@@ -812,6 +812,7 @@ function iasc_contact_views_default_views() {
   /* Display: Contact Detail Pane */
   $handler = $view->new_display('panel_pane', 'Contact Detail Pane', 'panel_pane_contact');
   $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Contact';
   $handler->display->display_options['display_description'] = 'A contact pane that displays the current node\'s contact information.';
   $handler->display->display_options['defaults']['access'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
@@ -831,6 +832,7 @@ function iasc_contact_views_default_views() {
   $handler->display->display_options['relationships']['field_contact_target_id']['id'] = 'field_contact_target_id';
   $handler->display->display_options['relationships']['field_contact_target_id']['table'] = 'field_data_field_contact';
   $handler->display->display_options['relationships']['field_contact_target_id']['field'] = 'field_contact_target_id';
+  $handler->display->display_options['relationships']['field_contact_target_id']['required'] = TRUE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
@@ -925,6 +927,7 @@ function iasc_contact_views_default_views() {
   $handler->display->display_options['allow']['exposed_form'] = 0;
   $handler->display->display_options['allow']['exposed_form_configure'] = 0;
   $handler->display->display_options['allow']['fields_override'] = 0;
+  $handler->display->display_options['allow']['panopoly_magic_display_type'] = 0;
   $export['search_contacts'] = $view;
 
   return $export;
