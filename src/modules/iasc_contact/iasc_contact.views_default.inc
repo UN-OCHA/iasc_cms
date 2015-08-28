@@ -25,11 +25,7 @@ function iasc_contact_views_default_views() {
   $handler->display->display_options['title'] = 'Search Contacts';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
-  $handler->display->display_options['cache']['type'] = 'time';
-  $handler->display->display_options['cache']['results_lifespan'] = '300';
-  $handler->display->display_options['cache']['results_lifespan_custom'] = '0';
-  $handler->display->display_options['cache']['output_lifespan'] = '300';
-  $handler->display->display_options['cache']['output_lifespan_custom'] = '0';
+  $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Search';
@@ -775,7 +771,7 @@ function iasc_contact_views_default_views() {
   $handler->display->display_options['fields']['field_branch']['id'] = 'field_branch';
   $handler->display->display_options['fields']['field_branch']['table'] = 'field_data_field_branch';
   $handler->display->display_options['fields']['field_branch']['field'] = 'field_branch';
-  /* Field: Content: Description */
+  /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
@@ -816,16 +812,9 @@ function iasc_contact_views_default_views() {
   /* Display: Contact Detail Pane */
   $handler = $view->new_display('panel_pane', 'Contact Detail Pane', 'panel_pane_contact');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Contact';
   $handler->display->display_options['display_description'] = 'A contact pane that displays the current node\'s contact information.';
   $handler->display->display_options['defaults']['access'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
-  $handler->display->display_options['defaults']['cache'] = FALSE;
-  $handler->display->display_options['cache']['type'] = 'time';
-  $handler->display->display_options['cache']['results_lifespan'] = '300';
-  $handler->display->display_options['cache']['results_lifespan_custom'] = '0';
-  $handler->display->display_options['cache']['output_lifespan'] = '300';
-  $handler->display->display_options['cache']['output_lifespan_custom'] = '0';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
@@ -834,6 +823,7 @@ function iasc_contact_views_default_views() {
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['hide_empty'] = TRUE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['empty'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
@@ -850,6 +840,7 @@ function iasc_contact_views_default_views() {
   $handler->display->display_options['fields']['title_field']['label'] = '';
   $handler->display->display_options['fields']['title_field']['element_type'] = 'h4';
   $handler->display->display_options['fields']['title_field']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title_field']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['title_field']['link_to_entity'] = 0;
   /* Field: Field: Homepage URL */
   $handler->display->display_options['fields']['field_homepage']['id'] = 'field_homepage';
@@ -859,6 +850,7 @@ function iasc_contact_views_default_views() {
   $handler->display->display_options['fields']['field_homepage']['label'] = '';
   $handler->display->display_options['fields']['field_homepage']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_homepage']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_homepage']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_homepage']['click_sort_column'] = 'url';
   $handler->display->display_options['fields']['field_homepage']['type'] = 'link_url';
   /* Field: Content: Organization */
@@ -871,6 +863,7 @@ function iasc_contact_views_default_views() {
   $handler->display->display_options['fields']['field_organisation']['alter']['path'] = '[field_homepage]';
   $handler->display->display_options['fields']['field_organisation']['alter']['target'] = '_blank';
   $handler->display->display_options['fields']['field_organisation']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_organisation']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_organisation']['type'] = 'taxonomy_term_reference_plain';
   /* Field: Content: Address - Locality (i.e. City) */
   $handler->display->display_options['fields']['field_address_locality']['id'] = 'field_address_locality';
@@ -879,6 +872,7 @@ function iasc_contact_views_default_views() {
   $handler->display->display_options['fields']['field_address_locality']['relationship'] = 'field_contact_target_id';
   $handler->display->display_options['fields']['field_address_locality']['label'] = '';
   $handler->display->display_options['fields']['field_address_locality']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_address_locality']['hide_empty'] = TRUE;
   /* Field: Content: Email */
   $handler->display->display_options['fields']['field_email']['id'] = 'field_email';
   $handler->display->display_options['fields']['field_email']['table'] = 'field_data_field_email';
@@ -887,6 +881,7 @@ function iasc_contact_views_default_views() {
   $handler->display->display_options['fields']['field_email']['element_label_type'] = 'div';
   $handler->display->display_options['fields']['field_email']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_email']['element_wrapper_class'] = 'field-label-inline';
+  $handler->display->display_options['fields']['field_email']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_email']['delta_limit'] = '1';
   $handler->display->display_options['fields']['field_email']['delta_offset'] = '0';
   /* Field: Content: Phone */
@@ -897,6 +892,7 @@ function iasc_contact_views_default_views() {
   $handler->display->display_options['fields']['field_phone']['element_label_type'] = 'div';
   $handler->display->display_options['fields']['field_phone']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_phone']['element_wrapper_class'] = 'field-label-inline';
+  $handler->display->display_options['fields']['field_phone']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_phone']['delta_limit'] = '1';
   $handler->display->display_options['fields']['field_phone']['delta_offset'] = '0';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
