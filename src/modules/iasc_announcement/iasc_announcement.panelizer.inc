@@ -190,7 +190,11 @@ function iasc_announcement_panelizer_defaults() {
   );
   $pane->cache = array();
   $pane->style = array(
-    'settings' => NULL,
+    'settings' => array(
+      'secondary_options' => 'panel-primary',
+      'linked_list' => 'none',
+    ),
+    'style' => 'secondary',
   );
   $pane->css = array();
   $pane->extras = array();
@@ -217,7 +221,11 @@ function iasc_announcement_panelizer_defaults() {
   );
   $pane->cache = array();
   $pane->style = array(
-    'settings' => NULL,
+    'settings' => array(
+      'secondary_options' => 'panel-primary',
+      'linked_list' => 'none',
+    ),
+    'style' => 'secondary',
   );
   $pane->css = array();
   $pane->extras = array();
