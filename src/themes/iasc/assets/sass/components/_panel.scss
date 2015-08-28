@@ -10,7 +10,6 @@
 .panel-default {
   border: none;
   .panel-heading { text-transform: uppercase; }
-  
 }
 
 .panel-secondary {
@@ -29,6 +28,13 @@
       }
     }
   }
+}
+
+.panel-body, .pane-content {
+  ul {
+    @extend .list-unstyled;
+  }
+  li { list-style: none; }
 }
 
 .panel-secondary.panel-success,

@@ -31,35 +31,27 @@ a:active {
   color: $brand-primary;
 }
 
-ul, ol {
-  @extend .list-unstyled;
-}
-li { list-style: none; }
-
-.list-styled,
-.wrapped-list {
-  li { 
+.field-type-text-with-summary ul, body#tinymce ul, .wrapped-list {
+  li {
+    list-style: none;
     padding-left: 15px;
     position: relative;
   }
   li:before {
     content: "\2022";
     color: lighten($gray-dark, 40%);
-    position: absolute; left: 0; top: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
     line-height: 22px;
     font-size: 22px;
   }
 }
 .wrapped-list li { margin-bottom: $line-height-computed / 2; }
 
-ol.ordered-styled {
-  li {
-    list-style: decimal outside none;
-    margin-bottom: 10px;
-    margin-left: 15px;
-  }
+iframe ul, body#tinymce ul {
+  padding-left: 2em;
 }
-
 
 figcaption,
 figure {
@@ -115,11 +107,11 @@ label {
 html.js {
   input.form-autocomplete {
     background-image: image-url('throbber.gif');
-    background-position: 100% 9px; 
+    background-position: 100% 9px;
   }
   input.throbbing {
     background-image: image-url('throbber.gif');
-    background-position: 100% -121px; 
+    background-position: 100% -121px;
   }
 }
 
