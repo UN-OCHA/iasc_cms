@@ -7785,13 +7785,15 @@ html.js input.throbbing {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icons-arrow, .panel-secondary.panel-success.arrow .view-content a:before,
-.panel-secondary.panel-info.arrow .view-content a:before {
+.icons-arrow, .panel-secondary.panel-success.arrow .view-content a:before, .panel-secondary.panel-success.arrow .field-items a:before,
+.panel-secondary.panel-info.arrow .view-content a:before,
+.panel-secondary.panel-info.arrow .field-items a:before {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf101;');
 }
 
-.icons-arrow:before, .view-display-id-panel_pane_featured_products .views-row .content a:after, .panel-secondary.panel-success.arrow .view-content a:before,
-.panel-secondary.panel-info.arrow .view-content a:before {
+.icons-arrow:before, .view-display-id-panel_pane_featured_products .views-row .content a:after, .panel-secondary.panel-success.arrow .view-content a:before, .panel-secondary.panel-success.arrow .field-items a:before,
+.panel-secondary.panel-info.arrow .view-content a:before,
+.panel-secondary.panel-info.arrow .field-items a:before {
   content: "\f101";
 }
 
@@ -7867,13 +7869,15 @@ html.js input.throbbing {
   content: "\f10a";
 }
 
-.icons-page, .panel-secondary.panel-success.doc-icon .view-content a:before,
-.panel-secondary.panel-info.doc-icon .view-content a:before {
+.icons-page, .panel-secondary.panel-success.doc-icon .view-content a:before, .panel-secondary.panel-success.doc-icon .field-items a:before,
+.panel-secondary.panel-info.doc-icon .view-content a:before,
+.panel-secondary.panel-info.doc-icon .field-items a:before {
   *zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf10b;');
 }
 
-.icons-page:before, .panel-secondary.panel-success.doc-icon .view-content a:before,
-.panel-secondary.panel-info.doc-icon .view-content a:before {
+.icons-page:before, .panel-secondary.panel-success.doc-icon .view-content a:before, .panel-secondary.panel-success.doc-icon .field-items a:before,
+.panel-secondary.panel-info.doc-icon .view-content a:before,
+.panel-secondary.panel-info.doc-icon .field-items a:before {
   content: "\f10b";
 }
 
@@ -8356,14 +8360,20 @@ form .form-actions .node-readmore a,
   font-weight: normal;
   margin-bottom: 5px;
 }
-.pane-node-field-agenda-items .icons-page, .pane-node-field-agenda-items .panel-secondary.panel-success.doc-icon .view-content a:before, .panel-secondary.panel-success.doc-icon .view-content .pane-node-field-agenda-items a:before,
+.pane-node-field-agenda-items .icons-page, .pane-node-field-agenda-items .panel-secondary.panel-success.doc-icon .view-content a:before, .panel-secondary.panel-success.doc-icon .view-content .pane-node-field-agenda-items a:before, .pane-node-field-agenda-items .panel-secondary.panel-success.doc-icon .field-items a:before, .panel-secondary.panel-success.doc-icon .field-items .pane-node-field-agenda-items a:before,
 .pane-node-field-agenda-items .panel-secondary.panel-info.doc-icon .view-content a:before,
 .panel-secondary.panel-info.doc-icon .view-content .pane-node-field-agenda-items a:before,
+.pane-node-field-agenda-items .panel-secondary.panel-info.doc-icon .field-items a:before,
+.panel-secondary.panel-info.doc-icon .field-items .pane-node-field-agenda-items a:before,
 .pane-node-field-oa-media .icons-page,
 .pane-node-field-oa-media .panel-secondary.panel-success.doc-icon .view-content a:before,
 .panel-secondary.panel-success.doc-icon .view-content .pane-node-field-oa-media a:before,
+.pane-node-field-oa-media .panel-secondary.panel-success.doc-icon .field-items a:before,
+.panel-secondary.panel-success.doc-icon .field-items .pane-node-field-oa-media a:before,
 .pane-node-field-oa-media .panel-secondary.panel-info.doc-icon .view-content a:before,
-.panel-secondary.panel-info.doc-icon .view-content .pane-node-field-oa-media a:before {
+.panel-secondary.panel-info.doc-icon .view-content .pane-node-field-oa-media a:before,
+.pane-node-field-oa-media .panel-secondary.panel-info.doc-icon .field-items a:before,
+.panel-secondary.panel-info.doc-icon .field-items .pane-node-field-oa-media a:before {
   font-size: 15px;
   margin-right: 10px;
   vertical-align: baseline;
@@ -8567,18 +8577,11 @@ header.header .search-form {
 .view-display-id-panel_pane_membership_logos ul li {
   position: relative;
   float: left;
-  min-width: 140px;
-  text-align: center;
-  padding: 0 8px;
-}
-.radix-layouts-contentfooter .view-display-id-panel_pane_membership_logos ul li {
-  min-width: 108px;
   max-width: 120px;
   min-width: 100px;
   width: 100%;
-}
-.radix-layouts-contentfooter .view-display-id-panel_pane_membership_logos ul li img {
-  margin-bottom: 0;
+  text-align: center;
+  padding: 0 8px;
 }
 .view-display-id-panel_pane_membership_logos ul a {
   height: 100px;
@@ -8586,7 +8589,7 @@ header.header .search-form {
 }
 .view-display-id-panel_pane_membership_logos ul img {
   vertical-align: middle;
-  margin-bottom: 44px;
+  margin-bottom: 0;
   padding: 0;
   width: auto;
 }
@@ -8610,14 +8613,14 @@ img.bio-circled {
   margin-bottom: 0;
 }
 .node-type-oa-event .field-name-field-agenda-items .field-name-field-ai-title {
-  margin-top: 0;
-}
-.node-type-oa-event .field-name-field-agenda-items .field-item .entity-field-collection-item .field:nth-child(1) {
   display: list-item;
   margin-left: 2em;
+  margin-top: 0;
 }
-.node-type-oa-event .field-name-field-agenda-items .field-item .entity-field-collection-item .field .field-name-field-oa-media {
+.node-type-oa-event .field-name-field-agenda-items .field-item .entity-field-collection-item .ref-document {
+  display: list-item;
   margin-left: 4em;
+  margin-bottom: 20px;
 }
 .node-type-oa-event .panel-primary.none:first-child {
   margin-bottom: 0;
@@ -9055,10 +9058,6 @@ img.bio-circled {
   color: white;
 }
 
-.panel-body li, .view-display-id-panel_pane_membership_logos ul li, .pane-content li {
-  list-style: none;
-}
-
 .panel-secondary.panel-success.doc-icon .menu li,
 .panel-secondary.panel-success.doc-icon .views-row,
 .panel-secondary.panel-success.doc-icon .field-item, .panel-secondary.panel-success.arrow .menu li,
@@ -9127,7 +9126,12 @@ img.bio-circled {
 .node-type-announcement h1.title,
 .page-page-not-found h1.title,
 .node-type-oa-event h1.title,
-.node-type-oa-wiki-page h1.title {
+.node-type-oa-wiki-page h1.title,
+.node-type-oa-section h1.title {
+  display: none;
+}
+
+.node-type-oa-section .pane-node-title .pane-content, .node-type-oa-space .pane-node-title .pane-content {
   display: none;
 }
 
