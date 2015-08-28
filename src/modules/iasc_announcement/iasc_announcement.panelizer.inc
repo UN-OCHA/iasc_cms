@@ -180,19 +180,22 @@ function iasc_announcement_panelizer_defaults() {
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'label' => 'above',
+    'label' => 'hidden',
     'formatter' => 'link_default',
-    'delta_limit' => 0,
+    'delta_limit' => '0',
     'delta_offset' => '0',
-    'delta_reversed' => FALSE,
+    'delta_reversed' => 0,
     'formatter_settings' => array(),
     'context' => 'panelizer',
+    'override_title' => 1,
+    'override_title_text' => 'Relevant Links',
+    'override_title_heading' => 'h2',
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => array(
-      'secondary_options' => 'panel-primary',
-      'linked_list' => 'none',
+      'secondary_options' => 'panel-success',
+      'linked_list' => 'arrow',
     ),
     'style' => 'secondary',
   );
@@ -204,7 +207,7 @@ function iasc_announcement_panelizer_defaults() {
   $display->content['new-cf8206e9-12a6-44a4-96ee-6a468e5cee49'] = $pane;
   $display->panels['sidebar'][0] = 'new-cf8206e9-12a6-44a4-96ee-6a468e5cee49';
   $pane = new stdClass();
-  $pane->pid = 'new-c549d6dc-cfa1-4e50-ab6e-3de807f74f94';
+  $pane->pid = 'new-c45c7935-b817-4305-a536-029903936386';
   $pane->panel = 'sidebar';
   $pane->type = 'views_panes';
   $pane->subtype = 'search_contacts-panel_pane_contact';
@@ -231,9 +234,9 @@ function iasc_announcement_panelizer_defaults() {
   $pane->extras = array();
   $pane->position = 1;
   $pane->locks = array();
-  $pane->uuid = 'c549d6dc-cfa1-4e50-ab6e-3de807f74f94';
-  $display->content['new-c549d6dc-cfa1-4e50-ab6e-3de807f74f94'] = $pane;
-  $display->panels['sidebar'][1] = 'new-c549d6dc-cfa1-4e50-ab6e-3de807f74f94';
+  $pane->uuid = 'c45c7935-b817-4305-a536-029903936386';
+  $display->content['new-c45c7935-b817-4305-a536-029903936386'] = $pane;
+  $display->panels['sidebar'][1] = 'new-c45c7935-b817-4305-a536-029903936386';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $panelizer->display = $display;
