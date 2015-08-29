@@ -577,33 +577,6 @@ function iasc_document_default_page_manager_pages() {
   $pane->uuid = '69e5d901-07c0-4078-95b6-52be9a6dada2';
   $display->content['new-69e5d901-07c0-4078-95b6-52be9a6dada2'] = $pane;
   $display->panels['contentmain'][0] = 'new-69e5d901-07c0-4078-95b6-52be9a6dada2';
-  $pane = new stdClass();
-  $pane->pid = 'new-509ccb9a-7d15-44d5-9e7d-132bf04d504e';
-  $pane->panel = 'sidebar';
-  $pane->type = 'block';
-  $pane->subtype = 'menu-menu-iasc-body-categories';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'override_title' => 0,
-    'override_title_text' => '',
-    'override_title_heading' => 'h2',
-  );
-  $pane->cache = array();
-  $pane->style = array(
-    'settings' => array(
-      'secondary_options' => 'panel-primary',
-      'linked_list' => 'none',
-    ),
-    'style' => 'secondary',
-  );
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 0;
-  $pane->locks = array();
-  $pane->uuid = '509ccb9a-7d15-44d5-9e7d-132bf04d504e';
-  $display->content['new-509ccb9a-7d15-44d5-9e7d-132bf04d504e'] = $pane;
-  $display->panels['sidebar'][0] = 'new-509ccb9a-7d15-44d5-9e7d-132bf04d504e';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
