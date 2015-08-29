@@ -283,12 +283,22 @@ function iasc_configuration_update_7006() {
     if (isset($menu_top[$item['link']['link_title']])) {
       $title = $item['link']['link_title'];
 
-      $menu_items_top[] = array(
-        'menu_name' => 'menu-iasc-body-categories',
-        'link_path' => $item['link']['link_path'],
-        'link_title' => $title,
-        'weight' => $menu_top[$item['link']['link_title']],
-      );
+      if ('Subsidiary Bodies' == $title || 'Events' == $title || 'Field' == $title) {
+        $menu_items_top[] = array(
+          'menu_name' => 'menu-iasc-body-categories',
+          'link_path' => $item['link']['link_path'],
+          'link_title' => $title,
+          'weight' => $menu_top[$item['link']['link_title']],
+        );
+      }
+      else {
+        $menu_items_top[] = array(
+          'menu_name' => 'menu-iasc-body-categories',
+          'link_path' => drupal_get_normal_path(drupal_get_path_alias($item['link']['link_path']) . '/documents'),
+          'link_title' => $title,
+          'weight' => $menu_top[$item['link']['link_title']],
+        );
+      }
     }
 
     // See if we need to grab any of the secondary level menu items.
@@ -297,7 +307,7 @@ function iasc_configuration_update_7006() {
         $title = $child['link']['link_title'];
         $menu_items_secondary[$title] = array(
           'menu_name' => 'menu-iasc-body-categories',
-          'link_path' => $child['link']['link_path'],
+          'link_path' => drupal_get_normal_path(drupal_get_path_alias($child['link']['link_path']) . '/documents'),
           'link_title' => $title,
         );
       }
