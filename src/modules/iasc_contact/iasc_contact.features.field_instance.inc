@@ -1522,10 +1522,10 @@ function iasc_contact_field_default_field_instances() {
           'video' => 0,
         ),
         'browser_plugins' => array(
-          'media_default--media_browser_1' => 0,
-          'media_default--media_browser_my_files' => 0,
+          'media_default--media_browser_1' => 'media_default--media_browser_1',
+          'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
           'media_internet' => 0,
-          'upload' => 0,
+          'upload' => 'upload',
           'youtube' => 0,
         ),
         'manualcrop_crop_info' => 1,

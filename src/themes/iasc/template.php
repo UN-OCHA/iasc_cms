@@ -4,11 +4,7 @@
  * Theme functions
  */
 
-require_once dirname(__FILE__) . '/includes/structure.inc';
 require_once dirname(__FILE__) . '/includes/form.inc';
-require_once dirname(__FILE__) . '/includes/menu.inc';
-require_once dirname(__FILE__) . '/includes/comment.inc';
-require_once dirname(__FILE__) . '/includes/node.inc';
 
 /**
  * Implements hook_css_alter().
@@ -194,18 +190,6 @@ function iasc_form_panels_edit_style_type_form_alter(&$form, &$form_state, $form
   // Unset default panel styles.
   unset($form['style']['style']['#options']['oa_styles_well']);
   unset($form['style']['style']['#options']['oa_styles_oa_pane']);
-}
-
-/**
- * Implements theme_file_icon().
- */
-function iasc_file_icon($variables) {
-  $file = $variables['file'];
-  $icon_directory = $variables['icon_directory'];
-
-  $mime = check_plain($file->filemime);
-  $icon_url = file_icon_url($file, $icon_directory);
-  return '<span class="icons-page"></span> ';
 }
 
 /**
