@@ -1816,7 +1816,7 @@ ol ol {
   margin-bottom: 0;
 }
 
-.list-unstyled, ul, ol {
+.list-unstyled, .panel-body ul, .view-display-id-panel_pane_membership_logos ul ul, .pane-content ul {
   padding-left: 0;
   list-style: none;
 }
@@ -7638,17 +7638,12 @@ a:active {
   color: #00817b;
 }
 
-li {
+.field-type-text-with-summary ul li, body#tinymce ul li, .wrapped-list li {
   list-style: none;
-}
-
-.list-styled li,
-.wrapped-list li {
   padding-left: 15px;
   position: relative;
 }
-.list-styled li:before,
-.wrapped-list li:before {
+.field-type-text-with-summary ul li:before, body#tinymce ul li:before, .wrapped-list li:before {
   content: "\2022";
   color: #999999;
   position: absolute;
@@ -7662,10 +7657,8 @@ li {
   margin-bottom: 10px;
 }
 
-ol.ordered-styled li {
-  list-style: decimal outside none;
-  margin-bottom: 10px;
-  margin-left: 15px;
+.field-type-text-with-summary ul, body#tinymce ul {
+  padding-left: 2em;
 }
 
 figcaption,
