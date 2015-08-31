@@ -18,13 +18,45 @@
     a {
       @extend .btn;
       @extend .btn-default;
-      background-color: $red;
       border: 0; 
       color: $white;
       &:hover,
       &:active {
         background-color: $red;
         color: $white;
+      }
+    }
+  }
+
+  &.panel-info {
+    .more-link a {
+      background-color: $red;
+
+      &:hover,
+      &:active {
+        background-color: $red;
+      }
+    }
+  }
+
+  &.panel-success {
+    .more-link a {
+      background-color: $brand-primary;;
+
+      &:hover,
+      &:active {
+        background-color: $brand-primary;;
+      }
+    }
+  }
+
+  &.panel-primary {
+    .more-link a {
+      background-color: $brand-primary;;
+
+      &:hover,
+      &:active {
+        background-color: $brand-primary;;
       }
     }
   }
