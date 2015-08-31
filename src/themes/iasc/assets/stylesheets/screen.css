@@ -9165,7 +9165,8 @@ img.bio-circled {
 .page-page-not-found h1.title,
 .node-type-oa-event h1.title,
 .node-type-oa-wiki-page h1.title,
-.node-type-oa-section h1.title {
+.node-type-oa-section h1.title,
+.page-node h1.title {
   display: none;
 }
 
