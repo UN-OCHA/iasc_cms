@@ -1927,6 +1927,25 @@ function iasc_configuration_strongarm_alter(&$data) {
  * Implements hook_views_default_views_alter().
  */
 function iasc_configuration_views_default_views_alter(&$data) {
+  if (isset($data['oa_admin_views_node'])) {
+    $data['oa_admin_views_node']->display['default']->display_options['fields']['created'] = array(
+      'id' => 'created',
+      'table' => 'node',
+      'field' => 'created',
+      'label' => 'Created',
+      'date_format' => 'short',
+      'second_date_format' => 'oa_date',
+      'oa_date' => 0,
+    ); /* WAS: '' */
+    $data['oa_admin_views_node']->display['default']->display_options['style_options']['columns']['created'] = 'created'; /* WAS: '' */
+    $data['oa_admin_views_node']->display['default']->display_options['style_options']['info']['created'] = array(
+      'sortable' => 1,
+      'default_sort_order' => 'desc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ); /* WAS: '' */
+  }
   if (isset($data['oa_comment_media'])) {
     unset($data['oa_comment_media']->display['default']->display_options['relationships']['field_oa_related_node']['label']);
   }

@@ -1778,6 +1778,23 @@ function iasc_configuration_features_override_default_overrides() {
   $overrides["variable.bootstrap_library_settings.value|theme|themes|iasc"] = 'iasc';
 
   // Exported overrides for: views_view
+  $overrides["views_view.oa_admin_views_node.display|default|display_options|fields|created"] = array(
+    'id' => 'created',
+    'table' => 'node',
+    'field' => 'created',
+    'label' => 'Created',
+    'date_format' => 'short',
+    'second_date_format' => 'oa_date',
+    'oa_date' => 0,
+  );
+  $overrides["views_view.oa_admin_views_node.display|default|display_options|style_options|columns|created"] = 'created';
+  $overrides["views_view.oa_admin_views_node.display|default|display_options|style_options|info|created"] = array(
+    'sortable' => 1,
+    'default_sort_order' => 'desc',
+    'align' => '',
+    'separator' => '',
+    'empty_column' => 0,
+  );
   $overrides["views_view.oa_comment_media.display|default|display_options|relationships|field_oa_related_node|label"]["DELETED"] = TRUE;
 
  return $overrides;
