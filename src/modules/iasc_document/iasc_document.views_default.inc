@@ -395,7 +395,7 @@ function iasc_document_views_default_views() {
   $handler->display->display_options['allow']['offset'] = 0;
   $handler->display->display_options['allow']['link_to_view'] = 0;
   $handler->display->display_options['allow']['more_link'] = 'more_link';
-  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['path_override'] = 'path_override';
   $handler->display->display_options['allow']['title_override'] = 'title_override';
   $handler->display->display_options['allow']['exposed_form'] = 'exposed_form';
   $handler->display->display_options['allow']['exposed_form_configure'] = 0;
@@ -640,6 +640,26 @@ function iasc_document_views_default_views() {
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['pane_category']['name'] = 'IASC Documents';
   $handler->display->display_options['pane_category']['weight'] = '0';
+  $handler->display->display_options['allow']['use_pager'] = 0;
+  $handler->display->display_options['allow']['items_per_page'] = 0;
+  $handler->display->display_options['allow']['offset'] = 0;
+  $handler->display->display_options['allow']['link_to_view'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 0;
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 0;
+  $handler->display->display_options['allow']['exposed_form'] = 'exposed_form';
+  $handler->display->display_options['allow']['exposed_form_configure'] = 0;
+  $handler->display->display_options['allow']['fields_override'] = 0;
+  $handler->display->display_options['exposed_form_overrides'] = array(
+    'filters' => array(
+      'field_published_date_value' => 'pane_and_exposed',
+      'field_published_date_value_1' => 'pane_and_exposed',
+      'og_group_ref_target_id' => 'pane_and_exposed',
+      'field_category_tid' => 'pane_and_exposed',
+      'field_document_type_tid' => 'pane_and_exposed',
+      'keys' => 'pane_and_exposed',
+    ),
+  );
 
   /* Display: Meeting documents pane */
   $handler = $view->new_display('panel_pane', 'Meeting documents pane', 'panel_pane_meeting_documents');
