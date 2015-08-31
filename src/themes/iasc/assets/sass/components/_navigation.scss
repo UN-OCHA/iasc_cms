@@ -160,5 +160,8 @@ a.menu { @extend .dropdown-toggle; }
   }
 }
 
-
+.dropdown-menu > li.dropdown-column ul {
+  list-style: none;
+  padding-left: 0;
+}
 

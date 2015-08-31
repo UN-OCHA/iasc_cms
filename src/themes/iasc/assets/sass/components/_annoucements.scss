@@ -1,8 +1,19 @@
 .view-display-id-page_special_announcements,
 .view-display-id-page_featured_home {
-  h2 { margin-bottom: 0; }
-  .views-field-field-published-date { margin-bottom: $padding-small-vertical * 2;} 
+  h2 {
+    margin-bottom: 0;
+  }
+
+  .views-field-field-published-date {
+    margin-bottom: $padding-small-vertical * 2;
+  }
+
   li.views-row {
     margin-bottom: $padding-large-vertical * 2;
+  }
+
+  .item-list ul {
+    list-style: none;
+    padding-left: 0;
   }
 }
