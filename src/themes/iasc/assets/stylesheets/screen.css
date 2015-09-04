@@ -8644,6 +8644,10 @@ img.bio-circled {
   margin-bottom: 20px;
 }
 
+.oa-event-add-cal {
+  float: right;
+}
+
 .alert-warning:before {
   font-size: 20px;
   float: left;
