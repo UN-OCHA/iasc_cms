@@ -32,6 +32,7 @@ function iasc_meeting_module_implements_alter(&$implementations, $hook) {
 function iasc_meeting_field_formatter_info_alter(&$info) {
   // Use our version of field_formatter_view.
   $info['oa_events_date_formatter']['module'] = 'iasc_meeting';
+  $info['oa_events_addthis']['module'] = 'iasc_meeting';
 }
 
 /**
@@ -84,6 +85,9 @@ function iasc_meeting_field_formatter_view($entity_type, $entity, $field, $insta
         )
       ),
     );
+  }
+  elseif ($display['type'] == 'oa_events_addthis') {
+    $element[0]['#markup'] = iasc_meeting_field_add_to_calendar_markup($entity->nid, $items, t('Add to Calendar'));
   }
 
   return $element;
@@ -182,4 +186,71 @@ function iasc_meeting_form_alter(&$form, &$form_state, $form_id) {
     $form['og_subspaces_view_all']['#access'] = FALSE;
     $form['og_subspaces_view_parent']['#access'] = FALSE;
   }
+}
+
+/**
+ * Create Addthis Event calendar markup.
+ */
+function iasc_meeting_field_add_to_calendar_markup($nid, $items, $title = 'Add to Calendar') {
+  static $date_field_info = FALSE;
+  static $date_field_instance = FALSE;
+  drupal_add_css(drupal_get_path('module', 'oa_events') . '/css/addthisevent.css');
+  drupal_add_js(drupal_get_path('module', 'oa_events') . '/js/atemay.js');
+
+  $node = node_load($nid);
+  if (false === $date_field_info) {
+    $date_field_info = field_info_field('field_event_date');
+    $date_field_instance = field_info_instance('node', 'field_event_date', $node->type);
+  }
+
+  $event_info = oa_events_find_next_event($items);
+  $date = $event_info['event'];
+
+  // TODO: Change this to respect primary timezone when it gets added.
+  $date_field_date1 = new DateObject($date['value'], $date['timezone_db'], DATE_FORMAT_UNIX);
+  $date_field_date2 = new DateObject($date['value2'], $date['timezone_db'], DATE_FORMAT_UNIX);
+
+  $link_content = $title;
+  $event_url = url('node/' . $node->nid, array('absolute' => TRUE));
+
+  $description_language = field_language('node', $node, 'body');
+  $description = !empty($node->body[$description_language][0]['safe_value']) ? strip_tags($node->body[$description_language][0]['safe_value']) : '';
+  $location_language = field_language('node', $node, 'body');
+
+  $location = !empty($node->field_city[$location_language][0]['safe_value']) ? strip_tags($node->field_city[$location_language][0]['safe_value']) : '';
+  $location .= !empty($node->field_venue[$location_language][0]['safe_value']) ? ', ' . strip_tags($node->field_venue[$location_language][0]['safe_value']) : '';
+
+  if (user_is_logged_in()) {
+    $location .= !empty($node->field_room[$location_language][0]['safe_value']) ? ', ' . strip_tags($node->field_room[$location_language][0]['safe_value']) : '';
+  }
+
+  $alldayevent = date_is_all_day(date(DATE_FORMAT_DATETIME, $date['value']), date(DATE_FORMAT_DATETIME, $date['value2'])) ? 'true' : 'false';
+
+  $spans = array(
+    '_url' => $event_url,
+    '_start' => date_format_date($date_field_date1, 'custom', 'm-d-Y H:i:s'),
+    '_end' => date_format_date($date_field_date2, 'custom', 'm-d-Y H:i:s'),
+    '_zonecode' => '35', // UTC
+    '_summary' => check_plain($node->title),
+    '_description' => $description,
+    '_location' => $location,
+    '_all_day_event' => $alldayevent,
+    '_date_format' => variable_get('oa_events_date_format', OA_EVENTS_DATE_FORMAT),
+  );
+
+  foreach ($spans as $span_class => $span_value) {
+    $link_content .= '<span class="' . $span_class . '">' . $span_value . '</span>';
+  }
+
+  return l(
+    $link_content,
+    $event_url,
+    array(
+      'attributes' => array(
+        'class' => 'addthisevent',
+        'title' => t('Add to Calendar'),
+      ),
+      'html' => TRUE,
+    )
+  );
 }
