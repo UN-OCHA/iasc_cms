@@ -8582,18 +8582,11 @@ header.header .search-form {
 .view-display-id-panel_pane_membership_logos ul li {
   position: relative;
   float: left;
-  min-width: 140px;
-  text-align: center;
-  padding: 0 8px;
-}
-.radix-layouts-contentfooter .view-display-id-panel_pane_membership_logos ul li {
-  min-width: 108px;
   max-width: 120px;
   min-width: 100px;
   width: 100%;
-}
-.radix-layouts-contentfooter .view-display-id-panel_pane_membership_logos ul li img {
-  margin-bottom: 0;
+  text-align: center;
+  padding: 0 8px;
 }
 .view-display-id-panel_pane_membership_logos ul a {
   height: 100px;
@@ -8601,7 +8594,7 @@ header.header .search-form {
 }
 .view-display-id-panel_pane_membership_logos ul img {
   vertical-align: middle;
-  margin-bottom: 44px;
+  margin-bottom: 0;
   padding: 0;
   width: auto;
 }
