@@ -72,3 +72,12 @@ function iasc_update_7004() {
   variable_set('oa_related_allowed_types', $oa_related_allowed_types);
   features_template_revert();
 }
+
+/**
+ * Implements hook_update_N().
+ *
+ * Enable responsive_imagemaps module.
+ */
+function iasc_update_7005() {
+  module_enable(array('responsive_imagemaps'));
+}
