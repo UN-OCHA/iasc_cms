@@ -148,6 +148,7 @@ dependencies[] = iasc_wysiwyg
 dependencies[] = iasc_search
 dependencies[] = iasc_permissions
 dependencies[] = iasc_group_login
+dependencies[] = iasc_content_page
 
 ; Contrib
 dependencies[] = radix_layouts
