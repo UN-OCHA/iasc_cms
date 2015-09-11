@@ -161,4 +161,4 @@ dependencies[] = title
 dependencies[] = nodequeue
 dependencies[] = access_code
 dependencies[] = og_role_override
-dependencies[] = securelogin
+dependencies[] = securepages
