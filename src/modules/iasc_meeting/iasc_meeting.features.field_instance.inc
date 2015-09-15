@@ -11,6 +11,127 @@ function iasc_meeting_field_default_field_instances() {
   $field_instances = array();
 
   // Exported field_instance:
+  // 'field_collection_item-field_additional_locations-field_additional_city'
+  $field_instances['field_collection_item-field_additional_locations-field_additional_city'] = array(
+    'bundle' => 'field_additional_locations',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_additional_city',
+    'label' => 'City',
+    'required' => 0,
+    'settings' => array(
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'field_collection_item-field_additional_locations-field_additional_timezone'
+  $field_instances['field_collection_item-field_additional_locations-field_additional_timezone'] = array(
+    'bundle' => 'field_additional_locations',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'tzfield',
+        'settings' => array(
+          'format' => 'T P',
+        ),
+        'type' => 'tzfield_date',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_additional_timezone',
+    'label' => 'Additional timezone',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'tzfield_geofield',
+      'settings' => array(
+        'geofield' => 'field_geofield_additional_city',
+      ),
+      'type' => 'tzfield_geofield',
+      'weight' => 3,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'field_collection_item-field_additional_locations-field_geofield_additional_city'
+  $field_instances['field_collection_item-field_additional_locations-field_geofield_additional_city'] = array(
+    'bundle' => 'field_additional_locations',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_geofield_additional_city',
+    'label' => 'Geofield Additional City',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'geocoder',
+      'settings' => array(
+        'delta_handling' => 'default',
+        'geocoder_field' => 'field_additional_city',
+        'geocoder_handler' => 'google',
+        'handler_settings' => array(
+          'google' => array(
+            'all_results' => 0,
+            'geometry_type' => 'point',
+            'reject_results' => array(
+              'APPROXIMATE' => 0,
+              'GEOMETRIC_CENTER' => 0,
+              'RANGE_INTERPOLATED' => 0,
+              'ROOFTOP' => 0,
+            ),
+          ),
+        ),
+      ),
+      'type' => 'geocoder',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance:
   // 'field_collection_item-field_agenda_items-field_ai_description'
   $field_instances['field_collection_item-field_agenda_items-field_ai_description'] = array(
     'bundle' => 'field_agenda_items',
@@ -217,6 +338,85 @@ function iasc_meeting_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-oa_event-field_additional_locations'
+  $field_instances['node-oa_event-field_additional_locations'] = array(
+    'bundle' => 'oa_event',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'bio_full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'bio_long' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'bio_short' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'field_collection',
+        'settings' => array(
+          'add' => 'Add',
+          'delete' => 'Delete',
+          'description' => TRUE,
+          'edit' => 'Edit',
+          'view_mode' => 'full',
+        ),
+        'type' => 'field_collection_view',
+        'weight' => 24,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'ical' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'link_to_document' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_additional_locations',
+    'label' => 'Additional locations',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'field_collection',
+      'settings' => array(),
+      'type' => 'field_collection_embed',
+      'weight' => 3,
+    ),
+  );
+
   // Exported field_instance: 'node-oa_event-field_agenda_items'
   $field_instances['node-oa_event-field_agenda_items'] = array(
     'bundle' => 'oa_event',
@@ -292,7 +492,7 @@ function iasc_meeting_field_default_field_instances() {
       'module' => 'field_collection',
       'settings' => array(),
       'type' => 'field_collection_embed',
-      'weight' => 12,
+      'weight' => 10,
     ),
   );
 
@@ -374,7 +574,7 @@ function iasc_meeting_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 4,
+      'weight' => 8,
     ),
   );
 
@@ -466,7 +666,7 @@ function iasc_meeting_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 10,
+      'weight' => 8,
     ),
   );
 
@@ -545,7 +745,7 @@ function iasc_meeting_field_default_field_instances() {
         'apply_chosen' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 9,
+      'weight' => 7,
     ),
   );
 
@@ -626,7 +826,7 @@ function iasc_meeting_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 3,
+      'weight' => 5,
     ),
   );
 
@@ -707,7 +907,7 @@ function iasc_meeting_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 16,
+      'weight' => 13,
     ),
   );
 
@@ -799,7 +999,7 @@ function iasc_meeting_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 11,
+      'weight' => 9,
     ),
   );
 
@@ -893,7 +1093,173 @@ function iasc_meeting_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 13,
+      'weight' => 11,
+    ),
+  );
+
+  // Exported field_instance: 'node-oa_event-field_primary_geofield'
+  $field_instances['node-oa_event-field_primary_geofield'] = array(
+    'bundle' => 'oa_event',
+    'comment_alter' => 0,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'bio_full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'bio_long' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'bio_short' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'geofield',
+        'settings' => array(
+          'data' => 'full',
+        ),
+        'type' => 'geofield_wkt',
+        'weight' => 25,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'ical' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'link_to_document' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_primary_geofield',
+    'label' => 'Primary geofield',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'geocoder',
+      'settings' => array(
+        'delta_handling' => 'default',
+        'geocoder_field' => 'field_city',
+        'geocoder_handler' => 'google',
+        'handler_settings' => array(
+          'google' => array(
+            'all_results' => 0,
+            'geometry_type' => 'point',
+            'reject_results' => array(
+              'APPROXIMATE' => 0,
+              'GEOMETRIC_CENTER' => 0,
+              'RANGE_INTERPOLATED' => 0,
+              'ROOFTOP' => 0,
+            ),
+          ),
+        ),
+      ),
+      'type' => 'geocoder',
+      'weight' => 9,
+    ),
+  );
+
+  // Exported field_instance: 'node-oa_event-field_primary_timezone'
+  $field_instances['node-oa_event-field_primary_timezone'] = array(
+    'bundle' => 'oa_event',
+    'comment_alter' => 0,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'bio_full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'bio_long' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'bio_short' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'tzfield',
+        'settings' => array(),
+        'type' => 'tzfield_default',
+        'weight' => 26,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'ical' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'link_to_document' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_primary_timezone',
+    'label' => 'Primary Timezone',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'tzfield_geofield',
+      'settings' => array(
+        'geofield' => 'field_primary_geofield',
+      ),
+      'type' => 'tzfield_geofield',
+      'weight' => 10,
     ),
   );
 
@@ -975,7 +1341,7 @@ function iasc_meeting_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 6,
+      'weight' => 14,
     ),
   );
 
@@ -1041,7 +1407,7 @@ function iasc_meeting_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_time_zone',
     'label' => 'Time Zone',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
@@ -1049,10 +1415,10 @@ function iasc_meeting_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(
-        'apply_chosen' => 1,
+        'apply_chosen' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 15,
+      'weight' => 11,
     ),
   );
 
@@ -1134,7 +1500,7 @@ function iasc_meeting_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 5,
+      'weight' => 13,
     ),
   );
 
@@ -1142,10 +1508,13 @@ function iasc_meeting_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Add an existing or Create a new meeting agenda Document that should be associated with this Meeting.');
   t('Add an existing or Create a new meeting note Document that should be associated with this Meeting.');
+  t('Additional locations');
+  t('Additional timezone');
   t('Agenda Items');
   t('City');
   t('Contact');
   t('Description');
+  t('Geofield Additional City');
   t('Item Title');
   t('Legacy Publish');
   t('Meeting Agendas');
@@ -1157,6 +1526,8 @@ function iasc_meeting_field_default_field_instances() {
   t('Please select the time zones for this meeting.');
   t('Presenter (External)');
   t('Presenters');
+  t('Primary Timezone');
+  t('Primary geofield');
   t('Private Details');
   t('Relevant Documents');
   t('Room');

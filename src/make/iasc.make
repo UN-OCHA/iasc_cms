@@ -120,3 +120,7 @@ projects[features_extra][subdir] = iasc_contrib
 projects[taxonomy_csv][type] = module
 projects[taxonomy_csv][version] = 5.10
 projects[taxonomy_csv][subdir] = iasc_contrib
+
+projects[tzfield][type] = module
+projects[tzfield][version] = 1.1
+projects[tzfield][subdir] = iasc_contrib

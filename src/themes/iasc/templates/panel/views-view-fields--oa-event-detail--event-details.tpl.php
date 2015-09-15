@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Default simple view template to all the fields as a row.
+ * Event Details view template to all the fields as a row.
  *
  * - $view: The view in use.
  * - $fields: an array of $field objects. Each one contains:
@@ -39,11 +39,71 @@
         <?php print $field_oa_date_1; ?>
       <?php endif; ?>
     </div>
+
     <div class='oa-event-details'>
-      <?php print $field_oa_date; ?>
-      <div class="field-label-inline">
-        <span class='oa-event-label field-label'><?php print t('Timezone:');?>&nbsp;</span><?php print $field_time_zone; ?>
+      <div class="row">
+        <?php // Display primary date and time. ?>
+        <div class="col-md-4">
+          <?php print $field_oa_date; ?>
+          <div>
+            in <strong><?php print $field_city;?></strong>
+          </div>
+        </div>
+
+        <?php if (isset($first_other_date)): ?>
+          <div class="col-md-4">
+            <?php print $first_other_date['start']; ?> to <?php print $first_other_date['end']; ?>
+            <div>
+              in <strong><?php print $first_other_date['city'];?></strong>
+            </div>
+          </div>
+        <?php endif; ?>
+
+        <?php if (isset($second_other_date)): ?>
+          <div class="col-md-4">
+            <?php print $second_other_date['start']; ?> to <?php print $second_other_date['end']; ?>
+            <div>
+              in <strong><?php print $second_other_date['city'];?></strong>
+            </div>
+          </div>
+        <?php endif; ?>
+
+      </div>
+
+      <?php if (count($other_dates)): ?>
+        <?php foreach($other_dates as $index => $date): ?>
+          <?php if (0 == $index): ?>
+            <div class="row">
+          <?php elseif ($index > 0 && !($index % 3)): ?>
+            </div><div class="row">
+          <?php endif; ?>
+
+          <div class="col-md-4">
+            <?php print $date['start']; ?> to <?php print $date['end']; ?>
+            <div>
+              in <strong><?php print $date['city'];?></strong>
+            </div>
+          </div>
+        <?php endforeach; ?>
+
+        </div>
+      <?php endif; ?>
+    </div>
+
+    <?php // Additional helpful widgets. ?>
+    <div class="row event-additional row col-xs-12">
+      <?php // My Timezone widget. ?>
+      <div class="col-md-6 col-md-offset-2">
+        <?php print drupal_render($my_timezone_form); ?>
+      </div>
+
+      <?php // Add to Calendar widget. ?>
+      <div class="oa-event-add-cal col-md-4">
+        <?php print $field_oa_date_2; ?>
       </div>
     </div>
+
+
   </div>
 </div>
+

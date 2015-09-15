@@ -161,3 +161,4 @@ dependencies[] = nodequeue
 dependencies[] = access_code
 dependencies[] = og_role_override
 dependencies[] = securepages
+dependencies[] = tzfield
