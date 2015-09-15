@@ -320,7 +320,7 @@ function iasc_meeting_features_override_default_overrides() {
       'cache' => array(),
       'style' => array(
         'settings' => array(
-          'secondary_options' => 'panel-success',
+          'secondary_options' => 'panel-info',
           'linked_list' => 'arrow',
         ),
         'style' => 'secondary',
@@ -707,7 +707,6 @@ function iasc_meeting_features_override_default_overrides() {
       'description' => 0,
       'view_mode' => 'full',
     ),
-    'delta_offset' => 0,
     'multi_type' => 'ul',
   );
   $overrides["views_view.oa_event_detail.display|event_details|display_options|fields|field_city"] = array(
@@ -843,7 +842,6 @@ function iasc_meeting_features_override_default_overrides() {
         'show_repeat_rule' => 'hide',
       ),
       'group_rows' => FALSE,
-      'delta_offset' => 0,
     ),
   );
   $overrides["views_view.oa_event_list.display|panel_pane_1|display_options|pane_category|name"] = 'IASC Meetings';

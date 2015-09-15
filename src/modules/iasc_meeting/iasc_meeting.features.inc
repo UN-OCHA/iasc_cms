@@ -373,7 +373,7 @@ function iasc_meeting_panelizer_defaults_override_alter(&$data) {
           'cache' => array(),
           'style' => array(
             'settings' => array(
-              'secondary_options' => 'panel-success',
+              'secondary_options' => 'panel-info',
               'linked_list' => 'arrow',
             ),
             'style' => 'secondary',
@@ -769,7 +769,6 @@ function iasc_meeting_views_default_views_alter(&$data) {
         'description' => 0,
         'view_mode' => 'full',
       ),
-      'delta_offset' => 0,
       'multi_type' => 'ul',
     ); /* WAS: '' */
     $data['oa_event_detail']->display['event_details']->display_options['fields']['field_city'] = array(
@@ -905,7 +904,6 @@ function iasc_meeting_views_default_views_alter(&$data) {
           'show_repeat_rule' => 'hide',
         ),
         'group_rows' => FALSE,
-        'delta_offset' => 0,
       ),
     ); /* WAS: '' */
     $data['oa_event_list']->display['panel_pane_1']->display_options['pane_category']['name'] = 'IASC Meetings'; /* WAS: 'Open Atrium Events' */
