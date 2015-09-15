@@ -199,38 +199,40 @@ function iasc_meeting_preprocess_views_view_fields(&$vars) {
     $edate = new DateTime('@' . $row->field_field_oa_date[0]['raw']['value2']);
     $etext = $edate->format('Y-m-d G:i');
 
-    // Get the primary timezone.
-    $primary_sdate = new DateTime($stext, new DateTimeZone($row->field_field_primary_timezone[0]['raw']['value']));
-    $primary_edate = new DateTime($etext, new DateTimeZone($row->field_field_primary_timezone[0]['raw']['value']));
-
     $other_dates = array();
 
-    foreach($row->field_field_additional_locations as $collection) {
-      $id = $collection['raw']['value'];
-      $item = entity_load('field_collection_item', array($id));
+    if (isset($row->field_field_primary_timezone[0]['raw']['value'])) {
+      // Get the primary timezone.
+      $primary_sdate = new DateTime($stext, new DateTimeZone($row->field_field_primary_timezone[0]['raw']['value']));
+      $primary_edate = new DateTime($etext, new DateTimeZone($row->field_field_primary_timezone[0]['raw']['value']));
 
-      $other_date = array(
-        'city' => $item[$id]->field_additional_city[LANGUAGE_NONE][0]['safe_value'],
-        'timezone' => $item[$id]->field_additional_timezone[LANGUAGE_NONE][0]['value'],
-      );
+      foreach ($row->field_field_additional_locations as $collection) {
+        $id = $collection['raw']['value'];
+        $item = entity_load('field_collection_item', array($id));
 
-      $primary_start_clone = clone $primary_sdate;
-      $primary_start_clone ->setTimezone(new DateTimeZone($item[$id]->field_additional_timezone[LANGUAGE_NONE][0]['value']));
-      $other_date['start'] = $primary_start_clone->format('G:i');
+        $other_date = array(
+          'city' => $item[$id]->field_additional_city[LANGUAGE_NONE][0]['safe_value'],
+          'timezone' => $item[$id]->field_additional_timezone[LANGUAGE_NONE][0]['value'],
+        );
 
-      $primary_end_clone = clone $primary_edate;
-      $primary_end_clone->setTimezone(new DateTimeZone($item[$id]->field_additional_timezone[LANGUAGE_NONE][0]['value']));
-      $other_date['end'] = $primary_end_clone->format('G:i');
+        $primary_start_clone = clone $primary_sdate;
+        $primary_start_clone->setTimezone(new DateTimeZone($item[$id]->field_additional_timezone[LANGUAGE_NONE][0]['value']));
+        $other_date['start'] = $primary_start_clone->format('G:i');
 
-      $other_dates[] = $other_date;
-    }
+        $primary_end_clone = clone $primary_edate;
+        $primary_end_clone->setTimezone(new DateTimeZone($item[$id]->field_additional_timezone[LANGUAGE_NONE][0]['value']));
+        $other_date['end'] = $primary_end_clone->format('G:i');
 
-    if (count($other_dates)) {
-      $vars['first_other_date'] = array_shift($other_dates);
-    }
+        $other_dates[] = $other_date;
+      }
 
-    if (count($other_dates)) {
-      $vars['second_other_date'] = array_shift($other_dates);
+      if (count($other_dates)) {
+        $vars['first_other_date'] = array_shift($other_dates);
+      }
+
+      if (count($other_dates)) {
+        $vars['second_other_date'] = array_shift($other_dates);
+      }
     }
 
     $vars['other_dates'] = $other_dates;
