@@ -28,6 +28,9 @@
  */
 ?>
 <div class='oa-event clearfix'>
+  <div class='oa-event-add-cal'>
+    <?php  print $field_oa_date_2; ?>
+  </div>
   <div class='oa-event-header'>
     <div class='oa-event-icon'>
       <?php if (!empty($field_oa_media)): ?>

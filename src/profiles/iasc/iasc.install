@@ -76,8 +76,17 @@ function iasc_update_7004() {
 /**
  * Implements hook_update_N().
  *
- * Enable Time zone field module.
+ * Enable iasc content page module.
  */
 function iasc_update_7005() {
+  module_enable(array('iasc_content_page'));
+}
+
+/**
+ * Implements hook_update_N().
+ *
+ * Enable Time zone field module.
+ */
+function iasc_update_7006() {
   module_enable(array('tzfield', 'tzfield_geofield'));
 }

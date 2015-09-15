@@ -51,6 +51,7 @@
   .pane-node-field-host { margin-bottom: $padding-large-vertical; } 
 }
 
+
 .oa-event-details .row {
   padding-bottom: 1em;
   margin-right: 0;
@@ -63,4 +64,8 @@
 
 h5#my-timezone-label {
   margin-top: 0;
+}
+
+.oa-event-add-cal {
+  float: right;
 }

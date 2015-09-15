@@ -8658,6 +8658,10 @@ h5#my-timezone-label {
   margin-top: 0;
 }
 
+.oa-event-add-cal {
+  float: right;
+}
+
 .alert-warning:before {
   font-size: 20px;
   float: left;
