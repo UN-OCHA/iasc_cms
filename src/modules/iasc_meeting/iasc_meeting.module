@@ -183,3 +183,128 @@ function iasc_meeting_form_alter(&$form, &$form_state, $form_id) {
     $form['og_subspaces_view_parent']['#access'] = FALSE;
   }
 }
+
+/**
+ * Implements hook_preprocess_views_view_fields().
+ *
+ * Generic preprocess that is needed to call more specific templates.
+ */
+function iasc_meeting_preprocess_views_view_fields(&$vars) {
+  if (isset($vars['view']->name) && 'oa_event_detail' == $vars['view']->name) {
+    $row = $vars['row'];
+    // Primary datetime is set in UTC.
+    $sdate = new DateTime('@' . $row->field_field_oa_date[0]['raw']['value']);
+    $stext = $sdate->format('Y-m-d G:i');
+
+    $edate = new DateTime('@' . $row->field_field_oa_date[0]['raw']['value2']);
+    $etext = $edate->format('Y-m-d G:i');
+
+    // Get the primary timezone.
+    $primary_sdate = new DateTime($stext, new DateTimeZone($row->field_field_primary_timezone[0]['raw']['value']));
+    $primary_edate = new DateTime($etext, new DateTimeZone($row->field_field_primary_timezone[0]['raw']['value']));
+
+    $other_dates = array();
+
+    foreach($row->field_field_additional_locations as $collection) {
+      $id = $collection['raw']['value'];
+      $item = entity_load('field_collection_item', array($id));
+
+      $other_date = array(
+        'city' => $item[$id]->field_additional_city[LANGUAGE_NONE][0]['safe_value'],
+        'timezone' => $item[$id]->field_additional_timezone[LANGUAGE_NONE][0]['value'],
+      );
+
+      $primary_start_clone = clone $primary_sdate;
+      $primary_start_clone ->setTimezone(new DateTimeZone($item[$id]->field_additional_timezone[LANGUAGE_NONE][0]['value']));
+      $other_date['start'] = $primary_start_clone->format('G:i');
+
+      $primary_end_clone = clone $primary_edate;
+      $primary_end_clone->setTimezone(new DateTimeZone($item[$id]->field_additional_timezone[LANGUAGE_NONE][0]['value']));
+      $other_date['end'] = $primary_end_clone->format('G:i');
+
+      $other_dates[] = $other_date;
+    }
+
+    if (count($other_dates)) {
+      $vars['first_other_date'] = array_shift($other_dates);
+    }
+
+    if (count($other_dates)) {
+      $vars['second_other_date'] = array_shift($other_dates);
+    }
+
+    $vars['other_dates'] = $other_dates;
+
+
+    $vars['my_timezone_form'] = drupal_get_form('iasc_meeting_my_timezone_form', $primary_sdate, $primary_edate);
+  }
+}
+
+/**
+ * My Timezone form builder.
+ */
+function iasc_meeting_my_timezone_form($form, &$form_state, $primary_sdate, $primary_edate) {
+  $form = array();
+
+  $form['#primary_sdate'] = $primary_sdate;
+  $form['#primary_edate'] = $primary_edate;
+
+  $form['my_timezone'] = array(
+    '#type' => 'select',
+    '#options' => iasc_meeting_system_time_zones(),
+    '#prefix' => '<h5 id="my-timezone-label">Select My Timezone</h5>',
+    '#ajax' => array(
+      'callback' => 'iasc_meeting_my_timezone_callback',
+      'wrapper' => 'my-timezone-label',
+      'method' => 'replace',
+      'effect' => 'fade',
+    ),
+  );
+
+  return $form;
+}
+
+/**
+ * Generate an array of time zones and their local time&date.
+ *
+ * @param $blank
+ *   If evaluates true, prepend an empty time zone option to the array.
+ */
+function iasc_meeting_system_time_zones() {
+  $zonelist = timezone_identifiers_list();
+  $zones = array('' => t('- None selected -'));
+  foreach ($zonelist as $zone) {
+    // Because many time zones exist in PHP only for backward compatibility
+    // reasons and should not be used, the list is filtered by a regular
+    // expression.
+    if (preg_match('!^((Africa|America|Antarctica|Arctic|Asia|Atlantic|Australia|Europe|Indian|Pacific)/|UTC$)!', $zone)) {
+      $zone_pieces = explode('/', t(str_replace('_', ' ', $zone)));
+      $zone_pieces = array_reverse($zone_pieces);
+      $continent = count($zone_pieces) > 1 ? array_pop($zone_pieces) : '';
+      $zone_pretty = implode(', ', $zone_pieces);
+
+      if ($continent) {
+        $zone_pretty .= ' - ' . $continent;
+      }
+
+      $zones[$zone] = t('@zone', array('@zone' => $zone_pretty));
+    }
+  }
+  // Sort the translated time zones alphabetically.
+  asort($zones);
+  return $zones;
+}
+
+function iasc_meeting_my_timezone_callback($form, &$form_state) {
+  $timezone = $form_state['values']['my_timezone'];
+
+  $primary_start_clone = clone $form['#primary_sdate'];
+  $primary_start_clone ->setTimezone(new DateTimeZone($timezone));
+  $start = $primary_start_clone->format('G:i');
+
+  $primary_end_clone = clone $form['#primary_edate'];
+  $primary_end_clone->setTimezone(new DateTimeZone($timezone));
+  $end = $primary_end_clone->format('G:i');
+
+  return t('<h5 id="my-timezone-label">@start to @end</h5>', array('@start' => $start, '@end' => $end));
+}

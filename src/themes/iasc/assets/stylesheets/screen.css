@@ -8644,6 +8644,20 @@ img.bio-circled {
   margin-bottom: 20px;
 }
 
+.oa-event-details .row, .oa-event-details .mc-field-group {
+  padding-bottom: 1em;
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.event-additional {
+  padding: 0;
+}
+
+h5#my-timezone-label {
+  margin-top: 0;
+}
+
 .alert-warning:before {
   font-size: 20px;
   float: left;
