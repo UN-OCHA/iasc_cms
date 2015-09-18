@@ -16,7 +16,7 @@ function iasc_meeting_ctools_plugin_directory($owner, $plugin_type) {
 }
 
 /**
- * Implementation of hook_module_implements_alter()
+ * Implements hook_module_implements_alter().
  */
 function iasc_meeting_module_implements_alter(&$implementations, $hook) {
   if ($hook == 'form_alter') {
@@ -198,7 +198,7 @@ function iasc_meeting_field_add_to_calendar_markup($nid, $items, $title = 'Add t
   drupal_add_js(drupal_get_path('module', 'oa_events') . '/js/atemay.js');
 
   $node = node_load($nid);
-  if (false === $date_field_info) {
+  if (FALSE === $date_field_info) {
     $date_field_info = field_info_field('field_event_date');
     $date_field_instance = field_info_instance('node', 'field_event_date', $node->type);
   }
@@ -226,11 +226,12 @@ function iasc_meeting_field_add_to_calendar_markup($nid, $items, $title = 'Add t
 
   $alldayevent = date_is_all_day(date(DATE_FORMAT_DATETIME, $date['value']), date(DATE_FORMAT_DATETIME, $date['value2'])) ? 'true' : 'false';
 
+  // Zonecode 32 = UTC.
   $spans = array(
     '_url' => $event_url,
     '_start' => date_format_date($date_field_date1, 'custom', 'm-d-Y H:i:s'),
     '_end' => date_format_date($date_field_date2, 'custom', 'm-d-Y H:i:s'),
-    '_zonecode' => '35', // UTC
+    '_zonecode' => '35',
     '_summary' => check_plain($node->title),
     '_description' => $description,
     '_location' => $location,
@@ -308,7 +309,6 @@ function iasc_meeting_preprocess_views_view_fields(&$vars) {
 
     $vars['other_dates'] = $other_dates;
 
-
     $vars['my_timezone_form'] = drupal_get_form('iasc_meeting_my_timezone_form', $primary_sdate, $primary_edate);
   }
 }
@@ -338,10 +338,7 @@ function iasc_meeting_my_timezone_form($form, &$form_state, $primary_sdate, $pri
 }
 
 /**
- * Generate an array of time zones and their local time&date.
- *
- * @param $blank
- *   If evaluates true, prepend an empty time zone option to the array.
+ * Generate an array of time zones and their local time & date.
  */
 function iasc_meeting_system_time_zones() {
   $zonelist = timezone_identifiers_list();
@@ -351,7 +348,7 @@ function iasc_meeting_system_time_zones() {
     // reasons and should not be used, the list is filtered by a regular
     // expression.
     if (preg_match('!^((Africa|America|Antarctica|Arctic|Asia|Atlantic|Australia|Europe|Indian|Pacific)/|UTC$)!', $zone)) {
-      $zone_pieces = explode('/', t(str_replace('_', ' ', $zone)));
+      $zone_pieces = explode('/', str_replace('_', ' ', $zone));
       $zone_pieces = array_reverse($zone_pieces);
       $continent = count($zone_pieces) > 1 ? array_pop($zone_pieces) : '';
       $zone_pretty = implode(', ', $zone_pieces);
@@ -384,6 +381,6 @@ function iasc_meeting_my_timezone_callback($form, &$form_state) {
 
   return t('<h5 id="my-timezone-label">@start to @end</h5>', array(
     '@start' => $start,
-    '@end' => $end
+    '@end' => $end,
   ));
 }

@@ -204,7 +204,7 @@ function iasc_configuration_update_7004() {
        * with a group.
        */
       if (empty($node->field_oa_group_ref)) {
-        $node->title = t($node->title . ' (Public)');
+        $node->title = t('@title (Public)', array('@title' => $node->title));
         node_save($node);
       }
     }
@@ -238,7 +238,7 @@ function iasc_configuration_update_7006() {
   );
   menu_save($menu);
 
-  // Setup the menu items arrays that we'll use to save to the newly created menu.
+  // Setup the menu item arrays that we'll save to the newly created menu.
   $menu_items_top = array();
   $menu_items_secondary = array();
   $mlid_parents = array();
@@ -274,11 +274,11 @@ function iasc_configuration_update_7006() {
 
   $secondary_items['Transformative Agenda'] = 'Field';
 
-  // Menu links are a subset of the menu items in the main menu in a different order.
+  // Menu links are a subset of the menu items in the main menu in a diff order.
   $main_menu = menu_tree_all_data('main-menu');
 
   // Cycle thru main menu items to grab the info for the menu items we need.
-  foreach($main_menu as $item) {
+  foreach ($main_menu as $item) {
     // Handle the parent menu items first.
     if (isset($menu_top[$item['link']['link_title']])) {
       $title = $item['link']['link_title'];
@@ -302,7 +302,7 @@ function iasc_configuration_update_7006() {
     }
 
     // See if we need to grab any of the secondary level menu items.
-    foreach($item['below'] as $child) {
+    foreach ($item['below'] as $child) {
       if (isset($secondary_items[$child['link']['link_title']])) {
         $title = $child['link']['link_title'];
         $menu_items_secondary[$title] = array(
@@ -315,7 +315,7 @@ function iasc_configuration_update_7006() {
   }
 
   // First add the parent menu items to the IASC Body Categories Menu.
-  foreach($menu_items_top as $item) {
+  foreach ($menu_items_top as $item) {
     $mlid = menu_link_save($item);
 
     // We'll need the parent mlid when we add the secondard menu items.
@@ -326,7 +326,7 @@ function iasc_configuration_update_7006() {
 
   // Create the child menu items.
   $index = 0;
-  foreach($secondary_items as $child_item_title => $parent_item_title) {
+  foreach ($secondary_items as $child_item_title => $parent_item_title) {
     // Get the parent mlid in menu-iasc-body-categories.
     if (isset($mlid_parents[$parent_item_title])) {
       // Add the remaining info on parent mlid and menu link weight.

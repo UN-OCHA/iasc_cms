@@ -770,7 +770,7 @@ function iasc_configuration_permission() {
 }
 
 /**
- * Implementation of hook_module_implements_alter()
+ * Implements hook_module_implements_alter().
  */
 function iasc_configuration_module_implements_alter(&$implementations, $hook) {
   if ($hook == 'form_alter') {
@@ -905,7 +905,8 @@ function iasc_configuration_form_alter(&$form, &$form_state, $form_id) {
  * Implements hook_form_alter().
  */
 function iasc_configuration_form_panels_ipe_edit_control_form_alter(&$form, &$form_state, $form_id) {
-  // Hide revision + log fields on customize this page form b/c they are unnecessary.
+  // Hide revision + log fields on customize this page form b/c they are
+  // unnecessary.
   $form['options']['revision']['#access'] = FALSE;
   $form['options']['log']['#access'] = FALSE;
 
@@ -977,7 +978,7 @@ function iasc_configuration_ctools_plugin_directory($owner, $plugin_type) {
  * Implements hook_media_browser_plugin_info_alter().
  */
 function iasc_configuration_media_browser_plugin_info_alter(&$info) {
-   // We prevent multifile upload because of the request in IASC-388 (Moving
-   // file name to the file title field on upload.
-   $info['upload']['class'] = 'MediaBrowserUpload';
+  // We prevent multifile upload because of the request in IASC-388 (Moving
+  // file name to the file title field on upload.
+  $info['upload']['class'] = 'MediaBrowserUpload';
 }

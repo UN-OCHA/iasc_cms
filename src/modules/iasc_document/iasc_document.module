@@ -16,7 +16,7 @@ function iasc_document_ctools_plugin_directory($owner, $plugin_type) {
 }
 
 /**
- * Implementation of hook_module_implements_alter()
+ * Implements hook_module_implements_alter().
  */
 function iasc_document_module_implements_alter(&$implementations, $hook) {
   if ($hook == 'form_alter') {
@@ -208,7 +208,7 @@ function iasc_document_form_alter(&$form, &$form_state, $form_id) {
   if ('views_exposed_form' == $form_id
     && 'iasc_document' == $form_state['view']->name
     && ('panel_pane_resources' == $form_state['view']->current_display
-    || 'panel_pane_meeting_documents' == $form_state['view']->current_display )) {
+    || 'panel_pane_meeting_documents' == $form_state['view']->current_display)) {
 
     // Ensure that target id is not set to Active Space.
     $form['og_group_ref_target_id']['#default_value'] = 'All';

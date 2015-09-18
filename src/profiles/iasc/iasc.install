@@ -56,7 +56,7 @@ function iasc_update_7001() {
  * Don't allow any content type to use the related content field.
  */
 function iasc_update_7004() {
-  $oa_related_allowed_types = array (
+  $oa_related_allowed_types = array(
     'announcement' => 0,
     'oa_group' => 0,
     'oa_space' => 0,
