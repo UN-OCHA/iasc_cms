@@ -121,9 +121,14 @@ projects[taxonomy_csv][type] = module
 projects[taxonomy_csv][version] = 5.10
 projects[taxonomy_csv][subdir] = iasc_contrib
 
+projects[tzfield][type] = module
+projects[tzfield][version] = 1.1
+projects[tzfield][subdir] = iasc_contrib
+
 projects[responsive_imagemaps][type] = module
 projects[responsive_imagemaps][version] = 1.1
 projects[responsive_imagemaps][subdir] = iasc_contrib
 
 libraries[responsive-imagemaps][download][type] = get
 libraries[responsive-imagemaps][download][url] = https://github.com/stowball/jQuery-rwdImageMaps/archive/master.zip
+

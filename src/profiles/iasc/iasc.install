@@ -82,9 +82,18 @@ function iasc_update_7005() {
   module_enable(array('iasc_content_page'));
 }
 
+/**
+ * Implements hook_update_N().
+ *
+ * Enable Time zone field module.
+ */
+function iasc_update_7006() {
+  module_enable(array('tzfield', 'tzfield_geofield'));
+}
+
 /*
  * Enable responsive_imagemaps module.
  */
-function iasc_update_7006() {
+function iasc_update_7007() {
   module_enable(array('responsive_imagemaps'));
 }
