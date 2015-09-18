@@ -87,7 +87,7 @@ dependencies[] = og_menu_single
 dependencies[] = oa_core
 dependencies[] = oa_date
 dependencies[] = oa_diff
-dependencies[] = oa_dashboard
+dependencies[] = oa_toolbar
 dependencies[] = oa_notifications
 dependencies[] = og_session_context
 dependencies[] = oa_section_context
@@ -146,8 +146,8 @@ dependencies[] = iasc_announcement
 dependencies[] = oa_apachesolr
 dependencies[] = iasc_wysiwyg
 dependencies[] = iasc_search
-dependencies[] = iasc_permissions
 dependencies[] = iasc_group_login
+dependencies[] = iasc_content_page
 
 ; Contrib
 dependencies[] = radix_layouts
@@ -160,5 +160,5 @@ dependencies[] = title
 dependencies[] = nodequeue
 dependencies[] = access_code
 dependencies[] = og_role_override
-dependencies[] = securelogin
+dependencies[] = securepages
 dependencies[] = responsive_imagemaps
