@@ -31,7 +31,9 @@
       "!src/**/*.features.*inc",
       "!src/**/*.pages_default.inc",
       "!src/**/*.panelizer.inc",
-      "!src/**/*.strongarm.inc"
+      "!src/**/*.strongarm.inc",
+      "!src/**/*.views.inc",
+      "!src/modules/oa_apachesolr/**"
     ]
   },
   "phpmd": {
