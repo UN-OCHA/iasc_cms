@@ -162,3 +162,4 @@ dependencies[] = access_code
 dependencies[] = og_role_override
 dependencies[] = securepages
 dependencies[] = tzfield
+dependencies[] = responsive_imagemaps
