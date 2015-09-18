@@ -90,6 +90,8 @@ function iasc_meeting_features_override_default_overrides() {
   $overrides["field_instance.node-oa_event-field_oa_date.display|teaser|settings|show_remaining_days"] = FALSE;
   $overrides["field_instance.node-oa_event-field_oa_date.display|teaser|settings|show_repeat_rule"] = 'show';
   $overrides["field_instance.node-oa_event-field_oa_date.display|teaser|type"] = 'date_default';
+  $overrides["field_instance.node-oa_event-field_oa_date.widget|settings|input_format"] = 'M j Y - H:i:s';
+  $overrides["field_instance.node-oa_event-field_oa_date.widget|settings|no_fieldset"] = 0;
   $overrides["field_instance.node-oa_event-field_oa_geo_location.node-oa_event-field_oa_geo_location"]["DELETED"] = TRUE;
   $overrides["field_instance.node-oa_event-field_oa_media.node-oa_event-field_oa_media"]["DELETED"] = TRUE;
   $overrides["field_instance.node-oa_event-oa_other_spaces_ref.display|bio_full"] = array(

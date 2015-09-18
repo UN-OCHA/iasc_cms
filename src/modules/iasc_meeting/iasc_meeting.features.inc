@@ -119,6 +119,8 @@ function iasc_meeting_field_default_field_instances_alter(&$data) {
     $data['node-oa_event-field_oa_date']['display']['teaser']['settings']['show_remaining_days'] = FALSE; /* WAS: '' */
     $data['node-oa_event-field_oa_date']['display']['teaser']['settings']['show_repeat_rule'] = 'show'; /* WAS: '' */
     $data['node-oa_event-field_oa_date']['display']['teaser']['type'] = 'date_default'; /* WAS: 'hidden' */
+    $data['node-oa_event-field_oa_date']['widget']['settings']['input_format'] = 'M j Y - H:i:s'; /* WAS: 'M j Y - g:i:sa' */
+    $data['node-oa_event-field_oa_date']['widget']['settings']['no_fieldset'] = 0; /* WAS: '' */
   }
   if (isset($data['node-oa_event-field_oa_geo_location'])) {
     unset($data['node-oa_event-field_oa_geo_location']);
