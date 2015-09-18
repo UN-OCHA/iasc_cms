@@ -41,10 +41,7 @@
       <div class="row">
         <?php // Display primary date and time. ?>
         <div class="col-md-4">
-          <?php print $field_oa_date; ?>
-          <div>
-            in <strong><?php print $field_city;?></strong>
-          </div>
+          <?php print $field_oa_date; ?> in <strong><?php print $field_city;?></strong>
         </div>
 
         <?php if (isset($first_other_date)): ?>
@@ -103,4 +100,3 @@
 
   </div>
 </div>
-

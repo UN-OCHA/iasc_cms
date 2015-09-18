@@ -714,7 +714,7 @@ function iasc_meeting_features_override_default_overrides() {
     'table' => 'field_data_field_city',
     'field' => 'field_city',
     'label' => '',
-    'element_type' => 0,
+    'element_type' => 'span',
     'element_label_colon' => FALSE,
   );
   $overrides["views_view.oa_event_detail.display|event_details|display_options|fields|field_oa_address"]["DELETED"] = TRUE;

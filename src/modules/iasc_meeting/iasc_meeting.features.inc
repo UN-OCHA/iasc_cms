@@ -776,7 +776,7 @@ function iasc_meeting_views_default_views_alter(&$data) {
       'table' => 'field_data_field_city',
       'field' => 'field_city',
       'label' => '',
-      'element_type' => 0,
+      'element_type' => 'span',
       'element_label_colon' => FALSE,
     ); /* WAS: '' */
     $data['oa_event_detail']->display['event_details']->display_options['fields']['field_oa_date']['element_type'] = 'span'; /* WAS: '' */
