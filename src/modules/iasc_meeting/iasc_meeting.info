@@ -168,6 +168,7 @@ features[features_overrides][] = views_view.oa_event_detail.display|default|disp
 features[features_overrides][] = views_view.oa_event_detail.display|event_details|display_options|fields|body
 features[features_overrides][] = views_view.oa_event_detail.display|event_details|display_options|fields|field_additional_locations
 features[features_overrides][] = views_view.oa_event_detail.display|event_details|display_options|fields|field_city
+features[features_overrides][] = views_view.oa_event_detail.display|event_details|display_options|fields|field_dial_in_meeting
 features[features_overrides][] = views_view.oa_event_detail.display|event_details|display_options|fields|field_oa_address
 features[features_overrides][] = views_view.oa_event_detail.display|event_details|display_options|fields|field_oa_date_1|delta_offset
 features[features_overrides][] = views_view.oa_event_detail.display|event_details|display_options|fields|field_oa_date_2|delta_offset
