@@ -19,7 +19,6 @@ function iasc_meeting_features_override_default_overrides() {
   $overrides["field_group.group_oa_access|node|oa_event|form.data|children|0"] = 'oa_other_spaces_ref';
   $overrides["field_group.group_oa_access|node|oa_event|form.data|children|1"] = 'oa_section_ref';
   $overrides["field_group.group_oa_access|node|oa_event|form.data|children|2"] = 'og_group_ref';
-  $overrides["field_group.group_oa_access|node|oa_event|form.data|weight"] = 6;
   $overrides["field_group.group_oa_event_location|node|oa_event|form.data|weight"] = 4;
 
   // Exported overrides for: field_instance
@@ -53,7 +52,7 @@ function iasc_meeting_features_override_default_overrides() {
   $overrides["field_instance.node-oa_event-body.display|teaser|type"] = 'hidden';
   $overrides["field_instance.node-oa_event-body.display|teaser|weight"] = 9;
   $overrides["field_instance.node-oa_event-body.label"] = 'Public Information';
-  $overrides["field_instance.node-oa_event-body.widget|weight"] = 4;
+  $overrides["field_instance.node-oa_event-body.widget|weight"] = 5;
   $overrides["field_instance.node-oa_event-field_oa_address.node-oa_event-field_oa_address"]["DELETED"] = TRUE;
   $overrides["field_instance.node-oa_event-field_oa_date.display|bio_full"] = array(
     'label' => 'above',
@@ -202,7 +201,7 @@ function iasc_meeting_features_override_default_overrides() {
     'weight' => 0,
   );
   $overrides["field_instance.node-oa_event-og_vocabulary.display|teaser|weight"] = 6;
-  $overrides["field_instance.node-oa_event-og_vocabulary.widget|weight"] = 12;
+  $overrides["field_instance.node-oa_event-og_vocabulary.widget|weight"] = 13;
 
   // Exported overrides for: page_manager_handlers
   $overrides["page_manager_handlers.node_edit_panel_context_7.conf|display|content|new-020f676b-0f7d-4a37-93e2-44aa23df3980|position"] = 3;

@@ -36,7 +36,6 @@ function iasc_meeting_field_group_info_alter(&$data) {
     $data['group_oa_access|node|oa_event|form']->data['children'][0] = 'oa_other_spaces_ref'; /* WAS: 'oa_section_ref' */
     $data['group_oa_access|node|oa_event|form']->data['children'][1] = 'oa_section_ref'; /* WAS: 'og_group_ref' */
     $data['group_oa_access|node|oa_event|form']->data['children'][2] = 'og_group_ref'; /* WAS: 'oa_other_spaces_ref' */
-    $data['group_oa_access|node|oa_event|form']->data['weight'] = 6; /* WAS: 7 */
   }
   if (isset($data['group_oa_event_location|node|oa_event|form'])) {
     $data['group_oa_event_location|node|oa_event|form']->data['weight'] = 4; /* WAS: 5 */
@@ -76,7 +75,7 @@ function iasc_meeting_field_default_field_instances_alter(&$data) {
     $data['node-oa_event-body']['display']['teaser']['type'] = 'hidden'; /* WAS: 'text_summary_or_trimmed' */
     $data['node-oa_event-body']['display']['teaser']['weight'] = 9; /* WAS: 0 */
     $data['node-oa_event-body']['label'] = 'Public Information'; /* WAS: 'Description' */
-    $data['node-oa_event-body']['widget']['weight'] = 4; /* WAS: 2 */
+    $data['node-oa_event-body']['widget']['weight'] = 5; /* WAS: 2 */
     unset($data['node-oa_event-body']['display']['teaser']['module']);
     unset($data['node-oa_event-body']['display']['teaser']['settings']['trim_length']);
   }
@@ -243,7 +242,7 @@ function iasc_meeting_field_default_field_instances_alter(&$data) {
       'weight' => 0,
     ); /* WAS: '' */
     $data['node-oa_event-og_vocabulary']['display']['teaser']['weight'] = 6; /* WAS: 0 */
-    $data['node-oa_event-og_vocabulary']['widget']['weight'] = 12; /* WAS: 9 */
+    $data['node-oa_event-og_vocabulary']['widget']['weight'] = 13; /* WAS: 9 */
   }
 }
 
