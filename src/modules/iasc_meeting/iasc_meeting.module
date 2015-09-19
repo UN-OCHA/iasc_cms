@@ -192,23 +192,37 @@ function iasc_meeting_form_alter(&$form, &$form_state, $form_id) {
  * Create Addthis Event calendar markup.
  */
 function iasc_meeting_field_add_to_calendar_markup($nid, $items, $title = 'Add to Calendar') {
-  static $date_field_info = FALSE;
-  static $date_field_instance = FALSE;
   drupal_add_css(drupal_get_path('module', 'oa_events') . '/css/addthisevent.css');
   drupal_add_js(drupal_get_path('module', 'oa_events') . '/js/atemay.js');
 
   $node = node_load($nid);
-  if (FALSE === $date_field_info) {
-    $date_field_info = field_info_field('field_event_date');
-    $date_field_instance = field_info_instance('node', 'field_event_date', $node->type);
-  }
 
   $event_info = oa_events_find_next_event($items);
   $date = $event_info['event'];
 
-  // TODO: Change this to respect primary timezone when it gets added.
-  $date_field_date1 = new DateObject($date['value'], $date['timezone_db'], DATE_FORMAT_UNIX);
-  $date_field_date2 = new DateObject($date['value2'], $date['timezone_db'], DATE_FORMAT_UNIX);
+  $date_field_date1 = new DateObject('@' . $date['value']);
+  $date1_text = $date_field_date1->format('Y-m-d G:i');
+
+  $date_field_date2 = new DateObject('@' . $date['value2']);
+  $date2_text = $date_field_date2->format('Y-m-d G:i');
+
+  if (isset($node->field_primary_timezone[LANGUAGE_NONE][0]['value'])) {
+    // Get the primary timezone.
+    $temp_date1 = new DateTime($date1_text, new DateTimeZone($node->field_primary_timezone[LANGUAGE_NONE][0]['value']));
+    $temp_date2 = new DateTime($date2_text, new DateTimeZone($node->field_primary_timezone[LANGUAGE_NONE][0]['value']));
+
+    // Convert the original start/end datetime values to UTC.
+    $primary_sdate = clone $temp_date1;
+    $primary_sdate->setTimezone(new DateTimeZone('UTC'));
+
+    $primary_edate = clone $temp_date2;
+    $primary_edate->setTimezone(new DateTimeZone('UTC'));
+  }
+  else {
+    // Set the default timezone to UTC.
+    $primary_sdate = new DateTime($date1_text, new DateTimeZone('UTC'));
+    $primary_edate = new DateTime($date2_text, new DateTimeZone('UTC'));
+  }
 
   $link_content = $title;
   $event_url = url('node/' . $node->nid, array('absolute' => TRUE));
@@ -229,8 +243,8 @@ function iasc_meeting_field_add_to_calendar_markup($nid, $items, $title = 'Add t
   // Zonecode 32 = UTC.
   $spans = array(
     '_url' => $event_url,
-    '_start' => date_format_date($date_field_date1, 'custom', 'm-d-Y H:i:s'),
-    '_end' => date_format_date($date_field_date2, 'custom', 'm-d-Y H:i:s'),
+    '_start' => $primary_sdate->format('m-d-Y H:i:s'),
+    '_end' => $primary_edate->format('m-d-Y H:i:s'),
     '_zonecode' => '35',
     '_summary' => check_plain($node->title),
     '_description' => $description,
@@ -277,34 +291,39 @@ function iasc_meeting_preprocess_views_view_fields(&$vars) {
       // Get the primary timezone.
       $primary_sdate = new DateTime($stext, new DateTimeZone($row->field_field_primary_timezone[0]['raw']['value']));
       $primary_edate = new DateTime($etext, new DateTimeZone($row->field_field_primary_timezone[0]['raw']['value']));
+    }
+    else {
+      // Set the default timezone to UTC.
+      $primary_sdate = new DateTime($stext, new DateTimeZone('UTC'));
+      $primary_edate = new DateTime($etext, new DateTimeZone('UTC'));
+    }
 
-      foreach ($row->field_field_additional_locations as $collection) {
-        $id = $collection['raw']['value'];
-        $item = entity_load('field_collection_item', array($id));
+    foreach ($row->field_field_additional_locations as $collection) {
+      $id = $collection['raw']['value'];
+      $item = entity_load('field_collection_item', array($id));
 
-        $other_date = array(
-          'city' => $item[$id]->field_additional_city[LANGUAGE_NONE][0]['safe_value'],
-          'timezone' => $item[$id]->field_additional_timezone[LANGUAGE_NONE][0]['value'],
-        );
+      $other_date = array(
+        'city' => $item[$id]->field_additional_city[LANGUAGE_NONE][0]['safe_value'],
+        'timezone' => $item[$id]->field_additional_timezone[LANGUAGE_NONE][0]['value'],
+      );
 
-        $primary_start_clone = clone $primary_sdate;
-        $primary_start_clone->setTimezone(new DateTimeZone($item[$id]->field_additional_timezone[LANGUAGE_NONE][0]['value']));
-        $other_date['start'] = $primary_start_clone->format('G:i');
+      $primary_start_clone = clone $primary_sdate;
+      $primary_start_clone->setTimezone(new DateTimeZone($item[$id]->field_additional_timezone[LANGUAGE_NONE][0]['value']));
+      $other_date['start'] = $primary_start_clone->format('G:i');
 
-        $primary_end_clone = clone $primary_edate;
-        $primary_end_clone->setTimezone(new DateTimeZone($item[$id]->field_additional_timezone[LANGUAGE_NONE][0]['value']));
-        $other_date['end'] = $primary_end_clone->format('G:i');
+      $primary_end_clone = clone $primary_edate;
+      $primary_end_clone->setTimezone(new DateTimeZone($item[$id]->field_additional_timezone[LANGUAGE_NONE][0]['value']));
+      $other_date['end'] = $primary_end_clone->format('G:i');
 
-        $other_dates[] = $other_date;
-      }
+      $other_dates[] = $other_date;
+    }
 
-      if (count($other_dates)) {
-        $vars['first_other_date'] = array_shift($other_dates);
-      }
+    if (count($other_dates)) {
+      $vars['first_other_date'] = array_shift($other_dates);
+    }
 
-      if (count($other_dates)) {
-        $vars['second_other_date'] = array_shift($other_dates);
-      }
+    if (count($other_dates)) {
+      $vars['second_other_date'] = array_shift($other_dates);
     }
 
     $vars['other_dates'] = $other_dates;
