@@ -90,3 +90,12 @@ function iasc_update_7005() {
 function iasc_update_7006() {
   module_enable(array('tzfield', 'tzfield_geofield'));
 }
+
+/**
+ * Implements hook_update_N().
+ *
+ * Enable responsive_imagemaps module.
+ */
+function iasc_update_7007() {
+  module_enable(array('responsive_imagemaps'));
+}
