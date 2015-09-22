@@ -772,18 +772,6 @@ function iasc_meeting_views_default_views_alter(&$data) {
       ),
       'multi_type' => 'ul',
     ); /* WAS: '' */
-    $data['oa_event_detail']->display['event_details']->display_options['fields']['field_city'] = array(
-      'id' => 'field_city',
-      'table' => 'field_data_field_city',
-      'field' => 'field_city',
-      'label' => '',
-      'alter' => array(
-        'alter_text' => TRUE,
-        'text' => '[field_city] [field_dial_in_meeting]',
-      ),
-      'element_type' => 'span',
-      'element_label_colon' => FALSE,
-    ); /* WAS: '' */
     $data['oa_event_detail']->display['event_details']->display_options['fields']['field_dial_in_meeting'] = array(
       'id' => 'field_dial_in_meeting',
       'table' => 'field_data_field_dial_in_meeting',
@@ -798,6 +786,18 @@ function iasc_meeting_views_default_views_alter(&$data) {
       'hide_empty' => TRUE,
       'empty_zero' => TRUE,
       'type' => 'list_key',
+    ); /* WAS: '' */
+    $data['oa_event_detail']->display['event_details']->display_options['fields']['field_city'] = array(
+      'id' => 'field_city',
+      'table' => 'field_data_field_city',
+      'field' => 'field_city',
+      'label' => '',
+      'alter' => array(
+        'alter_text' => TRUE,
+        'text' => '[field_city] [field_dial_in_meeting]',
+      ),
+      'element_type' => 'span',
+      'element_label_colon' => FALSE,
     ); /* WAS: '' */
     $data['oa_event_detail']->display['event_details']->display_options['fields']['field_oa_date']['element_type'] = 'span'; /* WAS: '' */
     $data['oa_event_detail']->display['event_details']->display_options['fields']['field_oa_date']['settings']['format_type'] = 'panopoly_time'; /* WAS: 'long' */

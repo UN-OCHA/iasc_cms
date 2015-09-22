@@ -710,18 +710,6 @@ function iasc_meeting_features_override_default_overrides() {
     ),
     'multi_type' => 'ul',
   );
-  $overrides["views_view.oa_event_detail.display|event_details|display_options|fields|field_city"] = array(
-    'id' => 'field_city',
-    'table' => 'field_data_field_city',
-    'field' => 'field_city',
-    'label' => '',
-    'alter' => array(
-      'alter_text' => TRUE,
-      'text' => '[field_city] [field_dial_in_meeting]',
-    ),
-    'element_type' => 'span',
-    'element_label_colon' => FALSE,
-  );
   $overrides["views_view.oa_event_detail.display|event_details|display_options|fields|field_dial_in_meeting"] = array(
     'id' => 'field_dial_in_meeting',
     'table' => 'field_data_field_dial_in_meeting',
@@ -736,6 +724,18 @@ function iasc_meeting_features_override_default_overrides() {
     'hide_empty' => TRUE,
     'empty_zero' => TRUE,
     'type' => 'list_key',
+  );
+  $overrides["views_view.oa_event_detail.display|event_details|display_options|fields|field_city"] = array(
+    'id' => 'field_city',
+    'table' => 'field_data_field_city',
+    'field' => 'field_city',
+    'label' => '',
+    'alter' => array(
+      'alter_text' => TRUE,
+      'text' => '[field_city] [field_dial_in_meeting]',
+    ),
+    'element_type' => 'span',
+    'element_label_colon' => FALSE,
   );
   $overrides["views_view.oa_event_detail.display|event_details|display_options|fields|field_oa_address"]["DELETED"] = TRUE;
   $overrides["views_view.oa_event_detail.display|event_details|display_options|fields|field_oa_date_1|delta_offset"]["DELETED"] = TRUE;
