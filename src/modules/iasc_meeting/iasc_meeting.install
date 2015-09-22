@@ -102,14 +102,18 @@ function iasc_meeting_update_7003() {
   // Get all of the events with a value in field_data_field_city.
   $result = db_query('SELECT entity_id from field_data_field_city')->fetchAll();
   if ($result) {
-    foreach($result as $node) {
+    foreach ($result as $node) {
       $meeting = node_load($node->entity_id);
 
       $city = $meeting->field_city[LANGUAGE_NONE][0]['value'];
       $safe_city = $meeting->field_city[LANGUAGE_NONE][0]['value'];
 
       if (!empty($city) && 'tbc' != $city) {
-        watchdog('iasc_meeting', "Updated city (%city) for: %nid", array('%city' => $city, '%nid' => $meeting->nid,));
+        watchdog('iasc_meeting', "Updated city (%city) for: %nid", array(
+          '%city' => $city,
+          '%nid' => $meeting->nid,
+          )
+        );
 
         // If the city has the text: By Phone, Video Conference, or
         // teleconference, we need to set the dial-in meeting flag.
@@ -121,7 +125,7 @@ function iasc_meeting_update_7003() {
           field_attach_update('node', $meeting);
           entity_get_controller('node')->resetCache(array($meeting->nid));
 
-          watchdog('iasc_meeting', "Updated event dial-in for: %nid", array('%nid' => $meeting->nid,));
+          watchdog('iasc_meeting', "Updated event dial-in for: %nid", array('%nid' => $meeting->nid));
           continue;
         }
 
@@ -162,7 +166,7 @@ function iasc_meeting_update_7003() {
           node_save($meeting);
         }
 
-        watchdog('iasc_meeting', "Updated event location and timezones: %nid", array('%nid' => $meeting->nid,));
+        watchdog('iasc_meeting', "Updated event location and timezones: %nid", array('%nid' => $meeting->nid));
       }
     }
   }
@@ -187,9 +191,9 @@ function iasc_meeting_update_7003() {
  */
 function iasc_meeting_split_city_locations(&$meeting, $delimiters, &$city) {
   $changed = FALSE;
-  foreach($delimiters as $delimiter) {
+  foreach ($delimiters as $delimiter) {
     if (stripos($city, $delimiter) !== FALSE) {
-      $cities =  explode($delimiter, $city);
+      $cities = explode($delimiter, $city);
 
       if (!empty($cities)) {
         $changed = TRUE;
@@ -198,7 +202,7 @@ function iasc_meeting_split_city_locations(&$meeting, $delimiters, &$city) {
         $meeting->field_city[LANGUAGE_NONE][0]['value'] = $city;
 
         // Create a new field collection entity for additional cities.
-        foreach($cities as $additional_city) {
+        foreach ($cities as $additional_city) {
           $additional_city = trim(str_replace(')', '', $additional_city));
 
           $collection = entity_create('field_collection_item', array('field_name' => 'field_additional_locations'));
