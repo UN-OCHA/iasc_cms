@@ -100,8 +100,16 @@ function iasc_meeting_update_7003() {
   features_revert_module('iasc_meeting');
 
   // Get all of the events with a value in field_data_field_city.
-  $result = db_query('SELECT entity_id from field_data_field_city')->fetchAll();
+  $result = db_query('SELECT c.entity_id
+    FROM field_data_field_city AS c
+    LEFT OUTER JOIN field_data_field_primary_geofield AS g ON c.entity_id = g.entity_id
+    WHERE g.entity_id IS NULL;')->fetchAll();
+
   if ($result) {
+    // We have to track number of results
+    $num_results = count($result);
+    $i = 0;
+
     foreach ($result as $node) {
       $meeting = node_load($node->entity_id);
 
@@ -127,6 +135,11 @@ function iasc_meeting_update_7003() {
 
           watchdog('iasc_meeting', "Updated event dial-in for: %nid", array('%nid' => $meeting->nid));
           continue;
+        }
+
+        if ($i >= 400) {
+          // We can only make so many requests to Google for geocodes in a day.
+          break;
         }
 
         // If the city has the text: dial-in, dial in, webex, we need to set the
@@ -167,7 +180,18 @@ function iasc_meeting_update_7003() {
         }
 
         watchdog('iasc_meeting', "Updated event location and timezones: %nid", array('%nid' => $meeting->nid));
+
+        // Update the counter to keep track of the number of geocode requests
+        // we are making.
+        $i++;
       }
+    }
+
+    if ($num_results > 400) {
+      // This is not really an "error". It's a way of dealing with the Google
+      // geocode daily limit. If we have more records to update we will have to
+      // run update again the next day.
+      throw new DrupalUpdateException('Google Geocode daily limit hit. Run update again tomorrow.');
     }
   }
 
