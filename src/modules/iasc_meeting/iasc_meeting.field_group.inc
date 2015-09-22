@@ -48,7 +48,7 @@ function iasc_meeting_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Primary Location',
-    'weight' => '2',
+    'weight' => '3',
     'children' => array(
       0 => 'field_oa_date',
       1 => 'field_time_zone',

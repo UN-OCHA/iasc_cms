@@ -89,3 +89,132 @@ function iasc_meeting_update_7002() {
     field_delete_instance($instance);
   }
 }
+
+/**
+ * Implements hook_update_N().
+ *
+ * Update timezone handling for existing events.
+ */
+function iasc_meeting_update_7003() {
+  // Make sure we get the new fields applied to oa_event.
+  features_revert_module('iasc_meeting');
+
+  // Get all of the events with a value in field_data_field_city.
+  $result = db_query('SELECT entity_id from field_data_field_city')->fetchAll();
+  if ($result) {
+    foreach ($result as $node) {
+      $meeting = node_load($node->entity_id);
+
+      $city = $meeting->field_city[LANGUAGE_NONE][0]['value'];
+      $safe_city = $meeting->field_city[LANGUAGE_NONE][0]['value'];
+
+      if (!empty($city) && 'tbc' != $city) {
+        watchdog('iasc_meeting', "Updated city (%city) for: %nid", array(
+          '%city' => $city,
+          '%nid' => $meeting->nid,
+          )
+        );
+
+        // If the city has the text: By Phone, Video Conference, or
+        // teleconference, we need to set the dial-in meeting flag.
+        // We should just update this field and ignore additional geocode +
+        // timezone handling.
+        $match_found = preg_match('/(By Phone|Video\s?Conference|teleconference)/i', $city);
+        if ($match_found) {
+          $meeting->field_dial_in_meeting[LANGUAGE_NONE][0]['value'] = TRUE;
+          field_attach_update('node', $meeting);
+          entity_get_controller('node')->resetCache(array($meeting->nid));
+
+          watchdog('iasc_meeting', "Updated event dial-in for: %nid", array('%nid' => $meeting->nid));
+          continue;
+        }
+
+        // If the city has the text: dial-in, dial in, webex, we need to set the
+        // dial-in meeting flag. Also remove the dial-in/webex information from
+        // the city field.
+        $city = preg_replace('/\(?\+?\s(dial-?\s?in\)?|webex)/i', '', $city, -1, $count);
+
+        if ($count) {
+          $meeting->field_dial_in_meeting[LANGUAGE_NONE][0]['value'] = TRUE;
+        }
+
+        // Replace '-' with spaces.
+        $city = str_replace(array('-', ')'), ' ', $city);
+
+        // We need to separate out the additional locations and add them to the
+        // the additional locations field collection.
+        $delimiters = array(' and ', '/', '(+', '(', '+');
+        if (!iasc_meeting_split_city_locations($meeting, $delimiters, $city)) {
+          // Nothing was changed so we just need to update the geofield and
+          // timezone field.
+
+          // Have to do a full node_save() instead of using
+          // field_attach_update() + resetCache to be sure that the geofield can
+          // be saved later. Geofield does not send in an api request for the
+          // geocode if the value of the city remains the same. So it ensure
+          // that the geocode update later works as expected (and also updates
+          // the dependent timezone field), we have to start with a blank slate
+          // for the city initially.
+          $meeting->field_city[LANGUAGE_NONE][0]['value'] = '';
+          $meeting->field_city[LANGUAGE_NONE][0]['safe_value'] = '';
+          node_save($meeting);
+
+          // Reset the original city value.
+          $meeting->field_city[LANGUAGE_NONE][0]['value'] = $city;
+          $meeting->field_city[LANGUAGE_NONE][0]['safe_value'] = $safe_city;
+
+          node_save($meeting);
+        }
+
+        watchdog('iasc_meeting', "Updated event location and timezones: %nid", array('%nid' => $meeting->nid));
+      }
+    }
+  }
+
+  // Drop old timezone field.
+  field_delete_field('field_data_field_time_zone');
+  field_purge_batch(10);
+}
+
+/**
+ * Handle saving additional cities.
+ *
+ * @param object $meeting
+ *   The meeting node.
+ * @param array $delimiters
+ *   An array of delimiters that separate the additional cities.
+ * @param string $city
+ *   The starting string for the city.
+ *
+ * @return bool
+ *   TRUE if a change was made (additional cities added), otherwise FALSE.
+ */
+function iasc_meeting_split_city_locations(&$meeting, $delimiters, &$city) {
+  $changed = FALSE;
+  foreach ($delimiters as $delimiter) {
+    if (stripos($city, $delimiter) !== FALSE) {
+      $cities = explode($delimiter, $city);
+
+      if (!empty($cities)) {
+        $changed = TRUE;
+        // The first item in the array should be the primary location.
+        $city = trim(array_shift($cities));
+        $meeting->field_city[LANGUAGE_NONE][0]['value'] = $city;
+
+        // Create a new field collection entity for additional cities.
+        foreach ($cities as $additional_city) {
+          $additional_city = trim(str_replace(')', '', $additional_city));
+
+          $collection = entity_create('field_collection_item', array('field_name' => 'field_additional_locations'));
+          $collection->setHostEntity('node', $meeting);
+          $collection->field_additional_city[LANGUAGE_NONE][0]['value'] = $additional_city;
+
+          // Saving the new field collection will also save the parent node.
+          $collection->save();
+        }
+      }
+    }
+  }
+
+  return $changed;
+}
