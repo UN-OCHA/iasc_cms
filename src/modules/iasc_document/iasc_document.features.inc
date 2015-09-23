@@ -447,6 +447,9 @@ function iasc_document_panelizer_defaults_override_alter(&$data) {
  * Implements hook_strongarm_alter().
  */
 function iasc_document_strongarm_alter(&$data) {
+  if (isset($data['dhtml_menu_settings'])) {
+    $data['dhtml_menu_settings']->value['filter']['list']['menu-iasc-body-categories'] = 'menu-iasc-body-categories'; /* WAS: '' */
+  }
   if (isset($data['field_bundle_settings_node__oa_wiki_page'])) {
     $data['field_bundle_settings_node__oa_wiki_page']->value['extra_fields']['form']['flag'] = array(
       'weight' => 12,

@@ -405,6 +405,7 @@ function iasc_document_features_override_default_overrides() {
   $overrides["panelizer_defaults.node:oa_wiki_page:default.display|panels|sidebar|3"]["DELETED"] = TRUE;
 
   // Exported overrides for: variable
+  $overrides["variable.dhtml_menu_settings.value|filter|list|menu-iasc-body-categories"] = 'menu-iasc-body-categories';
   $overrides["variable.field_bundle_settings_node__oa_wiki_page.value|extra_fields|form|flag"] = array(
     'weight' => 12,
   );

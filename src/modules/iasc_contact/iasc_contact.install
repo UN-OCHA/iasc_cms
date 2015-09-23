@@ -50,13 +50,11 @@ function iasc_contact_update_7001() {
  */
 function iasc_contact_update_7002() {
   // Get all contacts that don't have an entry in title_field.
-  $result = db_query("
-      SELECT n.nid, n.title FROM {node} n
+  $result = db_query("SELECT n.nid, n.title FROM {node} n
       LEFT OUTER JOIN {field_data_title_field} t
       ON n.nid = t.entity_id
       WHERE t.entity_id IS NULL
-      AND n.type = 'contact'"
-    )
+      AND n.type = 'contact'")
     ->fetchAll();
 
   if ($result) {

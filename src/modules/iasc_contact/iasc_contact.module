@@ -70,7 +70,6 @@ function iasc_contact_form_node_form_alter(&$form, &$form_state, $form_id) {
     $form['field_address'][LANGUAGE_NONE][0]['locality_block']['administrative_area']['#required'] = FALSE;
     $form['field_address'][LANGUAGE_NONE][0]['locality_block']['postal_code']['#required'] = FALSE;
 
-
     $node = $form['#node'];
     if (isset($node->field_address[LANGUAGE_NONE][0]['name_line'])) {
       $form['field_address'][LANGUAGE_NONE][0]['#address']['name_line'] = $node->field_address[LANGUAGE_NONE][0]['name_line'];

@@ -56,7 +56,7 @@ function iasc_update_7001() {
  * Don't allow any content type to use the related content field.
  */
 function iasc_update_7004() {
-  $oa_related_allowed_types = array (
+  $oa_related_allowed_types = array(
     'announcement' => 0,
     'oa_group' => 0,
     'oa_space' => 0,
@@ -71,4 +71,31 @@ function iasc_update_7004() {
 
   variable_set('oa_related_allowed_types', $oa_related_allowed_types);
   features_template_revert();
+}
+
+/**
+ * Implements hook_update_N().
+ *
+ * Enable iasc content page module.
+ */
+function iasc_update_7005() {
+  module_enable(array('iasc_content_page'));
+}
+
+/**
+ * Implements hook_update_N().
+ *
+ * Enable Time zone field module.
+ */
+function iasc_update_7006() {
+  module_enable(array('tzfield', 'tzfield_geofield'));
+}
+
+/**
+ * Implements hook_update_N().
+ *
+ * Enable responsive_imagemaps module.
+ */
+function iasc_update_7007() {
+  module_enable(array('responsive_imagemaps'));
 }

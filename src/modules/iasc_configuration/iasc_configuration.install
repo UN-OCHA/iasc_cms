@@ -204,7 +204,7 @@ function iasc_configuration_update_7004() {
        * with a group.
        */
       if (empty($node->field_oa_group_ref)) {
-        $node->title = t($node->title . ' (Public)');
+        $node->title = t('@title (Public)', array('@title' => $node->title));
         node_save($node);
       }
     }
@@ -222,4 +222,122 @@ function iasc_configuration_update_7005() {
     $queue->size = 1;
     nodequeue_save($queue);
   }
+}
+
+/**
+ * Implements hook_update_N().
+ *
+ * Create IASC Body Categories Menu and menu items.
+ */
+function iasc_configuration_update_7006() {
+  // Create the IASC Body Categories Menu.
+  $menu = array(
+    'menu_name' => 'menu-iasc-body-categories',
+    'title' => t('IASC Body Categories'),
+    'description' => t('The <em>IASC Body Categories</em> menu is used to manage the menu of Body categories for the site.'),
+  );
+  menu_save($menu);
+
+  // Setup the menu item arrays that we'll save to the newly created menu.
+  $menu_items_top = array();
+  $menu_items_secondary = array();
+  $mlid_parents = array();
+
+  // Top level menu link titles.
+  $menu_top = array_flip(array(
+    'Principals',
+    'Working Group',
+    'Emergency Directors',
+    'Subsidiary Bodies',
+    'Events',
+    'Field',
+    )
+  );
+
+  // Secondary level menu link titles and parents.
+  $secondary_items = array_fill_keys(array(
+    'Accountability to Affected Populations/PSEA',
+    'Humanitarian Financing',
+    'Preparedness and Resilience',
+    'Revitalizing Principled Humanitarian Action',
+    'Protection Priority: Global Protection Cluster',
+    'Gender and Humanitarian Action',
+    'Meeting Humanitarian Challenges in Urban Areas',
+    'Mental Health and Psychosocial Support in Emergency Settings',
+    'IASC and the World Humanitarian Summit',
+  ), 'Subsidiary Bodies');
+
+  $secondary_items += array_fill_keys(array(
+    'Geneva',
+    'New York',
+  ), 'Events');
+
+  $secondary_items['Transformative Agenda'] = 'Field';
+
+  // Menu links are a subset of the menu items in the main menu in a diff order.
+  $main_menu = menu_tree_all_data('main-menu');
+
+  // Cycle thru main menu items to grab the info for the menu items we need.
+  foreach ($main_menu as $item) {
+    // Handle the parent menu items first.
+    if (isset($menu_top[$item['link']['link_title']])) {
+      $title = $item['link']['link_title'];
+
+      if ('Subsidiary Bodies' == $title || 'Events' == $title || 'Field' == $title) {
+        $menu_items_top[] = array(
+          'menu_name' => 'menu-iasc-body-categories',
+          'link_path' => $item['link']['link_path'],
+          'link_title' => $title,
+          'weight' => $menu_top[$item['link']['link_title']],
+        );
+      }
+      else {
+        $menu_items_top[] = array(
+          'menu_name' => 'menu-iasc-body-categories',
+          'link_path' => drupal_get_normal_path(drupal_get_path_alias($item['link']['link_path']) . '/documents'),
+          'link_title' => $title,
+          'weight' => $menu_top[$item['link']['link_title']],
+        );
+      }
+    }
+
+    // See if we need to grab any of the secondary level menu items.
+    foreach ($item['below'] as $child) {
+      if (isset($secondary_items[$child['link']['link_title']])) {
+        $title = $child['link']['link_title'];
+        $menu_items_secondary[$title] = array(
+          'menu_name' => 'menu-iasc-body-categories',
+          'link_path' => drupal_get_normal_path(drupal_get_path_alias($child['link']['link_path']) . '/documents'),
+          'link_title' => $title,
+        );
+      }
+    }
+  }
+
+  // First add the parent menu items to the IASC Body Categories Menu.
+  foreach ($menu_items_top as $item) {
+    $mlid = menu_link_save($item);
+
+    // We'll need the parent mlid when we add the secondard menu items.
+    if ($mlid !== FALSE) {
+      $mlid_parents[$item['link_title']] = $mlid;
+    }
+  }
+
+  // Create the child menu items.
+  $index = 0;
+  foreach ($secondary_items as $child_item_title => $parent_item_title) {
+    // Get the parent mlid in menu-iasc-body-categories.
+    if (isset($mlid_parents[$parent_item_title])) {
+      // Add the remaining info on parent mlid and menu link weight.
+      $menu_items_secondary[$child_item_title]['plid'] = $mlid_parents[$parent_item_title];
+      $menu_items_secondary[$child_item_title]['weight'] = $index;
+
+      if (menu_link_save($menu_items_secondary[$child_item_title]) !== FALSE) {
+        $index++;
+      }
+    }
+  }
+
+  menu_cache_clear_all();
 }

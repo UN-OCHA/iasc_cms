@@ -29,7 +29,6 @@ function iasc_wysiwyg_wysiwyg_default_profiles() {
           'numlist' => 1,
           'unlink' => 1,
           'formatselect' => 1,
-          'styleselect' => 1,
           'removeformat' => 1,
         ),
         'paste' => array(
@@ -58,8 +57,7 @@ function iasc_wysiwyg_wysiwyg_default_profiles() {
       'block_formats' => 'h1,h2,h3,h4,h5,h6,p,address,pre,div',
       'css_setting' => 'self',
       'css_path' => '%bsites/all/themes/custom/iasc/assets/stylesheets/screen.css',
-      'css_classes' => 'Unordered list=list-styled
-Ordered list=ordered-styled',
+      'css_classes' => '',
     ),
   );
 

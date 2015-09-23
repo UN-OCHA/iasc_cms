@@ -6,10 +6,8 @@
  */
 
 /**
-* Implements hook_update_N().
-*
-* Remove fields that have been refactored.
-*/
+ * Remove fields that have been refactored.
+ */
 function iahe_recommendations_update_7000() {
   field_delete_field('field_country3');
   field_delete_field('field_type2');

@@ -16,7 +16,7 @@ function iasc_meeting_ctools_plugin_directory($owner, $plugin_type) {
 }
 
 /**
- * Implementation of hook_module_implements_alter()
+ * Implements hook_module_implements_alter().
  */
 function iasc_meeting_module_implements_alter(&$implementations, $hook) {
   if ($hook == 'form_alter') {
@@ -32,6 +32,7 @@ function iasc_meeting_module_implements_alter(&$implementations, $hook) {
 function iasc_meeting_field_formatter_info_alter(&$info) {
   // Use our version of field_formatter_view.
   $info['oa_events_date_formatter']['module'] = 'iasc_meeting';
+  $info['oa_events_addthis']['module'] = 'iasc_meeting';
 }
 
 /**
@@ -84,6 +85,9 @@ function iasc_meeting_field_formatter_view($entity_type, $entity, $field, $insta
         )
       ),
     );
+  }
+  elseif ($display['type'] == 'oa_events_addthis') {
+    $element[0]['#markup'] = iasc_meeting_field_add_to_calendar_markup($entity->nid, $items, t('Add to Calendar'));
   }
 
   return $element;
@@ -182,4 +186,220 @@ function iasc_meeting_form_alter(&$form, &$form_state, $form_id) {
     $form['og_subspaces_view_all']['#access'] = FALSE;
     $form['og_subspaces_view_parent']['#access'] = FALSE;
   }
+}
+
+/**
+ * Create Addthis Event calendar markup.
+ */
+function iasc_meeting_field_add_to_calendar_markup($nid, $items, $title = 'Add to Calendar') {
+  drupal_add_css(drupal_get_path('module', 'oa_events') . '/css/addthisevent.css');
+  drupal_add_js(drupal_get_path('module', 'oa_events') . '/js/atemay.js');
+
+  $node = node_load($nid);
+
+  $event_info = oa_events_find_next_event($items);
+  $date = $event_info['event'];
+
+  $date_field_date1 = new DateObject('@' . $date['value']);
+  $date1_text = $date_field_date1->format('Y-m-d G:i');
+
+  $date_field_date2 = new DateObject('@' . $date['value2']);
+  $date2_text = $date_field_date2->format('Y-m-d G:i');
+
+  if (isset($node->field_primary_timezone[LANGUAGE_NONE][0]['value'])) {
+    // Get the primary timezone.
+    $temp_date1 = new DateTime($date1_text, new DateTimeZone($node->field_primary_timezone[LANGUAGE_NONE][0]['value']));
+    $temp_date2 = new DateTime($date2_text, new DateTimeZone($node->field_primary_timezone[LANGUAGE_NONE][0]['value']));
+
+    // Convert the original start/end datetime values to UTC.
+    $primary_sdate = clone $temp_date1;
+    $primary_sdate->setTimezone(new DateTimeZone('UTC'));
+
+    $primary_edate = clone $temp_date2;
+    $primary_edate->setTimezone(new DateTimeZone('UTC'));
+  }
+  else {
+    // Set the default timezone to UTC.
+    $primary_sdate = new DateTime($date1_text, new DateTimeZone('UTC'));
+    $primary_edate = new DateTime($date2_text, new DateTimeZone('UTC'));
+  }
+
+  $link_content = $title;
+  $event_url = url('node/' . $node->nid, array('absolute' => TRUE));
+
+  $description_language = field_language('node', $node, 'body');
+  $description = !empty($node->body[$description_language][0]['safe_value']) ? strip_tags($node->body[$description_language][0]['safe_value']) : '';
+  $location_language = field_language('node', $node, 'body');
+
+  $location = !empty($node->field_city[$location_language][0]['safe_value']) ? strip_tags($node->field_city[$location_language][0]['safe_value']) : '';
+  $location .= !empty($node->field_venue[$location_language][0]['safe_value']) ? ', ' . strip_tags($node->field_venue[$location_language][0]['safe_value']) : '';
+
+  if (user_is_logged_in()) {
+    $location .= !empty($node->field_room[$location_language][0]['safe_value']) ? ', ' . strip_tags($node->field_room[$location_language][0]['safe_value']) : '';
+  }
+
+  $alldayevent = date_is_all_day(date(DATE_FORMAT_DATETIME, $date['value']), date(DATE_FORMAT_DATETIME, $date['value2'])) ? 'true' : 'false';
+
+  // Zonecode 32 = UTC.
+  $spans = array(
+    '_url' => $event_url,
+    '_start' => $primary_sdate->format('m-d-Y H:i:s'),
+    '_end' => $primary_edate->format('m-d-Y H:i:s'),
+    '_zonecode' => '35',
+    '_summary' => check_plain($node->title),
+    '_description' => $description,
+    '_location' => $location,
+    '_all_day_event' => $alldayevent,
+    '_date_format' => variable_get('oa_events_date_format', OA_EVENTS_DATE_FORMAT),
+  );
+
+  foreach ($spans as $span_class => $span_value) {
+    $link_content .= '<span class="' . $span_class . '">' . $span_value . '</span>';
+  }
+
+  return l(
+    $link_content,
+    $event_url,
+    array(
+      'attributes' => array(
+        'class' => 'addthisevent',
+        'title' => t('Add to Calendar'),
+      ),
+      'html' => TRUE,
+    )
+  );
+}
+
+/**
+ * Implements hook_preprocess_views_view_fields().
+ *
+ * Generic preprocess that is needed to call more specific templates.
+ */
+function iasc_meeting_preprocess_views_view_fields(&$vars) {
+  if (isset($vars['view']->name) && 'oa_event_detail' == $vars['view']->name) {
+    $row = $vars['row'];
+    // Primary datetime is set in UTC.
+    $sdate = new DateTime('@' . $row->field_field_oa_date[0]['raw']['value']);
+    $stext = $sdate->format('Y-m-d G:i');
+
+    $edate = new DateTime('@' . $row->field_field_oa_date[0]['raw']['value2']);
+    $etext = $edate->format('Y-m-d G:i');
+
+    $other_dates = array();
+
+    if (isset($row->field_field_primary_timezone[0]['raw']['value'])) {
+      // Get the primary timezone.
+      $primary_sdate = new DateTime($stext, new DateTimeZone($row->field_field_primary_timezone[0]['raw']['value']));
+      $primary_edate = new DateTime($etext, new DateTimeZone($row->field_field_primary_timezone[0]['raw']['value']));
+    }
+    else {
+      // Set the default timezone to UTC.
+      $primary_sdate = new DateTime($stext, new DateTimeZone('UTC'));
+      $primary_edate = new DateTime($etext, new DateTimeZone('UTC'));
+    }
+
+    foreach ($row->field_field_additional_locations as $collection) {
+      $id = $collection['raw']['value'];
+      $item = entity_load('field_collection_item', array($id));
+
+      $other_date = array(
+        'city' => $item[$id]->field_additional_city[LANGUAGE_NONE][0]['safe_value'],
+        'timezone' => $item[$id]->field_additional_timezone[LANGUAGE_NONE][0]['value'],
+      );
+
+      $primary_start_clone = clone $primary_sdate;
+      $primary_start_clone->setTimezone(new DateTimeZone($item[$id]->field_additional_timezone[LANGUAGE_NONE][0]['value']));
+      $other_date['start'] = $primary_start_clone->format('G:i');
+
+      $primary_end_clone = clone $primary_edate;
+      $primary_end_clone->setTimezone(new DateTimeZone($item[$id]->field_additional_timezone[LANGUAGE_NONE][0]['value']));
+      $other_date['end'] = $primary_end_clone->format('G:i');
+
+      $other_dates[] = $other_date;
+    }
+
+    if (count($other_dates)) {
+      $vars['first_other_date'] = array_shift($other_dates);
+    }
+
+    if (count($other_dates)) {
+      $vars['second_other_date'] = array_shift($other_dates);
+    }
+
+    $vars['other_dates'] = $other_dates;
+
+    $vars['my_timezone_form'] = drupal_get_form('iasc_meeting_my_timezone_form', $primary_sdate, $primary_edate);
+  }
+}
+
+/**
+ * My Timezone form builder.
+ */
+function iasc_meeting_my_timezone_form($form, &$form_state, $primary_sdate, $primary_edate) {
+  $form = array();
+
+  $form['#primary_sdate'] = $primary_sdate;
+  $form['#primary_edate'] = $primary_edate;
+
+  $form['my_timezone'] = array(
+    '#type' => 'select',
+    '#options' => iasc_meeting_system_time_zones(),
+    '#prefix' => '<h5 id="my-timezone-label">Select My Timezone</h5>',
+    '#ajax' => array(
+      'callback' => 'iasc_meeting_my_timezone_callback',
+      'wrapper' => 'my-timezone-label',
+      'method' => 'replace',
+      'effect' => 'fade',
+    ),
+  );
+
+  return $form;
+}
+
+/**
+ * Generate an array of time zones and their local time & date.
+ */
+function iasc_meeting_system_time_zones() {
+  $zonelist = timezone_identifiers_list();
+  $zones = array('' => t('- None selected -'));
+  foreach ($zonelist as $zone) {
+    // Because many time zones exist in PHP only for backward compatibility
+    // reasons and should not be used, the list is filtered by a regular
+    // expression.
+    if (preg_match('!^((Africa|America|Antarctica|Arctic|Asia|Atlantic|Australia|Europe|Indian|Pacific)/|UTC$)!', $zone)) {
+      $zone_pieces = explode('/', str_replace('_', ' ', $zone));
+      $zone_pieces = array_reverse($zone_pieces);
+      $continent = count($zone_pieces) > 1 ? array_pop($zone_pieces) : '';
+      $zone_pretty = implode(', ', $zone_pieces);
+
+      if ($continent) {
+        $zone_pretty .= ' - ' . $continent;
+      }
+
+      $zones[$zone] = t('@zone', array('@zone' => $zone_pretty));
+    }
+  }
+  // Sort the translated time zones alphabetically.
+  asort($zones);
+  return $zones;
+}
+
+/**
+ * Callback for My Timezone select.
+ */
+function iasc_meeting_my_timezone_callback($form, &$form_state) {
+  $timezone = $form_state['values']['my_timezone'];
+
+  $primary_start_clone = clone $form['#primary_sdate'];
+  $primary_start_clone->setTimezone(new DateTimeZone($timezone));
+  $start = $primary_start_clone->format('G:i');
+
+  $primary_end_clone = clone $form['#primary_edate'];
+  $primary_end_clone->setTimezone(new DateTimeZone($timezone));
+  $end = $primary_end_clone->format('G:i');
+
+  return t('<h5 id="my-timezone-label">@start to @end</h5>', array(
+    '@start' => $start,
+    '@end' => $end,
+  ));
 }

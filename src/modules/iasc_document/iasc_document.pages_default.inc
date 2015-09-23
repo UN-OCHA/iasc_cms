@@ -577,6 +577,44 @@ function iasc_document_default_page_manager_pages() {
   $pane->uuid = '69e5d901-07c0-4078-95b6-52be9a6dada2';
   $display->content['new-69e5d901-07c0-4078-95b6-52be9a6dada2'] = $pane;
   $display->panels['contentmain'][0] = 'new-69e5d901-07c0-4078-95b6-52be9a6dada2';
+  $pane = new stdClass();
+  $pane->pid = 'new-f867de8f-68e7-4be5-8497-9a71c11e8c7b';
+  $pane->panel = 'sidebar';
+  $pane->type = 'menu_tree';
+  $pane->subtype = 'menu-iasc-body-categories';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'parent' => 'menu-iasc-body-categories:0',
+    'title_link' => 0,
+    'admin_title' => '',
+    'level' => '1',
+    'follow' => 0,
+    'depth' => 0,
+    'depth_relative' => 0,
+    'expanded' => 0,
+    'sort' => 0,
+    'menu_name' => 'menu-iasc-body-categories',
+    'parent_mlid' => '0',
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => array(
+      'secondary_options' => 'panel-primary',
+      'linked_list' => 'none',
+    ),
+    'style' => 'secondary',
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = 'f867de8f-68e7-4be5-8497-9a71c11e8c7b';
+  $display->content['new-f867de8f-68e7-4be5-8497-9a71c11e8c7b'] = $pane;
+  $display->panels['sidebar'][0] = 'new-f867de8f-68e7-4be5-8497-9a71c11e8c7b';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

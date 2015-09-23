@@ -36,7 +36,6 @@ function iasc_meeting_field_group_info_alter(&$data) {
     $data['group_oa_access|node|oa_event|form']->data['children'][0] = 'oa_other_spaces_ref'; /* WAS: 'oa_section_ref' */
     $data['group_oa_access|node|oa_event|form']->data['children'][1] = 'oa_section_ref'; /* WAS: 'og_group_ref' */
     $data['group_oa_access|node|oa_event|form']->data['children'][2] = 'og_group_ref'; /* WAS: 'oa_other_spaces_ref' */
-    $data['group_oa_access|node|oa_event|form']->data['weight'] = 8; /* WAS: 7 */
   }
   if (isset($data['group_oa_event_location|node|oa_event|form'])) {
     $data['group_oa_event_location|node|oa_event|form']->data['weight'] = 4; /* WAS: 5 */
@@ -76,6 +75,7 @@ function iasc_meeting_field_default_field_instances_alter(&$data) {
     $data['node-oa_event-body']['display']['teaser']['type'] = 'hidden'; /* WAS: 'text_summary_or_trimmed' */
     $data['node-oa_event-body']['display']['teaser']['weight'] = 9; /* WAS: 0 */
     $data['node-oa_event-body']['label'] = 'Public Information'; /* WAS: 'Description' */
+    $data['node-oa_event-body']['widget']['weight'] = 5; /* WAS: 2 */
     unset($data['node-oa_event-body']['display']['teaser']['module']);
     unset($data['node-oa_event-body']['display']['teaser']['settings']['trim_length']);
   }
@@ -118,6 +118,8 @@ function iasc_meeting_field_default_field_instances_alter(&$data) {
     $data['node-oa_event-field_oa_date']['display']['teaser']['settings']['show_remaining_days'] = FALSE; /* WAS: '' */
     $data['node-oa_event-field_oa_date']['display']['teaser']['settings']['show_repeat_rule'] = 'show'; /* WAS: '' */
     $data['node-oa_event-field_oa_date']['display']['teaser']['type'] = 'date_default'; /* WAS: 'hidden' */
+    $data['node-oa_event-field_oa_date']['widget']['settings']['input_format'] = 'M j Y - H:i:s'; /* WAS: 'M j Y - g:i:sa' */
+    $data['node-oa_event-field_oa_date']['widget']['settings']['no_fieldset'] = 0; /* WAS: '' */
   }
   if (isset($data['node-oa_event-field_oa_geo_location'])) {
     unset($data['node-oa_event-field_oa_geo_location']);
@@ -240,7 +242,7 @@ function iasc_meeting_field_default_field_instances_alter(&$data) {
       'weight' => 0,
     ); /* WAS: '' */
     $data['node-oa_event-og_vocabulary']['display']['teaser']['weight'] = 6; /* WAS: 0 */
-    $data['node-oa_event-og_vocabulary']['widget']['weight'] = 14; /* WAS: 9 */
+    $data['node-oa_event-og_vocabulary']['widget']['weight'] = 13; /* WAS: 9 */
   }
 }
 
@@ -249,34 +251,22 @@ function iasc_meeting_field_default_field_instances_alter(&$data) {
  */
 function iasc_meeting_default_page_manager_handlers_alter(&$data) {
   if (isset($data['node_edit_panel_context_7'])) {
-    $data['node_edit_panel_context_7']->conf['display']->content['new-08f897a0-7ee5-4c24-856e-e5d6e0aa8bb3']->position = 2; /* WAS: 1 */
-    $data['node_edit_panel_context_7']->conf['display']->content['new-457a0b07-9259-4092-a16e-f542822ee2af'] = (object) array(
-          'pid' => 'new-457a0b07-9259-4092-a16e-f542822ee2af',
-          'panel' => 'sidebar',
-          'type' => 'entity_form_field',
-          'subtype' => 'node:field_time_zone',
-          'shown' => TRUE,
-          'access' => array(),
-          'configuration' => array(
-            'label' => '',
-            'formatter' => '',
-            'context' => 'argument_node_edit_1',
-            'override_title' => 0,
-            'override_title_text' => '',
-          ),
-          'cache' => array(),
-          'style' => array(
-            'settings' => NULL,
-          ),
-          'css' => array(),
-          'extras' => array(),
-          'position' => 1,
-          'locks' => array(),
-          'uuid' => '457a0b07-9259-4092-a16e-f542822ee2af',
-        ); /* WAS: '' */
-    $data['node_edit_panel_context_7']->conf['display']->panels['sidebar'][1] = 'new-457a0b07-9259-4092-a16e-f542822ee2af'; /* WAS: 'new-08f897a0-7ee5-4c24-856e-e5d6e0aa8bb3' */
-    $data['node_edit_panel_context_7']->conf['display']->panels['sidebar'][2] = 'new-08f897a0-7ee5-4c24-856e-e5d6e0aa8bb3'; /* WAS: 'new-30f4398c-9f13-4195-b392-3f34ab0ddcee' */
+    $data['node_edit_panel_context_7']->conf['display']->content['new-020f676b-0f7d-4a37-93e2-44aa23df3980']->position = 3; /* WAS: 5 */
+    $data['node_edit_panel_context_7']->conf['display']->content['new-0b869cc5-d419-48ed-bcd1-4e6ec0d15a34']->position = 4; /* WAS: 6 */
+    $data['node_edit_panel_context_7']->conf['display']->content['new-3e236361-115c-44f3-9bac-35db63392f0a']->position = 5; /* WAS: 7 */
+    $data['node_edit_panel_context_7']->conf['display']->content['new-68f32ccd-0cec-45db-9ecd-112683c079ae']->position = 6; /* WAS: 8 */
+    $data['node_edit_panel_context_7']->conf['display']->content['new-84b3bfce-f79b-4397-8b67-d97d1b61347c']->position = 2; /* WAS: 4 */
+    $data['node_edit_panel_context_7']->conf['display']->content['new-c1b47a87-02a0-4882-a02f-5dd40ec016bb']->position = 1; /* WAS: 3 */
+    $data['node_edit_panel_context_7']->conf['display']->panels['sidebar'][1] = 'new-c1b47a87-02a0-4882-a02f-5dd40ec016bb'; /* WAS: 'new-08f897a0-7ee5-4c24-856e-e5d6e0aa8bb3' */
+    $data['node_edit_panel_context_7']->conf['display']->panels['sidebar'][2] = 'new-84b3bfce-f79b-4397-8b67-d97d1b61347c'; /* WAS: 'new-30f4398c-9f13-4195-b392-3f34ab0ddcee' */
+    $data['node_edit_panel_context_7']->conf['display']->panels['sidebar'][3] = 'new-020f676b-0f7d-4a37-93e2-44aa23df3980'; /* WAS: 'new-c1b47a87-02a0-4882-a02f-5dd40ec016bb' */
+    $data['node_edit_panel_context_7']->conf['display']->panels['sidebar'][4] = 'new-0b869cc5-d419-48ed-bcd1-4e6ec0d15a34'; /* WAS: 'new-84b3bfce-f79b-4397-8b67-d97d1b61347c' */
+    $data['node_edit_panel_context_7']->conf['display']->panels['sidebar'][5] = 'new-3e236361-115c-44f3-9bac-35db63392f0a'; /* WAS: 'new-020f676b-0f7d-4a37-93e2-44aa23df3980' */
+    $data['node_edit_panel_context_7']->conf['display']->panels['sidebar'][6] = 'new-68f32ccd-0cec-45db-9ecd-112683c079ae'; /* WAS: 'new-0b869cc5-d419-48ed-bcd1-4e6ec0d15a34' */
+    unset($data['node_edit_panel_context_7']->conf['display']->content['new-08f897a0-7ee5-4c24-856e-e5d6e0aa8bb3']);
     unset($data['node_edit_panel_context_7']->conf['display']->content['new-30f4398c-9f13-4195-b392-3f34ab0ddcee']);
+    unset($data['node_edit_panel_context_7']->conf['display']->panels['sidebar'][7]);
+    unset($data['node_edit_panel_context_7']->conf['display']->panels['sidebar'][8]);
   }
 }
 
@@ -384,7 +374,7 @@ function iasc_meeting_panelizer_defaults_override_alter(&$data) {
           'cache' => array(),
           'style' => array(
             'settings' => array(
-              'secondary_options' => 'panel-success',
+              'secondary_options' => 'panel-info',
               'linked_list' => 'arrow',
             ),
             'style' => 'secondary',
@@ -767,18 +757,64 @@ function iasc_meeting_views_default_views_alter(&$data) {
       'element_label_type' => 0,
       'element_default_classes' => FALSE,
     ); /* WAS: '' */
+    $data['oa_event_detail']->display['event_details']->display_options['fields']['field_additional_locations'] = array(
+      'id' => 'field_additional_locations',
+      'table' => 'field_data_field_additional_locations',
+      'field' => 'field_additional_locations',
+      'label' => '',
+      'element_label_colon' => FALSE,
+      'settings' => array(
+        'edit' => '',
+        'delete' => '',
+        'add' => '',
+        'description' => 0,
+        'view_mode' => 'full',
+      ),
+      'multi_type' => 'ul',
+    ); /* WAS: '' */
+    $data['oa_event_detail']->display['event_details']->display_options['fields']['field_dial_in_meeting'] = array(
+      'id' => 'field_dial_in_meeting',
+      'table' => 'field_data_field_dial_in_meeting',
+      'field' => 'field_dial_in_meeting',
+      'label' => '',
+      'exclude' => TRUE,
+      'alter' => array(
+        'alter_text' => TRUE,
+        'text' => '+ dial-in',
+      ),
+      'element_label_colon' => FALSE,
+      'hide_empty' => TRUE,
+      'empty_zero' => TRUE,
+      'type' => 'list_key',
+    ); /* WAS: '' */
+    $data['oa_event_detail']->display['event_details']->display_options['fields']['field_city'] = array(
+      'id' => 'field_city',
+      'table' => 'field_data_field_city',
+      'field' => 'field_city',
+      'label' => '',
+      'alter' => array(
+        'alter_text' => TRUE,
+        'text' => '[field_city] [field_dial_in_meeting]',
+      ),
+      'element_type' => 'span',
+      'element_label_colon' => FALSE,
+    ); /* WAS: '' */
     $data['oa_event_detail']->display['event_details']->display_options['fields']['field_oa_date']['element_type'] = 'span'; /* WAS: '' */
     $data['oa_event_detail']->display['event_details']->display_options['fields']['field_oa_date']['settings']['format_type'] = 'panopoly_time'; /* WAS: 'long' */
-    $data['oa_event_detail']->display['event_details']->display_options['fields']['field_time_zone'] = array(
-      'id' => 'field_time_zone',
-      'table' => 'field_data_field_time_zone',
-      'field' => 'field_time_zone',
-      'element_type' => 0,
-      'element_label_type' => 0,
-      'element_default_classes' => FALSE,
+    $data['oa_event_detail']->display['event_details']->display_options['fields']['field_primary_timezone'] = array(
+      'id' => 'field_primary_timezone',
+      'table' => 'field_data_field_primary_timezone',
+      'field' => 'field_primary_timezone',
+      'label' => '',
+      'element_label_colon' => FALSE,
+      'type' => 'tzfield_date',
+      'settings' => array(
+        'format' => 'T P',
+      ),
     ); /* WAS: '' */
     unset($data['oa_event_detail']->display['default']->display_options['fields']['field_oa_address']);
     unset($data['oa_event_detail']->display['default']->display_options['fields']['term_node_tid']);
+    unset($data['oa_event_detail']->display['event_details']->display_options['fields']['body']);
     unset($data['oa_event_detail']->display['event_details']->display_options['fields']['field_oa_address']);
     unset($data['oa_event_detail']->display['event_details']->display_options['fields']['field_oa_date_1']['delta_offset']);
     unset($data['oa_event_detail']->display['event_details']->display_options['fields']['field_oa_date_2']['delta_offset']);
@@ -787,9 +823,6 @@ function iasc_meeting_views_default_views_alter(&$data) {
     unset($data['oa_event_detail']->display['event_details']->display_options['fields']['field_oa_related']);
   }
   if (isset($data['oa_event_list'])) {
-    $data['oa_event_list']->display['default']->display_options['cache']['output_lifespan'] = 300; /* WAS: '' */
-    $data['oa_event_list']->display['default']->display_options['cache']['results_lifespan'] = 300; /* WAS: '' */
-    $data['oa_event_list']->display['default']->display_options['cache']['type'] = 'time'; /* WAS: 'none' */
     $data['oa_event_list']->display['default']->display_options['empty'] = array(
       'area' => array(
         'id' => 'area',
@@ -808,7 +841,7 @@ function iasc_meeting_views_default_views_alter(&$data) {
     $data['oa_event_list']->display['default']->display_options['filters']['field_oa_date_value']['year_range'] = '-10:+3'; /* WAS: '' */
     $data['oa_event_list']->display['default']->display_options['pager']['options']['items_per_page'] = 6; /* WAS: 10 */
     $data['oa_event_list']->display['oa_events_ical']->display_options['defaults']['empty'] = FALSE; /* WAS: '' */
-    $data['oa_event_list']->display['page_calendar'] = unserialize('O:13:"views_display":7:{s:15:"display_options";a:10:{s:5:"query";a:2:{s:4:"type";s:11:"views_query";s:7:"options";a:0:{}}s:8:"defaults";a:10:{s:5:"title";b:0;s:12:"style_plugin";b:0;s:13:"style_options";b:0;s:10:"row_plugin";b:0;s:11:"row_options";b:0;s:13:"relationships";b:0;s:6:"fields";b:0;s:5:"sorts";b:0;s:13:"filter_groups";b:0;s:7:"filters";b:0;}s:5:"title";s:8:"Calendar";s:12:"style_plugin";s:7:"default";s:10:"row_plugin";s:6:"fields";s:11:"row_options";a:1:{s:22:"default_field_elements";b:0;}s:6:"fields";a:6:{s:13:"field_oa_date";a:9:{s:2:"id";s:13:"field_oa_date";s:5:"table";s:24:"field_data_field_oa_date";s:5:"field";s:13:"field_oa_date";s:5:"label";s:0:"";s:19:"element_label_colon";b:0;s:4:"type";s:24:"oa_events_date_formatter";s:8:"settings";a:6:{s:11:"format_type";s:4:"long";s:6:"fromto";s:4:"both";s:15:"multiple_number";s:0:"";s:13:"multiple_from";s:0:"";s:11:"multiple_to";s:0:"";s:16:"show_repeat_rule";s:4:"hide";}s:10:"group_rows";b:0;s:12:"delta_offset";s:1:"0";}s:5:"title";a:8:{s:2:"id";s:5:"title";s:5:"table";s:4:"node";s:5:"field";s:5:"title";s:5:"label";s:0:"";s:5:"alter";a:2:{s:13:"word_boundary";b:0;s:8:"ellipsis";b:0;}s:12:"element_type";s:2:"h4";s:13:"element_class";s:5:"title";s:19:"element_label_colon";b:0;}s:12:"og_group_ref";a:9:{s:2:"id";s:12:"og_group_ref";s:5:"table";s:13:"og_membership";s:5:"field";s:12:"og_group_ref";s:5:"label";s:0:"";s:12:"element_type";s:6:"strong";s:19:"element_label_colon";b:0;s:20:"element_wrapper_type";s:3:"div";s:10:"hide_empty";b:1;s:8:"settings";a:1:{s:4:"link";i:0;}}s:10:"field_city";a:6:{s:2:"id";s:10:"field_city";s:5:"table";s:21:"field_data_field_city";s:5:"field";s:10:"field_city";s:5:"label";s:0:"";s:19:"element_label_colon";b:0;s:20:"element_wrapper_type";s:3:"div";}s:15:"field_time_zone";a:6:{s:2:"id";s:15:"field_time_zone";s:5:"table";s:26:"field_data_field_time_zone";s:5:"field";s:15:"field_time_zone";s:5:"label";s:0:"";s:7:"exclude";b:1;s:19:"element_label_colon";b:0;}s:15:"field_oa_date_1";a:9:{s:2:"id";s:15:"field_oa_date_1";s:5:"table";s:24:"field_data_field_oa_date";s:5:"field";s:13:"field_oa_date";s:5:"label";s:0:"";s:5:"alter";a:2:{s:10:"alter_text";b:1;s:4:"text";s:37:"[field_oa_date_1] ([field_time_zone])";}s:19:"element_label_colon";b:0;s:8:"settings";a:6:{s:11:"format_type";s:13:"panopoly_time";s:6:"fromto";s:4:"both";s:15:"multiple_number";s:0:"";s:13:"multiple_from";s:0:"";s:11:"multiple_to";s:0:"";s:16:"show_repeat_rule";s:4:"hide";}s:10:"group_rows";b:0;s:12:"delta_offset";s:1:"0";}}s:5:"sorts";a:1:{s:19:"field_oa_date_value";a:3:{s:2:"id";s:19:"field_oa_date_value";s:5:"table";s:24:"field_data_field_oa_date";s:5:"field";s:19:"field_oa_date_value";}}s:7:"filters";a:6:{s:6:"status";a:6:{s:2:"id";s:6:"status";s:5:"table";s:4:"node";s:5:"field";s:6:"status";s:5:"value";i:1;s:5:"group";i:1;s:6:"expose";a:1:{s:8:"operator";b:0;}}s:4:"type";a:5:{s:2:"id";s:4:"type";s:5:"table";s:4:"node";s:5:"field";s:4:"type";s:5:"value";a:1:{s:8:"oa_event";s:8:"oa_event";}s:5:"group";i:1;}s:19:"field_oa_date_value";a:11:{s:2:"id";s:19:"field_oa_date_value";s:5:"table";s:24:"field_data_field_oa_date";s:5:"field";s:19:"field_oa_date_value";s:7:"ui_name";s:16:"Start Date Limit";s:8:"operator";s:2:">=";s:5:"group";i:1;s:7:"exposed";b:1;s:6:"expose";a:5:{s:11:"operator_id";s:22:"field_oa_date_value_op";s:5:"label";s:10:"Date Range";s:8:"operator";s:22:"field_oa_date_value_op";s:10:"identifier";s:19:"field_oa_date_value";s:14:"remember_roles";a:4:{i:2;s:1:"2";i:1;i:0;i:3;i:0;i:4;i:0;}}s:9:"form_type";s:10:"date_popup";s:12:"default_date";s:23:"first day of this month";s:10:"year_range";s:6:"-10:+3";}s:21:"field_oa_date_value_1";a:9:{s:2:"id";s:21:"field_oa_date_value_1";s:5:"table";s:24:"field_data_field_oa_date";s:5:"field";s:19:"field_oa_date_value";s:7:"ui_name";s:14:"End Date Limit";s:8:"operator";s:2:"<=";s:5:"group";i:1;s:7:"exposed";b:1;s:6:"expose";a:4:{s:11:"operator_id";s:24:"field_oa_date_value_1_op";s:8:"operator";s:24:"field_oa_date_value_1_op";s:10:"identifier";s:21:"field_oa_date_value_1";s:14:"remember_roles";a:4:{i:2;s:1:"2";i:1;i:0;i:3;i:0;i:4;i:0;}}s:9:"form_type";s:10:"date_popup";}s:22:"og_group_ref_target_id";a:6:{s:2:"id";s:22:"og_group_ref_target_id";s:5:"table";s:13:"og_membership";s:5:"field";s:22:"og_group_ref_target_id";s:5:"group";i:1;s:7:"exposed";b:1;s:6:"expose";a:5:{s:11:"operator_id";s:25:"og_group_ref_target_id_op";s:5:"label";s:16:"Authoring Bodies";s:8:"operator";s:25:"og_group_ref_target_id_op";s:10:"identifier";s:22:"og_group_ref_target_id";s:14:"remember_roles";a:4:{i:2;s:1:"2";i:1;i:0;i:3;i:0;i:4;i:0;}}}s:4:"keys";a:5:{s:2:"id";s:4:"keys";s:5:"table";s:12:"search_index";s:5:"field";s:4:"keys";s:7:"exposed";b:1;s:6:"expose";a:5:{s:11:"operator_id";s:7:"keys_op";s:5:"label";s:6:"Filter";s:8:"operator";s:7:"keys_op";s:10:"identifier";s:4:"keys";s:14:"remember_roles";a:6:{i:2;s:1:"2";i:1;i:0;i:3;i:0;i:4;i:0;i:5;i:0;i:6;i:0;}}}}s:4:"path";s:8:"calendar";}s:8:"db_table";s:13:"views_display";s:3:"vid";i:0;s:2:"id";s:13:"page_calendar";s:13:"display_title";s:8:"Calendar";s:14:"display_plugin";s:4:"page";s:8:"position";i:0;}'); /* WAS: '' */
+    $data['oa_event_list']->display['page_calendar'] = unserialize('O:13:"views_display":7:{s:15:"display_options";a:10:{s:5:"query";a:2:{s:4:"type";s:11:"views_query";s:7:"options";a:0:{}}s:8:"defaults";a:10:{s:5:"title";b:0;s:12:"style_plugin";b:0;s:13:"style_options";b:0;s:10:"row_plugin";b:0;s:11:"row_options";b:0;s:13:"relationships";b:0;s:6:"fields";b:0;s:5:"sorts";b:0;s:13:"filter_groups";b:0;s:7:"filters";b:0;}s:5:"title";s:8:"Calendar";s:12:"style_plugin";s:7:"default";s:10:"row_plugin";s:6:"fields";s:11:"row_options";a:1:{s:22:"default_field_elements";b:0;}s:6:"fields";a:5:{s:13:"field_oa_date";a:9:{s:2:"id";s:13:"field_oa_date";s:5:"table";s:24:"field_data_field_oa_date";s:5:"field";s:13:"field_oa_date";s:5:"label";s:0:"";s:19:"element_label_colon";b:0;s:4:"type";s:24:"oa_events_date_formatter";s:8:"settings";a:6:{s:11:"format_type";s:4:"long";s:6:"fromto";s:4:"both";s:15:"multiple_number";s:0:"";s:13:"multiple_from";s:0:"";s:11:"multiple_to";s:0:"";s:16:"show_repeat_rule";s:4:"hide";}s:10:"group_rows";b:0;s:12:"delta_offset";s:1:"0";}s:5:"title";a:8:{s:2:"id";s:5:"title";s:5:"table";s:4:"node";s:5:"field";s:5:"title";s:5:"label";s:0:"";s:5:"alter";a:2:{s:13:"word_boundary";b:0;s:8:"ellipsis";b:0;}s:12:"element_type";s:2:"h4";s:13:"element_class";s:5:"title";s:19:"element_label_colon";b:0;}s:12:"og_group_ref";a:9:{s:2:"id";s:12:"og_group_ref";s:5:"table";s:13:"og_membership";s:5:"field";s:12:"og_group_ref";s:5:"label";s:0:"";s:12:"element_type";s:6:"strong";s:19:"element_label_colon";b:0;s:20:"element_wrapper_type";s:3:"div";s:10:"hide_empty";b:1;s:8:"settings";a:1:{s:4:"link";i:0;}}s:10:"field_city";a:6:{s:2:"id";s:10:"field_city";s:5:"table";s:21:"field_data_field_city";s:5:"field";s:10:"field_city";s:5:"label";s:0:"";s:19:"element_label_colon";b:0;s:20:"element_wrapper_type";s:3:"div";}s:15:"field_oa_date_1";a:8:{s:2:"id";s:15:"field_oa_date_1";s:5:"table";s:24:"field_data_field_oa_date";s:5:"field";s:13:"field_oa_date";s:5:"label";s:0:"";s:19:"element_label_colon";b:0;s:8:"settings";a:7:{s:11:"format_type";s:13:"panopoly_time";s:6:"fromto";s:4:"both";s:15:"multiple_number";s:0:"";s:13:"multiple_from";s:0:"";s:11:"multiple_to";s:0:"";s:19:"show_remaining_days";i:0;s:16:"show_repeat_rule";s:4:"hide";}s:10:"group_rows";b:0;s:12:"delta_offset";s:1:"0";}}s:5:"sorts";a:1:{s:19:"field_oa_date_value";a:3:{s:2:"id";s:19:"field_oa_date_value";s:5:"table";s:24:"field_data_field_oa_date";s:5:"field";s:19:"field_oa_date_value";}}s:7:"filters";a:6:{s:6:"status";a:6:{s:2:"id";s:6:"status";s:5:"table";s:4:"node";s:5:"field";s:6:"status";s:5:"value";i:1;s:5:"group";i:1;s:6:"expose";a:1:{s:8:"operator";b:0;}}s:4:"type";a:5:{s:2:"id";s:4:"type";s:5:"table";s:4:"node";s:5:"field";s:4:"type";s:5:"value";a:1:{s:8:"oa_event";s:8:"oa_event";}s:5:"group";i:1;}s:19:"field_oa_date_value";a:11:{s:2:"id";s:19:"field_oa_date_value";s:5:"table";s:24:"field_data_field_oa_date";s:5:"field";s:19:"field_oa_date_value";s:7:"ui_name";s:16:"Start Date Limit";s:8:"operator";s:2:">=";s:5:"group";i:1;s:7:"exposed";b:1;s:6:"expose";a:5:{s:11:"operator_id";s:22:"field_oa_date_value_op";s:5:"label";s:10:"Date Range";s:8:"operator";s:22:"field_oa_date_value_op";s:10:"identifier";s:19:"field_oa_date_value";s:14:"remember_roles";a:4:{i:2;s:1:"2";i:1;i:0;i:3;i:0;i:4;i:0;}}s:9:"form_type";s:10:"date_popup";s:12:"default_date";s:23:"first day of this month";s:10:"year_range";s:6:"-10:+3";}s:21:"field_oa_date_value_1";a:9:{s:2:"id";s:21:"field_oa_date_value_1";s:5:"table";s:24:"field_data_field_oa_date";s:5:"field";s:19:"field_oa_date_value";s:7:"ui_name";s:14:"End Date Limit";s:8:"operator";s:2:"<=";s:5:"group";i:1;s:7:"exposed";b:1;s:6:"expose";a:4:{s:11:"operator_id";s:24:"field_oa_date_value_1_op";s:8:"operator";s:24:"field_oa_date_value_1_op";s:10:"identifier";s:21:"field_oa_date_value_1";s:14:"remember_roles";a:4:{i:2;s:1:"2";i:1;i:0;i:3;i:0;i:4;i:0;}}s:9:"form_type";s:10:"date_popup";}s:22:"og_group_ref_target_id";a:6:{s:2:"id";s:22:"og_group_ref_target_id";s:5:"table";s:13:"og_membership";s:5:"field";s:22:"og_group_ref_target_id";s:5:"group";i:1;s:7:"exposed";b:1;s:6:"expose";a:5:{s:11:"operator_id";s:25:"og_group_ref_target_id_op";s:5:"label";s:16:"Authoring Bodies";s:8:"operator";s:25:"og_group_ref_target_id_op";s:10:"identifier";s:22:"og_group_ref_target_id";s:14:"remember_roles";a:4:{i:2;s:1:"2";i:1;i:0;i:3;i:0;i:4;i:0;}}}s:4:"keys";a:5:{s:2:"id";s:4:"keys";s:5:"table";s:12:"search_index";s:5:"field";s:4:"keys";s:7:"exposed";b:1;s:6:"expose";a:5:{s:11:"operator_id";s:7:"keys_op";s:5:"label";s:6:"Filter";s:8:"operator";s:7:"keys_op";s:10:"identifier";s:4:"keys";s:14:"remember_roles";a:6:{i:2;s:1:"2";i:1;i:0;i:3;i:0;i:4;i:0;i:5;i:0;i:6;i:0;}}}}s:4:"path";s:8:"calendar";}s:8:"db_table";s:13:"views_display";s:3:"vid";i:0;s:2:"id";s:13:"page_calendar";s:13:"display_title";s:8:"Calendar";s:14:"display_plugin";s:4:"page";s:8:"position";i:0;}'); /* WAS: '' */
     $data['oa_event_list']->display['panel_pane_1']->display_options['defaults']['empty'] = FALSE; /* WAS: '' */
     $data['oa_event_list']->display['panel_pane_1']->display_options['defaults']['fields'] = FALSE; /* WAS: '' */
     $data['oa_event_list']->display['panel_pane_1']->display_options['defaults']['row_options'] = FALSE; /* WAS: '' */
@@ -868,19 +901,31 @@ function iasc_meeting_views_default_views_alter(&$data) {
           'link' => 0,
         ),
       ),
+      'field_dial_in_meeting' => array(
+        'id' => 'field_dial_in_meeting',
+        'table' => 'field_data_field_dial_in_meeting',
+        'field' => 'field_dial_in_meeting',
+        'label' => '',
+        'exclude' => TRUE,
+        'alter' => array(
+          'alter_text' => TRUE,
+          'text' => '+ dial-in',
+        ),
+        'element_type' => 0,
+        'element_label_colon' => FALSE,
+        'hide_empty' => TRUE,
+        'empty_zero' => TRUE,
+        'type' => 'list_key',
+      ),
       'field_city' => array(
         'id' => 'field_city',
         'table' => 'field_data_field_city',
         'field' => 'field_city',
         'label' => '',
-        'element_label_colon' => FALSE,
-      ),
-      'field_time_zone' => array(
-        'id' => 'field_time_zone',
-        'table' => 'field_data_field_time_zone',
-        'field' => 'field_time_zone',
-        'label' => '',
-        'exclude' => TRUE,
+        'alter' => array(
+          'alter_text' => TRUE,
+          'text' => '[field_city] [field_dial_in_meeting]',
+        ),
         'element_label_colon' => FALSE,
       ),
       'field_oa_date_1' => array(
@@ -888,10 +933,6 @@ function iasc_meeting_views_default_views_alter(&$data) {
         'table' => 'field_data_field_oa_date',
         'field' => 'field_oa_date',
         'label' => '',
-        'alter' => array(
-          'alter_text' => TRUE,
-          'text' => '[field_oa_date_1] ([field_time_zone])',
-        ),
         'element_label_colon' => FALSE,
         'settings' => array(
           'format_type' => 'panopoly_time',
@@ -899,6 +940,7 @@ function iasc_meeting_views_default_views_alter(&$data) {
           'multiple_number' => '',
           'multiple_from' => '',
           'multiple_to' => '',
+          'show_remaining_days' => 0,
           'show_repeat_rule' => 'hide',
         ),
         'group_rows' => FALSE,
@@ -908,7 +950,7 @@ function iasc_meeting_views_default_views_alter(&$data) {
     $data['oa_event_list']->display['panel_pane_1']->display_options['row_plugin'] = 'fields'; /* WAS: '' */
     $data['oa_event_list']->display['panel_pane_1']->display_options['style_plugin'] = 'default'; /* WAS: '' */
     $data['oa_event_list']->display['panel_pane_upcoming_meetings'] = unserialize('O:13:"views_display":7:{s:15:"display_options";a:13:{s:5:"query";a:2:{s:4:"type";s:11:"views_query";s:7:"options";a:0:{}}s:8:"defaults";a:12:{s:5:"title";b:0;s:12:"style_plugin";b:0;s:13:"style_options";b:0;s:10:"row_plugin";b:0;s:11:"row_options";b:0;s:5:"empty";b:0;s:13:"relationships";b:0;s:6:"fields";b:0;s:5:"sorts";b:0;s:9:"arguments";b:0;s:13:"filter_groups";b:0;s:7:"filters";b:0;}s:5:"title";s:17:"Upcoming Meetings";s:19:"display_description";s:56:"A panel pane list of upcoming events (no calendar icons)";s:12:"style_plugin";s:4:"list";s:13:"style_options";a:2:{s:17:"default_row_class";b:0;s:13:"wrapper_class";s:0:"";}s:10:"row_plugin";s:6:"fields";s:5:"empty";a:1:{s:4:"area";a:6:{s:2:"id";s:4:"area";s:5:"table";s:5:"views";s:5:"field";s:4:"area";s:5:"empty";b:1;s:7:"content";s:42:"There are no upcoming events at this time.";s:6:"format";s:12:"iasc_wysiwyg";}}s:6:"fields";a:4:{s:5:"title";a:8:{s:2:"id";s:5:"title";s:5:"table";s:4:"node";s:5:"field";s:5:"title";s:5:"label";s:0:"";s:5:"alter";a:3:{s:4:"text";s:19:"[title] [timestamp]";s:13:"word_boundary";b:0;s:8:"ellipsis";b:0;}s:12:"element_type";s:2:"h4";s:13:"element_class";s:5:"title";s:19:"element_label_colon";b:0;}s:15:"field_oa_date_1";a:9:{s:2:"id";s:15:"field_oa_date_1";s:5:"table";s:24:"field_data_field_oa_date";s:5:"field";s:13:"field_oa_date";s:5:"label";s:0:"";s:7:"exclude";b:1;s:19:"element_label_colon";b:0;s:8:"settings";a:6:{s:11:"format_type";s:4:"long";s:6:"fromto";s:4:"both";s:15:"multiple_number";s:0:"";s:13:"multiple_from";s:0:"";s:11:"multiple_to";s:0:"";s:16:"show_repeat_rule";s:4:"hide";}s:10:"group_rows";b:0;s:12:"delta_offset";s:1:"0";}s:15:"field_time_zone";a:6:{s:2:"id";s:15:"field_time_zone";s:5:"table";s:26:"field_data_field_time_zone";s:5:"field";s:15:"field_time_zone";s:5:"label";s:0:"";s:5:"alter";a:2:{s:10:"alter_text";b:1;s:4:"text";s:37:"[field_oa_date_1] ([field_time_zone])";}s:19:"element_label_colon";b:0;}s:12:"og_group_ref";a:8:{s:2:"id";s:12:"og_group_ref";s:5:"table";s:13:"og_membership";s:5:"field";s:12:"og_group_ref";s:5:"label";s:0:"";s:12:"element_type";s:6:"strong";s:19:"element_label_colon";b:0;s:10:"hide_empty";b:1;s:8:"settings";a:1:{s:4:"link";i:0;}}}s:5:"sorts";a:1:{s:19:"field_oa_date_value";a:3:{s:2:"id";s:19:"field_oa_date_value";s:5:"table";s:24:"field_data_field_oa_date";s:5:"field";s:19:"field_oa_date_value";}}s:7:"filters";a:8:{s:6:"status";a:6:{s:2:"id";s:6:"status";s:5:"table";s:4:"node";s:5:"field";s:6:"status";s:5:"value";i:1;s:5:"group";i:1;s:6:"expose";a:1:{s:8:"operator";b:0;}}s:4:"type";a:5:{s:2:"id";s:4:"type";s:5:"table";s:4:"node";s:5:"field";s:4:"type";s:5:"value";a:1:{s:8:"oa_event";s:8:"oa_event";}s:5:"group";i:1;}s:19:"field_oa_date_value";a:11:{s:2:"id";s:19:"field_oa_date_value";s:5:"table";s:24:"field_data_field_oa_date";s:5:"field";s:19:"field_oa_date_value";s:7:"ui_name";s:16:"Start Date Limit";s:8:"operator";s:2:">=";s:5:"group";i:1;s:7:"exposed";b:1;s:6:"expose";a:5:{s:11:"operator_id";s:22:"field_oa_date_value_op";s:5:"label";s:10:"Date Range";s:8:"operator";s:22:"field_oa_date_value_op";s:10:"identifier";s:19:"field_oa_date_value";s:14:"remember_roles";a:7:{i:2;s:1:"2";i:1;i:0;i:3;i:0;i:4;i:0;i:5;i:0;i:6;i:0;i:11;i:0;}}s:9:"form_type";s:10:"date_popup";s:12:"default_date";s:5:"today";s:10:"year_range";s:6:"-10:+3";}s:20:"field_oa_date_value2";a:11:{s:2:"id";s:20:"field_oa_date_value2";s:5:"table";s:24:"field_data_field_oa_date";s:5:"field";s:20:"field_oa_date_value2";s:7:"ui_name";s:14:"Date End Limit";s:8:"operator";s:2:"<=";s:5:"group";i:1;s:7:"exposed";b:1;s:6:"expose";a:4:{s:11:"operator_id";s:23:"field_oa_date_value2_op";s:8:"operator";s:23:"field_oa_date_value2_op";s:10:"identifier";s:20:"field_oa_date_value2";s:14:"remember_roles";a:6:{i:2;s:1:"2";i:1;i:0;i:3;i:0;i:4;i:0;i:5;i:0;i:6;i:0;}}s:9:"form_type";s:10:"date_popup";s:12:"default_date";s:9:"+6 months";s:10:"year_range";s:6:"-10:+3";}s:16:"field_city_value";a:7:{s:2:"id";s:16:"field_city_value";s:5:"table";s:21:"field_data_field_city";s:5:"field";s:16:"field_city_value";s:8:"operator";s:4:"word";s:5:"group";i:1;s:7:"exposed";b:1;s:6:"expose";a:10:{s:11:"operator_id";s:19:"field_city_value_op";s:5:"label";s:4:"City";s:8:"operator";s:19:"field_city_value_op";s:10:"identifier";s:16:"field_city_value";s:14:"remember_roles";a:4:{i:2;s:1:"2";i:1;i:0;i:3;i:0;i:4;i:0;}s:18:"autocomplete_items";s:2:"10";s:22:"autocomplete_min_chars";s:1:"0";s:27:"autocomplete_raw_suggestion";i:1;s:25:"autocomplete_raw_dropdown";i:1;s:22:"autocomplete_dependent";i:0;}}s:22:"og_group_ref_target_id";a:6:{s:2:"id";s:22:"og_group_ref_target_id";s:5:"table";s:13:"og_membership";s:5:"field";s:22:"og_group_ref_target_id";s:5:"group";i:1;s:7:"exposed";b:1;s:6:"expose";a:5:{s:11:"operator_id";s:25:"og_group_ref_target_id_op";s:5:"label";s:16:"Authoring Bodies";s:8:"operator";s:25:"og_group_ref_target_id_op";s:10:"identifier";s:22:"og_group_ref_target_id";s:14:"remember_roles";a:4:{i:2;s:1:"2";i:1;i:0;i:3;i:0;i:4;i:0;}}}s:4:"keys";a:6:{s:2:"id";s:4:"keys";s:5:"table";s:12:"search_index";s:5:"field";s:4:"keys";s:5:"group";i:1;s:7:"exposed";b:1;s:6:"expose";a:5:{s:11:"operator_id";s:7:"keys_op";s:5:"label";s:6:"Filter";s:8:"operator";s:7:"keys_op";s:10:"identifier";s:4:"keys";s:14:"remember_roles";a:6:{i:2;s:1:"2";i:1;i:0;i:3;i:0;i:4;i:0;i:5;i:0;i:6;i:0;}}}s:24:"oa_section_ref_target_id";a:5:{s:2:"id";s:24:"oa_section_ref_target_id";s:5:"table";s:25:"field_data_oa_section_ref";s:5:"field";s:24:"oa_section_ref_target_id";s:7:"exposed";b:1;s:6:"expose";a:5:{s:11:"operator_id";s:27:"oa_section_ref_target_id_op";s:5:"label";s:7:"Section";s:8:"operator";s:27:"oa_section_ref_target_id_op";s:10:"identifier";s:24:"oa_section_ref_target_id";s:14:"remember_roles";a:4:{i:2;s:1:"2";i:1;i:0;i:3;i:0;i:4;i:0;}}}}s:13:"pane_category";a:2:{s:4:"name";s:13:"IASC Meetings";s:6:"weight";s:1:"0";}s:5:"allow";a:9:{s:9:"use_pager";s:9:"use_pager";s:14:"items_per_page";s:14:"items_per_page";s:6:"offset";i:0;s:12:"link_to_view";i:0;s:9:"more_link";i:0;s:13:"path_override";i:0;s:14:"title_override";s:14:"title_override";s:12:"exposed_form";s:12:"exposed_form";s:15:"fields_override";i:0;}}s:8:"db_table";s:13:"views_display";s:3:"vid";i:0;s:2:"id";s:28:"panel_pane_upcoming_meetings";s:13:"display_title";s:28:"Upcoming Meetings - No Icons";s:14:"display_plugin";s:10:"panel_pane";s:8:"position";i:0;}'); /* WAS: '' */
-    $data['oa_event_list']->display['panel_pane_upcoming_meetings_filterable'] = unserialize('O:13:"views_display":7:{s:15:"display_options";a:14:{s:5:"query";a:2:{s:4:"type";s:11:"views_query";s:7:"options";a:0:{}}s:8:"defaults";a:12:{s:5:"title";b:0;s:12:"exposed_form";b:0;s:12:"style_plugin";b:0;s:13:"style_options";b:0;s:10:"row_plugin";b:0;s:11:"row_options";b:0;s:13:"relationships";b:0;s:6:"fields";b:0;s:5:"sorts";b:0;s:9:"arguments";b:0;s:13:"filter_groups";b:0;s:7:"filters";b:0;}s:5:"title";s:17:"Upcoming Meetings";s:19:"display_description";s:79:"A panel pane list of upcoming events (icons) with an optionally exposed filter.";s:12:"exposed_form";a:2:{s:4:"type";s:7:"oa_form";s:7:"options";a:2:{s:13:"submit_button";s:6:"Filter";s:16:"collapsed_filter";i:1;}}s:12:"style_plugin";s:7:"default";s:10:"row_plugin";s:6:"fields";s:11:"row_options";a:1:{s:10:"hide_empty";b:1;}s:6:"fields";a:6:{s:13:"field_oa_date";a:8:{s:2:"id";s:13:"field_oa_date";s:5:"table";s:24:"field_data_field_oa_date";s:5:"field";s:13:"field_oa_date";s:5:"label";s:0:"";s:19:"element_label_colon";b:0;s:4:"type";s:24:"oa_events_date_formatter";s:8:"settings";a:6:{s:11:"format_type";s:4:"long";s:6:"fromto";s:4:"both";s:15:"multiple_number";s:0:"";s:13:"multiple_from";s:0:"";s:11:"multiple_to";s:0:"";s:16:"show_repeat_rule";s:4:"show";}s:12:"delta_offset";s:1:"0";}s:5:"title";a:8:{s:2:"id";s:5:"title";s:5:"table";s:4:"node";s:5:"field";s:5:"title";s:5:"label";s:0:"";s:5:"alter";a:3:{s:4:"text";s:19:"[title] [timestamp]";s:13:"word_boundary";b:0;s:8:"ellipsis";b:0;}s:12:"element_type";s:2:"h4";s:13:"element_class";s:5:"title";s:19:"element_label_colon";b:0;}s:12:"og_group_ref";a:8:{s:2:"id";s:12:"og_group_ref";s:5:"table";s:13:"og_membership";s:5:"field";s:12:"og_group_ref";s:5:"label";s:0:"";s:12:"element_type";s:6:"strong";s:19:"element_label_colon";b:0;s:10:"hide_empty";b:1;s:8:"settings";a:1:{s:4:"link";i:0;}}s:10:"field_city";a:5:{s:2:"id";s:10:"field_city";s:5:"table";s:21:"field_data_field_city";s:5:"field";s:10:"field_city";s:5:"label";s:0:"";s:19:"element_label_colon";b:0;}s:15:"field_time_zone";a:7:{s:2:"id";s:15:"field_time_zone";s:5:"table";s:26:"field_data_field_time_zone";s:5:"field";s:15:"field_time_zone";s:5:"label";s:0:"";s:7:"exclude";b:1;s:5:"alter";a:1:{s:4:"text";s:35:"[field_oa_date] ([field_time_zone])";}s:19:"element_label_colon";b:0;}s:15:"field_oa_date_1";a:8:{s:2:"id";s:15:"field_oa_date_1";s:5:"table";s:24:"field_data_field_oa_date";s:5:"field";s:13:"field_oa_date";s:5:"label";s:0:"";s:5:"alter";a:2:{s:10:"alter_text";b:1;s:4:"text";s:37:"[field_oa_date_1] ([field_time_zone])";}s:19:"element_label_colon";b:0;s:8:"settings";a:6:{s:11:"format_type";s:13:"panopoly_time";s:6:"fromto";s:4:"both";s:15:"multiple_number";s:0:"";s:13:"multiple_from";s:0:"";s:11:"multiple_to";s:0:"";s:16:"show_repeat_rule";s:4:"show";}s:12:"delta_offset";s:1:"0";}}s:5:"sorts";a:1:{s:19:"field_oa_date_value";a:3:{s:2:"id";s:19:"field_oa_date_value";s:5:"table";s:24:"field_data_field_oa_date";s:5:"field";s:19:"field_oa_date_value";}}s:7:"filters";a:8:{s:6:"status";a:6:{s:2:"id";s:6:"status";s:5:"table";s:4:"node";s:5:"field";s:6:"status";s:5:"value";i:1;s:5:"group";i:1;s:6:"expose";a:1:{s:8:"operator";b:0;}}s:4:"type";a:5:{s:2:"id";s:4:"type";s:5:"table";s:4:"node";s:5:"field";s:4:"type";s:5:"value";a:1:{s:8:"oa_event";s:8:"oa_event";}s:5:"group";i:1;}s:19:"field_oa_date_value";a:11:{s:2:"id";s:19:"field_oa_date_value";s:5:"table";s:24:"field_data_field_oa_date";s:5:"field";s:19:"field_oa_date_value";s:7:"ui_name";s:16:"Start Date Limit";s:8:"operator";s:2:">=";s:5:"group";i:1;s:7:"exposed";b:1;s:6:"expose";a:5:{s:11:"operator_id";s:22:"field_oa_date_value_op";s:5:"label";s:10:"Date Range";s:8:"operator";s:22:"field_oa_date_value_op";s:10:"identifier";s:19:"field_oa_date_value";s:14:"remember_roles";a:7:{i:2;s:1:"2";i:1;i:0;i:3;i:0;i:4;i:0;i:5;i:0;i:6;i:0;i:11;i:0;}}s:9:"form_type";s:10:"date_popup";s:12:"default_date";s:5:"today";s:10:"year_range";s:6:"-10:+3";}s:21:"field_oa_date_value_1";a:10:{s:2:"id";s:21:"field_oa_date_value_1";s:5:"table";s:24:"field_data_field_oa_date";s:5:"field";s:19:"field_oa_date_value";s:7:"ui_name";s:14:"End Date Limit";s:8:"operator";s:2:"<=";s:5:"group";i:1;s:7:"exposed";b:1;s:6:"expose";a:4:{s:11:"operator_id";s:24:"field_oa_date_value_1_op";s:8:"operator";s:24:"field_oa_date_value_1_op";s:10:"identifier";s:21:"field_oa_date_value_1";s:14:"remember_roles";a:6:{i:2;s:1:"2";i:1;i:0;i:3;i:0;i:4;i:0;i:5;i:0;i:6;i:0;}}s:9:"form_type";s:10:"date_popup";s:10:"year_range";s:6:"-10:+3";}s:16:"field_city_value";a:7:{s:2:"id";s:16:"field_city_value";s:5:"table";s:21:"field_data_field_city";s:5:"field";s:16:"field_city_value";s:8:"operator";s:4:"word";s:5:"group";i:1;s:7:"exposed";b:1;s:6:"expose";a:10:{s:11:"operator_id";s:19:"field_city_value_op";s:5:"label";s:4:"City";s:8:"operator";s:19:"field_city_value_op";s:10:"identifier";s:16:"field_city_value";s:14:"remember_roles";a:4:{i:2;s:1:"2";i:1;i:0;i:3;i:0;i:4;i:0;}s:18:"autocomplete_items";s:2:"10";s:22:"autocomplete_min_chars";s:1:"0";s:27:"autocomplete_raw_suggestion";i:1;s:25:"autocomplete_raw_dropdown";i:1;s:22:"autocomplete_dependent";i:0;}}s:22:"og_group_ref_target_id";a:6:{s:2:"id";s:22:"og_group_ref_target_id";s:5:"table";s:13:"og_membership";s:5:"field";s:22:"og_group_ref_target_id";s:5:"group";i:1;s:7:"exposed";b:1;s:6:"expose";a:5:{s:11:"operator_id";s:25:"og_group_ref_target_id_op";s:5:"label";s:16:"Authoring Bodies";s:8:"operator";s:25:"og_group_ref_target_id_op";s:10:"identifier";s:22:"og_group_ref_target_id";s:14:"remember_roles";a:4:{i:2;s:1:"2";i:1;i:0;i:3;i:0;i:4;i:0;}}}s:24:"oa_section_ref_target_id";a:6:{s:2:"id";s:24:"oa_section_ref_target_id";s:5:"table";s:25:"field_data_oa_section_ref";s:5:"field";s:24:"oa_section_ref_target_id";s:5:"group";i:1;s:7:"exposed";b:1;s:6:"expose";a:5:{s:11:"operator_id";s:27:"oa_section_ref_target_id_op";s:5:"label";s:7:"Section";s:8:"operator";s:27:"oa_section_ref_target_id_op";s:10:"identifier";s:24:"oa_section_ref_target_id";s:14:"remember_roles";a:4:{i:2;s:1:"2";i:1;i:0;i:3;i:0;i:4;i:0;}}}s:4:"keys";a:6:{s:2:"id";s:4:"keys";s:5:"table";s:12:"search_index";s:5:"field";s:4:"keys";s:5:"group";i:1;s:7:"exposed";b:1;s:6:"expose";a:5:{s:11:"operator_id";s:7:"keys_op";s:5:"label";s:6:"Filter";s:8:"operator";s:7:"keys_op";s:10:"identifier";s:4:"keys";s:14:"remember_roles";a:6:{i:2;s:1:"2";i:1;i:0;i:3;i:0;i:4;i:0;i:5;i:0;i:6;i:0;}}}}s:13:"pane_category";a:2:{s:4:"name";s:13:"IASC Meetings";s:6:"weight";s:1:"0";}s:5:"allow";a:10:{s:9:"use_pager";s:9:"use_pager";s:14:"items_per_page";s:14:"items_per_page";s:6:"offset";i:0;s:12:"link_to_view";i:0;s:9:"more_link";i:0;s:13:"path_override";i:0;s:14:"title_override";i:0;s:12:"exposed_form";s:12:"exposed_form";s:22:"exposed_form_configure";s:22:"exposed_form_configure";s:15:"fields_override";i:0;}s:22:"exposed_form_overrides";a:1:{s:7:"filters";a:6:{s:19:"field_oa_date_value";s:16:"pane_and_exposed";s:21:"field_oa_date_value_1";s:16:"pane_and_exposed";s:16:"field_city_value";s:16:"pane_and_exposed";s:22:"og_group_ref_target_id";s:0:"";s:24:"oa_section_ref_target_id";s:0:"";s:4:"keys";s:16:"pane_and_exposed";}}}s:8:"db_table";s:13:"views_display";s:3:"vid";i:0;s:2:"id";s:39:"panel_pane_upcoming_meetings_filterable";s:13:"display_title";s:25:"Upcoming Meetings (Icons)";s:14:"display_plugin";s:10:"panel_pane";s:8:"position";i:0;}'); /* WAS: '' */
+    $data['oa_event_list']->display['panel_pane_upcoming_meetings_filterable'] = unserialize('O:13:"views_display":7:{s:15:"display_options";a:14:{s:5:"query";a:2:{s:4:"type";s:11:"views_query";s:7:"options";a:0:{}}s:8:"defaults";a:12:{s:5:"title";b:0;s:12:"exposed_form";b:0;s:12:"style_plugin";b:0;s:13:"style_options";b:0;s:10:"row_plugin";b:0;s:11:"row_options";b:0;s:13:"relationships";b:0;s:6:"fields";b:0;s:5:"sorts";b:0;s:9:"arguments";b:0;s:13:"filter_groups";b:0;s:7:"filters";b:0;}s:5:"title";s:17:"Upcoming Meetings";s:19:"display_description";s:79:"A panel pane list of upcoming events (icons) with an optionally exposed filter.";s:12:"exposed_form";a:2:{s:4:"type";s:7:"oa_form";s:7:"options";a:2:{s:13:"submit_button";s:6:"Filter";s:16:"collapsed_filter";i:1;}}s:12:"style_plugin";s:7:"default";s:10:"row_plugin";s:6:"fields";s:11:"row_options";a:1:{s:10:"hide_empty";b:1;}s:6:"fields";a:6:{s:13:"field_oa_date";a:8:{s:2:"id";s:13:"field_oa_date";s:5:"table";s:24:"field_data_field_oa_date";s:5:"field";s:13:"field_oa_date";s:5:"label";s:0:"";s:19:"element_label_colon";b:0;s:4:"type";s:24:"oa_events_date_formatter";s:8:"settings";a:6:{s:11:"format_type";s:4:"long";s:6:"fromto";s:4:"both";s:15:"multiple_number";s:0:"";s:13:"multiple_from";s:0:"";s:11:"multiple_to";s:0:"";s:16:"show_repeat_rule";s:4:"show";}s:12:"delta_offset";s:1:"0";}s:5:"title";a:8:{s:2:"id";s:5:"title";s:5:"table";s:4:"node";s:5:"field";s:5:"title";s:5:"label";s:0:"";s:5:"alter";a:3:{s:4:"text";s:19:"[title] [timestamp]";s:13:"word_boundary";b:0;s:8:"ellipsis";b:0;}s:12:"element_type";s:2:"h4";s:13:"element_class";s:5:"title";s:19:"element_label_colon";b:0;}s:12:"og_group_ref";a:8:{s:2:"id";s:12:"og_group_ref";s:5:"table";s:13:"og_membership";s:5:"field";s:12:"og_group_ref";s:5:"label";s:0:"";s:12:"element_type";s:6:"strong";s:19:"element_label_colon";b:0;s:10:"hide_empty";b:1;s:8:"settings";a:1:{s:4:"link";i:0;}}s:21:"field_dial_in_meeting";a:10:{s:2:"id";s:21:"field_dial_in_meeting";s:5:"table";s:32:"field_data_field_dial_in_meeting";s:5:"field";s:21:"field_dial_in_meeting";s:5:"label";s:0:"";s:7:"exclude";b:1;s:5:"alter";a:2:{s:10:"alter_text";b:1;s:4:"text";s:9:"+ dial-in";}s:19:"element_label_colon";b:0;s:10:"hide_empty";b:1;s:10:"empty_zero";b:1;s:4:"type";s:8:"list_key";}s:10:"field_city";a:6:{s:2:"id";s:10:"field_city";s:5:"table";s:21:"field_data_field_city";s:5:"field";s:10:"field_city";s:5:"label";s:0:"";s:5:"alter";a:2:{s:10:"alter_text";b:1;s:4:"text";s:36:"[field_city] [field_dial_in_meeting]";}s:19:"element_label_colon";b:0;}s:15:"field_oa_date_1";a:7:{s:2:"id";s:15:"field_oa_date_1";s:5:"table";s:24:"field_data_field_oa_date";s:5:"field";s:13:"field_oa_date";s:5:"label";s:0:"";s:19:"element_label_colon";b:0;s:8:"settings";a:7:{s:11:"format_type";s:13:"panopoly_time";s:6:"fromto";s:4:"both";s:15:"multiple_number";s:0:"";s:13:"multiple_from";s:0:"";s:11:"multiple_to";s:0:"";s:19:"show_remaining_days";i:0;s:16:"show_repeat_rule";s:4:"show";}s:12:"delta_offset";s:1:"0";}}s:5:"sorts";a:1:{s:19:"field_oa_date_value";a:3:{s:2:"id";s:19:"field_oa_date_value";s:5:"table";s:24:"field_data_field_oa_date";s:5:"field";s:19:"field_oa_date_value";}}s:7:"filters";a:8:{s:6:"status";a:6:{s:2:"id";s:6:"status";s:5:"table";s:4:"node";s:5:"field";s:6:"status";s:5:"value";i:1;s:5:"group";i:1;s:6:"expose";a:1:{s:8:"operator";b:0;}}s:4:"type";a:5:{s:2:"id";s:4:"type";s:5:"table";s:4:"node";s:5:"field";s:4:"type";s:5:"value";a:1:{s:8:"oa_event";s:8:"oa_event";}s:5:"group";i:1;}s:19:"field_oa_date_value";a:11:{s:2:"id";s:19:"field_oa_date_value";s:5:"table";s:24:"field_data_field_oa_date";s:5:"field";s:19:"field_oa_date_value";s:7:"ui_name";s:16:"Start Date Limit";s:8:"operator";s:2:">=";s:5:"group";i:1;s:7:"exposed";b:1;s:6:"expose";a:5:{s:11:"operator_id";s:22:"field_oa_date_value_op";s:5:"label";s:10:"Date Range";s:8:"operator";s:22:"field_oa_date_value_op";s:10:"identifier";s:19:"field_oa_date_value";s:14:"remember_roles";a:7:{i:2;s:1:"2";i:1;i:0;i:3;i:0;i:4;i:0;i:5;i:0;i:6;i:0;i:11;i:0;}}s:9:"form_type";s:10:"date_popup";s:12:"default_date";s:5:"today";s:10:"year_range";s:6:"-10:+3";}s:21:"field_oa_date_value_1";a:10:{s:2:"id";s:21:"field_oa_date_value_1";s:5:"table";s:24:"field_data_field_oa_date";s:5:"field";s:19:"field_oa_date_value";s:7:"ui_name";s:14:"End Date Limit";s:8:"operator";s:2:"<=";s:5:"group";i:1;s:7:"exposed";b:1;s:6:"expose";a:4:{s:11:"operator_id";s:24:"field_oa_date_value_1_op";s:8:"operator";s:24:"field_oa_date_value_1_op";s:10:"identifier";s:21:"field_oa_date_value_1";s:14:"remember_roles";a:6:{i:2;s:1:"2";i:1;i:0;i:3;i:0;i:4;i:0;i:5;i:0;i:6;i:0;}}s:9:"form_type";s:10:"date_popup";s:10:"year_range";s:6:"-10:+3";}s:16:"field_city_value";a:7:{s:2:"id";s:16:"field_city_value";s:5:"table";s:21:"field_data_field_city";s:5:"field";s:16:"field_city_value";s:8:"operator";s:4:"word";s:5:"group";i:1;s:7:"exposed";b:1;s:6:"expose";a:10:{s:11:"operator_id";s:19:"field_city_value_op";s:5:"label";s:4:"City";s:8:"operator";s:19:"field_city_value_op";s:10:"identifier";s:16:"field_city_value";s:14:"remember_roles";a:4:{i:2;s:1:"2";i:1;i:0;i:3;i:0;i:4;i:0;}s:18:"autocomplete_items";s:2:"10";s:22:"autocomplete_min_chars";s:1:"0";s:27:"autocomplete_raw_suggestion";i:1;s:25:"autocomplete_raw_dropdown";i:1;s:22:"autocomplete_dependent";i:0;}}s:22:"og_group_ref_target_id";a:6:{s:2:"id";s:22:"og_group_ref_target_id";s:5:"table";s:13:"og_membership";s:5:"field";s:22:"og_group_ref_target_id";s:5:"group";i:1;s:7:"exposed";b:1;s:6:"expose";a:5:{s:11:"operator_id";s:25:"og_group_ref_target_id_op";s:5:"label";s:16:"Authoring Bodies";s:8:"operator";s:25:"og_group_ref_target_id_op";s:10:"identifier";s:22:"og_group_ref_target_id";s:14:"remember_roles";a:4:{i:2;s:1:"2";i:1;i:0;i:3;i:0;i:4;i:0;}}}s:24:"oa_section_ref_target_id";a:6:{s:2:"id";s:24:"oa_section_ref_target_id";s:5:"table";s:25:"field_data_oa_section_ref";s:5:"field";s:24:"oa_section_ref_target_id";s:5:"group";i:1;s:7:"exposed";b:1;s:6:"expose";a:5:{s:11:"operator_id";s:27:"oa_section_ref_target_id_op";s:5:"label";s:7:"Section";s:8:"operator";s:27:"oa_section_ref_target_id_op";s:10:"identifier";s:24:"oa_section_ref_target_id";s:14:"remember_roles";a:4:{i:2;s:1:"2";i:1;i:0;i:3;i:0;i:4;i:0;}}}s:4:"keys";a:6:{s:2:"id";s:4:"keys";s:5:"table";s:12:"search_index";s:5:"field";s:4:"keys";s:5:"group";i:1;s:7:"exposed";b:1;s:6:"expose";a:5:{s:11:"operator_id";s:7:"keys_op";s:5:"label";s:6:"Filter";s:8:"operator";s:7:"keys_op";s:10:"identifier";s:4:"keys";s:14:"remember_roles";a:6:{i:2;s:1:"2";i:1;i:0;i:3;i:0;i:4;i:0;i:5;i:0;i:6;i:0;}}}}s:13:"pane_category";a:2:{s:4:"name";s:13:"IASC Meetings";s:6:"weight";s:1:"0";}s:5:"allow";a:10:{s:9:"use_pager";s:9:"use_pager";s:14:"items_per_page";s:14:"items_per_page";s:6:"offset";i:0;s:12:"link_to_view";i:0;s:9:"more_link";i:0;s:13:"path_override";i:0;s:14:"title_override";i:0;s:12:"exposed_form";s:12:"exposed_form";s:22:"exposed_form_configure";s:22:"exposed_form_configure";s:15:"fields_override";i:0;}s:22:"exposed_form_overrides";a:1:{s:7:"filters";a:6:{s:19:"field_oa_date_value";s:16:"pane_and_exposed";s:21:"field_oa_date_value_1";s:16:"pane_and_exposed";s:16:"field_city_value";s:16:"pane_and_exposed";s:22:"og_group_ref_target_id";s:0:"";s:24:"oa_section_ref_target_id";s:0:"";s:4:"keys";s:16:"pane_and_exposed";}}}s:8:"db_table";s:13:"views_display";s:3:"vid";i:0;s:2:"id";s:39:"panel_pane_upcoming_meetings_filterable";s:13:"display_title";s:25:"Upcoming Meetings (Icons)";s:14:"display_plugin";s:10:"panel_pane";s:8:"position";i:0;}'); /* WAS: '' */
     unset($data['oa_event_list']->display['default']->display_options['fields']['field_oa_address']);
     unset($data['oa_event_list']->display['oa_calendar_month']->display_options['allow']['exposed_form_configure']);
     unset($data['oa_event_list']->display['oa_calendar_month']->display_options['exposed_form_overrides']);

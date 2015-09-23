@@ -26,7 +26,8 @@ function iasc_css_alter(&$css) {
  */
 function iasc_js_alter(&$js) {
   $oa_radix_path = drupal_get_path('theme', 'oa_radix');
-  // Add this script so that the jquery ui dialogs have the correct close button classes/etc.
+  // Add this script so that the jquery ui dialogs have the correct close button
+  // classes/etc.
   $js[$oa_radix_path . '/assets/javascripts/script.js']['data'] = $oa_radix_path . '/assets/javascripts/script.js';
 }
 
@@ -403,8 +404,8 @@ function iasc_preprocess_views_view(&$vars) {
     if ('panel_pane_upcoming_meetings_filterable' == $vars['display_id']) {
       // Front page widget should link to /calendar.
       if (!drupal_is_front_page()) {
-        /* Only show the View all Meetings link if the total rows is greater than
-           the items per page. */
+        // Only show the View all Meetings link if total rows is greater than
+        // the items per page.
         if ($vars['view']->total_rows > $vars['view']->items_per_page) {
           $space_nid = $vars['view']->exposed_raw_input['og_group_ref_target_id'];
           $path = drupal_get_path_alias("node/$space_nid");

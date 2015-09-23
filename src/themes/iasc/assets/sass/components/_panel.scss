@@ -10,7 +10,6 @@
 .panel-default {
   border: none;
   .panel-heading { text-transform: uppercase; }
-  
 }
 
 .panel-secondary {
@@ -19,7 +18,6 @@
     a {
       @extend .btn;
       @extend .btn-default;
-      background-color: $red;
       border: 0; 
       color: $white;
       &:hover,
@@ -29,6 +27,46 @@
       }
     }
   }
+
+  &.panel-info {
+    .more-link a {
+      background-color: $red;
+
+      &:hover,
+      &:active {
+        background-color: $red;
+      }
+    }
+  }
+
+  &.panel-success {
+    .more-link a {
+      background-color: $brand-primary;;
+
+      &:hover,
+      &:active {
+        background-color: $brand-primary;;
+      }
+    }
+  }
+
+  &.panel-primary {
+    .more-link a {
+      background-color: $brand-primary;;
+
+      &:hover,
+      &:active {
+        background-color: $brand-primary;;
+      }
+    }
+  }
+}
+
+.panel-body, .pane-content {
+  ul {
+    @extend .list-unstyled;
+  }
+  li { list-style: none; }
 }
 
 .panel-secondary.panel-success,
@@ -91,8 +129,17 @@
 .node-type-announcement, 
 .page-page-not-found,
 .node-type-oa-event,
-.node-type-oa-wiki-page {
+.node-type-oa-wiki-page,
+.node-type-oa-section,
+.page-node {
   h1.title { display: none; }
+}
+
+// Hide section extra title
+.node-type-oa-section, .node-type-oa-space {
+  .pane-node-title .pane-content {
+    display: none;
+  }
 }
 
 .section-menu .space-title a {
