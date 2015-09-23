@@ -587,9 +587,6 @@ function iasc_document_views_default_views() {
   $handler->display->display_options['filters']['field_document_type_tid']['id'] = 'field_document_type_tid';
   $handler->display->display_options['filters']['field_document_type_tid']['table'] = 'field_data_field_document_type';
   $handler->display->display_options['filters']['field_document_type_tid']['field'] = 'field_document_type_tid';
-  $handler->display->display_options['filters']['field_document_type_tid']['value'] = array(
-    205 => '205',
-  );
   $handler->display->display_options['filters']['field_document_type_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_document_type_tid']['expose']['operator_id'] = 'field_document_type_tid_op';
   $handler->display->display_options['filters']['field_document_type_tid']['expose']['label'] = 'Document Type';
@@ -603,6 +600,8 @@ function iasc_document_views_default_views() {
     4 => 0,
     5 => 0,
     6 => 0,
+    11 => 0,
+    16 => 0,
   );
   $handler->display->display_options['filters']['field_document_type_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_document_type_tid']['vocabulary'] = 'document_types';
