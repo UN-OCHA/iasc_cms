@@ -290,12 +290,12 @@ function iasc_document_default_page_manager_pages() {
   $pane->configuration = array(
     'exposed' => array(
       'og_group_ref_target_id_op' => 'not empty',
-      'og_group_ref_target_id' => '2608',
+      'og_group_ref_target_id' => 2608,
       'og_group_ref_target_id_mine' => 0,
       'og_subspaces_view_all' => 0,
       'og_subspaces_view_parent' => 0,
       'field_document_type_tid' => array(
-        205 => '205',
+        1481 => '1481',
       ),
     ),
     'more_link' => 0,
@@ -435,12 +435,12 @@ function iasc_document_default_page_manager_pages() {
   $pane->configuration = array(
     'exposed' => array(
       'og_group_ref_target_id_op' => 'or',
-      'og_group_ref_target_id' => '2608',
+      'og_group_ref_target_id' => 2608,
       'og_group_ref_target_id_mine' => 0,
       'og_subspaces_view_all' => 0,
       'og_subspaces_view_parent' => 0,
       'field_document_type_tid' => array(
-        205 => '205',
+        1482 => '1482',
       ),
     ),
     'link_to_view' => 0,
