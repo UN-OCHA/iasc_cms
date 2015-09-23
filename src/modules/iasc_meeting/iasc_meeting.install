@@ -101,8 +101,8 @@ function iasc_meeting_update_7003() {
 
   // Get all of the events with a value in field_data_field_city.
   $result = db_query('SELECT c.entity_id
-    FROM field_data_field_city AS c
-    LEFT OUTER JOIN field_data_field_primary_geofield AS g ON c.entity_id = g.entity_id
+    FROM {field_data_field_city} AS c
+    LEFT OUTER JOIN {field_data_field_primary_geofield} AS g ON c.entity_id = g.entity_id
     WHERE g.entity_id IS NULL;')->fetchAll();
 
   if ($result) {
