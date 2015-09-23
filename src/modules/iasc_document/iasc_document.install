@@ -121,3 +121,79 @@ function iasc_document_update_7002() {
     }
   }
 }
+
+/**
+ * Implements hook_update_N().
+ *
+ * Split Products into IASC Products and Other Products and update existing nodes.
+ */
+function iasc_document_update_7003() {
+  // Get the vocabulary for Document Type.
+  $vocab = taxonomy_vocabulary_machine_name_load('document_types');
+
+  if (!$vocab) {
+    throw new DrupalUpdateException('Missing vocabulary for Document Types.');
+  }
+
+  // Create the new taxonomy terms for the Document types.
+  $iasc_product = new stdClass();
+  $iasc_product->name = t('IASC Product');
+  $iasc_product->vid = $vocab->vid;
+
+  if (!taxonomy_term_save($iasc_product)) {
+    throw new DrupalUpdateException('Couldn\'t save IASC Product term.');
+  }
+  watchdog('iasc_document', 'Added term: IASC Product');
+
+  $other_product = new stdClass();
+  $other_product->name = t('Other Product');
+  $other_product->vid = $vocab->vid;
+  if (!taxonomy_term_save($other_product)) {
+    throw new DrupalUpdateException('Couldn\'t save Other Product term.');
+  }
+  watchdog('iasc_document', 'Added term: Other Product');
+
+  // Get all Document nodes that are Products.
+  $product_term = taxonomy_get_term_by_name('Product', 'document_types');
+  if (empty($product_term)) {
+    throw new DrupalUpdateException('Couldn\'t load Product term.');
+  }
+  $product_term = array_shift($product_term);
+
+  $result = db_query('SELECT entity_id
+    FROM {field_data_field_document_type}
+    WHERE field_document_type_tid = :tid;', array(':tid' => $product_term->tid))
+    ->fetchAll();
+
+  if ($result) {
+    // If Document's Authoring Body is "Other", set Document Type to Other
+    // Products.
+    $other_space_nid = db_query("SELECT nid
+      FROM {node}
+      WHERE type = 'oa_space' AND title = 'Other'")
+      ->fetchField();
+
+    foreach ($result as $node) {
+      $document = node_load($node->entity_id);
+      $wrapper = entity_metadata_wrapper('node', $document);
+
+      if ($other_space_nid == $wrapper->og_group_ref->value()->nid) {
+        $wrapper->field_document_type->set($other_product->tid);
+      }
+      else {
+        // Else set the type to IASC Products.
+        $wrapper->field_document_type->set($iasc_product->tid);
+      }
+
+      $wrapper->save();
+      watchdog('iasc_document', 'Updated node: %nid with term: %term', array(
+        '%nid' => $document->nid,
+        '%term' => $wrapper->field_document_type->value()->name,
+      ));
+    }
+  }
+
+  // Delete the old taxonomy term "Product".
+  taxonomy_term_delete($product_term->tid);
+  watchdog('iasc_document', 'Deleted term: Product');
+}
