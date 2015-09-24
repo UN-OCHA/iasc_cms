@@ -1421,83 +1421,6 @@ function iasc_meeting_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-oa_event-field_time_zone'
-  $field_instances['node-oa_event-field_time_zone'] = array(
-    'bundle' => 'oa_event',
-    'comment_alter' => 0,
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Please select the time zones for this meeting.',
-    'display' => array(
-      'bio_full' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'bio_long' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'bio_short' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'default' => array(
-        'label' => 'above',
-        'module' => 'list',
-        'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 14,
-      ),
-      'featured' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'ical' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'link_to_document' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'inline',
-        'module' => 'list',
-        'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 1,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_time_zone',
-    'label' => 'Time Zone',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'apply_chosen' => 0,
-      ),
-      'type' => 'options_select',
-      'weight' => 10,
-    ),
-  );
-
   // Exported field_instance: 'node-oa_event-field_venue'
   $field_instances['node-oa_event-field_venue'] = array(
     'bundle' => 'oa_event',
@@ -1601,7 +1524,6 @@ function iasc_meeting_field_default_field_instances() {
   t('Please enter additional information about the meeting. <strong>Please note:</strong> This information will not be made publicly available and has privacy restrictions.');
   t('Please note: If the agenda item does not have a referenced Document then the agenda item will be public <em>if</em> the Meeting is public.');
   t('Please select the host(s) for this meeting.');
-  t('Please select the time zones for this meeting.');
   t('Presenter (External)');
   t('Presenters');
   t('Primary Timezone');
@@ -1609,7 +1531,6 @@ function iasc_meeting_field_default_field_instances() {
   t('Private Details');
   t('Relevant Documents');
   t('Room');
-  t('Time Zone');
   t('Venue');
   t('You can use this field to enter Presenter(s) who are not in the Contacts database. ');
 
