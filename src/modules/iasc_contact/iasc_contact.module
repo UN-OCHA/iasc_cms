@@ -62,7 +62,7 @@ function iasc_contact_form_node_form_alter(&$form, &$form_state, $form_id) {
     // Change the labels for Building and Room. These are part of addressfield.
     $form['field_address'][LANGUAGE_NONE][0]['name_block']['name_line']['#title'] = t('Building');
     $form['field_address'][LANGUAGE_NONE][0]['organisation_block']['organisation_name']['#title'] = t('Room');
-    
+
     $node = $form['#node'];
     if (isset($node->field_address[LANGUAGE_NONE][0]['name_line'])) {
       $form['field_address'][LANGUAGE_NONE][0]['#address']['name_line'] = $node->field_address[LANGUAGE_NONE][0]['name_line'];
@@ -799,7 +799,6 @@ function iasc_contact_link_address($item, &$context) {
 
   $context['results']['updated_org_address'][] = $legacy_id;
 }
-
 
 /**
  * Get the default mappings for titles.
