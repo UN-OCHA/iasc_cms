@@ -440,7 +440,7 @@ function iasc_document_default_page_manager_pages() {
       'og_subspaces_view_all' => 0,
       'og_subspaces_view_parent' => 0,
       'field_document_type_tid' => array(
-        1482 => '1482',
+        1486 => '1486',
       ),
     ),
     'link_to_view' => 0,
