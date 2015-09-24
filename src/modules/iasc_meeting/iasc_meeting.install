@@ -112,7 +112,7 @@ function iasc_meeting_update_7003() {
   variable_set('iasc_meeting_num_events_missing_primary_geocode', 0);
 
   // Drop old timezone field.
-  field_delete_field('field_data_field_time_zone');
+  field_delete_field('field_time_zone');
   field_purge_batch(10);
 }
 
