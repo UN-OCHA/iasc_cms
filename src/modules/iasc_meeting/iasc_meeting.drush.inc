@@ -143,7 +143,8 @@ function iasc_meeting_get_events_missing_primary_geocode() {
   $result = db_query('SELECT c.entity_id
     FROM {field_data_field_city} AS c
     LEFT OUTER JOIN {field_data_field_primary_geofield} AS g ON c.entity_id = g.entity_id
-    WHERE g.entity_id IS NULL;')->fetchAll();
+    WHERE g.entity_id IS NULL
+    ORDER BY c.entity_id DESC;')->fetchAll();
 
   return $result;
 }
