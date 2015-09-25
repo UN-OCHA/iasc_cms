@@ -902,14 +902,8 @@ function iasc_configuration_form_alter(&$form, &$form_state, $form_id) {
 
   // Add cancel button on node form
   if (strpos($form_id, '_node_form') !== FALSE) {
-    // If the node is being created, redirect the users to the page where
-    // they can choose the content type for a new node; otherwise, redirect
-    // them to the page showing the node.
-    $node = $form_state['build_info']['args'][0];
-    $destination = (!isset($node->nid) || isset($node->is_new)) ? 'node/add' : "node/{$node->nid}";
-
     $form['actions']['cancel'] = array(
-      '#markup' => l(t('Cancel'), $destination, array('attributes' => array('class' => array('btn', 'btn-default')))),
+      '#markup' => l(t('Cancel'), '#', array('attributes' => array('class' => array('btn', 'btn-default'), 'onclick' => 'history.go(-1); return true;'))),
       '#weight' => 20,
     );
   }
