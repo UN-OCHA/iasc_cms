@@ -226,7 +226,7 @@ function iasc_contact_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 32,
+      'weight' => 30,
     ),
   );
 
@@ -234,18 +234,7 @@ function iasc_contact_field_default_field_instances() {
   $field_instances['node-contact-field_address'] = array(
     'bundle' => 'contact',
     'comment_alter' => 0,
-    'default_value' => array(
-      0 => array(
-        'element_key' => 'node|contact|field_address|und|0',
-        'thoroughfare' => '',
-        'premise' => '',
-        'postal_code' => '',
-        'locality' => '',
-        'country' => 'CH',
-        'organisation_name' => '',
-        'name_line' => '',
-      ),
-    ),
+    'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -327,55 +316,21 @@ function iasc_contact_field_default_field_instances() {
       'active' => 1,
       'module' => 'addressfield',
       'settings' => array(
-        'available_countries' => array(
-          'AF' => 'AF',
-          'AL' => 'AL',
-          'AO' => 'AO',
-          'AS' => 'AS',
-          'BE' => 'BE',
-          'BI' => 'BI',
-          'CD' => 'CD',
-          'CF' => 'CF',
-          'CH' => 'CH',
-          'CI' => 'CI',
-          'DE' => 'DE',
-          'ET' => 'ET',
-          'FR' => 'FR',
-          'GB' => 'GB',
-          'GH' => 'GH',
-          'ID' => 'ID',
-          'IE' => 'IE',
-          'IL' => 'IL',
-          'IT' => 'IT',
-          'KE' => 'KE',
-          'LK' => 'LK',
-          'NO' => 'NO',
-          'PA' => 'PA',
-          'PE' => 'PE',
-          'PH' => 'PH',
-          'PK' => 'PK',
-          'SA' => 'SA',
-          'SD' => 'SD',
-          'SE' => 'SE',
-          'SN' => 'SN',
-          'SO' => 'SO',
-          'TD' => 'TD',
-          'TT' => 'TT',
-          'UG' => 'UG',
-          'US' => 'US',
-          'ZW' => 'ZW',
-        ),
+        'available_countries' => array(),
         'default_country' => 'site_default',
         'format_handlers' => array(
           'address' => 'address',
           'organisation' => 'organisation',
           'name-oneline' => 'name-oneline',
+          'address-optional' => 'address-optional',
+          'address-hide-postal-code' => 0,
+          'address-hide-street' => 0,
           'address-hide-country' => 0,
           'name-full' => 0,
         ),
       ),
       'type' => 'addressfield_standard',
-      'weight' => 12,
+      'weight' => 25,
     ),
   );
 
@@ -463,7 +418,7 @@ function iasc_contact_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 30,
+      'weight' => 28,
     ),
   );
 
@@ -546,7 +501,7 @@ function iasc_contact_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 29,
+      'weight' => 27,
     ),
   );
 
@@ -899,7 +854,7 @@ function iasc_contact_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 31,
+      'weight' => 29,
     ),
   );
 
@@ -1630,7 +1585,7 @@ function iasc_contact_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 28,
+      'weight' => 26,
     ),
   );
 

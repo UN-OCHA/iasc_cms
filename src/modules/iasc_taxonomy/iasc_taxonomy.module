@@ -431,3 +431,18 @@ function membership_level_mappings() {
 
   return $levels;
 }
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function iasc_taxonomy_form_taxonomy_form_term_alter(&$form, &$form_state, $form_id) {
+  // Change the labels on the address fields to be more relevant.
+  $address_keys = element_children($form['field_addresses'][LANGUAGE_NONE]);
+  foreach ($address_keys as $key) {
+    if (is_numeric($key)) {
+      //  Change the labels for Building and Room. These are part of addressfield.
+      $form['field_addresses'][LANGUAGE_NONE][$key]['name_block']['name_line']['#title'] = t('Building');
+      $form['field_addresses'][LANGUAGE_NONE][$key]['organisation_block']['organisation_name']['#title'] = t('Room');
+    }
+  }
+}

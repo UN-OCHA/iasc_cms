@@ -59,25 +59,64 @@ function iasc_contact_form_node_form_alter(&$form, &$form_state, $form_id) {
     $form['title_field']['#access'] = FALSE;
     $form['#submit'][] = 'iasc_contact_form_submit';
 
+    // Setup for Pre-populate from organization address.
+    // Custom handling of the Address pre-population.
+    $form['field_address']['#prefix'] = '<div id="iasc-contacts-addressfield">';
+    $form['field_address']['#suffix'] = '</div>';
+
+    // Adjust ordering of elements. We are inserting 2 or 3 new elements after
+    // the organization field.
+    $form['field_organisation']['#weight'] -= 3;
+
+    $form['get_org_address'] = array(
+      '#type' => 'submit',
+      '#value' => t('Select Organization Address'),
+      '#prefix' => t('<p><strong>Click to see the existing addresses associated with
+        the organization.</strong></p>'),
+      '#suffix' => t('<p><em>Click to see the existing addresses associated with
+        the organization. If there are addresses, you can select one to autofill
+        the Contact\'s address. To add/edit/remove addresses of an organization,
+        you will need to edit the Organization directly. <strong>If you are adding
+        a new Contact, you will need to select the country first and then you
+        can autofill the rest of the address.</strong></em></p>'),
+      '#submit' => array('iasc_contact_get_addresses'),
+      '#ajax' => array(
+        'wrapper' => 'org-address-options',
+        'callback' => 'iasc_contact_update_org_address_options',
+      ),
+      '#weight' => $form['field_organisation']['#weight'] + 1,
+    );
+    // Add this new element to the Organization Information fieldset.
+    $form['#group_children']['get_org_address'] = 'group_org_info';
+
+    // Radio options for the existing organization addresses. Initially empty.
+    $org = isset($form_state['org']) ? $form_state['org'] : FALSE;
+
+    $form['org_address_options'] = array(
+      '#type' => 'radios',
+      '#prefix' => '<div id="org-address-options">',
+      '#suffix' => '</div>',
+      '#options' => iasc_contact_org_address_options($org, $form_state),
+      '#weight' => $form['get_org_address']['#weight'] + 1,
+      '#ajax' => array(
+        'wrapper' => 'iasc-contacts-addressfield',
+        'callback' => 'iasc_contact_address_autofill',
+      ),
+    );
+    // Add this new element to the Organization Information fieldset.
+    $form['#group_children']['org_address_options'] = 'group_org_info';
+
+    // Set a helpful msg in #description if there are no addresses associated
+    // with the organization so that the user knows that the button worked.
+    $help_msg = '';
+    if (isset($form_state['display_empty_feedback']) && empty($form['org_address_options']['#options'])) {
+      $help_msg = t('<p><em>No addresses are available for autofill.</em></p>');
+    }
+    $form['org_address_options']['#description'] = $help_msg;
+
     // Change the labels for Building and Room. These are part of addressfield.
     $form['field_address'][LANGUAGE_NONE][0]['name_block']['name_line']['#title'] = t('Building');
     $form['field_address'][LANGUAGE_NONE][0]['organisation_block']['organisation_name']['#title'] = t('Room');
-
-    // Make all fields of the addressfield optional.
-    $form['field_address'][LANGUAGE_NONE][0]['name_block']['name_line']['#required'] = FALSE;
-    $form['field_address'][LANGUAGE_NONE][0]['street_block']['thoroughfare']['#required'] = FALSE;
-    $form['field_address'][LANGUAGE_NONE][0]['locality_block']['locality']['#required'] = FALSE;
-    $form['field_address'][LANGUAGE_NONE][0]['locality_block']['administrative_area']['#required'] = FALSE;
-    $form['field_address'][LANGUAGE_NONE][0]['locality_block']['postal_code']['#required'] = FALSE;
-
-
-    $node = $form['#node'];
-    if (isset($node->field_address[LANGUAGE_NONE][0]['name_line'])) {
-      $form['field_address'][LANGUAGE_NONE][0]['#address']['name_line'] = $node->field_address[LANGUAGE_NONE][0]['name_line'];
-    }
-    if (isset($node->field_address[LANGUAGE_NONE][0]['organisation_name'])) {
-      $form['field_address'][LANGUAGE_NONE][0]['#address']['organisation_name'] = $node->field_address[LANGUAGE_NONE][0]['organisation_name'];
-    }
   }
 }
 
@@ -105,6 +144,71 @@ function iasc_contact_form_submit($form, &$form_state) {
   $title = substr($title, 0, 255);
 
   $form_state['values']['title_field'][LANGUAGE_NONE][0]['value'] = $title;
+}
+
+/**
+ * Ajax submit callback that triggers an update of the organization addresses to
+ * be used for autofill.
+ */
+function iasc_contact_get_addresses($form, &$form_state) {
+  $form_state['org'] = $form_state['values']['field_organisation'][LANGUAGE_NONE][0]['tid'];
+  $form_state['display_empty_feedback'] = TRUE;
+  $form_state['rebuild'] = TRUE;
+}
+
+/**
+ * Ajax Callback that updates the radio options for the organization addresses.
+ */
+function iasc_contact_update_org_address_options($form, &$form_state) {
+  return $form['org_address_options'];
+}
+
+/**
+ * @param int $org_tid
+ *   The organization term tid.
+ *
+ * @return array
+ *   Return an array of matching addresses, other returns an empty array.
+ */
+function iasc_contact_org_address_options($org_tid, &$form_state) {
+  $options = array();
+
+  if ($org_tid) {
+    // Get the addresses associated with the given tid.
+    $term = taxonomy_term_load($org_tid);
+
+    if ($term && !empty($term->field_addresses)) {
+      // We'll need to access this term's address again.
+      $form_state['organization_addresses'] = $term->field_addresses;
+
+      // Render the addresses in a user-friendly format for the radio options.
+      $items = field_get_items('taxonomy_term', $term, 'field_addresses');
+      foreach ($items as $key => $address) {
+        $output = field_view_value('taxonomy_term', $term, 'field_addresses', $items[$key]);
+        $options[] = render($output);
+      }
+    }
+  }
+
+  return $options;
+}
+
+function iasc_contact_address_autofill($form, &$form_state) {
+  $delta = $form_state['values']['org_address_options'];
+  $address = $form_state['organization_addresses'][LANGUAGE_NONE][$delta];
+
+  // Autofill the values for the field_address.
+  $form['field_address'][LANGUAGE_NONE][0]['street_block']['thoroughfare']['#value'] = $address['thoroughfare'];
+  $form['field_address'][LANGUAGE_NONE][0]['street_block']['premise']['#value'] = $address['premise'];
+  $form['field_address'][LANGUAGE_NONE][0]['locality_block']['postal_code']['#value'] = $address['postal_code'];
+  $form['field_address'][LANGUAGE_NONE][0]['locality_block']['dependent_locality']['#value'] = $address['dependent_locality'];
+  $form['field_address'][LANGUAGE_NONE][0]['locality_block']['locality']['#value'] = $address['locality'];
+  $form['field_address'][LANGUAGE_NONE][0]['locality_block']['administrative_area']['#value'] = $address['administrative_area'];
+  $form['field_address'][LANGUAGE_NONE][0]['organisation_block ']['organisation_name']['#value'] = $address['organisation_name'];
+  $form['field_address'][LANGUAGE_NONE][0]['name_block']['name_line']['#value'] = $address['name_line'];
+  $form['field_address'][LANGUAGE_NONE][0]['country']['#value'] = $address['country'];
+
+  return $form['field_address'];
 }
 
 /**
@@ -807,7 +911,6 @@ function iasc_contact_link_address($item, &$context) {
 
   $context['results']['updated_org_address'][] = $legacy_id;
 }
-
 
 /**
  * Get the default mappings for titles.

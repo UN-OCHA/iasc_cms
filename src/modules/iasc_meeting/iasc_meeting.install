@@ -39,6 +39,11 @@ function iasc_meeting_install() {
   }
 }
 
+function iasc_meeting_uninstall() {
+  // Remove variables.
+  variable_del('iasc_meeting_num_events_missing_primary_geocode');
+}
+
 /**
  * Implements hook_update_N().
  *
@@ -89,3 +94,25 @@ function iasc_meeting_update_7002() {
     field_delete_instance($instance);
   }
 }
+
+/**
+ * Implements hook_update_N().
+ *
+ * Update timezone handling for existing events. Due to daily limits on getting
+ * geocodes from Google. Updating existing meeting geocodes will happen in a
+ * Jenkins job that is run over a period of days.
+ */
+function iasc_meeting_update_7003() {
+  // Make sure we get the new fields applied to oa_event.
+  features_revert_module('iasc_meeting');
+
+  // Set a variable that can be used to track the number of events missing a
+  // primary geocode. This will be helpful for the daily Jenkins job that will
+  // be used to track the number of events that need to be updated.
+  variable_set('iasc_meeting_num_events_missing_primary_geocode', 0);
+
+  // Drop old timezone field.
+  field_delete_field('field_time_zone');
+  field_purge_batch(10);
+}
+
