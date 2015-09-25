@@ -1,0 +1,22 @@
+/* line 6, ../sass/components/_form.scss */
+label {
+  display: block;
+  margin-top: .5em;
+}
+
+/* line 11, ../sass/components/_form.scss */
+.form-item-org-address-options {
+  padding-bottom: .5em;
+}
+/* line 14, ../sass/components/_form.scss */
+.form-item-org-address-options label > div {
+  padding-left: .25em;
+}
+/* line 18, ../sass/components/_form.scss */
+.form-item-org-address-options .addressfield-container-inline {
+  display: inline-flex;
+}
+/* line 21, ../sass/components/_form.scss */
+.form-item-org-address-options .addressfield-container-inline.name-block {
+  padding-left: .5em;
+}

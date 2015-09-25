@@ -1,0 +1,25 @@
+name        = IASC Admin
+description = An Open Atrium theme based on OA Radix
+screenshot  = screenshot.png
+core        = 7.x
+
+; Base - Radix
+base theme  = oa_radix
+
+; Regions
+regions[help]         = Help
+regions[navigation]   = Navigation
+regions[menu]         = Menu
+regions[content]      = Content
+regions[footer]       = Footer
+regions[primarytabs]  = Primary tabs
+
+; Panels
+plugins[panels][layouts] = panels/layouts
+plugins[panels][styles] = panels/styles
+
+; CSS - General
+stylesheets[all][]     = assets/stylesheets/sub-screen.css
+
+
+
