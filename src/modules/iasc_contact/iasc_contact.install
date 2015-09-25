@@ -100,6 +100,9 @@ function iasc_contact_update_7003() {
  * Associate the addresses with the organization term.
  */
 function iasc_contact_update_7004() {
+  // Make sure we get the new fields applied to taxonomy organzation terms.
+  features_revert_module('iasc_taxonomy');
+
   // Get the vocabulary for the Organizations.
   $org_vocab = taxonomy_vocabulary_machine_name_load('hosts');
 
@@ -125,16 +128,10 @@ function iasc_contact_update_7004() {
         if (!empty($contact->field_address)) {
           // Render the addresses in a user-friendly format for easy comparison.
           $items = field_get_items('node', $contact , 'field_address');
-          $address_values = field_view_value('node', $contact, 'field_address', $items[0]);
-          $rendered = render($address_values);
+          $items[0]['organisation_name'] = '';
 
-          $item = array(
-            'address' => $items[0],
-            'rendered' => $rendered,
-          );
-
-          if (!in_array($item, $addresses)) {
-            $addresses[] = $item;
+          if (!in_array($items[0], $addresses)) {
+            $addresses[] = $items[0];
           }
         }
       }
@@ -146,7 +143,7 @@ function iasc_contact_update_7004() {
 
       // Add these addresses to the taxonomy term
       foreach ($addresses as $address) {
-        $organization->field_addresses[LANGUAGE_NONE][] = $address['address'];
+        $organization->field_addresses[LANGUAGE_NONE][] = $address;
       }
 
       if (taxonomy_term_save($organization)) {
