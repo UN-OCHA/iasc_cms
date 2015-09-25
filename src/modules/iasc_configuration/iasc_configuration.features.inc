@@ -2006,6 +2006,7 @@ function iasc_configuration_default_panels_mini_alter(&$data) {
 function iasc_configuration_strongarm_alter(&$data) {
   if (isset($data['bootstrap_library_settings'])) {
     $data['bootstrap_library_settings']->value['theme']['themes']['iasc'] = 'iasc'; /* WAS: '' */
+    $data['bootstrap_library_settings']->value['theme']['themes']['iasc_admin'] = 'iasc_admin'; /* WAS: '' */
   }
 }
 
