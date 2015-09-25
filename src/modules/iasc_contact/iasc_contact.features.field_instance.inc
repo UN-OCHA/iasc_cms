@@ -226,7 +226,7 @@ function iasc_contact_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 32,
+      'weight' => 30,
     ),
   );
 
@@ -330,7 +330,7 @@ function iasc_contact_field_default_field_instances() {
         ),
       ),
       'type' => 'addressfield_standard',
-      'weight' => 12,
+      'weight' => 25,
     ),
   );
 
@@ -418,7 +418,7 @@ function iasc_contact_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 30,
+      'weight' => 28,
     ),
   );
 
@@ -501,7 +501,7 @@ function iasc_contact_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 29,
+      'weight' => 27,
     ),
   );
 
@@ -854,7 +854,7 @@ function iasc_contact_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 31,
+      'weight' => 29,
     ),
   );
 
@@ -1585,7 +1585,7 @@ function iasc_contact_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 28,
+      'weight' => 26,
     ),
   );
 
