@@ -1862,6 +1862,7 @@ function iasc_configuration_features_override_default_overrides() {
 
   // Exported overrides for: variable
   $overrides["variable.bootstrap_library_settings.value|theme|themes|iasc"] = 'iasc';
+  $overrides["variable.bootstrap_library_settings.value|theme|themes|iasc_admin"] = 'iasc_admin';
 
   // Exported overrides for: views_view
   $overrides["views_view.oa_admin_views_node.display|default|display_options|fields|created"] = array(

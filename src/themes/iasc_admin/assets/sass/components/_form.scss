@@ -1,0 +1,25 @@
+//
+// Layout
+// Styles for Forms
+// --------------------------------------------------
+
+label {
+  display: block;
+  margin-top: .5em;
+}
+
+.form-item-org-address-options {
+  padding-bottom: .5em;
+
+  label > div {
+    padding-left: .25em;
+  }
+
+  .addressfield-container-inline {
+    display: inline-flex;
+
+    &.name-block {
+      padding-left: .5em;
+    }
+  }
+}

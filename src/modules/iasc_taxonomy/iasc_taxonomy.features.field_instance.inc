@@ -10,6 +10,61 @@
 function iasc_taxonomy_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance: 'taxonomy_term-hosts-field_addresses'
+  $field_instances['taxonomy_term-hosts-field_addresses'] = array(
+    'bundle' => 'hosts',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Addresses for the organization.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'addressfield',
+        'settings' => array(
+          'format_handlers' => array(
+            0 => 'address',
+          ),
+          'use_widget_handlers' => 1,
+        ),
+        'type' => 'addressfield_default',
+        'weight' => 5,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'taxonomy_term',
+    'field_name' => 'field_addresses',
+    'label' => 'Organization Addresses',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'addressfield',
+      'settings' => array(
+        'available_countries' => array(),
+        'default_country' => 'site_default',
+        'format_handlers' => array(
+          'address' => 'address',
+          'organisation' => 'organisation',
+          'name-oneline' => 'name-oneline',
+          'address-optional' => 'address-optional',
+          'address-hide-postal-code' => 0,
+          'address-hide-street' => 0,
+          'address-hide-country' => 0,
+          'name-full' => 0,
+        ),
+      ),
+      'type' => 'addressfield_standard',
+      'weight' => 31,
+    ),
+  );
+
   // Exported field_instance: 'taxonomy_term-hosts-field_homepage'
   $field_instances['taxonomy_term-hosts-field_homepage'] = array(
     'bundle' => 'hosts',
@@ -234,10 +289,12 @@ function iasc_taxonomy_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Addresses for the organization.');
   t('Homepage URL');
   t('Logo');
   t('Long Name');
   t('Membership');
+  t('Organization Addresses');
 
   return $field_instances;
 }
