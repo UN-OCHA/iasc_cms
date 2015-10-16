@@ -66,7 +66,6 @@
   ul {
     @extend .list-unstyled;
   }
-  li { list-style: none; }
 }
 
 .panel-secondary.panel-success,
@@ -199,6 +198,26 @@
 	color: $dark-grey;
 }
 
+.front .twitter-widget {
+  background-color: transparent;
+}
+
+.front .twitter-widget .panel-heading {
+  border-color: transparent;
+}
+
+.front .twitter-widget .panel-body {
+  padding: 0px;
+}
+
 .twitter-timeline {
   max-width: none !important;
+}
+
+.node-type-oa-event #panels-ipe-paneid-new-bd3daacb-9380-4c7f-b478-67ec6c6244d2 {
+  margin-top: 20px;
+}
+
+.node-type-oa-event #panels-ipe-paneid-new-bd3daacb-9380-4c7f-b478-67ec6c6244d2 .panel-heading {
+  margin-bottom: 20px;
 }

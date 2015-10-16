@@ -7,3 +7,4 @@ vendor
 bin
 src/modules/iasc_scrape/IASC/creds.php
 src/modules/iasc_scrape/IASC/vendor
+src/themes/iasc/assets/stylesheets/*

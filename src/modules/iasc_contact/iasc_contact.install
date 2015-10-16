@@ -93,3 +93,70 @@ function iasc_contact_update_7003() {
   field_delete_field('field_org_fax');
   field_purge_batch(10);
 }
+
+/**
+ * Consolidate all organization addresses.
+ *
+ * Associate the addresses with the organization term.
+ */
+function iasc_contact_update_7004() {
+  // Make sure we get the new fields applied to taxonomy organzation terms.
+  features_revert_module('iasc_taxonomy');
+
+  // Get the vocabulary for the Organizations.
+  $org_vocab = taxonomy_vocabulary_machine_name_load('hosts');
+
+  // Get all the terms in this vocabulary.
+  $terms = taxonomy_get_tree($org_vocab->vid);
+
+  foreach ($terms as $term) {
+    // Check to see if we have a Contact associated with this term.
+    $results = db_query("SELECT entity_id
+      FROM field_data_field_organisation
+      WHERE field_organisation_tid = :tid;",
+      array(':tid' => $term->tid))
+      ->fetchCol();
+
+    if ($results) {
+      // The whole entity is not fully loaded. We have to load the entire entity.
+      $organization = taxonomy_term_load($term->tid);
+
+      $addresses = array();
+      $contacts = node_load_multiple($results);
+      // Now loop thru the returned Contact entities
+      foreach ($contacts as $contact) {
+        if (!empty($contact->field_address)) {
+          // Render the addresses in a user-friendly format for easy comparison.
+          $items = field_get_items('node', $contact , 'field_address');
+          $items[0]['organisation_name'] = '';
+
+          if (!in_array($items[0], $addresses)) {
+            $addresses[] = $items[0];
+          }
+        }
+      }
+
+      // Watchdog the address collection
+      watchdog('iasc_contact', "Found :num distinct addresses for term :term",
+        array(':num' => count($addresses), ':term' => $organization->name)
+      );
+
+      // Add these addresses to the taxonomy term
+      foreach ($addresses as $address) {
+        $organization->field_addresses[LANGUAGE_NONE][] = $address;
+      }
+
+      if (taxonomy_term_save($organization)) {
+        watchdog('iasc_contact', "Saved new addresses for the term :term",
+          array(':term' => $organization->name)
+        );
+      }
+      else {
+        watchdog('iasc_contact', "Could not save new addresses for the term :term",
+          array(':term' => $organization->name), WATCHDOG_ERROR
+        );
+      }
+
+    }
+  }
+}
