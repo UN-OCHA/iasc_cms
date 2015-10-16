@@ -928,7 +928,7 @@ function iasc_configuration_panelizer_defaults() {
       'og_subspaces_view_parent' => 0,
       'oa_section_ref_target_id' => 'All',
       'type' => 'oa_wiki_page',
-      'term_node_tid_depth_1' => '205',
+      'term_node_tid_depth_1' => '1481',
       'term_node_tid_depth' => 'All',
       'term_node_tid_depth_2' => 'All',
       'keys' => '',

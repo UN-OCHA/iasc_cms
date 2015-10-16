@@ -164,6 +164,8 @@ function iasc_contact_update_org_address_options($form, &$form_state) {
 }
 
 /**
+ * Get the addresses for a given organization.
+ *
  * @param int $org_tid
  *   The organization term tid.
  *
@@ -198,13 +200,13 @@ function iasc_contact_address_autofill($form, &$form_state) {
   $address = $form_state['organization_addresses'][LANGUAGE_NONE][$delta];
 
   // Autofill the values for the field_address.
+  // Room number should be excluded from autofill (organisation_name - organisation_name).
   $form['field_address'][LANGUAGE_NONE][0]['street_block']['thoroughfare']['#value'] = $address['thoroughfare'];
   $form['field_address'][LANGUAGE_NONE][0]['street_block']['premise']['#value'] = $address['premise'];
   $form['field_address'][LANGUAGE_NONE][0]['locality_block']['postal_code']['#value'] = $address['postal_code'];
   $form['field_address'][LANGUAGE_NONE][0]['locality_block']['dependent_locality']['#value'] = $address['dependent_locality'];
   $form['field_address'][LANGUAGE_NONE][0]['locality_block']['locality']['#value'] = $address['locality'];
   $form['field_address'][LANGUAGE_NONE][0]['locality_block']['administrative_area']['#value'] = $address['administrative_area'];
-  $form['field_address'][LANGUAGE_NONE][0]['organisation_block ']['organisation_name']['#value'] = $address['organisation_name'];
   $form['field_address'][LANGUAGE_NONE][0]['name_block']['name_line']['#value'] = $address['name_line'];
   $form['field_address'][LANGUAGE_NONE][0]['country']['#value'] = $address['country'];
 
