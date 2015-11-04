@@ -97,7 +97,7 @@ function iasc_document_default_page_manager_handlers() {
       'og_subspaces_view_all' => 0,
       'og_subspaces_view_parent' => 0,
       'field_document_type_tid' => array(
-        205 => '205',
+        1481 => '1481',
       ),
     ),
     'more_link' => 0,
