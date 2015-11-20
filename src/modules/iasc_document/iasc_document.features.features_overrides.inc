@@ -283,6 +283,8 @@ function iasc_document_features_override_default_overrides() {
       'locks' => array(),
       'uuid' => '436ee688-6d0a-4114-addd-12f3bd8d8131',
     );
+  $overrides["panelizer_defaults.node:oa_wiki_page:default.display|content|new-61664bae-1939-49e7-a25e-f958bf7a99f6|configuration|formatter"] = 'file_default';
+  $overrides["panelizer_defaults.node:oa_wiki_page:default.display|content|new-61664bae-1939-49e7-a25e-f958bf7a99f6|configuration|formatter_settings|text"] = '[file:name]';
   $overrides["panelizer_defaults.node:oa_wiki_page:default.display|content|new-61664bae-1939-49e7-a25e-f958bf7a99f6|configuration|label"] = 'above';
   $overrides["panelizer_defaults.node:oa_wiki_page:default.display|content|new-61664bae-1939-49e7-a25e-f958bf7a99f6|panel"] = 'contentmain';
   $overrides["panelizer_defaults.node:oa_wiki_page:default.display|content|new-61664bae-1939-49e7-a25e-f958bf7a99f6|position"] = 3;
@@ -419,6 +421,8 @@ function iasc_document_features_override_default_overrides() {
     'custom_settings' => TRUE,
   );
   $overrides["variable.node_submitted_oa_wiki_page.value"] = 0;
+  $overrides["variable.panelizer_defaults_node_oa_wiki_page.value|view modes|teaser|default"] = 1;
+  $overrides["variable.panelizer_defaults_node_oa_wiki_page.value|view modes|teaser|status"] = 1;
 
  return $overrides;
 }

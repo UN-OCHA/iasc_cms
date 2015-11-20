@@ -318,6 +318,8 @@ function iasc_document_panelizer_defaults_override_alter(&$data) {
           'locks' => array(),
           'uuid' => '436ee688-6d0a-4114-addd-12f3bd8d8131',
         ); /* WAS: '' */
+    $data['node:oa_wiki_page:default']->display->content['new-61664bae-1939-49e7-a25e-f958bf7a99f6']->configuration['formatter'] = 'file_default'; /* WAS: 'media_colorbox' */
+    $data['node:oa_wiki_page:default']->display->content['new-61664bae-1939-49e7-a25e-f958bf7a99f6']->configuration['formatter_settings']['text'] = '[file:name]'; /* WAS: '' */
     $data['node:oa_wiki_page:default']->display->content['new-61664bae-1939-49e7-a25e-f958bf7a99f6']->configuration['label'] = 'above'; /* WAS: 'title' */
     $data['node:oa_wiki_page:default']->display->content['new-61664bae-1939-49e7-a25e-f958bf7a99f6']->panel = 'contentmain'; /* WAS: 'sidebar' */
     $data['node:oa_wiki_page:default']->display->content['new-61664bae-1939-49e7-a25e-f958bf7a99f6']->position = 3; /* WAS: 2 */
@@ -466,6 +468,10 @@ function iasc_document_strongarm_alter(&$data) {
   }
   if (isset($data['node_submitted_oa_wiki_page'])) {
     $data['node_submitted_oa_wiki_page']->value = 0; /* WAS: 1 */
+  }
+  if (isset($data['panelizer_defaults_node_oa_wiki_page'])) {
+    $data['panelizer_defaults_node_oa_wiki_page']->value['view modes']['teaser']['default'] = 1; /* WAS: 0 */
+    $data['panelizer_defaults_node_oa_wiki_page']->value['view modes']['teaser']['status'] = 1; /* WAS: 0 */
   }
 }
 
