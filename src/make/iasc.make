@@ -62,6 +62,9 @@ projects[entity_view_mode][subdir] = iasc_contrib
 projects[menu_attributes][subdir] = iasc_contrib
 projects[menu_attributes][version] = 1.0-rc3
 
+projects[extlink][subdir] = iasc_contrib
+projects[extlink][version] = 1.18
+
 ; Apache Solr modules
 projects[apachesolr][subdir] = iasc_contrib
 projects[apachesolr][version] = 1.7
