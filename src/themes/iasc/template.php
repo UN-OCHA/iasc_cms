@@ -514,10 +514,7 @@ function iasc_file_link($variables) {
   }
 
   //open files of particular mime types in new window
-  $new_window_mimetypes = array('application/pdf', 'text/plain');
-  if (in_array($file->filemime, $new_window_mimetypes)) {
-    $options['attributes']['target'] = '_blank';
-  }
+  $options['attributes']['target'] = '_blank';
  
   return '<span class="file">' . $icon . ' ' . l($link_text, $url, $options) . '</span>';
 
