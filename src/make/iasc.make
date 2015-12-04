@@ -20,12 +20,12 @@ includes[panopoly] = includes/panopoly.make
 ; PERFORMANCE MODULES
 ; =====================================
 projects[memcache][type] = module
-projects[memcache][version] = 1.2
+projects[memcache][version] = 1.5
 projects[memcache][subdir] = iasc_contrib
 projects[memcache][download][type] = git
 
 projects[entitycache][type] = module
-projects[entitycache][version] = 1.2
+projects[entitycache][version] = 1.5
 projects[entitycache][subdir] = iasc_contrib
 projects[entitycache][download][type] = git
 
@@ -42,18 +42,18 @@ projects[XHProf][download][type] = git
 ; =====================================
 ; Other contrib
 ; =====================================
-projects[xautoload][version] = 5.1
+projects[xautoload][version] = 5.5
 projects[xautoload][subdir] = iasc_contrib
 
 projects[styleguide][version] = 1.1
 projects[styleguide][subdir] = iasc_contrib
 
 ; Supports grouping of fields for Agenda items
-projects[field_collection][version] = 1.0-beta8
+projects[field_collection][version] = 1.0-beta10
 projects[field_collection][subdir] = iasc_contrib
 
 ; Supports more standardized addresses.
-projects[addressfield][version] = 1.1
+projects[addressfield][version] = 1.2
 projects[addressfield][subdir] = iasc_contrib
 
 projects[entity_view_mode][version] = 1.0-rc1
@@ -67,10 +67,10 @@ projects[extlink][version] = 1.18
 
 ; Apache Solr modules
 projects[apachesolr][subdir] = iasc_contrib
-projects[apachesolr][version] = 1.7
+projects[apachesolr][version] = 1.8
 
 projects[apachesolr_autocomplete][subdir] = iasc_contrib
-projects[apachesolr_autocomplete][version] = 1.3
+projects[apachesolr_autocomplete][version] = 1.5
 projects[apachesolr_autocomplete][patch][1444038] = http://drupal.org/files/1444038-custom-page-autocomplete-with-panels-2.patch
 
 projects[apachesolr_panels][subdir] = iasc_contrib
@@ -85,7 +85,7 @@ projects[apachesolr_user][download][branch] = 7.x-1.x
 projects[apachesolr_user][download][revision] = cadb26b
 
 projects[apachesolr_attachments][type] = module
-projects[apachesolr_attachments][version] = 1.3
+projects[apachesolr_attachments][version] = 1.4
 projects[apachesolr_attachments][subdir] = iasc_contrib
 
 projects[title][type] = module
@@ -117,7 +117,7 @@ libraries[respondjs][download][type] = get
 libraries[respondjs][download][url] = https://raw.githubusercontent.com/scottjehl/Respond/master/dest/respond.min.js
 
 projects[features_extra][type] = module
-projects[features_extra][version] = 1.0-beta1
+projects[features_extra][version] = 1.0
 projects[features_extra][subdir] = iasc_contrib
 
 projects[taxonomy_csv][type] = module
