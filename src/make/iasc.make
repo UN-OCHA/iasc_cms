@@ -71,7 +71,6 @@ projects[apachesolr][version] = 1.8
 
 projects[apachesolr_autocomplete][subdir] = iasc_contrib
 projects[apachesolr_autocomplete][version] = 1.5
-projects[apachesolr_autocomplete][patch][1444038] = http://drupal.org/files/1444038-custom-page-autocomplete-with-panels-2.patch
 
 projects[apachesolr_panels][subdir] = iasc_contrib
 projects[apachesolr_panels][version] = 1.1
