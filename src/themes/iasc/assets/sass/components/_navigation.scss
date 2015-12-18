@@ -87,7 +87,7 @@
   }
 
   .dropdown-menu > li > a {
-    color: #fff; // overrides the colors for subnavs on desktop
+    color: #000; // overrides the colors for subnavs on desktop
     @media screen and (max-width: $screen-sm-min) {
       white-space: normal;
     }
