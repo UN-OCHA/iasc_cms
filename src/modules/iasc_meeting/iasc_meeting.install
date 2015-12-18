@@ -116,3 +116,50 @@ function iasc_meeting_update_7003() {
   field_purge_batch(10);
 }
 
+/**
+ * Implements hook_update_N().
+ *
+ * Add required columns in database to change date timezone handling to date.
+ */
+function iasc_meeting_update_7004() {
+  $db_columns['timezone'] = array(
+    'type' => 'varchar',
+    'length' => 50,
+    'not null' => FALSE,
+    'sortable' => TRUE,
+    'views' => FALSE,
+  );
+  $db_columns['offset'] = array(
+    'type' => 'int',
+    'not null' => FALSE,
+    'sortable' => TRUE,
+    'views' => FALSE,
+  );
+
+  db_add_field('field_data_field_oa_date', 'field_oa_date_timezone', $db_columns['timezone']);
+  db_add_field('field_data_field_oa_date', 'field_oa_date_offset', $db_columns['offset']);
+  db_add_field('field_data_field_oa_date', 'field_oa_date_offset2', $db_columns['offset']);
+
+  db_add_field('field_revision_field_oa_date', 'field_oa_date_timezone', $db_columns['timezone']);
+  db_add_field('field_revision_field_oa_date', 'field_oa_date_offset', $db_columns['offset']);
+  db_add_field('field_revision_field_oa_date', 'field_oa_date_offset2', $db_columns['offset']);
+
+}
+
+/**
+ * Implements hook_update_N()
+ *
+ * Change field configuration of field_oa_date
+ */
+function iasc_meeting_update_7005() {
+  // Update field configuration
+  $info = field_info_field('field_oa_date');
+  $info['settings']['tz_handling'] = 'date';
+  db_update('field_config')
+    ->fields(array(
+      'data' => $info
+    ))
+    ->condition('field_name', 'field_oa_date', '=')
+    ->execute();
+}
+

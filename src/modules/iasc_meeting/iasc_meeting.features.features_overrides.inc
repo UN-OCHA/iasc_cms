@@ -13,6 +13,7 @@ function iasc_meeting_features_override_default_overrides() {
 
   // Exported overrides for: field_base
   $overrides["field_base.field_oa_address.field_oa_address"]["DELETED"] = TRUE;
+  $overrides["field_base.field_oa_date.settings|tz_handling"] = 'date';
   $overrides["field_base.field_oa_geo_location.field_oa_geo_location"]["DELETED"] = TRUE;
 
   // Exported overrides for: field_group
