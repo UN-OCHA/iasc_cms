@@ -11,6 +11,7 @@ projects[panopoly_core][patch][2477363] = https://www.drupal.org/files/issues/24
 projects[panopoly_core][patch][2477369] = https://www.drupal.org/files/issues/2477369-panopoly_core-entity-3.patch
 projects[panopoly_core][patch][2477375] = https://www.drupal.org/files/issues/2477375-panopoly_core-entityreference-1.patch
 projects[panopoly_core][patch][2477379] = https://www.drupal.org/files/issues/2477379-panopoly_core-token-1.patch
+projects[panopoly_core][patch][2592821] = https://www.drupal.org/files/issues/2592821-panopoly_core-apps-2.patch
 
 projects[panopoly_images][version] = 1.29
 projects[panopoly_images][subdir] = panopoly
@@ -21,6 +22,7 @@ projects[panopoly_theme][subdir] = panopoly
 
 projects[panopoly_magic][version] = 1.29
 projects[panopoly_magic][subdir] = panopoly
+projects[panopoly_magic][patch][2611876] = https://www.drupal.org/files/issues/panopoly_magic-add_descriptions_to-2611876-2.patch
 
 projects[panopoly_widgets][version] = 1.29
 projects[panopoly_widgets][subdir] = panopoly
@@ -41,3 +43,4 @@ projects[panopoly_wysiwyg][subdir] = panopoly
 
 projects[panopoly_search][version] = 1.29
 projects[panopoly_search][subdir] = panopoly
+projects[panopoly_search][patch][2469005] = https://www.drupal.org/files/issues/2469005-panopoly_search-search_api-1.patch

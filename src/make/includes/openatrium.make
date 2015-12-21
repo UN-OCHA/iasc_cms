@@ -1,12 +1,13 @@
 api = 2
 core = 7.x
 
-; MAKE file for Open Atrium.
+; MAKE file for Open Atrium RELEASE version.  Used by Drupal.org packager
+; Drupal.org does not support recursive include[] files so everything is in this file
 
 ; ******************** RELEASE *******************
 
 projects[oa_core][subdir] = contrib
-projects[oa_core][version] = 2.65
+projects[oa_core][version] = 2.67
 
 ; ************************************************
 ; ************* Open Atrium Builtin Apps *********
@@ -43,20 +44,26 @@ projects[oa_appearance][subdir] = apps
 projects[oa_archive][version] = 2.3
 projects[oa_archive][subdir] = apps
 
+projects[oa_brand][version] = 2.0
+projects[oa_brand][subdir] = apps
+
 projects[oa_clone][version] = 2.9
 projects[oa_clone][subdir] = apps
 
-projects[oa_comment][subdir] = apps
 projects[oa_comment][version] = 2.7
+projects[oa_comment][subdir] = apps
 
-projects[oa_contextual_tabs][subdir] = apps
 projects[oa_contextual_tabs][version] = 2.29
+projects[oa_contextual_tabs][subdir] = apps
 
 projects[oa_devel][version] = 2.0
 projects[oa_devel][subdir] = apps
 
 projects[oa_domains][version] = 2.2
 projects[oa_domains][subdir] = apps
+
+projects[oa_export][version] = 2.0-beta4
+projects[oa_export][subdir] = apps
 
 projects[oa_events_import][subdir] = apps
 projects[oa_events_import][version] = 2.27
@@ -126,7 +133,7 @@ projects[oa_wizard][subdir] = apps
 ; ************** Open Atrium Themes **************
 
 projects[oa_radix][type] = theme
-projects[oa_radix][version] = 3.19
+projects[oa_radix][version] = 3.24
 
 ; *********** End Open Atrium Themes *************
 ; ************************************************
