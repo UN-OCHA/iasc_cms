@@ -133,7 +133,7 @@ projects[oa_wizard][subdir] = apps
 ; ************** Open Atrium Themes **************
 
 projects[oa_radix][type] = theme
-projects[oa_radix][version] = 3.24
+projects[oa_radix][version] = 3.19
 
 ; *********** End Open Atrium Themes *************
 ; ************************************************
