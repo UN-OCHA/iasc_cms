@@ -145,7 +145,7 @@ function iasc_preprocess_node(&$vars) {
 /**
  * Implements hook_links__system_main_menu().
  */
-function iasc_links__system_main_menu(&$vars) {
+/*function iasc_links__system_main_menu(&$vars) {
   unset($vars['links']['#sorted']);
   unset($vars['links']['#theme_wrappers']);
   $output = '';
@@ -162,7 +162,7 @@ function iasc_links__system_main_menu(&$vars) {
   $output .= '</ul>';
 
   return $output;
-}
+}*/
 
 /**
  * Implements hook_links__system_secondary_menu().
