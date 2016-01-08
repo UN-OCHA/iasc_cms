@@ -796,12 +796,10 @@ function iasc_configuration_flag($action, $flag, $content_id, $account) {
       $type = $wrapper->field_document_type->value();
 
       // Currently we only have a nodequeue for IASC Products (tid 1481).
-      if (1481 == $type->tid) {
-        $queue = nodequeue_load_queue_by_name('featured_products');
+      $queue = nodequeue_load_queue_by_name('featured_products');
 
-        if ($queue) {
-          $subqueue = nodequeue_load_subqueue($queue->qid);
-        }
+      if ($queue) {
+        $subqueue = nodequeue_load_subqueue($queue->qid);
       }
     }
   }
