@@ -157,7 +157,7 @@ function iasc_meeting_update_7005() {
   $info['settings']['tz_handling'] = 'date';
   db_update('field_config')
     ->fields(array(
-      'data' => $info
+      'data' => serialize($info)
     ))
     ->condition('field_name', 'field_oa_date', '=')
     ->execute();
