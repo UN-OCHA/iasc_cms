@@ -333,8 +333,8 @@ function iasc_meeting_update_7006() {
         $event->field_oa_date[LANGUAGE_NONE][0]['timezone'] = $timezone;
         $event->field_oa_date[LANGUAGE_NONE][0]['offset'] = $offset;
         $event->field_oa_date[LANGUAGE_NONE][0]['offset2'] = $offset2;
-        $event->field_oa_date[LANGUAGE_NONE][0]['value'] = $event->field_oa_date[LANGUAGE_NONE][0]['value'] + $offset;
-        $event->field_oa_date[LANGUAGE_NONE][0]['value2'] = $event->field_oa_date[LANGUAGE_NONE][0]['value2'] + $offset2;
+        $event->field_oa_date[LANGUAGE_NONE][0]['value'] = $event->field_oa_date[LANGUAGE_NONE][0]['value'] - $offset;
+        $event->field_oa_date[LANGUAGE_NONE][0]['value2'] = $event->field_oa_date[LANGUAGE_NONE][0]['value2'] - $offset2;
         node_save($event);
       }
     }
