@@ -169,7 +169,7 @@ function iasc_meeting_update_7005() {
 function _iasc_meeting_get_offset($tstamp, $timezone) {
   if ($timezone == 'America/New_York') {
     $fiveh = -18000;
-    $fourh = -14400
+    $fourh = -14400;
     if ($tstamp >= 1130637600 && $tstamp < 1143943200) {
       return $fiveh;
     }
