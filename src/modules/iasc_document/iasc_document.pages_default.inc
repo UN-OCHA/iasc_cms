@@ -435,7 +435,7 @@ function iasc_document_default_page_manager_pages() {
   $pane->configuration = array(
     'exposed' => array(
       'og_group_ref_target_id_op' => 'or',
-      'og_group_ref_target_id' => 2608,
+      'og_group_ref_target_id' => 'All',
       'og_group_ref_target_id_mine' => 0,
       'og_subspaces_view_all' => 0,
       'og_subspaces_view_parent' => 0,
