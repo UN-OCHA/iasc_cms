@@ -163,3 +163,180 @@ function iasc_meeting_update_7005() {
     ->execute();
 }
 
+/**
+ * Get offset for timestamp
+ */
+function _iasc_meeting_get_offset($tstamp, $timezone) {
+  if ($timezone == 'America/New_York') {
+    $fiveh = -18000;
+    $fourh = -14400
+    if ($tstamp >= 1130637600 && $tstamp < 1143943200) {
+      return $fiveh;
+    }
+    elseif ($tstamp >= 1143943200 && $tstamp < 1162087200) {
+      return $fourh;
+    }
+    elseif ($tstamp >= 1162087200 && $tstamp < 1173578400) {
+      return $fiveh;
+    }
+    elseif ($tstamp >= 1173578400 && $tstamp < 1194141600) {
+      return $fourh;
+    }
+    elseif ($tstamp >= 1194141600 && $tstamp < 1205028000) {
+      return $fiveh;
+    }
+    elseif ($tstamp >= 1205028000 && $tstamp < 1225591200) {
+      return $fourh;
+    }
+    elseif ($tstamp >= 1225591200 && $tstamp < 1236477600) {
+      return $fiveh;
+    }
+    elseif ($tstamp >= 1236477600 && $tstamp < 1257040800) {
+      return $fourh;
+    }
+    elseif ($tstamp >= 1257040800 && $tstamp < 1268532000) {
+      return $fiveh;
+    }
+    elseif ($tstamp >= 1268532000 && $tstamp < 1289095200) {
+      return $fourh;
+    }
+    elseif ($tstamp >= 1289095200 && $tstamp < 1299981600) {
+      return $fiveh;
+    }
+    elseif ($tstamp >= 1299981600 && $tstamp < 1320544800) {
+      return $fourh;
+    }
+    elseif ($tstamp >= 1320544800 && $tstamp < 1331431200) {
+      return $fiveh;
+    }
+    elseif ($tstamp >= 1331431200 && $tstamp < 1351994400) {
+      return $fourh;
+    }
+    elseif ($tstamp >= 1351994400 && $tstamp < 1362880800) {
+      return $fiveh;
+    }
+    elseif ($tstamp >= 1362880800 && $tstamp < 1383444000) {
+      return $fourh;
+    }
+    elseif ($tstamp >= 1383444000 && $tstamp < 1394330400) {
+      return $fiveh;
+    }
+    elseif ($tstamp >= 1394330400 && $tstamp < 1414893600) {
+      return $fourh;
+    }
+    elseif ($tstamp >= 1414893600 && $tstamp < 1425780000) {
+      return $fiveh;
+    }
+    elseif ($tstamp >= 1425780000 && $tstamp < 1446343200) {
+      return $fourh;
+    }
+    elseif ($tstamp >= 1446343200 && $tstamp < 1457834400) {
+      return $fiveh;
+    }
+  }
+  elseif ($timezone == 'Europe/Zurich') {
+    $oneh = 3600;
+    $twoh = 7200;
+    if ($tstamp >= 1111888800 && $tstamp < 1130637600) {
+      return $twoh;
+    }
+    elseif ($tstamp >= 1130637600 && $tstamp < 1143338400) {
+      return $oneh;
+    }
+    elseif ($tstamp >= 1143338400 && $tstamp < 1164765600) {
+      return $twoh;
+    }
+    elseif ($tstamp >= 1164765600 && $tstamp < 1174788000) {
+      return $oneh;
+    }
+    elseif ($tstamp >= 1174788000 && $tstamp < 1193536800) {
+      return $twoh;
+    }
+    elseif ($tstamp >= 1193536800 && $tstamp < 1206842400) {
+      return $oneh;
+    }
+    elseif ($tstamp >= 1206842400 && $tstamp < 1224986400) {
+      return $twoh;
+    }
+    elseif ($tstamp >= 1224986400 && $tstamp < 1238292000) {
+      return $oneh;
+    }
+    elseif ($tstamp >= 1238292000 && $tstamp < 1256436000) {
+      return $twoh;
+    }
+    elseif ($tstamp >= 1256436000 && $tstamp < 1269741600) {
+      return $oneh;
+    }
+    elseif ($tstamp >= 1269741600 && $tstamp < 1288490400) {
+      return $twoh;
+    }
+    elseif ($tstamp >= 1288490400 && $tstamp < 1301191200) {
+      return $oneh;
+    }
+    elseif ($tstamp >= 1301191200 && $tstamp < 1319940000) {
+      return $twoh;
+    }
+    elseif ($tstamp >= 1319940000 && $tstamp < 1332640800) {
+      return $oneh;
+    }
+    elseif ($tstamp >= 1332640800 && $tstamp < 1351389600) {
+      return $twoh;
+    }
+    elseif ($tstamp >= 1351389600 && $tstamp < 1364695200) {
+      return $oneh;
+    }
+    elseif ($tstamp >= 1364695200 && $tstamp < 1382839200) {
+      return $twoh;
+    }
+    elseif ($tstamp >= 1382839200 && $tstamp < 1396144800) {
+      return $oneh;
+    }
+    elseif ($tstamp >= 1396144800 && $tstamp < 1414288800) {
+      return $twoh;
+    }
+    elseif ($tstamp >= 1414288800 && $tstamp < 1427594400) {
+      return $oneh;
+    }
+    elseif ($tstamp >= 1427594400 && $tstamp < 1445738400) {
+      return $twoh;
+    }
+    elseif ($tstamp >= 1445738400 && $tstamp < 1459044000) {
+      return $oneh;
+    }
+  }
+}
+
+/**
+ * Implements hook_update_N()
+ *
+ * Update existing events
+ */
+function iasc_meeting_update_7006() {
+  $query = new EntityFieldQuery();
+  $result = $query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'oa_event')
+    ->execute();
+  if (isset($result['node'])) {
+    $nids = array_keys($result['node']);
+    $events = entity_load('node', $nids);
+    foreach ($events as $event) {
+      $timezone = '';
+      if ($event->field_city[LANGUAGE_NONE][0]['value'] == 'New York') {
+        $timezone = 'America/New_York';
+      }
+      elseif ($event->field_city[LANGUAGE_NONE][0]['value'] == 'Geneva') {
+        $timezone = 'Europe/Zurich';
+      }
+      if ($timezone != '') {
+        $offset = _iasc_meeting_get_offset($event->field_oa_date[LANGUAGE_NONE][0]['value'], $timezone);
+        $offset2 = _iasc_meeting_get_offset($event->field_oa_date[LANGUAGE_NONE][0]['value2'], $timezone);
+        $event->field_oa_date[LANGUAGE_NONE][0]['timezone'] = $timezone;
+        $event->field_oa_date[LANGUAGE_NONE][0]['offset'] = $offset;
+        $event->field_oa_date[LANGUAGE_NONE][0]['offset2'] = $offset2;
+        $event->field_oa_date[LANGUAGE_NONE][0]['value'] = $event->field_oa_date[LANGUAGE_NONE][0]['value'] + $offset;
+        $event->field_oa_date[LANGUAGE_NONE][0]['value2'] = $event->field_oa_date[LANGUAGE_NONE][0]['value2'] + $offset2;
+        node_save($event);
+      }
+    }
+  }
+}
