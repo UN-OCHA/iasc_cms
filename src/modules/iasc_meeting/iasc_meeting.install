@@ -324,7 +324,7 @@ function iasc_meeting_update_7006() {
       if ($event->field_city[LANGUAGE_NONE][0]['value'] == 'New York') {
         $timezone = 'America/New_York';
       }
-      elseif ($event->field_city[LANGUAGE_NONE][0]['value'] == 'Geneva') {
+      elseif ($event->field_city[LANGUAGE_NONE][0]['value'] == 'Geneva') {
         $timezone = 'Europe/Zurich';
       }
       if ($timezone != '') {
