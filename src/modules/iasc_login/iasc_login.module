@@ -5,3 +5,20 @@
  */
 
 include_once 'iasc_login.features.inc';
+
+/**
+ * Implements hook_menu_alter().
+ *
+ * Forbid access to user/login page
+ */
+function iasc_login_menu_alter(&$items) {
+  // Disable the user registration page for all users.
+  $items['user/register']['access callback'] = FALSE;
+
+  // Disable the user registration page for all users.
+  $items['user/password']['page callback'] = FALSE;
+
+  // Disable the user login page if disabled.
+  //$items['user']['page callback'] = 'hid_auth_user_page';
+  $items['user/login']['access callback'] = FALSE;
+}
