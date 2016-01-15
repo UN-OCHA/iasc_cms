@@ -12,6 +12,7 @@ function iasc_login_features_override_default_overrides() {
   $overrides = array();
 
   // Exported overrides for: page_manager_handlers
+  $overrides["page_manager_handlers.pm_existing_pages_user_login_panel_context.conf|display|layout"] = 'radix_phelan'; /* WAS: 'radix_boxton' */
   $overrides["page_manager_handlers.pm_existing_pages_user_login_panel_context.conf|display|content|new-36405db8-54c5-495c-ba8a-0a5f7ade185a"]["DELETED"] = TRUE;
   $overrides["page_manager_handlers.pm_existing_pages_user_login_panel_context.conf|display|content|new-56815e2a-96b1-400d-9b4e-79e775c4900a"] = (object) array(
       'pid' => 'new-56815e2a-96b1-400d-9b4e-79e775c4900a',
