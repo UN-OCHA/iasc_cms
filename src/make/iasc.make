@@ -131,6 +131,11 @@ projects[responsive_imagemaps][type] = module
 projects[responsive_imagemaps][version] = 1.1
 projects[responsive_imagemaps][subdir] = iasc_contrib
 
+; Humanitarian ID support
+projects[openid_connect][type] = module
+projects[openid_connect][version] = 1.0-beta6
+projects[openid_connect][subdir] = iasc_contrib
+
 libraries[responsive-imagemaps][download][type] = get
 libraries[responsive-imagemaps][download][url] = https://github.com/stowball/jQuery-rwdImageMaps/archive/master.zip
 
