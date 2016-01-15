@@ -287,3 +287,17 @@ function iasc_group_login_get_all_groups() {
     ->condition('n.type', OA_GROUP_TYPE);
   return $query->execute()->fetchAllAssoc('nid');
 }
+
+/**
+ * Implements hook_block_view_MODULE_DELTA_alter
+ *
+ * Allows access_code block to display on user login page
+ */
+function iasc_group_login_block_view_access_code_access_code_alter(&$data, $block) {
+  if (!$user->uid) {
+    module_load_include('inc', 'access_code', 'access_code.pages');
+    $data['subject'] = t('Access code login');
+    $data['content'] = drupal_get_form('access_code_login', FALSE);
+  }
+}
+
