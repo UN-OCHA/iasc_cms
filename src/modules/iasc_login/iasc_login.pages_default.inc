@@ -18,6 +18,18 @@ function iasc_login_default_page_manager_pages() {
   $page->path = 'user/iasc_login';
   $page->access = array(
     'logic' => 'and',
+    'plugins' = array(
+      0 => array(
+        'name' => 'role',
+        'settings' => array(
+          'rids' => array(
+            0 => 1,
+          ),
+        ),
+        'context' => 'logged-in-user',
+        'not' => FALSE,
+      ),
+    ),
   );
   $page->menu = array();
   $page->arguments = array();
