@@ -22,3 +22,27 @@ function iasc_login_menu_alter(&$items) {
   //$items['user']['page callback'] = 'hid_auth_user_page';
   $items['user/login']['access callback'] = FALSE;
 }
+
+/**
+ * Implements hook_form_FORM_ID_alter()
+ *
+ * Overrides openid connect form to add message
+ */
+function iasc_login_form_openid_connect_login_form_alter(&$form, &$form_state, $form_id) {
+  $form['hid_help'] = array(
+    '#markup' => t('The IASC is using Humanitarian ID as a way to allow you to login. To learn more about Humanitarian ID, click !url.', array('!url' => l(t('here'), "http://about.humanitarian.id")))
+  );
+  $form['openid_connect_client_generic_login'] = array(
+    '#type' => 'submit',
+    '#value' => t('Log in with Humanitarian ID'),
+    '#name' => $client['name'],
+    '#attributes' => array('class' => array('btn', 'btn-primary')),
+  );
+}
+
+function iasc_login_form_access_code_login_form_alter(&$form, &$form_state, $form_id) {
+  $form['ac_help'] = array(
+    '#markup' => t('The IASC allows you to login with a Group Access Code. If you are still using a group access code, we do encourage you to switch to Humanitarian ID, as this login method will be removed in the future.')
+  );
+}
+
