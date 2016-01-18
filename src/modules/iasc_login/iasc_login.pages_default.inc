@@ -18,7 +18,7 @@ function iasc_login_default_page_manager_pages() {
   $page->path = 'user/iasc_login';
   $page->access = array(
     'logic' => 'and',
-    'plugins' = array(
+    'plugins' => array(
       0 => array(
         'name' => 'role',
         'settings' => array(
