@@ -74,6 +74,7 @@ function iasc_login_hid_exists($mail) {
 }
 
 function iasc_login_hid_register($mail, $fname, $lname) {
+  $secret = IASC_LOGIN_AUTH_SECRET;
   $data = array(
     'client_key' => IASC_LOGIN_CLIENT_ID,
     'email' => $mail,
@@ -90,7 +91,7 @@ function iasc_login_hid_register($mail, $fname, $lname) {
       $flat .= $datum;
     }
   }
-  $data['access_key'] = hash('sha256', $flat.IASC_LOGIN_AUTH_SECRET);
+  $data['access_key'] = hash('sha256', $flat.$secret);
   $headers = array('Content-Type' => 'application/json');
   $options = array(
     'headers' => $headers,
