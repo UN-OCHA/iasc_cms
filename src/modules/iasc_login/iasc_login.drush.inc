@@ -84,7 +84,13 @@ function iasc_login_hid_register($mail, $fname, $lname) {
     'emailFlag' => 1,
     'adminEmail' => 'iasccorrespondence@un.org'
   );
-  $data['access_key'] = hash('sha256', IASC_LOGIN_CLIENT_ID.$mail.$fname.$lname.'1IASC1iasccorrespondence@un.org'.IASC_LOGIN_AUTH_SECRET);
+  $flat = '';
+  foreach ($data as $key => $datum) {
+    if ($key != 'client_key') {
+      $flat .= $datum;
+    }
+  }
+  $data['access_key'] = hash('sha256', $flat.IASC_LOGIN_AUTH_SECRET);
   $headers = array('Content-Type' => 'application/json');
   $options = array(
     'headers' => $headers,
