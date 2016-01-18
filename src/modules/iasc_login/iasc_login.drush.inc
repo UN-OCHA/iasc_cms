@@ -91,7 +91,7 @@ function iasc_login_hid_register($mail, $fname, $lname) {
       $flat .= $datum;
     }
   }
-  $data['access_key'] = hash('sha256', $flat.$secret);
+  $data['access_key'] = hash('sha256', $flat.$secret);
   $headers = array('Content-Type' => 'application/json');
   $options = array(
     'headers' => $headers,
