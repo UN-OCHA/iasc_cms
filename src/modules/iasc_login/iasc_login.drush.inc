@@ -96,7 +96,7 @@ function iasc_login_hid_register($mail, $fname, $lname) {
   $options = array(
     'headers' => $headers,
     'method' => 'POST',
-    'data' => json_encode($data);
+    'data' => json_encode($data),
   );
   drupal_http_request(IASC_LOGIN_AUTH_URL.'api/register', $options);
 }
