@@ -81,7 +81,7 @@ function iasc_login_default_page_manager_pages() {
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => 'Log In with a Personal Account',
+    'override_title_text' => 'Log In with Humanitarian ID',
     'override_title_heading' => 'h2',
   );
   $pane->cache = array();
