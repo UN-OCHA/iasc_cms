@@ -30,7 +30,7 @@ function iasc_login_menu_alter(&$items) {
  */
 function iasc_login_form_openid_connect_login_form_alter(&$form, &$form_state, $form_id) {
   $form['hid_help'] = array(
-    '#markup' => t('The IASC is using Humanitarian ID as a way to allow you to login. To learn more about Humanitarian ID, click !url.', array('!url' => l(t('here'), "http://about.humanitarian.id"))),
+    '#markup' => '<p>'.t('The IASC is using Humanitarian ID as a way to allow you to login. To learn more about Humanitarian ID, click !url.', array('!url' => l(t('here'), "http://about.humanitarian.id"))).'</p><p>'.t('Once logged in, plase !contact to see private content.', array('!contact' => l(t('contact us'), 'mailto:iasccorrespondence@un.org', array('absolute' => TRUE)))).'</p>',
     '#weight' => -1,
     '#suffix' => '<br />',
   );
