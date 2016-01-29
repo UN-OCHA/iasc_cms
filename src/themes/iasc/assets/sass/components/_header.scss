@@ -29,12 +29,14 @@ header.header {
 
 .brand {
   display: block;
-  max-width: 238px;
   @media screen and (max-width: $screen-md-min) {
     margin-bottom: $padding-large-vertical / 2;
   }
-  @media screen and (min-width: $screen-lg-min) {
-    max-width: 360px; 
+
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
   }
 }
 
