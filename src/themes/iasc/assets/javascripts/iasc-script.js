@@ -2,7 +2,7 @@
  * @file
  * Custom scripts for theme.
  */
-(function ($) {
+/*(function ($) {
   Drupal.behaviors.iasc = {
     attach: function (context, settings) {
       
@@ -43,4 +43,4 @@
 
     }
   };
-})(jQuery);
+})(jQuery);*/
