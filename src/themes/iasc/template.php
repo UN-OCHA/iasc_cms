@@ -62,9 +62,6 @@ function iasc_preprocess_html(&$vars) {
   drupal_add_css('//fonts.googleapis.com/css?family=Montserrat:400,700', 'external');
   drupal_add_css('//fonts.googleapis.com/css?family=Hind', 'external');
 
-  // Add bootstrap js
-  drupal_add_js('https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js', 'external');
-
   // Don't need the navbar for our theme.
   unset($vars['page']['page_top']['navbar']);
 
