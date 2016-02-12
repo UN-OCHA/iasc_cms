@@ -9,6 +9,9 @@ core = 7.x
 projects[oa_core][subdir] = contrib
 projects[oa_core][version] = 2.69
 
+; DO NOT DELETE ON UPDATE - Allows redirects to happen when logging in with HID
+projects[oa_core][patch][] = https://www.drupal.org/files/issues/2502013-oa_core_login_redirect-4.patch
+
 ; ************************************************
 ; ************* Open Atrium Builtin Apps *********
 
