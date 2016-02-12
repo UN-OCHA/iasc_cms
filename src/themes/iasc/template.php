@@ -173,9 +173,9 @@ function iasc_links__system_secondary_menu($vars) {
     $link['html'] = TRUE;
 
     // Add destination to login link.
-    if ('user/login' == $link['href']) {
+    if ('user/iasc_login' == $link['href']) {
       $alias = drupal_get_path_alias();
-      if ('user/login' != $alias) {
+      if ('user/iasc_login' != $alias) {
         $dest = array('destination' => $alias);
         $link['query'] = $dest;
       }
