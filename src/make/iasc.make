@@ -136,6 +136,11 @@ projects[openid_connect][type] = module
 projects[openid_connect][version] = 1.0-beta6
 projects[openid_connect][subdir] = iasc_contrib
 
+; Event registration
+projects[registration][type] = module
+projects[registration][version] = 1.6
+projects[registration][subdir] = iasc_contrib
+
 libraries[responsive-imagemaps][download][type] = get
 libraries[responsive-imagemaps][download][url] = https://github.com/stowball/jQuery-rwdImageMaps/archive/master.zip
 
