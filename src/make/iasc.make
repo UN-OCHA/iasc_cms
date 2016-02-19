@@ -138,7 +138,7 @@ projects[openid_connect][subdir] = iasc_contrib
 
 ; Event registration
 projects[registration][type] = module
-projects[registration][version] = 1.6
+projects[registration][version] = 2.0-beta1
 projects[registration][subdir] = iasc_contrib
 
 libraries[responsive-imagemaps][download][type] = get
