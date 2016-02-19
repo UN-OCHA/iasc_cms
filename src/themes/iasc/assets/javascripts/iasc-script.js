@@ -13,7 +13,7 @@
       });
 
       $('.dropdown').removeOnce('radix-dropdown');
-      $('.dropdown').once('radix-dropdown', function(){
+      $('.navbar-default .dropdown').once('radix-dropdown', function(){
         var dropdown = this;
 
         function show() {
