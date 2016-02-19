@@ -2001,16 +2001,6 @@ function iasc_configuration_default_panels_mini_alter(&$data) {
 }
 
 /**
- * Implements hook_strongarm_alter().
- */
-function iasc_configuration_strongarm_alter(&$data) {
-  if (isset($data['bootstrap_library_settings'])) {
-    $data['bootstrap_library_settings']->value['theme']['themes']['iasc'] = 'iasc'; /* WAS: '' */
-    $data['bootstrap_library_settings']->value['theme']['themes']['iasc_admin'] = 'iasc_admin'; /* WAS: '' */
-  }
-}
-
-/**
  * Implements hook_views_default_views_alter().
  */
 function iasc_configuration_views_default_views_alter(&$data) {

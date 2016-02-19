@@ -1860,10 +1860,6 @@ function iasc_configuration_features_override_default_overrides() {
   $overrides["panels_mini.oa_toolbar_panel.display|panels|footer|5"] = 'new-e8e35514-f8e5-4d1a-9767-fdd77c4339ef';
   $overrides["panels_mini.oa_toolbar_panel.display|panels|footer|6"]["DELETED"] = TRUE;
 
-  // Exported overrides for: variable
-  $overrides["variable.bootstrap_library_settings.value|theme|themes|iasc"] = 'iasc';
-  $overrides["variable.bootstrap_library_settings.value|theme|themes|iasc_admin"] = 'iasc_admin';
-
   // Exported overrides for: views_view
   $overrides["views_view.oa_admin_views_node.display|default|display_options|fields|created"] = array(
     'id' => 'created',
