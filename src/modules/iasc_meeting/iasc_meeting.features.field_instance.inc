@@ -482,7 +482,7 @@ function iasc_meeting_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_agenda_items',
-    'label' => 'Agenda Items',
+    'label' => 'Meeting Documents',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -1509,7 +1509,7 @@ function iasc_meeting_field_default_field_instances() {
   t('Add an existing or Create a new meeting note Document that should be associated with this Meeting.');
   t('Additional locations');
   t('Additional timezone');
-  t('Agenda Items');
+  t('Meeting Documents');
   t('Check if the meeting also has a Dial-in call. You can add the dial-in details in the <strong>Private Details</strong> field.');
   t('City');
   t('Contact');

@@ -222,7 +222,7 @@ function iasc_meeting_defaultconfig_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_agenda_items',
-      'label' => 'Agenda Items',
+      'label' => 'Meeting Documents',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -1416,7 +1416,7 @@ function iasc_meeting_defaultconfig_field_default_fields() {
   // Included for use with string extractors like potx.
   t('Add an existing or Create a new meeting agenda Document that should be associated with this Meeting.');
   t('Add an existing or Create a new meeting note Document that should be associated with this Meeting.');
-  t('Agenda Items');
+  t('Meeting Documents');
   t('Biography');
   t('City');
   t('Contact');
