@@ -13,6 +13,9 @@
       });
 
       $('.dropdown').removeOnce('radix-dropdown');
+      $('.dropdown').off('mouseenter.radix.dropdown');
+      $('.dropdown').off('mouseleave.radix.dropdown');
+      $('.dropdown').off('focusin.radix.dropdown');
       $('.navbar-nav .dropdown').once('radix-dropdown', function(){
         var dropdown = this;
 
