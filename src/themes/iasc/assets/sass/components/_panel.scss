@@ -31,10 +31,12 @@
   &.panel-info {
     .more-link a {
       background-color: $red;
+      color: $white;
 
       &:hover,
       &:active {
         background-color: $red;
+        color: $white;
       }
     }
   }
