@@ -2,7 +2,7 @@
  * @file
  * Custom scripts for theme.
  */
-/*(function ($) {
+(function ($) {
   Drupal.behaviors.iasc = {
     attach: function (context, settings) {
       
@@ -13,7 +13,7 @@
       });
 
       $('.dropdown').removeOnce('radix-dropdown');
-      $('.dropdown').once('radix-dropdown', function(){
+      $('navbar-nav .dropdown').once('radix-dropdown', function(){
         var dropdown = this;
 
         function show() {
@@ -43,4 +43,4 @@
 
     }
   };
-})(jQuery);*/
+})(jQuery);
