@@ -144,6 +144,3 @@ projects[registration][subdir] = iasc_contrib
 libraries[responsive-imagemaps][download][type] = get
 libraries[responsive-imagemaps][download][url] = https://github.com/stowball/jQuery-rwdImageMaps/archive/master.zip
 
-; Fix private to public issue with file_entity
-projects[file_entity][patch][2537982] = https://www.drupal.org/files/issues/2537982-fix-changing-file-scheme.patch
-
