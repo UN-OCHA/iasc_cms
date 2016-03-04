@@ -10,7 +10,7 @@
 function iasc_meeting_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_additional_city'
+  // Exported field_base: 'field_additional_city'.
   $field_bases['field_additional_city'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -31,7 +31,7 @@ function iasc_meeting_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_additional_locations'
+  // Exported field_base: 'field_additional_locations'.
   $field_bases['field_additional_locations'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -53,7 +53,7 @@ function iasc_meeting_field_default_field_bases() {
     'type' => 'field_collection',
   );
 
-  // Exported field_base: 'field_additional_timezone'
+  // Exported field_base: 'field_additional_timezone'.
   $field_bases['field_additional_timezone'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -74,7 +74,7 @@ function iasc_meeting_field_default_field_bases() {
     'type' => 'tzfield',
   );
 
-  // Exported field_base: 'field_agenda_items'
+  // Exported field_base: 'field_agenda_items'.
   $field_bases['field_agenda_items'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -96,7 +96,7 @@ function iasc_meeting_field_default_field_bases() {
     'type' => 'field_collection',
   );
 
-  // Exported field_base: 'field_ai_description'
+  // Exported field_base: 'field_ai_description'.
   $field_bases['field_ai_description'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -115,7 +115,7 @@ function iasc_meeting_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_ai_title'
+  // Exported field_base: 'field_ai_title'.
   $field_bases['field_ai_title'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -136,7 +136,7 @@ function iasc_meeting_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_city'
+  // Exported field_base: 'field_city'.
   $field_bases['field_city'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -157,7 +157,7 @@ function iasc_meeting_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_contact'
+  // Exported field_base: 'field_contact'.
   $field_bases['field_contact'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -192,7 +192,7 @@ function iasc_meeting_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_dial_in_meeting'
+  // Exported field_base: 'field_dial_in_meeting'.
   $field_bases['field_dial_in_meeting'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -217,7 +217,7 @@ function iasc_meeting_field_default_field_bases() {
     'type' => 'list_boolean',
   );
 
-  // Exported field_base: 'field_geofield_additional_city'
+  // Exported field_base: 'field_geofield_additional_city'.
   $field_bases['field_geofield_additional_city'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -267,7 +267,7 @@ function iasc_meeting_field_default_field_bases() {
     'type' => 'geofield',
   );
 
-  // Exported field_base: 'field_host'
+  // Exported field_base: 'field_host'.
   $field_bases['field_host'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -293,7 +293,7 @@ function iasc_meeting_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_info_private'
+  // Exported field_base: 'field_info_private'.
   $field_bases['field_info_private'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -312,7 +312,7 @@ function iasc_meeting_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_meeting_agendas'
+  // Exported field_base: 'field_meeting_agendas'.
   $field_bases['field_meeting_agendas'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -347,7 +347,7 @@ function iasc_meeting_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_meeting_notes'
+  // Exported field_base: 'field_meeting_notes'.
   $field_bases['field_meeting_notes'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -382,7 +382,7 @@ function iasc_meeting_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_presenter_external'
+  // Exported field_base: 'field_presenter_external'.
   $field_bases['field_presenter_external'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -403,7 +403,7 @@ function iasc_meeting_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_primary_geofield'
+  // Exported field_base: 'field_primary_geofield'.
   $field_bases['field_primary_geofield'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -453,7 +453,7 @@ function iasc_meeting_field_default_field_bases() {
     'type' => 'geofield',
   );
 
-  // Exported field_base: 'field_primary_timezone'
+  // Exported field_base: 'field_primary_timezone'.
   $field_bases['field_primary_timezone'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -474,7 +474,7 @@ function iasc_meeting_field_default_field_bases() {
     'type' => 'tzfield',
   );
 
-  // Exported field_base: 'field_referenced_docs'
+  // Exported field_base: 'field_referenced_docs'.
   $field_bases['field_referenced_docs'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -509,7 +509,26 @@ function iasc_meeting_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_room'
+  // Exported field_base: 'field_registration'.
+  $field_bases['field_registration'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_registration',
+    'indexes' => array(
+      'registration_type' => array(
+        0 => 'registration_type',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'registration',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'registration',
+  );
+
+  // Exported field_base: 'field_room'.
   $field_bases['field_room'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -530,7 +549,7 @@ function iasc_meeting_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_venue'
+  // Exported field_base: 'field_venue'.
   $field_bases['field_venue'] = array(
     'active' => 1,
     'cardinality' => 1,

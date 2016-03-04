@@ -525,6 +525,35 @@ function iasc_meeting_features_override_default_overrides() {
       'locks' => array(),
       'uuid' => '721e6db6-a312-4742-8dd2-d7d879654919',
     );
+  $overrides["panelizer_defaults.node:oa_event:default.display|content|new-79f83343-399f-460b-80e5-e76610078f19"] = (object) array(
+      'pid' => 'new-79f83343-399f-460b-80e5-e76610078f19',
+      'panel' => 'contentmain',
+      'type' => 'entity_field',
+      'subtype' => 'node:field_registration',
+      'shown' => TRUE,
+      'access' => array(),
+      'configuration' => array(
+        'label' => 'title',
+        'formatter' => 'registration_form',
+        'delta_limit' => 0,
+        'delta_offset' => 0,
+        'delta_reversed' => FALSE,
+        'formatter_settings' => array(),
+        'context' => array(),
+        'override_title' => 0,
+        'override_title_text' => '',
+        'override_title_heading' => 'h2',
+      ),
+      'cache' => array(),
+      'style' => array(
+        'settings' => NULL,
+      ),
+      'css' => array(),
+      'extras' => array(),
+      'position' => 8,
+      'locks' => array(),
+      'uuid' => '79f83343-399f-460b-80e5-e76610078f19',
+    );
   $overrides["panelizer_defaults.node:oa_event:default.display|content|new-9035b3e7-28dc-478f-a595-e89dca69718a|position"] = 1;
   $overrides["panelizer_defaults.node:oa_event:default.display|content|new-9c1552e9-6b59-4811-ac8f-8278030a8f11"] = (object) array(
       'pid' => 'new-9c1552e9-6b59-4811-ac8f-8278030a8f11',
@@ -670,6 +699,7 @@ function iasc_meeting_features_override_default_overrides() {
   $overrides["panelizer_defaults.node:oa_event:default.display|panels|contentmain|5"] = 'new-2832cb36-53a3-484e-bbf0-05b7084ea8f4';
   $overrides["panelizer_defaults.node:oa_event:default.display|panels|contentmain|6"] = 'new-29d974b8-bef0-4ff8-af8c-38b369433a5c';
   $overrides["panelizer_defaults.node:oa_event:default.display|panels|contentmain|7"] = 'new-163116e6-77f1-4774-aa82-1e437162dcca';
+  $overrides["panelizer_defaults.node:oa_event:default.display|panels|contentmain|8"] = 'new-79f83343-399f-460b-80e5-e76610078f19';
   $overrides["panelizer_defaults.node:oa_event:default.display|panels|sidebar|0"] = 'new-721e6db6-a312-4742-8dd2-d7d879654919';
   $overrides["panelizer_defaults.node:oa_event:default.display|panels|sidebar|1"] = 'new-b556a608-6c09-4e8b-99bb-f7cee89c1756';
   $overrides["panelizer_defaults.node:oa_event:default.display|panels|sidebar|2"] = 'new-677802ea-6c46-4806-9759-35191c9cf1a8';
@@ -711,6 +741,18 @@ function iasc_meeting_features_override_default_overrides() {
     ),
     'multi_type' => 'ul',
   );
+  $overrides["views_view.oa_event_detail.display|event_details|display_options|fields|field_city"] = array(
+    'id' => 'field_city',
+    'table' => 'field_data_field_city',
+    'field' => 'field_city',
+    'label' => '',
+    'alter' => array(
+      'alter_text' => TRUE,
+      'text' => '[field_city] [field_dial_in_meeting]',
+    ),
+    'element_type' => 'span',
+    'element_label_colon' => FALSE,
+  );
   $overrides["views_view.oa_event_detail.display|event_details|display_options|fields|field_dial_in_meeting"] = array(
     'id' => 'field_dial_in_meeting',
     'table' => 'field_data_field_dial_in_meeting',
@@ -725,18 +767,6 @@ function iasc_meeting_features_override_default_overrides() {
     'hide_empty' => TRUE,
     'empty_zero' => TRUE,
     'type' => 'list_key',
-  );
-  $overrides["views_view.oa_event_detail.display|event_details|display_options|fields|field_city"] = array(
-    'id' => 'field_city',
-    'table' => 'field_data_field_city',
-    'field' => 'field_city',
-    'label' => '',
-    'alter' => array(
-      'alter_text' => TRUE,
-      'text' => '[field_city] [field_dial_in_meeting]',
-    ),
-    'element_type' => 'span',
-    'element_label_colon' => FALSE,
   );
   $overrides["views_view.oa_event_detail.display|event_details|display_options|fields|field_oa_address"]["DELETED"] = TRUE;
   $overrides["views_view.oa_event_detail.display|event_details|display_options|fields|field_oa_date_1|delta_offset"]["DELETED"] = TRUE;

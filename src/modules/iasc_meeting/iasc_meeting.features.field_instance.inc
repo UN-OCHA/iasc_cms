@@ -11,7 +11,7 @@ function iasc_meeting_field_default_field_instances() {
   $field_instances = array();
 
   // Exported field_instance:
-  // 'field_collection_item-field_additional_locations-field_additional_city'
+  // 'field_collection_item-field_additional_locations-field_additional_city'.
   $field_instances['field_collection_item-field_additional_locations-field_additional_city'] = array(
     'bundle' => 'field_additional_locations',
     'default_value' => NULL,
@@ -51,7 +51,7 @@ function iasc_meeting_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'field_collection_item-field_additional_locations-field_additional_timezone'
+  // 'field_collection_item-field_additional_locations-field_additional_timezone'.
   $field_instances['field_collection_item-field_additional_locations-field_additional_timezone'] = array(
     'bundle' => 'field_additional_locations',
     'deleted' => 0,
@@ -86,7 +86,7 @@ function iasc_meeting_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'field_collection_item-field_additional_locations-field_geofield_additional_city'
+  // 'field_collection_item-field_additional_locations-field_geofield_additional_city'.
   $field_instances['field_collection_item-field_additional_locations-field_geofield_additional_city'] = array(
     'bundle' => 'field_additional_locations',
     'deleted' => 0,
@@ -132,7 +132,7 @@ function iasc_meeting_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'field_collection_item-field_agenda_items-field_ai_description'
+  // 'field_collection_item-field_agenda_items-field_ai_description'.
   $field_instances['field_collection_item-field_agenda_items-field_ai_description'] = array(
     'bundle' => 'field_agenda_items',
     'default_value' => NULL,
@@ -171,7 +171,7 @@ function iasc_meeting_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'field_collection_item-field_agenda_items-field_ai_title'
+  // 'field_collection_item-field_agenda_items-field_ai_title'.
   $field_instances['field_collection_item-field_agenda_items-field_ai_title'] = array(
     'bundle' => 'field_agenda_items',
     'default_value' => NULL,
@@ -210,7 +210,7 @@ function iasc_meeting_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'field_collection_item-field_agenda_items-field_contact'
+  // 'field_collection_item-field_agenda_items-field_contact'.
   $field_instances['field_collection_item-field_agenda_items-field_contact'] = array(
     'bundle' => 'field_agenda_items',
     'default_value' => NULL,
@@ -255,7 +255,7 @@ function iasc_meeting_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'field_collection_item-field_agenda_items-field_presenter_external'
+  // 'field_collection_item-field_agenda_items-field_presenter_external'.
   $field_instances['field_collection_item-field_agenda_items-field_presenter_external'] = array(
     'bundle' => 'field_agenda_items',
     'default_value' => NULL,
@@ -294,7 +294,7 @@ function iasc_meeting_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'field_collection_item-field_agenda_items-field_referenced_docs'
+  // 'field_collection_item-field_agenda_items-field_referenced_docs'.
   $field_instances['field_collection_item-field_agenda_items-field_referenced_docs'] = array(
     'bundle' => 'field_agenda_items',
     'default_value' => NULL,
@@ -338,7 +338,7 @@ function iasc_meeting_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-oa_event-field_additional_locations'
+  // Exported field_instance: 'node-oa_event-field_additional_locations'.
   $field_instances['node-oa_event-field_additional_locations'] = array(
     'bundle' => 'oa_event',
     'default_value' => NULL,
@@ -417,7 +417,7 @@ function iasc_meeting_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-oa_event-field_agenda_items'
+  // Exported field_instance: 'node-oa_event-field_agenda_items'.
   $field_instances['node-oa_event-field_agenda_items'] = array(
     'bundle' => 'oa_event',
     'default_value' => NULL,
@@ -496,7 +496,7 @@ function iasc_meeting_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-oa_event-field_city'
+  // Exported field_instance: 'node-oa_event-field_city'.
   $field_instances['node-oa_event-field_city'] = array(
     'bundle' => 'oa_event',
     'comment_alter' => 0,
@@ -578,7 +578,7 @@ function iasc_meeting_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-oa_event-field_contact'
+  // Exported field_instance: 'node-oa_event-field_contact'.
   $field_instances['node-oa_event-field_contact'] = array(
     'bundle' => 'oa_event',
     'comment_alter' => 0,
@@ -670,7 +670,7 @@ function iasc_meeting_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-oa_event-field_dial_in_meeting'
+  // Exported field_instance: 'node-oa_event-field_dial_in_meeting'.
   $field_instances['node-oa_event-field_dial_in_meeting'] = array(
     'bundle' => 'oa_event',
     'comment_alter' => 0,
@@ -746,7 +746,7 @@ function iasc_meeting_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-oa_event-field_host'
+  // Exported field_instance: 'node-oa_event-field_host'.
   $field_instances['node-oa_event-field_host'] = array(
     'bundle' => 'oa_event',
     'comment_alter' => 0,
@@ -825,7 +825,7 @@ function iasc_meeting_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-oa_event-field_info_private'
+  // Exported field_instance: 'node-oa_event-field_info_private'.
   $field_instances['node-oa_event-field_info_private'] = array(
     'bundle' => 'oa_event',
     'comment_alter' => 0,
@@ -906,7 +906,7 @@ function iasc_meeting_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-oa_event-field_legacy_publish'
+  // Exported field_instance: 'node-oa_event-field_legacy_publish'.
   $field_instances['node-oa_event-field_legacy_publish'] = array(
     'bundle' => 'oa_event',
     'comment_alter' => 0,
@@ -987,7 +987,7 @@ function iasc_meeting_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-oa_event-field_meeting_agendas'
+  // Exported field_instance: 'node-oa_event-field_meeting_agendas'.
   $field_instances['node-oa_event-field_meeting_agendas'] = array(
     'bundle' => 'oa_event',
     'comment_alter' => 0,
@@ -1079,7 +1079,7 @@ function iasc_meeting_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-oa_event-field_meeting_notes'
+  // Exported field_instance: 'node-oa_event-field_meeting_notes'.
   $field_instances['node-oa_event-field_meeting_notes'] = array(
     'bundle' => 'oa_event',
     'comment_alter' => 0,
@@ -1173,7 +1173,7 @@ function iasc_meeting_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-oa_event-field_primary_geofield'
+  // Exported field_instance: 'node-oa_event-field_primary_geofield'.
   $field_instances['node-oa_event-field_primary_geofield'] = array(
     'bundle' => 'oa_event',
     'comment_alter' => 0,
@@ -1264,7 +1264,7 @@ function iasc_meeting_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-oa_event-field_primary_timezone'
+  // Exported field_instance: 'node-oa_event-field_primary_timezone'.
   $field_instances['node-oa_event-field_primary_timezone'] = array(
     'bundle' => 'oa_event',
     'comment_alter' => 0,
@@ -1339,7 +1339,108 @@ function iasc_meeting_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-oa_event-field_room'
+  // Exported field_instance: 'node-oa_event-field_registration'.
+  $field_instances['node-oa_event-field_registration'] = array(
+    'bundle' => 'oa_event',
+    'comment_alter' => 0,
+    'default_value' => array(
+      0 => array(
+        'registration_type' => 'event',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'bio_full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'bio_long' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'bio_short' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => NULL,
+        'settings' => array(),
+        'type' => 'registration_default',
+        'weight' => 28,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'ical' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'link_to_document' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_registration',
+    'label' => 'Registration',
+    'required' => 0,
+    'settings' => array(
+      'default_registration_settings' => array(
+        'capacity' => 0,
+        'reminder' => array(
+          'reminder_settings' => array(
+            'reminder_date' => NULL,
+            'reminder_template' => '',
+          ),
+          'send_reminder' => 0,
+        ),
+        'scheduling' => array(
+          'close' => NULL,
+          'open' => NULL,
+        ),
+        'settings' => array(
+          'confirmation' => 'Registration has been saved.',
+          'confirmation_redirect' => '',
+          'from_address' => 'iasccorrespondence@un.org',
+          'maximum_spaces' => 1,
+          'multiple_registrations' => 0,
+        ),
+        'status' => 1,
+      ),
+      'hide_register_tab' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'registration',
+      'settings' => array(),
+      'type' => 'registration_select',
+      'weight' => 15,
+    ),
+  );
+
+  // Exported field_instance: 'node-oa_event-field_room'.
   $field_instances['node-oa_event-field_room'] = array(
     'bundle' => 'oa_event',
     'comment_alter' => 0,
@@ -1421,7 +1522,7 @@ function iasc_meeting_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-oa_event-field_venue'
+  // Exported field_instance: 'node-oa_event-field_venue'.
   $field_instances['node-oa_event-field_venue'] = array(
     'bundle' => 'oa_event',
     'comment_alter' => 0,
@@ -1503,22 +1604,102 @@ function iasc_meeting_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'registration-event-field_first_name'.
+  $field_instances['registration-event-field_first_name'] = array(
+    'bundle' => 'event',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'registration',
+    'field_name' => 'field_first_name',
+    'label' => 'First Name',
+    'required' => 1,
+    'settings' => array(
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'registration-event-field_last_name'.
+  $field_instances['registration-event-field_last_name'] = array(
+    'bundle' => 'event',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'registration',
+    'field_name' => 'field_last_name',
+    'label' => 'Last Name',
+    'required' => 1,
+    'settings' => array(
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 2,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Add an existing or Create a new meeting agenda Document that should be associated with this Meeting.');
   t('Add an existing or Create a new meeting note Document that should be associated with this Meeting.');
   t('Additional locations');
   t('Additional timezone');
-  t('Meeting Documents');
   t('Check if the meeting also has a Dial-in call. You can add the dial-in details in the <strong>Private Details</strong> field.');
   t('City');
   t('Contact');
   t('Description');
   t('Dial-in meeting?');
+  t('First Name');
   t('Geofield Additional City');
   t('Item Title');
+  t('Last Name');
   t('Legacy Publish');
   t('Meeting Agendas');
+  t('Meeting Documents');
   t('Meeting Host(s)');
   t('Meeting Notes');
   t('Please enter additional information about the meeting. <strong>Please note:</strong> This information will not be made publicly available and has privacy restrictions.');
@@ -1529,6 +1710,7 @@ function iasc_meeting_field_default_field_instances() {
   t('Primary Timezone');
   t('Primary geofield');
   t('Private Details');
+  t('Registration');
   t('Relevant Documents');
   t('Room');
   t('Venue');
