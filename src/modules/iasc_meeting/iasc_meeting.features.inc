@@ -991,3 +991,19 @@ function iasc_meeting_views_default_views_alter(&$data) {
     unset($data['oa_event_list']->display['panel_pane_1']->display_options['exposed_form_overrides']);
   }
 }
+
+/**
+ * Implements hook_default_registration_type().
+ */
+function iasc_meeting_default_registration_type() {
+  $items = array();
+  $items['event'] = entity_import('registration_type', '{
+    "name" : "event",
+    "label" : "Event",
+    "locked" : "0",
+    "default_state" : "pending",
+    "weight" : "0",
+    "data" : { "held_expire" : "0", "held_expire_state" : "canceled" }
+  }');
+  return $items;
+}
