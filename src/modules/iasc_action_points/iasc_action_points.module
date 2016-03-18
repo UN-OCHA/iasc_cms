@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Action Points feature.
+ */
+
+include_once 'iasc_action_points.features.inc';
