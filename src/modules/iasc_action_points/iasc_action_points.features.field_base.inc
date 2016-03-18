@@ -59,6 +59,7 @@ function iasc_action_points_field_default_field_bases() {
     'type' => 'text_long',
   );
 
+  // Exported field_base: 'field_ap_responsibility'.
   $field_bases['field_ap_responsibility'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -118,6 +119,27 @@ function iasc_action_points_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'list_text',
+  );
+
+  // Exported field_base: 'field_ap_topic'.
+  $field_bases['field_ap_topic'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_ap_topic',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'max_length' => 255,
+    ),
+    'translatable' => 0,
+    'type' => 'text',
   );
 
   return $field_bases;

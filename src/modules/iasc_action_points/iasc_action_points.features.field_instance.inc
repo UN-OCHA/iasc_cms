@@ -87,7 +87,7 @@ function iasc_action_points_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 31,
+      'weight' => 3,
     ),
   );
 
@@ -176,7 +176,7 @@ function iasc_action_points_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 36,
+      'weight' => 1,
     ),
   );
 
@@ -252,7 +252,7 @@ function iasc_action_points_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 38,
+      'weight' => 8,
     ),
   );
 
@@ -322,7 +322,7 @@ function iasc_action_points_field_default_field_instances() {
         'apply_chosen' => '',
       ),
       'type' => 'options_select',
-      'weight' => 41,
+      'weight' => 4,
     ),
   );
 
@@ -396,7 +396,83 @@ function iasc_action_points_field_default_field_instances() {
         'apply_chosen' => 1,
       ),
       'type' => 'options_select',
-      'weight' => 37,
+      'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance: 'node-action_point-field_ap_topic'.
+  $field_instances['node-action_point-field_ap_topic'] = array(
+    'bundle' => 'action_point',
+    'comment_alter' => 0,
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'bio_full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'bio_long' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'bio_short' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 8,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'link_to_document' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_ap_topic',
+    'label' => 'Topic/Theme',
+    'required' => 0,
+    'settings' => array(
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 2,
     ),
   );
 
@@ -479,7 +555,7 @@ function iasc_action_points_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 40,
+      'weight' => 7,
     ),
   );
 
@@ -568,7 +644,7 @@ function iasc_action_points_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 35,
+      'weight' => 5,
     ),
   );
 
@@ -581,6 +657,7 @@ function iasc_action_points_field_default_field_instances() {
   t('Progress overview');
   t('Responsibility');
   t('Status');
+  t('Topic/Theme');
 
   return $field_instances;
 }
