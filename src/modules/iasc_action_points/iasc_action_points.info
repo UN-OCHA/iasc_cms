@@ -21,6 +21,7 @@ features[ctools][] = strongarm:strongarm:1
 features[ctools][] = views:views_default:3.0
 features[features_api][] = api:2
 features[feeds_importer][] = actions_points
+features[feeds_importer][] = ap_responsibles
 features[field_base][] = field_ap_date
 features[field_base][] = field_ap_progress_overview
 features[field_base][] = field_ap_responsibility
