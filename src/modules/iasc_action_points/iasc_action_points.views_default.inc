@@ -39,25 +39,6 @@ function iasc_action_points_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  /* Field: Content: Deadline */
-  $handler->display->display_options['fields']['field_date']['id'] = 'field_date';
-  $handler->display->display_options['fields']['field_date']['table'] = 'field_data_field_date';
-  $handler->display->display_options['fields']['field_date']['field'] = 'field_date';
-  $handler->display->display_options['fields']['field_date']['label'] = 'Timeframe';
-  $handler->display->display_options['fields']['field_date']['settings'] = array(
-    'format_type' => 'panopoly_day',
-    'fromto' => 'both',
-    'multiple_number' => '',
-    'multiple_from' => '',
-    'multiple_to' => '',
-    'show_remaining_days' => 0,
-    'show_repeat_rule' => 'show',
-  );
-  /* Field: Content: Description */
-  $handler->display->display_options['fields']['body']['id'] = 'body';
-  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
-  $handler->display->display_options['fields']['body']['field'] = 'body';
-  $handler->display->display_options['fields']['body']['label'] = 'Action Point';
   /* Field: Content: Meeting date */
   $handler->display->display_options['fields']['field_ap_date']['id'] = 'field_ap_date';
   $handler->display->display_options['fields']['field_ap_date']['table'] = 'field_data_field_ap_date';
@@ -72,10 +53,15 @@ function iasc_action_points_views_default_views() {
     'show_remaining_days' => 0,
     'show_repeat_rule' => 'show',
   );
-  /* Field: Content: Progress overview */
-  $handler->display->display_options['fields']['field_ap_progress_overview']['id'] = 'field_ap_progress_overview';
-  $handler->display->display_options['fields']['field_ap_progress_overview']['table'] = 'field_data_field_ap_progress_overview';
-  $handler->display->display_options['fields']['field_ap_progress_overview']['field'] = 'field_ap_progress_overview';
+  /* Field: Content: Topic/Theme */
+  $handler->display->display_options['fields']['field_ap_topic']['id'] = 'field_ap_topic';
+  $handler->display->display_options['fields']['field_ap_topic']['table'] = 'field_data_field_ap_topic';
+  $handler->display->display_options['fields']['field_ap_topic']['field'] = 'field_ap_topic';
+  /* Field: Content: Description */
+  $handler->display->display_options['fields']['body']['id'] = 'body';
+  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
+  $handler->display->display_options['fields']['body']['field'] = 'body';
+  $handler->display->display_options['fields']['body']['label'] = 'Action Point';
   /* Field: Content: Responsibility */
   $handler->display->display_options['fields']['field_ap_responsibility']['id'] = 'field_ap_responsibility';
   $handler->display->display_options['fields']['field_ap_responsibility']['table'] = 'field_data_field_ap_responsibility';
@@ -85,14 +71,6 @@ function iasc_action_points_views_default_views() {
     'link' => 0,
   );
   $handler->display->display_options['fields']['field_ap_responsibility']['delta_offset'] = '0';
-  /* Field: Content: Status */
-  $handler->display->display_options['fields']['field_ap_status']['id'] = 'field_ap_status';
-  $handler->display->display_options['fields']['field_ap_status']['table'] = 'field_data_field_ap_status';
-  $handler->display->display_options['fields']['field_ap_status']['field'] = 'field_ap_status';
-  /* Field: Content: Topic/Theme */
-  $handler->display->display_options['fields']['field_ap_topic']['id'] = 'field_ap_topic';
-  $handler->display->display_options['fields']['field_ap_topic']['table'] = 'field_data_field_ap_topic';
-  $handler->display->display_options['fields']['field_ap_topic']['field'] = 'field_ap_topic';
   /* Field: Field: Contact */
   $handler->display->display_options['fields']['field_contact']['id'] = 'field_contact';
   $handler->display->display_options['fields']['field_contact']['table'] = 'field_data_field_contact';
@@ -103,6 +81,28 @@ function iasc_action_points_views_default_views() {
     'link' => 0,
   );
   $handler->display->display_options['fields']['field_contact']['delta_offset'] = '0';
+  /* Field: Content: Date */
+  $handler->display->display_options['fields']['field_date']['id'] = 'field_date';
+  $handler->display->display_options['fields']['field_date']['table'] = 'field_data_field_date';
+  $handler->display->display_options['fields']['field_date']['field'] = 'field_date';
+  $handler->display->display_options['fields']['field_date']['label'] = 'Timeframe';
+  $handler->display->display_options['fields']['field_date']['settings'] = array(
+    'format_type' => 'panopoly_day',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'show_remaining_days' => 0,
+    'show_repeat_rule' => 'show',
+  );
+  /* Field: Content: Status */
+  $handler->display->display_options['fields']['field_ap_status']['id'] = 'field_ap_status';
+  $handler->display->display_options['fields']['field_ap_status']['table'] = 'field_data_field_ap_status';
+  $handler->display->display_options['fields']['field_ap_status']['field'] = 'field_ap_status';
+  /* Field: Content: Progress overview */
+  $handler->display->display_options['fields']['field_ap_progress_overview']['id'] = 'field_ap_progress_overview';
+  $handler->display->display_options['fields']['field_ap_progress_overview']['table'] = 'field_data_field_ap_progress_overview';
+  $handler->display->display_options['fields']['field_ap_progress_overview']['field'] = 'field_ap_progress_overview';
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -141,6 +141,26 @@ function iasc_action_points_views_default_views() {
     11 => 0,
     16 => 0,
   );
+  /* Filter criterion: Content: Meeting date -  start date (field_ap_date) */
+  $handler->display->display_options['filters']['field_ap_date_value']['id'] = 'field_ap_date_value';
+  $handler->display->display_options['filters']['field_ap_date_value']['table'] = 'field_data_field_ap_date';
+  $handler->display->display_options['filters']['field_ap_date_value']['field'] = 'field_ap_date_value';
+  $handler->display->display_options['filters']['field_ap_date_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_ap_date_value']['expose']['operator_id'] = 'field_ap_date_value_op';
+  $handler->display->display_options['filters']['field_ap_date_value']['expose']['label'] = 'Date';
+  $handler->display->display_options['filters']['field_ap_date_value']['expose']['operator'] = 'field_ap_date_value_op';
+  $handler->display->display_options['filters']['field_ap_date_value']['expose']['identifier'] = 'field_ap_date_value';
+  $handler->display->display_options['filters']['field_ap_date_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    5 => 0,
+    6 => 0,
+    11 => 0,
+    16 => 0,
+  );
+  $handler->display->display_options['filters']['field_ap_date_value']['form_type'] = 'date_popup';
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
