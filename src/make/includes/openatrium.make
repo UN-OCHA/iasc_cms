@@ -146,7 +146,7 @@ projects[oa_theme][type] = theme
 projects[oa_theme][version] = 2.1
 
 projects[oa_radix][type] = theme
-projects[oa_radix][version] = 3.25
+projects[oa_radix][version] = 3.24
 
 ; *********** End Open Atrium Themes *************
 ; ************************************************
