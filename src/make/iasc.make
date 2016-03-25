@@ -12,11 +12,6 @@ includes[core] = includes/drupal-org-core.make
 includes[openatrium] = includes/openatrium.make
 
 ; =====================================
-; PANOPOLY
-; =====================================
-includes[panopoly] = includes/panopoly.make
-
-; =====================================
 ; PERFORMANCE MODULES
 ; =====================================
 projects[memcache][type] = module
