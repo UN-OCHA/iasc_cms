@@ -57,7 +57,7 @@ function iasc_action_points_views_default_views() {
   $handler->display->display_options['fields']['field_ap_topic']['id'] = 'field_ap_topic';
   $handler->display->display_options['fields']['field_ap_topic']['table'] = 'field_data_field_ap_topic';
   $handler->display->display_options['fields']['field_ap_topic']['field'] = 'field_ap_topic';
-  /* Field: Content: Description */
+  /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
