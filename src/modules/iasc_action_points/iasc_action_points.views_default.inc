@@ -81,7 +81,7 @@ function iasc_action_points_views_default_views() {
     'link' => 0,
   );
   $handler->display->display_options['fields']['field_contact']['delta_offset'] = '0';
-  /* Field: Content: Date */
+  /* Field: Content: Deadline */
   $handler->display->display_options['fields']['field_date']['id'] = 'field_date';
   $handler->display->display_options['fields']['field_date']['table'] = 'field_data_field_date';
   $handler->display->display_options['fields']['field_date']['field'] = 'field_date';
