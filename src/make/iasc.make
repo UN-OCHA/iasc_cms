@@ -136,6 +136,11 @@ projects[registration][type] = module
 projects[registration][version] = 2.0-beta1
 projects[registration][subdir] = iasc_contrib
 
+; Action points matrix
+projects[nodeaccess][type] = module
+projects[nodeaccess][version] = 1.4
+projects[nodeaccess][subdir] = iasc_contrib
+
 libraries[responsive-imagemaps][download][type] = get
 libraries[responsive-imagemaps][download][url] = https://github.com/stowball/jQuery-rwdImageMaps/archive/master.zip
 
