@@ -78,27 +78,6 @@ function iasc_group_login_ctools_plugin_directory($owner, $plugin_type) {
 }
 
 /**
- * Implements hook_form_FORM_ID_alter().
- *
- * Alter the Login form to include information about the access code.
- */
-function iasc_group_login_form_user_login_alter(&$form, $form_state) {
-  $items[] = l(t('Use access code'), 'user/ac', array('attributes' => array('title' => t('Log in using an access code.')), 'query' => drupal_get_destination()));
-  $form['access_code_link'] = array('#markup' => theme('item_list', array('items' => $items)));
-}
-
-/**
- * Implements hook_form_FORM_ID_alter().
- *
- * Alter the Forgot Password form to include information about the access code.
- */
-function iasc_group_login_form_user_pass_alter(&$form, $form_state) {
-  $items[] = l(t('Use access code'), 'user/ac', array('attributes' => array('title' => t('Log in using an access code.')), 'query' => drupal_get_destination()));
-  $items[] = t('If you do not have an access code, you will have to contact the site administrator.');
-  $form['access_code_link'] = array('#markup' => theme('item_list', array('items' => $items)));
-}
-
-/**
  * Form builder; the user registration form from a group login.
  *
  * @ingroup forms
@@ -286,18 +265,5 @@ function iasc_group_login_get_all_groups() {
   $query->fields('n', array('nid', 'title'))
     ->condition('n.type', OA_GROUP_TYPE);
   return $query->execute()->fetchAllAssoc('nid');
-}
-
-/**
- * Implements hook_block_view_MODULE_DELTA_alter
- *
- * Allows access_code block to display on user login page
- */
-function iasc_group_login_block_view_access_code_access_code_alter(&$data, $block) {
-  if (!$user->uid) {
-    module_load_include('inc', 'access_code', 'access_code.pages');
-    $data['subject'] = t('Access code login');
-    $data['content'] = drupal_get_form('access_code_login', FALSE);
-  }
 }
 

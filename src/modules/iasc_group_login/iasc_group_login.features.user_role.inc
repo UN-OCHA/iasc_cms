@@ -10,12 +10,6 @@
 function iasc_group_login_user_default_roles() {
   $roles = array();
 
-  // Exported role: group login.
-  $roles['group login'] = array(
-    'name' => 'group login',
-    'weight' => 4,
-  );
-
   // Exported role: viewer.
   $roles['viewer'] = array(
     'name' => 'viewer',

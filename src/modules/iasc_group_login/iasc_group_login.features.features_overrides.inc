@@ -507,7 +507,6 @@ function iasc_group_login_features_override_default_overrides() {
   $overrides["user_permission.use text format panopoly_html_text.roles|editor"]["DELETED"] = TRUE;
   $overrides["user_permission.view private files.roles|authenticated user"] = 'authenticated user';
   $overrides["user_permission.view private files.roles|editor"] = 'editor';
-  $overrides["user_permission.view private files.roles|group login"] = 'group login';
   $overrides["user_permission.view private files.roles|viewer"] = 'viewer';
 
  return $overrides;

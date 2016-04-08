@@ -19,15 +19,6 @@ function iasc_group_login_user_default_permissions() {
     'module' => 'user',
   );
 
-  // Exported permission: 'change own access code'.
-  $permissions['change own access code'] = array(
-    'name' => 'change own access code',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'access_code',
-  );
-
   // Exported permission: 'change own username'.
   $permissions['change own username'] = array(
     'name' => 'change own username',
