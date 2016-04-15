@@ -812,7 +812,7 @@ function iasc_meeting_views_default_views_alter(&$data) {
       'label' => '',
       'alter' => array(
         'alter_text' => TRUE,
-        'text' => '[field_city] [field_dial_in_meeting]',
+        'text' => '[field_city]',
       ),
       'element_type' => 'span',
       'element_label_colon' => FALSE,
@@ -957,7 +957,7 @@ function iasc_meeting_views_default_views_alter(&$data) {
         'label' => '',
         'alter' => array(
           'alter_text' => TRUE,
-          'text' => '[field_city] [field_dial_in_meeting]',
+          'text' => '[field_city]',
         ),
         'element_label_colon' => FALSE,
       ),
