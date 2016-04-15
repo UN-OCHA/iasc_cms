@@ -46,7 +46,7 @@ function iasc_action_points_feeds_tamper_default() {
   $feeds_tamper->api_version = 2;
   $feeds_tamper->id = 'actions_points-rpa-rpa_explode';
   $feeds_tamper->importer = 'actions_points';
-  $feeds_tamper->source = 'RPA';
+  $feeds_tamper->source = 'Lead';
   $feeds_tamper->plugin_id = 'explode';
   $feeds_tamper->settings = array(
     'separator' => ',',
@@ -62,7 +62,7 @@ function iasc_action_points_feeds_tamper_default() {
   $feeds_tamper->api_version = 2;
   $feeds_tamper->id = 'actions_points-rpa-rpa_trim';
   $feeds_tamper->importer = 'actions_points';
-  $feeds_tamper->source = 'RPA';
+  $feeds_tamper->source = 'Lead';
   $feeds_tamper->plugin_id = 'trim';
   $feeds_tamper->settings = array(
     'mask' => '',
