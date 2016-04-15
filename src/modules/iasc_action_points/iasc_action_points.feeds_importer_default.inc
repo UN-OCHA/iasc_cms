@@ -69,7 +69,7 @@ function iasc_action_points_feeds_importer_default() {
             'unique' => FALSE,
           ),
           5 => array(
-            'source' => 'RPA',
+            'source' => 'Lead',
             'target' => 'field_ap_responsibility:label',
             'unique' => FALSE,
           ),

@@ -311,7 +311,7 @@ function iasc_action_points_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_ap_responsibility',
-    'label' => 'Responsibility',
+    'label' => 'Lead',
     'required' => FALSE,
     'settings' => array(
       'user_register_form' => FALSE,
