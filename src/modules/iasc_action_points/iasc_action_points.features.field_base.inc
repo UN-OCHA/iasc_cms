@@ -112,7 +112,7 @@ function iasc_action_points_field_default_field_bases() {
       'allowed_values' => array(
         'Outstanding' => 'Outstanding',
         'In Progress' => 'In Progress',
-        'Continuing' => 'Continuing',
+        'Open ended' => 'Open ended',
         'Completed' => 'Completed',
       ),
       'allowed_values_function' => '',
