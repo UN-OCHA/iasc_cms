@@ -280,22 +280,16 @@ function iasc_meeting_preprocess_views_view_fields(&$vars) {
     $row = $vars['row'];
     // Primary datetime is set in UTC.
     $sdate = new DateTime('@' . $row->field_field_oa_date[0]['raw']['value']);
-    $stext = $sdate->format('Y-m-d G:i');
-
     $edate = new DateTime('@' . $row->field_field_oa_date[0]['raw']['value2']);
-    $etext = $edate->format('Y-m-d G:i');
 
     $other_dates = array();
+    $primary_sdate = clone $sdate;
+    $primary_edate = clone $edate;
 
     if (isset($row->field_field_primary_timezone[0]['raw']['value'])) {
       // Get the primary timezone.
-      $primary_sdate = new DateTime($stext, new DateTimeZone($row->field_field_primary_timezone[0]['raw']['value']));
-      $primary_edate = new DateTime($etext, new DateTimeZone($row->field_field_primary_timezone[0]['raw']['value']));
-    }
-    else {
-      // Set the default timezone to UTC.
-      $primary_sdate = new DateTime($stext, new DateTimeZone('UTC'));
-      $primary_edate = new DateTime($etext, new DateTimeZone('UTC'));
+      $primary_sdate->setTimezone(new DateTimeZone($row->field_field_primary_timezone[0]['raw']['value']));
+      $primary_edate->setTimezone(new DateTimeZone($row->field_field_primary_timezone[0]['raw']['value']));
     }
 
     foreach ($row->field_field_additional_locations as $collection) {
