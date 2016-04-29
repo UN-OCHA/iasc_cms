@@ -62,6 +62,7 @@ features[variable][] = comment_form_location_action_point
 features[variable][] = comment_preview_action_point
 features[variable][] = comment_subject_field_action_point
 features[variable][] = date_format_european
+features[variable][] = date_format_iasc_ap_day
 features[variable][] = field_bundle_settings_node__action_point
 features[variable][] = menu_options_action_point
 features[variable][] = menu_parent_action_point

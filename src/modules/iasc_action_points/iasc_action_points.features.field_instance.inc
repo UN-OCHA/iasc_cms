@@ -657,7 +657,7 @@ function iasc_action_points_field_default_field_instances() {
   t('Meeting date');
   t('Progress overview');
   t('Status');
-  t('Topic/Theme');
+  t('Topic/Theme/Country');
 
   return $field_instances;
 }
