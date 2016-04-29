@@ -148,6 +148,7 @@ projects[feeds_tamper][subdir] = iasc_contrib
 projects[expanding_formatter][type] = module
 projects[expanding_formatter][version] = 1.0
 projects[expanding_formatter][subdir] = iasc_contrib
+projects[expanding_formatter][patch][2502947] = https://www.drupal.org/files/issues/css_and_js_not_being-2502947-10.patch
 
 libraries[responsive-imagemaps][download][type] = get
 libraries[responsive-imagemaps][download][url] = https://github.com/stowball/jQuery-rwdImageMaps/archive/master.zip
