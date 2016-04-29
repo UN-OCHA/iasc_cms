@@ -4,6 +4,7 @@ package = IASC
 dependencies[] = ctools
 dependencies[] = date
 dependencies[] = entityreference
+dependencies[] = expanding_formatter
 dependencies[] = features
 dependencies[] = feeds
 dependencies[] = feeds_tamper
