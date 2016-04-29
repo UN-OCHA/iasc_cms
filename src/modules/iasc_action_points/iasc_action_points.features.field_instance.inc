@@ -454,7 +454,7 @@ function iasc_action_points_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_ap_topic',
-    'label' => 'Topic/Theme',
+    'label' => 'Topic/Theme/Country',
     'required' => 0,
     'settings' => array(
       'linkit' => array(
