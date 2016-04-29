@@ -653,9 +653,9 @@ function iasc_action_points_field_default_field_instances() {
   t('Action Point');
   t('Deadline');
   t('Focal Point');
+  t('Lead');
   t('Meeting date');
   t('Progress overview');
-  t('Responsibility');
   t('Status');
   t('Topic/Theme');
 
