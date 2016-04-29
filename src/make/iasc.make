@@ -145,6 +145,10 @@ projects[feeds_tamper][type] = module
 projects[feeds_tamper][version] = 1.1
 projects[feeds_tamper][subdir] = iasc_contrib
 
+projects[expanding_formatter][type] = module
+projects[expanding_formatter][version] = 1.0
+projects[expanding_formatter][subdir] = iasc_contrib
+
 libraries[responsive-imagemaps][download][type] = get
 libraries[responsive-imagemaps][download][url] = https://github.com/stowball/jQuery-rwdImageMaps/archive/master.zip
 
