@@ -345,11 +345,83 @@ function iasc_action_points_views_default_views() {
   $handler->display->display_options['filters']['field_ap_topic_value']['expose']['autocomplete_raw_suggestion'] = 1;
   $handler->display->display_options['filters']['field_ap_topic_value']['expose']['autocomplete_raw_dropdown'] = 1;
   $handler->display->display_options['filters']['field_ap_topic_value']['expose']['autocomplete_dependent'] = 0;
+  /* Filter criterion: Content: Lead (field_ap_responsibility:target_id) (reference filter) */
+  $handler->display->display_options['filters']['field_ap_responsibility_target_id_entityreference_filter']['id'] = 'field_ap_responsibility_target_id_entityreference_filter';
+  $handler->display->display_options['filters']['field_ap_responsibility_target_id_entityreference_filter']['table'] = 'field_data_field_ap_responsibility';
+  $handler->display->display_options['filters']['field_ap_responsibility_target_id_entityreference_filter']['field'] = 'field_ap_responsibility_target_id_entityreference_filter';
+  $handler->display->display_options['filters']['field_ap_responsibility_target_id_entityreference_filter']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_ap_responsibility_target_id_entityreference_filter']['expose']['operator_id'] = 'field_ap_responsibility_target_id_entityreference_filter_op';
+  $handler->display->display_options['filters']['field_ap_responsibility_target_id_entityreference_filter']['expose']['label'] = 'Lead';
+  $handler->display->display_options['filters']['field_ap_responsibility_target_id_entityreference_filter']['expose']['operator'] = 'field_ap_responsibility_target_id_entityreference_filter_op';
+  $handler->display->display_options['filters']['field_ap_responsibility_target_id_entityreference_filter']['expose']['identifier'] = 'field_ap_responsibility_target_id_entityreference_filter';
+  $handler->display->display_options['filters']['field_ap_responsibility_target_id_entityreference_filter']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    5 => 0,
+    6 => 0,
+    11 => 0,
+    16 => 0,
+  );
+  $handler->display->display_options['filters']['field_ap_responsibility_target_id_entityreference_filter']['reference_display'] = 'iasc_ap_leads:entityreference_1';
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['path'] = 'iasc/action-points';
   $export['iasc_action_points'] = $view;
+
+  $view = new view();
+  $view->name = 'iasc_ap_leads';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'taxonomy_term_data';
+  $view->human_name = 'IASC Action Points Leads';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: Taxonomy term: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['name']['link_to_taxonomy'] = TRUE;
+  /* Filter criterion: Taxonomy vocabulary: Machine name */
+  $handler->display->display_options['filters']['machine_name']['id'] = 'machine_name';
+  $handler->display->display_options['filters']['machine_name']['table'] = 'taxonomy_vocabulary';
+  $handler->display->display_options['filters']['machine_name']['field'] = 'machine_name';
+  $handler->display->display_options['filters']['machine_name']['value'] = array(
+    'ap_responsibility' => 'ap_responsibility',
+  );
+
+  /* Display: Entity Reference */
+  $handler = $view->new_display('entityreference', 'Entity Reference', 'entityreference_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'entityreference_style';
+  $handler->display->display_options['style_options']['search_fields'] = array(
+    'name' => 'name',
+  );
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'entityreference_fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $export['iasc_ap_leads'] = $view;
 
   return $export;
 }
