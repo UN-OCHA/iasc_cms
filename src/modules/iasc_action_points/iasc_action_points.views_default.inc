@@ -148,7 +148,7 @@ function iasc_action_points_views_default_views() {
   $handler->display->display_options['fields']['field_ap_topic']['field'] = 'field_ap_topic';
   $handler->display->display_options['fields']['field_ap_topic']['element_class'] = 'col-md-1';
   $handler->display->display_options['fields']['field_ap_topic']['element_default_classes'] = FALSE;
-  /* Field: Content: Description */
+  /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
@@ -159,17 +159,14 @@ function iasc_action_points_views_default_views() {
   $handler->display->display_options['fields']['body']['alter']['more_link_path'] = '[path]';
   $handler->display->display_options['fields']['body']['element_class'] = 'col-md-2';
   $handler->display->display_options['fields']['body']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['body']['type'] = 'expanding_formatter_text_trimmed';
+  $handler->display->display_options['fields']['body']['type'] = 'jquery_expander';
   $handler->display->display_options['fields']['body']['settings'] = array(
-    'trim_length' => '150',
-    'trim_ellipsis' => 1,
-    'effect' => 'slide',
-    'css3' => 1,
-    'trigger_expanded_label' => 'More',
-    'trigger_collapsed_label' => 'Less',
-    'trigger_classes' => 'button',
-    'inline' => 1,
-    'js_duration' => '500',
+    'expandText' => 'More',
+    'expandPrefix' => '...',
+    'slicePoint' => '150',
+    'collapseTimer' => '',
+    'userCollapseText' => 'Less',
+    'userCollapsePrefix' => '',
   );
   /* Field: Content: Lead */
   $handler->display->display_options['fields']['field_ap_responsibility']['id'] = 'field_ap_responsibility';
@@ -194,7 +191,7 @@ function iasc_action_points_views_default_views() {
     'link' => 0,
   );
   $handler->display->display_options['fields']['field_contact']['delta_offset'] = '0';
-  /* Field: Content: Date */
+  /* Field: Content: Deadline */
   $handler->display->display_options['fields']['field_date']['id'] = 'field_date';
   $handler->display->display_options['fields']['field_date']['table'] = 'field_data_field_date';
   $handler->display->display_options['fields']['field_date']['field'] = 'field_date';
@@ -226,17 +223,14 @@ function iasc_action_points_views_default_views() {
   $handler->display->display_options['fields']['field_ap_progress_overview']['alter']['more_link_path'] = '[path]';
   $handler->display->display_options['fields']['field_ap_progress_overview']['element_class'] = 'col-md-2';
   $handler->display->display_options['fields']['field_ap_progress_overview']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_ap_progress_overview']['type'] = 'expanding_formatter_text_trimmed';
+  $handler->display->display_options['fields']['field_ap_progress_overview']['type'] = 'jquery_expander';
   $handler->display->display_options['fields']['field_ap_progress_overview']['settings'] = array(
-    'trim_length' => '150',
-    'trim_ellipsis' => 1,
-    'effect' => 'slide',
-    'css3' => 1,
-    'trigger_expanded_label' => 'More',
-    'trigger_collapsed_label' => 'Less',
-    'trigger_classes' => 'button',
-    'inline' => 1,
-    'js_duration' => '500',
+    'expandText' => 'More',
+    'expandPrefix' => '...',
+    'slicePoint' => '150',
+    'collapseTimer' => '',
+    'userCollapseText' => 'Less',
+    'userCollapsePrefix' => '',
   );
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';

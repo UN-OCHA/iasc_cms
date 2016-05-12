@@ -11,6 +11,7 @@ dependencies[] = feeds
 dependencies[] = feeds_tamper
 dependencies[] = iahe_recommendations
 dependencies[] = iasc_meeting
+dependencies[] = iasc_action_points
 dependencies[] = list
 dependencies[] = node
 dependencies[] = nodeaccess
