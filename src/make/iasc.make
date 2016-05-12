@@ -154,6 +154,12 @@ projects[entityreference_filter][type] = module
 projects[entityreference_filter][version] = 1.5
 projects[entityreference_filter][subdir] = iasc_contrib
 
+projects[jquery_expander][type] = module
+projects[jquery_expander][version] = 1.0
+projects[jquery_expander][subdir] = iasc_contrib
+
 libraries[responsive-imagemaps][download][type] = get
 libraries[responsive-imagemaps][download][url] = https://github.com/stowball/jQuery-rwdImageMaps/archive/master.zip
 
+libraries[jquery.expander][download][type] = get
+libraries[jquery.expander][download][url] = https://github.com/kswedberg/jquery-expander/archive/master.zip
