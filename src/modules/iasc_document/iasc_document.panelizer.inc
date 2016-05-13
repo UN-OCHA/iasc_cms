@@ -185,12 +185,18 @@ function iasc_document_panelizer_defaults() {
   $pane->access = array();
   $pane->configuration = array(
     'label' => 'hidden',
-    'formatter' => 'text_summary_or_trimmed',
+    'formatter' => 'jquery_expander',
     'delta_limit' => 0,
     'delta_offset' => '0',
     'delta_reversed' => FALSE,
     'formatter_settings' => array(
       'trim_length' => '600',
+      'expandText' => 'More',
+      'expandPrefix' => '...',
+      'collapseTimer' => '',
+      'slicePoint' => '150',
+      'userCollapseText' => 'Less',
+      'userCollapsePrefix' => '',
     ),
     'context' => array(),
     'override_title' => 0,

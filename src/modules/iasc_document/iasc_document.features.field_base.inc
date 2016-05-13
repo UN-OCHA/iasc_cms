@@ -10,7 +10,7 @@
 function iasc_document_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_category'
+  // Exported field_base: 'field_category'.
   $field_bases['field_category'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -36,7 +36,7 @@ function iasc_document_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_document_no'
+  // Exported field_base: 'field_document_no'.
   $field_bases['field_document_no'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -57,7 +57,7 @@ function iasc_document_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_document_type'
+  // Exported field_base: 'field_document_type'.
   $field_bases['field_document_type'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -83,7 +83,7 @@ function iasc_document_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_product_thumbnail'
+  // Exported field_base: 'field_product_thumbnail'.
   $field_bases['field_product_thumbnail'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -105,7 +105,7 @@ function iasc_document_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_published_date'
+  // Exported field_base: 'field_published_date'.
   $field_bases['field_published_date'] = array(
     'active' => 1,
     'cardinality' => 1,

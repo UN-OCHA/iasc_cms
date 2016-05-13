@@ -92,6 +92,7 @@ function iasc_document_field_default_field_instances_alter(&$data) {
     ); /* WAS: '' */
     $data['node-oa_wiki_page-field_oa_media']['display']['teaser']['weight'] = 11; /* WAS: 4 */
     $data['node-oa_wiki_page-field_oa_media']['label'] = 'File(s)'; /* WAS: 'Attachments' */
+    $data['node-oa_wiki_page-field_oa_media']['settings']['file_extensions'] = 'jpg jpeg gif png txt doc docx xls xlsx pdf ppt pptx pps ppsx odt ods odp mp3 mov mp4 m4a m4v mpeg avi ogg oga ogv weba webp webm zip tgz gz key dotx'; /* WAS: '' */
     $data['node-oa_wiki_page-field_oa_media']['widget']['settings']['browser_plugins']['youtube'] = 0; /* WAS: '' */
     $data['node-oa_wiki_page-field_oa_media']['widget']['settings']['manualcrop_crop_info'] = 1; /* WAS: TRUE */
     $data['node-oa_wiki_page-field_oa_media']['widget']['settings']['manualcrop_default_crop_area'] = 1; /* WAS: TRUE */
@@ -328,7 +329,8 @@ function iasc_document_panelizer_defaults_override_alter(&$data) {
     $data['node:oa_wiki_page:default']->display->content['new-61664bae-1939-49e7-a25e-f958bf7a99f6']->configuration['formatter_settings']['text'] = '[file:name]'; /* WAS: '' */
     $data['node:oa_wiki_page:default']->display->content['new-61664bae-1939-49e7-a25e-f958bf7a99f6']->configuration['label'] = 'above'; /* WAS: 'title' */
     $data['node:oa_wiki_page:default']->display->content['new-61664bae-1939-49e7-a25e-f958bf7a99f6']->panel = 'contentmain'; /* WAS: 'sidebar' */
-    $data['node:oa_wiki_page:default']->display->content['new-61664bae-1939-49e7-a25e-f958bf7a99f6']->position = 3; /* WAS: 2 */
+    $data['node:oa_wiki_page:default']->display->content['new-61664bae-1939-49e7-a25e-f958bf7a99f6']->position = 4; /* WAS: 2 */
+    $data['node:oa_wiki_page:default']->display->content['new-75a6ef87-6704-432f-90cf-62f15ce2ec6c']->position = 1; /* WAS: 0 */
     $data['node:oa_wiki_page:default']->display->content['new-7680596e-9c34-431d-9d73-701c4d44c350'] = (object) array(
           'pid' => 'new-7680596e-9c34-431d-9d73-701c4d44c350',
           'panel' => 'sidebar',
@@ -360,7 +362,16 @@ function iasc_document_panelizer_defaults_override_alter(&$data) {
           'locks' => array(),
           'uuid' => '7680596e-9c34-431d-9d73-701c4d44c350',
         ); /* WAS: '' */
-    $data['node:oa_wiki_page:default']->display->content['new-7746f122-1e4b-445f-8cf4-d15ef627d71f']->position = 2; /* WAS: 0 */
+    $data['node:oa_wiki_page:default']->display->content['new-7746f122-1e4b-445f-8cf4-d15ef627d71f']->configuration['formatter_settings']['collapseTimer'] = ''; /* WAS: '' */
+    $data['node:oa_wiki_page:default']->display->content['new-7746f122-1e4b-445f-8cf4-d15ef627d71f']->configuration['formatter_settings']['expandPrefix'] = '...'; /* WAS: '' */
+    $data['node:oa_wiki_page:default']->display->content['new-7746f122-1e4b-445f-8cf4-d15ef627d71f']->configuration['formatter_settings']['expandText'] = 'More'; /* WAS: '' */
+    $data['node:oa_wiki_page:default']->display->content['new-7746f122-1e4b-445f-8cf4-d15ef627d71f']->configuration['formatter_settings']['slicePoint'] = 50; /* WAS: '' */
+    $data['node:oa_wiki_page:default']->display->content['new-7746f122-1e4b-445f-8cf4-d15ef627d71f']->configuration['formatter_settings']['userCollapsePrefix'] = ''; /* WAS: '' */
+    $data['node:oa_wiki_page:default']->display->content['new-7746f122-1e4b-445f-8cf4-d15ef627d71f']->configuration['formatter_settings']['userCollapseText'] = 'Less'; /* WAS: '' */
+    $data['node:oa_wiki_page:default']->display->content['new-7746f122-1e4b-445f-8cf4-d15ef627d71f']->configuration['override_title'] = 0; /* WAS: '' */
+    $data['node:oa_wiki_page:default']->display->content['new-7746f122-1e4b-445f-8cf4-d15ef627d71f']->configuration['override_title_heading'] = 'h2'; /* WAS: '' */
+    $data['node:oa_wiki_page:default']->display->content['new-7746f122-1e4b-445f-8cf4-d15ef627d71f']->configuration['override_title_text'] = ''; /* WAS: '' */
+    $data['node:oa_wiki_page:default']->display->content['new-7746f122-1e4b-445f-8cf4-d15ef627d71f']->position = 3; /* WAS: 1 */
     $data['node:oa_wiki_page:default']->display->content['new-7ddbd76b-3d46-436a-b91b-5078220845a8']->configuration['override_title'] = 1; /* WAS: 0 */
     $data['node:oa_wiki_page:default']->display->content['new-7ddbd76b-3d46-436a-b91b-5078220845a8']->configuration['override_title_text'] = 'Security Level'; /* WAS: '' */
     $data['node:oa_wiki_page:default']->display->content['new-7ddbd76b-3d46-436a-b91b-5078220845a8']->position = 2; /* WAS: 0 */
@@ -431,22 +442,25 @@ function iasc_document_panelizer_defaults_override_alter(&$data) {
           ),
           'css' => array(),
           'extras' => array(),
-          'position' => 1,
+          'position' => 2,
           'locks' => array(),
           'uuid' => 'ef8dc734-ed19-4641-be3f-38031e611432',
         ); /* WAS: '' */
-    $data['node:oa_wiki_page:default']->display->panels['contentmain'][1] = 'new-61664bae-1939-49e7-a25e-f958bf7a99f6'; /* WAS: 'new-32c308fc-ae57-43df-a4fa-8667a747ea6f' */
-    $data['node:oa_wiki_page:default']->display->panels['contentmain'][2] = 'new-436ee688-6d0a-4114-addd-12f3bd8d8131'; /* WAS: 'new-a811ab4b-b391-4bac-aee2-f0b6bdb5a65d' */
-    $data['node:oa_wiki_page:default']->display->panels['contentmain'][3] = 'new-ef8dc734-ed19-4641-be3f-38031e611432'; /* WAS: 'new-fd50a4cf-8298-4584-8504-b21e0e215e78' */
-    $data['node:oa_wiki_page:default']->display->panels['sidebar'][1] = 'new-7680596e-9c34-431d-9d73-701c4d44c350'; /* WAS: 'new-05a2ca63-14bd-45a1-bab5-147952670034' */
-    $data['node:oa_wiki_page:default']->display->panels['sidebar'][2] = 'new-eac5d508-0b43-4e80-ac21-cb302bdcb050'; /* WAS: 'new-61664bae-1939-49e7-a25e-f958bf7a99f6' */
+    $data['node:oa_wiki_page:default']->display->panels['contentmain'][0] = 'new-436ee688-6d0a-4114-addd-12f3bd8d8131'; /* WAS: 'new-75a6ef87-6704-432f-90cf-62f15ce2ec6c' */
+    $data['node:oa_wiki_page:default']->display->panels['contentmain'][1] = 'new-75a6ef87-6704-432f-90cf-62f15ce2ec6c'; /* WAS: 'new-7746f122-1e4b-445f-8cf4-d15ef627d71f' */
+    $data['node:oa_wiki_page:default']->display->panels['contentmain'][2] = 'new-ef8dc734-ed19-4641-be3f-38031e611432'; /* WAS: 'new-32c308fc-ae57-43df-a4fa-8667a747ea6f' */
+    $data['node:oa_wiki_page:default']->display->panels['contentmain'][3] = 'new-7746f122-1e4b-445f-8cf4-d15ef627d71f'; /* WAS: 'new-a811ab4b-b391-4bac-aee2-f0b6bdb5a65d' */
+    $data['node:oa_wiki_page:default']->display->panels['contentmain'][4] = 'new-61664bae-1939-49e7-a25e-f958bf7a99f6'; /* WAS: 'new-fd50a4cf-8298-4584-8504-b21e0e215e78' */
+    $data['node:oa_wiki_page:default']->display->panels['sidebar'][0] = 'new-7680596e-9c34-431d-9d73-701c4d44c350'; /* WAS: 'new-7ddbd76b-3d46-436a-b91b-5078220845a8' */
+    $data['node:oa_wiki_page:default']->display->panels['sidebar'][1] = 'new-eac5d508-0b43-4e80-ac21-cb302bdcb050'; /* WAS: 'new-05a2ca63-14bd-45a1-bab5-147952670034' */
+    $data['node:oa_wiki_page:default']->display->panels['sidebar'][2] = 'new-7ddbd76b-3d46-436a-b91b-5078220845a8'; /* WAS: 'new-61664bae-1939-49e7-a25e-f958bf7a99f6' */
     unset($data['node:oa_wiki_page:default']->display->content['new-05a2ca63-14bd-45a1-bab5-147952670034']);
     unset($data['node:oa_wiki_page:default']->display->content['new-32c308fc-ae57-43df-a4fa-8667a747ea6f']);
     unset($data['node:oa_wiki_page:default']->display->content['new-726f799f-b273-4c70-bb8e-8fa078660e60']);
     unset($data['node:oa_wiki_page:default']->display->content['new-a811ab4b-b391-4bac-aee2-f0b6bdb5a65d']);
     unset($data['node:oa_wiki_page:default']->display->content['new-e46086d2-3bda-405b-b9b1-6d44d79ea78e']);
     unset($data['node:oa_wiki_page:default']->display->content['new-fd50a4cf-8298-4584-8504-b21e0e215e78']);
-    unset($data['node:oa_wiki_page:default']->display->panels['contentmain'][4]);
+    unset($data['node:oa_wiki_page:default']->display->panels['contentmain'][5]);
     unset($data['node:oa_wiki_page:default']->display->panels['sidebar'][3]);
   }
 }

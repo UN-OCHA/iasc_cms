@@ -10,7 +10,7 @@
 function iasc_document_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-oa_wiki_page-field_category'
+  // Exported field_instance: 'node-oa_wiki_page-field_category'.
   $field_instances['node-oa_wiki_page-field_category'] = array(
     'bundle' => 'oa_wiki_page',
     'comment_alter' => 0,
@@ -86,7 +86,7 @@ function iasc_document_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-oa_wiki_page-field_document_no'
+  // Exported field_instance: 'node-oa_wiki_page-field_document_no'.
   $field_instances['node-oa_wiki_page-field_document_no'] = array(
     'bundle' => 'oa_wiki_page',
     'comment_alter' => 0,
@@ -162,7 +162,7 @@ function iasc_document_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-oa_wiki_page-field_document_type'
+  // Exported field_instance: 'node-oa_wiki_page-field_document_type'.
   $field_instances['node-oa_wiki_page-field_document_type'] = array(
     'bundle' => 'oa_wiki_page',
     'comment_alter' => 0,
@@ -236,7 +236,7 @@ function iasc_document_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-oa_wiki_page-field_legacy_publish'
+  // Exported field_instance: 'node-oa_wiki_page-field_legacy_publish'.
   $field_instances['node-oa_wiki_page-field_legacy_publish'] = array(
     'bundle' => 'oa_wiki_page',
     'comment_alter' => 0,
@@ -311,7 +311,7 @@ function iasc_document_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-oa_wiki_page-field_product_thumbnail'
+  // Exported field_instance: 'node-oa_wiki_page-field_product_thumbnail'.
   $field_instances['node-oa_wiki_page-field_product_thumbnail'] = array(
     'bundle' => 'oa_wiki_page',
     'deleted' => 0,
@@ -424,7 +424,7 @@ function iasc_document_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-oa_wiki_page-field_published_date'
+  // Exported field_instance: 'node-oa_wiki_page-field_published_date'.
   $field_instances['node-oa_wiki_page-field_published_date'] = array(
     'bundle' => 'oa_wiki_page',
     'comment_alter' => 0,
