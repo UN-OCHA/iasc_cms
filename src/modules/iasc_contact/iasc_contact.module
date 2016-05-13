@@ -214,23 +214,6 @@ function iasc_contact_address_autofill($form, &$form_state) {
 }
 
 /**
- * Implements hook_node_access().
- */
-function iasc_contact_node_access($node, $op, $account) {
-  $type = is_string($node) ? $node : $node->type;
-
-  if ('contact' == $type && $op == 'view' && $account->uid != 1) {
-    // Deny access to node view for all roles outside of administrator.
-    if (array_search('administrator', $account->roles) === FALSE &&
-      array_search('editor', $account->roles) === FALSE) {
-      return NODE_ACCESS_DENY;
-    }
-  }
-
-  return NODE_ACCESS_IGNORE;
-}
-
-/**
  * Process the import of contacts.
  *
  * @param array $options
