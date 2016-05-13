@@ -153,6 +153,10 @@ projects[jquery_expander][type] = module
 projects[jquery_expander][version] = 1.0
 projects[jquery_expander][subdir] = iasc_contrib
 
+projects[field_permissions][type] = module
+projects[field_permissions][version] = 1.0-beta2
+projects[field_permissions][subdir] = iasc_contrib
+
 libraries[responsive-imagemaps][download][type] = get
 libraries[responsive-imagemaps][download][url] = https://github.com/stowball/jQuery-rwdImageMaps/archive/master.zip
 
