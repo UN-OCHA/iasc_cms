@@ -259,6 +259,7 @@ function iasc_action_points_field_default_field_instances() {
   // Exported field_instance: 'node-action_point-field_ap_responsibility'.
   $field_instances['node-action_point-field_ap_responsibility'] = array(
     'bundle' => 'action_point',
+    'comment_alter' => 0,
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -312,11 +313,20 @@ function iasc_action_points_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_ap_responsibility',
     'label' => 'Lead',
-    'required' => FALSE,
+    'options_limit' => FALSE,
+    'options_limit_empty_behaviour' => 0,
+    'options_limit_fields' => array(),
+    'required' => 0,
     'settings' => array(
+      'behaviors' => array(
+        'taxonomy-index' => array(
+          'status' => TRUE,
+        ),
+      ),
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'options',
       'settings' => array(
         'apply_chosen' => '',
@@ -648,6 +658,85 @@ function iasc_action_points_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-action_point-title_field'.
+  $field_instances['node-action_point-title_field'] = array(
+    'bundle' => 'action_point',
+    'comment_alter' => 0,
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'bio_full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'bio_long' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'bio_short' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 9,
+      ),
+      'featured' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'link_to_document' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'title_field',
+    'label' => 'Title',
+    'required' => 1,
+    'settings' => array(
+      'hide_label' => array(
+        'entity' => 0,
+        'page' => 0,
+      ),
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => -5,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Action Point');
@@ -657,6 +746,7 @@ function iasc_action_points_field_default_field_instances() {
   t('Meeting date');
   t('Progress overview');
   t('Status');
+  t('Title');
   t('Topic/Theme/Country');
 
   return $field_instances;

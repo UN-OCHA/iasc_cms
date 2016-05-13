@@ -45,6 +45,7 @@ features[field_instance][] = node-action_point-field_ap_status
 features[field_instance][] = node-action_point-field_ap_topic
 features[field_instance][] = node-action_point-field_contact
 features[field_instance][] = node-action_point-field_date
+features[field_instance][] = node-action_point-title_field
 features[node][] = action_point
 features[taxonomy][] = ap_responsibility
 features[user_permission][] = administer nodeaccess
