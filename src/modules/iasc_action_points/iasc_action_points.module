@@ -5,3 +5,21 @@
  */
 
 include_once 'iasc_action_points.features.inc';
+
+/**
+ * Implements hook_field_access()
+ *
+ * Makes sure AP focal points can only edit the status and progress overview fields.
+ */
+function iasc_action_points_field_access($op, $field, $entity_type, $entity, $account) {
+  if ($op == 'edit' 
+    && $entity_type == 'node' 
+    && $entity->type == 'action_point' 
+    && in_array($field['field_name'], array('title_field', 'field_ap_date', 'field_ap_topic', 'body', 'field_ap_responsibility', 'field_date', 'field_contact'))) {
+    $admin = user_role_load_by_name('administrator');
+    if (!user_has_role($admin->rid, $account)) {
+      return FALSE;
+    }
+  }
+  return TRUE;
+}
