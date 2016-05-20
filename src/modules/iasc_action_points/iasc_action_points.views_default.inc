@@ -22,7 +22,6 @@ function iasc_action_points_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'IASC Action Points';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -110,13 +109,6 @@ function iasc_action_points_views_default_views() {
       'empty_column' => 0,
     ),
   );
-  /* Header: Global: Unfiltered text */
-  $handler->display->display_options['header']['area_text_custom']['id'] = 'area_text_custom';
-  $handler->display->display_options['header']['area_text_custom']['table'] = 'views';
-  $handler->display->display_options['header']['area_text_custom']['field'] = 'area_text_custom';
-  $handler->display->display_options['header']['area_text_custom']['empty'] = TRUE;
-  $handler->display->display_options['header']['area_text_custom']['content'] = 'This space aim to provide up-to-date information on policy and operational decisions and action points adopted by IASC Principals and Working Group at their regular and ad hoc meetings.
-The IASC Principals are chaired by the Emergency Relief Coordinator (ERC), Mr. Stephen O\'Brien while the Working Group meeting are chaired by the Deputy Emergency Relief Coordinator, Ms. Kyung-wha Kang.';
   /* Field: Content: Path */
   $handler->display->display_options['fields']['path']['id'] = 'path';
   $handler->display->display_options['fields']['path']['table'] = 'node';
@@ -367,9 +359,8 @@ The IASC Principals are chaired by the Emergency Relief Coordinator (ERC), Mr. S
   );
   $handler->display->display_options['filters']['field_ap_responsibility_target_id_entityreference_filter']['reference_display'] = 'iasc_ap_leads:entityreference_1';
 
-  /* Display: Page */
-  $handler = $view->new_display('page', 'Page', 'page');
-  $handler->display->display_options['path'] = 'iasc/action-points';
+  /* Display: Content pane */
+  $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_1');
   $export['iasc_action_points'] = $view;
 
   $view = new view();

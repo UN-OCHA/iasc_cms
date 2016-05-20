@@ -17,6 +17,9 @@ function iasc_action_points_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_ap_date',
+    'field_permissions' => array(
+      'type' => 2,
+    ),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'date',
@@ -66,6 +69,9 @@ function iasc_action_points_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_ap_responsibility',
+    'field_permissions' => array(
+      'type' => 2,
+    ),
     'indexes' => array(
       'target_id' => array(
         0 => 'target_id',
@@ -128,6 +134,9 @@ function iasc_action_points_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_ap_topic',
+    'field_permissions' => array(
+      'type' => 2,
+    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',

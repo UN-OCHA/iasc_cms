@@ -28,8 +28,8 @@ function iasc_action_points_drush_command() {
   return $items;
 }
 
-function drush_iasc_ap_grants() {
-   // Load all action points
+function drush_iasc_action_points_iasc_ap_grants() {
+  // Load all action points
   $query = new EntityFieldQuery();
 
   $query->entityCondition('entity_type', 'node')
@@ -53,7 +53,7 @@ function drush_iasc_ap_grants() {
           $grants = array();
           $grants[] = array(
             'gid' => $account->uid,
-            'realm'=> 'nodeaccess_uid',
+            'realm' => 'nodeaccess_uid',
             'grant_view' => 1,
             'grant_update' => 1,
             'grant_delete' => 0
