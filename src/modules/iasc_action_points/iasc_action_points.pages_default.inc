@@ -58,17 +58,17 @@ function iasc_action_points_default_page_manager_pages() {
   $display->content = array();
   $display->panels = array();
   $pane = new stdClass();
-  $pane->pid = 'new-c00fe1a9-54c7-4683-b680-23807bd4cca4';
+  $pane->pid = 'new-155ac3d1-82ff-4ecc-be9b-3350aaffbfe8';
   $pane->panel = 'contentmain';
   $pane->type = 'fieldable_panels_pane';
-  $pane->subtype = 'vid:1261';
+  $pane->subtype = 'vid:1561';
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
     'view_mode' => 'full',
     'fieldable_panels_pane' => (object) array(
       'bundle' => 'text',
-      'language' => '',
+      'language' => 'und',
       'is_new' => TRUE,
       'title' => '',
       'link' => 0,
@@ -77,38 +77,36 @@ function iasc_action_points_default_page_manager_pages() {
       'admin_title' => '',
       'admin_description' => '',
       'category' => 'Reusable Content',
-      'vid' => '1261',
+      'vid' => '1561',
       'current_vid' => '',
       'revision' => 1,
-      'fpid' => '206',
+      'fpid' => '261',
       'field_basic_text_text' => array(
         'und' => array(
           0 => array(
-            'value' => '<p><span style="color: #333333; font-family: Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 21.5385px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; display: inline !important; float: none; background-color: #ffffff;">This space aim to provide up-to-date information on policy and operational decisions and action points adopted by IASC Principals and Working Group at their regular and ad hoc meetings. The IASC Principals are chaired by the Emergency Relief Coordinator (ERC), Mr. Stephen O\'Brien while the Working Group meeting are chaired by the Deputy Emergency Relief Coordinator, Ms. Kyung-wha Kang.</span></p>',
+            'value' => '<p><span>This space aim to provide up-to-date information on policy and operational decisions and action points adopted by IASC Principals and Working Group at their regular and ad hoc meetings. The IASC Principals are chaired by the Emergency Relief Coordinator (ERC), Mr. Stephen O\'Brien while the Working Group meeting are chaired by the Deputy Emergency Relief Coordinator, Ms. Kyung-wha Kang.</span></p>',
             'format' => 'iasc_wysiwyg',
           ),
         ),
       ),
       'log' => '',
-      'created' => 1463740997,
-      'timestamp' => 1463740997,
-      'changed' => 1463740997,
+      'created' => 1463748568,
+      'timestamp' => 1463748568,
+      'changed' => 1463748568,
       'uuid' => '',
-      'uid' => '691',
+      'uid' => '851',
       'vuuid' => '',
     ),
   );
   $pane->cache = array();
-  $pane->style = array(
-    'settings' => NULL,
-  );
+  $pane->style = array();
   $pane->css = array();
   $pane->extras = array();
   $pane->position = 0;
   $pane->locks = array();
-  $pane->uuid = 'c00fe1a9-54c7-4683-b680-23807bd4cca4';
-  $display->content['new-c00fe1a9-54c7-4683-b680-23807bd4cca4'] = $pane;
-  $display->panels['contentmain'][0] = 'new-c00fe1a9-54c7-4683-b680-23807bd4cca4';
+  $pane->uuid = '155ac3d1-82ff-4ecc-be9b-3350aaffbfe8';
+  $display->content['new-155ac3d1-82ff-4ecc-be9b-3350aaffbfe8'] = $pane;
+  $display->panels['contentmain'][0] = 'new-155ac3d1-82ff-4ecc-be9b-3350aaffbfe8';
   $pane = new stdClass();
   $pane->pid = 'new-5dc0db9b-e73b-4b4f-a5b2-c6cbb9f0c13d';
   $pane->panel = 'contentmain';
@@ -118,8 +116,8 @@ function iasc_action_points_default_page_manager_pages() {
   $pane->access = array();
   $pane->configuration = array(
     'view_settings' => 'table',
-    'header_type' => 'none',
-    'view_mode' => 'teaser',
+    'header_type' => 'titles',
+    'view_mode' => 'full',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -133,7 +131,7 @@ function iasc_action_points_default_page_manager_pages() {
   $display->content['new-5dc0db9b-e73b-4b4f-a5b2-c6cbb9f0c13d'] = $pane;
   $display->panels['contentmain'][1] = 'new-5dc0db9b-e73b-4b4f-a5b2-c6cbb9f0c13d';
   $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = 'new-c00fe1a9-54c7-4683-b680-23807bd4cca4';
+  $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;
   $pages['iasc_action_points'] = $page;
