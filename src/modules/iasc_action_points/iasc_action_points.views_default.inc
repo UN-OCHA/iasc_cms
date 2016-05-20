@@ -110,6 +110,13 @@ function iasc_action_points_views_default_views() {
       'empty_column' => 0,
     ),
   );
+  /* Header: Global: Unfiltered text */
+  $handler->display->display_options['header']['area_text_custom']['id'] = 'area_text_custom';
+  $handler->display->display_options['header']['area_text_custom']['table'] = 'views';
+  $handler->display->display_options['header']['area_text_custom']['field'] = 'area_text_custom';
+  $handler->display->display_options['header']['area_text_custom']['empty'] = TRUE;
+  $handler->display->display_options['header']['area_text_custom']['content'] = 'This space aim to provide up-to-date information on policy and operational decisions and action points adopted by IASC Principals and Working Group at their regular and ad hoc meetings.
+The IASC Principals are chaired by the Emergency Relief Coordinator (ERC), Mr. Stephen O\'Brien while the Working Group meeting are chaired by the Deputy Emergency Relief Coordinator, Ms. Kyung-wha Kang.';
   /* Field: Content: Path */
   $handler->display->display_options['fields']['path']['id'] = 'path';
   $handler->display->display_options['fields']['path']['table'] = 'node';
@@ -148,7 +155,7 @@ function iasc_action_points_views_default_views() {
   $handler->display->display_options['fields']['field_ap_topic']['field'] = 'field_ap_topic';
   $handler->display->display_options['fields']['field_ap_topic']['element_class'] = 'col-md-1';
   $handler->display->display_options['fields']['field_ap_topic']['element_default_classes'] = FALSE;
-  /* Field: Content: Description */
+  /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
@@ -191,7 +198,7 @@ function iasc_action_points_views_default_views() {
     'link' => 0,
   );
   $handler->display->display_options['fields']['field_contact']['delta_offset'] = '0';
-  /* Field: Content: Date */
+  /* Field: Content: Deadline */
   $handler->display->display_options['fields']['field_date']['id'] = 'field_date';
   $handler->display->display_options['fields']['field_date']['table'] = 'field_data_field_date';
   $handler->display->display_options['fields']['field_date']['field'] = 'field_date';
