@@ -135,6 +135,7 @@ projects[openid_connect][subdir] = iasc_contrib
 projects[registration][type] = module
 projects[registration][version] = 2.0-beta1
 projects[registration][subdir] = iasc_contrib
+projects[registration][patch][1473714] = https://www.drupal.org/files/issues/registration_views-default-registration-list-replacement-1473714-94.patch
 
 ; Action points matrix
 projects[nodeaccess][type] = module
