@@ -1604,6 +1604,39 @@ function iasc_meeting_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'registration-event-field_event_pass'.
+  $field_instances['registration-event-field_event_pass'] = array(
+    'bundle' => 'event',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Check this if you need a pass to access the building where the event takes place',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 2,
+      ),
+    ),
+    'entity_type' => 'registration',
+    'field_name' => 'field_event_pass',
+    'label' => 'I need a pass',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 3,
+    ),
+  );
+
   // Exported field_instance: 'registration-event-field_first_name'.
   $field_instances['registration-event-field_first_name'] = array(
     'bundle' => 'event',
@@ -1689,12 +1722,14 @@ function iasc_meeting_field_default_field_instances() {
   t('Additional locations');
   t('Additional timezone');
   t('Check if the meeting also has a Dial-in call. You can add the dial-in details in the <strong>Private Details</strong> field.');
+  t('Check this if you need a pass to access the building where the event takes place');
   t('City');
   t('Contact');
   t('Description');
   t('Dial-in meeting?');
   t('First Name');
   t('Geofield Additional City');
+  t('I need a pass');
   t('Item Title');
   t('Last Name');
   t('Legacy Publish');

@@ -17,6 +17,13 @@ function iasc_meeting_ctools_plugin_api($module = NULL, $api = NULL) {
 }
 
 /**
+ * Implements hook_views_api().
+ */
+function iasc_meeting_views_api($module = NULL, $api = NULL) {
+  return array("api" => "3.0");
+}
+
+/**
  * Implements hook_field_default_field_bases_alter().
  */
 function iasc_meeting_field_default_field_bases_alter(&$data) {
