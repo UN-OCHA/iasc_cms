@@ -228,4 +228,3 @@ projects[oa_responsive_regions][subdir] = contrib
 
 ; Fix private to public issue with file_entity
 projects[file_entity][subdir] = contrib
-projects[file_entity][patch][2537982] = https://www.drupal.org/files/issues/2537982-fix-changing-file-scheme.patch
