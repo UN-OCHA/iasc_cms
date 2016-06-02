@@ -44,7 +44,7 @@ projects[styleguide][version] = 1.1
 projects[styleguide][subdir] = iasc_contrib
 
 ; Supports grouping of fields for Agenda items
-projects[field_collection][version] = 1.0-beta10
+projects[field_collection][version] = 1.0-beta11
 projects[field_collection][subdir] = iasc_contrib
 
 ; Supports more standardized addresses.
