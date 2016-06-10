@@ -1604,6 +1604,43 @@ function iasc_meeting_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'registration-event-field_event_location'.
+  $field_instances['registration-event-field_event_location'] = array(
+    'bundle' => 'event',
+    'default_value' => array(
+      0 => array(
+        'value' => 'geneva',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => 'From where will you attend this event ?',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 3,
+      ),
+    ),
+    'entity_type' => 'registration',
+    'field_name' => 'field_event_location',
+    'label' => 'Location',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => '',
+      ),
+      'type' => 'options_select',
+      'weight' => 4,
+    ),
+  );
+
   // Exported field_instance: 'registration-event-field_event_pass'.
   $field_instances['registration-event-field_event_pass'] = array(
     'bundle' => 'event',
@@ -1728,11 +1765,13 @@ function iasc_meeting_field_default_field_instances() {
   t('Description');
   t('Dial-in meeting?');
   t('First Name');
+  t('From where will you attend this event ?');
   t('Geofield Additional City');
   t('I need a badge');
   t('Item Title');
   t('Last Name');
   t('Legacy Publish');
+  t('Location');
   t('Meeting Agendas');
   t('Meeting Documents');
   t('Meeting Host(s)');
