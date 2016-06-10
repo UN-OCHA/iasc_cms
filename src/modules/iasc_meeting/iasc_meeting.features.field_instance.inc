@@ -1609,7 +1609,7 @@ function iasc_meeting_field_default_field_instances() {
     'bundle' => 'event',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Check this if you need a pass to access the building where the event takes place',
+    'description' => 'Check this if you need a badge to access the building where the event takes place',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -1621,7 +1621,7 @@ function iasc_meeting_field_default_field_instances() {
     ),
     'entity_type' => 'registration',
     'field_name' => 'field_event_pass',
-    'label' => 'I need a pass',
+    'label' => 'I need a badge',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
