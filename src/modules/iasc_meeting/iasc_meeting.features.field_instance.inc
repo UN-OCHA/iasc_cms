@@ -1722,14 +1722,14 @@ function iasc_meeting_field_default_field_instances() {
   t('Additional locations');
   t('Additional timezone');
   t('Check if the meeting also has a Dial-in call. You can add the dial-in details in the <strong>Private Details</strong> field.');
-  t('Check this if you need a pass to access the building where the event takes place');
+  t('Check this if you need a badge to access the building where the event takes place');
   t('City');
   t('Contact');
   t('Description');
   t('Dial-in meeting?');
   t('First Name');
   t('Geofield Additional City');
-  t('I need a pass');
+  t('I need a badge');
   t('Item Title');
   t('Last Name');
   t('Legacy Publish');
