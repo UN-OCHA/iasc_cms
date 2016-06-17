@@ -10,7 +10,7 @@
 function iasc_configuration_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_body_legacy_ids'
+  // Exported field_base: 'field_body_legacy_ids'.
   $field_bases['field_body_legacy_ids'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -25,7 +25,7 @@ function iasc_configuration_field_default_field_bases() {
     'type' => 'number_integer',
   );
 
-  // Exported field_base: 'field_date_closed'
+  // Exported field_base: 'field_date_closed'.
   $field_bases['field_date_closed'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -55,7 +55,7 @@ function iasc_configuration_field_default_field_bases() {
     'type' => 'datetime',
   );
 
-  // Exported field_base: 'field_legacy_id'
+  // Exported field_base: 'field_legacy_id'.
   $field_bases['field_legacy_id'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -70,7 +70,7 @@ function iasc_configuration_field_default_field_bases() {
     'type' => 'number_integer',
   );
 
-  // Exported field_base: 'field_legacy_parent_id'
+  // Exported field_base: 'field_legacy_parent_id'.
   $field_bases['field_legacy_parent_id'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -91,7 +91,7 @@ function iasc_configuration_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_legacy_publish'
+  // Exported field_base: 'field_legacy_publish'.
   $field_bases['field_legacy_publish'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -112,7 +112,7 @@ function iasc_configuration_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_legacy_space_name'
+  // Exported field_base: 'field_legacy_space_name'.
   $field_bases['field_legacy_space_name'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -133,7 +133,7 @@ function iasc_configuration_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_responsibilities'
+  // Exported field_base: 'field_responsibilities'.
   $field_bases['field_responsibilities'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -152,7 +152,7 @@ function iasc_configuration_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_short_name'
+  // Exported field_base: 'field_short_name'.
   $field_bases['field_short_name'] = array(
     'active' => 1,
     'cardinality' => 1,

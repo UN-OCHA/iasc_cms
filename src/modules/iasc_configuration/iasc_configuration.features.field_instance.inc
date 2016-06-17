@@ -10,7 +10,7 @@
 function iasc_configuration_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-oa_space-field_body_legacy_ids'
+  // Exported field_instance: 'node-oa_space-field_body_legacy_ids'.
   $field_instances['node-oa_space-field_body_legacy_ids'] = array(
     'bundle' => 'oa_space',
     'comment_alter' => 0,
@@ -87,7 +87,7 @@ function iasc_configuration_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-oa_space-field_date_closed'
+  // Exported field_instance: 'node-oa_space-field_date_closed'.
   $field_instances['node-oa_space-field_date_closed'] = array(
     'bundle' => 'oa_space',
     'comment_alter' => 0,
@@ -175,7 +175,7 @@ function iasc_configuration_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-oa_space-field_homepage'
+  // Exported field_instance: 'node-oa_space-field_homepage'.
   $field_instances['node-oa_space-field_homepage'] = array(
     'bundle' => 'oa_space',
     'comment_alter' => 0,
@@ -266,7 +266,7 @@ function iasc_configuration_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-oa_space-field_legacy_parent_id'
+  // Exported field_instance: 'node-oa_space-field_legacy_parent_id'.
   $field_instances['node-oa_space-field_legacy_parent_id'] = array(
     'bundle' => 'oa_space',
     'comment_alter' => 0,
@@ -341,7 +341,7 @@ function iasc_configuration_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-oa_space-field_legacy_space_name'
+  // Exported field_instance: 'node-oa_space-field_legacy_space_name'.
   $field_instances['node-oa_space-field_legacy_space_name'] = array(
     'bundle' => 'oa_space',
     'comment_alter' => 0,
@@ -416,7 +416,7 @@ function iasc_configuration_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-oa_space-field_responsibilities'
+  // Exported field_instance: 'node-oa_space-field_responsibilities'.
   $field_instances['node-oa_space-field_responsibilities'] = array(
     'bundle' => 'oa_space',
     'comment_alter' => 0,
@@ -491,7 +491,7 @@ function iasc_configuration_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-oa_space-field_short_name'
+  // Exported field_instance: 'node-oa_space-field_short_name'.
   $field_instances['node-oa_space-field_short_name'] = array(
     'bundle' => 'oa_space',
     'comment_alter' => 0,

@@ -42,7 +42,7 @@ function iasc_configuration_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Content: Authoring Bodies */
+  /* Field: Content: Groups audience */
   $handler->display->display_options['fields']['og_group_ref']['id'] = 'og_group_ref';
   $handler->display->display_options['fields']['og_group_ref']['table'] = 'og_membership';
   $handler->display->display_options['fields']['og_group_ref']['field'] = 'og_group_ref';
@@ -54,7 +54,7 @@ function iasc_configuration_views_default_views() {
   $handler->display->display_options['fields']['field_oa_date']['id'] = 'field_oa_date';
   $handler->display->display_options['fields']['field_oa_date']['table'] = 'field_data_field_oa_date';
   $handler->display->display_options['fields']['field_oa_date']['field'] = 'field_oa_date';
-  /* Field: Content: Time Zone */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_time_zone']['id'] = 'field_time_zone';
   $handler->display->display_options['fields']['field_time_zone']['table'] = 'field_data_field_time_zone';
   $handler->display->display_options['fields']['field_time_zone']['field'] = 'field_time_zone';
@@ -63,7 +63,7 @@ function iasc_configuration_views_default_views() {
   $handler->display->display_options['sorts']['field_published_date_value']['table'] = 'field_data_field_published_date';
   $handler->display->display_options['sorts']['field_published_date_value']['field'] = 'field_published_date_value';
   $handler->display->display_options['sorts']['field_published_date_value']['order'] = 'DESC';
-  /* Contextual filter: Content: Authoring Bodies (og_group_ref:target_id) */
+  /* Contextual filter: Content: Groups audience (og_group_ref:target_id) */
   $handler->display->display_options['arguments']['og_group_ref_target_id']['id'] = 'og_group_ref_target_id';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['table'] = 'og_membership';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['field'] = 'og_group_ref_target_id';
@@ -148,7 +148,7 @@ function iasc_configuration_views_default_views() {
   $handler->display->display_options['fields']['title']['element_type'] = 'h4';
   $handler->display->display_options['fields']['title']['element_class'] = 'title';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Content: Authoring Bodies */
+  /* Field: Content: Groups audience */
   $handler->display->display_options['fields']['og_group_ref']['id'] = 'og_group_ref';
   $handler->display->display_options['fields']['og_group_ref']['table'] = 'og_membership';
   $handler->display->display_options['fields']['og_group_ref']['field'] = 'og_group_ref';
@@ -164,7 +164,7 @@ function iasc_configuration_views_default_views() {
   $handler->display->display_options['fields']['field_city']['field'] = 'field_city';
   $handler->display->display_options['fields']['field_city']['label'] = '';
   $handler->display->display_options['fields']['field_city']['element_label_colon'] = FALSE;
-  /* Field: Content: Time Zone */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_time_zone']['id'] = 'field_time_zone';
   $handler->display->display_options['fields']['field_time_zone']['table'] = 'field_data_field_time_zone';
   $handler->display->display_options['fields']['field_time_zone']['field'] = 'field_time_zone';
@@ -354,7 +354,7 @@ function iasc_configuration_views_default_views() {
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Authoring Bodies (og_group_ref:target_id) */
+  /* Filter criterion: Content: Groups audience (og_group_ref:target_id) */
   $handler->display->display_options['filters']['og_group_ref_target_id']['id'] = 'og_group_ref_target_id';
   $handler->display->display_options['filters']['og_group_ref_target_id']['table'] = 'og_membership';
   $handler->display->display_options['filters']['og_group_ref_target_id']['field'] = 'og_group_ref_target_id';
