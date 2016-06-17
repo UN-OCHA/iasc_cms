@@ -29,10 +29,12 @@ function iasc_configuration_space_section_menu_render($subtype, $conf, $args, $c
   $types = array(t('documents'), t('meetings'), t('news'), t('discussions'));
   $links = array();
   foreach ($types as $type) {
-    $links[$type] = array(
-      'title' => ucfirst($type),
-      'href' => "$path/$type",
-    );
+    if (drupal_valid_path("$path/$type")) {
+      $links[$type] = array(
+        'title' => ucfirst($type),
+        'href' => "$path/$type",
+      );
+    }
   }
 
   $block->title = t('Sections');
