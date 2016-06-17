@@ -26,7 +26,7 @@ function iasc_configuration_space_section_menu_render($subtype, $conf, $args, $c
   $block = new stdClass();
   $path = drupal_get_path_alias("node/$space_nid");
 
-  $types = array(t('documents'), t('meetings'), t('news'));
+  $types = array(t('documents'), t('meetings'), t('news'), t('discussions'));
   $links = array();
   foreach ($types as $type) {
     $links[$type] = array(

@@ -5,7 +5,7 @@
  */
 
 $plugin = array(
-  'title' => t('Add a Discussion'),
+  'title' => t('Post a Discussion'),
   'description' => t('Provides a button to Add a discussion'),
   'category' => array(t('IASC')),
   'render callback' => 'iasc_discussion_add_discussion_render',
