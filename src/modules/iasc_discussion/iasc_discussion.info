@@ -1,0 +1,7 @@
+name = IASC Discussion
+description = Manage IASC Discussions feature.
+core = 7.x
+package = IASC
+dependencies[] = iasc_configuration
+dependencies[] = oa_core
+dependencies[] = panelizer
