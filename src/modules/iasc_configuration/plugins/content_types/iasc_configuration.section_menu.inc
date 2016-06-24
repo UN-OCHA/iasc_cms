@@ -29,7 +29,7 @@ function iasc_configuration_space_section_menu_render($subtype, $conf, $args, $c
   $types = array(t('documents'), t('meetings'), t('news'), t('discussions'));
   $links = array();
   foreach ($types as $type) {
-    if (drupal_lookup_path("$path/$type")) {
+    if (drupal_lookup_path('source', "$path/$type") != FALSE) {
       $links[$type] = array(
         'title' => ucfirst($type),
         'href' => "$path/$type",
