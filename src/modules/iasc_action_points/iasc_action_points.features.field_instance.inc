@@ -658,13 +658,12 @@ function iasc_action_points_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-action_point-group_access'.
-  $field_instances['node-action_point-group_access'] = array(
+  // Exported field_instance: 'node-action_point-group_content_access'.
+  $field_instances['node-action_point-group_content_access'] = array(
     'bundle' => 'action_point',
-    'comment_alter' => 0,
     'default_value' => array(
       0 => array(
-        'value' => 1,
+        'value' => 0,
       ),
     ),
     'deleted' => 0,
@@ -693,7 +692,7 @@ function iasc_action_points_field_default_field_instances() {
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 11,
+        'weight' => 12,
       ),
       'featured' => array(
         'label' => 'above',
@@ -715,19 +714,31 @@ function iasc_action_points_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'group_access',
-    'label' => 'Group visibility',
-    'required' => 1,
+    'field_name' => 'group_content_access',
+    'label' => 'Group content visibility',
+    'required' => TRUE,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_buttons',
-      'weight' => 12,
+    'view modes' => array(
+      'full' => array(
+        'label' => 'above',
+        'type' => 'list_default',
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'type' => 'list_default',
+      ),
     ),
+    'widget' => array(
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => '',
+      ),
+      'type' => 'options_select',
+      'weight' => 13,
+    ),
+    'widget_type' => 'options_select',
   );
 
   // Exported field_instance: 'node-action_point-og_group_ref'.
@@ -920,7 +931,7 @@ function iasc_action_points_field_default_field_instances() {
   t('Action Point');
   t('Deadline');
   t('Focal Point');
-  t('Group visibility');
+  t('Group content visibility');
   t('Groups audience');
   t('Lead');
   t('Meeting date');
