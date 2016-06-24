@@ -161,5 +161,5 @@ projects[views_data_export][subdir] = iasc_contrib
 libraries[responsive-imagemaps][download][type] = get
 libraries[responsive-imagemaps][download][url] = https://github.com/stowball/jQuery-rwdImageMaps/archive/master.zip
 
-libraries[jquery.expander][download][type] = get
+libraries[jquery.expander][download][type] = file
 libraries[jquery.expander][download][url] = https://github.com/kswedberg/jquery-expander/archive/master.zip
