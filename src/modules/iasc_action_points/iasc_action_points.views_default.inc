@@ -361,6 +361,7 @@ function iasc_action_points_views_default_views() {
 
   /* Display: Content pane */
   $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_1');
+  $handler->display->display_options['inherit_panels_path'] = '1';
   $export['iasc_action_points'] = $view;
 
   $view = new view();
