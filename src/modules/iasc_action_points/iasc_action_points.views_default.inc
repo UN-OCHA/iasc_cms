@@ -147,7 +147,7 @@ function iasc_action_points_views_default_views() {
   $handler->display->display_options['fields']['field_ap_topic']['field'] = 'field_ap_topic';
   $handler->display->display_options['fields']['field_ap_topic']['element_class'] = 'col-md-1';
   $handler->display->display_options['fields']['field_ap_topic']['element_default_classes'] = FALSE;
-  /* Field: Content: Body */
+  /* Field: Content: Description */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
@@ -190,7 +190,7 @@ function iasc_action_points_views_default_views() {
     'link' => 0,
   );
   $handler->display->display_options['fields']['field_contact']['delta_offset'] = '0';
-  /* Field: Content: Deadline */
+  /* Field: Content: Date */
   $handler->display->display_options['fields']['field_date']['id'] = 'field_date';
   $handler->display->display_options['fields']['field_date']['table'] = 'field_data_field_date';
   $handler->display->display_options['fields']['field_date']['field'] = 'field_date';
