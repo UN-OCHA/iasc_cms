@@ -26,6 +26,7 @@ features[field_base][] = field_ap_progress_overview
 features[field_base][] = field_ap_responsibility
 features[field_base][] = field_ap_status
 features[field_base][] = field_ap_topic
+features[field_base][] = group_content_access
 features[field_instance][] = node-action_point-body
 features[field_instance][] = node-action_point-field_ap_date
 features[field_instance][] = node-action_point-field_ap_progress_overview
