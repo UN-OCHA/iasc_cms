@@ -11,13 +11,13 @@ function iasc_action_points_user_default_permissions() {
   $permissions = array();
 
   // Exported permission: 'administer nodeaccess'.
-  $permissions['administer nodeaccess'] = array(
+  /*$permissions['administer nodeaccess'] = array(
     'name' => 'administer nodeaccess',
     'roles' => array(
       'administrator' => 'administrator',
     ),
     'module' => 'nodeaccess',
-  );
+  );*/
 
   // Exported permission: 'create action_point content'.
   $permissions['create action_point content'] = array(
@@ -66,41 +66,41 @@ function iasc_action_points_user_default_permissions() {
   );
 
   // Exported permission: 'grant deletable node permissions'.
-  $permissions['grant deletable node permissions'] = array(
+  /*$permissions['grant deletable node permissions'] = array(
     'name' => 'grant deletable node permissions',
     'roles' => array(
       'administrator' => 'administrator',
     ),
     'module' => 'nodeaccess',
-  );
+  );*/
 
   // Exported permission: 'grant editable node permissions'.
-  $permissions['grant editable node permissions'] = array(
+  /*$permissions['grant editable node permissions'] = array(
     'name' => 'grant editable node permissions',
     'roles' => array(
       'administrator' => 'administrator',
     ),
     'module' => 'nodeaccess',
-  );
+  );*/
 
   // Exported permission: 'grant node permissions'.
-  $permissions['grant node permissions'] = array(
+  /*$permissions['grant node permissions'] = array(
     'name' => 'grant node permissions',
     'roles' => array(
       'administrator' => 'administrator',
     ),
     'module' => 'nodeaccess',
-  );
+  );*/
 
   // Exported permission: 'grant own node permissions'.
-  $permissions['grant own node permissions'] = array(
+  /*$permissions['grant own node permissions'] = array(
     'name' => 'grant own node permissions',
     'roles' => array(
       'administrator' => 'administrator',
       'authenticated user' => 'authenticated user',
     ),
     'module' => 'nodeaccess',
-  );
+  );*/
 
   return $permissions;
 }
