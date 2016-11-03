@@ -19,6 +19,8 @@
   },
   "phpcs": {
     "path": "bin/phpcs",
+    "standard": "vendor/drupal/coder/coder_sniffer/Drupal",
+    "report": "summary",
     "dir": [
       "src/**/*.php",
       "src/**/*.module",
@@ -40,9 +42,10 @@
     "path": "bin/phpmd"
   },
   "drush": {
-    "cmd": "bin/drush",
+    "cmd": "/usr/bin/drush",
+    "path": "/usr/bin/drush",
     "make": {
-      "args": ["--concurrency=1", "--contrib-destination=profiles/openatrium"]
+      "args": ["--concurrency=2", "--contrib-destination=profiles/openatrium", "--force-complete"]
     }
   },
   "behat": {
