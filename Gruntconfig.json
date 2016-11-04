@@ -45,7 +45,7 @@
     "cmd": "/usr/bin/drush",
     "path": "/usr/bin/drush",
     "make": {
-      "args": ["--concurrency=2", "--contrib-destination=profiles/openatrium", "--force-complete"]
+      "args": ["--concurrency=2", "--contrib-destination=profiles/openatrium"]
     }
   },
   "behat": {
