@@ -326,7 +326,7 @@ function iasc_meeting_panelizer_defaults_override_alter(&$data) {
           'locks' => array(),
           'uuid' => '024f971a-f875-4063-bf25-63926a5c9092',
         ); /* WAS: '' */
-    $data['node:oa_event:default']->display->content['new-163116e6-77f1-4774-aa82-1e437162dcca']->position = 7; /* WAS: 4 */
+    $data['node:oa_event:default']->display->content['new-163116e6-77f1-4774-aa82-1e437162dcca']->position = 7; /* WAS: 5 */
     $data['node:oa_event:default']->display->content['new-19fe4e19-0d90-4acf-9c80-e1ffdf773880'] = (object) array(
           'pid' => 'new-19fe4e19-0d90-4acf-9c80-e1ffdf773880',
           'panel' => 'sidebar',
@@ -490,6 +490,32 @@ function iasc_meeting_panelizer_defaults_override_alter(&$data) {
           'locks' => array(),
           'uuid' => '3ac35fec-c644-44aa-a89a-ea15a4c4704a',
         ); /* WAS: '' */
+    $data['node:oa_event:default']->display->content['new-41c8ff2d-5d1b-4eda-862f-174d82e93a26'] = (object) array(
+          'pid' => 'new-41c8ff2d-5d1b-4eda-862f-174d82e93a26',
+          'panel' => 'sidebar',
+          'type' => 'panels_mini',
+          'subtype' => 'iasc_location',
+          'shown' => TRUE,
+          'access' => array(),
+          'configuration' => array(
+            'override_title' => 0,
+            'override_title_text' => '',
+            'override_title_heading' => 'h2',
+          ),
+          'cache' => array(),
+          'style' => array(
+            'settings' => array(
+              'secondary_options' => 'panel-primary',
+              'linked_list' => 'none',
+            ),
+            'style' => 'secondary',
+          ),
+          'css' => array(),
+          'extras' => array(),
+          'position' => 0,
+          'locks' => array(),
+          'uuid' => '41c8ff2d-5d1b-4eda-862f-174d82e93a26',
+        ); /* WAS: '' */
     $data['node:oa_event:default']->display->content['new-554e3ff8-5ae2-47d4-944e-53903613b9f5'] = (object) array(
           'pid' => 'new-554e3ff8-5ae2-47d4-944e-53903613b9f5',
           'panel' => 'contentmain',
@@ -559,31 +585,6 @@ function iasc_meeting_panelizer_defaults_override_alter(&$data) {
           'locks' => array(),
           'uuid' => '677802ea-6c46-4806-9759-35191c9cf1a8',
         ); /* WAS: '' */
-    $data['node:oa_event:default']->display->content['new-721e6db6-a312-4742-8dd2-d7d879654919'] = (object) array(
-          'pid' => 'new-721e6db6-a312-4742-8dd2-d7d879654919',
-          'panel' => 'sidebar',
-          'type' => 'panels_mini',
-          'subtype' => 'iasc_location',
-          'shown' => TRUE,
-          'access' => array(),
-          'configuration' => array(
-            'override_title' => 0,
-            'override_title_text' => '',
-          ),
-          'cache' => array(),
-          'style' => array(
-            'settings' => array(
-              'secondary_options' => 'panel-primary',
-              'linked_list' => 'none',
-            ),
-            'style' => 'secondary',
-          ),
-          'css' => array(),
-          'extras' => array(),
-          'position' => 0,
-          'locks' => array(),
-          'uuid' => '721e6db6-a312-4742-8dd2-d7d879654919',
-        ); /* WAS: '' */
     $data['node:oa_event:default']->display->content['new-79f83343-399f-460b-80e5-e76610078f19'] = (object) array(
           'pid' => 'new-79f83343-399f-460b-80e5-e76610078f19',
           'panel' => 'contentmain',
@@ -613,7 +614,6 @@ function iasc_meeting_panelizer_defaults_override_alter(&$data) {
           'locks' => array(),
           'uuid' => '79f83343-399f-460b-80e5-e76610078f19',
         ); /* WAS: '' */
-    $data['node:oa_event:default']->display->content['new-9035b3e7-28dc-478f-a595-e89dca69718a']->position = 1; /* WAS: 0 */
     $data['node:oa_event:default']->display->content['new-9c1552e9-6b59-4811-ac8f-8278030a8f11'] = (object) array(
           'pid' => 'new-9c1552e9-6b59-4811-ac8f-8278030a8f11',
           'panel' => 'contentmain',
@@ -653,6 +653,7 @@ function iasc_meeting_panelizer_defaults_override_alter(&$data) {
             'context' => array(),
             'override_title' => 0,
             'override_title_text' => '',
+            'override_title_heading' => 'h2',
           ),
           'cache' => array(),
           'style' => array(
@@ -747,16 +748,15 @@ function iasc_meeting_panelizer_defaults_override_alter(&$data) {
           'locks' => array(),
           'uuid' => 'c84bd896-6873-41ab-89ea-5d0f2e0c2c7f',
         ); /* WAS: '' */
-    $data['node:oa_event:default']->display->panels['contentmain'][0] = 'new-c84bd896-6873-41ab-89ea-5d0f2e0c2c7f'; /* WAS: 'new-9035b3e7-28dc-478f-a595-e89dca69718a' */
-    $data['node:oa_event:default']->display->panels['contentmain'][1] = 'new-9035b3e7-28dc-478f-a595-e89dca69718a'; /* WAS: 'new-3aa30de6-1950-4644-ad0c-aab8ed0b16a1' */
-    $data['node:oa_event:default']->display->panels['contentmain'][2] = 'new-3ac35fec-c644-44aa-a89a-ea15a4c4704a'; /* WAS: 'new-63669577-1767-458b-a0e4-9e11beb23736' */
-    $data['node:oa_event:default']->display->panels['contentmain'][3] = 'new-9c1552e9-6b59-4811-ac8f-8278030a8f11'; /* WAS: 'new-a6c0fd8c-28ed-47a4-b617-0575366de7b9' */
-    $data['node:oa_event:default']->display->panels['contentmain'][4] = 'new-554e3ff8-5ae2-47d4-944e-53903613b9f5'; /* WAS: 'new-163116e6-77f1-4774-aa82-1e437162dcca' */
-    $data['node:oa_event:default']->display->panels['contentmain'][5] = 'new-2832cb36-53a3-484e-bbf0-05b7084ea8f4'; /* WAS: '' */
+    $data['node:oa_event:default']->display->panels['contentmain'][0] = 'new-c84bd896-6873-41ab-89ea-5d0f2e0c2c7f'; /* WAS: 'new-5ce94f00-9e7f-4cbe-82e2-e5ae0ec44f48' */
+    $data['node:oa_event:default']->display->panels['contentmain'][2] = 'new-3ac35fec-c644-44aa-a89a-ea15a4c4704a'; /* WAS: 'new-3aa30de6-1950-4644-ad0c-aab8ed0b16a1' */
+    $data['node:oa_event:default']->display->panels['contentmain'][3] = 'new-9c1552e9-6b59-4811-ac8f-8278030a8f11'; /* WAS: 'new-63669577-1767-458b-a0e4-9e11beb23736' */
+    $data['node:oa_event:default']->display->panels['contentmain'][4] = 'new-554e3ff8-5ae2-47d4-944e-53903613b9f5'; /* WAS: 'new-a6c0fd8c-28ed-47a4-b617-0575366de7b9' */
+    $data['node:oa_event:default']->display->panels['contentmain'][5] = 'new-2832cb36-53a3-484e-bbf0-05b7084ea8f4'; /* WAS: 'new-163116e6-77f1-4774-aa82-1e437162dcca' */
     $data['node:oa_event:default']->display->panels['contentmain'][6] = 'new-29d974b8-bef0-4ff8-af8c-38b369433a5c'; /* WAS: '' */
     $data['node:oa_event:default']->display->panels['contentmain'][7] = 'new-163116e6-77f1-4774-aa82-1e437162dcca'; /* WAS: '' */
     $data['node:oa_event:default']->display->panels['contentmain'][8] = 'new-79f83343-399f-460b-80e5-e76610078f19'; /* WAS: '' */
-    $data['node:oa_event:default']->display->panels['sidebar'][0] = 'new-721e6db6-a312-4742-8dd2-d7d879654919'; /* WAS: 'new-231244a5-ffbc-4013-a01e-cc85b4feeff0' */
+    $data['node:oa_event:default']->display->panels['sidebar'][0] = 'new-41c8ff2d-5d1b-4eda-862f-174d82e93a26'; /* WAS: 'new-231244a5-ffbc-4013-a01e-cc85b4feeff0' */
     $data['node:oa_event:default']->display->panels['sidebar'][1] = 'new-b556a608-6c09-4e8b-99bb-f7cee89c1756'; /* WAS: 'new-e0f02a5b-dd4e-4ab9-8479-06a195d86fd0' */
     $data['node:oa_event:default']->display->panels['sidebar'][2] = 'new-677802ea-6c46-4806-9759-35191c9cf1a8'; /* WAS: 'new-cf81af22-ac8b-4147-8462-a5fce1b76471' */
     $data['node:oa_event:default']->display->panels['sidebar'][3] = 'new-024f971a-f875-4063-bf25-63926a5c9092'; /* WAS: '' */
@@ -764,9 +764,10 @@ function iasc_meeting_panelizer_defaults_override_alter(&$data) {
     $data['node:oa_event:default']->display->panels['sidebar'][5] = 'new-bd3daacb-9380-4c7f-b478-67ec6c6244d2'; /* WAS: '' */
     $data['node:oa_event:default']->display->panels['sidebar'][6] = 'new-19fe4e19-0d90-4acf-9c80-e1ffdf773880'; /* WAS: '' */
     $data['node:oa_event:default']->display->panels['sidebar'][7] = 'new-213e8d65-ffde-47b2-bad5-b54b3f97dcfd'; /* WAS: '' */
-    $data['node:oa_event:default']->pipeline = 'ipe_node_access'; /* WAS: 'standard' */
+    $data['node:oa_event:default']->pipeline = 'ipe'; /* WAS: 'standard' */
     unset($data['node:oa_event:default']->display->content['new-231244a5-ffbc-4013-a01e-cc85b4feeff0']);
     unset($data['node:oa_event:default']->display->content['new-3aa30de6-1950-4644-ad0c-aab8ed0b16a1']);
+    unset($data['node:oa_event:default']->display->content['new-5ce94f00-9e7f-4cbe-82e2-e5ae0ec44f48']);
     unset($data['node:oa_event:default']->display->content['new-63669577-1767-458b-a0e4-9e11beb23736']);
     unset($data['node:oa_event:default']->display->content['new-a6c0fd8c-28ed-47a4-b617-0575366de7b9']);
     unset($data['node:oa_event:default']->display->content['new-cf81af22-ac8b-4147-8462-a5fce1b76471']);

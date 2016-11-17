@@ -18,15 +18,7 @@ function iasc_meeting_default_panels_mini() {
   $mini->admin_title = 'IASC Location';
   $mini->admin_description = '';
   $mini->requiredcontexts = array();
-  $mini->contexts = array(
-    0 => array(
-      'identifier' => 'Node add form',
-      'keyword' => 'node_add',
-      'name' => 'node_add_form',
-      'type' => 'oa_event',
-      'id' => 1,
-    ),
-  );
+  $mini->contexts = array();
   $mini->relationships = array();
   $display = new panels_display();
   $display->layout = 'onecol';
@@ -40,8 +32,35 @@ function iasc_meeting_default_panels_mini() {
   $display->cache = array();
   $display->title = 'Location';
   $display->uuid = '17913e0d-c586-4246-8891-7de381c79919';
+  $display->storage_type = 'panels_mini';
+  $display->storage_id = 'iasc_location';
   $display->content = array();
   $display->panels = array();
+  $pane = new stdClass();
+  $pane->pid = 'new-52ac04cf-b5df-4ffc-a4f2-351c79469771';
+  $pane->panel = 'middle';
+  $pane->type = 'custom';
+  $pane->subtype = 'custom';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'admin_title' => '',
+    'title' => '',
+    'body' => '<div style="display: none;">&nbsp;</div>',
+    'format' => 'insecure_html',
+    'substitute' => TRUE,
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = '52ac04cf-b5df-4ffc-a4f2-351c79469771';
+  $display->content['new-52ac04cf-b5df-4ffc-a4f2-351c79469771'] = $pane;
+  $display->panels['middle'][0] = 'new-52ac04cf-b5df-4ffc-a4f2-351c79469771';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $mini->display = $display;
