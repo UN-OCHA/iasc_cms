@@ -50,3 +50,6 @@ projects[drupal][patch][2097081] = https://www.drupal.org/files/2097081-fix-stic
 
 ; Prevent Drupal from scanning node_module and bower_component directories in theme
 projects[drupal][patch][2329453] = https://www.drupal.org/files/issues/ignore_front_end_vendor-2329453-111.patch
+
+; Image style previews don't show when using a private file system.
+projects[drupal][patch][1440312] = https://www.drupal.org/files/issues/drupal-image-styles-1440312-35.patch
