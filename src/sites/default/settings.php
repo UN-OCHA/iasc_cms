@@ -632,3 +632,9 @@ if (isset($_SERVER['HTTP_X_HEALTH_CHECK']) && ($_SERVER['HTTP_X_HEALTH_CHECK'] =
   die('Hi, HAPROXY!');
 }
 
+/**
+ * Configure the syslog module.
+ */
+$conf['syslog_facility'] = LOG_LOCAL0;
+$conf['syslog_identity'] = 'iasc';
+$conf['syslog_format']   = '!base_url|!timestamp|!type|!ip|!request_uri|!referer|!uid|!link|!message';
