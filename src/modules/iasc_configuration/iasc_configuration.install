@@ -341,3 +341,12 @@ function iasc_configuration_update_7006() {
 
   menu_cache_clear_all();
 }
+
+/**
+ * Implements hook_update_N().
+ *
+ * Enable syslog module, so that Drupal logs can go to logstash.
+ */
+function iasc_configuration_update_7007() {
+  module_enable(array('syslog'));
+}
