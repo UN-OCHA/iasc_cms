@@ -83,7 +83,7 @@ projects[apachesolr_attachments][version] = 1.4
 projects[apachesolr_attachments][subdir] = iasc_contrib
 
 projects[title][type] = module
-projects[title][version] = 1.0-alpha7
+projects[title][version] = 1.0-alpha9
 projects[title][subdir] = iasc_contrib
 
 projects[nodequeue][type] = module
@@ -155,7 +155,7 @@ projects[jquery_expander][version] = 1.0
 projects[jquery_expander][subdir] = iasc_contrib
 
 projects[views_data_export][type] = module
-projects[views_data_export][version] = 3.0-beta9
+projects[views_data_export][version] = 3.1
 projects[views_data_export][subdir] = iasc_contrib
 
 libraries[responsive-imagemaps][download][type] = get
