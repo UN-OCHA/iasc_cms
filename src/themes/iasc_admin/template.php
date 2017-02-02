@@ -6,6 +6,7 @@
 
 /**
  * Implements hook_css_alter().
+ *
  * Changes the jQuery UI theme to a Bootstrap-like theme
  * from http://addyosmani.github.io/jquery-ui-bootstrap/
  */
@@ -20,7 +21,7 @@ function iasc_admin_css_alter(&$css) {
 
   // Add a custom jQuery UI theme.
   if (isset($css['misc/ui/jquery.ui.theme.css'])) {
-    $css['misc/ui/jquery.ui.theme.css']['data'] =
-      drupal_get_path('theme', 'oa_radix') . '/assets/vendor/jqueryui/jquery-ui-1.10.0.custom.css';
+    $css['misc/ui/jquery.ui.theme.css']['data']
+      = drupal_get_path('theme', 'oa_radix') . '/assets/vendor/jqueryui/jquery-ui-1.10.0.custom.css';
   }
 }
