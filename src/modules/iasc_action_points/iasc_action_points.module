@@ -13,14 +13,15 @@ include_once 'iasc_action_points.features.inc';
  * progress overview fields.
  */
 function iasc_action_points_field_access($op, $field, $entity_type, $entity, $account) {
-  $fields = array('title_field',
-                  'field_ap_date',
-                  'field_ap_topic',
-                  'body',
-                  'field_ap_responsibility',
-                  'field_date',
-                  'field_contact',
-                );
+  $fields = array(
+    'title_field',
+    'field_ap_date',
+    'field_ap_topic',
+    'body',
+    'field_ap_responsibility',
+    'field_date',
+    'field_contact',
+  );
 
   if ($op == 'edit'
     && $entity_type == 'node'

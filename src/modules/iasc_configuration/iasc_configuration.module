@@ -904,7 +904,8 @@ function iasc_configuration_form_alter(&$form, &$form_state, $form_id) {
       '#markup' => l(t('Cancel'), '#', array(
         'attributes' => array(
           'class' => array(
-            'btn', 'btn-default'
+            'btn',
+            'btn-default',
           ),
           'onclick' => 'history.go(-1); return false;',
         ))),

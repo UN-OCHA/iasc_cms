@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * Install file for IASC Contact.
@@ -160,4 +159,3 @@ function iasc_contact_update_7004() {
     }
   }
 }
-
