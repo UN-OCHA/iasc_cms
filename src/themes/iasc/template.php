@@ -488,7 +488,7 @@ function iasc_apachesolr_panels_info($variables) {
 }
 
 /**
- * Open files in new tab (see IASC-453)
+ * Open files in new tab (see IASC-453).
  */
 function iasc_file_link($variables) {
   $file = $variables['file'];
@@ -500,23 +500,22 @@ function iasc_file_link($variables) {
   // Set options as per anchor format described at
   // http://microformats.org/wiki/file-format-examples
   $options = array(
-      'attributes' => array(
-          'type' => $file->filemime . '; length=' . $file->filesize,
-      ),
+    'attributes' => array(
+      'type' => $file->filemime . '; length=' . $file->filesize,
+    ),
   );
 
   // Use the description as the link text if available.
   if (empty($file->description)) {
     $link_text = $file->filename;
-  } else {
+  }
+  else {
     $link_text = $file->description;
     $options['attributes']['title'] = check_plain($file->filename);
   }
 
-  //open files of particular mime types in new window
+  // Open files of particular mime types in new window.
   $options['attributes']['target'] = '_blank';
- 
+
   return '<span class="file">' . $icon . ' ' . l($link_text, $url, $options) . '</span>';
-
 }
-
