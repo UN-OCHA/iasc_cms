@@ -24,7 +24,7 @@ function iasc_meeting_drush_up_event_geocode() {
   $events = iasc_meeting_get_events_missing_primary_geocode();
 
   if ($events) {
-    // We have to track number of results
+    // We have to track number of results.
     $num_results = count($events);
 
     // Check to see if this number matches the last number recorded. If the
@@ -112,8 +112,8 @@ function iasc_meeting_drush_up_event_geocode() {
           $meeting->field_city[LANGUAGE_NONE][0]['safe_value'] = '';
           node_save($meeting);
           // Update the counter to keep track of the number of geocode requests
-          // we are making. Even tho the value is empty, it appears that geofield
-          // still makes a request.
+          // we are making. Even tho the value is empty, it appears that
+          // geofield still makes a request.
           $geocode_request_counter++;
 
           // Reset the original city value.
@@ -130,12 +130,14 @@ function iasc_meeting_drush_up_event_geocode() {
 }
 
 /**
- * Get the event nids that have a primary city but not a matching primary
+ * Get event nids.
+ *
+ * Fetch events nids that have a primary city but not a matching primary
  * geocode field.
  *
  * @return array
- *  Array of event nids, otherwise returns an empty array if there are no
- *  results.
+ *   Array of event nids, otherwise returns an empty array if there are no
+ *   results.
  */
 function iasc_meeting_get_events_missing_primary_geocode() {
   // Get all of the events with a value in field_data_field_city that are

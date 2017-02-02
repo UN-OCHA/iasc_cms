@@ -125,7 +125,8 @@ function iasc_document_update_7002() {
 /**
  * Implements hook_update_N().
  *
- * Split Products into IASC Products and Other Products and update existing nodes.
+ * Split Products into IASC Products and Other Products and update
+ * existing nodes.
  */
 function iasc_document_update_7003() {
   // Get the vocabulary for Document Type.

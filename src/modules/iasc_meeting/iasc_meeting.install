@@ -39,6 +39,9 @@ function iasc_meeting_install() {
   }
 }
 
+/**
+ * implements hook_uninstall().
+ */
 function iasc_meeting_uninstall() {
   // Remove variables.
   variable_del('iasc_meeting_num_events_missing_primary_geocode');
@@ -147,24 +150,22 @@ function iasc_meeting_update_7004() {
 }
 
 /**
- * Implements hook_update_N()
+ * Implements hook_update_N().
  *
- * Change field configuration of field_oa_date
+ * Change field configuration of field_oa_date.
  */
 function iasc_meeting_update_7005() {
-  // Update field configuration
+  // Update field configuration.
   $info = field_info_field('field_oa_date');
   $info['settings']['tz_handling'] = 'date';
   db_update('field_config')
-    ->fields(array(
-      'data' => serialize($info)
-    ))
+    ->fields(array('data' => serialize($info)))
     ->condition('field_name', 'field_oa_date', '=')
     ->execute();
 }
 
 /**
- * Get offset for timestamp
+ * Get offset for timestamp.
  */
 function _iasc_meeting_get_offset($tstamp, $timezone) {
   if ($timezone == 'America/New_York') {
@@ -307,9 +308,9 @@ function _iasc_meeting_get_offset($tstamp, $timezone) {
 }
 
 /**
- * Implements hook_update_N()
+ * Implements hook_update_N().
  *
- * Update existing events
+ * Update existing events.
  */
 function iasc_meeting_update_7006() {
   $query = new EntityFieldQuery();

@@ -1,5 +1,7 @@
 <?php
-// Plugin definition
+/**
+ * Plugin definition.
+ */
 $plugin = array(
   'title' => t('IASC Resource'),
   'icon' => 'iasc-resource.png',

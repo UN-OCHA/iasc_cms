@@ -147,8 +147,9 @@ function iasc_contact_form_submit($form, &$form_state) {
 }
 
 /**
- * Ajax submit callback that triggers an update of the organization addresses to
- * be used for autofill.
+ * Ajax submit callback.
+ *
+ * Triggers an update of the organization addresses to be used for autofill.
  */
 function iasc_contact_get_addresses($form, &$form_state) {
   $form_state['org'] = $form_state['values']['field_organisation'][LANGUAGE_NONE][0]['tid'];
@@ -195,12 +196,16 @@ function iasc_contact_org_address_options($org_tid, &$form_state) {
   return $options;
 }
 
+/**
+ * Autofill callback for address fporm.
+ */
 function iasc_contact_address_autofill($form, &$form_state) {
   $delta = $form_state['values']['org_address_options'];
   $address = $form_state['organization_addresses'][LANGUAGE_NONE][$delta];
 
   // Autofill the values for the field_address.
-  // Room number should be excluded from autofill (organisation_name - organisation_name).
+  // Room number should be excluded from
+  // autofill (organisation_name - organisation_name).
   $form['field_address'][LANGUAGE_NONE][0]['street_block']['thoroughfare']['#value'] = $address['thoroughfare'];
   $form['field_address'][LANGUAGE_NONE][0]['street_block']['premise']['#value'] = $address['premise'];
   $form['field_address'][LANGUAGE_NONE][0]['locality_block']['postal_code']['#value'] = $address['postal_code'];
