@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * @file
+ */
 $info = array(
   // Available colors and color labels used in theme.
   'fields' => array(
