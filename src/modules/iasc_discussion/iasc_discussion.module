@@ -14,4 +14,3 @@ function iasc_discussion_ctools_plugin_directory($owner, $plugin_type) {
     return 'plugins/content_types';
   }
 }
-
