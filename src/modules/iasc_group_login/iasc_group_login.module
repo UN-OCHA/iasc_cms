@@ -266,4 +266,3 @@ function iasc_group_login_get_all_groups() {
     ->condition('n.type', OA_GROUP_TYPE);
   return $query->execute()->fetchAllAssoc('nid');
 }
-
