@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * Install file for IASC Meeting.
@@ -40,7 +39,7 @@ function iasc_meeting_install() {
 }
 
 /**
- * implements hook_uninstall().
+ * Implements hook_uninstall().
  */
 function iasc_meeting_uninstall() {
   // Remove variables.

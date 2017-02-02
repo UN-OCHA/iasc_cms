@@ -1,7 +1,9 @@
 <?php
 /**
  * @file
+ * Colorizer data.
  */
+
 $info = array(
   // Available colors and color labels used in theme.
   'fields' => array(
