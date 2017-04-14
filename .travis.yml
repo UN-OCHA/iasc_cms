@@ -27,5 +27,5 @@ before_script:
   - phpenv rehash
 
 script:
-  - ./vendor/bin/phpcs --standard=phpcs.xml --report=full
-  - ./vendor/bin/phpmd src/modules text phpmd.xml
+  - bin/phpcs --standard=phpcs.xml --report=full
+  - bin/phpmd src/modules text phpmd.xml
