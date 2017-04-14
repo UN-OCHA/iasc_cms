@@ -1,5 +1,7 @@
 # IASC CMS
 
+[![Master Branch Build Status](https://travis-ci.org/UN-OCHA/iasc_cms.svg?branch=master)](https://travis-ci.org/UN-OCHA/iasc_cms) [![Develop Branch Build Status](https://travis-ci.org/UN-OCHA/iasc_cms.svg?branch=develop)](https://travis-ci.org/UN-OCHA/iasc_cms)
+
 This is the IASC CMS src repository and build tools.
 
 You should install the [IASC CMS Environment](https://bitbucket.org/phase2tech/iasc_env) as part of the process of working with this repository.
