@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ruleset name="drupal">
+  <description>Default PHP CodeSniffer configuration for Drupal.</description>
+  <file>src/modules,src/themes</file>
+  <arg name="extensions" value="inc,info,install,module,php,profile,test,theme"/>
+  <!--Exclude generated party code.-->
+  <exclude-pattern>*.test</exclude-pattern>
+  <exclude-pattern>*.features.*</exclude-pattern>
+  <exclude-pattern>*.strongarm.inc</exclude-pattern>
+  <exclude-pattern>*.context.inc</exclude-pattern>
+  <exclude-pattern>*.views_default.inc</exclude-pattern>
+  <exclude-pattern>*.views_handler*</exclude-pattern>
+  <rule ref="vendor/drupal/coder/coder_sniffer/Drupal" />
+</ruleset>
