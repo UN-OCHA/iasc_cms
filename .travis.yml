@@ -35,7 +35,7 @@ before_script:
   - phpenv rehash
 
 script:
-  - test -d $TRAVIS_BUILD_DIR/src/modules && bin/phpmd $TRAVIS_BUILD_DIR/src/modules text phpmd.xml
-  - test -d $TRAVIS_BUILD_DIR/src/all/modules/custom && bin/phpmd $TRAVIS_BUILD_DIR/src/themes text phpmd.xml
+  # - test -d $TRAVIS_BUILD_DIR/src/modules && bin/phpmd $TRAVIS_BUILD_DIR/src/modules text phpmd.xml
+  # - test -d $TRAVIS_BUILD_DIR/src/all/modules/custom && bin/phpmd $TRAVIS_BUILD_DIR/src/themes text phpmd.xml
   - test -d $TRAVIS_BUILD_DIR/src/modules && bin/phpcs --extensions=info,module,install,inc,php --ignore=*.pages_default.inc,*.views_default.inc,*.features.*,*.strongarm.* --report=full --standard=Drupal $TRAVIS_BUILD_DIR/src/modules
   - test -d $TRAVIS_BUILD_DIR/src/themes && bin/phpcs --extensions=info,module,install,inc,php --report=full --standard=Drupal $TRAVIS_BUILD_DIR/src/themes
