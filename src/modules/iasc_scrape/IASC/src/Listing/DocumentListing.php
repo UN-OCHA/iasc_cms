@@ -1,4 +1,8 @@
 <?php
+/**
+ * @file
+ * Document listing crawler class.
+ */
 
 namespace IASC\Listing;
 

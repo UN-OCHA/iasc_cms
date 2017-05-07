@@ -27,7 +27,7 @@ function oa_apachesolr_sidebar_search_pane_render($subtype, $conf, $args, $conte
   $block = new stdClass();
   $block->title = t('Search');
   $block->content = drupal_get_form('oa_apachesolr_search_form', 'sidebar', $allowed_options);
-  
+
   return $block;
 }
 

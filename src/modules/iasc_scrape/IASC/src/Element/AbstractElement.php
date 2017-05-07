@@ -1,4 +1,8 @@
 <?php
+/**
+ * @file
+ * Abstract element class.
+ */
 
 namespace IASC\Element;
 

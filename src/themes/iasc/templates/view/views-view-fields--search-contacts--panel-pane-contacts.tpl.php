@@ -26,6 +26,7 @@
  *
  * @ingroup views_templates
  */
+// @codingStandardsIgnoreFile
 ?>
 <?php if ($has_photo): ?>
   <?php if (!empty($fields['field_photo']->separator)): ?>

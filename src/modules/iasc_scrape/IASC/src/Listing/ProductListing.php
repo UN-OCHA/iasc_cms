@@ -1,4 +1,8 @@
 <?php
+/**
+ * @file
+ * Product listing crawler class.
+ */
 
 namespace IASC\Listing;
 

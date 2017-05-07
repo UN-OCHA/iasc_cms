@@ -1,4 +1,8 @@
 <?php
+/**
+ * @file
+ * Contact element class.
+ */
 
 namespace IASC\Element;
 
@@ -6,8 +10,10 @@ use IASC\Listing\ContactsListing;
 use Goutte\Client;
 use Symfony\Component\DomCrawler\Crawler;
 
-class ContactElement extends AbstractElement
-{
+class ContactElement extends AbstractElement {
+  /**
+   * Constructor.
+   */
   public function __construct(Client $client, Crawler $crawler, $page = 1, $position = 1) {
     $this->position = $position;
     $this->page = $page;
@@ -18,6 +24,9 @@ class ContactElement extends AbstractElement
     $this->setValues();
   }
 
+  /**
+   * Set element values.
+   */
   public function setValues() {
     $values = array(
       'first_name' => array('selector' => '#ctl00_ContentPlaceHolder1_ctl00_txtFirst'),

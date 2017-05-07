@@ -29,6 +29,7 @@ function iasc_login_menu_alter(&$items) {
  * Overrides openid connect form to add message.
  */
 function iasc_login_form_openid_connect_login_form_alter(&$form, &$form_state, $form_id) {
+  // @codingStandardsIgnoreStart
   $form['hid_help'] = array(
     '#markup' => '<p>' .
       t('The IASC is using Humanitarian ID as a way to allow you to login. To learn more about Humanitarian ID, click !url.',
@@ -42,6 +43,7 @@ function iasc_login_form_openid_connect_login_form_alter(&$form, &$form_state, $
     '#weight' => -1,
     '#suffix' => '<br />',
   );
+  // @codingStandardsIgnoreEnd
   $form['openid_connect_client_generic_login'] = array(
     '#type' => 'submit',
     '#value' => t('Log in with Humanitarian ID'),

@@ -2,12 +2,12 @@
 /**
  * @file
  * Code for the Open Atrium Apache Solr module.
- */ 
+ */
 
 include_once 'oa_apachesolr.features.inc';
 
 /**
- * Implementation of hook_ctools_plugin_directory()
+ * Implements hook_ctools_plugin_directory().
  */
 function oa_apachesolr_ctools_plugin_directory($module, $plugin) {
   return 'plugins/' . $plugin;
@@ -53,7 +53,9 @@ function oa_apachesolr_preprocess_oa_apachesolr_search_form_toolbar(&$vars) {
  *
  * @ingroup forms
  */
+// @codingStandardsIgnoreStart
 function oa_apachesolr_search_form($form, &$form_state, $type = 'sidebar', $allowed_options = array('all_spaces', 'this_space', 'users')) {
+// @codingStandardsIgnoreEnd
   $form['#id'] = drupal_html_id('oa-apachesolr-search-form-' . $type);
   $form['#attributes'] = array(
     'class' => array(
@@ -62,9 +64,7 @@ function oa_apachesolr_search_form($form, &$form_state, $type = 'sidebar', $allo
     ),
   );
   $form['wrapper'] = array(
-    '#theme' => ($type == 'toolbar') ? 'oa_apachesolr_search_form_toolbar'
-      : 'oa_apachesolr_search_form_sidebar',
-  );
+    '#theme' => ($type == 'toolbar') ? 'oa_apachesolr_search_form_toolbar' : 'oa_apachesolr_search_form_sidebar');
 
   $form['wrapper']['keys'] = array(
     '#type' => 'textfield',
@@ -78,7 +78,7 @@ function oa_apachesolr_search_form($form, &$form_state, $type = 'sidebar', $allo
     '#type' => 'submit',
     '#value' => t('Search'),
   );
- 
+
   // Setup options based on what is allowed.
   if (count($allowed_options) > 1) {
     $default_options = array(
@@ -91,7 +91,7 @@ function oa_apachesolr_search_form($form, &$form_state, $type = 'sidebar', $allo
       '#options' => array(),
       '#default_value' => 'all_spaces',
     );
-     foreach ($allowed_options as $key) {
+    foreach ($allowed_options as $key) {
       $form['wrapper']['options']['#options'][$key] = $default_options[$key];
     }
   }
@@ -190,7 +190,7 @@ function oa_apachesolr_menu() {
   $items = array();
 
   $items['admin/oa_apachesolr'] = array(
-    'title' => t('Open Atrium ApacheSolr Integration Settings'),
+    'title' => 'Open Atrium ApacheSolr Integration Settings',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('oa_apachesolr_settings_form'),
     'access arguments' => array('oa_apachesolr_manage_settings'),
@@ -212,7 +212,8 @@ function oa_apachesolr_permission() {
 }
 
 /**
- * oa_apachesolr_settings_form
+ * Settings form callback.
+ *
  * Simple form for admin settings for oa_apachesolr
  */
 function oa_apachesolr_settings_form() {
