@@ -8,6 +8,7 @@
   <exclude-pattern>*.features.*</exclude-pattern>
   <exclude-pattern>*.strongarm.inc</exclude-pattern>
   <exclude-pattern>*.context.inc</exclude-pattern>
+  <exclude-pattern>*.pages_default.inc</exclude-pattern>
   <exclude-pattern>*.views_default.inc</exclude-pattern>
   <exclude-pattern>*.views_handler*</exclude-pattern>
   <rule ref="vendor/drupal/coder/coder_sniffer/Drupal" />
