@@ -26,6 +26,7 @@
  *
  * @ingroup views_templates
  */
+// @codingStandardsIgnoreFile
 ?>
 <div class='oa-event clearfix'>
   <div class='oa-event-header'>

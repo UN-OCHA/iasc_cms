@@ -1,4 +1,8 @@
 <?php
+/**
+ * @file
+ * News listing crawler class.
+ */
 
 namespace IASC\Listing;
 

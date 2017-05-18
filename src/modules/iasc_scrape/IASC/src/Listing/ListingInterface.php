@@ -1,9 +1,12 @@
 <?php
+/**
+ * @file
+ * Listing interface.
+ */
 
 namespace IASC\Listing;
 
-interface ListingInterface
-{
+interface ListingInterface {
   /**
    * Go to the default main page for a listing.
    */

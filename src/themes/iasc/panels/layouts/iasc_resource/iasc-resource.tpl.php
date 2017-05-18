@@ -10,7 +10,7 @@
  */
 ?>
 
-<div class="panel-display moscone clearfix <?php if (!empty($classes)) { print $classes; } ?><?php if (!empty($class)) { print $class; } ?>" <?php if (!empty($css_id)) { print "id=\"$css_id\""; } ?>>
+<div class="panel-display moscone clearfix <?php if (!empty($classes)): print $classes; endif; ?><?php if (!empty($class)): print $class; endif; ?>" <?php if (!empty($css_id)): print "id=\"$css_id\""; endif; ?>>
 
   <div class="container-fluid">
     <div class="row">
@@ -20,7 +20,7 @@
         </div>
       </div>
     </div>
-    
+
     <div class="row">
       <div class="col-md-2 radix-layouts-sidebar panel-panel">
         <div class="panel-panel-inner">
@@ -33,7 +33,7 @@
         </div>
       </div>
     </div>
-    
+
     <div class="row">
       <div class="col-md-12 radix-layouts-footer panel-panel">
         <div class="panel-panel-inner">
@@ -42,5 +42,5 @@
       </div>
     </div>
   </div>
- 
+
 </div><!-- /.moscone -->

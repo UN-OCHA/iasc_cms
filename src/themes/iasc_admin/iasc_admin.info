@@ -20,6 +20,3 @@ plugins[panels][styles] = panels/styles
 
 ; CSS - General
 stylesheets[all][]     = assets/stylesheets/sub-screen.css
-
-
-

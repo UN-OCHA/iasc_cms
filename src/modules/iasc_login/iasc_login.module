@@ -19,21 +19,31 @@ function iasc_login_menu_alter(&$items) {
   $items['user/password']['page callback'] = FALSE;
 
   // Disable the user login page if disabled.
-  //$items['user']['page callback'] = 'hid_auth_user_page';
+  // $items['user']['page callback'] = 'hid_auth_user_page';
   $items['user/login']['access callback'] = FALSE;
 }
 
 /**
- * Implements hook_form_FORM_ID_alter()
+ * Implements hook_form_FORM_ID_alter().
  *
- * Overrides openid connect form to add message
+ * Overrides openid connect form to add message.
  */
 function iasc_login_form_openid_connect_login_form_alter(&$form, &$form_state, $form_id) {
+  // @codingStandardsIgnoreStart
   $form['hid_help'] = array(
-    '#markup' => '<p>'.t('The IASC is using Humanitarian ID as a way to allow you to login. To learn more about Humanitarian ID, click !url.', array('!url' => l(t('here'), "http://about.humanitarian.id"))).'</p><p class="text-danger"><strong>'.t('When you have logged in with your Humanitarian ID for the first time, please !contact to verify your account and to grant you access to private content.', array('!contact' => l(t('contact us'), 'mailto:iasccorrespondence@un.org', array('absolute' => TRUE)))).'</strong></p>',
+    '#markup' => '<p>' .
+      t('The IASC is using Humanitarian ID as a way to allow you to login. To learn more about Humanitarian ID, click !url.',
+        array('!url' => l(t('here'), "http://about.humanitarian.id"))
+      ) .
+      '</p><p class="text-danger"><strong>' .
+      t('When you have logged in with your Humanitarian ID for the first time, please !contact to verify your account and to grant you access to private content.',
+        array('!contact' => l(t('contact us'), 'mailto:iasccorrespondence@un.org', array('absolute' => TRUE)))
+      ) .
+      '</strong></p>',
     '#weight' => -1,
     '#suffix' => '<br />',
   );
+  // @codingStandardsIgnoreEnd
   $form['openid_connect_client_generic_login'] = array(
     '#type' => 'submit',
     '#value' => t('Log in with Humanitarian ID'),
@@ -42,10 +52,12 @@ function iasc_login_form_openid_connect_login_form_alter(&$form, &$form_state, $
   );
 }
 
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
 function iasc_login_form_access_code_login_alter(&$form, &$form_state, $form_id) {
   $form['ac_help'] = array(
     '#markup' => t('The IASC currently also allows you to login with an Access Code. If you are still using a group access code, we encourage you to set up an individual account via Humanitarian ID, as the group login method will be removed in the future.'),
-    '#weight' => -1
+    '#weight' => -1,
   );
 }
-

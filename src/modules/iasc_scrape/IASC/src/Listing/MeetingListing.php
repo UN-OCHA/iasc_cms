@@ -1,4 +1,8 @@
 <?php
+/**
+ * @file
+ * Meeting listing crawler class.
+ */
 
 namespace IASC\Listing;
 

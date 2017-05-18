@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * Install file for IASC Contact.
@@ -118,16 +117,16 @@ function iasc_contact_update_7004() {
       ->fetchCol();
 
     if ($results) {
-      // The whole entity is not fully loaded. We have to load the entire entity.
+      // The whole entity is not fully loaded. We have to load it explicitly.
       $organization = taxonomy_term_load($term->tid);
 
       $addresses = array();
       $contacts = node_load_multiple($results);
-      // Now loop thru the returned Contact entities
+      // Now loop thru the returned Contact entities.
       foreach ($contacts as $contact) {
         if (!empty($contact->field_address)) {
           // Render the addresses in a user-friendly format for easy comparison.
-          $items = field_get_items('node', $contact , 'field_address');
+          $items = field_get_items('node', $contact, 'field_address');
           $items[0]['organisation_name'] = '';
 
           if (!in_array($items[0], $addresses)) {
@@ -136,12 +135,12 @@ function iasc_contact_update_7004() {
         }
       }
 
-      // Watchdog the address collection
+      // Watchdog the address collection.
       watchdog('iasc_contact', "Found :num distinct addresses for term :term",
         array(':num' => count($addresses), ':term' => $organization->name)
       );
 
-      // Add these addresses to the taxonomy term
+      // Add these addresses to the taxonomy term.
       foreach ($addresses as $address) {
         $organization->field_addresses[LANGUAGE_NONE][] = $address;
       }

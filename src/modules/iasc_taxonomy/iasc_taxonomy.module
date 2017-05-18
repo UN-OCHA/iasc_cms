@@ -440,7 +440,8 @@ function iasc_taxonomy_form_taxonomy_form_term_alter(&$form, &$form_state, $form
   $address_keys = element_children($form['field_addresses'][LANGUAGE_NONE]);
   foreach ($address_keys as $key) {
     if (is_numeric($key)) {
-      //  Change the labels for Building and Room. These are part of addressfield.
+      // Change the labels for Building and Room.
+      // These are part of addressfield.
       $form['field_addresses'][LANGUAGE_NONE][$key]['name_block']['name_line']['#title'] = t('Building');
       $form['field_addresses'][LANGUAGE_NONE][$key]['organisation_block']['organisation_name']['#title'] = t('Room');
     }

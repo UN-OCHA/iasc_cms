@@ -140,16 +140,18 @@ function iahe_recommendations_views_default_views() {
   $handler->display->display_options['fields']['field_evaluation_title']['table'] = 'field_data_field_evaluation_title';
   $handler->display->display_options['fields']['field_evaluation_title']['field'] = 'field_evaluation_title';
   $handler->display->display_options['fields']['field_evaluation_title']['label'] = 'Evaluation';
-  /* Field: Content: Date */
+  /* Field: Content: Deadline */
   $handler->display->display_options['fields']['field_date']['id'] = 'field_date';
   $handler->display->display_options['fields']['field_date']['table'] = 'field_data_field_date';
   $handler->display->display_options['fields']['field_date']['field'] = 'field_date';
+  $handler->display->display_options['fields']['field_date']['label'] = 'Date';
   $handler->display->display_options['fields']['field_date']['settings'] = array(
     'format_type' => 'panopoly_day',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
     'multiple_to' => '',
+    'show_remaining_days' => 0,
     'show_repeat_rule' => 'show',
   );
   /* Field: Content: Nid */
@@ -239,7 +241,7 @@ function iahe_recommendations_views_default_views() {
     'oa_worktracker_task' => 'oa_worktracker_task',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Date (field_date) */
+  /* Filter criterion: Content: Deadline (field_date) */
   $handler->display->display_options['filters']['field_date_value']['id'] = 'field_date_value';
   $handler->display->display_options['filters']['field_date_value']['table'] = 'field_data_field_date';
   $handler->display->display_options['filters']['field_date_value']['field'] = 'field_date_value';
@@ -381,7 +383,7 @@ function iahe_recommendations_views_default_views() {
   $handler->display->display_options['filters']['field_addressee_value']['expose']['autocomplete_raw_suggestion'] = 1;
   $handler->display->display_options['filters']['field_addressee_value']['expose']['autocomplete_raw_dropdown'] = 1;
   $handler->display->display_options['filters']['field_addressee_value']['expose']['autocomplete_dependent'] = 0;
-  /* Filter criterion: Content: Authoring Bodies (og_group_ref:target_id) */
+  /* Filter criterion: Content: Groups audience (og_group_ref:target_id) */
   $handler->display->display_options['filters']['og_group_ref_target_id']['id'] = 'og_group_ref_target_id';
   $handler->display->display_options['filters']['og_group_ref_target_id']['table'] = 'og_membership';
   $handler->display->display_options['filters']['og_group_ref_target_id']['field'] = 'og_group_ref_target_id';
