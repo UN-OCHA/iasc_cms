@@ -350,12 +350,3 @@ function iasc_configuration_update_7006() {
 function iasc_configuration_update_7007() {
   module_enable(array('syslog'));
 }
-
-/**
- * Implements hook_update().
- *
- * Enable admin_denied module, so that user/1 cannot login.
- */
-function iasc_configuration_update_7008() {
-  module_enable(array('admin_denied'));
-}
