@@ -37,9 +37,6 @@ projects[XHProf][download][type] = git
 ; =====================================
 ; Other contrib
 ; =====================================
-projects[admin_denied][version] = 1.0
-projects[admin_denied][subdir] = iasc_contrib
-
 projects[xautoload][version] = 5.5
 projects[xautoload][subdir] = iasc_contrib
 
