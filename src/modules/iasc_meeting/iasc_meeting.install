@@ -44,6 +44,7 @@ function iasc_meeting_install() {
 function iasc_meeting_uninstall() {
   // Remove variables.
   variable_del('iasc_meeting_num_events_missing_primary_geocode');
+  variable_del('iasc_meeting_my_timezone_form_enabled');
 }
 
 /**
