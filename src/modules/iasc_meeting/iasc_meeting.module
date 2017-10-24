@@ -7,6 +7,35 @@
 include_once 'iasc_meeting.features.inc';
 
 /**
+ * Implements hook_permission().
+ */
+function iasc_meeting_permission() {
+  return array(
+    'administer iasc meeting' => array(
+      'title' => t('Administer IASC Meeting'),
+      'description' => t('Change settings for the IASC meeting module.'),
+    ),
+  );
+}
+
+
+/**
+ * Implements hook_menu().
+ */
+function iasc_meeting_menu() {
+  $items['admin/config/iasc-meeting'] = array(
+    'title' => 'IASC Settings',
+    'description' => 'Configure IASC Meeting Settings.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('iasc_meeting_settings'),
+    'access arguments' => array('administer iasc meeting'),
+    'file' => 'iasc_meeting.admin.inc',
+    'type' => MENU_NORMAL_ITEM,
+  );
+  return $items;
+}
+
+/**
  * Implements hook_ctools_plugin_directory().
  */
 function iasc_meeting_ctools_plugin_directory($owner, $plugin_type) {
@@ -322,7 +351,10 @@ function iasc_meeting_preprocess_views_view_fields(&$vars) {
 
     $vars['other_dates'] = $other_dates;
 
-    $vars['my_timezone_form'] = drupal_get_form('iasc_meeting_my_timezone_form', $primary_sdate, $primary_edate);
+    // Allow the helper form to be hidden during staggered DST switches.
+    if (variable_get('iasc_meeting_my_timezone_form_enabled', 1) === 1) {
+      $vars['my_timezone_form'] = drupal_get_form('iasc_meeting_my_timezone_form', $primary_sdate, $primary_edate);
+    }
   }
 }
 
