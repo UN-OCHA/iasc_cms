@@ -36,3 +36,14 @@ function iasc_action_points_field_access($op, $field, $entity_type, $entity, $ac
   }
   return TRUE;
 }
+
+/**
+ * Implements template_preprocess_views_view().
+ */
+function iasc_action_points_preprocess_views_view(&$vars) {
+  if ($vars['view']->name == 'iasc_action_points') {
+    drupal_add_js(drupal_get_path('module', 'iasc_action_points') . '/lib/jspdf.debug.js');
+    drupal_add_js(drupal_get_path('module', 'iasc_action_points') . '/lib/jspdf.plugin.autotable.js');
+    drupal_add_js(drupal_get_path('module', 'iasc_action_points') . '/iasc_action_points.js');
+  }
+}
