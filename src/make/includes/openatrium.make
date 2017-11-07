@@ -10,6 +10,7 @@ core = 7.x
 
 projects[oa_core][subdir] = contrib
 projects[oa_core][version] = 2.87
+projects[oa_core][patch][2921209] = https://www.drupal.org/files/issues/fix-simplepie-download-source-2921209-2.patch
 
 ; ************************************************
 ; ************* Open Atrium Builtin Apps *********
