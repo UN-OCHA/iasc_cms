@@ -99,3 +99,17 @@ function iasc_update_7006() {
 function iasc_update_7007() {
   module_enable(array('responsive_imagemaps'));
 }
+
+/**
+ * Implements hook_update_N().
+ *
+ * Enable audit_log.
+ */
+function iasc_update_7008() {
+  module_enable(array(
+    'audit_log',
+    'audit_log_user',
+    'audit_log_syslog',
+    'audit_log_openid_connect',
+  ));
+}
