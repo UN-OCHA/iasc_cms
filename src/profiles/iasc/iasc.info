@@ -163,3 +163,9 @@ dependencies[] = og_role_override
 dependencies[] = securepages
 dependencies[] = tzfield
 dependencies[] = responsive_imagemaps
+
+; Logging
+dependencies[] = audit_log
+dependencies[] = audit_log_user
+dependencies[] = audit_log_syslog
+dependencies[] = audit_log_openid_connect

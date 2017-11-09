@@ -166,3 +166,7 @@ libraries[responsive-imagemaps][download][url] = https://github.com/stowball/jQu
 
 libraries[jquery.expander][download][type] = file
 libraries[jquery.expander][download][url] = https://github.com/kswedberg/jquery-expander/archive/master.zip
+
+projects[audit_log][type] = module
+projects[audit_log][subdir] = iasc_contrib
+projects[audit_log][version] = 1.x-dev
